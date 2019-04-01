@@ -4,19 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Varyag.Models
 {
     
     public class ShipProject
     {
-        public enum ShipType
-        {
-            Лодка, Катер, Ладья, Драккар, Яхта, Шлюпка, Шхуна, Струг, Бот
-        }
-
-        public int ProjectId;
-
+        public int ShipProjectID { get; set; }
         [Required]
         public string ProjectName { get; set; }
         [Required]
@@ -45,7 +40,11 @@ namespace Varyag.Models
         public bool HistoricalShip { get; set; }
         public bool ReserchShip { get; set; }
         public bool PassangerShip { get; set; }
-        
-        public virtual List<ProjectFoto> Fotos { get; set; }
+
+        public List<ProjectFoto> Fotos { get; set; }
+    }
+    public enum ShipType
+    {
+        Лодка, Катер, Ладья, Драккар, Яхта, Шлюпка, Шхуна, Струг, Бот
     }
 }
