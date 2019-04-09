@@ -9,22 +9,23 @@ using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    public class ShipProjectsController : Controller
+    public class ProjectsController : Controller
     {
         private readonly VaryagContext _context;
 
-        public ShipProjectsController(VaryagContext context)
+        public ProjectsController(VaryagContext context)
         {
             _context = context;
         }
 
-        // GET: ShipProjects
+        // GET: Projects
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ShipProject.ToListAsync());
+            //SelectList Types = _context.Project.Ty
+            return View(await _context.Project.ToListAsync());
         }
 
-        // GET: ShipProjects/Details/5
+        // GET: Projects/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,39 +33,39 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            var shipProject = await _context.ShipProject
-                .FirstOrDefaultAsync(m => m.ShipProjectID == id);
-            if (shipProject == null)
+            var project = await _context.Project
+                .FirstOrDefaultAsync(m => m.ProjectID == id);
+            if (project == null)
             {
                 return NotFound();
             }
 
-            return View(shipProject);
+            return View(project);
         }
 
-        // GET: ShipProjects/Create
+        // GET: Projects/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: ShipProjects/Create
+        // POST: Projects/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ShipProjectID,ProjectName,ProjectLength,ProjectWindth,ProjectDeep,ProjectVolume,ProjectEnginePower,ProjectSpeed,ProjectSailArea,ProjectSleepingAreas,ProjectPassengerCap,ProjectFuelCap,ProjectFreshWaterCap,ProjectType,ProjectDescription,CruiseShip,StudyShip,FishingShip,HistoricalShip,ReserchShip,PassangerShip")] ShipProject shipProject)
+        public async Task<IActionResult> Create([Bind("ProjectID,Name,Length,Windth,Deep,Volume,EnginePower,Speed,SailArea,SleepingAreas,PassengerCap,FuelCap,FreshWaterCap,Type,Description,CruiseShip,StudyShip,FishingShip,HistoricalShip,ReserchShip,PassangerShip")] Project project)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(shipProject);
+                _context.Add(project);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(shipProject);
+            return View(project);
         }
 
-        // GET: ShipProjects/Edit/5
+        // GET: Projects/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +73,22 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            var shipProject = await _context.ShipProject.FindAsync(id);
-            if (shipProject == null)
+            var project = await _context.Project.FindAsync(id);
+            if (project == null)
             {
                 return NotFound();
             }
-            return View(shipProject);
+            return View(project);
         }
 
-        // POST: ShipProjects/Edit/5
+        // POST: Projects/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ShipProjectID,ProjectName,ProjectLength,ProjectWindth,ProjectDeep,ProjectVolume,ProjectEnginePower,ProjectSpeed,ProjectSailArea,ProjectSleepingAreas,ProjectPassengerCap,ProjectFuelCap,ProjectFreshWaterCap,ProjectType,ProjectDescription,CruiseShip,StudyShip,FishingShip,HistoricalShip,ReserchShip,PassangerShip")] ShipProject shipProject)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectID,Name,Length,Windth,Deep,Volume,EnginePower,Speed,SailArea,SleepingAreas,PassengerCap,FuelCap,FreshWaterCap,Type,Description,CruiseShip,StudyShip,FishingShip,HistoricalShip,ReserchShip,PassangerShip")] Project project)
         {
-            if (id != shipProject.ShipProjectID)
+            if (id != project.ProjectID)
             {
                 return NotFound();
             }
@@ -96,12 +97,12 @@ namespace Varyag.Controllers
             {
                 try
                 {
-                    _context.Update(shipProject);
+                    _context.Update(project);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ShipProjectExists(shipProject.ShipProjectID))
+                    if (!ProjectExists(project.ProjectID))
                     {
                         return NotFound();
                     }
@@ -112,10 +113,10 @@ namespace Varyag.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(shipProject);
+            return View(project);
         }
 
-        // GET: ShipProjects/Delete/5
+        // GET: Projects/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,30 +124,30 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            var shipProject = await _context.ShipProject
-                .FirstOrDefaultAsync(m => m.ShipProjectID == id);
-            if (shipProject == null)
+            var project = await _context.Project
+                .FirstOrDefaultAsync(m => m.ProjectID == id);
+            if (project == null)
             {
                 return NotFound();
             }
 
-            return View(shipProject);
+            return View(project);
         }
 
-        // POST: ShipProjects/Delete/5
+        // POST: Projects/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var shipProject = await _context.ShipProject.FindAsync(id);
-            _context.ShipProject.Remove(shipProject);
+            var project = await _context.Project.FindAsync(id);
+            _context.Project.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ShipProjectExists(int id)
+        private bool ProjectExists(int id)
         {
-            return _context.ShipProject.Any(e => e.ShipProjectID == id);
+            return _context.Project.Any(e => e.ProjectID == id);
         }
     }
 }

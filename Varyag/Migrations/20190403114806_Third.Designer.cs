@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Varyag.Models;
 
 namespace Varyag.Migrations
 {
     [DbContext(typeof(VaryagContext))]
-    partial class VaryagContextModelSnapshot : ModelSnapshot
+    [Migration("20190403114806_Third")]
+    partial class Third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,8 +71,7 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("CruiseShip");
 
-                    b.Property<string>("Deep")
-                        .IsRequired();
+                    b.Property<decimal>("Deep");
 
                     b.Property<string>("Description")
                         .IsRequired();
@@ -85,8 +86,7 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("HistoricalShip");
 
-                    b.Property<string>("Length")
-                        .IsRequired();
+                    b.Property<decimal>("Length");
 
                     b.Property<string>("Name")
                         .IsRequired();
@@ -97,7 +97,7 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("ReserchShip");
 
-                    b.Property<string>("SailArea");
+                    b.Property<decimal?>("SailArea");
 
                     b.Property<int?>("SleepingAreas");
 
@@ -107,11 +107,9 @@ namespace Varyag.Migrations
 
                     b.Property<int>("Type");
 
-                    b.Property<string>("Volume")
-                        .IsRequired();
+                    b.Property<decimal>("Volume");
 
-                    b.Property<string>("Windth")
-                        .IsRequired();
+                    b.Property<decimal>("Windth");
 
                     b.HasKey("ProjectID");
 

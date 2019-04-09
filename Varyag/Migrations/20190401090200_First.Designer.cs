@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Varyag.Models;
 
 namespace Varyag.Migrations
 {
     [DbContext(typeof(VaryagContext))]
-    partial class VaryagContextModelSnapshot : ModelSnapshot
+    [Migration("20190401090200_First")]
+    partial class First
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,40 +27,15 @@ namespace Varyag.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Alt");
-
-                    b.Property<string>("Name");
-
-                    b.Property<int?>("NewsID");
-
                     b.Property<byte[]>("ProjectFoto");
 
-                    b.Property<int?>("ShipProjectID");
+                    b.Property<int>("ShipProjectID");
 
                     b.HasKey("FotoID");
-
-                    b.HasIndex("NewsID");
 
                     b.HasIndex("ShipProjectID");
 
                     b.ToTable("Foto");
-                });
-
-            modelBuilder.Entity("Varyag.Models.News", b =>
-                {
-                    b.Property<int>("NewsId")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Header");
-
-                    b.Property<string>("MainStory");
-
-                    b.Property<string>("ShortStory");
-
-                    b.HasKey("NewsId");
-
-                    b.ToTable("News");
                 });
 
             modelBuilder.Entity("Varyag.Models.Project", b =>
@@ -69,8 +46,7 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("CruiseShip");
 
-                    b.Property<string>("Deep")
-                        .IsRequired();
+                    b.Property<int>("Deep");
 
                     b.Property<string>("Description")
                         .IsRequired();
@@ -85,8 +61,7 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("HistoricalShip");
 
-                    b.Property<string>("Length")
-                        .IsRequired();
+                    b.Property<int>("Length");
 
                     b.Property<string>("Name")
                         .IsRequired();
@@ -97,7 +72,7 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("ReserchShip");
 
-                    b.Property<string>("SailArea");
+                    b.Property<int?>("SailArea");
 
                     b.Property<int?>("SleepingAreas");
 
@@ -107,11 +82,9 @@ namespace Varyag.Migrations
 
                     b.Property<int>("Type");
 
-                    b.Property<string>("Volume")
-                        .IsRequired();
+                    b.Property<int>("Volume");
 
-                    b.Property<string>("Windth")
-                        .IsRequired();
+                    b.Property<int>("Windth");
 
                     b.HasKey("ProjectID");
 
@@ -120,13 +93,10 @@ namespace Varyag.Migrations
 
             modelBuilder.Entity("Varyag.Models.Foto", b =>
                 {
-                    b.HasOne("Varyag.Models.News", "News")
-                        .WithMany("NewsFotos")
-                        .HasForeignKey("NewsID");
-
                     b.HasOne("Varyag.Models.Project", "ShipProject")
-                        .WithMany("ShipFotos")
-                        .HasForeignKey("ShipProjectID");
+                        .WithMany("Fotos")
+                        .HasForeignKey("ShipProjectID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
         }

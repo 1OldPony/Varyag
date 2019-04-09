@@ -9,25 +9,25 @@ namespace Varyag.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ShipProject",
+                name: "Project",
                 columns: table => new
                 {
-                    ShipProjectID = table.Column<int>(nullable: false)
+                    ProjectID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ProjectName = table.Column<string>(nullable: false),
-                    ProjectLength = table.Column<int>(nullable: false),
-                    ProjectWindth = table.Column<int>(nullable: false),
-                    ProjectDeep = table.Column<int>(nullable: false),
-                    ProjectVolume = table.Column<int>(nullable: false),
-                    ProjectEnginePower = table.Column<int>(nullable: true),
-                    ProjectSpeed = table.Column<int>(nullable: true),
-                    ProjectSailArea = table.Column<int>(nullable: true),
-                    ProjectSleepingAreas = table.Column<int>(nullable: true),
-                    ProjectPassengerCap = table.Column<int>(nullable: false),
-                    ProjectFuelCap = table.Column<int>(nullable: true),
-                    ProjectFreshWaterCap = table.Column<int>(nullable: true),
-                    ProjectType = table.Column<int>(nullable: false),
-                    ProjectDescription = table.Column<string>(nullable: false),
+                    Name = table.Column<string>(nullable: false),
+                    Length = table.Column<int>(nullable: false),
+                    Windth = table.Column<int>(nullable: false),
+                    Deep = table.Column<int>(nullable: false),
+                    Volume = table.Column<int>(nullable: false),
+                    EnginePower = table.Column<int>(nullable: true),
+                    Speed = table.Column<int>(nullable: true),
+                    SailArea = table.Column<int>(nullable: true),
+                    SleepingAreas = table.Column<int>(nullable: true),
+                    PassengerCap = table.Column<int>(nullable: false),
+                    FuelCap = table.Column<int>(nullable: true),
+                    FreshWaterCap = table.Column<int>(nullable: true),
+                    Type = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
                     CruiseShip = table.Column<bool>(nullable: false),
                     StudyShip = table.Column<bool>(nullable: false),
                     FishingShip = table.Column<bool>(nullable: false),
@@ -37,42 +37,42 @@ namespace Varyag.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShipProject", x => x.ShipProjectID);
+                    table.PrimaryKey("PK_Project", x => x.ProjectID);
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProjectFoto",
+                name: "Foto",
                 columns: table => new
                 {
-                    ProjectFotoID = table.Column<int>(nullable: false)
+                    FotoID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Foto = table.Column<byte[]>(nullable: true),
+                    ProjectFoto = table.Column<byte[]>(nullable: true),
                     ShipProjectID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProjectFoto", x => x.ProjectFotoID);
+                    table.PrimaryKey("PK_Foto", x => x.FotoID);
                     table.ForeignKey(
-                        name: "FK_ProjectFoto_ShipProject_ShipProjectID",
+                        name: "FK_Foto_Project_ShipProjectID",
                         column: x => x.ShipProjectID,
-                        principalTable: "ShipProject",
-                        principalColumn: "ShipProjectID",
+                        principalTable: "Project",
+                        principalColumn: "ProjectID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProjectFoto_ShipProjectID",
-                table: "ProjectFoto",
+                name: "IX_Foto_ShipProjectID",
+                table: "Foto",
                 column: "ShipProjectID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "ProjectFoto");
+                name: "Foto");
 
             migrationBuilder.DropTable(
-                name: "ShipProject");
+                name: "Project");
         }
     }
 }

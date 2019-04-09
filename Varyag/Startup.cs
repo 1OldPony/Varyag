@@ -62,7 +62,7 @@ namespace Varyag
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Projects}/{action=Index}/{id?}");
             });
         }
     }
