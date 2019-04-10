@@ -32,10 +32,17 @@ namespace Varyag.Models
         [MaxLength(5)]
         public string Deep { get; set; }
 
-        [Required]
         [DisplayName("Водоизмещение порожнем, т")]
         [MaxLength(10)]
         public string Volume { get; set; }
+
+        [DisplayName("Вес корпуса, кг")]
+        [MaxLength(10)]
+        public string Mass { get; set; }
+
+        [DisplayName("Количество весел, шт")]
+        [MaxLength(5)]
+        public string NumberOfOars { get; set; }
 
         [DisplayName("Мощность двигателя, л.с.")]
         public int? EnginePower { get; set; }
