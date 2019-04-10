@@ -18,45 +18,45 @@ namespace Varyag.Models
         public string Name { get; set; }
 
         [Required]
-        [DisplayName("Длинна корпуса наибольшая")]
+        [DisplayName("Длинна корпуса наибольшая, м")]
         [MaxLength(5)]
         public string Length { get; set; }
 
         [Required]
-        [DisplayName("Ширина корпуса наибольшая")]
+        [DisplayName("Ширина корпуса наибольшая, м")]
         [MaxLength(5)]
         public string Windth { get; set; }
 
         [Required]
-        [DisplayName("Осадка в полном грузу")]
+        [DisplayName("Осадка в полном грузу, м")]
         [MaxLength(5)]
         public string Deep { get; set; }
 
         [Required]
-        [DisplayName("Водоизмещение порожнем")]
+        [DisplayName("Водоизмещение порожнем, т")]
         [MaxLength(10)]
         public string Volume { get; set; }
 
-        [DisplayName("Мощность двигателя")]
+        [DisplayName("Мощность двигателя, л.с.")]
         public int? EnginePower { get; set; }
 
-        [DisplayName("Скорость под двигателем")]
+        [DisplayName("Скорость под двигателем, узлов")]
         public int? Speed { get; set; }
 
-        [DisplayName("Площадь парусности")]
+        [DisplayName("Площадь парусности, м2")]
         [MaxLength(10)]
         public string SailArea { get; set; }
 
-        [DisplayName("Количество спальных мест")]
+        [DisplayName("Количество спальных мест, шт")]
         public int? SleepingAreas { get; set; }
 
-        [DisplayName("Пассажировместимость")]
+        [DisplayName("Пассажировместимость, чел")]
         public int PassengerCap { get; set; }
 
-        [DisplayName("Запас топлива")]
+        [DisplayName("Запас топлива, л")]
         public int? FuelCap { get; set; }
 
-        [DisplayName("Запас пресной воды")]
+        [DisplayName("Запас пресной воды, л")]
         public int? FreshWaterCap { get; set; }
 
         [Required]
@@ -65,6 +65,7 @@ namespace Varyag.Models
 
         [Required]
         [DisplayName("Описание")]
+        [DefaultValue("Описание судна")]
         public string Description { get; set; }
 
         public bool CruiseShip { get; set; }

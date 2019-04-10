@@ -13,8 +13,9 @@ namespace Varyag.Models
         public int FotoID { get; set; }
         [DisplayName("ALT для фотки")]
         public string Alt { get; set; }
-        [DisplayName("Name для фотки")]
+        [DisplayName("Title для фотки")]
         public string Name { get; set; }
+        [Required]
         public byte[] ProjectFoto { get; set; }
         
         public int? ShipProjectID { get; set; }

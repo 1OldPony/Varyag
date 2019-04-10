@@ -21,32 +21,21 @@ namespace Varyag.Controllers
             _context = context;
         }
 
+        public async Task<IActionResult> ImageRender(int? id)
+        {
+            //Foto foto;
+            var foto = await _context.Foto.SingleAsync(f => f.FotoID.Equals(id));
+
+            byte[] image = foto.ProjectFoto;
+            return File(image, "image/jpg");
+        }
+
         // GET: Fotoes
         public async Task<IActionResult> Index()
         {
             var varyagContext = _context.Foto.Include(f => f.News).Include(f => f.ShipProject);
             return View(await varyagContext.ToListAsync());
         }
-
-        //// GET: Fotoes/Details/5
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var foto = await _context.Foto
-        //        .Include(f => f.News)
-        //        .Include(f => f.ShipProject)
-        //        .FirstOrDefaultAsync(m => m.FotoID == id);
-        //    if (foto == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(foto);
-        //}
 
         // GET: Fotoes/Create
         public IActionResult Create()
@@ -61,18 +50,8 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(/*[Bind("FotoID,Alt,Name,ProjectFoto,ShipProjectID,NewsID")]*/ /*Foto foto*/ FotoViewModel model, IFormFile fot )
+        public async Task<IActionResult> Create(FotoViewModel model)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    _context.Add(foto);
-            //    await _context.SaveChangesAsync();
-            //    return RedirectToAction(nameof(Index));
-            //}
-            //ViewData["NewsID"] = new SelectList(_context.Set<News>(), "NewsId", "NewsId", foto.NewsID);
-            //ViewData["ShipProjectID"] = new SelectList(_context.Project, "ProjectID", "Description", foto.ShipProjectID);
-            //return View(foto);
-
             if (ModelState.IsValid)
             {
                 var foto = new Foto
@@ -81,13 +60,11 @@ namespace Varyag.Controllers
                     Alt = model.Alt,
                     ShipProjectID = model.ShipProjectID,
                     NewsID = model.NewsID,
-                    FotoID = model.FotoID,
-                    //ProjectFoto = model.ProjectFoto
+                    FotoID = model.FotoID
                 };
                 using (var memoryStream = new MemoryStream())
                 {
-                    fot.CopyTo(memoryStream);
-                    //await model.Foto.CopyToAsync(memoryStream);
+                    await model.Foto.CopyToAsync(memoryStream);
                     foto.ProjectFoto = memoryStream.ToArray();
                 }
                 _context.Add(foto);
@@ -150,7 +127,7 @@ namespace Varyag.Controllers
         //    ViewData["NewsID"] = new SelectList(_context.Set<News>(), "NewsId", "NewsId", foto.NewsID);
         //    ViewData["ShipProjectID"] = new SelectList(_context.Project, "ProjectID", "Description", foto.ShipProjectID);
         //    return View(foto);
-        //}
+    //}
 
         // GET: Fotoes/Delete/5
         public async Task<IActionResult> Delete(int? id)

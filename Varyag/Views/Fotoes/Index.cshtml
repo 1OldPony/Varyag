@@ -40,13 +40,13 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ProjectFoto)
+                <img alt="@item.Alt" title="@item.Name" src="@Url.Action("ImageRender", new { id = item.FotoID})">
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ShipProject.Description)
+                @Html.DisplayFor(modelItem => item.ShipProject.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.News.NewsId)
+                @Html.DisplayFor(modelItem => item.News.Header)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.FotoID">Edit</a> |
