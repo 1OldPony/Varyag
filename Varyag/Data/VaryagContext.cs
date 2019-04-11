@@ -22,18 +22,6 @@ namespace Varyag.Models
             public DbSet<Foto> Foto { get; set; }
 
             public DbSet<News> News { get; set; }
-
-            //protected override void OnModelCreating(ModelBuilder modelBuilder)
-            //{
-            //    modelBuilder.Entity<Project>(eb =>
-            //    {
-            //        eb.Property(b => b.Deep).HasColumnType("decimal(10, 1)");
-            //        eb.Property(b => b.Length).HasColumnType("decimal(10, 1)");
-            //        eb.Property(b => b.SailArea).HasColumnType("decimal(10, 1)");
-            //        eb.Property(b => b.Volume).HasColumnType("decimal(10, 1)");
-            //        eb.Property(b => b.Windth).HasColumnType("decimal(10, 1)");
-            //    });
-            //}
         }
 
 

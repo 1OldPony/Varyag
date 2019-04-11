@@ -9,153 +9,76 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+@foreach (var item in Model)
+{ 
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Length)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Windth)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Deep)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Volume)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mass)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NumberOfOars)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EnginePower)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Speed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SailArea)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SleepingAreas)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PassengerCap)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FuelCap)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FreshWaterCap)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CruiseShip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StudyShip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FishingShip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HistoricalShip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ReserchShip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PassangerShip)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Length)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Windth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Deep)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Volume)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mass)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberOfOars)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnginePower)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Speed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SailArea)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SleepingAreas)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PassengerCap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FuelCap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FreshWaterCap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CruiseShip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StudyShip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FishingShip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HistoricalShip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReserchShip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PassangerShip)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProjectID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProjectID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProjectID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.Name)</td>
+        <td>@Html.DisplayNameFor(model => model.Length)</td>
+        <td>@Html.DisplayNameFor(model => model.Windth)</td>
+        <td>@Html.DisplayNameFor(model => model.Deep)</td>
+        <td>@Html.DisplayNameFor(model => model.Volume)</td>
+        <td>@Html.DisplayNameFor(model => model.Mass)</td>
+        <td>@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+        <td>@Html.DisplayNameFor(model => model.EnginePower)</td>
+        <td>@Html.DisplayNameFor(model => model.Speed)</td>
+        <td>@Html.DisplayNameFor(model => model.SailArea)</td>
+        <td>@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+        <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
+        <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
+        <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+        <td>@Html.DisplayFor(modelItem => item.Length)</td>
+        <td>@Html.DisplayFor(modelItem => item.Windth)</td>
+        <td>@Html.DisplayFor(modelItem => item.Deep)</td>
+        <td>@Html.DisplayFor(modelItem => item.Volume)</td>
+        <td>@Html.DisplayFor(modelItem => item.Mass)</td>
+        <td>@Html.DisplayFor(modelItem => item.NumberOfOars)</td>
+        <td>@Html.DisplayFor(modelItem => item.EnginePower)</td>
+        <td>@Html.DisplayFor(modelItem => item.Speed)</td>
+        <td>@Html.DisplayFor(modelItem => item.SailArea)</td>
+        <td>@Html.DisplayFor(modelItem => item.SleepingAreas)</td>
+        <td>@Html.DisplayFor(modelItem => item.PassengerCap)</td>
+        <td>@Html.DisplayFor(modelItem => item.FuelCap)</td>
+        <td>@Html.DisplayFor(modelItem => item.FreshWaterCap)</td>
+    </tr>
+    <tr>
+        <td colspan="2">@Html.DisplayNameFor(model => model.CruiseShip)</td>
+        <td colspan="2">@Html.DisplayNameFor(model => model.StudyShip)</td>
+        <td colspan="2">@Html.DisplayNameFor(model => model.FishingShip)</td>
+        <td colspan="2">@Html.DisplayNameFor(model => model.HistoricalShip)</td>
+        <td colspan="2">@Html.DisplayNameFor(model => model.ReserchShip)</td>
+        <td colspan="2">@Html.DisplayNameFor(model => model.PassangerShip)</td>
+        <td colspan="2">@Html.DisplayNameFor(model => model.Type)</td>
+    </tr>
+    <tr>
+        <td colspan="2">@Html.DisplayFor(modelItem => item.CruiseShip)</td>
+        <td colspan="2">@Html.DisplayFor(modelItem => item.StudyShip)</td>
+        <td colspan="2">@Html.DisplayFor(modelItem => item.FishingShip)</td>
+        <td colspan="2">@Html.DisplayFor(modelItem => item.HistoricalShip)</td>
+        <td colspan="2">@Html.DisplayFor(modelItem => item.ReserchShip)</td>
+        <td colspan="2">@Html.DisplayFor(modelItem => item.PassangerShip)</td>
+        <td colspan="2">@Html.DisplayFor(modelItem => item.Type)</td>
+    </tr>
+    <tr>
+
+        <td colspan="14">@Html.DisplayNameFor(model => model.Description)</td>        
+    </tr>
+    <tr>
+        <td colspan="14">
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="14">
+            <a asp-action="Edit" asp-route-id="@item.ProjectID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.ProjectID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.ProjectID">Delete</a>
+        </td>
+    </tr>
+    @*<partial name="Fotos" model="Foto" />*@
 </table>
+}

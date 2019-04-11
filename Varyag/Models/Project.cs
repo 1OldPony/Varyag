@@ -13,21 +13,18 @@ namespace Varyag.Models
     public class Project
     {
         public int ProjectID { get; set; }
-        [Required]
+
         [DisplayName("Название проекта")]
         public string Name { get; set; }
 
-        [Required]
         [DisplayName("Длинна корпуса наибольшая, м")]
         [MaxLength(5)]
         public string Length { get; set; }
 
-        [Required]
         [DisplayName("Ширина корпуса наибольшая, м")]
         [MaxLength(5)]
         public string Windth { get; set; }
 
-        [Required]
         [DisplayName("Осадка в полном грузу, м")]
         [MaxLength(5)]
         public string Deep { get; set; }
@@ -58,7 +55,7 @@ namespace Varyag.Models
         public int? SleepingAreas { get; set; }
 
         [DisplayName("Пассажировместимость, чел")]
-        public int PassengerCap { get; set; }
+        public int? PassengerCap { get; set; }
 
         [DisplayName("Запас топлива, л")]
         public int? FuelCap { get; set; }
@@ -70,16 +67,20 @@ namespace Varyag.Models
         [DisplayName("Тип судна")]
         public ShipType Type { get; set; }
 
-        [Required]
         [DisplayName("Описание")]
-        [DefaultValue("Описание судна")]
         public string Description { get; set; }
 
+        [DisplayName("Круизное")]
         public bool CruiseShip { get; set; }
+        [DisplayName("Учебное")]
         public bool StudyShip { get; set; }
+        [DisplayName("Рыболовецкое")]
         public bool FishingShip { get; set; }
+        [DisplayName("Историческое")]
         public bool HistoricalShip { get; set; }
+        [DisplayName("Исследовательское")]
         public bool ReserchShip { get; set; }
+        [DisplayName("Пассажирское")]
         public bool PassangerShip { get; set; }
 
         public List<Foto> ShipFotos { get; set; }
