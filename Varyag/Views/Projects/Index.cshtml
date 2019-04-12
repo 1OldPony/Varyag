@@ -1,84 +1,86 @@
 ﻿@model IEnumerable<Varyag.Models.Project>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Проекты";
 }
 
-<h1>Index</h1>
+<h1>Проекты:</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Добавить проект</a>
 </p>
 
 @foreach (var item in Model)
-{ 
-<table class="table">
-    <tr>
-        <td>@Html.DisplayNameFor(model => model.Name)</td>
-        <td>@Html.DisplayNameFor(model => model.Length)</td>
-        <td>@Html.DisplayNameFor(model => model.Windth)</td>
-        <td>@Html.DisplayNameFor(model => model.Deep)</td>
-        <td>@Html.DisplayNameFor(model => model.Volume)</td>
-        <td>@Html.DisplayNameFor(model => model.Mass)</td>
-        <td>@Html.DisplayNameFor(model => model.NumberOfOars)</td>
-        <td>@Html.DisplayNameFor(model => model.EnginePower)</td>
-        <td>@Html.DisplayNameFor(model => model.Speed)</td>
-        <td>@Html.DisplayNameFor(model => model.SailArea)</td>
-        <td>@Html.DisplayNameFor(model => model.SleepingAreas)</td>
-        <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
-        <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
-        <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
-    </tr>
-    <tr>
-        <td>@Html.DisplayFor(modelItem => item.Name)</td>
-        <td>@Html.DisplayFor(modelItem => item.Length)</td>
-        <td>@Html.DisplayFor(modelItem => item.Windth)</td>
-        <td>@Html.DisplayFor(modelItem => item.Deep)</td>
-        <td>@Html.DisplayFor(modelItem => item.Volume)</td>
-        <td>@Html.DisplayFor(modelItem => item.Mass)</td>
-        <td>@Html.DisplayFor(modelItem => item.NumberOfOars)</td>
-        <td>@Html.DisplayFor(modelItem => item.EnginePower)</td>
-        <td>@Html.DisplayFor(modelItem => item.Speed)</td>
-        <td>@Html.DisplayFor(modelItem => item.SailArea)</td>
-        <td>@Html.DisplayFor(modelItem => item.SleepingAreas)</td>
-        <td>@Html.DisplayFor(modelItem => item.PassengerCap)</td>
-        <td>@Html.DisplayFor(modelItem => item.FuelCap)</td>
-        <td>@Html.DisplayFor(modelItem => item.FreshWaterCap)</td>
-    </tr>
-    <tr>
-        <td colspan="2">@Html.DisplayNameFor(model => model.CruiseShip)</td>
-        <td colspan="2">@Html.DisplayNameFor(model => model.StudyShip)</td>
-        <td colspan="2">@Html.DisplayNameFor(model => model.FishingShip)</td>
-        <td colspan="2">@Html.DisplayNameFor(model => model.HistoricalShip)</td>
-        <td colspan="2">@Html.DisplayNameFor(model => model.ReserchShip)</td>
-        <td colspan="2">@Html.DisplayNameFor(model => model.PassangerShip)</td>
-        <td colspan="2">@Html.DisplayNameFor(model => model.Type)</td>
-    </tr>
-    <tr>
-        <td colspan="2">@Html.DisplayFor(modelItem => item.CruiseShip)</td>
-        <td colspan="2">@Html.DisplayFor(modelItem => item.StudyShip)</td>
-        <td colspan="2">@Html.DisplayFor(modelItem => item.FishingShip)</td>
-        <td colspan="2">@Html.DisplayFor(modelItem => item.HistoricalShip)</td>
-        <td colspan="2">@Html.DisplayFor(modelItem => item.ReserchShip)</td>
-        <td colspan="2">@Html.DisplayFor(modelItem => item.PassangerShip)</td>
-        <td colspan="2">@Html.DisplayFor(modelItem => item.Type)</td>
-    </tr>
-    <tr>
-
-        <td colspan="14">@Html.DisplayNameFor(model => model.Description)</td>        
-    </tr>
-    <tr>
-        <td colspan="14">
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-    </tr>
-    <tr>
-        <td colspan="14">
-            <a asp-action="Edit" asp-route-id="@item.ProjectID">Edit</a> |
-            <a asp-action="Details" asp-route-id="@item.ProjectID">Details</a> |
-            <a asp-action="Delete" asp-route-id="@item.ProjectID">Delete</a>
-        </td>
-    </tr>
-    @*<partial name="Fotos" model="Foto" />*@
-</table>
+{
+<h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+    <table class="table">
+        <tr>
+            @*<td>@Html.DisplayNameFor(model => model.Name)</td>*@
+            <td>@Html.DisplayNameFor(model => model.Length)</td>
+            <td>@Html.DisplayNameFor(model => model.Windth)</td>
+            <td>@Html.DisplayNameFor(model => model.Deep)</td>
+            <td>@Html.DisplayNameFor(model => model.Volume)</td>
+            <td>@Html.DisplayNameFor(model => model.Mass)</td>
+            <td>@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+            <td>@Html.DisplayNameFor(model => model.EnginePower)</td>
+            <td>@Html.DisplayNameFor(model => model.Speed)</td>
+            <td>@Html.DisplayNameFor(model => model.SailArea)</td>
+            <td>@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+            <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
+            <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
+            <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+        </tr>
+        <tr>
+            @*<td>@Html.DisplayFor(modelItem => item.Name)</td>*@
+            <td>@Html.DisplayFor(modelItem => item.Length)</td>
+            <td>@Html.DisplayFor(modelItem => item.Windth)</td>
+            <td>@Html.DisplayFor(modelItem => item.Deep)</td>
+            <td>@Html.DisplayFor(modelItem => item.Volume)</td>
+            <td>@Html.DisplayFor(modelItem => item.Mass)</td>
+            <td>@Html.DisplayFor(modelItem => item.NumberOfOars)</td>
+            <td>@Html.DisplayFor(modelItem => item.EnginePower)</td>
+            <td>@Html.DisplayFor(modelItem => item.Speed)</td>
+            <td>@Html.DisplayFor(modelItem => item.SailArea)</td>
+            <td>@Html.DisplayFor(modelItem => item.SleepingAreas)</td>
+            <td>@Html.DisplayFor(modelItem => item.PassengerCap)</td>
+            <td>@Html.DisplayFor(modelItem => item.FuelCap)</td>
+            <td>@Html.DisplayFor(modelItem => item.FreshWaterCap)</td>
+        </tr>
+        <tr>
+            <td colspan="2">@Html.DisplayNameFor(model => model.CruiseShip)</td>
+            <td colspan="2">@Html.DisplayNameFor(model => model.StudyShip)</td>
+            <td colspan="2">@Html.DisplayNameFor(model => model.FishingShip)</td>
+            <td colspan="2">@Html.DisplayNameFor(model => model.HistoricalShip)</td>
+            <td colspan="2">@Html.DisplayNameFor(model => model.ReserchShip)</td>
+            <td colspan="2">@Html.DisplayNameFor(model => model.PassangerShip)</td>
+            <td colspan="1">@Html.DisplayNameFor(model => model.Type)</td>
+        </tr>
+        <tr>
+            <td colspan="2">@Html.DisplayFor(modelItem => item.CruiseShip)</td>
+            <td colspan="2">@Html.DisplayFor(modelItem => item.StudyShip)</td>
+            <td colspan="2">@Html.DisplayFor(modelItem => item.FishingShip)</td>
+            <td colspan="2">@Html.DisplayFor(modelItem => item.HistoricalShip)</td>
+            <td colspan="2">@Html.DisplayFor(modelItem => item.ReserchShip)</td>
+            <td colspan="2">@Html.DisplayFor(modelItem => item.PassangerShip)</td>
+            <td colspan="1">@Html.DisplayFor(modelItem => item.Type)</td>
+        </tr>
+        <tr>
+            <td colspan="13">@Html.DisplayNameFor(model => model.Description)</td>
+        </tr>
+        <tr>
+            <td colspan="13">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+        </tr>
+        @await Component.InvokeAsync("ProjectFoto", new { shipProjectId = item.ProjectID })
+        <tr>
+            <td colspan="13">
+                <a asp-action="Edit" asp-route-id="@item.ProjectID">Редактировать проект</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProjectID">Удалить проект</a>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <br />
 }

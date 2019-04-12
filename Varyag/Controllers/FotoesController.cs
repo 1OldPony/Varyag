@@ -69,66 +69,10 @@ namespace Varyag.Controllers
                 }
                 _context.Add(foto);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Projects");
             }
             return RedirectToAction(nameof(Create));
         }
-
-        //// GET: Fotoes/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var foto = await _context.Foto.FindAsync(id);
-        //    if (foto == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    ViewData["NewsID"] = new SelectList(_context.Set<News>(), "NewsId", "NewsId", foto.NewsID);
-        //    ViewData["ShipProjectID"] = new SelectList(_context.Project, "ProjectID", "Description", foto.ShipProjectID);
-        //    return View(foto);
-        //}
-
-        //// POST: Fotoes/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("FotoID,Alt,Name,ProjectFoto,ShipProjectID,NewsID")] Foto foto)
-        //{
-        //    if (id != foto.FotoID)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(foto);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!FotoExists(foto.FotoID))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["NewsID"] = new SelectList(_context.Set<News>(), "NewsId", "NewsId", foto.NewsID);
-        //    ViewData["ShipProjectID"] = new SelectList(_context.Project, "ProjectID", "Description", foto.ShipProjectID);
-        //    return View(foto);
-    //}
-
         // GET: Fotoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -157,7 +101,7 @@ namespace Varyag.Controllers
             var foto = await _context.Foto.FindAsync(id);
             _context.Foto.Remove(foto);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Projects");
         }
 
         private bool FotoExists(int id)
