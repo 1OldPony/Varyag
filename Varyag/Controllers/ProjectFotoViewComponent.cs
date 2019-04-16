@@ -17,15 +17,12 @@ namespace Varyag.Controllers
             db = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int shipProjectId)
+        public async Task<IViewComponentResult> InvokeAsync(int? shipProjectId, int? newsId)
         {
             var items = await db.Foto.Where(w => w.ShipProjectID == shipProjectId).ToListAsync();
+            ViewBag.ShipId = shipProjectId;
+            ViewBag.NewsId = newsId;
             return View(items);
         }
-
-        //public async Task<List<Foto>> GetProjectFotosAsync(int shipId)
-        //{
-        //    return db.Foto.Where(w => w.ShipProjectID == shipId).ToListAsync();
-        //}
     }
 }

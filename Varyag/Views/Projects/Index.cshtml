@@ -12,10 +12,9 @@
 
 @foreach (var item in Model)
 {
-<h2>@Html.DisplayFor(modelItem => item.Name)</h2>
     <table class="table">
+        <tr><td colspan="13"><h3>@Html.DisplayFor(modelItem => item.Name)</h3></td></tr>
         <tr>
-            @*<td>@Html.DisplayNameFor(model => model.Name)</td>*@
             <td>@Html.DisplayNameFor(model => model.Length)</td>
             <td>@Html.DisplayNameFor(model => model.Windth)</td>
             <td>@Html.DisplayNameFor(model => model.Deep)</td>
@@ -31,7 +30,6 @@
             <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
         </tr>
         <tr>
-            @*<td>@Html.DisplayFor(modelItem => item.Name)</td>*@
             <td>@Html.DisplayFor(modelItem => item.Length)</td>
             <td>@Html.DisplayFor(modelItem => item.Windth)</td>
             <td>@Html.DisplayFor(modelItem => item.Deep)</td>
@@ -47,22 +45,19 @@
             <td>@Html.DisplayFor(modelItem => item.FreshWaterCap)</td>
         </tr>
         <tr>
-            <td colspan="2">@Html.DisplayNameFor(model => model.CruiseShip)</td>
-            <td colspan="2">@Html.DisplayNameFor(model => model.StudyShip)</td>
-            <td colspan="2">@Html.DisplayNameFor(model => model.FishingShip)</td>
-            <td colspan="2">@Html.DisplayNameFor(model => model.HistoricalShip)</td>
-            <td colspan="2">@Html.DisplayNameFor(model => model.ReserchShip)</td>
-            <td colspan="2">@Html.DisplayNameFor(model => model.PassangerShip)</td>
-            <td colspan="1">@Html.DisplayNameFor(model => model.Type)</td>
-        </tr>
-        <tr>
-            <td colspan="2">@Html.DisplayFor(modelItem => item.CruiseShip)</td>
-            <td colspan="2">@Html.DisplayFor(modelItem => item.StudyShip)</td>
-            <td colspan="2">@Html.DisplayFor(modelItem => item.FishingShip)</td>
-            <td colspan="2">@Html.DisplayFor(modelItem => item.HistoricalShip)</td>
-            <td colspan="2">@Html.DisplayFor(modelItem => item.ReserchShip)</td>
-            <td colspan="2">@Html.DisplayFor(modelItem => item.PassangerShip)</td>
-            <td colspan="1">@Html.DisplayFor(modelItem => item.Type)</td>
+            <td>@Html.DisplayNameFor(model => model.CruiseShip)</td>
+            <td>@Html.DisplayFor(modelItem => item.CruiseShip)</td>
+            <td>@Html.DisplayNameFor(model => model.StudyShip)</td>
+            <td>@Html.DisplayFor(modelItem => item.StudyShip)</td>
+            <td>@Html.DisplayNameFor(model => model.FishingShip)</td>
+            <td>@Html.DisplayFor(modelItem => item.FishingShip)</td>
+            <td>@Html.DisplayNameFor(model => model.HistoricalShip)</td>
+            <td>@Html.DisplayFor(modelItem => item.HistoricalShip)</td>
+            <td>@Html.DisplayNameFor(model => model.ReserchShip)</td>
+            <td>@Html.DisplayFor(modelItem => item.ReserchShip)</td>
+            <td>@Html.DisplayNameFor(model => model.PassangerShip)</td>
+            <td>@Html.DisplayFor(modelItem => item.PassangerShip)</td>
+            <td>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(modelItem => item.Type)</td>
         </tr>
         <tr>
             <td colspan="13">@Html.DisplayNameFor(model => model.Description)</td>
@@ -72,7 +67,7 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
         </tr>
-        @await Component.InvokeAsync("ProjectFoto", new { shipProjectId = item.ProjectID })
+        <tr><td colspan="13">@await Component.InvokeAsync("ProjectFoto", new { shipProjectId = item.ProjectID })</td></tr>
         <tr>
             <td colspan="13">
                 <a asp-action="Edit" asp-route-id="@item.ProjectID">Редактировать проект</a> |

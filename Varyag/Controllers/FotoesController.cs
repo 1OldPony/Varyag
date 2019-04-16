@@ -38,10 +38,10 @@ namespace Varyag.Controllers
         }
 
         // GET: Fotoes/Create
-        public IActionResult Create()
+        public IActionResult Create(int? ShipProjectId, int? NewsId)
         {
-            ViewData["NewsID"] = new SelectList(_context.Set<News>(), "NewsId", "Header");
-            ViewData["ShipProjectID"] = new SelectList(_context.Project, "ProjectID", "Name");
+            ViewBag.ShipId = ShipProjectId;
+            ViewBag.NewsId = NewsId;
             return View();
         }
 
