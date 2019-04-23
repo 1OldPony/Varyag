@@ -40,7 +40,9 @@ namespace Varyag
             services.AddDbContext<VaryagContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VaryagContext")));
 
-            services.AddIdentity<User, IdentityRole>()
+            services.AddIdentity<User, IdentityRole>( options => {
+                options.Password.RequireNonAlphanumeric = false;
+            })
                 .AddEntityFrameworkStores<VaryagContext>();
         }
 

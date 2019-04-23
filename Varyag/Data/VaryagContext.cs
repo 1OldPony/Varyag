@@ -11,7 +11,7 @@ using Varyag.Models;
 
 namespace Varyag.Models
 {
-        public class VaryagContext : IdentityDbContext
+        public class VaryagContext : IdentityDbContext<User>
         {
             public VaryagContext(DbContextOptions<VaryagContext> options)
                 : base(options)
@@ -23,7 +23,7 @@ namespace Varyag.Models
             public DbSet<Foto> Foto { get; set; }
 
             public DbSet<News> News { get; set; }
-        }
+    }
 
 
 }

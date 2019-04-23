@@ -8,7 +8,7 @@ namespace Varyag.Models
 {
     public class User : IdentityUser
     {
-        public string Login { get; set; }
-        public int Password { get; set; }
+        //public string Login { get; set; }
+        //public string Password { get; set; }
     }
 }
