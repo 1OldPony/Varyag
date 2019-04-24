@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using Varyag.Models;
 
 namespace Varyag.Controllers
 {
+    [Authorize]
     public class ProjectFotoViewComponent : ViewComponent
     {
         private readonly VaryagContext db;

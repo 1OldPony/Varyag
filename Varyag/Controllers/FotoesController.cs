@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -12,6 +13,7 @@ using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
+    [Authorize]
     public class FotoesController : Controller
     {
         private readonly VaryagContext _context;

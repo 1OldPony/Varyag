@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ namespace Varyag.Controllers
         }
 
         // GET: Projects
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             //SelectList Types = _context.Project.Ty
@@ -44,6 +46,7 @@ namespace Varyag.Controllers
         }
 
         // GET: Projects/Create
+        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             return View();

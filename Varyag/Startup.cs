@@ -42,8 +42,12 @@ namespace Varyag
 
             services.AddIdentity<User, IdentityRole>( options => {
                 options.Password.RequireNonAlphanumeric = false;
-            })
-                .AddEntityFrameworkStores<VaryagContext>();
+            }).AddEntityFrameworkStores<VaryagContext>();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.AccessDeniedPath = "/Accounts/Login";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
