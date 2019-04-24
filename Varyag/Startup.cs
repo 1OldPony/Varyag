@@ -47,6 +47,7 @@ namespace Varyag
             services.ConfigureApplicationCookie(options =>
             {
                 options.AccessDeniedPath = "/Accounts/Login";
+                options.LoginPath = "/Accounts/Login";
             });
         }
 

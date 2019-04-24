@@ -10,7 +10,7 @@ using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class NewsController : Controller
     {
         private readonly VaryagContext _context;

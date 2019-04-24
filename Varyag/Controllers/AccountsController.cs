@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Varyag.Controllers
 {
-    [Authorize]
+    [Authorize(Roles ="admin")]
     public class AccountsController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -22,14 +22,14 @@ namespace Varyag.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
-
-
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
             return View(new LogInViewModel { ReturnUrl = returnUrl });
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LogInViewModel model)
@@ -62,7 +62,7 @@ namespace Varyag.Controllers
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Login", "Accounts");
+            return RedirectToAction("Login");
         }
     }
 }

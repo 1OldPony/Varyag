@@ -13,7 +13,7 @@ using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class FotoesController : Controller
     {
         private readonly VaryagContext _context;

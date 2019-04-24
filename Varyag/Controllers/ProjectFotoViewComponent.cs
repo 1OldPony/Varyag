@@ -9,7 +9,7 @@ using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "admin")]
     public class ProjectFotoViewComponent : ViewComponent
     {
         private readonly VaryagContext db;

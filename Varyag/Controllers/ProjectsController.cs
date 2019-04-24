@@ -10,6 +10,7 @@ using Varyag.Models;
 
 namespace Varyag.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class ProjectsController : Controller
     {
         private readonly VaryagContext _context;
@@ -20,7 +21,6 @@ namespace Varyag.Controllers
         }
 
         // GET: Projects
-        [Authorize]
         public async Task<IActionResult> Index()
         {
             //SelectList Types = _context.Project.Ty
@@ -46,7 +46,6 @@ namespace Varyag.Controllers
         }
 
         // GET: Projects/Create
-        [Authorize(Roles = "admin")]
         public IActionResult Create()
         {
             return View();
