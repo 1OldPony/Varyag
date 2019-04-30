@@ -36,6 +36,9 @@ namespace Varyag
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                //.AddRazorPagesOptions(options => {
+                //    options.Conventions.
+                //});
 
             services.AddDbContext<VaryagContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VaryagContext")));
@@ -69,10 +72,13 @@ namespace Varyag
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
-
+            
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
+                routes.MapRoute( 
+                    //name: "default",
+                    //template: "{Area=Pages}/{Page=MainCatalog}");
+
                     name: "default",
                     template: "{controller=Accounts}/{action=Login}/{id?}");
             });

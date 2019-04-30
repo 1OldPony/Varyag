@@ -1,0 +1,101 @@
+﻿/*h1 {
+    text-align:center;
+}*/
+.MyContainer {
+    display: grid;
+    text-align: center;
+    margin: auto;
+    padding: 60px;
+    max-width: 1400px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "emblem menu menu" "text text text" "catalog-tur catalog-tur catalog-tur" "catalog-prog catalog-prog catalog-prog" "catalog-uch catalog-uch catalog-uch" "catalog-rib catalog-rib catalog-rib" "catalog-ist catalog-ist catalog-ist" "catalog-issl catalog-issl catalog-issl" "catalog-pass catalog-pass catalog-pass" "empty empty empty" "footer footer footer";
+}
+
+.emblem {
+    grid-area: emblem;
+}
+
+.menu {
+    grid-area: menu;
+}
+
+.text {
+    grid-area: text;
+}
+
+.appointment {
+    grid-area: appointment;
+}
+
+.types {
+    grid-area: types;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.empty {
+    grid-area: empty;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.catalog-tur {
+    grid-area: catalog-tur;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "appointment types" "projects projects"
+}
+
+.catalog-prog {
+    grid-area: catalog-prog;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "appointment types" "projects projects"
+}
+
+.catalog-uch {
+    grid-area: catalog-uch;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "appointment types" "projects projects"
+}
+
+.catalog-rib {
+    grid-area: catalog-rib;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "appointment types" "projects projects"
+}
+
+.catalog-ist {
+    grid-area: catalog-ist;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "appointment types" "projects projects"
+}
+
+.catalog-issl {
+    grid-area: catalog-issl;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "appointment types" "projects projects"
+}
+
+.catalog-pass {
+    grid-area: catalog-pass;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;
+    grid-template-areas: "appointment types" "projects projects"
+}
