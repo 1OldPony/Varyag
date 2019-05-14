@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Varyag.Models
+namespace Varyag.Models.ViewModels
 {
-
-    public class Project
+    public class ProjectViewModel
     {
         public int ProjectID { get; set; }
 
@@ -78,14 +81,8 @@ namespace Varyag.Models
         [DisplayName("Пассажирское")]
         public bool PassangerShip { get; set; }
         [DisplayName("Схема")]
-        public byte[] ShipSheme { get; set; }
+        public IFormFile ShipSheme { get; set; }
         [DisplayName("Главная фотка")]
-        public byte[] MainFoto { get; set; }
-
-        public List<Foto> ShipFotos { get; set; }
-    }
-    public enum ShipType
-    {
-        Лодка, Катер, Ладья, Драккар, Яхта, Шлюпка, Шхуна, Струг, Бот
+        public IFormFile MainFoto { get; set; }
     }
 }

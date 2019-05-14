@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
+using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
@@ -16,6 +18,15 @@ namespace Varyag.Controllers
         {
             _context = context;
         }
+
+        //public async Task<IActionResult> ImageRender(int? id)
+        //{
+        //    //Foto foto;
+        //    var foto = await _context.Foto.SingleAsync(f => f.FotoID.Equals(id));
+
+        //    byte[] image = foto.ProjectFoto;
+        //    return File(image, "image/jpg");
+        //}
 
         // GET: Projects
         public async Task<IActionResult> Index()
@@ -53,15 +64,51 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProjectID,Name,Length,Windth,Deep,Volume,Mass,NumberOfOars,EnginePower,Speed,SailArea,SleepingAreas,PassengerCap,FuelCap,FreshWaterCap,Type,Description,CruiseShip,StudyShip,FishingShip,HistoricalShip,ReserchShip,PassangerShip")] Project project)
+        public async Task<IActionResult> Create(ProjectViewModel model/*[Bind("ProjectID,Name,Length,Windth,Deep,Volume,Mass,NumberOfOars,EnginePower,Speed,SailArea,SleepingAreas,PassengerCap,FuelCap,FreshWaterCap,Type,Description,CruiseShip,StudyShip,FishingShip,HistoricalShip,ReserchShip,PassangerShip")] Project project*/)
         {
             if (ModelState.IsValid)
             {
+                var project = new Project
+                {
+                    CruiseShip = model.CruiseShip,
+                    Deep = model.Deep,
+                    Description = model.Description,
+                    EnginePower = model.EnginePower,
+                    FishingShip = model.FishingShip,
+                    FreshWaterCap = model.FreshWaterCap,
+                    FuelCap = model.FuelCap,
+                    HistoricalShip = model.HistoricalShip,
+                    Length = model.Length,
+                    Mass = model.Mass,
+                    Name = model.Name,
+                    NumberOfOars = model.NumberOfOars,
+                    PassangerShip = model.PassangerShip,
+                    PassengerCap = model.PassengerCap,
+                    ProjectID = model.ProjectID,
+                    ReserchShip = model.ReserchShip,
+                    SailArea = model.SailArea,
+                    SleepingAreas = model.SleepingAreas,
+                    Speed = model.Speed,
+                    StudyShip = model.StudyShip,
+                    Type = model.Type,
+                    Volume = model.Volume,
+                    Windth = model.Windth
+                };
+                using (var memoryStream = new MemoryStream())
+                {
+                    await model.ShipSheme.CopyToAsync(memoryStream);
+                    project.ShipSheme = memoryStream.ToArray();
+                }
+                using (var memoryStream = new MemoryStream())
+                {
+                    await model.MainFoto.CopyToAsync(memoryStream);
+                    project.MainFoto = memoryStream.ToArray();
+                }
                 _context.Add(project);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(project);
+            return RedirectToAction(nameof(Create));
         }
 
         // GET: Projects/Edit/5

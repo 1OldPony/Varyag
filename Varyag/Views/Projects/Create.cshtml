@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -82,6 +82,18 @@
                 <input asp-for="FreshWaterCap" class="form-control" />
                 <span asp-validation-for="FreshWaterCap" class="text-danger"></span>
             </div>
+
+            <div class="form-group">
+                <label asp-for="ShipSheme" class="control-label"></label>
+                <input type="file" asp-for="ShipSheme" class="form-control" />
+                <span asp-validation-for="ShipSheme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MainFoto" class="control-label"></label>
+                <input type="file" asp-for="MainFoto" class="form-control" />
+                <span asp-validation-for="MainFoto" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="Type" class="control-label"></label>
                 <select asp-for="Type" asp-items="@new  SelectList(Enum.GetValues(typeof(ShipType)))" class="form-control"></select>

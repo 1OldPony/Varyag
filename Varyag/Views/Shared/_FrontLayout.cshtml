@@ -7,18 +7,21 @@
     <title>@ViewData["Title"] - Varyag</title>
 </head>
 <body>
+    <div class="header">
+        <img src="~/images/Макет магнита 3.jpg" width="120" height="120" />
+        <div>
+            <a asp-page="">Суда моторные</a>
+            <a asp-page="">Суда парусно-моторные</a>
+            <a asp-page="">Лодки и шлюпки</a>
+            <a asp-page="">О нас</a>
+        </div>
+        <table>
+            <tr><td class="">+7 8142 73 35 80</td></tr>
+            <tr><td>varyag@onego.ru</td></tr>
+        </table>
+    </div>
+
     <div class="MyContainer">
-        <div class="emblem">
-            <img src="~/images/Макет магнита 3.jpg" width="120" height="120" />
-        </div>
-        <div class="menu">
-            <nav>
-                    <a asp-page="">Суда моторные</a>
-                    <a asp-page="">Суда парусно-моторные</a>
-                    <a asp-page="">Лодки и шлюпки</a>
-                    <a asp-page="">О нас</a>
-            </nav>
-        </div>
         <partial name="_CookieConsentPartial" />
         @RenderBody()
 

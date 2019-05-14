@@ -10,9 +10,9 @@
     <h1>Егегееей! Заказываете прямо сейчас:</h1>
 </div>
 
-<div class="catalog-tur">
+<div class="appointment-types">
     <div class="appointment">
-        <h1>Туристические, круизные суда:</h1>
+        <h1>Круизные суда:</h1>
     </div>
     <div class="types">
         <table>
@@ -32,13 +32,13 @@
             </tr>
         </table>
     </div>
-    <div class="projects">
-        <p>проекты</p>
-        @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
-    </div>
+</div>
+<div class="projects">
+    <p>проекты</p>
+    @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
 </div>
 
-<div class="catalog-prog">
+<div class="appointment-types">
     <div class="appointment">
         <h1>Прогулочные суда:</h1>
     </div>
@@ -54,13 +54,13 @@
             </tr>
         </table>
     </div>
-    <div class="projects">
-        <p>проекты</p>
-        @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
-    </div>
+</div>
+<div class="projects">
+    <p>проекты</p>
+    @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
 </div>
 
-<div class="catalog-uch">
+<div class="appointment-types">
     <div class="appointment">
         <h1>Учебные суда:</h1>
     </div>
@@ -76,15 +76,15 @@
             </tr>
         </table>
     </div>
-    <div class="projects">
-        <p>проекты</p>
-        @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
-    </div>
+</div>
+<div class="projects">
+    <p>проекты</p>
+    @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
 </div>
 
-<div class="catalog-rib">
+<div class="appointment-types">
     <div class="appointment">
-        <h1>Промысловые, рыболовные суда:</h1>
+        <h1>Рыболовные суда:</h1>
     </div>
     <div class="types">
         <table>
@@ -98,13 +98,14 @@
             </tr>
         </table>
     </div>
-    <div class="projects">
-        <p>проекты</p>
-        @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
-    </div>
+</div>
+<div class="projects">
+    <p>проекты</p>
+    @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
 </div>
 
-<div class="catalog-ist">
+
+<div class="appointment-types">
     <div class="appointment">
         <h1>Исторические суда:</h1>
     </div>
@@ -120,13 +121,13 @@
             </tr>
         </table>
     </div>
-    <div class="projects">
-        <p>проекты</p>
-        @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
-    </div>
+</div>
+<div class="projects">
+    <p>проекты</p>
+    @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
 </div>
 
-<div class="catalog-issl">
+<div class="appointment-types">
     <div class="appointment">
         <h1>Исследовательские суда:</h1>
     </div>
@@ -142,13 +143,13 @@
             </tr>
         </table>
     </div>
-    <div class="projects">
-        <p>проекты</p>
-        @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
-    </div>
+</div>
+<div class="projects">
+    <p>проекты</p>
+    @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
 </div>
 
-<div class="catalog-pass">
+<div class="appointment-types">
     <div class="appointment">
         <h1>Пассажирские суда:</h1>
     </div>
@@ -164,183 +165,11 @@
             </tr>
         </table>
     </div>
-    <div class="projects">
-        <p>проекты</p>
-        @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
-    </div>
 </div>
-
+<div class="projects">
+    <p>проекты</p>
+    @*@await Component.InvokeAsync("имя ViewComponent-a", new { shipProjectId = item.ProjectID })*@
+</div>
 
 <div class="empty">
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*<h1>MainCatalog</h1>
-
-    <p>
-        <a asp-page="Create">Create New</a>
-    </p>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Length)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Windth)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Deep)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Volume)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Mass)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].NumberOfOars)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].EnginePower)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Speed)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].SailArea)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].SleepingAreas)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].PassengerCap)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].FuelCap)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].FreshWaterCap)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Type)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].CruiseShip)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].StudyShip)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].FishingShip)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].HistoricalShip)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].ReserchShip)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Project[0].PassangerShip)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model.Project) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Length)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Windth)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Deep)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Volume)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mass)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NumberOfOars)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EnginePower)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Speed)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SailArea)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SleepingAreas)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PassengerCap)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FuelCap)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FreshWaterCap)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CruiseShip)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StudyShip)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FishingShip)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HistoricalShip)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ReserchShip)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PassangerShip)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ProjectID">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.ProjectID">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ProjectID">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@

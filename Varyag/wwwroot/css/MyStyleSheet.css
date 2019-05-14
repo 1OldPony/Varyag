@@ -1,68 +1,94 @@
 ﻿/*h1 {
-    text-align:center;
+    font-size:14px;
 }*/
+
+body {
+    margin: 0px;
+    /*background-color: #d6dac1;*/
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: auto;
+    padding: 20px;
+}
+
 .MyContainer {
-    display: grid;
+    display: flex;
+    flex-direction:column;
+    background-color: gainsboro;
     text-align: center;
     margin: auto;
-    padding: 60px;
-    max-width: 1400px;
-    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+    max-width: 1300px;
+    /*grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "emblem menu menu" "text text text" "catalog-tur catalog-tur catalog-tur" "catalog-prog catalog-prog catalog-prog" "catalog-uch catalog-uch catalog-uch" "catalog-rib catalog-rib catalog-rib" "catalog-ist catalog-ist catalog-ist" "catalog-issl catalog-issl catalog-issl" "catalog-pass catalog-pass catalog-pass" "empty empty empty" "footer footer footer";
-}
-
-.emblem {
-    grid-area: emblem;
-}
-
-.menu {
-    grid-area: menu;
+    grid-template-areas: "text text text" "catalog-tur catalog-tur catalog-tur" "catalog-prog catalog-prog catalog-prog" "catalog-uch catalog-uch catalog-uch" "catalog-rib catalog-rib catalog-rib" "catalog-ist catalog-ist catalog-ist" "catalog-issl catalog-issl catalog-issl" "catalog-pass catalog-pass catalog-pass" "empty empty empty" "footer footer footer";*/
 }
 
 .text {
-    grid-area: text;
+    /*grid-area: text;*/
 }
 
 .appointment {
-    grid-area: appointment;
+    /*grid-area: appointment;*/
+    /*text-align: left;*/
 }
 
 .types {
-    grid-area: types;
+    /*grid-area: types;*/
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
 }
 
 .projects {
-    grid-area: projects;
+    /*grid-area: projects;*/
 }
 
 .empty {
-    grid-area: empty;
+    /*grid-area: empty;*/
 }
 
 .footer {
-    grid-area: footer;
+    /*grid-area: footer;*/
 }
 
-.catalog-tur {
+.appointment-types {
+    grid-area: appointment-types;
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto;*/
+    font-size: 13px;
+    /*grid-template-areas: "appointment types";*/ 
+    background-color: #f8e394;
+}
+
+/*.catalog-tur {
     grid-area: catalog-tur;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "appointment types" "projects projects"
+    grid-template-areas: "appointment-types" "projects"
 }
 
 .catalog-prog {
     grid-area: catalog-prog;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    display: flex;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "appointment types" "projects projects"
+    grid-template-areas: "appointment-types" "projects"
 }
 
 .catalog-uch {
     grid-area: catalog-uch;
-    display: grid;
+    max-width: 1300px;
+    display: flex;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
     grid-template-areas: "appointment types" "projects projects"
@@ -70,6 +96,7 @@
 
 .catalog-rib {
     grid-area: catalog-rib;
+    max-width: 1300px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
@@ -78,6 +105,7 @@
 
 .catalog-ist {
     grid-area: catalog-ist;
+    max-width: 1300px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
@@ -86,6 +114,7 @@
 
 .catalog-issl {
     grid-area: catalog-issl;
+    max-width: 1300px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
@@ -94,8 +123,9 @@
 
 .catalog-pass {
     grid-area: catalog-pass;
+    max-width: 1300px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto;
     grid-template-areas: "appointment types" "projects projects"
-}
+}*/
