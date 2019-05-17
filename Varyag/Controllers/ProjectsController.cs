@@ -19,14 +19,22 @@ namespace Varyag.Controllers
             _context = context;
         }
 
-        //public async Task<IActionResult> ImageRender(int? id)
-        //{
-        //    //Foto foto;
-        //    var foto = await _context.Foto.SingleAsync(f => f.FotoID.Equals(id));
+        public async Task<IActionResult> ProjectImageRender(int? id, string fot)
+        {
+            //Foto foto;
+            var project = await _context.Project.SingleAsync(f => f.ProjectID == id);
 
-        //    byte[] image = foto.ProjectFoto;
-        //    return File(image, "image/jpg");
-        //}
+            if (fot == "sheme")
+            {
+                byte[] image = project.ShipSheme;
+                return File(image, "image/jpg");
+            }
+            else
+            {
+                byte[] image = project.MainFoto;
+                return File(image, "image/jpg");
+            }
+        }
 
         // GET: Projects
         public async Task<IActionResult> Index()
@@ -132,9 +140,9 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProjectID,Name,Length,Windth,Deep,Volume,Mass,NumberOfOars,EnginePower,Speed,SailArea,SleepingAreas,PassengerCap,FuelCap,FreshWaterCap,Type,Description,CruiseShip,StudyShip,FishingShip,HistoricalShip,ReserchShip,PassangerShip")] Project project)
+        public async Task<IActionResult> Edit(int id, ProjectViewModel model)
         {
-            if (id != project.ProjectID)
+            if (id != model.ProjectID)
             {
                 return NotFound();
             }
@@ -143,12 +151,56 @@ namespace Varyag.Controllers
             {
                 try
                 {
+                    var project = new Project
+                    {
+                        CruiseShip = model.CruiseShip,
+                        Deep = model.Deep,
+                        Description = model.Description,
+                        EnginePower = model.EnginePower,
+                        FishingShip = model.FishingShip,
+                        FreshWaterCap = model.FreshWaterCap,
+                        FuelCap = model.FuelCap,
+                        HistoricalShip = model.HistoricalShip,
+                        Length = model.Length,
+                        Mass = model.Mass,
+                        Name = model.Name,
+                        NumberOfOars = model.NumberOfOars,
+                        PassangerShip = model.PassangerShip,
+                        PassengerCap = model.PassengerCap,
+                        ProjectID = model.ProjectID,
+                        ReserchShip = model.ReserchShip,
+                        SailArea = model.SailArea,
+                        SleepingAreas = model.SleepingAreas,
+                        Speed = model.Speed,
+                        StudyShip = model.StudyShip,
+                        Type = model.Type,
+                        Volume = model.Volume,
+                        Windth = model.Windth
+                    };
+
+                    if (model.ShipSheme != null)
+                    {
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await model.ShipSheme.CopyToAsync(memoryStream);
+                            project.ShipSheme = memoryStream.ToArray();
+                        }
+                    }
+                    if (model.MainFoto != null)
+                    {
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await model.MainFoto.CopyToAsync(memoryStream);
+                            project.MainFoto = memoryStream.ToArray();
+                        }
+                    }
+                    
                     _context.Update(project);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProjectExists(project.ProjectID))
+                    if (!ProjectExists(model.ProjectID))
                     {
                         return NotFound();
                     }
@@ -159,7 +211,7 @@ namespace Varyag.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(project);
+            return View(model);
         }
 
         // GET: Projects/Delete/5

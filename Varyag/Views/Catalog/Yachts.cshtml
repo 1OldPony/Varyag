@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Varyag.Models.Project>
+
+@{
+    ViewData["Title"] = "Яхты";
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+<h1>Яхты</h1>
+
+<div class="nav">
+    <div class="nav-element">
+        <div class="nav-element-inside">
+            <a asp-action="boats" onclick="">Лодки</a>
+        </div>
+    </div>
+    <div class="nav-element">
+        <div class="nav-element-inside">
+            <a asp-action="bigboats" onclick="">Шлюпки</a>
+        </div>
+    </div>
+    <div class="nav-element">
+        <div class="nav-element-inside">
+            <a asp-action="motorboats" onclick="">Катера</a>
+        </div>
+    </div>
+    <div class="nav-element">
+        <div class="nav-element-inside">
+            <a asp-action="lodiy" onclick="">Лодьи</a>
+        </div>
+    </div>
+    <div class="nav-element-choosen">
+        <div class="nav-element-inside">
+            <a asp-action="yachts" onclick="">Яхты</a>
+        </div>
+    </div>
+    <div class="nav-element">
+        <div class="nav-element-inside">
+            <a asp-action="schooners" onclick="">Шхуны</a>
+        </div>
+    </div>
+    <div class="nav-element">
+        <div class="nav-element-inside">
+            <a asp-action="battleships" onclick="">Линкоры</a>
+        </div>
+    </div>
+</div>

@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ProjectID" />
             <div class="form-group">
@@ -83,6 +83,36 @@
                 <input asp-for="FreshWaterCap" class="form-control" />
                 <span asp-validation-for="FreshWaterCap" class="text-danger"></span>
             </div>
+
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            Схема
+                        </td>
+                        <td>
+                            <img width="120" height="120" src="@Url.Action("ProjectImageRender", new { id = Model.ProjectID, fot = "sheme"})">
+                        </td>
+                        <td>
+                            Основная фотка
+                        </td>
+                        <td>
+                            <img width="120" height="120" src="@Url.Action("ProjectImageRender", new { id = Model.ProjectID, fot = "main"})">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                                <input type="file" asp-for="ShipSheme" class="form-control" />
+                                <span asp-validation-for="ShipSheme" class="text-danger"></span>
+                        </td>
+                        <td colspan="2">
+                                <input type="file" asp-for="MainFoto" class="form-control" />
+                                <span asp-validation-for="MainFoto" class="text-danger"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
             <div class="form-group">
                 <label asp-for="Type" class="control-label"></label>
                 <select asp-for="Type" asp-items="@new SelectList(Enum.GetValues(typeof(ShipType)))" class="form-control"></select>

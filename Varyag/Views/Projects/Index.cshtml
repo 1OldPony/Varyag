@@ -67,6 +67,20 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
         </tr>
+        <tr>
+            <td colspan="2">
+                Схема
+            </td>
+            <td colspan="4">
+                <img width="120" height="120" src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "sheme"})">
+            </td>
+            <td colspan="2">
+                Основная фотка
+            </td>
+            <td colspan="5">
+                <img width="120" height="120" src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "main"})">
+            </td>
+        </tr>
         <tr><td colspan="13">@await Component.InvokeAsync("ProjectFoto", new { shipProjectId = item.ProjectID })</td></tr>
         <tr>
             <td colspan="13">

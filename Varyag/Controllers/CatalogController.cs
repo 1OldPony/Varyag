@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Varyag.Controllers
 {
-    public class PublicPartController : Controller
+    public class CatalogController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Yachts()
         {
             return View();
         }
