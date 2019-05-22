@@ -1,46 +1,55 @@
 ﻿@model IEnumerable<Varyag.Models.Project>
 
 @{
-    ViewData["Title"] = "Яхты";
+    ViewData["Title"] = "Купить прекрасные яхты от производителя";
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
 
+<input type="text" value="yachts" id="currentPage" hidden />
+
 <h1>Яхты</h1>
 
-<div class="nav">
-    <div class="nav-element">
-        <div class="nav-element-inside">
-            <a asp-action="boats" onclick="">Лодки</a>
+<div class="catalog">
+    <div class="nav" id="nav">
+        <div class="nav-element" name="lodki" id="lodki">
+            <div class="nav-element-inside">
+                <a asp-action="boats">Лодки</a>
+            </div>
+        </div>
+        <div class="nav-element" name="shlupki" id="shlupki">
+            <div class="nav-element-inside">
+                <a asp-action="bigboats">Шлюпки</a>
+            </div>
+        </div>
+        <div class="nav-element" name="katera" id="katera">
+            <div class="nav-element-inside">
+                <a asp-action="motorboats">Катера</a>
+            </div>
+        </div>
+        <div class="nav-element" name="lodiy" id="lodiy">
+            <div class="nav-element-inside">
+                <a asp-action="lodiy">Лодьи</a>
+            </div>
+        </div>
+        <div class="nav-element-choosen" name="yachts" id="yachts">
+            <div class="nav-element-inside">
+                <a asp-action="yachts">Яхты</a>
+            </div>
+        </div>
+        <div class="nav-element" name="schooners" id="schooners">
+            <div class="nav-element-inside">
+                <a asp-action="schooners">Шхуны</a>
+            </div>
+        </div>
+        <div class="nav-element" name="battleships" id="battleships">
+            <div class="nav-element-inside">
+                <a asp-action="battleships">Линкоры</a>
+            </div>
         </div>
     </div>
-    <div class="nav-element">
-        <div class="nav-element-inside">
-            <a asp-action="bigboats" onclick="">Шлюпки</a>
-        </div>
-    </div>
-    <div class="nav-element">
-        <div class="nav-element-inside">
-            <a asp-action="motorboats" onclick="">Катера</a>
-        </div>
-    </div>
-    <div class="nav-element">
-        <div class="nav-element-inside">
-            <a asp-action="lodiy" onclick="">Лодьи</a>
-        </div>
-    </div>
-    <div class="nav-element-choosen">
-        <div class="nav-element-inside">
-            <a asp-action="yachts" onclick="">Яхты</a>
-        </div>
-    </div>
-    <div class="nav-element">
-        <div class="nav-element-inside">
-            <a asp-action="schooners" onclick="">Шхуны</a>
-        </div>
-    </div>
-    <div class="nav-element">
-        <div class="nav-element-inside">
-            <a asp-action="battleships" onclick="">Линкоры</a>
-        </div>
-    </div>
+    <div name="yachts-Sub" id="yachts-Sub">@await Html.PartialAsync("~/Views/Catalog/Yachts-SubNav.cshtml")</div>
+    <div name="lodki-Sub" id="lodki-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
+    <div name="shlupki-Sub" id="shlupki-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
+    <div name="katera-Sub" id="katera-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
+    <div name="lodiy-Sub" id="lodiy-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Lodiy-SubNav.cshtml")</div>
 </div>

@@ -5,6 +5,17 @@
     font-weight: normal;
 }*/
 
+@font-face {
+    font-family: "AmaticSC-Bold";
+    /*font-weight: 400;*/
+    src: url("~/fonts/Amatic_SC/AmaticSC-Bold.ttf");
+}
+
+a {
+    text-decoration: none;
+    color: #183f61;
+}
+
 body {
     margin: 0px;
     background-color: #f3f5f7;
@@ -28,12 +39,20 @@ body {
     /*box-shadow: 0px 0px 40px 12px white;*/
 }
 
-    .header:after {
-    }
+.contacts {
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-family: 'AmaticSC-Bold';
+}
+
+.phone {
+}
+
+.mail {
+}
 
 .MyContainer {
-    /*top: 50px;*/
-    /*position: relative;*/
+    font-family: 'AmaticSC-Bold';
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -41,47 +60,35 @@ body {
     margin: auto;
     padding: 20px;
     max-width: 1350px;
-    /*box-shadow: 0 0 40px 12px white;*/
 }
 
-.text {
-}
-
-.appointment {
-}
-
-.types {
+.catalog {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.projects {
-}
-
-.empty {
-}
-
-.footer {
-}
-
-.appointment-types {
-    max-width: 1300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 13px;
-    background-color: #f8e394;
+    flex-direction: column;
+    width: fit-content;
+    box-shadow: 0 0 30px 25px whitesmoke;
+    background-color: whitesmoke;
+    margin: auto;
 }
 
 .nav {
     display: flex;
-    width: fit-content;
     justify-items: center;
     align-items: center;
-    box-shadow: 0 0 30px 25px whitesmoke;
     margin: auto;
-    background-color: whitesmoke;
+}
+
+.sub-nav {
+    display: flex;
+    min-width: inherit;
+    justify-content: space-between;
+    max-width:840px;
+}
+
+.sub-nav-current {
+    display: flex;
+    min-width: inherit;
+    justify-content: space-between;
 }
 
 .nav-element {
@@ -96,7 +103,25 @@ body {
 
     .nav-element:hover {
         cursor: pointer;
+        background-color: #aec9e0;
         box-shadow: 0px 0px 20px 0px #aec9e0;
+    }
+
+.nav-element-minor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 3em;
+    font-size: 20px;
+    background-color: white;
+    flex-grow: 1;
+}
+
+    .nav-element-minor:hover {
+        cursor: pointer;
+        background-color: #aec9e0;
+        /*box-shadow: 0px 0px 20px 0px #aec9e0;*/
     }
 
 .nav-element-choosen {

@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="~/css/MyStyleSheet.css" />
+    <link rel="stylesheet" type="text/css" href="~/fonts/Amatic_SC/AmaticSC-Bold.ttf" />
     <title>@ViewData["Title"] - Varyag</title>
 </head>
 <body>
@@ -15,14 +16,14 @@
             <a asp-page="">Лодки и шлюпки</a>
             <a asp-page="">О нас</a>
         </div>
-        <table>
-            <tr><td class="">+7 8142 73 35 80</td></tr>
-            <tr><td>varyag@onego.ru</td></tr>
+        <table class="contacts">
+            <tr><td class="phone">+7 8142 73 35 80</td></tr>
+            <tr><td class="mail">varyag@onego.ru</td></tr>
         </table>
     </div>
     <div class="myBorder"></div>
 
-    <div class="MyContainer">
+    <div class="MyContainer"  id="main">
         <partial name="_CookieConsentPartial" />
         @RenderBody()
 
@@ -32,6 +33,13 @@
             </div>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+    </script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
 </body>
