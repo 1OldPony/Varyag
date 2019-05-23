@@ -8,7 +8,7 @@ namespace Varyag.Controllers
 {
     public class CatalogController : Controller
     {
-        public IActionResult Yachts()
+        public IActionResult Sailboats()
         {
             return View();
         }

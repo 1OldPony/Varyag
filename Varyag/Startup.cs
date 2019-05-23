@@ -80,7 +80,7 @@ namespace Varyag
                     //template: "{Area=Pages}/{Page=MainCatalog}");
 
                     name: "default",
-                    template: "{controller=Catalog}/{action=Yachts}/{id?}");
+                    template: "{controller=Catalog}/{action=Sailboats}/{id?}");
             });
         }
     }
