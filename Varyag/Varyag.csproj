@@ -5,6 +5,41 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="Views\Accounts\Login.cshtml" />
+    <None Include="Views\Accounts\Register-disabled.cshtml" />
+    <None Include="Views\Catalog\Katera-SubNav.cshtml" />
+    <None Include="Views\Catalog\Lodiy-SubNav.cshtml" />
+    <None Include="Views\Catalog\Lodki-SubNav.cshtml" />
+    <None Include="Views\Catalog\Models-SubNav.cshtml" />
+    <None Include="Views\Catalog\Sailboats-SubNav.cshtml" />
+    <None Include="Views\Catalog\Sailboats.cshtml" />
+    <None Include="Views\Catalog\Shlupki-SubNav.cshtml" />
+    <None Include="Views\Fotoes\Create.cshtml" />
+    <None Include="Views\Fotoes\Delete.cshtml" />
+    <None Include="Views\Fotoes\Details.cshtml" />
+    <None Include="Views\Fotoes\Index.cshtml" />
+    <None Include="Views\News\Create.cshtml" />
+    <None Include="Views\News\Delete.cshtml" />
+    <None Include="Views\News\Details.cshtml" />
+    <None Include="Views\News\Edit.cshtml" />
+    <None Include="Views\News\Index.cshtml" />
+    <None Include="Views\Projects\Create.cshtml" />
+    <None Include="Views\Projects\Delete.cshtml" />
+    <None Include="Views\Projects\Details.cshtml" />
+    <None Include="Views\Projects\Edit.cshtml" />
+    <None Include="Views\Projects\Index.cshtml" />
+    <None Include="Views\Roles\Create.cshtml" />
+    <None Include="Views\Roles\Edit.cshtml" />
+    <None Include="Views\Roles\Index.cshtml" />
+    <None Include="Views\Roles\UserList.cshtml" />
+    <None Include="Views\Shared\Components\ProjectFoto\Default.cshtml" />
+    <None Include="Views\Shared\_CookieConsentPartial.cshtml" />
+    <None Include="Views\Shared\_FrontLayout.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
