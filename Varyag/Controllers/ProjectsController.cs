@@ -211,9 +211,12 @@ namespace Varyag.Controllers
                         SleepingAreas = model.SleepingAreas,
                         Speed = model.Speed,
                         Volume = model.Volume,
-                        Windth = model.Windth
-                    };
+                        Windth = model.Windth,
+                        //ShipSheme = project.ShipSheme,
+                        //MainFoto = proj.MainFoto
 
+                    };
+                    
                     if (model.ShipSheme != null)
                     {
                         using (var memoryStream = new MemoryStream())
@@ -222,6 +225,11 @@ namespace Varyag.Controllers
                             project.ShipSheme = memoryStream.ToArray();
                         }
                     }
+                    else
+                    {
+                        var proj = _context.Project.Single(f => f.ProjectID.Equals(id));
+                        project.ShipSheme = proj.ShipSheme;
+                    }
                     if (model.MainFoto != null)
                     {
                         using (var memoryStream = new MemoryStream())
@@ -229,6 +237,11 @@ namespace Varyag.Controllers
                             await model.MainFoto.CopyToAsync(memoryStream);
                             project.MainFoto = memoryStream.ToArray();
                         }
+                    }
+                    else
+                    {
+                        var proj = _context.Project.Single(f => f.ProjectID.Equals(id));
+                        project.MainFoto = proj.MainFoto;
                     }
                     
                     _context.Update(project);
