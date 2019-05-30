@@ -45,19 +45,93 @@
             <td>@Html.DisplayFor(modelItem => item.FreshWaterCap)</td>
         </tr>
         <tr>
-            <td>@Html.DisplayNameFor(model => model.CruiseShip)</td>
-            <td>@Html.DisplayFor(modelItem => item.CruiseShip)</td>
-            <td>@Html.DisplayNameFor(model => model.StudyShip)</td>
-            <td>@Html.DisplayFor(modelItem => item.StudyShip)</td>
-            <td>@Html.DisplayNameFor(model => model.FishingShip)</td>
-            <td>@Html.DisplayFor(modelItem => item.FishingShip)</td>
-            <td>@Html.DisplayNameFor(model => model.HistoricalShip)</td>
-            <td>@Html.DisplayFor(modelItem => item.HistoricalShip)</td>
-            <td>@Html.DisplayNameFor(model => model.ReserchShip)</td>
-            <td>@Html.DisplayFor(modelItem => item.ReserchShip)</td>
-            <td>@Html.DisplayNameFor(model => model.PassangerShip)</td>
-            <td>@Html.DisplayFor(modelItem => item.PassangerShip)</td>
-            <td>@Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(modelItem => item.Type)</td>
+            <td colspan="13">
+                <div style="display:flex; justify-content:space-between">
+                    <div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.BoatRow) @Html.DisplayFor(modelItem => item.BoatRow)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.BoatSail) @Html.DisplayFor(modelItem => item.BoatSail)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.BoatTraditional) @Html.DisplayFor(modelItem => item.BoatTraditional)
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.BoatYal) @Html.DisplayFor(modelItem => item.BoatYal)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.KaterRow) @Html.DisplayFor(modelItem => item.KaterRow)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.Botik) @Html.DisplayFor(modelItem => item.Botik)
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.Motosailer) @Html.DisplayFor(modelItem => item.Motosailer)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.KaterCabin) @Html.DisplayFor(modelItem => item.KaterCabin)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.KaterFish) @Html.DisplayFor(modelItem => item.KaterFish)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.KaterPass) @Html.DisplayFor(modelItem => item.KaterPass)
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.LadyaRow) @Html.DisplayFor(modelItem => item.LadyaRow)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.LadyaSail) @Html.DisplayFor(modelItem => item.LadyaSail)
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.Yacht) @Html.DisplayFor(modelItem => item.Yacht)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.Shvertbot) @Html.DisplayFor(modelItem => item.Shvertbot)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.SailboatStudy) @Html.DisplayFor(modelItem => item.SailboatStudy)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.SailboatHistorical) @Html.DisplayFor(modelItem => item.SailboatHistorical)
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.MaketStudy) @Html.DisplayFor(modelItem => item.MaketStudy)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.MaketCinema) @Html.DisplayFor(modelItem => item.MaketCinema)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.MaketMuseum) @Html.DisplayFor(modelItem => item.MaketMuseum)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.MaketDesign) @Html.DisplayFor(modelItem => item.MaketDesign)
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.KaterProject) @Html.DisplayFor(modelItem => item.KaterProject)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.LadyaProject) @Html.DisplayFor(modelItem => item.LadyaProject)
+                        </div>
+                        <div>
+                            @Html.DisplayNameFor(model => model.SailboatProject) @Html.DisplayFor(modelItem => item.SailboatProject)
+                        </div>
+                    </div>
+                </div>
+            </td>
         </tr>
         <tr>
             <td colspan="13">@Html.DisplayNameFor(model => model.Description)</td>

@@ -9,7 +9,7 @@
 <h4>Project</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div style="flex: 1 1 100%; margin:20px">
         <form asp-action="Create" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -94,40 +94,136 @@
                 <span asp-validation-for="MainFoto" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <select asp-for="Type" asp-items="@new  SelectList(Enum.GetValues(typeof(ShipType)))" class="form-control"></select>
-                <span asp-validation-for="Type" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="CruiseShip" /> @Html.DisplayNameFor(model => model.CruiseShip)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="StudyShip" /> @Html.DisplayNameFor(model => model.StudyShip)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="FishingShip" /> @Html.DisplayNameFor(model => model.FishingShip)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="HistoricalShip" /> @Html.DisplayNameFor(model => model.HistoricalShip)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ReserchShip" /> @Html.DisplayNameFor(model => model.ReserchShip)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="PassangerShip" /> @Html.DisplayNameFor(model => model.PassangerShip)
-                </label>
+            <div style="display:flex; justify-content:space-between">
+                <div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="BoatRow" /> @Html.DisplayNameFor(model => model.BoatRow)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="BoatSail" /> @Html.DisplayNameFor(model => model.BoatSail)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="BoatTraditional" /> @Html.DisplayNameFor(model => model.BoatTraditional)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="BoatYal" /> @Html.DisplayNameFor(model => model.BoatYal)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="KaterRow" /> @Html.DisplayNameFor(model => model.KaterRow)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Botik" /> @Html.DisplayNameFor(model => model.Botik)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Motosailer" /> @Html.DisplayNameFor(model => model.Motosailer)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="KaterCabin" /> @Html.DisplayNameFor(model => model.KaterCabin)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="KaterFish" /> @Html.DisplayNameFor(model => model.KaterFish)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="KaterPass" /> @Html.DisplayNameFor(model => model.KaterPass)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="LadyaRow" /> @Html.DisplayNameFor(model => model.LadyaRow)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="LadyaSail" /> @Html.DisplayNameFor(model => model.LadyaSail)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Yacht" /> @Html.DisplayNameFor(model => model.Yacht)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Shvertbot" /> @Html.DisplayNameFor(model => model.Shvertbot)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="SailboatStudy" /> @Html.DisplayNameFor(model => model.SailboatStudy)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="SailboatHistorical" /> @Html.DisplayNameFor(model => model.SailboatHistorical)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="MaketStudy" /> @Html.DisplayNameFor(model => model.MaketStudy)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="MaketCinema" /> @Html.DisplayNameFor(model => model.MaketCinema)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="MaketMuseum" /> @Html.DisplayNameFor(model => model.MaketMuseum)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="MaketDesign" /> @Html.DisplayNameFor(model => model.MaketDesign)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="KaterProject" /> @Html.DisplayNameFor(model => model.KaterProject)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="LadyaProject" /> @Html.DisplayNameFor(model => model.LadyaProject)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="SailboatProject" /> @Html.DisplayNameFor(model => model.SailboatProject)
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>

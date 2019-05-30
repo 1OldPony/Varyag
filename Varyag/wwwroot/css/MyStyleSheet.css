@@ -16,6 +16,11 @@ body {
     background-color: #f3f5f7;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
+
 .myBorder {
     content: '';
     width: 100%;

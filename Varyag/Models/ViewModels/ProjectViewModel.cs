@@ -61,25 +61,66 @@ namespace Varyag.Models.ViewModels
         [DisplayName("Запас пресной воды, л")]
         public int? FreshWaterCap { get; set; }
 
-        [Required]
-        [DisplayName("Тип судна")]
-        public ShipType Type { get; set; }
+        //[Required]
+        //[DisplayName("Тип судна")]
+        //public ShipType Type { get; set; }
 
         [DisplayName("Описание")]
         public string Description { get; set; }
 
-        [DisplayName("Круизное")]
-        public bool CruiseShip { get; set; }
-        [DisplayName("Учебное")]
-        public bool StudyShip { get; set; }
-        [DisplayName("Рыболовецкое")]
-        public bool FishingShip { get; set; }
-        [DisplayName("Историческое")]
-        public bool HistoricalShip { get; set; }
-        [DisplayName("Исследовательское")]
-        public bool ReserchShip { get; set; }
-        [DisplayName("Пассажирское")]
-        public bool PassangerShip { get; set; }
+        [DisplayName("Прогулочная гребная лодка")]
+        public bool BoatRow { get; set; }
+        [DisplayName("Прогулочная парусная лодка")]
+        public bool BoatSail { get; set; }
+        [DisplayName("Народная лодка")]
+        public bool BoatTraditional { get; set; }
+
+        [DisplayName("Шлюпки ЯЛ-6, ЯЛ-4, ЯЛ-2")]
+        public bool BoatYal { get; set; }
+        [DisplayName("Гребной катер")]
+        public bool KaterRow { get; set; }
+        [DisplayName("Ботик")]
+        public bool Botik { get; set; }
+
+        [DisplayName("Мотосейлер")]
+        public bool Motosailer { get; set; }
+        [DisplayName("Каютный катер")]
+        public bool KaterCabin { get; set; }
+        [DisplayName("Рыболовный/рабочий катер")]
+        public bool KaterFish { get; set; }
+        [DisplayName("Пассажирский катер")]
+        public bool KaterPass { get; set; }
+
+        [DisplayName("Парусно-гребная ладья")]
+        public bool LadyaRow { get; set; }
+        [DisplayName("Парусно-моторная ладья")]
+        public bool LadyaSail { get; set; }
+
+        [DisplayName("Яхта")]
+        public bool Yacht { get; set; }
+        [DisplayName("Швертбот")]
+        public bool Shvertbot { get; set; }
+        [DisplayName("Учебный парусник")]
+        public bool SailboatStudy { get; set; }
+        [DisplayName("Исторический парусник")]
+        public bool SailboatHistorical { get; set; }
+
+        [DisplayName("Макет для обучения")]
+        public bool MaketStudy { get; set; }
+        [DisplayName("Макет для кино")]
+        public bool MaketCinema { get; set; }
+        [DisplayName("Макет для музеев")]
+        public bool MaketMuseum { get; set; }
+        [DisplayName("Макет для интерьеров")]
+        public bool MaketDesign { get; set; }
+
+        [DisplayName("Проект катера")]
+        public bool KaterProject { get; set; }
+        [DisplayName("Проект ладьи")]
+        public bool LadyaProject { get; set; }
+        [DisplayName("Проект парусника")]
+        public bool SailboatProject { get; set; }
+
         [DisplayName("Схема")]
         public IFormFile ShipSheme { get; set; }
         [DisplayName("Главная фотка")]
