@@ -3,33 +3,44 @@
 
 $(document).ready(function () {
     
-    $("#sailboats").mouseenter(function showYachts () {
+    $("#sailboats").mouseenter(function () {
         hideAll();
+        //$("#sailboats-Sub").css('background-color', '#dae6f1' )
         $("#sailboats-Sub").show();
     });
 
     $("#lodki").mouseenter(function () {
         hideAll();
+        //unPaintAll();
+        //$("#lodki-Sub").css('background-color', '#dae6f1')
         $("#lodki-Sub").show();
     });
 
     $("#shlupki").mouseenter(function () {
         hideAll();
+        //unPaintAll();
+        //$("#shlupki-Sub").css('background-color', '#dae6f1')
         $("#shlupki-Sub").show();
     });
 
     $("#katera").mouseenter(function () {
         hideAll();
+        //unPaintAll();
+        //$("#katera-Sub").css('background-color', '#dae6f1')
         $("#katera-Sub").show();
     });
 
     $("#lodiy").mouseenter(function () {
         hideAll();
+        //unPaintAll();
+        //$("#lodiy-Sub").css('background-color', '#dae6f1')
         $("#lodiy-Sub").show();
     });
 
     $("#models").mouseenter(function () {
         hideAll();
+        //unPaintAll();
+        //$("#models-Sub").css('background-color', '#dae6f1' )
         $("#models-Sub").show();
     });
 
@@ -44,7 +55,9 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "lodiy" && event.target.id != "lodiy-Sub")
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
-                 hideAll();
+                    hideAll();
+                    //unPaintAll();
+                    //$("#sailboats-Sub").css('background-color', '#dae6f1')
                     $("#sailboats-Sub").show();
                 }
                 break;
@@ -56,6 +69,8 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
+                    //unPaintAll();
+                    //$("#lodki-Sub").css('background-color', '#dae6f1')
                     $("#lodki-Sub").show();
                     break;
                 }
@@ -67,6 +82,8 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
+                    //unPaintAll();
+                    //$("#shlupki-Sub").css('background-color', '#dae6f1')
                     $("#shlupki-Sub").show();
                     break;
                 }
@@ -78,6 +95,8 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
+                    //unPaintAll();
+                    //$("#katera-Sub").css('background-color', '#dae6f1')
                     $("#katera-Sub").show();
                     break;
                 }
@@ -89,6 +108,8 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
+                    //unPaintAll();
+                    //$("#lodiy-Sub").css('background-color', '#dae6f1')
                     $("#lodiy-Sub").show();
                 }
                 break;
@@ -99,7 +120,9 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
                     && (event.currentTarget.id != "lodiy" && event.target.id != "lodiy-Sub")) {
                     hideAll();
-                    $("#lodiy-Sub").show();
+                    //unPaintAll();
+                    //$("#models-Sub").css('background-color', '#dae6f1')
+                    $("#models-Sub").show();
                 }
                 break;
             default:
@@ -117,3 +140,11 @@ function hideAll() {
     $("#lodiy-Sub").hide();
 };
 
+function unPaintAll() {
+    $("#models-Sub").css('background-color', 'white')
+    $("#sailboats-Sub").css('background-color', 'white')
+    $("#lodki-Sub").css('background-color', 'white')
+    $("#shlupki-Sub").css('background-color', 'white')
+    $("#katera-Sub").css('background-color', 'white')
+    $("#lodiy-Sub").css('background-color', 'white')
+}

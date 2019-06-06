@@ -62,7 +62,7 @@ namespace Varyag.Models
         //[DisplayName("Тип судна")]
         //public ShipType Type { get; set; }
 
-        [DisplayName("Описание")]
+        [DisplayName("Краткое описание")]
         public string Description { get; set; }
 
         [DisplayName("Прогулочная гребная лодка")]
