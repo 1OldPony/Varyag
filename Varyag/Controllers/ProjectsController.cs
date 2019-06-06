@@ -36,6 +36,7 @@ namespace Varyag.Controllers
             }
         }
 
+
         // GET: Projects
         public async Task<IActionResult> Index()
         {
@@ -216,12 +217,14 @@ namespace Varyag.Controllers
 
                     if (model.ShipSheme != null)
                     {
+                        
                         using (var memoryStream = new MemoryStream())
                         {
                             await model.ShipSheme.CopyToAsync(memoryStream);
                             project.ShipSheme = memoryStream.ToArray();
                         }
                     }
+
                     if (model.MainFoto != null)
                     {
                         using (var memoryStream = new MemoryStream())
@@ -230,7 +233,7 @@ namespace Varyag.Controllers
                             project.MainFoto = memoryStream.ToArray();
                         }
                     }
-                    
+
                     _context.Update(project);
                     await _context.SaveChangesAsync();
                 }
