@@ -5,11 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="~/css/MyStyleSheet.css" />
     <link href="https://fonts.googleapis.com/css?family=Gabriela&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/my-slider.css" />
     <title>@ViewData["Title"] - Varyag</title>
 </head>
 <body>
     <div class="MyContainer" id="main">
-        <div id="ship_foto"><img src="~/images/порезанный2.jpg" /></div>
+        <div class="ism-slider" data-interval="3000" id="my-slider">
+            <ol>
+                <li>
+                    <img src="~/images/порезанный2.jpg">
+                    <div class="ism-caption ism-caption-0">My slide caption text</div>
+                </li>
+                <li>
+                    <img src="~/images/slides/beautiful-701678_1280.jpg">
+                    <a class="ism-caption ism-caption-0" href="" target="_self">My slide caption text</a>
+                </li>
+                <li>
+                    <img src="~/images/slides/summer-192179_1280.jpg">
+                    <div class="ism-caption ism-caption-0">My slide caption text</div>
+                </li>
+                <li>
+                    <img src="~/images/slides/city-690332_1280.jpg">
+                    <div class="ism-caption ism-caption-0">My slide caption text</div>
+                </li>
+            </ol>
+        </div>
         <div class="header">
             <div class="logo"><img src="~/images/Судоверфь Варяг.jpg" width="127" height="72" /></div>
             <div class="nav-top">
@@ -60,6 +80,7 @@
             crossorigin="anonymous"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
     </script>
+    <script src="~/js/ism-2.2.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
