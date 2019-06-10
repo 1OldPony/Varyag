@@ -33,7 +33,7 @@
         <div class="header">
             <div class="logo"><img src="~/images/Судоверфь Варяг.jpg" width="127" height="72" /></div>
             <div class="nav-top">
-                <div id="ships-catalog" class="nav-element">
+                <div id="ships-catalog" class="nav-element" style="border-bottom-left-radius:50px; border-top-left-radius:50px">
                     <div class="nav-element-inside">
                         <a asp-page="">Каталог</a>
                     </div>
@@ -53,7 +53,7 @@
                         <a asp-page="">О нас</a>
                     </div>
                 </div>
-                <div id="Contacts" class="nav-element">
+                <div id="Contacts" class="nav-element" style="border-bottom-right-radius:50px; border-top-right-radius:50px; border-right-width:1px">
                     <div class="nav-element-inside">
                         <a asp-page="">Контакты</a>
                     </div>
@@ -74,14 +74,9 @@
             </div>
         </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-            asp-fallback-test="window.jQuery"
-            crossorigin="anonymous"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-    </script>
-    <script src="~/js/ism-2.2.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/ism-2.2.min.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

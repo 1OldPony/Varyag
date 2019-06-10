@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Varyag.Models.Project>
+
+<div class="projects">
+    @foreach (var item in Model)
+    {
+        <div class="singleProject">
+            <div class="projectImage"><img src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "sheme"})" alt="@item.Name" title="@item.Name" /></div>
+            <div class="projectImage"><img src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "main"})" alt="@item.Name" title="@item.Name" /></div>
+            <div>@Html.Raw(item.Description)</div>
+        </div>
+    }
+</div>
+<br />

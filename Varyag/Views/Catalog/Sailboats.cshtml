@@ -48,5 +48,7 @@
     <div name="katera-Sub" id="katera-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
     <div name="lodiy-Sub" id="lodiy-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Lodiy-SubNav.cshtml")</div>
     <div name="models-Sub" id="models-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
-    
+
 </div>
+
+<div>@await Component.InvokeAsync("ProjectsCatalog", new { category = "sailboat" })</div>

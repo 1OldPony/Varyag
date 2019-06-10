@@ -58,10 +58,6 @@ namespace Varyag.Models
         [DisplayName("Запас пресной воды, л")]
         public int? FreshWaterCap { get; set; }
 
-        //[Required]
-        //[DisplayName("Тип судна")]
-        //public ShipType Type { get; set; }
-
         [DisplayName("Краткое описание")]
         public string Description { get; set; }
 

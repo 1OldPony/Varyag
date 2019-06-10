@@ -116,12 +116,3 @@ function hideAll() {
     $("#katera-Sub").hide();
     $("#lodiy-Sub").hide();
 };
-
-function unPaintAll() {
-    $("#models-Sub").css('background-color', 'white')
-    $("#sailboats-Sub").css('background-color', 'white')
-    $("#lodki-Sub").css('background-color', 'white')
-    $("#shlupki-Sub").css('background-color', 'white')
-    $("#katera-Sub").css('background-color', 'white')
-    $("#lodiy-Sub").css('background-color', 'white')
-}

@@ -8,8 +8,6 @@ body {
     color: #2d5d88;
     margin: 0px;
     background-color: #f3f5f7;
-    /*background-repeat:no-repeat;
-    background-image:url(../images/gold-textured-background-texture-png-clipart_1592795.png)*/
 }
 
 .logo {
@@ -41,7 +39,7 @@ img {
     padding-bottom: 2px;
     background-color: white;
     text-align: center;
-    /*box-shadow: 0px 0px 40px 12px white;*/
+    position:fixed;
 }
 
 .contacts {
@@ -88,8 +86,6 @@ img {
 
 .nav-top {
     display: flex;
-    margin-left: 20px;
-    margin-right: 20px;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -97,12 +93,16 @@ img {
 }
 
     .nav-top .nav-element {
-        background-color: darkgrey;
+        background-color: #ffffff;
         margin: auto;
         border-style: solid;
-        border-width: 2px;
+        border-width: 1px;
         border-right-width: 0px;
+        box-shadow: inset 0px 0px 14px 2px #2d5d88;
     }
+
+div#SMI {
+}
 
 .sub-nav {
     display: flex;
@@ -130,9 +130,7 @@ img {
     flex-grow: 1;
     min-width: 5.8em;
     height: 3em;
-    background-color: white;
-    margin: 2px;
-    /* border: 4px double #0d2371; */
+    background-color: #ffffff;
 }
 
     .nav-element:hover {
@@ -150,27 +148,15 @@ img {
     flex-grow: 1;
     flex-shrink: 1;
     margin: 2px;
-    background-color: #dae6f1;
+    background-color: rgb(209, 224, 249);
 }
 
     .nav-element-minor:hover {
         cursor: pointer;
-        /*background-color: #aec9e0;*/
-        /*box-shadow: 0px 0px 20px 0px #aec9e0;*/
+        background-color: #aec9e0;
     }
 
 .nav-element-minor-choosen {
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 3em;
-    font-size: 20px;
-    background-color: white;
-    flex-grow: 1;
-    flex-shrink: 1;
-    margin: 2px;
-    background-color: #dae6f1;*/
 }
 
     .nav-element-minor-choosen .nav-element-inside a {
@@ -199,4 +185,25 @@ img {
 
 .nav-element-inside {
     padding: 10px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 30px;
+}
+
+.singleProject {
+    display: flex;
+    align-content: center;
+    width: 100%;
+}
+
+    .singleProject p {
+        margin-top: 0px;
+    }
+
+.projectImage {
+    min-width: 20%;
 }
