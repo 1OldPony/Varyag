@@ -9,6 +9,11 @@
     <title>@ViewData["Title"] - Varyag</title>
 </head>
 <body>
+    <input id="cat" type="number" value="0" hidden />
+    <input id="new" type="number" value="0" hidden />
+    <input id="srmin" type="number" value="0" hidden />
+    <input id="abus" type="number" value="0" hidden />
+    <input id="con" type="number" value="0" hidden />
     <div class="MyContainer" id="main">
         <div class="ism-slider" data-interval="3000" id="my-slider">
             <ol>
@@ -30,39 +35,40 @@
                 </li>
             </ol>
         </div>
-        <div class="header">
-            <div class="logo"><img src="~/images/Судоверфь Варяг.jpg" width="127" height="72" /></div>
-            <div class="nav-top">
-                <div id="ships-catalog" class="nav-element" style="border-bottom-left-radius:50px; border-top-left-radius:50px">
+        <div id="header" class="header">
+            @*<div class="logo"><img src="~/images/Судоверфь Варяг.jpg" width="127" height="72" /></div>*@
+            <div id="nav-top" class="nav-top">
+                <div id="ships-catalog" class="nav-element-top" style="border-bottom-left-radius:50px; border-top-left-radius:50px">
                     <div class="nav-element-inside">
                         <a asp-page="">Каталог</a>
                     </div>
                 </div>
-                <div id="news" class="nav-element">
+                <div id="news" class="nav-element-top">
                     <div class="nav-element-inside">
                         <a asp-page="">Наши новости</a>
                     </div>
                 </div>
-                <div id="SMI" class="nav-element">
+                <div id="SMI" class="nav-element-top">
                     <div class="nav-element-inside">
                         <a asp-page="">Мы в СМИ</a>
                     </div>
                 </div>
-                <div id="About" class="nav-element">
+                <div id="About" class="nav-element-top">
                     <div class="nav-element-inside">
-                        <a asp-page="">О нас</a>
+                        <a asp-action="">О нас</a>
                     </div>
                 </div>
-                <div id="Contacts" class="nav-element" style="border-bottom-right-radius:50px; border-top-right-radius:50px; border-right-width:1px">
+                <div id="Contacts" class="nav-element-top" style="border-bottom-right-radius:50px; border-top-right-radius:50px; border-right-width:1px">
                     <div class="nav-element-inside">
                         <a asp-page="">Контакты</a>
                     </div>
                 </div>
             </div>
-            <table class="contacts">
-                <tr><td class="phone">+7 8142 73 35 80</td></tr>
-                <tr><td class="mail">varyag@onego.ru</td></tr>
-            </table>
+            @*<table class="contacts">
+                    <tr><td class="phone">+7 8142 73 35 80</td></tr>
+                    <tr><td class="mail">varyag@onego.ru</td></tr>
+                </table>*@
+            <div id="menu-nav-top" class="menu-nav-top"></div>
         </div>
 
         <partial name="_CookieConsentPartial" />
@@ -75,6 +81,7 @@
         </footer>
     </div>
     <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/top-nav.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/ism-2.2.min.js"></script>
 

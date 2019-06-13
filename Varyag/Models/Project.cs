@@ -61,6 +61,9 @@ namespace Varyag.Models
         [DisplayName("Краткое описание")]
         public string Description { get; set; }
 
+        //[DisplayName("Краткое описание")]
+        //public string FullDescription { get; set; }
+
         [DisplayName("Прогулочная гребная лодка")]
         public bool BoatRow { get; set; }
         [DisplayName("Прогулочная парусная лодка")]

@@ -38,11 +38,11 @@ $(document).ready(function () {
         switch (page)
         {
             case "sailboats":
-                if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-                    && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                    && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "lodiy" && event.target.id != "lodiy-Sub")
-                    && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
+                if ((event.currentTarget.id != "lodki" && event.relatedTarget.id != "lodki-Sub")
+                    && (event.currentTarget.id != "shlupki" && event.relatedTarget.id != "shlupki-Sub")
+                    && (event.currentTarget.id != "katera" && event.relatedTarget.id != "katera-Sub")
+                    && (event.currentTarget.id != "lodiy" && event.relatedTarget.id != "lodiy-Sub")
+                    && (event.currentTarget.id != "models" && event.relatedTarget.id != "models-Sub"))
                 {
                     hideAll();
                     $("#sailboats-Sub").show();
