@@ -58,11 +58,11 @@ namespace Varyag.Models
         [DisplayName("Запас пресной воды, л")]
         public int? FreshWaterCap { get; set; }
 
-        [DisplayName("Краткое описание")]
-        public string Description { get; set; }
+        [DisplayName("Цена, т.р.")]
+        public string Price { get; set; }
 
-        //[DisplayName("Краткое описание")]
-        //public string FullDescription { get; set; }
+        [DisplayName("Полное описание")]
+        public string Description { get; set; }
 
         [DisplayName("Прогулочная гребная лодка")]
         public bool BoatRow { get; set; }

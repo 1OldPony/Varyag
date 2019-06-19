@@ -9,7 +9,7 @@ using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
     public class ProjectsController : Controller
     {
         private readonly VaryagContext _context;
@@ -119,7 +119,8 @@ namespace Varyag.Controllers
                     SleepingAreas = model.SleepingAreas,
                     Speed = model.Speed,
                     Volume = model.Volume,
-                    Windth = model.Windth
+                    Windth = model.Windth,
+                    Price = model.Price
                 };
                 using (var memoryStream = new MemoryStream())
                 {
@@ -212,7 +213,8 @@ namespace Varyag.Controllers
                         SleepingAreas = model.SleepingAreas,
                         Speed = model.Speed,
                         Volume = model.Volume,
-                        Windth = model.Windth
+                        Windth = model.Windth,
+                        Price = model.Price
                     };
 
                     if (model.ShipSheme != null)

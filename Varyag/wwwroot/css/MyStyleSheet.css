@@ -31,7 +31,7 @@ img {
 .header {
     font-family: 'Gabriela', Arial, sans-serif;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     /*align-items: center;*/
     justify-content: space-between;
     width: 100%;
@@ -90,27 +90,31 @@ img {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .nav-element-top {
+    justify-content: center;
+    display: flex;
     background-color: #ffffff;
     margin: auto;
-    cursor:pointer;
+    cursor: pointer;
     box-shadow: inset 0px 0px 14px 2px #2d5d88;
-    flex-grow:1;
+    flex-grow: 1;
 }
+
     .nav-element-top:hover {
         background-color: #aec9e0;
         box-shadow: 0px 0px 20px 0px #aec9e0;
     }
 
 .menu-nav-top {
-    background-color:white;
+    background-color: white;
 }
 
 .menu-top-element {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -124,9 +128,10 @@ img {
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
-    position:absolute;
-    /*background-color:red;*/
-    max-width:1350px;
+    position: absolute;
+    background-color: white;
+    max-width: 1350px;
+    padding-bottom: 10px;
 }
 
 .sub-nav {
@@ -150,11 +155,13 @@ img {
 
 .nav-element {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
     min-width: 5.8em;
-    height: 3em;
+    margin: 2px;
+    /*height: 3em;*/
     background-color: #ffffff;
 }
 
@@ -191,10 +198,12 @@ img {
 .nav-element-choosen {
     display: flex;
     flex-grow: 1;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: 5.8em;
-    height: 3em;
+    margin: 2px;
+    /*height: 3em;*/
     box-shadow: 0px 0px 20px 0px #aec9e0;
     background-color: #aec9e0;
 }
@@ -209,20 +218,22 @@ img {
 
 
 .nav-element-inside {
-    padding: 10px;
+    padding: 5px;
 }
 
 .projects {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    padding: 30px;
+    padding: 20px;
 }
 
 .singleProject {
     display: flex;
-    align-content: center;
+    align-items: center;
     width: 100%;
+    border-style: groove;
+    font-size: 15px;
 }
 
     .singleProject p {
@@ -230,5 +241,23 @@ img {
     }
 
 .projectImage {
-    min-width: 20%;
+    width: 33%;
+}
+
+.TTH {
+    width: 33%;
+    text-align:left;
+    padding: 10px;
+}
+
+
+.details-top {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.sheme-tth {
+    display:flex;
+    flex-direction:column;
 }

@@ -12,8 +12,70 @@
 
 @foreach (var item in Model)
 {
+
+    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+
+    <p style="margin:20px">Отображение в каталоге</p>
+    <div class="representation">
+        <div class="repres-top-bottom" style="margin-bottom:20px">
+            <div class="inner-repres">
+                Схема
+            </div>
+            <div class="inner-repres">
+                Фотка
+            </div>
+            <div class="inner-repres" style="flex-grow:3">
+                Краткий текст
+            </div>
+        </div>
+        <div class="repres-top-bottom" style="border-style:groove">
+            <div class="inner-repres">
+                <img src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "sheme"})">
+            </div>
+            <div class="inner-repres">
+                <img src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "main"})">
+            </div>
+            <div class="inner-repres" style="width:33%; padding:20px;">
+                <div>
+                    <table>
+                        <tr>
+                            <td colspan="2">@item.Name</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Length)</td>
+                            <td>@item.Length</td>
+                        </tr>
+                        @if (@item.Volume != null)
+                        {
+                            <tr>
+                                <td>@Html.DisplayNameFor(model => model.Volume)</td>
+                                <td>@item.Volume</td>
+                            </tr>
+                        }
+                        @if (@item.Mass != null)
+                        {
+                            <tr>
+                                <td>@Html.DisplayNameFor(model => model.Mass)</td>
+                                <td>@item.Mass</td>
+                            </tr>
+                        }
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                            <td>@item.PassengerCap</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Price)</td>
+                            <td>@item.Price</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p style="margin:20px">ДАННЫЕ</p>
+
     <table class="table">
-        <tr><td colspan="13"><h3>@Html.DisplayFor(modelItem => item.Name)</h3></td></tr>
         <tr>
             <td>@Html.DisplayNameFor(model => model.Length)</td>
             <td>@Html.DisplayNameFor(model => model.Windth)</td>
@@ -28,6 +90,7 @@
             <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
             <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
             <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+            <td>@Html.DisplayNameFor(model => model.Price)</td>
         </tr>
         <tr>
             <td>@Html.DisplayFor(modelItem => item.Length)</td>
@@ -43,9 +106,10 @@
             <td>@Html.DisplayFor(modelItem => item.PassengerCap)</td>
             <td>@Html.DisplayFor(modelItem => item.FuelCap)</td>
             <td>@Html.DisplayFor(modelItem => item.FreshWaterCap)</td>
+            <td>@Html.DisplayFor(modelItem => item.Price)</td>
         </tr>
         <tr>
-            <td colspan="13">
+            <td colspan="14">
                 <div style="display:flex; justify-content:space-between">
                     <div>
                         <div>
@@ -134,30 +198,20 @@
             </td>
         </tr>
         <tr>
-            <td colspan="13">@Html.DisplayNameFor(model => model.Description)</td>
+            <td colspan="14">@Html.DisplayNameFor(model => model.Description)</td>
         </tr>
         <tr>
-            <td colspan="13">
+            <td colspan="14">
                 @Html.Raw(item.Description)
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                Схема
-            </td>
-            <td colspan="4">
-                <img width="120" height="120" src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "sheme"})">
-            </td>
-            <td colspan="2">
-                Основная фотка
-            </td>
-            <td colspan="5">
-                <img width="120" height="120" src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "main"})">
+            <td>
             </td>
         </tr>
-        <tr><td colspan="13">@await Component.InvokeAsync("ProjectFoto", new { shipProjectId = item.ProjectID })</td></tr>
+        <tr><td colspan="14">@await Component.InvokeAsync("ProjectFoto", new { shipProjectId = item.ProjectID })</td></tr>
         <tr>
-            <td colspan="13">
+            <td colspan="14">
                 <a asp-action="Edit" asp-route-id="@item.ProjectID">Редактировать проект</a> |
                 <a asp-action="Delete" asp-route-id="@item.ProjectID">Удалить проект</a>
             </td>

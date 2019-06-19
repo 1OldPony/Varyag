@@ -1,0 +1,114 @@
+﻿@model Varyag.Models.Project
+
+@{
+    ViewData["Title"] = "ProjectDetails";
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+<h1>@Model.Name</h1>
+
+<div class="MyContainer">
+    <div class="details-top">
+        <div class="sheme-tth">
+            <div><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" /></div>
+            <div>
+                <table>
+                    <tr>
+                        <td colspan="2"><h5>Характеристики</h5></td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Length)</td>
+                        <td>@Model.Length</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Windth)</td>
+                        <td>@Model.Windth</td>
+                    </tr>
+                    @if (@Model.Deep != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Deep)</td>
+                            <td>@Model.Deep</td>
+                        </tr>
+                    }
+                    @if (@Model.Volume != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Volume)</td>
+                            <td>@Model.Volume</td>
+                        </tr>
+                    }
+                    @if (@Model.Mass != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Mass)</td>
+                            <td>@Model.Mass</td>
+                        </tr>
+                    }
+                    @if (@Model.NumberOfOars != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                            <td>@Model.NumberOfOars</td>
+                        </tr>
+                    }
+                    @if (@Model.EnginePower != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.EnginePower)</td>
+                            <td>@Model.EnginePower</td>
+                        </tr>
+                    }
+                    @if (@Model.Speed != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.Speed)</td>
+                            <td>@Model.Speed</td>
+                        </tr>
+                    }
+                    @if (@Model.SailArea != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.SailArea)</td>
+                            <td>@Model.SailArea</td>
+                        </tr>
+                    }
+                    @if (@Model.SleepingAreas != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                            <td>@Model.SleepingAreas</td>
+                        </tr>
+                    }
+                    @if (@Model.PassengerCap != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                            <td>@Model.PassengerCap</td>
+                        </tr>
+                    }
+                    @if (@Model.FuelCap != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
+                            <td>@Model.FuelCap</td>
+                        </tr>
+                    }@if (@Model.FreshWaterCap != null)
+                    {
+                        <tr>
+                            <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                            <td>@Model.FreshWaterCap</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Price)</td>
+                        <td>@Model.Price</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div>
+            <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "main"})" />
+        </div>
+    </div>
+</div>
