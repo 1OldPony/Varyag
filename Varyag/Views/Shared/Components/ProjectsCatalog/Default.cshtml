@@ -3,23 +3,25 @@
 <div class="projects">
     @foreach (var item in Model)
     {
-    <div class="singleProject">
+    <div class="singleProject" onclick="">
         <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "sheme"})" alt="@item.Name" title="@item.Name" /></div>
         <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "main"})" alt="@item.Name" title="@item.Name" /></div>
         <div class="TTH">
             <div>
                 <table>
                     <tr>
-                        <td colspan="2">@item.Name</td>
+                        <td colspan="3" style="text-align:center">@item.Name</td>
                     </tr>
                     <tr>
                         <td>@Html.DisplayNameFor(model => model.Length)</td>
+                        <td class="table-space"></td>
                         <td>@item.Length</td>
                     </tr>
                     @if (@item.Volume != null)
                     {
                         <tr>
                             <td>@Html.DisplayNameFor(model => model.Volume)</td>
+                            <td class="table-space"></td>
                             <td>@item.Volume</td>
                         </tr>
                     }
@@ -27,16 +29,20 @@
                     {
                         <tr>
                             <td>@Html.DisplayNameFor(model => model.Mass)</td>
+                            <td class="table-space"></td>
                             <td>@item.Mass</td>
                         </tr>
                     }
                     <tr>
                         <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                        <td class="table-space"></td>
                         <td>@item.PassengerCap</td>
                     </tr>
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.Price)</td>
-                        <td>@item.Price</td>
+                        <td style="text-align:left; padding-top:20px" colspan="3">@Html.DisplayNameFor(model => model.Price) : @item.Price</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right; padding-top:20px" colspan="3"><a asp-action="ProjectDetails" asp-controller="Catalog" asp-route-id="@item.ProjectID">Детали</a></td>
                     </tr>
                 </table>
             </div>

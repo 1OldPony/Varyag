@@ -116,3 +116,10 @@ function hideAll() {
     $("#katera-Sub").hide();
     $("#lodiy-Sub").hide();
 };
+
+
+//function navigation() {
+//    $.ajax({
+//        url: @Url.Action("Sailboats", "Catalog")
+//    });
+//};

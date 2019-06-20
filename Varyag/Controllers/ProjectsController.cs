@@ -9,7 +9,7 @@ using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class ProjectsController : Controller
     {
         private readonly VaryagContext _context;
@@ -18,7 +18,7 @@ namespace Varyag.Controllers
         {
             _context = context;
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult> ProjectImageRender(int? id, string fot)
         {
             //Foto foto;

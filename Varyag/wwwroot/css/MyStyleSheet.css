@@ -8,6 +8,7 @@ body {
     color: #2d5d88;
     margin: 0px;
     background-color: #f3f5f7;
+    background-image:url('../images/Картинка фона сайта.jpg')
 }
 
 .logo {
@@ -32,7 +33,6 @@ img {
     font-family: 'Gabriela', Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
     justify-content: space-between;
     width: 100%;
     margin: auto;
@@ -96,11 +96,11 @@ img {
 .nav-element-top {
     justify-content: center;
     display: flex;
-    background-color: #ffffff;
+    background-color: #f3e0b6;
     margin: auto;
     cursor: pointer;
-    box-shadow: inset 0px 0px 14px 2px #2d5d88;
     flex-grow: 1;
+    border-style: ridge;
 }
 
     .nav-element-top:hover {
@@ -231,13 +231,18 @@ img {
 .singleProject {
     display: flex;
     align-items: center;
+    max-width: 1304px;
     width: 100%;
     border-style: groove;
-    font-size: 15px;
+    font-size: 22px;
 }
 
     .singleProject p {
-        margin-top: 0px;
+        margin-top: 0px
+    }
+
+    .singleProject:hover {
+        cursor: pointer;
     }
 
 .projectImage {
@@ -245,19 +250,36 @@ img {
 }
 
 .TTH {
+    display: flex;
+    justify-content: center;
     width: 33%;
-    text-align:left;
+    text-align: left;
     padding: 10px;
 }
 
 
 .details-top {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }
 
 .sheme-tth {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
+    width: 29%;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.table-space {
+    width: 10px;
+}
+
+.value {
+    text-align: right;
+}
+
+.bottom-top {
+    display: flex;
+    justify-content: space-between;
 }
