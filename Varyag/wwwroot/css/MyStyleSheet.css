@@ -283,3 +283,7 @@ img {
     display: flex;
     justify-content: space-between;
 }
+
+.galery {
+    margin:auto;
+}
