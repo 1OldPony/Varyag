@@ -6,149 +6,29 @@
 }
 
 <h1>@Model.Name</h1>
-<div style="width:90%; margin:auto">
-    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="cover" data-ratio="16/9" data-allowfullscreen="native">
-        <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "main"})" />
-        <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" />
-    </div>
-</div>
-<div class="bottom-top">
-    <table>
-        <tr>
-            <td colspan="3"><h4>Характеристики</h4></td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.Length)</td>
-            <td class="table-space"></td>
-            <td class="value">@Model.Length</td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.Windth)</td>
-            <td class="table-space"></td>
-            <td class="value">@Model.Windth</td>
-        </tr>
-        @if (@Model.Deep != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.Deep)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.Deep</td>
-            </tr>
-        }
-        @if (@Model.Volume != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.Volume)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.Volume</td>
-            </tr>
-        }
-        @if (@Model.Mass != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.Mass)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.Mass</td>
-            </tr>
-        }
-        @if (@Model.NumberOfOars != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.NumberOfOars)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.NumberOfOars</td>
-            </tr>
-        }
-        @if (@Model.EnginePower != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.EnginePower)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.EnginePower</td>
-            </tr>
-        }
-        @if (@Model.Speed != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.Speed)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.Speed</td>
-            </tr>
-        }
-        @if (@Model.SailArea != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.SailArea)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.SailArea</td>
-            </tr>
-        }
-        @if (@Model.SleepingAreas != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.SleepingAreas)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.SleepingAreas</td>
-            </tr>
-        }
-        @if (@Model.PassengerCap != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.PassengerCap</td>
-            </tr>
-        }
-        @if (@Model.FuelCap != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.FuelCap</td>
-            </tr>
-        }@if (@Model.FreshWaterCap != null)
-        {
-            <tr>
-                <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
-                <td class="table-space"></td>
-                <td class="value">@Model.FreshWaterCap</td>
-            </tr>
-        }
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.Price)</td>
-            <td class="table-space"></td>
-            <td class="value">@Model.Price</td>
-        </tr>
-    </table>
-    <div><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" /></div>
-</div>
-
-
-@*///////////////////////////////////////////////////////////////////////////////////////////////////////////////*@
-
 
 <div class="details-top">
     <div class="sheme-tth">
-        <div><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" /></div>
-        <div>
-            <table>
+        <div class="sheme"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" /></div>
+        <div class="TTH-details">
+            <table style="width:100%">
                 <tr>
                     <td colspan="3"><h4>Характеристики</h4></td>
                 </tr>
                 <tr>
-                    <td>@Html.DisplayNameFor(model => model.Length)</td>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
                     <td class="table-space"></td>
                     <td class="value">@Model.Length</td>
                 </tr>
                 <tr>
-                    <td>@Html.DisplayNameFor(model => model.Windth)</td>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
                     <td class="table-space"></td>
                     <td class="value">@Model.Windth</td>
                 </tr>
                 @if (@Model.Deep != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.Deep)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.Deep</td>
                     </tr>
@@ -156,7 +36,7 @@
                 @if (@Model.Volume != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.Volume)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.Volume</td>
                     </tr>
@@ -164,7 +44,7 @@
                 @if (@Model.Mass != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.Mass)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.Mass</td>
                     </tr>
@@ -172,7 +52,7 @@
                 @if (@Model.NumberOfOars != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.NumberOfOars</td>
                     </tr>
@@ -180,7 +60,7 @@
                 @if (@Model.EnginePower != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.EnginePower)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.EnginePower</td>
                     </tr>
@@ -188,7 +68,7 @@
                 @if (@Model.Speed != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.Speed)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.Speed</td>
                     </tr>
@@ -196,7 +76,7 @@
                 @if (@Model.SailArea != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.SailArea)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.SailArea</td>
                     </tr>
@@ -204,7 +84,7 @@
                 @if (@Model.SleepingAreas != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.SleepingAreas</td>
                     </tr>
@@ -212,7 +92,7 @@
                 @if (@Model.PassengerCap != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.PassengerCap</td>
                     </tr>
@@ -220,27 +100,32 @@
                 @if (@Model.FuelCap != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.FuelCap</td>
                     </tr>
                 }@if (@Model.FreshWaterCap != null)
                 {
                     <tr>
-                        <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
                         <td class="table-space"></td>
                         <td class="value">@Model.FreshWaterCap</td>
                     </tr>
                 }
                 <tr>
-                    <td>@Html.DisplayNameFor(model => model.Price)</td>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Price)</td>
                     <td class="table-space"></td>
                     <td class="value">@Model.Price</td>
                 </tr>
             </table>
         </div>
     </div>
-    <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "main"})" />
+    <div class="galery">
+        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+            <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "main"})" />
+            <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" />
+        </div>
+    </div>
 </div>
 <div>
     @Html.Raw(Model.Description)

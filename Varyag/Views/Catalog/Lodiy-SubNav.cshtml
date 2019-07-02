@@ -1,19 +1,25 @@
-﻿<div class="sub-nav">
+﻿@*<div class="sub-nav">*@
     <div class="sub-nav-elements">
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="CruisnieYachty">Парусно-гребные ладьи</a>
-            </div>
+            <a asp-action="SailRowLadyas" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Парусно-гребные ладьи</p>
+                </div>
+            </a>
         </div>
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="ProgulochnieYachty">Парусно-моторные ладьи</a>
-            </div>
+            <a asp-action="SailMotorLadyas" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Парусно-моторные ладьи</p>
+                </div>
+            </a>
         </div>
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="ProgulochnieYachty">Проекты ладей</a>
-            </div>
+            <a asp-action="LadyaProjects" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Проекты ладей</p>
+                </div>
+            </a>
         </div>
     </div>
-</div>
+@*</div>*@

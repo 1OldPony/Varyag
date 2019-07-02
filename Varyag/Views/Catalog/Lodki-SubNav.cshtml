@@ -1,19 +1,25 @@
-﻿<div class="sub-nav">
+﻿@*<div class="sub-nav">*@
     <div class="sub-nav-elements">
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="Progulochnie-Lodki">Прогулочные гребные лодки</a>
-            </div>
+            <a asp-action="RowBoats" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Прогулочные гребные лодки</p>
+                </div>
+            </a>
         </div>
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="Uchebnie-Lodki">Прогулочные парусные лодки</a>
-            </div>
+            <a asp-action="SailBoats" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Прогулочные парусные лодки</p>
+                </div>
+            </a>
         </div>
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="Istoricheskie-Lodki">Народные лодки</a>
-            </div>
+            <a asp-action="NarodnyeLodki" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Народные лодки</p>
+                </div>
+            </a>
         </div>
     </div>
-</div>
+@*</div>*@

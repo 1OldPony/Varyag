@@ -1,19 +1,25 @@
-﻿<div class="sub-nav">
+﻿@*<div class="sub-nav">*@
     <div class="sub-nav-elements">
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="ProgulochnieYachty">Ял-6, Ял-4, Ял-2</a>
-            </div>
+            <a asp-action="Yals" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Ял-6, Ял-4, Ял-2</p>
+                </div>
+            </a>
         </div>
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="UchebnieYachty">Гребные катера</a>
-            </div>
+            <a asp-action="KaterRows" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Гребные катера</p>
+                </div>
+            </a>
         </div>
         <div class="nav-element-minor">
-            <div class="nav-element-inside">
-                <a asp-action="IstoricheskieYachty">Ботики</a>
-            </div>
+            <a asp-action="Botiks" asp-controller="Catalog">
+                <div class="nav-element-inside">
+                    <p>Ботики</p>
+                </div>
+            </a>
         </div>
     </div>
-</div>
+@*</div>*@
