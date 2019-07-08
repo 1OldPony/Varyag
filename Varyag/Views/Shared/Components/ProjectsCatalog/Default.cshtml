@@ -1,51 +1,100 @@
 ﻿@model IEnumerable<Varyag.Models.Project>
 
 <div class="projects">
+    <div class="myBorder"></div>
     @foreach (var item in Model)
     {
-    <a class="projectListItem" asp-action="ProjectDetails" asp-controller="Catalog" asp-route-id="@item.ProjectID">
-        <div class="singleProject">
-            <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "sheme"})" alt="@item.Name" title="@item.Name" /></div>
-            <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "main"})" alt="@item.Name" title="@item.Name" /></div>
-            <div class="TTH">
-                <div>
-                    <table>
-                        <tr>
-                            <td colspan="3" style="text-align:center">@item.Name</td>
-                        </tr>
-                        <tr>
-                            <td>@Html.DisplayNameFor(model => model.Length)</td>
-                            <td class="table-space"></td>
-                            <td class="value">@item.Length</td>
-                        </tr>
-                        @if (@item.Volume != null)
-                        {
-                            <tr>
-                                <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
-                                <td class="table-space"></td>
-                                <td class="value">@item.Volume</td>
+        <a class="projectListItem" asp-action="ProjectDetails" asp-controller="Catalog" asp-route-id="@item.ProjectID">
+            <div class="singleProject">
+                <div id="short" class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "sheme"})" alt="@item.Name" title="@item.Name" /></div>
+                <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "main"})" alt="@item.Name" title="@item.Name" /></div>
+                <div class="TTH">
+                        <div class="catalogItemTop">@item.Name</div>
+                        <table>
+                            <tr class="cellLong">
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
+                                <td class="value">@item.Length&nbsp;м.</td>
                             </tr>
-                        }
-                        @if (@item.Mass != null)
-                        {
-                            <tr>
-                                <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
-                                <td class="table-space"></td>
-                                <td class="value">@item.Mass</td>
+                            <tr id="fifth-out" class="cellShort">
+                                <td class="characteristic">Длина</td>
+                                <td class="value">@item.Length&nbsp;м.</td>
                             </tr>
-                        }
-                        <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
-                            <td class="table-space"></td>
-                            <td class="value">@item.PassengerCap</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align:left; padding-top:20px" colspan="3">@Html.DisplayNameFor(model => model.Price) : @item.Price</td>
-                        </tr>
-                    </table>
+                            <tr class="cellLong">
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
+                                <td class="value">@item.Windth&nbsp;м.</td>
+                            </tr>
+                            <tr id="fourth-out" class="cellShort">
+                                <td class="characteristic">Ширина</td>
+                                <td class="value">@item.Windth&nbsp;м.</td>
+                            </tr>
+                            @if (@item.Mass != null)
+                            {<tr class="cellLong">
+                                    <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                                    <td class="value">@item.Mass&nbsp;кг.</td>
+                                </tr>
+                                <tr id="first-out" class="cellShort">
+                                    <td class="characteristic">Масса</td>
+                                    <td class="value">@item.Mass&nbsp;кг.</td>
+                                </tr>}
+
+                            <tr class="cellLong">
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                                <td class="value">@item.PassengerCap&nbsp;чел.</td>
+                            </tr>
+                            <tr id="fird-out" class="cellShort">
+                                <td class="characteristic">Пассажиры</td>
+                                <td class="value">@item.PassengerCap&nbsp;чел.</td>
+                            </tr>
+
+                            <tr class="cellLong">
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                                @if (@item.SleepingAreas != null)
+                                {<td class="value">@item.SleepingAreas&nbsp;шт.</td>}
+                                else
+                                {<td class="value">-</td>}
+                            </tr>
+                            <tr id="second-out" class="cellShort">
+                                <td class="characteristic">Койкоместа</td>
+                                @if (@item.SleepingAreas != null)
+                                {<td class="value">@item.SleepingAreas&nbsp;шт.</td>}
+                                else
+                                {<td class="value">-</td>}
+                            </tr>
+
+                            <tr class="cellLong">
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                                @if (@item.SailArea != null)
+                                {<td class="value">@item.SailArea&nbsp;м<sup>2</sup></td>}
+                                else
+                                {<td class="value">-</td>}
+                            </tr>
+                            <tr id="first-out" class="cellShort">
+                                <td class="characteristic">Паруса</td>
+                                @if (@item.SailArea != null)
+                                {<td class="value">@item.SailArea&nbsp;м<sup>2</sup></td>}
+                                else
+                                {<td class="value">-</td>}
+                            </tr>
+
+                            <tr class="cellLong">
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                                @if (@item.EnginePower != null)
+                                {<td class="value">@item.EnginePower&nbsp;л.с.</td>}
+                                else
+                                {<td class="value">-</td>}
+                            </tr>
+                            <tr id="first-out" class="cellShort">
+                                <td class="characteristic">Двигатель</td>
+                                @if (@item.EnginePower != null)
+                                {<td class="value">@item.EnginePower&nbsp;л.с.</td>}
+                                else
+                                {<td class="value">-</td>}
+                            </tr>
+                        </table>
+                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @item.Price</div>
                 </div>
             </div>
-        </div>
-    </a>
+        </a>
+        <div class="myBorder"></div>
     }
 </div>

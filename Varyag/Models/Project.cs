@@ -12,53 +12,53 @@ namespace Varyag.Models
         [DisplayName("Название проекта")]
         public string Name { get; set; }
 
-        [DisplayName("Длинна корпуса наибольшая, м")]
+        [DisplayName("Длина корпуса наибольшая")]
         [MaxLength(5)]
         public string Length { get; set; }
 
-        [DisplayName("Ширина корпуса наибольшая, м")]
+        [DisplayName("Ширина корпуса наибольшая")]
         [MaxLength(5)]
         public string Windth { get; set; }
 
-        [DisplayName("Осадка в полном грузу, м")]
+        [DisplayName("Осадка в полном грузу")]
         [MaxLength(5)]
         public string Deep { get; set; }
 
-        [DisplayName("Водоизмещение порожнем, т")]
+        [DisplayName("Водоизмещение порожнем")]
         [MaxLength(10)]
         public string Volume { get; set; }
 
-        [DisplayName("Вес корпуса, кг")]
+        [DisplayName("Вес корпуса")]
         [MaxLength(10)]
         public string Mass { get; set; }
 
-        [DisplayName("Количество весел, шт")]
+        [DisplayName("Количество весел")]
         [MaxLength(5)]
         public string NumberOfOars { get; set; }
 
-        [DisplayName("Мощность двигателя, л.с.")]
+        [DisplayName("Мощность двигателя")]
         public int? EnginePower { get; set; }
 
-        [DisplayName("Скорость под двигателем, узлов")]
+        [DisplayName("Скорость под двигателем")]
         public int? Speed { get; set; }
 
-        [DisplayName("Площадь парусности, м2")]
+        [DisplayName("Площадь парусности")]
         [MaxLength(10)]
         public string SailArea { get; set; }
 
-        [DisplayName("Количество спальных мест, шт")]
+        [DisplayName("Количество спальных мест")]
         public int? SleepingAreas { get; set; }
 
-        [DisplayName("Пассажировместимость, чел")]
+        [DisplayName("Количество пассажиров")]
         public int? PassengerCap { get; set; }
 
-        [DisplayName("Запас топлива, л")]
+        [DisplayName("Запас топлива")]
         public int? FuelCap { get; set; }
 
-        [DisplayName("Запас пресной воды, л")]
+        [DisplayName("Запас пресной воды")]
         public int? FreshWaterCap { get; set; }
 
-        [DisplayName("Цена, т.р.")]
+        [DisplayName("Цена")]
         public string Price { get; set; }
 
         [DisplayName("Полное описание")]

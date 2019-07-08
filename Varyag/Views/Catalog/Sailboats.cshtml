@@ -17,7 +17,7 @@
     <div class="nav" id="nav">
         <div class="nav-element" name="lodki" id="lodki">
             <a asp-action="boats" asp-controller="Catalog">
-                <img src="~/images/боковушки/Лодка.jpg" />
+                <img src="~/images/icons/Лодка.jpg" />
                 <div class="whiteSpace"></div>
                 <div class="nav-element-inside">
                     <p>Лодки</p>
@@ -26,7 +26,7 @@
         </div>
         <div class="nav-element" name="shlupki" id="shlupki">
             <a asp-action="bigboats" asp-controller="Catalog">
-                <img src="~/images/боковушки/Шлюпка.jpg" />
+                <img src="~/images/icons/Шлюпка.jpg" />
                 <div class="whiteSpace"></div>
                 <div class="nav-element-inside">
                     <p>Шлюпки</p>
@@ -35,16 +35,16 @@
         </div>
         <div class="nav-element" name="katera" id="katera">
             <a asp-action="motorboats" asp-controller="Catalog">
-                <img src="~/images/боковушки/Катер.jpg" />
+                <img src="~/images/icons/Катер.jpg" />
                 <div class="whiteSpace"></div>
                 <div class="nav-element-inside">
                     <p>Катера</p>
                 </div>
             </a>
         </div>
-        <div class="nav-element" name="lodiy" id="lodiy">
+        <div class="nav-element" name="ladiy" id="ladiy">
             <a asp-action="ladiy" asp-controller="Catalog">
-                <img src="~/images/боковушки/Ладья2.jpg" />
+                <img src="~/images/icons/Ладья.jpg" />
                 <div class="whiteSpace"></div>
                 <div class="nav-element-inside">
                     <p>Ладьи</p>
@@ -53,7 +53,7 @@
         </div>
         <div class="nav-element-choosen" name="sailboats" id="sailboats">
             <a asp-action="sailboats" asp-controller="Catalog">
-                <img src="~/images/боковушки/Парусник.jpg" />
+                <img src="~/images/icons/Парусник.jpg" />
                 <div class="whiteSpace"></div>
                 <div class="nav-element-inside">
                     <p>Парусники</p>
@@ -62,7 +62,7 @@
         </div>
         <div class="nav-element" name="models" id="models">
             <a asp-action="makets" asp-controller="Catalog">
-                <img src="~/images/icons/гребная_лодка.jpg" />
+                <img src="~/images/icons/Макет.jpg" />
                 <div class="whiteSpace"></div>
                 <div class="nav-element-inside">
                     <p>Макеты</p>
@@ -71,12 +71,12 @@
             </a>
         </div>
     </div>
-    <div name="sailboats-Sub" id="sailboats-Sub">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
-    <div name="lodki-Sub" id="lodki-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
-    <div name="shlupki-Sub" id="shlupki-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
-    <div name="katera-Sub" id="katera-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
-    <div name="lodiy-Sub" id="lodiy-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Lodiy-SubNav.cshtml")</div>
-    <div name="models-Sub" id="models-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
+    <div name="sailboats-Sub" id="sailboats-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
+    <div name="lodki-Sub" id="lodki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
+    <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
+    <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
+    <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
+    <div name="models-Sub" id="models-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
 
 </div>
 

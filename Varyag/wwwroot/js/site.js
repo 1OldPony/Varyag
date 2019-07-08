@@ -36,10 +36,10 @@ $(document).ready(function () {
         $("#katera-Sub").show();
     });
 
-    $("#lodiy").mouseenter(function () {
+    $("#ladiy").mouseenter(function () {
         hideAll();
-        $("#lodiy").attr("class", "nav-element-choosen");
-        $("#lodiy-Sub").show();
+        $("#ladiy").attr("class", "nav-element-choosen");
+        $("#ladiy-Sub").show();
     });
 
     $("#models").mouseenter(function () {
@@ -64,7 +64,7 @@ $(document).ready(function () {
                 if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                     && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
                     && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "lodiy" && event.target.id != "lodiy-Sub")
+                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
@@ -76,7 +76,7 @@ $(document).ready(function () {
                 if ((event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                     && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
                     && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "lodiy" && event.target.id != "lodiy-Sub")
+                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
@@ -88,7 +88,7 @@ $(document).ready(function () {
                 if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                     && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                     && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "lodiy" && event.target.id != "lodiy-Sub")
+                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
@@ -100,7 +100,7 @@ $(document).ready(function () {
                 if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                     && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                     && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                    && (event.currentTarget.id != "lodiy" && event.target.id != "lodiy-Sub")
+                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
@@ -108,7 +108,7 @@ $(document).ready(function () {
                     $("#katera-Sub").show();
                     break;
                 }
-            case "lodiy":
+            case "ladiy":
                 if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                     && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                     && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
@@ -116,8 +116,8 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
                     hideAll();
-                    $("#lodiy").attr("class", "nav-element-choosen");
-                    $("#lodiy-Sub").show();
+                    $("#ladiy").attr("class", "nav-element-choosen");
+                    $("#ladiy-Sub").show();
                 }
                 break;
             case "models":
@@ -125,7 +125,7 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                     && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
                     && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "lodiy" && event.target.id != "lodiy-Sub")) {
+                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
                     hideAll();
                     $("#models").attr("class", "nav-element-choosen");
                     $("#models-Sub").show();
@@ -142,19 +142,12 @@ function hideAll() {
     $("#lodki").attr("class", "nav-element");
     $("#shlupki").attr("class", "nav-element");
     $("#katera").attr("class", "nav-element");
-    $("#lodiy").attr("class", "nav-element");
+    $("#ladiy").attr("class", "nav-element");
     $("#models").attr("class", "nav-element");
     $("#models-Sub").hide()
     $("#sailboats-Sub").hide();
     $("#lodki-Sub").hide();
     $("#shlupki-Sub").hide();
     $("#katera-Sub").hide();
-    $("#lodiy-Sub").hide();
+    $("#ladiy-Sub").hide();
 };
-
-
-//function navigation() {
-//    $.ajax({
-//        url: @Url.Action("Sailboats", "Catalog")
-//    });
-//};

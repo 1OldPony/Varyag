@@ -9,7 +9,7 @@
 
 <div class="details-top">
     <div class="sheme-tth">
-        <div class="sheme"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" /></div>
+        <div class="sheme"><div class="fotorama" data-allowfullscreen="native"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" /></div></div>
         <div class="TTH-details">
             <table style="width:100%">
                 <tr>
@@ -17,105 +17,91 @@
                 </tr>
                 <tr>
                     <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
-                    <td class="table-space"></td>
-                    <td class="value">@Model.Length</td>
+                    <td class="value">@Model.Length&nbsp;м.</td>
                 </tr>
                 <tr>
                     <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
-                    <td class="table-space"></td>
-                    <td class="value">@Model.Windth</td>
+                    <td class="value">@Model.Windth&nbsp;м.</td>
                 </tr>
                 @if (@Model.Deep != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.Deep</td>
+                        <td class="value">@Model.Deep&nbsp;м.</td>
                     </tr>
                 }
                 @if (@Model.Volume != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.Volume</td>
+                        <td class="value">@Model.Volume&nbsp;т.</td>
                     </tr>
                 }
                 @if (@Model.Mass != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.Mass</td>
+                        <td class="value">@Model.Mass&nbsp;кг.</td>
                     </tr>
                 }
                 @if (@Model.NumberOfOars != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.NumberOfOars</td>
+                        <td class="value">@Model.NumberOfOars&nbsp;шт.</td>
                     </tr>
                 }
                 @if (@Model.EnginePower != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.EnginePower</td>
+                        <td class="value">@Model.EnginePower&nbsp;л.с.</td>
                     </tr>
                 }
                 @if (@Model.Speed != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.Speed</td>
+                        <td class="value">@Model.Speed&nbsp;узлов</td>
                     </tr>
                 }
                 @if (@Model.SailArea != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.SailArea</td>
+                        <td class="value">@Model.SailArea&nbsp;м<sup>2</sup></td>
                     </tr>
                 }
                 @if (@Model.SleepingAreas != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.SleepingAreas</td>
+                        <td class="value">@Model.SleepingAreas&nbsp;шт.</td>
                     </tr>
                 }
                 @if (@Model.PassengerCap != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.PassengerCap</td>
+                        <td class="value">@Model.PassengerCap&nbsp;чел.</td>
                     </tr>
                 }
                 @if (@Model.FuelCap != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.FuelCap</td>
+                        <td class="value">@Model.FuelCap&nbsp;л.</td>
                     </tr>
                 }@if (@Model.FreshWaterCap != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
-                        <td class="table-space"></td>
-                        <td class="value">@Model.FreshWaterCap</td>
+                        <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
                     </tr>
                 }
                 <tr>
                     <td class="characteristic">@Html.DisplayNameFor(model => model.Price)</td>
-                    <td class="table-space"></td>
-                    <td class="value">@Model.Price</td>
+                    <td class="value">@Model.Price&nbsp;т.р.</td>
                 </tr>
             </table>
         </div>

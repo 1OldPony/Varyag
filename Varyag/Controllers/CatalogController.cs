@@ -19,6 +19,7 @@ namespace Varyag.Controllers
 
         public IActionResult Sailboats()
         {
+            ViewBag.TopPic = "sailboats";
             return View();
         }
 

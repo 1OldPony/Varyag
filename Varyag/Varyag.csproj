@@ -9,7 +9,7 @@
     <None Include="Views\Accounts\Login.cshtml" />
     <None Include="Views\Accounts\Register-disabled.cshtml" />
     <None Include="Views\Catalog\Katera-SubNav.cshtml" />
-    <None Include="Views\Catalog\Lodiy-SubNav.cshtml" />
+    <None Include="Views\Catalog\Ladiy-SubNav.cshtml" />
     <None Include="Views\Catalog\Lodki-SubNav.cshtml" />
     <None Include="Views\Catalog\Models-SubNav.cshtml" />
     <None Include="Views\Catalog\ProjectDetails.cshtml" />

@@ -11,22 +11,28 @@
 <body>
     <div class="MyContainer" id="main">
         <div class="top-pic">
-            <img src="~/images/узкие/58-й.jpg">
+
+            @switch (@ViewBag.TopPic)
+            {
+                case "sailboats":
+                    <img src="~/images/узкие/58-й.jpg">
+                    break;
+                case "bigboats":
+                    <img src="~/images/узкие/атлична!2.jpg">
+                    break;
+                case "general":
+                    <img src="~/images/порезанный2.jpg">
+                    break;
+                default:
+                    break;
+            }
+
             <div class="logo">
                 <img src="~/images/Судоверфь Варяг.jpg">
             </div>
             <div class="contacts">
                 +7 814 273 35 80
             </div>
-        </div>
-        <div style="display:none">
-            <img src="~/images/узкие/52.jpg">
-        </div>
-        <div style="display:none">
-            <img src="~/images/узкие/атлична!2.jpg">
-        </div>
-        <div style="display:none">
-            <img src="~/images/порезанный2.jpg">
         </div>
         <div id="header" class="header">
             <div id="nav-top" class="nav-top">
