@@ -1,4 +1,7 @@
 ﻿
+/*//////////////////////////далее - грид!///////////////////////////////*/
+
+
 a {
     text-decoration: none;
     color: #183f61;
@@ -6,7 +9,6 @@ a {
 }
 
 #shlupki a {
-    /*min-width:185px;*/
 }
 
 p {
@@ -20,8 +22,12 @@ body {
     background-color: #e4e4e4;
 }
 
+.top-hat {
+    position: relative;
+}
+
 .top-pic {
-    /*display: none;*/
+    display: flex;
     position: relative;
 }
 
@@ -63,7 +69,6 @@ img {
     margin: auto;
     background-color: white;
     text-align: center;
-    /*position:fixed;*/
 }
 
 
@@ -83,17 +88,14 @@ img {
     text-align: center;
     margin: auto;
     max-width: 1350px;
-    /*min-width: 850px;*/
 }
 
 .catalog {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    width: 100%;
-    margin: auto;
-    /*min-width: 850px;*/
-    max-width: 1350px;
+    display: grid;
+    grid-template-areas: "boats bigboats kater ladya sailboat maket" "sub-boats sub-boats sub-boats sub-boats sub-boats sub-boats" "sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats" "sub-kater sub-kater sub-kater sub-kater sub-kater sub-kater" "sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya" "sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat" "sub-maket sub-maket sub-maket sub-maket sub-maket sub-maket";
+    grid-template-columns: 13.6% 11.6% 17% 17% 24.6% 16%;
+    grid-template-rows: 219px min-content min-content min-content min-content min-content min-content;
+    font-size: 22px;
 }
 
 .nav {
@@ -107,7 +109,7 @@ img {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .nav-element-top {
@@ -136,7 +138,6 @@ img {
     align-items: center;
     width: 100%;
     margin-top: 10px;
-    /*background-color: forestgreen;*/
 }
 
 .category {
@@ -154,12 +155,12 @@ img {
 .sub-nav {
     display: none;
     flex-direction: column;
-    min-width: 785.54px;
     font-size: 20px;
 }
 
 .sub-nav-elements {
     display: flex;
+    position: initial;
     width: 100%;
     max-width: 1350px;
     background-color: #ffffff;
@@ -171,7 +172,6 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 785.54px;
 }
 
 .sub-nav a {
@@ -181,35 +181,109 @@ img {
 .nav-element {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     flex-grow: 1;
-    /*min-width: 5.8em;*/
-    /*margin: 1%;*/
-    background-color: #d1e0f9;
 }
 
-    .nav-element .nav-element-inside {
-        height: 1.7em;
-    }
+#lodki.nav-element {
+    grid-area: boats;
+}
+
+#lodki.nav-element-choosen {
+    grid-area: boats;
+}
+
+#shlupki.nav-element {
+    grid-area: bigboats;
+}
+
+#shlupki.nav-element-choosen {
+    grid-area: bigboats;
+}
+
+#katera.nav-element {
+    grid-area: kater;
+}
+
+#katera.nav-element-choosen {
+    grid-area: kater;
+}
+
+#ladiy.nav-element {
+    grid-area: ladya;
+}
+
+#ladiy.nav-element-choosen {
+    grid-area: ladya;
+}
+
+#sailboats.nav-element {
+    grid-area: sailboat;
+}
+
+#sailboats.nav-element-choosen {
+    grid-area: sailboat;
+}
+
+#models.nav-element {
+    grid-area: maket;
+}
+
+#models.nav-element-choosen {
+    grid-area: maket;
+}
+
+#lodki-Sub.sub-nav {
+    grid-area: sub-boats;
+}
+
+#shlupki-Sub.sub-nav {
+    grid-area: sub-bigboats;
+}
+
+#katera-Sub.sub-nav {
+    grid-area: sub-kater;
+}
+
+#ladiy-Sub.sub-nav {
+    grid-area: sub-ladya;
+}
+
+#sailboats-Sub.sub-nav {
+    grid-area: sub-sailboat;
+}
+
+#models-Sub.sub-nav {
+    grid-area: sub-maket;
+}
+
+.nav-element .nav-element-inside {
+    height: 2em;
+    background-color: #d1e0f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .nav-element-choosen .nav-element-inside {
-    height: 1.7em;
+    height: 2em;
 }
 
 .nav-element img {
-    width: 100%
+    width: 100%;
+    margin: auto;
 }
 
 .nav-element-minor {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    /* height: 53px; */
     flex-grow: 1;
     font-size: 19px;
     flex-shrink: 1;
-    /*margin: 2px;*/
+    margin: 2px;
     background-color: rgb(255, 255, 255);
 }
 
@@ -224,7 +298,6 @@ img {
     align-items: center;
     width: auto;
     font-size: 23px;
-    /*height: 3em;*/
     flex-grow: 1;
     flex-shrink: 1;
     background-color: #aec9e0;
@@ -238,7 +311,6 @@ img {
     font-size: 23px;
     flex-grow: 1;
     flex-shrink: 1;
-    /*height: 3em;*/
     background-color: #aec9e0;
 }
 
@@ -250,13 +322,12 @@ img {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /*min-width: 5.8em;*/
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
     .nav-element-choosen img {
-        width: 100%
+        width: 100%;
     }
 
     .nav-element-choosen .nav-element-inside p {
@@ -266,6 +337,7 @@ img {
 
     .nav-element-choosen img {
         filter: opacity(80%);
+        margin: auto;
     }
 
 .nav-element-inside {
@@ -295,9 +367,8 @@ img {
 .projectImage {
     width: 32%;
     align-self: flex-end;
-    /* margin-left: 10px; */
-    /* margin-right: 10px; */
-    margin: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .whiteSpace {
@@ -316,7 +387,7 @@ img {
 }
 
     .TTH .value {
-        /*width:100px;*/
+        width: 100px;
     }
 
     .TTH .characteristic {
@@ -356,11 +427,11 @@ img {
 }
 
 .table-space {
-    /* width: 20px; */
+    width: 20px;
 }
 
 .value {
-    /*text-align: right;*/
+    text-align: right;
 }
 
 .characteristic {
@@ -384,9 +455,6 @@ img {
 
 .projectListItem {
     padding-bottom: 10px;
-    /* border-bottom-style: dashed; */
-    /* border-width: 1px; */
-    /* border-top-style: dashed; */
 }
 
 .cellLong {
@@ -397,8 +465,33 @@ img {
     display: none;
 }
 
-@media (max-width:1280px) {
+#shortNav.menu-top-element {
+    display: none;
+}
 
+#veryShortNav.menu-top-element {
+    display: none;
+}
+
+#mobileAbout {
+    display: none;
+}
+
+#mobileShips-Catalog {
+    display: none;
+}
+
+.explainText {
+    font-size: 19px;
+    text-align: left;
+    margin: 35px;
+}
+
+.cat-icons {
+    display: none;
+}
+
+@media (max-width:1280px) {
     .cellLong {
         display: none;
     }
@@ -413,7 +506,7 @@ img {
     .details-top {
         display: flex;
         flex-direction: column-reverse;
-        /*align-items: center;*/
+        align-items: center;
     }
 
     .sheme-tth {
@@ -442,9 +535,18 @@ img {
     #first-out.cellShort {
         display: none;
     }
+
+    #top-right {
+        display: initial;
+    }
 }
 
 @media (max-width:790px) {
+
+    #sailboats-Sub.sub-nav img {
+        width:auto;
+        margin-left:10px;
+    }
 
     .sheme-tth {
         flex-direction: column;
@@ -462,6 +564,7 @@ img {
 
     .projectImage {
         width: 50%;
+        margin: 10px;
     }
 
     .TTH {
@@ -473,7 +576,34 @@ img {
     }
 
     .catalog {
-        flex-direction: row;
+        grid-template-areas: "boats sub" "bigboats sub" "kater sub" "ladya sub" "sailboat sub" "maket sub";
+        grid-template-columns:1fr 1fr;
+        grid-template-rows: min-content min-content min-content min-content min-content min-content;
+        font-size: 22px;
+    }
+
+    #lodki-Sub.sub-nav {
+        grid-area: sub;
+    }
+
+    #shlupki-Sub.sub-nav {
+        grid-area: sub;
+    }
+
+    #katera-Sub.sub-nav {
+        grid-area: sub;
+    }
+
+    #ladiy-Sub.sub-nav {
+        grid-area: sub;
+    }
+
+    #sailboats-Sub.sub-nav {
+        grid-area: sub;
+    }
+
+    #models-Sub.sub-nav {
+        grid-area: sub;
     }
 
     .nav {
@@ -497,6 +627,101 @@ img {
     .cellShort {
         display: none;
     }
+
+    #top-left {
+        display: initial;
+    }
+
+    #shortNav.menu-top-element {
+        display: flex;
+    }
+
+    #news.nav-element-top {
+        display: none;
+    }
+
+    #SMI.nav-element-top {
+        display: none;
+    }
+
+    #about {
+        display: none;
+    }
+
+    #mobileAbout {
+        display: initial;
+    }
+
+    #ships-catalog {
+        display: none;
+    }
+
+    #mobileShips-Catalog {
+        display: initial;
+    }
+
+    .sub-nav-elements {
+        flex-direction: column-reverse;
+        height:371px;
+    }
+
+    #top-right.contacts {
+        /*display: none;*/
+    }
+
+    .sub-nav {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .nav-element-minor {
+        width: 100%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .nav-element-minor-choosen {
+        width: 100%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .nav-element-minor-choosen-current {
+        width: 100%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .sub-nav-elements p {
+        margin-block-start: 7px;
+        margin-block-end: 7px;
+    }
+
+    .whiteSpace {
+        display: none;
+    }
+
+    .nav-element {
+        margin-bottom: 2px;
+    }
+
+    .nav-element-choosen {
+        margin-bottom: 2px;
+    }
+
+    .nav-element .nav-element-inside {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .cat-icons {
+        display:initial;
+        width:100%;
+    }
+
+        .cat-icons img {
+            width:100%;
+        }
 }
 
 @media (max-width:740px) {
@@ -510,12 +735,24 @@ img {
     }
 }
 
-@media (max-width:620px){
+@media (max-width:620px) {
 
     #second-out.cellShort {
-        display:none;
+        display: none;
     }
 }
+
+@media (max-width:525px) {
+
+    #veryShortNav.menu-top-element {
+        display: flex;
+    }
+
+    #Goto-Pred.nav-element-top {
+        display: none;
+    }
+}
+
 
 @media (max-width:500px) {
 
@@ -537,7 +774,116 @@ img {
         display: none;
     }
 
-    .catalogItemBottom {
+    .explainText {
         display: none;
+    }
+
+    .category {
+        flex-direction: column;
+    }
+
+    .nav {
+        width: 100%;
+    }
+    
+    .nav-element .nav-element-inside {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .sub-nav {
+        margin-bottom:2px;
+    }
+
+    .catalog {
+        margin-top: 10px;
+        display: grid;
+        grid-template-areas: "boats" "sub-boats" "bigboats" "sub-bigboats" "kater" "sub-kater" "ladya" "sub-ladya" "sailboat" "sub-sailboat" "maket" "sub-maket";
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px min-content 50px min-content 50px min-content 50px min-content 50px min-content 50px min-content;
+    }
+
+    #lodki.nav-element, #lodki.nav-element-choosen {
+        grid-area: boats;
+    }
+
+    #lodki-Sub.sub-nav {
+        grid-area: sub-boats;
+    }
+
+    #shlupki.nav-element, #shlupki.nav-element-choosen {
+        grid-area: bigboats;
+    }
+
+    #shlupki-Sub.sub-nav {
+        grid-area: sub-bigboats;
+    }
+
+    #katera.nav-element, #katera.nav-element-choosen {
+        grid-area: kater;
+    }
+
+    #katera-Sub.sub-nav {
+        grid-area: sub-kater;
+    }
+
+    #ladiy.nav-element, #ladiy.nav-element-choosen {
+        grid-area: ladya;
+    }
+
+    #ladiy-Sub.sub-nav {
+        grid-area: sub-ladya;
+    }
+
+    #sailboats.nav-element, #sailboats.nav-element-choosen {
+        grid-area: sailboat;
+    }
+
+    #sailboats-Sub.sub-nav {
+        grid-area: sub-sailboat;
+    }
+
+    #models.nav-element, #models.nav-element-choosen {
+        grid-area: maket;
+    }
+
+    #models-Sub.sub-nav {
+        grid-area: sub-maket;
+    }
+
+    .nav-element-minor {
+        padding: unset;
+        margin: unset;
+    }
+
+    .nav-element-minor-choosen {
+        padding: unset;
+        margin: unset;
+    }
+
+    .nav-element-minor-choosen-current {
+        padding: unset;
+        margin: unset;
+    }
+
+    .top-pic {
+        display:none;
+    }
+
+    .logo {
+        position:initial;
+        width:100%;
+    }
+
+    .contacts {
+        display: flex;
+        flex-direction:column;
+        position: initial;
+        width: 100%;
+    }
+
+    .top-hat {
+        display:flex;
+        background-image:url(../images/доска.jpg)
     }
 }

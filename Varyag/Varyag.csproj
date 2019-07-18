@@ -8,6 +8,7 @@
   <ItemGroup>
     <None Include="Views\Accounts\Login.cshtml" />
     <None Include="Views\Accounts\Register-disabled.cshtml" />
+    <None Include="Views\Catalog\FotoGallery.cshtml" />
     <None Include="Views\Catalog\Katera-SubNav.cshtml" />
     <None Include="Views\Catalog\Ladiy-SubNav.cshtml" />
     <None Include="Views\Catalog\Lodki-SubNav.cshtml" />
@@ -40,6 +41,10 @@
     <None Include="Views\Shared\_FrontLayout.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="wwwroot\js\fotorama.js" />
+    <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\js\tinymce\jquery.tinymce.min.js" />
     <None Include="wwwroot\js\tinymce\langs\readme.md" />
     <None Include="wwwroot\js\tinymce\langs\ru.js" />
@@ -92,6 +97,7 @@
     <None Include="wwwroot\js\tinymce\themes\mobile\theme.min.js" />
     <None Include="wwwroot\js\tinymce\themes\silver\theme.min.js" />
     <None Include="wwwroot\js\tinymce\tinymce.min.js" />
+    <None Include="wwwroot\js\top-nav.js" />
   </ItemGroup>
 
 

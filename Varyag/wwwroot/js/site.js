@@ -3,11 +3,11 @@
 
 $(document).ready(function () {
 
-    $(window).scroll(function () {        
-        if ($(this).scrollTop() > 714) {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 714 && window.innerWidth > 790) {
             $('.sub-nav-elements').css("position", "fixed");
         }
-        else if ($(this).scrollTop() < 714) {
+        else/* if ($(this).scrollTop() < 714)*/ {
             $('.sub-nav-elements').css("position", "relative");
         }
     });

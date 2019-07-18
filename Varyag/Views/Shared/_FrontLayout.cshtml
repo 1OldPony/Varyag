@@ -10,12 +10,22 @@
 </head>
 <body>
     <div class="MyContainer" id="main">
-        <div class="top-pic">
-
+        <div class="top-hat">
             @switch (@ViewBag.TopPic)
             {
                 case "sailboats":
-                    <img src="~/images/узкие/58-й.jpg">
+            <div class="top-pic">
+                <div id="top-left">
+                    <img src="~/images/узкие/узкие порезанные/58-й лево.jpg" />
+                </div>
+                <div id="top-center">
+                    <img src="~/images/узкие/узкие порезанные/58-й центр.jpg" />
+                </div>
+                <div id="top-right">
+                    <img src="~/images/узкие/узкие порезанные/58-й право.jpg" />
+                </div>
+            </div>
+                    @*<img src="~/images/узкие/58-й.jpg">*@
                     break;
                 case "bigboats":
                     <img src="~/images/узкие/атлична!2.jpg">
@@ -26,16 +36,21 @@
                 default:
                     break;
             }
-
-            <div class="logo">
-                <img src="~/images/Судоверфь Варяг.jpg">
-            </div>
-            <div class="contacts">
-                +7 814 273 35 80
+                    <div class="logo" id="top-left">
+                        <img src="~/images/icons/Логотип для вставки.png">
+                    </div>
+            <div id="top-right" class="contacts">
+                <p>+7&nbsp;814&nbsp;273&nbsp;35&nbsp;80</p>
+                <p>varyag@onego.ru</p>
             </div>
         </div>
         <div id="header" class="header">
             <div id="nav-top" class="nav-top">
+                <div id="mobileShips-Catalog" class="nav-element-top">
+                    <div class="nav-element-inside">
+                        КАТАЛОГ
+                    </div>
+                </div>
                 <div id="ships-catalog" class="nav-element-top">
                     <div class="nav-element-inside">
                         <a href="/">КАТАЛОГ</a>
@@ -51,22 +66,27 @@
                         <a href="/">МЫ В СМИ</a>
                     </div>
                 </div>
-                <div id="About" class="nav-element-top">
+                <div id="mobileAbout" class="nav-element-top">
+                    <div class="nav-element-inside">
+                        О НАС
+                    </div>
+                </div>
+                <div id="about" class="nav-element-top">
                     <div class="nav-element-inside">
                         <a href="">О НАС</a>
                     </div>
                 </div>
-                <div id="Contacts" class="nav-element-top">
+                <div id="contacts" class="nav-element-top">
                     <div class="nav-element-inside">
                         <a href="/">КОНТАКТЫ</a>
                     </div>
                 </div>
-                <div id="Turism" class="nav-element-top">
+                <div id="turism" class="nav-element-top">
                     <div class="nav-element-inside">
                         <a href="/">ТУРИЗМ</a>
                     </div>
                 </div>
-                <div id="Goto-Predistinacia" class="nav-element-top" style="border-right:ridge">
+                <div id="Goto-Pred" class="nav-element-top" style="border-right:ridge">
                     <div class="nav-element-inside">
                         <div>
                             <input id="cat" type="number" value="0" hidden />
