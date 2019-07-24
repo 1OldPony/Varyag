@@ -26,6 +26,7 @@ $(document).ready(function () {
         function show() {
             if (categorysState === 1) {
                 categorysState = 2;
+                aboutState = 1;
                 HideAll();
                 var shCat = $("#cat").val();
                 if (categorysState === 2) {
@@ -51,6 +52,7 @@ $(document).ready(function () {
         function show () {
             if (aboutState === 1) {
                 aboutState = 2;
+                categorysState = 1;
                 HideAll();
                 ShowAbout();
             }

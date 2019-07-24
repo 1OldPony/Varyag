@@ -34,7 +34,7 @@ body {
 .logo {
     opacity: 1;
     position: absolute;
-    top: 21%;
+    top: 11%;
     left: 6%;
     width: 15%;
 }
@@ -42,10 +42,9 @@ body {
 .contacts {
     opacity: 1;
     position: absolute;
-    top: 24%;
-    right: 4%;
-    width: 15%;
-    font-size: 25px;
+    top: 36%;
+    right: 0.5%;
+    width: 24%;
 }
 
 img {
@@ -155,14 +154,12 @@ img {
 .sub-nav {
     display: none;
     flex-direction: column;
-    font-size: 20px;
 }
 
 .sub-nav-elements {
     display: flex;
     position: initial;
     width: 100%;
-    max-width: 1350px;
     background-color: #ffffff;
     align-items: center;
     top: 0px;
@@ -176,6 +173,7 @@ img {
 
 .sub-nav a {
     width: 100%;
+    /*height:53px;*/
 }
 
 .nav-element {
@@ -349,11 +347,21 @@ img {
     margin: 10px;
 }
 
-.singleProject {
+/*/////////////перебиваю на грид/////////////*/
+
+/*.singleProject {
     display: flex;
     align-items: flex-start;
     max-width: 1330px;
     width: 100%;
+    font-size: 18px;
+}*/
+
+.singleProject {
+    display: grid;
+    grid-template-areas: "sheme foto name" "sheme foto freeSpaceTop" "sheme foto tth" "sheme foto freeSpaceBottom" "sheme foto price"; 
+    grid-template-columns: 35% 35% 30%;
+    grid-template-rows: 20px auto min-content auto 20px;
     font-size: 18px;
 }
 
@@ -365,10 +373,14 @@ img {
     }
 
 .projectImage {
-    width: 32%;
+    grid-area:foto;
     align-self: flex-end;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+#short.projectImage {
+    grid-area:sheme;
 }
 
 .whiteSpace {
@@ -377,13 +389,14 @@ img {
 }
 
 .TTH {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     justify-content: center;
     width: 29%;
-    align-self: center;
+    align-self: center;*/
+    grid-area:tth;
     text-align: left;
-    margin-left: 10px;
+    align-self:center;
 }
 
     .TTH .value {
@@ -402,13 +415,21 @@ img {
 }
 
 .catalogItemTop {
+    grid-area:name;
     text-align: center;
-    margin-bottom: 3%;
 }
 
 .catalogItemBottom {
+    grid-area: price;
     text-align: left;
-    margin-top: 3%;
+}
+
+#top.gridFreeSpace {
+    grid-area: freeSpaceTop;
+}
+
+#bottom.gridFreeSpace {
+    grid-area: freeSpaceBottom;
 }
 
 .details-top {
@@ -499,6 +520,10 @@ img {
     .cellShort {
         display: table-row;
     }
+
+    #pre-first-out.cellShort {
+        display:none;
+    }
 }
 
 @media (max-width:1023px) {
@@ -536,16 +561,27 @@ img {
         display: none;
     }
 
-    #top-right {
-        display: initial;
+}
+
+@media (max-width:960px) {
+    .singleProject {
+        grid-template-rows: 45px auto min-content auto 20px;
+    }
+
+    #post-first-out.cellShort {
+        display:none;
     }
 }
 
 @media (max-width:790px) {
 
+    .projects {
+        margin:5px;
+    }
+
     #sailboats-Sub.sub-nav img {
-        width:auto;
-        margin-left:10px;
+        width: auto;
+        margin: auto;
     }
 
     .sheme-tth {
@@ -562,22 +598,13 @@ img {
         display: none;
     }
 
-    .projectImage {
-        width: 50%;
-        margin: 10px;
-    }
-
-    .TTH {
-        width: 50%
-    }
-
     .sheme {
         width: 100%;
     }
 
     .catalog {
         grid-template-areas: "boats sub" "bigboats sub" "kater sub" "ladya sub" "sailboat sub" "maket sub";
-        grid-template-columns:1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: min-content min-content min-content min-content min-content min-content;
         font-size: 22px;
     }
@@ -662,7 +689,7 @@ img {
 
     .sub-nav-elements {
         flex-direction: column-reverse;
-        height:371px;
+        height: 371px;
     }
 
     #top-right.contacts {
@@ -715,16 +742,29 @@ img {
     }
 
     .cat-icons {
-        display:initial;
-        width:100%;
+        display: initial;
+        width: 100%;
     }
 
         .cat-icons img {
-            width:100%;
+            width: 100%;
         }
+
+    #pre-first-out.cellShort {
+        display: none;
+    }
+
+    /*#pre-first-out.cellLong {
+        display: table-row;
+    }*/
+
+    .singleProject {
+        grid-template-columns: 0% 57% 43%;
+        grid-template-rows:20px auto min-content auto 20px;
+    }
 }
 
-@media (max-width:740px) {
+@media (max-width:786px) {
 
     .cellLong {
         display: none;
@@ -732,6 +772,26 @@ img {
 
     .cellShort {
         display: table-row;
+    }
+
+    #post-first-out.cellShort {
+        display: table-row;
+    }
+
+    #first-out.cellShort {
+        display: table-row;
+    }
+}
+
+@media (max-width:676px) {
+
+    .singleProject {
+        grid-template-columns: 0% 57% 43%;
+        grid-template-rows: 45px auto min-content auto 20px;
+    }
+
+    #first-out.cellShort {
+        display:none;
     }
 }
 
@@ -768,7 +828,7 @@ img {
     }
 }
 
-@media (max-width:375px) {
+@media (max-width:383px) {
 
     #fifth-out.cellShort {
         display: none;
@@ -872,7 +932,7 @@ img {
 
     .logo {
         position:initial;
-        width:100%;
+        width:119px;
     }
 
     .contacts {
@@ -880,10 +940,29 @@ img {
         flex-direction:column;
         position: initial;
         width: 100%;
+        align-self:center;
     }
 
     .top-hat {
         display:flex;
-        background-image:url(../images/доска.jpg)
+        background-image:url(../images/небо.png)
+    }
+
+    .logo img {
+        width:90px;
+        height:90px;
+    }
+
+    .singleProject {
+        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price";
+        /*grid-template-rows: 68px auto min-content auto 20px;*/
+    }
+
+    #post-first-out.cellShort {
+        display:none;
+    }
+
+    .catalogItemTop {
+        align-self:center;
     }
 }
