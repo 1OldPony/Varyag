@@ -125,6 +125,8 @@ namespace Varyag.Models.ViewModels
 
         [DisplayName("Схема")]
         public IFormFile ShipSheme { get; set; }
+        [DisplayName("Схема с расположением")]
+        public IFormFile ShipShemeFull { get; set; }
         [DisplayName("Главная фотка")]
         public IFormFile MainFoto { get; set; }
     }

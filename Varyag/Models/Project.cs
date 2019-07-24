@@ -120,11 +120,14 @@ namespace Varyag.Models
 
         [DisplayName("Схема")]
         public byte[] ShipSheme { get; set; }
+        [DisplayName("Схема с расположением")]
+        public byte[] ShipShemeFull { get; set; }
         [DisplayName("Главная фотка")]
         public byte[] MainFoto { get; set; }
 
         public List<Foto> ShipFotos { get; set; }
     }
+
     public enum ShipType
     {
         Выберите_Тип, Лодка, Катер, Ладья, Парусник, Шлюпка, Макет

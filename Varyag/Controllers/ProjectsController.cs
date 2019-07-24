@@ -29,9 +29,14 @@ namespace Varyag.Controllers
                 byte[] image = project.ShipSheme;
                 return File(image, "image/jpg");
             }
-            else
+            else if(fot == "main")
             {
                 byte[] image = project.MainFoto;
+                return File(image, "image/jpg");
+            }
+            else
+            {
+                byte[] image = project.ShipShemeFull;
                 return File(image, "image/jpg");
             }
         }
@@ -132,6 +137,11 @@ namespace Varyag.Controllers
                     await model.MainFoto.CopyToAsync(memoryStream);
                     project.MainFoto = memoryStream.ToArray();
                 }
+                using (var memoryStream = new MemoryStream())
+                {
+                    await model.ShipShemeFull.CopyToAsync(memoryStream);
+                    project.ShipShemeFull = memoryStream.ToArray();
+                }
                 _context.Add(project);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -219,7 +229,6 @@ namespace Varyag.Controllers
 
                     if (model.ShipSheme != null)
                     {
-                        
                         using (var memoryStream = new MemoryStream())
                         {
                             await model.ShipSheme.CopyToAsync(memoryStream);
@@ -236,6 +245,14 @@ namespace Varyag.Controllers
                         }
                     }
 
+                    if (model.ShipShemeFull != null)
+                    {
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await model.ShipShemeFull.CopyToAsync(memoryStream);
+                            project.ShipShemeFull = memoryStream.ToArray();
+                        }
+                    }
                     _context.Update(project);
                     await _context.SaveChangesAsync();
                 }

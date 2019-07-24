@@ -103,6 +103,12 @@
                         <td>
                             <img width="120" height="90" src="@Url.Action("ProjectImageRender", new { id = Model.ProjectID, fot = "main"})">
                         </td>
+                        <td>
+                            Основная фотка
+                        </td>
+                        <td>
+                            <img width="120" height="90" src="@Url.Action("ProjectImageRender", new { id = Model.ProjectID, fot = "shemefull"})">
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -112,6 +118,10 @@
                         <td colspan="2">
                             <input type="file" value="" asp-for="MainFoto" class="form-control" />
                             <span asp-validation-for="MainFoto" class="text-danger"></span>
+                        </td>
+                        <td colspan="2">
+                            <input type="file" value="" asp-for="ShipShemeFull" class="form-control" />
+                            <span asp-validation-for="ShipShemeFull" class="text-danger"></span>
                         </td>
                     </tr>
                 </table>

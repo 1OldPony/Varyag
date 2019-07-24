@@ -17,7 +17,7 @@ p {
 }
 
 body {
-    color: #2d5d88;
+    color: #183f61;
     margin: 0px;
     background-color: #e4e4e4;
 }
@@ -92,7 +92,7 @@ img {
 .catalog {
     display: grid;
     grid-template-areas: "boats bigboats kater ladya sailboat maket" "sub-boats sub-boats sub-boats sub-boats sub-boats sub-boats" "sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats" "sub-kater sub-kater sub-kater sub-kater sub-kater sub-kater" "sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya" "sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat" "sub-maket sub-maket sub-maket sub-maket sub-maket sub-maket";
-    grid-template-columns: 13.6% 11.6% 17% 17% 24.6% 16%;
+    grid-template-columns: 13.6% 11.9% 17% 17% 24.6% 16%;
     grid-template-rows: 219px min-content min-content min-content min-content min-content min-content;
     font-size: 22px;
 }
@@ -163,6 +163,7 @@ img {
     background-color: #ffffff;
     align-items: center;
     top: 0px;
+    max-width:1350px;
 }
 
 .sub-nav-current {
@@ -173,7 +174,89 @@ img {
 
 .sub-nav a {
     width: 100%;
-    /*height:53px;*/
+}
+
+#lodki.nav-element-choosen {
+    grid-area: boats;
+}
+
+.nav-element-choosen .nav-element-grid {
+    display: grid;
+    grid-template-areas: "icon" "whiteSpace" "text";
+    grid-template-columns: auto;
+    grid-template-rows: auto 10px auto;
+}
+
+#lodki.nav-element-grid img {
+    grid-area: icon;
+}
+
+#lodki.nav-element-grid .whiteSpace {
+    grid-area: whiteSpace;
+}
+
+#lodki.nav-element-grid .nav-element-inside {
+    grid-area: text;
+}
+
+#shlupki.nav-element-grid img {
+    grid-area: icon;
+}
+
+#shlupki.nav-element-grid .whiteSpace {
+    grid-area: whiteSpace;
+}
+
+#shlupki.nav-element-grid .nav-element-inside {
+    grid-area: text;
+}
+
+#katera.nav-element-grid img {
+    grid-area: icon;
+}
+
+#katera.nav-element-grid .whiteSpace {
+    grid-area: whiteSpace;
+}
+
+#katera.nav-element-grid .nav-element-inside {
+    grid-area: text;
+}
+
+#ladiy.nav-element-grid img {
+    grid-area: icon;
+}
+
+#ladiy.nav-element-grid .whiteSpace {
+    grid-area: whiteSpace;
+}
+
+#ladiy.nav-element-grid .nav-element-inside {
+    grid-area: text;
+}
+
+#sailboats.nav-element-grid img {
+    grid-area: icon;
+}
+
+#sailboats.nav-element-grid .whiteSpace {
+    grid-area: whiteSpace;
+}
+
+#sailboats.nav-element-grid .nav-element-inside {
+    grid-area: text;
+}
+
+#models.nav-element-grid img {
+    grid-area: icon;
+}
+
+#models.nav-element-grid .whiteSpace {
+    grid-area: whiteSpace;
+}
+
+#models.nav-element-grid .nav-element-inside {
+    grid-area: text;
 }
 
 .nav-element {
@@ -185,10 +268,6 @@ img {
 }
 
 #lodki.nav-element {
-    grid-area: boats;
-}
-
-#lodki.nav-element-choosen {
     grid-area: boats;
 }
 
@@ -331,6 +410,7 @@ img {
     .nav-element-choosen .nav-element-inside p {
         color: #e00e0e;
         font-size: 26px;
+        margin-block-start: 4px;
     }
 
     .nav-element-choosen img {
@@ -346,16 +426,6 @@ img {
     flex-direction: column;
     margin: 10px;
 }
-
-/*/////////////перебиваю на грид/////////////*/
-
-/*.singleProject {
-    display: flex;
-    align-items: flex-start;
-    max-width: 1330px;
-    width: 100%;
-    font-size: 18px;
-}*/
 
 .singleProject {
     display: grid;
@@ -389,11 +459,6 @@ img {
 }
 
 .TTH {
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 29%;
-    align-self: center;*/
     grid-area:tth;
     text-align: left;
     align-self:center;
@@ -754,14 +819,15 @@ img {
         display: none;
     }
 
-    /*#pre-first-out.cellLong {
-        display: table-row;
-    }*/
-
     .singleProject {
         grid-template-columns: 0% 57% 43%;
         grid-template-rows:20px auto min-content auto 20px;
     }
+
+.nav-element-choosen .nav-element-inside p {
+    margin-block-start: 0px;
+}
+
 }
 
 @media (max-width:786px) {
@@ -955,7 +1021,6 @@ img {
 
     .singleProject {
         grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price";
-        /*grid-template-rows: 68px auto min-content auto 20px;*/
     }
 
     #post-first-out.cellShort {
@@ -964,5 +1029,9 @@ img {
 
     .catalogItemTop {
         align-self:center;
+    }
+
+    .nav-element-choosen .nav-element-inside p {
+        margin-block-start: 2px;
     }
 }
