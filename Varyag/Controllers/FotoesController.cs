@@ -18,7 +18,7 @@ namespace Varyag.Controllers
         {
             _context = context;
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult> ImageRender(int? id)
         {
             //Foto foto;

@@ -89,6 +89,13 @@ img {
     max-width: 1350px;
 }
 
+.MyContainer1 {
+    font-family: Tahoma, 'Gabriela', Arial, sans-serif;
+    background-color: white;
+    text-align: initial;
+    margin: auto;
+}
+
 .catalog {
     display: grid;
     grid-template-areas: "boats bigboats kater ladya sailboat maket" "sub-boats sub-boats sub-boats sub-boats sub-boats sub-boats" "sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats" "sub-kater sub-kater sub-kater sub-kater sub-kater sub-kater" "sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya" "sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat" "sub-maket sub-maket sub-maket sub-maket sub-maket sub-maket";
@@ -115,6 +122,7 @@ img {
     justify-content: center;
     display: flex;
     background-color: #f3e0b6;
+    /*background-color: #ffcb73;*/
     margin: auto;
     cursor: pointer;
     flex-grow: 1;
@@ -359,8 +367,7 @@ img {
     /* height: 53px; */
     flex-grow: 1;
     font-size: 19px;
-    flex-shrink: 1;
-    margin: 2px;
+    /*margin: 2px;*/
     background-color: rgb(255, 255, 255);
 }
 
@@ -374,9 +381,9 @@ img {
     justify-content: center;
     align-items: center;
     width: auto;
-    font-size: 23px;
+    font-size: 19px;
+    /*font-size: 23px;*/
     flex-grow: 1;
-    flex-shrink: 1;
     background-color: #aec9e0;
 }
 
@@ -387,12 +394,13 @@ img {
     width: auto;
     font-size: 23px;
     flex-grow: 1;
-    flex-shrink: 1;
     background-color: #aec9e0;
 }
 
-.nav-element-minor-choosen .nav-element-inside p {
+.nav-element-minor-choosen p {
     color: #e00e0e;
+    /*margin-block-start: 6px;*/
+    /*margin-block-end: 6px;*/
 }
 
 .nav-element-choosen {
@@ -439,8 +447,10 @@ img {
         margin-top: 0px
     }
 
-    .singleProject:hover {
-    }
+#admin.singleProject {
+    max-width:1350px;
+    margin-right:5px;
+}
 
 .projectImage {
     grid-area:foto;
@@ -754,7 +764,6 @@ img {
 
     .sub-nav-elements {
         flex-direction: column-reverse;
-        height: 371px;
     }
 
     #top-right.contacts {
@@ -824,9 +833,10 @@ img {
         grid-template-rows:20px auto min-content auto 20px;
     }
 
-.nav-element-choosen .nav-element-inside p {
-    margin-block-start: 0px;
-}
+    .nav-element-choosen .nav-element-inside p {
+        margin-block-start: 0px;
+        margin-block-end: 2px;
+    }
 
 }
 

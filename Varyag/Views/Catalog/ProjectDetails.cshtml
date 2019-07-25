@@ -9,7 +9,11 @@
 
 <div class="details-top">
     <div class="sheme-tth">
-        <div class="sheme"><div class="fotorama" data-allowfullscreen="native"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" /></div></div>
+        <div class="sheme">
+            <div class="fotorama" data-allowfullscreen="native">
+                <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" />
+            </div>
+        </div>
         <div class="TTH-details">
             <table style="width:100%">
                 <tr>
@@ -108,8 +112,7 @@
     </div>
     <div class="galery">
         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-            <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "main"})" />
-            <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "sheme"})" />
+            @await Component.InvokeAsync("Fotorama", new { shipProjectId = Model.ProjectID })
         </div>
     </div>
 </div>

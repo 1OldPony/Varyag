@@ -67,6 +67,17 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
                     && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
                 {
+                    var catalog = $('.catalog').height();
+                    var header = $('.header').height();
+                    var tophat = $('.top-hat').height();
+                    var height = tophat + header + catalog;
+                    if ($(window).width() < 383) {
+                        if (event.pageY < height) {
+                            hideAll();
+                            $("#sailboats").attr("class", "nav-element-choosen");
+                            $("#sailboats-Sub").show();
+                        }
+                    }
                     hideAll();
                     $("#sailboats").attr("class", "nav-element-choosen");
                     $("#sailboats-Sub").show();

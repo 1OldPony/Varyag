@@ -1,0 +1,7 @@
+﻿@model IEnumerable<Varyag.Models.Foto>
+
+@foreach (var item in Model)
+{
+    <img alt="@item.Alt" title="@item.Name" src="@Url.Action("ImageRender", "Fotoes", new { id = item.FotoID})">
+
+}

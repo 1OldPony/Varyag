@@ -1,223 +1,305 @@
 ﻿@model IEnumerable<Varyag.Models.Project>
-
 @{
     ViewData["Title"] = "Проекты";
 }
+<div class="MyContainer1">
+    <h1>Проекты:</h1>
+    <p>
+        <a asp-action="Create">Добавить проект</a>
+    </p>
+    @foreach (var item in Model)
+    {
 
-<h1>Проекты:</h1>
+        <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
 
-<p>
-    <a asp-action="Create">Добавить проект</a>
-</p>
-
-@foreach (var item in Model)
-{
-
-    <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
-
-    <p style="margin:20px">Отображение в каталоге</p>
-    <div class="representation">
-        <div class="repres-top-bottom" style="margin-bottom:20px">
-            <div class="inner-repres">
-                Схема
-            </div>
-            <div class="inner-repres">
-                Фотка
-            </div>
-            <div class="inner-repres" style="flex-grow:3">
-                Краткий текст
-            </div>
-        </div>
-        <div class="repres-top-bottom" style="border-style:groove">
-            <div class="inner-repres">
-                <img src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "sheme"})">
-            </div>
-            <div class="inner-repres">
-                <img src="@Url.Action("ProjectImageRender", new { id = item.ProjectID, fot = "main"})">
-            </div>
-            <div class="inner-repres" style="width:33%; padding:20px;">
-                <div>
-                    <table>
-                        <tr>
-                            <td colspan="2">@item.Name</td>
+        <p style="margin:20px">Отображение в каталоге</p>
+        <div id="admin" class="singleProject">
+            <div id="short" class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "sheme"})" alt="@item.Name" title="@item.Name" /></div>
+            <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "main"})" alt="@item.Name" title="@item.Name" /></div>
+            <div class="catalogItemTop">@item.Name</div>
+            <div id="top" class="gridFreeSpace"></div>
+            <div class="TTH">
+                <table>
+                    <tr class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
+                        <td class="value">@item.Length&nbsp;м.</td>
+                    </tr>
+                    <tr id="fifth-out" class="cellShort">
+                        <td class="characteristic">Длина</td>
+                        <td class="value">@item.Length&nbsp;м.</td>
+                    </tr>
+                    <tr class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
+                        <td class="value">@item.Windth&nbsp;м.</td>
+                    </tr>
+                    <tr id="fourth-out" class="cellShort">
+                        <td class="characteristic">Ширина</td>
+                        <td class="value">@item.Windth&nbsp;м.</td>
+                    </tr>
+                    <tr class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                        <td class="value">@item.Deep&nbsp;м.</td>
+                    </tr>
+                    <tr id="post-first-out" class="cellShort">
+                        <td class="characteristic">Осадка</td>
+                        <td class="value">@item.Deep&nbsp;м.</td>
+                    </tr>
+                    @if (@item.Mass != null)
+                    {
+                        <tr class="cellLong">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                            <td class="value">@item.Mass&nbsp;кг.</td>
                         </tr>
-                        <tr>
-                            <td>@Html.DisplayNameFor(model => model.Length)</td>
-                            <td>@item.Length</td>
-                        </tr>
-                        @if (@item.Volume != null)
+                        <tr id="first-out" class="cellShort">
+                            <td class="characteristic">Масса</td>
+                            <td class="value">@item.Mass&nbsp;кг.</td>
+                        </tr>}
+                    <tr class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                        <td class="value">@item.PassengerCap&nbsp;чел.</td>
+                    </tr>
+                    <tr id="fird-out" class="cellShort">
+                        <td class="characteristic">Пассажиры</td>
+                        <td class="value">@item.PassengerCap&nbsp;чел.</td>
+                    </tr>
+                    <tr class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                        @if (@item.SleepingAreas != null)
                         {
-                            <tr>
-                                <td>@Html.DisplayNameFor(model => model.Volume)</td>
-                                <td>@item.Volume</td>
-                            </tr>
-                        }
-                        @if (@item.Mass != null)
+                            <td class="value">@item.SleepingAreas&nbsp;шт.</td>}
+                        else
                         {
-                            <tr>
-                                <td>@Html.DisplayNameFor(model => model.Mass)</td>
-                                <td>@item.Mass</td>
-                            </tr>
-                        }
-                        <tr>
-                            <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
-                            <td>@item.PassengerCap</td>
-                        </tr>
-                        <tr>
-                            <td>@Html.DisplayNameFor(model => model.Price)</td>
-                            <td>@item.Price</td>
-                        </tr>
-                    </table>
-                </div>
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr id="second-out" class="cellShort">
+                        <td class="characteristic">Койкоместа</td>
+                        @if (@item.SleepingAreas != null)
+                        {
+                            <td class="value">@item.SleepingAreas&nbsp;шт.</td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                        @if (@item.SailArea != null)
+                        {
+                            <td class="value">@item.SailArea&nbsp;м<sup>2</sup></td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr id="first-out" class="cellShort">
+                        <td class="characteristic">Паруса</td>
+                        @if (@item.SailArea != null)
+                        {
+                            <td class="value">@item.SailArea&nbsp;м<sup>2</sup></td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                        @if (@item.EnginePower != null)
+                        {
+                            <td class="value">@item.EnginePower&nbsp;л.с.</td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr id="first-out" class="cellShort">
+                        <td class="characteristic">Двигатель</td>
+                        @if (@item.EnginePower != null)
+                        {
+                            <td class="value">@item.EnginePower&nbsp;л.с.</td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr id="pre-first-out" class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                        @if (@item.FuelCap != null)
+                        {
+                            <td class="value">@item.FuelCap&nbsp;л.</td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr id="pre-first-out" class="cellShort">
+                        <td class="characteristic">Топливо</td>
+                        @if (@item.FuelCap != null)
+                        {
+                            <td class="value">@item.FuelCap&nbsp;л.</td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr id="pre-first-out" class="cellLong">
+                        <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                        @if (@item.FreshWaterCap != null)
+                        {
+                            <td class="value">@item.FreshWaterCap&nbsp;л.</td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                    <tr id="pre-first-out" class="cellShort">
+                        <td class="characteristic">Пресная вода</td>
+                        @if (@item.FreshWaterCap != null)
+                        {
+                            <td class="value">@item.FreshWaterCap&nbsp;л.</td>}
+                        else
+                        {
+                            <td class="value">-</td>}
+                    </tr>
+                </table>
             </div>
+            <div id="bottom" class="gridFreeSpace"></div>
+            <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @item.Price&nbsp;тыс.р.</div>
         </div>
-    </div>
 
-    <p style="margin:20px">ДАННЫЕ</p>
+        <p style="margin:20px">ДАННЫЕ</p>
+        <table class="table">
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Length)</td>
+                <td>@Html.DisplayNameFor(model => model.Windth)</td>
+                <td>@Html.DisplayNameFor(model => model.Deep)</td>
+                <td>@Html.DisplayNameFor(model => model.Volume)</td>
+                <td>@Html.DisplayNameFor(model => model.Mass)</td>
+                <td>@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                <td>@Html.DisplayNameFor(model => model.EnginePower)</td>
+                <td>@Html.DisplayNameFor(model => model.Speed)</td>
+                <td>@Html.DisplayNameFor(model => model.SailArea)</td>
+                <td>@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
+                <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                <td>@Html.DisplayNameFor(model => model.Price)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Length)</td>
+                <td>@Html.DisplayFor(modelItem => item.Windth)</td>
+                <td>@Html.DisplayFor(modelItem => item.Deep)</td>
+                <td>@Html.DisplayFor(modelItem => item.Volume)</td>
+                <td>@Html.DisplayFor(modelItem => item.Mass)</td>
+                <td>@Html.DisplayFor(modelItem => item.NumberOfOars)</td>
+                <td>@Html.DisplayFor(modelItem => item.EnginePower)</td>
+                <td>@Html.DisplayFor(modelItem => item.Speed)</td>
+                <td>@Html.DisplayFor(modelItem => item.SailArea)</td>
+                <td>@Html.DisplayFor(modelItem => item.SleepingAreas)</td>
+                <td>@Html.DisplayFor(modelItem => item.PassengerCap)</td>
+                <td>@Html.DisplayFor(modelItem => item.FuelCap)</td>
+                <td>@Html.DisplayFor(modelItem => item.FreshWaterCap)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+            </tr>
+            <tr>
+                <td colspan="14">
+                    <div style="display:flex; justify-content:space-between">
+                        <div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.BoatRow) @Html.DisplayFor(modelItem => item.BoatRow)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.BoatSail) @Html.DisplayFor(modelItem => item.BoatSail)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.BoatTraditional) @Html.DisplayFor(modelItem => item.BoatTraditional)
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.BoatYal) @Html.DisplayFor(modelItem => item.BoatYal)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.KaterRow) @Html.DisplayFor(modelItem => item.KaterRow)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.Botik) @Html.DisplayFor(modelItem => item.Botik)
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.Motosailer) @Html.DisplayFor(modelItem => item.Motosailer)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.KaterCabin) @Html.DisplayFor(modelItem => item.KaterCabin)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.KaterFish) @Html.DisplayFor(modelItem => item.KaterFish)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.KaterPass) @Html.DisplayFor(modelItem => item.KaterPass)
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.LadyaRow) @Html.DisplayFor(modelItem => item.LadyaRow)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.LadyaSail) @Html.DisplayFor(modelItem => item.LadyaSail)
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.Yacht) @Html.DisplayFor(modelItem => item.Yacht)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.Shvertbot) @Html.DisplayFor(modelItem => item.Shvertbot)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.SailboatStudy) @Html.DisplayFor(modelItem => item.SailboatStudy)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.SailboatHistorical) @Html.DisplayFor(modelItem => item.SailboatHistorical)
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.MaketStudy) @Html.DisplayFor(modelItem => item.MaketStudy)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.MaketCinema) @Html.DisplayFor(modelItem => item.MaketCinema)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.MaketMuseum) @Html.DisplayFor(modelItem => item.MaketMuseum)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.MaketDesign) @Html.DisplayFor(modelItem => item.MaketDesign)
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.KaterProject) @Html.DisplayFor(modelItem => item.KaterProject)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.LadyaProject) @Html.DisplayFor(modelItem => item.LadyaProject)
+                            </div>
+                            <div>
+                                @Html.DisplayNameFor(model => model.SailboatProject) @Html.DisplayFor(modelItem => item.SailboatProject)
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="14">@Html.DisplayNameFor(model => model.Description)</td>
+            </tr>
+            <tr>
+                <td colspan="14">
+                    @Html.Raw(item.Description)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr><td colspan="14">@await Component.InvokeAsync("ProjectFoto", new { shipProjectId = item.ProjectID })</td></tr>
+            <tr>
+                <td colspan="14">
+                    <a asp-action="Edit" asp-route-id="@item.ProjectID">Редактировать проект</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ProjectID">Удалить проект</a>
+                </td>
+            </tr>
+        </table>
+    }
 
-    <table class="table">
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.Length)</td>
-            <td>@Html.DisplayNameFor(model => model.Windth)</td>
-            <td>@Html.DisplayNameFor(model => model.Deep)</td>
-            <td>@Html.DisplayNameFor(model => model.Volume)</td>
-            <td>@Html.DisplayNameFor(model => model.Mass)</td>
-            <td>@Html.DisplayNameFor(model => model.NumberOfOars)</td>
-            <td>@Html.DisplayNameFor(model => model.EnginePower)</td>
-            <td>@Html.DisplayNameFor(model => model.Speed)</td>
-            <td>@Html.DisplayNameFor(model => model.SailArea)</td>
-            <td>@Html.DisplayNameFor(model => model.SleepingAreas)</td>
-            <td>@Html.DisplayNameFor(model => model.PassengerCap)</td>
-            <td>@Html.DisplayNameFor(model => model.FuelCap)</td>
-            <td>@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
-            <td>@Html.DisplayNameFor(model => model.Price)</td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.Length)</td>
-            <td>@Html.DisplayFor(modelItem => item.Windth)</td>
-            <td>@Html.DisplayFor(modelItem => item.Deep)</td>
-            <td>@Html.DisplayFor(modelItem => item.Volume)</td>
-            <td>@Html.DisplayFor(modelItem => item.Mass)</td>
-            <td>@Html.DisplayFor(modelItem => item.NumberOfOars)</td>
-            <td>@Html.DisplayFor(modelItem => item.EnginePower)</td>
-            <td>@Html.DisplayFor(modelItem => item.Speed)</td>
-            <td>@Html.DisplayFor(modelItem => item.SailArea)</td>
-            <td>@Html.DisplayFor(modelItem => item.SleepingAreas)</td>
-            <td>@Html.DisplayFor(modelItem => item.PassengerCap)</td>
-            <td>@Html.DisplayFor(modelItem => item.FuelCap)</td>
-            <td>@Html.DisplayFor(modelItem => item.FreshWaterCap)</td>
-            <td>@Html.DisplayFor(modelItem => item.Price)</td>
-        </tr>
-        <tr>
-            <td colspan="14">
-                <div style="display:flex; justify-content:space-between">
-                    <div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.BoatRow) @Html.DisplayFor(modelItem => item.BoatRow)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.BoatSail) @Html.DisplayFor(modelItem => item.BoatSail)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.BoatTraditional) @Html.DisplayFor(modelItem => item.BoatTraditional)
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.BoatYal) @Html.DisplayFor(modelItem => item.BoatYal)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.KaterRow) @Html.DisplayFor(modelItem => item.KaterRow)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.Botik) @Html.DisplayFor(modelItem => item.Botik)
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.Motosailer) @Html.DisplayFor(modelItem => item.Motosailer)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.KaterCabin) @Html.DisplayFor(modelItem => item.KaterCabin)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.KaterFish) @Html.DisplayFor(modelItem => item.KaterFish)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.KaterPass) @Html.DisplayFor(modelItem => item.KaterPass)
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.LadyaRow) @Html.DisplayFor(modelItem => item.LadyaRow)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.LadyaSail) @Html.DisplayFor(modelItem => item.LadyaSail)
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.Yacht) @Html.DisplayFor(modelItem => item.Yacht)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.Shvertbot) @Html.DisplayFor(modelItem => item.Shvertbot)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.SailboatStudy) @Html.DisplayFor(modelItem => item.SailboatStudy)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.SailboatHistorical) @Html.DisplayFor(modelItem => item.SailboatHistorical)
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.MaketStudy) @Html.DisplayFor(modelItem => item.MaketStudy)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.MaketCinema) @Html.DisplayFor(modelItem => item.MaketCinema)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.MaketMuseum) @Html.DisplayFor(modelItem => item.MaketMuseum)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.MaketDesign) @Html.DisplayFor(modelItem => item.MaketDesign)
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.KaterProject) @Html.DisplayFor(modelItem => item.KaterProject)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.LadyaProject) @Html.DisplayFor(modelItem => item.LadyaProject)
-                        </div>
-                        <div>
-                            @Html.DisplayNameFor(model => model.SailboatProject) @Html.DisplayFor(modelItem => item.SailboatProject)
-                        </div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="14">@Html.DisplayNameFor(model => model.Description)</td>
-        </tr>
-        <tr>
-            <td colspan="14">
-                @Html.Raw(item.Description)
-            </td>
-        </tr>
-        <tr>
-            <td>
-            </td>
-        </tr>
-        <tr><td colspan="14">@await Component.InvokeAsync("ProjectFoto", new { shipProjectId = item.ProjectID })</td></tr>
-        <tr>
-            <td colspan="14">
-                <a asp-action="Edit" asp-route-id="@item.ProjectID">Редактировать проект</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProjectID">Удалить проект</a>
-            </td>
-        </tr>
-    </table>
-    <br />
-    <br />
-    <br />
-}
+</div>
