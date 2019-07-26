@@ -39,6 +39,10 @@ body {
     width: 15%;
 }
 
+.shortLogo {
+    display: none;
+}
+
 .contacts {
     opacity: 1;
     position: absolute;
@@ -468,6 +472,10 @@ img {
     height: 10px;
 }
 
+.description {
+    font-size:18px;
+}
+
 .TTH {
     grid-area:tth;
     text-align: left;
@@ -546,7 +554,7 @@ img {
 }
 
 .sheme {
-    width: 75%;
+    width: 65%;
 }
 
 .projectListItem {
@@ -601,6 +609,12 @@ img {
     }
 }
 
+@media (max-width:1200px) {
+    .catalog {
+        grid-template-rows: 190px min-content min-content min-content min-content min-content min-content;
+    }
+}
+
 @media (max-width:1023px) {
 
     .details-top {
@@ -635,7 +649,6 @@ img {
     #first-out.cellShort {
         display: none;
     }
-
 }
 
 @media (max-width:960px) {
@@ -644,14 +657,20 @@ img {
     }
 
     #post-first-out.cellShort {
-        display:none;
+        display: none;
+    }
+}
+
+@media (max-width:800px) {
+    .catalog {
+        grid-template-rows: 165px min-content min-content min-content min-content min-content min-content;
     }
 }
 
 @media (max-width:790px) {
 
     .projects {
-        margin:5px;
+        margin: 5px;
     }
 
     #sailboats-Sub.sub-nav img {
@@ -728,10 +747,6 @@ img {
 
     .cellShort {
         display: none;
-    }
-
-    #top-left {
-        display: initial;
     }
 
     #shortNav.menu-top-element {
@@ -830,14 +845,13 @@ img {
 
     .singleProject {
         grid-template-columns: 0% 57% 43%;
-        grid-template-rows:20px auto min-content auto 20px;
+        grid-template-rows: 20px auto min-content auto 20px;
     }
 
     .nav-element-choosen .nav-element-inside p {
         margin-block-start: 0px;
         margin-block-end: 2px;
     }
-
 }
 
 @media (max-width:786px) {
@@ -867,7 +881,7 @@ img {
     }
 
     #first-out.cellShort {
-        display:none;
+        display: none;
     }
 }
 
@@ -921,14 +935,14 @@ img {
     .nav {
         width: 100%;
     }
-    
+
     .nav-element .nav-element-inside {
         padding-top: 2px;
         padding-bottom: 2px;
     }
 
     .sub-nav {
-        margin-bottom:2px;
+        margin-bottom: 2px;
     }
 
     .catalog {
@@ -1003,30 +1017,34 @@ img {
     }
 
     .top-pic {
-        display:none;
+        display: none;
     }
 
     .logo {
-        position:initial;
-        width:119px;
+        display:none;
+    }
+
+    .shortLogo {
+        display:initial;
+        width:33%;
     }
 
     .contacts {
         display: flex;
-        flex-direction:column;
+        flex-direction: column;
         position: initial;
         width: 100%;
-        align-self:center;
+        align-self: center;
     }
 
     .top-hat {
-        display:flex;
-        background-image:url(../images/небо.png)
+        display: flex;
+        background-image: url(../images/небо.png)
     }
 
     .logo img {
-        width:90px;
-        height:90px;
+        width: 90px;
+        height: 90px;
     }
 
     .singleProject {
@@ -1034,11 +1052,11 @@ img {
     }
 
     #post-first-out.cellShort {
-        display:none;
+        display: none;
     }
 
     .catalogItemTop {
-        align-self:center;
+        align-self: center;
     }
 
     .nav-element-choosen .nav-element-inside p {

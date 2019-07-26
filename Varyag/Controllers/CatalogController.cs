@@ -25,6 +25,9 @@ namespace Varyag.Controllers
 
         public async Task<IActionResult> ProjectDetails(int? id)
         {
+
+            ViewBag.TopPic = "details";
+
             if (id == null)
             {
                 return NotFound();

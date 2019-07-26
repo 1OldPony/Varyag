@@ -11,30 +11,39 @@
 <body>
     <div class="MyContainer" id="main">
         <div class="top-hat">
-            @switch (@ViewBag.TopPic)
-            {
-                case "sailboats":
-                    <img src="~/images/узкие/58-й.jpg">
-                    break;
-                case "bigboats":
-                    <img src="~/images/узкие/атлична!2.jpg">
-                    break;
-                case "general":
-                    <img src="~/images/порезанный2.jpg">
-                    break;
-                default:
-                    break;
-            }
-            @if (@ViewBag.TopPic != null)
+            <div class="top-pic">
+                @switch (@ViewBag.TopPic)
+                {
+                    case "sailboats":
+                        <img src="~/images/узкие/58-й.jpg">
+                        break;
+                    case "bigboats":
+                        <img src="~/images/узкие/атлична!2.jpg">
+                        break;
+                    case "general":
+                        <img src="~/images/порезанный2.jpg">
+                        break;
+                    default:
+                        break;
+                }
+            </div>
+            @if (@ViewBag.TopPic != "details")
             {
                 <div class="logo" id="top-left">
                     <img src="~/images/icons/Логотип для вставки с текстом.png">
                 </div>
+                <div class="shortLogo" id="top-left">
+                    <img src="~/images/icons/Логотип для вставки малый.png">
+                </div>
                 <div id="top-right" class="contacts">
                     <img src="~/images/icons/контакты2.png">
                 </div>
+                <div id="top-right2" class="contacts" style="display:none">
+                    <img src="~/images/icons/контакты тройные.png">
+                </div>
             }
         </div>
+        
         <div id="header" class="header">
             <div id="nav-top" class="nav-top">
                 <div id="mobileShips-Catalog" class="nav-element-top">
