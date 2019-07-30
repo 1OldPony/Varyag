@@ -126,7 +126,6 @@ img {
     justify-content: center;
     display: flex;
     background-color: #f3e0b6;
-    /*background-color: #ffcb73;*/
     margin: auto;
     cursor: pointer;
     flex-grow: 1;
@@ -175,7 +174,7 @@ img {
     background-color: #ffffff;
     align-items: center;
     top: 0px;
-    max-width:1350px;
+    max-width: 1350px;
 }
 
 .sub-nav-current {
@@ -277,6 +276,7 @@ img {
     justify-content: flex-end;
     align-items: flex-end;
     flex-grow: 1;
+    margin-left: 2px;
 }
 
 #lodki.nav-element {
@@ -368,10 +368,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 53px; */
     flex-grow: 1;
     font-size: 19px;
-    /*margin: 2px;*/
     background-color: rgb(255, 255, 255);
 }
 
@@ -386,7 +384,6 @@ img {
     align-items: center;
     width: auto;
     font-size: 19px;
-    /*font-size: 23px;*/
     flex-grow: 1;
     background-color: #aec9e0;
 }
@@ -403,8 +400,6 @@ img {
 
 .nav-element-minor-choosen p {
     color: #e00e0e;
-    /*margin-block-start: 6px;*/
-    /*margin-block-end: 6px;*/
 }
 
 .nav-element-choosen {
@@ -441,9 +436,9 @@ img {
 
 .singleProject {
     display: grid;
-    grid-template-areas: "sheme foto name" "sheme foto freeSpaceTop" "sheme foto tth" "sheme foto freeSpaceBottom" "sheme foto price"; 
+    grid-template-areas: "sheme foto name" "sheme foto freeSpaceTop" "sheme foto tth" "sheme foto freeSpaceBottom" "sheme foto price";
     grid-template-columns: 35% 35% 30%;
-    grid-template-rows: 20px auto min-content auto 20px;
+    grid-template-rows: 20px auto min-content auto 25px;
     font-size: 18px;
 }
 
@@ -452,19 +447,19 @@ img {
     }
 
 #admin.singleProject {
-    max-width:1350px;
-    margin-right:5px;
+    max-width: 1350px;
+    margin-right: 5px;
 }
 
 .projectImage {
-    grid-area:foto;
+    grid-area: foto;
     align-self: flex-end;
     margin-left: 10px;
     margin-right: 10px;
 }
 
 #short.projectImage {
-    grid-area:sheme;
+    grid-area: sheme;
 }
 
 .whiteSpace {
@@ -473,21 +468,17 @@ img {
 }
 
 .description {
-    font-size:18px;
+    font-size: 18px;
 }
 
 .TTH {
-    grid-area:tth;
+    grid-area: tth;
     text-align: left;
-    align-self:center;
+    align-self: center;
 }
 
     .TTH .value {
         width: 100px;
-    }
-
-    .TTH .characteristic {
-        width: 100%;
     }
 
 .TTH-details {
@@ -498,13 +489,17 @@ img {
 }
 
 .catalogItemTop {
-    grid-area:name;
+    grid-area: name;
     text-align: center;
+    font-weight: 600;
+    text-decoration: underline;
+    align-self: center;
 }
 
 .catalogItemBottom {
     grid-area: price;
-    text-align: left;
+    font-weight: 600;
+    text-align: right;
 }
 
 #top.gridFreeSpace {
@@ -595,23 +590,78 @@ img {
     display: none;
 }
 
-@media (max-width:1280px) {
+#longLength.cellLong {
+    background-color: #f0f5f9;
+}
+
+#longDeep.cellLong {
+    background-color: #f0f5f9;
+}
+
+#longSleepingAreas.cellLong {
+    background-color: #f0f5f9;
+}
+
+#longEnginePower.cellLong {
+    background-color: #f0f5f9;
+}
+
+#longFreshWaterCap.cellLong {
+    background-color: #f0f5f9;
+}
+
+
+@media (max-width:1189px) {
+
     .cellLong {
         display: none;
     }
 
-    .cellShort {
+    .cellShort[name="midLength"] {
+        display: table-row;
+        background-color: #f0f5f9;
+    }
+
+    .cellShort[name="midWidth"] {
         display: table-row;
     }
 
-    #pre-first-out.cellShort {
-        display:none;
+    .cellShort[name="midDeep"] {
+        display: table-row;
+        background-color: #f0f5f9;
+    }
+
+    .cellShort[name="midPassengerCap"] {
+        display: table-row;
+    }
+
+    .cellShort[name="midSleepingAreas"] {
+        display: table-row;
+        background-color: #f0f5f9;
+    }
+
+    .cellShort[name="midSailArea"] {
+        display: table-row;
+    }
+
+    .cellShort[name="midEnginePower"] {
+        display: table-row;
+        background-color: #f0f5f9;
+    }
+
+    .catalog {
+        grid-template-rows: 190px min-content min-content min-content min-content min-content min-content;
     }
 }
 
-@media (max-width:1200px) {
-    .catalog {
-        grid-template-rows: 190px min-content min-content min-content min-content min-content min-content;
+@media (max-width:1090px) {
+
+    .singleProject {
+        grid-template-rows: 45px auto min-content auto 20px;
+    }
+
+    .cellShort[name="midEnginePower"] {
+        display: none;
     }
 }
 
@@ -645,29 +695,30 @@ img {
     .sheme {
         width: 50%;
     }
+}
 
-    #first-out.cellShort {
+@media (max-width:990px) {
+
+    .cellShort[name="midSailArea"] {
         display: none;
     }
 }
 
 @media (max-width:960px) {
-    .singleProject {
-        grid-template-rows: 45px auto min-content auto 20px;
-    }
 
     #post-first-out.cellShort {
         display: none;
     }
 }
 
-@media (max-width:800px) {
-    .catalog {
-        grid-template-rows: 165px min-content min-content min-content min-content min-content min-content;
+@media (max-width:880px) {
+
+    .cellShort[name="midSleepingAreas"] {
+        display: none;
     }
 }
 
-@media (max-width:790px) {
+@media (max-width:820px) {
 
     .projects {
         margin: 5px;
@@ -745,7 +796,7 @@ img {
         display: table-row;
     }
 
-    .cellShort {
+    #middleValue.cellShort {
         display: none;
     }
 
@@ -781,10 +832,6 @@ img {
         flex-direction: column-reverse;
     }
 
-    #top-right.contacts {
-        /*display: none;*/
-    }
-
     .sub-nav {
         padding-left: 10px;
         padding-right: 10px;
@@ -809,8 +856,8 @@ img {
     }
 
     .sub-nav-elements p {
-        margin-block-start: 7px;
-        margin-block-end: 7px;
+        margin-block-start: 6px;
+        margin-block-end: 6px;
     }
 
     .whiteSpace {
@@ -833,15 +880,12 @@ img {
     .cat-icons {
         display: initial;
         width: 100%;
+        margin-bottom: 17px;
     }
 
         .cat-icons img {
             width: 100%;
         }
-
-    #pre-first-out.cellShort {
-        display: none;
-    }
 
     .singleProject {
         grid-template-columns: 0% 57% 43%;
@@ -860,34 +904,59 @@ img {
         display: none;
     }
 
-    .cellShort {
+    #middleValue.cellShort {
         display: table-row;
     }
 
-    #post-first-out.cellShort {
-        display: table-row;
+    .cellShort[name="midLength"] {
+        background-color: #f0f5f9;
     }
 
-    #first-out.cellShort {
-        display: table-row;
+    .cellShort[name="midDeep"] {
+        background-color: #f0f5f9;
+    }
+
+    .cellShort[name="midSleepingAreas"] {
+        background-color: #f0f5f9;
+    }
+
+    .cellShort[name="midEnginePower"] {
+        background-color: #f0f5f9;
+    }
+}
+
+@media (max-width:761px) {
+
+    .singleProject {
+        grid-template-rows: 45px auto min-content auto 20px;
     }
 }
 
 @media (max-width:676px) {
 
     .singleProject {
-        grid-template-columns: 0% 57% 43%;
         grid-template-rows: 45px auto min-content auto 20px;
-    }
-
-    #first-out.cellShort {
-        display: none;
     }
 }
 
-@media (max-width:620px) {
+@media (max-width:651px) {
 
-    #second-out.cellShort {
+    #middleValue.cellShort {
+        display: none;
+    }
+
+    .cellShort {
+        display: table-row;
+    }
+
+        .cellShort[name="shortLength"], .cellShort[name="shortDeep"], .cellShort[name="shortSleepingAreas"] {
+            background-color: #f0f5f9;
+        }
+}
+
+@media (max-width:610px) {
+
+    #first-out.cellShort {
         display: none;
     }
 }
@@ -899,6 +968,10 @@ img {
     }
 
     #Goto-Pred.nav-element-top {
+        display: none;
+    }
+
+    #second-out.cellShort {
         display: none;
     }
 }
@@ -915,6 +988,13 @@ img {
 
     #fourth-out.cellShort {
         display: none;
+    }
+}
+
+@media (max-width:425px) {
+
+    .singleProject {
+        grid-template-rows: 66px auto min-content auto 20px;
     }
 }
 
@@ -1021,12 +1101,12 @@ img {
     }
 
     .logo {
-        display:none;
+        display: none;
     }
 
     .shortLogo {
-        display:initial;
-        width:33%;
+        display: initial;
+        width: 33%;
     }
 
     .contacts {
@@ -1048,15 +1128,16 @@ img {
     }
 
     .singleProject {
-        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price";
+        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
     }
 
     #post-first-out.cellShort {
         display: none;
     }
 
-    .catalogItemTop {
-        align-self: center;
+    .catalogItemBottom {
+        font-size: 19px;
+        text-align: center;
     }
 
     .nav-element-choosen .nav-element-inside p {
