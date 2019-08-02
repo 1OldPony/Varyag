@@ -1,6 +1,18 @@
 ﻿
 /*//////////////////////////далее - грид!///////////////////////////////*/
 
+.colored {
+    display: none;
+}
+
+.ikons {
+    display: none;
+}
+
+.drawing {
+    display: initial;
+}
+
 
 a {
     text-decoration: none;
@@ -281,6 +293,7 @@ img {
 
 #lodki.nav-element {
     grid-area: boats;
+    margin-left: 0px;
 }
 
 #shlupki.nav-element {
@@ -405,6 +418,7 @@ img {
 .nav-element-choosen {
     display: flex;
     flex-grow: 1;
+    margin-left: 2px;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
@@ -469,6 +483,16 @@ img {
 
 .description {
     font-size: 18px;
+    text-align: left;
+    margin: 25px;
+    margin-top: 0px;
+}
+
+.desc-top {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 25px;
 }
 
 .TTH {
@@ -477,16 +501,35 @@ img {
     align-self: center;
 }
 
-    .TTH .value {
-        width: 100px;
-    }
+.value {
+    text-align: right;
+}
+
+.characteristic {
+    text-align: left;
+    width: 100%;
+}
 
 .TTH-details {
     width: 100%;
     text-align: left;
-    margin-left: 10px;
-    margin-right: 10px;
+    /*margin-left: 10px;
+    margin-right: 10px;*/
 }
+
+    .TTH-details h4 {
+        margin-block-start: 6px;
+        margin-block-end: 6px;
+        font-size: 20px;
+    }
+
+    .TTH-details .value {
+        border-bottom: 1px dashed grey;
+    }
+
+    .TTH-details .characteristic {
+        border-bottom: 1px dashed grey;
+    }
 
 .catalogItemTop {
     grid-area: name;
@@ -519,23 +562,13 @@ img {
 .sheme-tth {
     display: flex;
     flex-direction: column;
-    width: 34%;
-    margin-left: 5px;
-    margin-right: 5px;
+    width: 32%;
+    margin-left: 25px;
     align-items: center;
 }
 
 .table-space {
     width: 20px;
-}
-
-.value {
-    text-align: right;
-}
-
-.characteristic {
-    text-align: left;
-    width: 100%;
 }
 
 .bottom-top {
@@ -544,8 +577,9 @@ img {
 }
 
 .galery {
-    width: 64%;
-    margin: auto;
+    width: 63%;
+    margin-right: 25px;
+    margin-left: 20px;
 }
 
 .sheme {
@@ -584,6 +618,7 @@ img {
     font-size: 19px;
     text-align: left;
     margin: 35px;
+    margin-top: 0px;
 }
 
 .cat-icons {
@@ -610,6 +645,35 @@ img {
     background-color: #f0f5f9;
 }
 
+.path {
+    margin: 15px;
+    margin-left: 40px;
+    text-align: left;
+    font-size: 15px;
+}
+
+    .path a {
+        text-decoration: underline;
+    }
+
+.projectName {
+    margin: 20px;
+}
+
+    .projectName p {
+        text-align: left;
+        font-size: 32px;
+        font-weight: 600;
+        text-decoration: underline;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+
+@media (max-width:1260px) {
+    .sheme {
+        width: 60%;
+    }
+}
 
 @media (max-width:1189px) {
 
@@ -654,6 +718,12 @@ img {
     }
 }
 
+@media (max-width:1160px) {
+    .sheme {
+        width: 55%;
+    }
+}
+
 @media (max-width:1090px) {
 
     .singleProject {
@@ -665,7 +735,13 @@ img {
     }
 }
 
-@media (max-width:1023px) {
+@media (max-width:1060px) {
+    .sheme {
+        width: 50%;
+    }
+}
+
+@media (max-width:1042px) {
 
     .details-top {
         display: flex;
@@ -677,9 +753,10 @@ img {
         display: flex;
         flex-direction: row-reverse;
         width: 100%;
-        margin-left: 5px;
-        margin-right: 5px;
+        /*margin-left: 5px;
+        margin-right: 5px;*/
         align-items: center;
+        margin: 0px;
     }
 
     .galery {
@@ -688,12 +765,15 @@ img {
     }
 
     .TTH-details {
-        width: 50%;
+        width: 55%;
         text-align: left;
+        margin-left: 5%;
     }
 
     .sheme {
-        width: 50%;
+        width: 33%;
+        margin-right: 5%;
+        margin-left: 3%;
     }
 }
 
@@ -735,8 +815,21 @@ img {
     }
 
     .TTH-details {
-        width: 100%;
+        width: 90%;
         text-align: left;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .description {
+        margin: 5%;
+    }
+
+    .desc-top {
+        font-size: 28px;
+        font-weight: 600;
+        text-align: left;
+        margin-left: 5%;
     }
 
     #short.projectImage {
@@ -744,7 +837,9 @@ img {
     }
 
     .sheme {
-        width: 100%;
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
     }
 
     .catalog {

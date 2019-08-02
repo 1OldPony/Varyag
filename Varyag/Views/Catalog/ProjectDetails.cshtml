@@ -4,8 +4,11 @@
     ViewData["Title"] = "ProjectDetails";
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
+<div class="path">
+    <a>Главная</a> > <a>Каталог</a> > <a>Парусники</a> > <a>@Model.Name</a>
+</div>
 
-<h1>@Model.Name</h1>
+<div class="projectName"><p>@Model.Name</p></div>
 
 <div class="details-top">
     <div class="sheme-tth">
@@ -15,7 +18,7 @@
             </div>
         </div>
         <div class="TTH-details">
-            <table style="width:100%">
+            <table>
                 <tr>
                     <td colspan="3"><h4>Характеристики</h4></td>
                 </tr>
@@ -96,18 +99,16 @@
                         <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
                         <td class="value">@Model.FuelCap&nbsp;л.</td>
                     </tr>
-                }@if (@Model.FreshWaterCap != null)
+                }
+                @if (@Model.FreshWaterCap != null)
                 {
                     <tr>
                         <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
                         <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
                     </tr>
                 }
-                <tr>
-                    <td class="characteristic">@Html.DisplayNameFor(model => model.Price)</td>
-                    <td class="value">@Model.Price&nbsp;т.р.</td>
-                </tr>
             </table>
+            <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.Price&nbsp;тыс.р.</div>
         </div>
     </div>
     <div class="galery">
@@ -116,6 +117,7 @@
         </div>
     </div>
 </div>
+<div class="desc-top">Описание:</div>
 <div class="description">
     @Html.Raw(Model.Description)
 </div>
