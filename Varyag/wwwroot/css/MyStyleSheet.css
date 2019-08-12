@@ -391,17 +391,21 @@ img {
         background-color: #aec9e0;
     }
 
+    .nav-element-minor:hover p{
+        color: #e00e0e;
+    }
+
 .nav-element-minor-choosen {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
+    /*width: auto;*/
     font-size: 19px;
     flex-grow: 1;
     background-color: #aec9e0;
 }
 
-.nav-element-minor-choosen-current {
+/*.nav-element-minor-choosen-current {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -409,7 +413,7 @@ img {
     font-size: 23px;
     flex-grow: 1;
     background-color: #aec9e0;
-}
+}*/
 
 .nav-element-minor-choosen p {
     color: #e00e0e;

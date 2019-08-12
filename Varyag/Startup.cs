@@ -75,12 +75,8 @@ namespace Varyag
             
             app.UseMvc(routes =>
             {
-                routes.MapRoute( 
-                    //name: "default",
-                    //template: "{Area=Pages}/{Page=MainCatalog}");
-
-                    name: "default",
-                    template: "{controller=Catalog}/{action=Sailboats}/{id?}");
+                routes.MapRoute("default","{controller=Catalog}/{action=Sailboats}/{id?}");
+                routes.MapRoute("default", "{controller=Catalog}/{action=Sailboats}/{id?}");
             });
         }
     }

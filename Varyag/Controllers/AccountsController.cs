@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Varyag.Controllers
 {
-    [Authorize(Roles ="admin")]
+    [Authorize(Roles = "admin")]
     public class AccountsController : Controller
     {
         private readonly UserManager<User> _userManager;

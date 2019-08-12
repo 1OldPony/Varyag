@@ -2,11 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="keywords" content="@ViewData["Keywords"]" />
+    <meta name="description"  content="@ViewData["Description"]"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="~/css/MyStyleSheet.css" />
     <link rel="stylesheet" type="text/css" href="~/css/fotorama.css" />
     <link href="https://fonts.googleapis.com/css?family=Gabriela&display=swap&subset=cyrillic" rel="stylesheet">
-    <title>@ViewData["Title"] - Varyag</title>
+    <title>@ViewData["Title"]</title>
 </head>
 <body>
     <div class="MyContainer" id="main">
@@ -16,6 +18,9 @@
                 {
                     case "sailboats":
                         <img src="~/images/узкие/58-й.jpg">
+                        break;
+                    case "boats":
+                        <img src="~/images/узкие/атлична!2.jpg">
                         break;
                     case "bigboats":
                         <img src="~/images/узкие/атлична!2.jpg">

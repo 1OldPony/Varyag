@@ -1,17 +1,15 @@
 ﻿@model IEnumerable<Varyag.Models.Project>
-
 @{
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
 <div class="path">
-    <a>Главная</a> > <a asp-action="sailboats">Каталог</a> > <a>Парусники</a>
+    <a>Главная</a> > <a asp-action="sailboats">Каталог</a> > <a asp-action="sailboats">Парусники</a> > <a>Проекты парусников</a>
 </div>
 <div class="explainText">
     <span style="margin-left:100px">Верфь</span> ООО "Варяг" имеет возможность проектировать
-    и строить деревянные парусники под любые ваши цели и с учетом всех ваших пожеланий, от шветрботов и небольших парусных яхт для прогулок до большых учебных или исторических парусников. Все представленные в каталоге проекты разрабатывались нами под нужды контретных людей и каждый получил такой парусник, который нужен был ему.<br />
+    и строить деревянные проекты парусников под любые ваши цели и с учетом всех ваших пожеланий, от шветрботов и небольших парусных яхт для прогулок до большых учебных или исторических парусников. Все представленные в каталоге проекты разрабатывались нами под нужды контретных людей и каждый получил такой парусник, который нужен был ему.<br />
     <span style="margin-left:100px">За</span> время своего существования мы произвели десятки парусных судов, до сих пор бороздящих просторы морей и океанов во всех уголках нашей планеты, от Карибского моря до побережья Австралии.
 </div>
-
 <div class="catalog">
     <div class="nav-element" name="lodki" id="lodki">
         <a asp-action="boats" asp-controller="Catalog">
@@ -117,7 +115,7 @@
                 <div id="models" class="whiteSpace"></div>
                 <div class="nav-element-inside">
                     <p>Макеты</p>
-                    <input type="text" value="sailboats" id="currentPage" hidden />
+                    <input type="text" value="sailboatproject" id="currentPage" hidden />
                 </div>
             </div>
         </a>
@@ -128,7 +126,5 @@
     <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
     <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
     <div name="models-Sub" id="models-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
-
 </div>
-
-@await Component.InvokeAsync("ProjectsCatalog", new { category = "sailboat" })
+@await Component.InvokeAsync("ProjectsCatalog", new { category = "sailboatproject" })
