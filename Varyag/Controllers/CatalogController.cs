@@ -103,7 +103,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Купить  деревянные катера от производителя";
             ViewData["Keywords"] = "Купить деревянные катера, Деревянные катера от производителя";
             ViewData["Description"] = "Каталог деревянных каютных, рыболовных и пассажирских катеров, а также мотосейлеров производства верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "katera";
             return View();
         }
 
@@ -113,7 +113,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Купить деревянные мотосейлеры от производителя";
             ViewData["Keywords"] = "Купить деревянные мотосейлеры, Мотосейлеры от производителя";
             ViewData["Description"] = "Каталог мотосейлеров производства верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats"; 
+            ViewBag.TopPic = "katera"; 
             return View();
         }
 
@@ -123,7 +123,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Купить деревянные каютные катера от производителя";
             ViewData["Keywords"] = "Купить каютные катера, Деревянные каютные катера от производителя";
             ViewData["Description"] = "Каталог деревянных каютных катеров производства верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "katera";
             return View();
         }
 
@@ -133,7 +133,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Купить деревянные рабочие и рыболовные катера от производителя";
             ViewData["Keywords"] = "Купить рыболовные катера, Деревянные рабочие рыболовные катера от производителя";
             ViewData["Description"] = "Каталог деревянных рабочих и рыболовных катеров производства верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "katera";
             return View();
         }
 
@@ -143,7 +143,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Купить деревянные пассажирские катера от производителя";
             ViewData["Keywords"] = "Купить пассажирские катера, деревянные пассажирские катера от производителя";
             ViewData["Description"] = "Каталог деревянных пассажирских катеров производства верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "katera";
             return View();
         }
 
@@ -153,7 +153,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Готовые проекты деревянных катеров от производителя";
             ViewData["Keywords"] = "Проекты деревянных катеров, Купить деревянные катера";
             ViewData["Description"] = "Проекты деревянных катеров, разработанных на верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "katera";
             return View();
         }
 
@@ -163,7 +163,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Купить деревянные ладьи от производителя";
             ViewData["Keywords"] = "Купить исторические ладьи, Деревянные ладьи от производителя";
             ViewData["Description"] = "Каталог парусно-гребных и парусно-моторных ладей производства верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "ladiy";
             return View();
         }
 
@@ -173,7 +173,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Купить деревянные парусно-гребные ладьи от производителя";
             ViewData["Keywords"] = "Купить деревянные лодьи, Парусно-гребные ладьи от производителя";
             ViewData["Description"] = "Каталог парусно-гребных ладей производства верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "ladiy";
             return View();
         }
 
@@ -183,7 +183,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Купить деревянные парусно-моторные ладьи от производителя";
             ViewData["Keywords"] = "Купить деревянные лодьи, Парусно-моторные ладьи от производителя";
             ViewData["Description"] = "Каталог парусно-моторных ладей производства верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "ladiy";
             return View();
         }
 
@@ -193,7 +193,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Проекты деревянных ладей";
             ViewData["Keywords"] = "Проекты деревянных ладей, Купить ладью";
             ViewData["Description"] = "Проекты деревянных ладей, разработанных на верфи деревянного судостроения Варяг";
-            ViewBag.TopPic = "sailboats";
+            ViewBag.TopPic = "ladiy";
             return View();
         }
 
@@ -314,6 +314,14 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
+            if (project.BoatRow || project.BoatSail || project.BoatTraditional || project.BoatYal || project.Botik || project.KaterRow)
+            {
+                ViewBag.TTHType = "boats&bigboats";
+            }
+            else
+            {
+                ViewBag.TTHType = "AllOthers";
+            }
             return View(project);
         }
     }

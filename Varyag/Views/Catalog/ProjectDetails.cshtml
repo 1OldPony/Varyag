@@ -30,26 +30,24 @@
                     <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
                     <td class="value">@Model.Windth&nbsp;м.</td>
                 </tr>
-                @if (@Model.Deep != null)
-                {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
-                        <td class="value">@Model.Deep&nbsp;м.</td>
-                    </tr>
-                }
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                    <td class="value">@Model.Deep&nbsp;м.</td>
+                    @*<td class="value">-</td>*@
+                </tr>
                 @if (@Model.Volume != null)
                 {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
-                        <td class="value">@Model.Volume&nbsp;т.</td>
-                    </tr>
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
+                    <td class="value">@Model.Volume&nbsp;т.</td>
+                </tr>
                 }
                 @if (@Model.Mass != null)
                 {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
                         <td class="value">@Model.Mass&nbsp;кг.</td>
-                    </tr>
+                </tr>
                 }
                 @if (@Model.NumberOfOars != null)
                 {
@@ -58,48 +56,72 @@
                         <td class="value">@Model.NumberOfOars&nbsp;шт.</td>
                     </tr>
                 }
-                @if (@Model.EnginePower != null)
-                {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                    @if (@Model.EnginePower != null)
+                    {
                         <td class="value">@Model.EnginePower&nbsp;л.с.</td>
-                    </tr>
-                }
-                @if (@Model.Speed != null)
-                {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
+                    }
+                    else
+                    {
+                        <td class="value">-</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
+                    @if (@Model.Speed != null)
+                    {
                         <td class="value">@Model.Speed&nbsp;узлов</td>
-                    </tr>
-                }
-                @if (@Model.SailArea != null)
-                {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                    }
+                    else
+                    {
+                        <td class="value">-</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                    @if (@Model.SailArea != null)
+                    {
                         <td class="value">@Model.SailArea&nbsp;м<sup>2</sup></td>
-                    </tr>
-                }
-                @if (@Model.SleepingAreas != null)
-                {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                    }
+                    else
+                    {
+                        <td class="value">-</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                    @if (@Model.SleepingAreas != null)
+                    {
                         <td class="value">@Model.SleepingAreas&nbsp;шт.</td>
-                    </tr>
-                }
-                @if (@Model.PassengerCap != null)
-                {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                    }
+                    else
+                    {
+                        <td class="value">-</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                    @if (@Model.PassengerCap != null)
+                    {
                         <td class="value">@Model.PassengerCap&nbsp;чел.</td>
-                    </tr>
-                }
-                @if (@Model.FuelCap != null)
-                {
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                    }
+                    else
+                    {
+                        <td class="value">-</td>
+                    }
+                </tr>
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                    @if (@Model.FuelCap != null)
+                    {
                         <td class="value">@Model.FuelCap&nbsp;л.</td>
-                    </tr>
-                }
+                    }
+                    else
+                    {
+                        <td class="value">-</td>
+                    }
+                </tr>
                 @if (@Model.FreshWaterCap != null)
                 {
                     <tr>
