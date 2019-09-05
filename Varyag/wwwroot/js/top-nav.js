@@ -78,12 +78,6 @@ $(document).ready(function () {
         };
     };
 
-
-
-
-
-    
-
     function HideAll() {
         $("#category").hide();
         $("#shortAbout").hide();

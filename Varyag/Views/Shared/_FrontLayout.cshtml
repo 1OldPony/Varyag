@@ -11,208 +11,398 @@
     <title>@ViewData["Title"]</title>
 </head>
 <body>
-    <div class="MyContainer" id="main">
-        <div class="top-hat">
-            <div class="top-pic">
-                @switch (@ViewBag.TopPic)
-                {
-                    case "sailboats":
-                        <div style="display:none">
-                            <img src="~/images/узкие/Парусники/Аскольд-28.jpg">
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Парусники/Аскольд-28_1.jpg">
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Парусники/Аскольд-39.jpg">
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Парусники/Аскольд-48.jpg">
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Парусники/Аскольд-49.jpg">
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Парусники/Аскольд-58.jpg">
-                        </div>
-                        break;
-                    case "boats":
-                        <div style="display:none">
-                            <img src="~/images/узкие/Лодки/Аскольд-14_1.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Лодки/Аскольд-14_2.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Лодки/Аскольд-15_1.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Лодки/Аскольд-15_2.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Лодки/Сойма.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Лодки/Фофан.jpg" />
-                        </div>
-                        break;
-                    case "bigboats":
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/14-весельный катер_1.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/14-весельный катер_2.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/14-весельный катер_3.jpg" /> 
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/14-весельный катер_4.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/14-весельный катер_5.jpg" /> 
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/Ботик.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/Ботик_1.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/ЯЛ6.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/ЯЛ6_1.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Шлюпки/ЯЛ6_2.jpg" />
-                        </div>
-                        break;
-                    case "ladiy":
-                        <div style="display:none">
-                            <img src="~/images/узкие/Ладьи/Аскольд-38_1.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Ладьи/Аскольд-38_2.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Ладьи/Аскольд-38_3.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Ладьи/Аскольд-38_4.jpg" />
-                        </div>
-                        break;
-                    case "katera":
-                        <div style="display:none">
-                            <img src="~/images/узкие/Катера/Аскольд-18.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Катера/Аскольд-26.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Катера/Аскольд-40.1.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Катера/Аскольд-40.5.jpg" />
-                        </div>
-                        break;
-                    case "general":
-                        <div style="display:none">
-                            <img src="~/images/узкие/Макеты/Макет Ял6_1.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Макеты/Макет Ял6_2.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Макеты/Макет Ял6_3.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Макеты/Макет Ял6_4.jpg" />
-                        </div>
-                        <div style="display:none">
-                            <img src="~/images/узкие/Макеты/макет.jpg" />
-                        </div>
-                        break;
-                    default:
-                        break;
-                }
-            </div>
-            @if (@ViewBag.TopPic != "details")
+    <div class="top-hat">
+        <div class="top-pic">
+            @switch (@ViewBag.TopPic)
             {
-                <div class="logo" id="top-left">
-                    <img src="~/images/icons/Логотип для вставки с текстом.png">
-                </div>
-                <div class="shortLogo" id="top-left">
-                    <img src="~/images/icons/Логотип для вставки малый.png">
-                </div>
-                <div id="top-right" class="contacts" style="display:none">
-                    <img src="~/images/icons/контакты2.png">
-                </div>
-                <div id="top-right2" class="contacts">
-                    <img src="~/images/icons/контакты тройные.png">
-                </div>
+                case "boats":
+                    <div>
+                        <img src="~/images/узкие/Лодки/АС-19-обр-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/парусные-коллаж-на300-2.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/АС-19-обр-на300-круп-2.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/АС-19-обр-на300-круп.jpg" />
+                    </div>
+                    break;
+                case "boatsrow":
+                    <div>
+                        <img src="~/images/узкие/Лодки/фофан гребной-обр-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/фофан гребной-коллаж-на300.jpg" />
+                    </div>
+                    break;
+                case "boatssail":
+                    <div>
+                        <img src="~/images/узкие/Лодки/парусные-коллаж-на300-2.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/АС-19-обр-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/АС-19-обр-на300-круп-2.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img sr="~/images/узкие/Лодки/АС-19-обр-на300-круп.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/АС-15-на300.jpg" />
+                    </div>
+                    break;
+                case "boatstraditional":
+                    <div>
+                        <img src="~/images/узкие/Лодки/Сойма-коротки-обр-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/Сойма-2-короткий-обр-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/народные-коллаж-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/сойма-коллаж-на300.jpg" />
+                    </div>
+                    break;
+                case "bigboats":
+                    <div>
+                        <img src="~/images/узкие/Шлюпки/вельбот-и-катер-на300-горнизонт.jpg" />
+                    </div>
+                    break;
+                case "boatsyal":
+                    <div>
+                        <img src="~/images/узкие/Шлюпки/Ял-6-на300-круть.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/Ял-6-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/Ял-6-на300-круть-2.jpg" />
+                    </div>
+                    break;
+                case "botiks":
+                    <div>
+                        <img src="~/images/узкие/Шлюпки/Ботик-обработ-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/Ботик-2-обработ-на300.jpg" />
+                    </div>
+                    break;
+                case "katerrows":
+                    <div>
+                        <img src="~/images/узкие/Шлюпки/вельбот-корот-на300-2-горизонт.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/14-весельный катер-на300-горизонт.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/вельбот-корот-на300-2-горизонт.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/вельбот-и-катер-на300-горнизонт.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/вельбот-корот-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/Ботик-2-обработ-на300.jpg" />
+                    </div>
+                    break;
+                case "katera":
+                    <div>
+                        <img src="~/images/узкие/Катера/ГР-30Т-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/26й-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/студент-обр-на300.jpg" />
+                    </div>
+                    break;
+                case "motosailers":
+                    <div>
+                        <img src="~/images/узкие/Катера/АС-22MS-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/АС-22MS-2-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/22-й-коллаж.jpg" />
+                    </div>
+                    break;
+                case "katerkabins":
+                    <div>
+                        <img src="~/images/узкие/Катера/ГР-30Т-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/ГР-30Т-3-на300.jpg" />
+                    </div>
+                    break;
+                case "katersfishing":
+                    <div>
+                        <img src="~/images/узкие/Катера/26й-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/студент-коротк-обр-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/студент-обр-2-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/студент-обр-на300.jpg" />
+                    </div>
+                    break;
+                case "katerspassanger":
+                    <div>
+                        <img src="~/images/узкие/Катера/АС-40.1-2-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/АС-40.1-на300.jpg" />
+                    </div>
+                    break;
+                case "katerprojects":
+                    <div>
+                        <img src="~/images/узкие/Катера/Проект.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/катер-проект-коллаж.jpg" />
+                    </div>
+                    break;
+                case "ladiy":
+                    <div>
+                        <img src="~/images/узкие/Ладьи/АС-23-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/АС-38-обр-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/Русич-коллаж.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/Русич-коллаж-3.jpg" />
+                    </div>
+                    break;
+                case "ladyassailrow":
+                    <div>
+                        <img src="~/images/узкие/Ладьи/АС-23-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/АС-38-2-обр-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/АС-38-обр-на300.jpg" />
+                    </div>
+                    break;
+                case "ladyassailmotor":
+                    <div>
+                        <img src="~/images/узкие/Ладьи/Русич-коллаж-3.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/Русич-коллаж.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/Русич-коллаж-2.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/Русич-обр-на300-истинный.jpg" />
+                    </div>
+                    break;
+                case "ladyaprojects":
+                    <div>
+                        <img src="~/images/узкие/Ладьи/Русич-обр-2-на300-истин2.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/Русич-обр-3-на300.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Ладьи/Русич-обр-на300-истинный.jpg" />
+                    </div>
+                    break;
+                case "sailboats":
+                    <div>
+                        <img src="~/images/узкие/Парусники/ГР-58-на300.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/якуцк-обр-на300.jpg">
+                    </div>
+                    break;
+                case "yachts":
+                    <div>
+                        <img src="~/images/узкие/Парусники/ГР-31-на300.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/АС-36-на300.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/АС-49-на300.jpg">
+                    </div>
+                    break;
+                case "svertbots":
+                    <div>
+                        <img src="~/images/узкие/Парусники/АС-22MS-на300.jpg">
+                    </div>
+                    break;
+                case "sailboatsstudy":
+                    <div>
+                        <img src="~/images/узкие/Парусники/АС-39-обр-на300.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/якуцк-2-обр-на300.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/якуцк-3-обр-на300.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/якуцк-4-обр-на300.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/якуцк-на300-2.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/якуцк-на300.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/якуцк-обр-на300.jpg">
+                    </div>
+                    break;
+                case "sailboatshistorical":
+                    <div>
+                        <img src="~/images/узкие/Парусники/ГР-58-на300.jpg">
+                    </div>
+                    break;
+                case "sailboatsprojects":
+                    <div>
+                        <img src="~/images/узкие/Парусники/проект.jpg">
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Парусники/проект2.jpg">
+                    </div>
+                    break;
+                case "makets":
+                    <div>
+                        <img src="~/images/узкие/Макеты/гото-предистинация.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Макеты/хорнблауер.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Макеты/крузенштерн коллаж.jpg" />
+                    </div>
+                    break;
+                case "maketsstudy":
+                    <div>
+                        <img src="~/images/узкие/Макеты/ял-макет.jpg" />
+                    </div>
+                    break;
+                case "maketscinema":
+                    <div>
+                        <img src="~/images/узкие/Макеты/крузенштерн коллаж-2.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Макеты/крузенштерн коллаж.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Макеты/хорнблауер-2.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Макеты/хорнблауер.jpg" />
+                    </div>
+                    break;
+                case "maketsmuseum":
+                    <div>
+                        <img src="~/images/узкие/Макеты/гото-предистинация.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Макеты/выборг-коллаж.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Макеты/выборг.jpg" />
+                    </div>
+                    break;
+                default:
+                    break;
             }
         </div>
-        
-        <div id="header" class="header">
-            <div id="nav-top" class="nav-top">
-                <div id="mobileShips-Catalog" class="nav-element-top">
-                    <div class="nav-element-inside">
-                        КАТАЛОГ
-                    </div>
-                </div>
-                <div id="ships-catalog" class="nav-element-top">
-                    <div class="nav-element-inside">
-                        <a href="/">КАТАЛОГ</a>
-                    </div>
-                </div>
-                <div id="news" class="nav-element-top">
-                    <div class="nav-element-inside">
-                        <a href="/">НАШИ НОВОСТИ</a>
-                    </div>
-                </div>
-                <div id="SMI" class="nav-element-top">
-                    <div class="nav-element-inside">
-                        <a href="/">МЫ В СМИ</a>
-                    </div>
-                </div>
-                <div id="mobileAbout" class="nav-element-top">
-                    <div class="nav-element-inside">
-                        О НАС
-                    </div>
-                </div>
-                <div id="about" class="nav-element-top">
-                    <div class="nav-element-inside">
-                        <a href="">О НАС</a>
-                    </div>
-                </div>
-                <div id="contacts" class="nav-element-top">
-                    <div class="nav-element-inside">
-                        <a href="/">КОНТАКТЫ</a>
-                    </div>
-                </div>
-                <div id="turism" class="nav-element-top">
-                    <div class="nav-element-inside">
-                        <a href="/">ТУРИЗМ</a>
-                    </div>
-                </div>
-                <div id="Goto-Pred" class="nav-element-top" style="border-right:ridge">
-                    <div class="nav-element-inside">
-                        <div>
-                            <input id="cat" type="number" value="0" hidden />
-                            <input id="new" type="number" value="0" hidden />
-                            <input id="srmin" type="number" value="0" hidden />
-                            <input id="abus" type="number" value="0" hidden />
-                            <input id="con" type="number" value="0" hidden />
-                        </div>
-                        <a href="/">ГОТО-ПРЕДИСТИНАЦИЯ</a>
-                    </div>
+        @*@if (@ViewBag.TopPic != "details")
+        {
+            <div class="logo" id="top-left">
+                <img src="~/images/icons/Логотип для вставки с текстом.png">
+            </div>
+            <div class="shortLogo" id="top-left">
+                <img src="~/images/icons/Логотип для вставки малый.png">
+            </div>
+            <div id="top-right" class="contacts" style="display:none">
+                <img src="~/images/icons/контакты2.png">
+            </div>
+            <div id="top-right2" class="contacts">
+                <img src="~/images/icons/контакты тройные.png">
+            </div>
+        }*@
+    </div>
+
+    <div id="header" class="header">
+        <div id="nav-top" class="nav-top">
+            <div id="mobileShips-Catalog" class="nav-element-top">
+                <div class="nav-element-inside">
+                    КАТАЛОГ
                 </div>
             </div>
-            <div id="menu-nav-top" class="menu-nav-top"></div>
+            <div id="ships-catalog" class="nav-element-top">
+                <div class="nav-element-inside">
+                    <a href="/">КАТАЛОГ</a>
+                </div>
+            </div>
+            <div id="news" class="nav-element-top">
+                <div class="nav-element-inside">
+                    <a href="/">НАШИ НОВОСТИ</a>
+                </div>
+            </div>
+            <div id="SMI" class="nav-element-top">
+                <div class="nav-element-inside">
+                    <a href="/">МЫ В СМИ</a>
+                </div>
+            </div>
+            <div id="mobileAbout" class="nav-element-top">
+                <div class="nav-element-inside">
+                    О НАС
+                </div>
+            </div>
+            <div id="about" class="nav-element-top">
+                <div class="nav-element-inside">
+                    <a href="">О НАС</a>
+                </div>
+            </div>
+            <div id="contacts" class="nav-element-top">
+                <div class="nav-element-inside">
+                    <a href="/">КОНТАКТЫ</a>
+                </div>
+            </div>
+            <div id="turism" class="nav-element-top">
+                <div class="nav-element-inside">
+                    <a href="/">ТУРИЗМ</a>
+                </div>
+            </div>
+            <div id="Goto-Pred" class="nav-element-top" style="border-right:ridge">
+                <div class="nav-element-inside">
+                    <div>
+                        <input id="cat" type="number" value="0" hidden />
+                        <input id="new" type="number" value="0" hidden />
+                        <input id="srmin" type="number" value="0" hidden />
+                        <input id="abus" type="number" value="0" hidden />
+                        <input id="con" type="number" value="0" hidden />
+                    </div>
+                    <a href="/">ГОТО-ПРЕДИСТИНАЦИЯ</a>
+                </div>
+            </div>
         </div>
+        <div id="menu-nav-top" class="menu-nav-top"></div>
+    </div>
 
-
+    <div class="MyContainer" id="main">
         <partial name="_CookieConsentPartial" />
         @RenderBody()
 

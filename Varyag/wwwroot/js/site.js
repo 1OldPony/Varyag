@@ -20,11 +20,6 @@ $(document).ready(function () {
         $("#lodki-Sub").show();
     });
 
-    //$("#rowBoat").mouseenter(function () {
-    //    deselectAll();
-    //    $("#rowBoat").attr("class", "nav-element-minor-choosen");
-    //});
-
     $("#shlupki").mouseenter(function () {
         hideAll();
         $("#shlupki").attr("class", "nav-element-choosen");
@@ -141,7 +136,8 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
                     && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
                     && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                    && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                    && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
+                {
                     if ($(window).width() > 383) {
                         hideAll();
                         $("#sailboats").attr("class", "nav-element-choosen");
@@ -149,6 +145,8 @@ $(document).ready(function () {
                     }
                     break;
                 }
+                else
+                break;
             case "models":
             case "maketstudy":
             case "maketcinema":
@@ -157,7 +155,8 @@ $(document).ready(function () {
                     && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                     && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
                     && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
+                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub"))
+                {
                     hideAll();
                     $("#models").attr("class", "nav-element-choosen");
                     $("#models-Sub").show();
