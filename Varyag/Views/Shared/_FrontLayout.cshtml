@@ -36,6 +36,9 @@
                     <div style="display:none">
                         <img src="~/images/узкие/Лодки/фофан гребной-коллаж-на300.jpg" />
                     </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Лодки/фофан гребной-коллаж-на300-2.jpg" />
+                    </div>
                     break;
                 case "boatssail":
                     <div>
@@ -48,7 +51,7 @@
                         <img src="~/images/узкие/Лодки/АС-19-обр-на300-круп-2.jpg" />
                     </div>
                     <div style="display:none">
-                        <img sr="~/images/узкие/Лодки/АС-19-обр-на300-круп.jpg" />
+                        <img src="~/images/узкие/Лодки/АС-19-обр-на300-круп.jpg" />
                     </div>
                     <div style="display:none">
                         <img src="~/images/узкие/Лодки/АС-15-на300.jpg" />
@@ -71,6 +74,9 @@
                 case "bigboats":
                     <div>
                         <img src="~/images/узкие/Шлюпки/вельбот-и-катер-на300-горнизонт.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Шлюпки/вельбот-и-катер-на300-2.jpg" />
                     </div>
                     break;
                 case "boatsyal":
@@ -108,9 +114,6 @@
                     <div style="display:none">
                         <img src="~/images/узкие/Шлюпки/вельбот-корот-на300.jpg" />
                     </div>
-                    <div style="display:none">
-                        <img src="~/images/узкие/Шлюпки/Ботик-2-обработ-на300.jpg" />
-                    </div>
                     break;
                 case "katera":
                     <div>
@@ -132,6 +135,9 @@
                     </div>
                     <div style="display:none">
                         <img src="~/images/узкие/Катера/22-й-коллаж.jpg" />
+                    </div>
+                    <div style="display:none">
+                        <img src="~/images/узкие/Катера/мотосейлеры-коллаж.jpg" />
                     </div>
                     break;
                 case "katerkabins":
@@ -263,9 +269,6 @@
                         <img src="~/images/узкие/Парусники/якуцк-на300-2.jpg">
                     </div>
                     <div style="display:none">
-                        <img src="~/images/узкие/Парусники/якуцк-на300.jpg">
-                    </div>
-                    <div style="display:none">
                         <img src="~/images/узкие/Парусники/якуцк-обр-на300.jpg">
                     </div>
                     break;
@@ -328,37 +331,41 @@
             }
         </div>
         @*@if (@ViewBag.TopPic != "details")
-        {
-            <div class="logo" id="top-left">
-                <img src="~/images/icons/Логотип для вставки с текстом.png">
-            </div>
-            <div class="shortLogo" id="top-left">
-                <img src="~/images/icons/Логотип для вставки малый.png">
-            </div>
-            <div id="top-right" class="contacts" style="display:none">
-                <img src="~/images/icons/контакты2.png">
-            </div>
-            <div id="top-right2" class="contacts">
-                <img src="~/images/icons/контакты тройные.png">
-            </div>
-        }*@
+            {
+                <div class="logo" id="top-left">
+                    <img src="~/images/icons/Логотип для вставки с текстом.png">
+                </div>
+                <div class="shortLogo" id="top-left">
+                    <img src="~/images/icons/Логотип для вставки малый.png">
+                </div>
+                <div id="top-right" class="contacts" style="display:none">
+                    <img src="~/images/icons/контакты2.png">
+                </div>
+                <div id="top-right2" class="contacts">
+                    <img src="~/images/icons/контакты тройные.png">
+                </div>
+            }*@
     </div>
 
     <div id="header" class="header">
         <div id="nav-top" class="nav-top">
             <div id="mobileShips-Catalog" class="nav-element-top">
-                <div class="nav-element-inside">
-                    КАТАЛОГ
-                </div>
+                <a asp-action="sailboats" asp-controller="Catalog">
+                    <div class="nav-element-inside">
+                        КАТАЛОГ
+                    </div>
+                </a>
             </div>
             <div id="ships-catalog" class="nav-element-top">
-                <div class="nav-element-inside">
-                    <a href="/">КАТАЛОГ</a>
-                </div>
+                <a asp-action="sailboats" asp-controller="Catalog">
+                    <div class="nav-element-inside">
+                        КАТАЛОГ
+                    </div>
+                </a>
             </div>
             <div id="news" class="nav-element-top">
                 <div class="nav-element-inside">
-                    <a href="/">НАШИ НОВОСТИ</a>
+                    НАШИ НОВОСТИ
                 </div>
             </div>
             <div id="SMI" class="nav-element-top">
@@ -372,9 +379,11 @@
                 </div>
             </div>
             <div id="about" class="nav-element-top">
-                <div class="nav-element-inside">
-                    <a href="">О НАС</a>
-                </div>
+                <a asp-action="AboutUs" asp-controller="About">
+                    <div class="nav-element-inside">
+                        О НАС
+                    </div>
+                </a>
             </div>
             <div id="contacts" class="nav-element-top">
                 <div class="nav-element-inside">
@@ -402,16 +411,16 @@
         <div id="menu-nav-top" class="menu-nav-top"></div>
     </div>
 
-    <div class="MyContainer" id="main">
-        <partial name="_CookieConsentPartial" />
-        @RenderBody()
+    <partial name="_CookieConsentPartial" />
+    @RenderBody()
 
+    @*<div class="MyContainer" id="main">*@
         <footer class="footer">
             <div>
                 &copy; 2019 - Varyag - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
         </footer>
-    </div>
+    @*</div>*@
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/fotorama.js"></script>
     <script src="~/js/top-nav.js"></script>

@@ -273,7 +273,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Учебные макеты судов";
             ViewData["Keywords"] = "Купить учебные макеты, Учебные макеты судов";
             ViewData["Description"] = "Учебные макеты для изучения конструкции судов";
-            ViewBag.TopPic = "general";
+            ViewBag.TopPic = "maketsstudy";
             return View();
         }
 
@@ -283,7 +283,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Макеты судов и кораблей для фильмов";
             ViewData["Keywords"] = "Купить макеты для съемок, Макеты судов и кораблей для фильмов";
             ViewData["Description"] = "Макеты судов и кораблей для использования в съемках художественных или документальных фильмах";
-            ViewBag.TopPic = "general";
+            ViewBag.TopPic = "maketscinema";
             return View();
         }
 
@@ -293,7 +293,7 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Макеты судов для музеев";
             ViewData["Keywords"] = "Купить макеты судов для музеев, Макеты парусников и шлюпок для музеев";
             ViewData["Description"] = "Макеты судов и кораблей в качестве музейных экспонатов, а также судов и кораблей-музеев в качестве помещений для выставок";
-            ViewBag.TopPic = "general";
+            ViewBag.TopPic = "maketsmuseum";
             return View();
         }
 

@@ -1,4 +1,72 @@
-﻿.firstContainer {
+﻿.about {
+    height: 80vh;
+    position: relative;
+    /*background-attachment:local;*/
+}
+
+    .about p {
+        top: 20px;
+        position: absolute;
+        color: white;
+    }
+
+.aboutH1 {
+}
+
+    .aboutH1 h1 {
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        padding-bottom:3vH;
+        padding-top:3vH;
+        text-align:center;
+    }
+
+.betweenAbout {
+    font-size: 20px;
+    padding-left: 5vH;
+    padding-right: 5vH;
+    height: 50px;
+    text-align: center;
+    background-color: #f1e3c0;
+}
+
+    .betweenAbout p {
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
+
+#сatalog.about {
+    /*background: url(../images/о_нас/каталог/img440.jpg) center bottom no-repeat;*/
+    background: url(../images/о_нас/каталог/120923DMI_3702.JPG) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+#production.about {
+    background: url(../images/о_нас/производство/производство.JPG) 50% 60% no-repeat;
+    background-size: cover;
+}
+
+#news.about {
+    background: url(../images/о_нас/новостя/Шлюпка-Ял-6_2.jpg) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+#shipsLife.about {
+    background: url(../images/о_нас/про_жизь/Фото_наших_ЯЛ-6_МГУ_им._Невельского_Владивосток_6.jpg) 50% 35% no-repeat;
+    background-size: cover;
+}
+
+#goto-Predist.about {
+    background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 50% 100% no-repeat;
+    background-size: cover;
+}
+
+#contacts.about {
+    background: url(../images/о_нас/доставка/IMG_8760.JPG) 50% 0% no-repeat;
+    background-size: cover;
+}
+
+.firstContainer {
     background-color: aliceblue;
     width: 100%;
 }
@@ -176,6 +244,7 @@ img {
     cursor: pointer;
     flex-grow: 1;
     border-style: ridge;
+    border-right-style:none;
 }
 
     .nav-element-top:hover {
@@ -710,6 +779,14 @@ img {
         margin-block-start: 0px;
         margin-block-end: 0px;
     }
+
+
+.infoBlocks {
+    display: grid;
+    grid-template-areas: "first" "second" "fird" "fourth";
+    grid-template-columns: auto;
+    grid-template-rows: auto 10px auto;
+}
 
 @media (max-width:1260px) {
     .sheme {
