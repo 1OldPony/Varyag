@@ -1,59 +1,164 @@
 ﻿.about {
     height: 80vh;
     position: relative;
-    /*background-attachment:local;*/
 }
 
     .about p {
-        top: 20px;
-        position: absolute;
-        color: white;
+        /*position: absolute;*/
+        font-size:2rem;
     }
 
-.aboutH1 {
+#main.headerAbout {
+    font-size: 2.5rem;
 }
 
-    .aboutH1 h1 {
-        margin-block-start: 0px;
-        margin-block-end: 0px;
-        padding-bottom:3vH;
-        padding-top:3vH;
-        text-align:center;
-    }
-
-.betweenAbout {
-    font-size: 20px;
-    padding-left: 5vH;
-    padding-right: 5vH;
-    height: 50px;
+.headerAbout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+    font-family: 'Gabriela';
+    font-weight: bold;
+    margin-left: 5vw;
+    margin-right: 5vw;
     text-align: center;
-    background-color: #f1e3c0;
 }
 
-    .betweenAbout p {
-        margin-block-start: 0px;
-        margin-block-end: 0px;
+.annotation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0px;
+    width: 50%;
+    height: inherit;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.annotationText {
+    font-size:23px;
+    font-weight:bold;
+    margin:20%;
+}
+
+#production.about {
+    background: url(../images/о_нас/производство/производство.JPG) 80% 60% no-repeat;
+    background-size: auto 185%;
+}
+
+    #production.about .annotation {
+        right: 2vh;
+        bottom: 2vh;
+        height: auto;
+        width: 533px;
+        border-radius: 10px;
     }
 
-#сatalog.about {
-    /*background: url(../images/о_нас/каталог/img440.jpg) center bottom no-repeat;*/
+    #production.about .annotationText {
+        margin: 2%;
+    }
+
+.longText {
+    display: initial;
+}
+
+.shortText {
+    display: none;
+    text-decoration:underline;
+}
+
+.longTextSecond {
+    display: initial;
+}
+
+.shortTextSecond {
+    display: none;
+}
+
+#news.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+}
+
+    #news.about p {
+        position: absolute;
+    }
+
+.partNews {
+    display: flex;
+    /*top: 5vh;*/
+    justify-content: center;
+    position: relative;
+    width: 90%;
+}
+
+.partNewsElement {
+    width: 30%;
+    height: 35vh;
+    position: relative;
+}
+
+#one.partNewsElement {
+    background: url(../images/о_нас/каталог/20160811-16-17-35.jpg) 54% 55% no-repeat;
+    background-size:cover;
+}
+
+#two.partNewsElement {
+    background: url(../images/о_нас/каталог/АС-67_131.jpg) 54% 48% no-repeat;
+    background-size: cover;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#three.partNewsElement {
     background: url(../images/о_нас/каталог/120923DMI_3702.JPG) 50% 50% no-repeat;
     background-size: cover;
 }
 
-#production.about {
-    background: url(../images/о_нас/производство/производство.JPG) 50% 60% no-repeat;
-    background-size: cover;
+#сatalog.about {
+    background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 76% no-repeat;
+    /*background-size: auto 164%;*/
 }
 
-#news.about {
-    background: url(../images/о_нас/новостя/Шлюпка-Ял-6_2.jpg) 50% 50% no-repeat;
-    background-size: cover;
+    #сatalog.about .annotation {
+        left: 2vh;
+        bottom: 2vh;
+        height: auto;
+        width: 533px;
+        border-radius: 10px;
+    }
+
+    #сatalog.about .annotationText {
+        margin: 2%;
+    }
+
+#customers.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
 }
 
-#shipsLife.about {
-    background: url(../images/о_нас/про_жизь/Фото_наших_ЯЛ-6_МГУ_им._Невельского_Владивосток_6.jpg) 50% 35% no-repeat;
-    background-size: cover;
+.allCustomers {
+    display: flex;
+    font-size: 1.8rem;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    width: 90vw;
+    justify-content: space-around;
+}
+
+.customersBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.singleCustomer {
+    text-align: center;
+    margin: 1vh;
 }
 
 #goto-Predist.about {
@@ -61,10 +166,39 @@
     background-size: cover;
 }
 
+    #goto-Predist.about .annotation {
+        right: 5vh;
+        left: auto;
+        height: 60vh;
+        width: 40vw;
+        border-radius: 150px;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+
+    #goto-Predist.about .annotationText {
+        margin: 5%;
+    }
+
 #contacts.about {
-    background: url(../images/о_нас/доставка/IMG_8760.JPG) 50% 0% no-repeat;
-    background-size: cover;
+    display: flex;
+    text-align: center;
+    height: 30vh;
+    align-items: center;
 }
+
+.contactsText {
+    width: 50vw;
+    margin: auto;
+}
+
+.contactsFoto {
+    width: 40vw;
+    height: 20vh;
+    margin: 2vw;
+    background: url(../images/Снимок.PNG) 50% 50% no-repeat;
+}
+
 
 .firstContainer {
     background-color: aliceblue;
@@ -163,6 +297,15 @@ img {
     border-width: 1px;
     margin-bottom: 10px;
 }
+
+.borderAbout {
+    width: 100%;
+    border-top-style: solid;
+    border-width: 1px;
+    margin: 2vh;
+    border-color: rgba(24, 63, 97, 0.4);
+}
+
 
 .header {
     font-family: 'Gabriela', Arial, sans-serif;
@@ -788,13 +931,45 @@ img {
     grid-template-rows: auto 10px auto;
 }
 
+@media (max-width:1628px) {
+
+    .partNewsElement {
+        height: 31vh;
+    }
+}
+
+@media (max-width:1280px) {
+
+    #production.about {
+        background-position: 87% 60%;
+    }
+}
+
 @media (max-width:1260px) {
+
     .sheme {
         width: 60%;
     }
 }
 
 @media (max-width:1189px) {
+
+    #news.about {
+        height:80vh;
+    }
+
+    .partNews {
+        flex-direction:column;
+    }
+
+    .partNewsElement {
+        width:100%;
+        height:20vh;
+    }
+
+    #two.partNewsElement {
+        margin:0;
+    }
 
     .cellLong {
         display: none;
@@ -838,8 +1013,13 @@ img {
 }
 
 @media (max-width:1160px) {
+
     .sheme {
         width: 55%;
+    }
+
+    #сatalog.about {
+        background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 53% 76% no-repeat;
     }
 }
 
@@ -892,6 +1072,10 @@ img {
         margin-right: 5%;
         margin-left: 3%;
     }
+
+    /*#сatalog.about {
+        background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 58% 76% no-repeat;
+    }*/
 }
 
 @media (max-width:990px) {
@@ -912,6 +1096,17 @@ img {
 
     .cellShort[name="midSleepingAreas"] {
         display: none;
+    }
+}
+
+@media (max-width:830px) {
+
+    #news.about {
+        height: 83vh;
+    }
+
+    #production.about {
+        background-position: 92% 60%;
     }
 }
 
@@ -1108,6 +1303,10 @@ img {
         margin-block-start: 0px;
         margin-block-end: 2px;
     }
+
+    #сatalog.about {
+        background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 90% no-repeat;
+    }
 }
 
 @media (max-width:786px) {
@@ -1171,6 +1370,59 @@ img {
     #first-out.cellShort {
         display: none;
     }
+
+    #news.about {
+        height: 87vh;
+    }
+}
+
+@media (max-width:586px) {
+
+    #production.about .annotation {
+        right: 0;
+        bottom: 0;
+        left:0;
+        height: auto;
+        width: auto;
+        border-radius: 0;
+    }
+
+    #production.longText {
+        display: none;
+    }
+
+    #production.shortText {
+        display: initial;
+    }
+
+    #сatalog.about {
+        background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 80% no-repeat;
+    }
+
+    #сatalog.about .annotation {
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        width: auto;
+        border-radius: 0;
+    }
+
+    #сatalog.longText {
+        display: none;
+    }
+
+    #сatalog.shortText {
+        display: initial;
+    }
+}
+
+@media (max-width:550px) {
+
+    #production.about {
+        background: url(../images/о_нас/производство/производство_12.JPG) 84% 100%;
+        background-size: auto 130%;
+    }
 }
 
 @media (max-width:525px) {
@@ -1194,12 +1446,25 @@ img {
     #fird-out.cellShort {
         display: none;
     }
+
+    #news.about {
+        height: 87vh;
+    }
+
+    #сatalog.about {
+        background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
+    }
+
 }
 
 @media (max-width:440px) {
 
     #fourth-out.cellShort {
         display: none;
+    }
+
+    #news.about {
+        height: 91vh;
     }
 }
 
@@ -1208,7 +1473,23 @@ img {
     .singleProject {
         grid-template-rows: 66px auto min-content auto 20px;
     }
+
+    #сatalog.about {
+        background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 60% 85% no-repeat;
+    }
+
+    .longTextSecond {
+        display: none;
+    }
+
+    .shortTextSecond {
+        display: initial;
+    }
 }
+
+/*@media (max-width:400px) {
+
+}*/
 
 @media (max-width:383px) {
 
@@ -1354,5 +1635,20 @@ img {
 
     .nav-element-choosen .nav-element-inside p {
         margin-block-start: 2px;
+    }
+}
+
+@media (max-width:360px) {
+    #news.about {
+        height: 95vh;
+    }
+}
+
+@media (max-width:346px) {
+    #news.about {
+        height: 100vh;
+    }
+    .annotation {
+        width:57vw;
     }
 }

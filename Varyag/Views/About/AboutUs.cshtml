@@ -3,76 +3,160 @@
     ViewData["Title"] = "AboutUs";
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
-
-<div class="aboutH1" style="text-align:center"><h1>Верфь деревянного судостроения "Варяг"</h1></div>
-
-<div class="betweenAbout">
-    <p>
-        За годы работы нами было построено множество прекрасных парусников,
-        катеров, ладей, лодок и шлюпок. Мы работаем с каждым заказчиком индивидуально
-        и можем модифицировать существующий проект или разработать судно согласно вашим пожеланиям.
-    </p>
+@*<div class="aboutH1" style="text-align:center"><h1></h1></div>*@
+@*<div  class="about">
+        <p>
+        </p>
+    </div>*@
+<div id="main" class="headerAbout">
+    <div class="borderAbout"></div>
+    <div>Верфь деревянного судостроения "Варяг"</div>
+    <div class="borderAbout"></div>
 </div>
-<div>
-    <div id="сatalog" class="about">
-        <p>
-            Посмотреть на существующие проекты можно в нашел каталоге.
-        </p>
+<div id="production" class="about">
+    <div class="annotation">
+        <div class="annotationText">
+            <p>
+                За 30 лет нами было построено более 50 крупных судов и больше 150 лодок и шлюпок.<br />
+                Подробнее <span id="production" class="longText">о нашем производстве можно здесь.</span><span id="production" class="shortText">...</span>
+            </p>
+        </div>
     </div>
-    <div class="betweenAbout">
-        <p>
-            На нашей верфи бережно сохраняют и развивают традиции деревянного судостроения.
-            Мы выполняем весь цикл необходимых для спуска и ввода в эксплуатацию работ, от проектирования
-            до покраски, планировки интерьеров и резбы.
-        </p>
+</div>
+<div id="news" class="about">
+    <div class="headerAbout">
+        <div class="borderAbout"></div>
+        <div>Отследить события из нашей жизни и жизни наших кораблей можно в разделе новостей.</div>
+        <div class="borderAbout"></div>
     </div>
-    <div id="production" class="about">
-        <p>
-            Подробнее об этом процессе можно почитать тут.
-        </p>
+    @*<p>
+        Отследить события из нашей жизни и жизни наших кораблей можно в разделе новостей.
+    </p>*@
+    <div class="partNews">
+        <div id="one" class="partNewsElement">
+            <div class="annotation">
+                <div class="annotationText">
+                    Вот какой классный мы построили кораблик!<br /><a>Подробности...</a>
+                </div>
+            </div>
+        </div>
+        <div id="two" class="partNewsElement">
+            <div class="annotation">
+                <div class="annotationText">
+                    А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
+                </div>
+            </div>
+        </div>
+        <div id="three" class="partNewsElement">
+            <div class="annotation">
+                <div class="annotationText">
+                    А тут наш кораблик - гвоздь программы!<br /><a>Подробности...</a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="betweenAbout">
-        <p>
-            Кроме постройки судов мы участвуем в выставках и других мероприятиях.
-        </p>
+</div>
+<div id="сatalog" class="about">
+    <div class="annotation">
+        <div class="annotationText">
+            <p>
+                <span id="сatalog" class="longTextSecond">
+                    Мы работаем с каждым заказчиком индивидуально и
+                </span>
+                <span id="сatalog" class="shortTextSecond">Мы</span>
+                 можем модифицировать существующий проект или разработать судно согласно вашим пожеланиям.<br />
+                <span id="сatalog" class="longText">Посмотреть на существующие проекты можно в нашел каталоге.</span>
+                <span id="сatalog" class="shortText">Наш каталог...</span>
+            </p>
+        </div>
     </div>
-    <div id="news" class="about">
-        <p>
-            Отследить наши события можно в разделе новостей.
-        </p>
+</div>
+<div id="customers" class="about">
+    <div class="headerAbout">
+        <div class="borderAbout"></div>
+        <div>За время существования нашей верфи нашими заказчиками стали:</div>
+        <div class="borderAbout"></div>
     </div>
-    <div class="betweenAbout">
-        <p>
-            Наши суда живут интересной и насыщенной жизнью - ходят в кругосветки,
-            участвуют в представлениях, приобщают юных моряков и не только к морю,
-            а так-же служат в рыбных хозяйствах и на беломорской научной станции.
-        </p>
+    <div class="allCustomers">
+        <div class="customersBlock">
+            <div class="singleCustomer">
+                Артек
+            </div>
+            <div class="singleCustomer">
+                Мгу Биологическая станция
+            </div>
+            <div class="singleCustomer">
+                Администрация Воронежа
+            </div>
+            <div class="singleCustomer">
+                Мгу Биологическая станция
+            </div>
+            <div class="singleCustomer">
+                Администрация Воронежа
+            </div>
+        </div>
+        <div class="customersBlock">
+            <div class="singleCustomer">
+                Артек
+            </div>
+            <div class="singleCustomer">
+                Мгу Биологическая станция
+            </div>
+            <div class="singleCustomer">
+                Администрация Воронежа
+            </div>
+            <div class="singleCustomer">
+                Мгу Биологическая станция
+            </div>
+            <div class="singleCustomer">
+                Администрация Воронежа
+            </div>
+        </div>
+        <div class="customersBlock">
+            <div class="singleCustomer">
+                Артек
+            </div>
+            <div class="singleCustomer">
+                Мгу Биологическая станция
+            </div>
+            <div class="singleCustomer">
+                Администрация Воронежа
+            </div>
+            <div class="singleCustomer">
+                Мгу Биологическая станция
+            </div>
+            <div class="singleCustomer">
+                Администрация Воронежа
+            </div>
+        </div>
     </div>
-    <div id="shipsLife" class="about">
-        <p>
-            Подробнее о жизни наших судов можно узнать тут.
-        </p>
+</div>
+<div id="goto-Predist" class="about">
+    <div class="annotation">
+        <div class="annotationText">
+            <p>
+                Крупнейший наш проект - строительство корабля-музея
+                "Гото-Предистинация" для воронежской области.<br />
+                Подробно историю создания этого судна можно увидеть тут.
+            </p>
+        </div>
     </div>
-    <div class="betweenAbout">
-        <p>
-            Крупнейший наш проект - строительство корабля-музея
-            "Гото-Предистинация" для воронежской области.
-        </p>
-    </div>
-    <div id="goto-Predist" class="about">
-        <p>
-            Подробно историю создания этого судна можно увидеть тут.
-        </p>
-    </div>
-    <div class="betweenAbout">
+</div>
+@*<div id="production" class="about">
+    <p>
+        На нашей верфи бережно сохраняют и развивают традиции деревянного судостроения.
+        Мы выполняем весь цикл необходимых для спуска и ввода в эксплуатацию работ, от проектирования
+        до покраски, планировки интерьеров и резбы.<br />
+        Подробнее об этом процессе можно почитать тут.
+    </p>
+</div>*@
+<div id="contacts" class="about">
+    <div class="contactsText">
         <p>
             Мы находимся в Карелии, в городе Петрозаводск, но наши суда
-            можно встретить и в австралии и в карибском море.
-        </p>
-    </div>
-    <div id="contacts" class="about">
-        <p>
+            можно встретить и в австралии и в карибском море.<br />
             Подробнее о способах доставки и наши контакты можно узнать здесь.
         </p>
     </div>
+    <div class="contactsFoto"></div>
 </div>
