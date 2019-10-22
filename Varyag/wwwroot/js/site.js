@@ -166,6 +166,9 @@ $(document).ready(function () {
                 break;
         }
     });
+
+    //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
+    $("#left.control, #right.control").height($(".allCustomers").height());
 });
 
 function hideAll() {
@@ -314,3 +317,10 @@ function navElMinorChoose() {
         default:
     }
 };
+
+/*function () { $(".allCustomers").scrollLeft(scroll2 += 100) }*/
+$("#right.control").click(function () {
+    //$(".allCustomers").css('width', '300px');
+    $(".allCustomers").css('transform', "translatex(-100vw)");
+    //alert('hi');
+});

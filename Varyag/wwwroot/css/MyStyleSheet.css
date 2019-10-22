@@ -1,4 +1,34 @@
-﻿.about {
+﻿@font-face {
+    font-family: "BalticaC";
+    src: url("../fonts/BalticaC_5787.ttf") format("regular");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "AdobeHebrewRegular";
+    src: url("../fonts/AdobeHebrew-Regular.otf") format("opentype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+@font-face {
+    font-family: "rodeoxbc";
+    src: url("../fonts/AdobeHebrew-Regular.otf") format("opentype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Artemon";
+    src: url("../fonts/Artemon.ttf") format("regular");
+    font-style: normal;
+    font-weight: normal;
+} 
+
+
+.about {
     height: 80vh;
     position: relative;
 }
@@ -14,7 +44,7 @@
 
 .headerAbout {
     display: flex;
-    align-items: center;
+    align-self: center;
     justify-content: center;
     flex-direction: column;
     font-size: 2rem;
@@ -120,7 +150,7 @@
 
 #сatalog.about {
     background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 76% no-repeat;
-    /*background-size: auto 164%;*/
+    background-size: auto 164%;
 }
 
     #сatalog.about .annotation {
@@ -135,14 +165,14 @@
         margin: 2%;
     }
 
-#customers.about {
+/*#customers.about {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: auto;
-}
+}*/
 
-.allCustomers {
+/*.allCustomers {
     display: flex;
     font-size: 1.8rem;
     margin-top: 1vw;
@@ -154,11 +184,62 @@
 .customersBlock {
     display: flex;
     flex-direction: column;
+}*/
+/*///////////////////////////////со слайдером//////////////////////////*/
+
+#customers.about {
+    display: flex;
+    position:relative;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+
+#viewPort {
+    display:flex;
+    width:100vw;
+}
+
+.allCustomers {
+    display: flex;
+    font-size: 1.8rem;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: auto;
+    margin-right: auto;
+    width: 89vw;
+    transition: transform 0.6s ease;
+    justify-content:space-around;
+}
+
+.customersBlock {
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    /*max-width:89vw;*/
+}
+
+.control {
+    position: absolute;
+    background-color: darkviolet;
+    bottom: 0;
+    width: 5%;
+    margin: 1vw;
+    display:none;
+}
+
+#left.control {
+    left: 0;
+}
+
+#right.control {
+    right: 0;
 }
 
 .singleCustomer {
     text-align: center;
-    margin: 1vh;
+    padding: 1vh;
+    /*margin-left:0;*/
 }
 
 #goto-Predist.about {
@@ -299,7 +380,6 @@ img {
 }
 
 .borderAbout {
-    width: 100%;
     border-top-style: solid;
     border-width: 1px;
     margin: 2vh;
@@ -1082,6 +1162,31 @@ img {
 
     .cellShort[name="midSailArea"] {
         display: none;
+    }
+
+    #customers.about {
+        overflow:hidden;
+    }
+
+    .allCustomers {
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+    }
+
+    .customersBlock {
+        /*padding-left: 10vw;*/
+        /*padding-right: 10vw;*/
+        /*width: 89vw;*/
+        /*max-width: 89vw;*/
+        /*margin-right:6vw;*/
+        /*margin-left:4vw;*/
+    }
+
+    .control {
+        width: 4%;
+        margin: 1vw;
+        display:initial;
     }
 }
 
