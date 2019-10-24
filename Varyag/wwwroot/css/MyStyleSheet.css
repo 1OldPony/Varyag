@@ -221,12 +221,18 @@
 
 .control {
     position: absolute;
-    background-color: darkviolet;
     bottom: 0;
-    width: 5%;
+    width: 40px;
     margin: 1vw;
-    display:none;
+    margin-left:0;
+    margin-right:0;
+    z-index:999999;
+    display: none;
 }
+
+    .control:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
 
 #left.control {
     left: 0;
@@ -236,10 +242,93 @@
     right: 0;
 }
 
+/*/////////////маленькая стрелка/////////////*/
+.arrow {
+    cursor: pointer;
+    height: -webkit-fill-available;
+    width: 40px;
+    position: relative;
+}
+
+.arrow-top,
+.arrow-bottom {
+    background: #183f61;
+    height: 6px;
+    left: 8px;
+    position: absolute;
+    top: 51%;
+    width: 30px;
+}
+
+.arrow-top {
+    transform: rotate(60deg);
+    transform-origin: bottom left;
+    top: 49%;
+}
+
+.arrow-bottom {
+    transform: rotate(-60deg);
+    transform-origin: top left;
+}
+
+#right.arrow-top {
+    transform-origin: bottom right;
+    top: 50%;
+    left: -7px;
+}
+
+#right.arrow-bottom {
+    transform-origin: top right;
+    left: -7px;
+    top: 50%;
+}
+
+/*/////////////большая стрелка/////////////*/
+/*.arrow {
+    cursor: pointer;
+    height: -webkit-fill-available;
+    width: 40px;
+    position: relative;
+}
+
+.arrow-top,
+.arrow-bottom {
+    background: #183f61;
+    height: 7px;
+    left: 8px;
+    position: absolute;
+    top: 51%;
+    width: 60px;
+}
+
+.arrow-top {
+    transform: rotate(75deg);
+    transform-origin: bottom left;
+    top: 49%;
+}
+
+.arrow-bottom {
+    transform: rotate(-75deg);
+    transform-origin: top left;
+}
+
+#right.arrow-top {
+    transform-origin: bottom right;
+    top: 50%;
+    left: -35px;
+}
+
+#right.arrow-bottom {
+    transform-origin: top right;
+    left: -35px;
+    top: 51%;
+}*/
+
+
+
 .singleCustomer {
     text-align: center;
     padding: 1vh;
-    /*margin-left:0;*/
 }
 
 #goto-Predist.about {
@@ -1174,18 +1263,7 @@ img {
         width: auto;
     }
 
-    .customersBlock {
-        /*padding-left: 10vw;*/
-        /*padding-right: 10vw;*/
-        /*width: 89vw;*/
-        /*max-width: 89vw;*/
-        /*margin-right:6vw;*/
-        /*margin-left:4vw;*/
-    }
-
     .control {
-        width: 4%;
-        margin: 1vw;
         display:initial;
     }
 }

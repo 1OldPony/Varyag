@@ -317,10 +317,37 @@ function navElMinorChoose() {
         default:
     }
 };
+//////////////////Для пролистывания списка заказчиков//////////////////////
+var slideNumber = 0;
 
-/*function () { $(".allCustomers").scrollLeft(scroll2 += 100) }*/
 $("#right.control").click(function () {
-    //$(".allCustomers").css('width', '300px');
-    $(".allCustomers").css('transform', "translatex(-100vw)");
-    //alert('hi');
+
+    var custWidth = $(".allCustomers").width();
+    var step = custWidth / 3;
+    if (slideNumber == 2) {
+        slideNumber = 0;
+        var scrollNumber = step * slideNumber;
+    }
+    else {
+        var scrollNumber = step * (slideNumber + 1);
+        slideNumber += 1;
+    }
+
+    $(".allCustomers").css('transform', "translatex(-" + scrollNumber + "px)");
+
+});
+
+$("#left.control").click(function () {
+
+    if (slideNumber == 0) {
+        slideNumber = 3;
+    }
+
+    var custWidth = $(".allCustomers").width();
+    var step = custWidth / 3;
+    var scrollNumber = step * (slideNumber - 1);
+
+    $(".allCustomers").css('transform', "translatex(-" + scrollNumber + "px)");
+
+    slideNumber -= 1;
 });
