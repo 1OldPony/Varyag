@@ -3,6 +3,39 @@
 
 $(document).ready(function () {
 
+    //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
+    $("#left.control, #right.control").height($(".allCustomers").height());
+
+    //////////////////добавление яндекс карт, точка на варяге//////////////////////
+    ymaps.ready(function () {
+        var mapVaryag = new ymaps.Map("ourLocation", {
+            center: [61.7702, 34.4359],
+            zoom: 14
+        });
+        var VaryagMark = new ymaps.Placemark([61.7702, 34.4359], {
+            balloonContent: 'Верфь деревянного судостроения "Вряг"<br />varyag@onego.ru<br />8 814 273 35 80',
+            iconContent: ''
+        },
+            {
+            preset: 'islands#redIcon'
+        });
+
+        mapVaryag.controls.remove('zoomControl');
+        mapVaryag.controls.remove('geolocationControl');
+        mapVaryag.controls.remove('searchControl');
+        mapVaryag.controls.remove('routeButtonControl');
+        mapVaryag.controls.remove('trafficControl');
+        mapVaryag.controls.remove('rulerControl');
+        mapVaryag.controls.remove('typeSelector'); 
+        mapVaryag.controls.remove('fullscreenControl');
+
+        mapVaryag.geoObjects.add(VaryagMark); 
+    });
+
+    //////////////////////////виджет контакта//////////////////////////
+    VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height:"200" }, 137987101);
+
+    //////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
     navElMinorChoose();
 
     $(window).scroll(function () {
@@ -167,8 +200,6 @@ $(document).ready(function () {
         }
     });
 
-    //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
-    $("#left.control, #right.control").height($(".allCustomers").height());
 });
 
 function hideAll() {
@@ -351,3 +382,4 @@ $("#left.control").click(function () {
 
     slideNumber -= 1;
 });
+

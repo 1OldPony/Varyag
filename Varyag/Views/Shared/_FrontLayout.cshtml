@@ -330,21 +330,6 @@
                     break;
             }
         </div>
-        @*@if (@ViewBag.TopPic != "details")
-            {
-                <div class="logo" id="top-left">
-                    <img src="~/images/icons/Логотип для вставки с текстом.png">
-                </div>
-                <div class="shortLogo" id="top-left">
-                    <img src="~/images/icons/Логотип для вставки малый.png">
-                </div>
-                <div id="top-right" class="contacts" style="display:none">
-                    <img src="~/images/icons/контакты2.png">
-                </div>
-                <div id="top-right2" class="contacts">
-                    <img src="~/images/icons/контакты тройные.png">
-                </div>
-            }*@
     </div>
 
     <div id="header" class="header">
@@ -412,18 +397,36 @@
     </div>
 
     <partial name="_CookieConsentPartial" />
+   
     @RenderBody()
 
-    @*<div class="MyContainer" id="main">*@
-        <footer class="footer">
-            <div>
-                &copy; 2019 - Varyag - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="footer">
+        <div class="aboutSite">
+            <div class="logo">
+                <img src="~/images/icons/Логотип для вставки с текстом.png" />
             </div>
-        </footer>
-    @*</div>*@
+            <div>
+                <div id="vk_groups"></div>
+            </div>
+            <div>
+                    <p>Наш адрес: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43, 
+                    заезд с переулка спасателей.<br />
+                    Связаться с нами можно по:<br />
+                    электронной почте&nbsp;- varyag@onego.ru<br />
+                    или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80</p>
+            </div>
+        </div>
+        <div class="aboutMe">
+
+        </div>
+    </footer>
+
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/fotorama.js"></script>
     <script src="~/js/top-nav.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a93c2bc3-57dc-4ed5-90f0-419606ca819a&lang=ru_RU"
+            type="text/javascript"></script>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)

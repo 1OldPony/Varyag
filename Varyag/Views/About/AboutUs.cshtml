@@ -3,17 +3,10 @@
     ViewData["Title"] = "AboutUs";
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
-@*<div class="aboutH1" style="text-align:center"><h1></h1></div>*@
-@*<div  class="about">
-        <p>
-        </p>
-    </div>*@
+
 <div id="main" class="headerAbout">
     <div class="borderAbout"></div>
     <div style="font-family:'BalticaC'">Верфь деревянного судостроения "Варяг"</div>
-    <div style="font-family:'AdobeHebrewRegular'">Верфь деревянного судостроения "Варяг"</div>
-    <div style="font-family:'rodeoxbc'">Верфь деревянного судостроения "Варяг"</div>
-    <div style="font-family:'Artemon'">Верфь деревянного судостроения "Варяг"</div>
     <div>Верфь деревянного судостроения "Варяг"</div>
     <div class="borderAbout"></div>
 </div>
@@ -22,7 +15,8 @@
         <div class="annotationText">
             <p>
                 За 30 лет нами было построено более 50 крупных судов и больше 150 лодок и шлюпок.<br />
-                Подробнее <span id="production" class="longText">о нашем производстве можно здесь.</span><span id="production" class="shortText">...</span>
+                <span id="production" class="longText">Подробнее о нашем производстве можно здесь.</span>
+                <span id="production" class="shortText">Подробнее...</span>
             </p>
         </div>
     </div>
@@ -33,9 +27,6 @@
         <div>Отследить события из нашей жизни и жизни наших кораблей можно в разделе новостей.</div>
         <div class="borderAbout"></div>
     </div>
-    @*<p>
-        Отследить события из нашей жизни и жизни наших кораблей можно в разделе новостей.
-    </p>*@
     <div class="partNews">
         <div id="one" class="partNewsElement">
             <div class="annotation">
@@ -149,32 +140,37 @@
         </div>
     </div>
 </div>
-<div id="goto-Predist" class="about">
+<div id="goto-predist" class="about">
     <div class="annotation">
         <div class="annotationText">
             <p>
                 Крупнейший наш проект - строительство корабля-музея
-                "Гото-Предистинация" для воронежской области.<br />
-                Подробно историю создания этого судна можно увидеть тут.
+                "Гото-Предистинация"
+                <span id="goto-predist" class="longText">
+                    для воронежской области.
+                </span><br />
+                <span id="goto-predist" class="longText">
+                    Подробно историю создания этого судна
+                </span>
+                <span id="goto-predist" class="shortText">
+                    Подробнее...
+                </span>
+                <span id="goto-predist" class="longTextSecond"> можно увидеть тут.</span>
             </p>
         </div>
     </div>
 </div>
-@*<div id="production" class="about">
-    <p>
-        На нашей верфи бережно сохраняют и развивают традиции деревянного судостроения.
-        Мы выполняем весь цикл необходимых для спуска и ввода в эксплуатацию работ, от проектирования
-        до покраски, планировки интерьеров и резбы.<br />
-        Подробнее об этом процессе можно почитать тут.
-    </p>
-</div>*@
 <div id="contacts" class="about">
     <div class="contactsText">
         <p>
-            Мы находимся в Карелии, в городе Петрозаводск, но наши суда
-            можно встретить и в австралии и в карибском море.<br />
-            Подробнее о способах доставки и наши контакты можно узнать здесь.
+            Мы находимся в Карелии,<span id="contacts" class="longText">
+            приехать к нам и посмотреть на наше производство можно
+            </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">,
+            заезд с переулка спасателей.</span>
+            <br />Связаться с нами можно по:
         </p>
+        <p style="margin-top:2vh">электронной почте&nbsp;- varyag@onego.ru<br />
+        или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80</p
     </div>
-    <div class="contactsFoto"></div>
+    <div id="ourLocation"></div>
 </div>
