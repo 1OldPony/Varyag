@@ -163,7 +163,11 @@ namespace Varyag.Migrations
 
                     b.Property<string>("Header");
 
+                    b.Property<int>("KeyWord");
+
                     b.Property<string>("MainStory");
+
+                    b.Property<byte[]>("NewsMainFoto");
 
                     b.Property<string>("ShortStory");
 

@@ -331,7 +331,6 @@
             }
         </div>
     </div>
-
     <div id="header" class="header">
         <div id="nav-top" class="nav-top">
             <div id="mobileShips-Catalog" class="nav-element-top">
@@ -395,40 +394,54 @@
         </div>
         <div id="menu-nav-top" class="menu-nav-top"></div>
     </div>
-
     <partial name="_CookieConsentPartial" />
-   
-    @RenderBody()
 
+    @RenderBody()
     <footer class="footer">
         <div class="aboutSite">
             <div class="logo">
-                <img src="~/images/icons/Логотип для вставки с текстом.png" />
+                <img src="~/images/icons/Логотип для вставки малый.png" />
             </div>
-            <div>
-                <div id="vk_groups"></div>
+            <div class="socialNetworks">
+                <div>
+                    НАШИ СОЦСЕТИ:
+                </div>
+                <div class="socialVidgets">
+                    <div id="vk_groups"></div>
+                    <div style="height:200px;margin-right:1vw"></div>
+                    <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="" 
+                         data-width="200" data-height="200" data-small-header="true" 
+                         data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                    </div>
+                </div>
             </div>
-            <div>
-                    <p>Наш адрес: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43, 
-                    заезд с переулка спасателей.<br />
+            <div class="footerContacts">
+                <p>
+                    Наш адрес: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43,
+                    заезд с переулка спасателей.<br /><br />
                     Связаться с нами можно по:<br />
                     электронной почте&nbsp;- varyag@onego.ru<br />
-                    или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80</p>
+                    или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
+                </p>
+            </div>
+            <div>
+                <img src="~/images/Варяг_30-10-2019_18-08-23.png" width="320" height="265" />
             </div>
         </div>
         <div class="aboutMe">
-
+            Разработчик сайта - Михаил Мартюков.
         </div>
     </footer>
-
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/fotorama.js"></script>
     <script src="~/js/top-nav.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a93c2bc3-57dc-4ed5-90f0-419606ca819a&lang=ru_RU"
             type="text/javascript"></script>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v5.0"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @RenderSection("Scripts", required: false)
 </body>
 </html>

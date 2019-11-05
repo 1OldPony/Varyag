@@ -55,7 +55,9 @@ namespace Varyag.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Header = table.Column<string>(nullable: true),
                     ShortStory = table.Column<string>(nullable: true),
-                    MainStory = table.Column<string>(nullable: true)
+                    MainStory = table.Column<string>(nullable: true),
+                    KeyWord = table.Column<int>(nullable: false),
+                    NewsMainFoto = table.Column<byte[]>(nullable: true)
                 },
                 constraints: table =>
                 {

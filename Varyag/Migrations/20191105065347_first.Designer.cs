@@ -10,8 +10,8 @@ using Varyag.Models;
 namespace Varyag.Migrations
 {
     [DbContext(typeof(VaryagContext))]
-    [Migration("20190515061108_fotoToProject")]
-    partial class fotoToProject
+    [Migration("20191105065347_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -165,7 +165,11 @@ namespace Varyag.Migrations
 
                     b.Property<string>("Header");
 
+                    b.Property<int>("KeyWord");
+
                     b.Property<string>("MainStory");
+
+                    b.Property<byte[]>("NewsMainFoto");
 
                     b.Property<string>("ShortStory");
 
@@ -180,7 +184,15 @@ namespace Varyag.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("CruiseShip");
+                    b.Property<bool>("BoatRow");
+
+                    b.Property<bool>("BoatSail");
+
+                    b.Property<bool>("BoatTraditional");
+
+                    b.Property<bool>("BoatYal");
+
+                    b.Property<bool>("Botik");
 
                     b.Property<string>("Deep")
                         .HasMaxLength(5);
@@ -189,51 +201,79 @@ namespace Varyag.Migrations
 
                     b.Property<int?>("EnginePower");
 
-                    b.Property<bool>("FishingShip");
-
                     b.Property<int?>("FreshWaterCap");
 
                     b.Property<int?>("FuelCap");
 
-                    b.Property<bool>("HistoricalShip");
+                    b.Property<bool>("KaterCabin");
+
+                    b.Property<bool>("KaterFish");
+
+                    b.Property<bool>("KaterPass");
+
+                    b.Property<bool>("KaterProject");
+
+                    b.Property<bool>("KaterRow");
+
+                    b.Property<bool>("LadyaProject");
+
+                    b.Property<bool>("LadyaRow");
+
+                    b.Property<bool>("LadyaSail");
 
                     b.Property<string>("Length")
                         .HasMaxLength(5);
 
                     b.Property<byte[]>("MainFoto");
 
+                    b.Property<bool>("MaketCinema");
+
+                    b.Property<bool>("MaketDesign");
+
+                    b.Property<bool>("MaketMuseum");
+
+                    b.Property<bool>("MaketStudy");
+
                     b.Property<string>("Mass")
                         .HasMaxLength(10);
+
+                    b.Property<bool>("Motosailer");
 
                     b.Property<string>("Name");
 
                     b.Property<string>("NumberOfOars")
                         .HasMaxLength(5);
 
-                    b.Property<bool>("PassangerShip");
-
                     b.Property<int?>("PassengerCap");
 
-                    b.Property<bool>("ReserchShip");
+                    b.Property<string>("Price");
 
                     b.Property<string>("SailArea")
                         .HasMaxLength(10);
 
+                    b.Property<bool>("SailboatHistorical");
+
+                    b.Property<bool>("SailboatProject");
+
+                    b.Property<bool>("SailboatStudy");
+
                     b.Property<byte[]>("ShipSheme");
+
+                    b.Property<byte[]>("ShipShemeFull");
+
+                    b.Property<bool>("Shvertbot");
 
                     b.Property<int?>("SleepingAreas");
 
                     b.Property<int?>("Speed");
-
-                    b.Property<bool>("StudyShip");
-
-                    b.Property<int>("Type");
 
                     b.Property<string>("Volume")
                         .HasMaxLength(10);
 
                     b.Property<string>("Windth")
                         .HasMaxLength(5);
+
+                    b.Property<bool>("Yacht");
 
                     b.HasKey("ProjectID");
 

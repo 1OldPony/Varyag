@@ -1,13 +1,14 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    [Authorize(Roles = "admin")]
     public class NewsController : Controller
     {
         private readonly VaryagContext _context;
@@ -52,7 +53,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NewsId,Header,ShortStory,MainStory")] News news)
+        public async Task<IActionResult> Create([Bind("NewsId,Header,ShortStory,MainStory,KeyWord,NewsMainFoto")] News news)
         {
             if (ModelState.IsValid)
             {
@@ -60,6 +61,14 @@ namespace Varyag.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            //var keyWords = from NewsKeyWord e in Enum.GetValues(typeof(NewsKeyWord))
+            //               select new
+            //               {
+            //                   Id = (int)e,
+            //                   Name = e.ToString()
+            //               };
+            //ViewBag.KeyWords = new SelectList (keyWords, "Id","Name");
             return View(news);
         }
 
@@ -84,7 +93,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("NewsId,Header,ShortStory,MainStory")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("NewsId,Header,ShortStory,MainStory,KeyWord,NewsMainFoto")] News news)
         {
             if (id != news.NewsId)
             {

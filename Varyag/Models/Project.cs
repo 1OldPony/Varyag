@@ -127,9 +127,4 @@ namespace Varyag.Models
 
         public List<Foto> ShipFotos { get; set; }
     }
-
-    public enum ShipType
-    {
-        Выберите_Тип, Лодка, Катер, Ладья, Парусник, Шлюпка, Макет
-    }
 }

@@ -963,27 +963,51 @@ img {
 .footer {
     display: flex;
     flex-direction: column;
-    /*font-size:1.2rem;*/
-    /*color:white;*/
     background-color: #183f61;
-    width:100%;
-    padding:2vw;
+    width: 100%;
+    color: white;
+    border-top-style:solid;
+    border-color:red;
 }
 
 .aboutSite {
     display:flex;
     justify-content:space-between;
+    margin:2vh;
 }
 
 .logo {
-    /*display:flex;*/
+    display:flex;
     align-items: center;
+    width:300px;
+    margin-right:2vw;
 }
 
-.logo img {
+    .logo img {
+        min-width: 275px;
+        max-width: 300px;
+    }
+
+.socialNetworks {
+    display: flex;
+    flex-direction: column;
+    /*width:47vw;*/
+}
+
+.socialVidgets {
+    margin-top:2vh;
     display:flex;
-    width: 150px;
-    height:150px;
+}
+
+.footerContacts {
+    display:flex;
+    align-items:center;
+    width:260px;
+    font-size:1.2rem;
+    text-align:center;
+}
+
+.aboutMe {
 }
 
 @media (max-width:1628px) {
@@ -1583,16 +1607,6 @@ img {
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
     }
-
-    /*#goto-predist.longText {
-        display: initial;
-    }
-
-    #goto-predist.shortText {
-        display: none;
-        text-decoration: underline;
-    }*/
-
 }
 
 
@@ -1610,171 +1624,172 @@ img {
 
 @media (max-width:440px) {
 
-#fourth-out.cellShort {
-display: none;
-}
+    #fourth-out.cellShort {
+        display: none;
+    }
 
-#news.about {
-height: 91vh;
-}
+    #news.about {
+        height: 91vh;
+    }
 }
 
 @media (max-width:425px) {
 
-.singleProject {
-grid-template-rows: 66px auto min-content auto 20px;
-}
+    .singleProject {
+        grid-template-rows: 66px auto min-content auto 20px;
+    }
 
-#сatalog.about {
-background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 60% 85% no-repeat;
-}
+    #сatalog.about {
+        background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 60% 85% no-repeat;
+    }
 
-.longTextSecond {
-display: none;
-}
+    .longTextSecond {
+        display: none;
+    }
 
-.shortTextSecond {
-display: initial;
-}
+    .shortTextSecond {
+        display: initial;
+    }
 }
 
 @media (max-width:383px) {
 
-#fifth-out.cellShort {
-display: none;
-}
+    #fifth-out.cellShort {
+        display: none;
+    }
 
-.explainText {
-display: none;
-}
+    .explainText {
+        display: none;
+    }
 
-.category {
-flex-direction: column;
-}
+    .category {
+        flex-direction: column;
+    }
 
-.nav {
-width: 100%;
-}
+    .nav {
+        width: 100%;
+    }
 
-.nav-element .nav-element-inside {
-padding-top: 2px;
-padding-bottom: 2px;
-}
+    .nav-element .nav-element-inside {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
 
-.sub-nav {
-margin-bottom: 2px;
-}
+    .sub-nav {
+        margin-bottom: 2px;
+    }
 
-.catalog {
-margin-top: 10px;
-display: grid;
-grid-template-areas: "boats" "sub-boats" "bigboats" "sub-bigboats" "kater" "sub-kater" "ladya" "sub-ladya" "sailboat" "sub-sailboat" "maket" "sub-maket";
-grid-template-columns: 1fr;
-grid-template-rows: 50px min-content 50px min-content 50px min-content 50px min-content 50px min-content 50px min-content;
-}
+    .catalog {
+        margin-top: 10px;
+        display: grid;
+        grid-template-areas: "boats" "sub-boats" "bigboats" "sub-bigboats" "kater" "sub-kater" "ladya" "sub-ladya" "sailboat" "sub-sailboat" "maket" "sub-maket";
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px min-content 50px min-content 50px min-content 50px min-content 50px min-content 50px min-content;
+    }
 
-#lodki.nav-element, #lodki.nav-element-choosen {
-grid-area: boats;
-}
+    #lodki.nav-element, #lodki.nav-element-choosen {
+        grid-area: boats;
+    }
 
-#lodki-Sub.sub-nav {
-grid-area: sub-boats;
-}
+    #lodki-Sub.sub-nav {
+        grid-area: sub-boats;
+    }
 
-#shlupki.nav-element, #shlupki.nav-element-choosen {
-grid-area: bigboats;
-}
+    #shlupki.nav-element, #shlupki.nav-element-choosen {
+        grid-area: bigboats;
+    }
 
-#shlupki-Sub.sub-nav {
-grid-area: sub-bigboats;
-}
+    #shlupki-Sub.sub-nav {
+        grid-area: sub-bigboats;
+    }
 
-#katera.nav-element, #katera.nav-element-choosen {
-grid-area: kater;
-}
+    #katera.nav-element, #katera.nav-element-choosen {
+        grid-area: kater;
+    }
 
-#katera-Sub.sub-nav {
-grid-area: sub-kater;
-}
+    #katera-Sub.sub-nav {
+        grid-area: sub-kater;
+    }
 
-#ladiy.nav-element, #ladiy.nav-element-choosen {
-grid-area: ladya;
-}
+    #ladiy.nav-element, #ladiy.nav-element-choosen {
+        grid-area: ladya;
+    }
 
-#ladiy-Sub.sub-nav {
-grid-area: sub-ladya;
-}
+    #ladiy-Sub.sub-nav {
+        grid-area: sub-ladya;
+    }
 
-#sailboats.nav-element, #sailboats.nav-element-choosen {
-grid-area: sailboat;
-}
+    #sailboats.nav-element, #sailboats.nav-element-choosen {
+        grid-area: sailboat;
+    }
 
-#sailboats-Sub.sub-nav {
-grid-area: sub-sailboat;
-}
+    #sailboats-Sub.sub-nav {
+        grid-area: sub-sailboat;
+    }
 
-#models.nav-element, #models.nav-element-choosen {
-grid-area: maket;
-}
+    #models.nav-element, #models.nav-element-choosen {
+        grid-area: maket;
+    }
 
-#models-Sub.sub-nav {
-grid-area: sub-maket;
-}
+    #models-Sub.sub-nav {
+        grid-area: sub-maket;
+    }
 
-.nav-element-minor {
-padding: unset;
-margin: unset;
-}
+    .nav-element-minor {
+        padding: unset;
+        margin: unset;
+    }
 
-.nav-element-minor-choosen {
-padding: unset;
-margin: unset;
-}
+    .nav-element-minor-choosen {
+        padding: unset;
+        margin: unset;
+    }
 
-.nav-element-minor-choosen-current {
-padding: unset;
-margin: unset;
-}
+    .nav-element-minor-choosen-current {
+        padding: unset;
+        margin: unset;
+    }
 
-.top-pic {
-display: none;
-}
+    .top-pic {
+        display: none;
+    }
 
-.contacts {
-display: flex;
-flex-direction: column;
-position: initial;
-width: 100%;
-align-self: center;
-}
+    .contacts {
+        display: flex;
+        flex-direction: column;
+        position: initial;
+        width: 100%;
+        align-self: center;
+    }
 
-.top-hat {
-display: flex;
-background-image: url(../images/небо.png)
-}
+    .top-hat {
+        display: flex;
+        background-image: url(../images/небо.png)
+    }
 
-.singleProject {
-grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
-}
+    .singleProject {
+        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
+    }
 
-#post-first-out.cellShort {
-display: none;
-}
+    #post-first-out.cellShort {
+        display: none;
+    }
 
-.catalogItemBottom {
-font-size: 19px;
-text-align: center;
-}
+    .catalogItemBottom {
+        font-size: 19px;
+        text-align: center;
+    }
 
-.nav-element-choosen .nav-element-inside p {
-margin-block-start: 2px;
-}
+    .nav-element-choosen .nav-element-inside p {
+        margin-block-start: 2px;
+    }
 }
 
 @media (max-width:360px) {
-#news.about {
-height: 95vh;
-}
+
+    #news.about {
+    height: 95vh;
+    }
 }
 
 @media (max-width:346px) {
