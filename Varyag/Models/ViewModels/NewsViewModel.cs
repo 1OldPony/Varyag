@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Varyag.Models
+namespace Varyag.Models.ViewModels
 {
-    public class News
+    public class NewsViewModel
     {
         public int NewsId { get; set; }
         [DisplayName("Заголовок")]
@@ -17,10 +17,6 @@ namespace Varyag.Models
 
         [DisplayName("Маленькая фотка")]
         public string ShortImgPath { get; set; }
-        [DisplayName("ALT маленькой фотки")]
-        public string ShortImgAlt { get; set; }
-        [DisplayName("Title маленькой фотки")]
-        public string ShortImgTitle { get; set; }
         [DisplayName("Масштаб маленькой фотки")]
         public string ShortImgScale { get; set; }
         [DisplayName("Х маленькой фотки")]
@@ -30,10 +26,6 @@ namespace Varyag.Models
 
         [DisplayName("Средняя фотка")]
         public string MiddleImgPath { get; set; }
-        [DisplayName("ALT средней фотки")]
-        public string MiddleImgAlt { get; set; }
-        [DisplayName("Title средней фотки")]
-        public string MiddleImgTitle { get; set; }
         [DisplayName("Масштаб средней фотки")]
         public string MiddleImgScale { get; set; }
         [DisplayName("Х средней фотки")]
@@ -43,10 +35,6 @@ namespace Varyag.Models
 
         [DisplayName("Большая фотка")]
         public string WideImgPath { get; set; }
-        [DisplayName("ALT большой фотки")]
-        public string WideImgAlt { get; set; }
-        [DisplayName("Title большой фотки")]
-        public string WideImgTitle { get; set; }
         [DisplayName("Масштаб большой фотки")]
         public string WideImgScale { get; set; }
         [DisplayName("Х большой фотки")]
@@ -55,10 +43,5 @@ namespace Varyag.Models
         public string WideImgY { get; set; }
 
         public List<Foto> NewsFotos { get; set; }
-    }
-
-    public enum NewsKeyWord
-    {
-        Жизнь_кораблей, СМИ, Новые_корабли
     }
 }

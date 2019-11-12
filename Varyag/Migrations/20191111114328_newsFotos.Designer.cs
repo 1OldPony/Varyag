@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Varyag.Models;
 
 namespace Varyag.Migrations
 {
     [DbContext(typeof(VaryagContext))]
-    partial class VaryagContextModelSnapshot : ModelSnapshot
+    [Migration("20191111114328_newsFotos")]
+    partial class newsFotos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,25 +169,17 @@ namespace Varyag.Migrations
 
                     b.Property<string>("MainStory");
 
-                    b.Property<string>("MiddleImgAlt");
-
                     b.Property<string>("MiddleImgPath");
 
                     b.Property<string>("MiddleImgScale");
-
-                    b.Property<string>("MiddleImgTitle");
 
                     b.Property<string>("MiddleImgX");
 
                     b.Property<string>("MiddleImgY");
 
-                    b.Property<string>("ShortImgAlt");
-
                     b.Property<string>("ShortImgPath");
 
                     b.Property<string>("ShortImgScale");
-
-                    b.Property<string>("ShortImgTitle");
 
                     b.Property<string>("ShortImgX");
 
@@ -193,13 +187,9 @@ namespace Varyag.Migrations
 
                     b.Property<string>("ShortStory");
 
-                    b.Property<string>("WideImgAlt");
-
                     b.Property<string>("WideImgPath");
 
                     b.Property<string>("WideImgScale");
-
-                    b.Property<string>("WideImgTitle");
 
                     b.Property<string>("WideImgX");
 

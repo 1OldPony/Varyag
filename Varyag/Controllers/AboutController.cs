@@ -10,7 +10,6 @@ namespace Varyag.Controllers
     {
         public IActionResult AboutUs()
         {
-            //ViewBag.TopPic = "sailboats";
             return View();
         }
     }

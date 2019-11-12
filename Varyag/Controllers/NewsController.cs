@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +15,12 @@ namespace Varyag.Controllers
     public class NewsController : Controller
     {
         private readonly VaryagContext _context;
+        private readonly IHostingEnvironment _Environment;
 
-        public NewsController(VaryagContext context)
+        public NewsController(VaryagContext context, IHostingEnvironment appEnvironment)
         {
             _context = context;
+            _Environment = appEnvironment;
         }
 
         // GET: News
@@ -23,6 +28,13 @@ namespace Varyag.Controllers
         {
             return View(await _context.News.ToListAsync());
         }
+
+        public IActionResult FotoEditor()
+        {
+            return PartialView();
+        }
+
+
 
         // GET: News/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -42,6 +54,45 @@ namespace Varyag.Controllers
             return View(news);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto, 
+            string fotoType, string shortFotoName, string shortFotoAlt, string shortFotoScale)
+        {
+            if (newsFoto != null)
+            {
+                string name;
+
+                switch (fotoType)
+                {
+                    case "short":
+                        name = "short.jpg";
+                        break;
+                    case "middle":
+                        name = "medium.jpg";
+                        break;
+                    case "wide":
+                        name = "wide.jpg";
+                        break;
+                    default:
+                        name = "wide.jpg";
+                        break;
+                }
+
+                string path = "/images/temp/" + name;
+
+                using (var fileStream = new FileStream(_Environment.WebRootPath + path, FileMode.Create))
+                {
+                    await newsFoto.CopyToAsync(fileStream);
+                }
+                //FileModel file = new FileModel { Name = fotName, Path = path };
+                //_context.Files.Add(file);
+                //_context.SaveChanges();
+            }
+            ////////////////////////////тут нужен редирект на экшн, вызывающий партиал вью редактора!////////////////////////////////
+            return RedirectToAction("Create", new { shortName = shortFotoName, shortAlt = shortFotoAlt, shortScale = shortFotoScale });
+        }
+
+
         // GET: News/Create
         public IActionResult Create()
         {
@@ -53,7 +104,8 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NewsId,Header,ShortStory,MainStory,KeyWord,NewsMainFoto")] News news)
+        public async Task<IActionResult> Create([Bind("NewsId,Header,ShortStory,MainStory,KeyWord,ShortImgPath,ShortImgScale,ShortImgX,ShortImgY,MiddleImgPath," +
+            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgPath,WideImgScale,WideImgX,WideImgY")] News news, IFormFile uploadedFile)
         {
             if (ModelState.IsValid)
             {
@@ -61,14 +113,6 @@ namespace Varyag.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-
-            //var keyWords = from NewsKeyWord e in Enum.GetValues(typeof(NewsKeyWord))
-            //               select new
-            //               {
-            //                   Id = (int)e,
-            //                   Name = e.ToString()
-            //               };
-            //ViewBag.KeyWords = new SelectList (keyWords, "Id","Name");
             return View(news);
         }
 
@@ -93,7 +137,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("NewsId,Header,ShortStory,MainStory,KeyWord,NewsMainFoto")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("NewsId,Header,ShortStory,MainStory,KeyWord,ShortImgPath,ShortImgScale,ShortImgX,ShortImgY,MiddleImgPath,MiddleImgScale,MiddleImgX,MiddleImgY,WideImgPath,WideImgScale,WideImgX,WideImgY")] News news)
         {
             if (id != news.NewsId)
             {

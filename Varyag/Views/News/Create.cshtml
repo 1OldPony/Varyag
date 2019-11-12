@@ -2,15 +2,35 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Create</h1>
 
 <h4>News</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<div style="display:flex;">
+        <partial name="~/Views/News/FotoEditor.cshtml" />
+        <div style="display:flex;flex-direction:column;width:7vw;justify-content:center;">
+            <div>
+                <img src="~/images/temp/short.jpg" />
+            </div>
+            <form asp-action="SaveTempFoto" asp-route-fotoType="short" enctype="multipart/form-data" id="rer">
+                <input type="file" name="newsFoto" /><br />
+                <input type="text" name="fotoName" hidden />
+                <input type="text" name="fotoAlt" hidden />
+                <input type="text" name="fotoScale" hidden />
+                <input type="button" value="Загрузить" id="rar" />
+                <input type="button" value="клик" id="target" />
+            </form>
+        </div>
+
+
+
+
+
+    <div class="col-md-4" hidden>
+        <form asp-action="Create" enctype="multipart/form-data" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Header" class="control-label"></label>
@@ -33,10 +53,65 @@
                 <span asp-validation-for="KeyWord" class="text-danger"></span>
             </div>
             <div class="form-group">
-                        <label asp-for="NewsMainFoto" class="control-label"></label>
-                        <input asp-for="NewsMainFoto" class="form-control" />
-                        <span asp-validation-for="NewsMainFoto" class="text-danger"></span>
-                    </div>
+                <label asp-for="ShortImgPath" class="control-label"></label>
+                <input asp-for="ShortImgPath" class="form-control" />
+                <span asp-validation-for="ShortImgPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortImgScale" class="control-label"></label>
+                <input asp-for="ShortImgScale" class="form-control" />
+                <span asp-validation-for="ShortImgScale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortImgX" class="control-label"></label>
+                <input asp-for="ShortImgX" class="form-control" />
+                <span asp-validation-for="ShortImgX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortImgY" class="control-label"></label>
+                <input asp-for="ShortImgY" class="form-control" />
+                <span asp-validation-for="ShortImgY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleImgPath" class="control-label"></label>
+                <input asp-for="MiddleImgPath" class="form-control" />
+                <span asp-validation-for="MiddleImgPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleImgScale" class="control-label"></label>
+                <input asp-for="MiddleImgScale" class="form-control" />
+                <span asp-validation-for="MiddleImgScale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleImgX" class="control-label"></label>
+                <input asp-for="MiddleImgX" class="form-control" />
+                <span asp-validation-for="MiddleImgX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MiddleImgY" class="control-label"></label>
+                <input asp-for="MiddleImgY" class="form-control" />
+                <span asp-validation-for="MiddleImgY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WideImgPath" class="control-label"></label>
+                <input asp-for="WideImgPath" class="form-control" />
+                <span asp-validation-for="WideImgPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WideImgScale" class="control-label"></label>
+                <input asp-for="WideImgScale" class="form-control" />
+                <span asp-validation-for="WideImgScale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WideImgX" class="control-label"></label>
+                <input asp-for="WideImgX" class="form-control" />
+                <span asp-validation-for="WideImgX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WideImgY" class="control-label"></label>
+                <input asp-for="WideImgY" class="form-control" />
+                <span asp-validation-for="WideImgY" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

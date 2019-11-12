@@ -1,0 +1,31 @@
+﻿<div style="display:flex;width:100%;justify-content:space-between;margin-right:1vw">
+    <div class="partNewsElement" style="
+    background: url(../images/temp/short.jpg) 50% 50% no-repeat;
+    background-size:cover;">
+        @*<img src="~/images/temp/short.jpg">*@
+    </div>
+    <div>
+        <div>
+            <p>Ось Х</p>
+            <input type="range" id="shortAxisX" value="50" min="0" max="100" style="width:20vw" />
+        </div>
+        <div>
+            <p>Ось Y</p>
+            <input type="range" id="shortAxisY" value="50" min="0" max="100" style="width:20vw" />
+        </div>
+    </div>
+    <div style="display:flex;flex-direction:column">
+        <div style="display:flex;flex-direction:column">
+            <div>Name</div>
+            <input type="text" id="shortFotoName" value="Имя" />
+        </div>
+        <div style="display:flex;flex-direction:column">
+            <div>Alt</div>
+            <input type="text" id="shortFotoAlt" value="Альт" />
+        </div>
+        <div style="display:flex;flex-direction:column">
+            <div>Масштаб, %</div>
+            <input type="text" id="shortFotoScale" value="150%" />
+        </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Новости";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>Новости</h1>
@@ -11,6 +12,7 @@
 <p>
     <a asp-action="Create">Создать новость</a>
 </p>
+@*///////////////////////////////////все будет не так///////////////////////////////////////////*@
 
 <div style="background: url(@x) 80% 100% no-repeat;background-size: auto 135%"></div>
 
@@ -44,63 +46,7 @@
         </div>
     </div>
     <p>
-        <a asp-action="Edit" asp-route-id="@item.NewsId">Редактировать проект</a> | 
+        <a asp-action="Edit" asp-route-id="@item.NewsId">Редактировать проект</a> |
         <a asp-action="Delete" asp-route-id="@item.NewsId">Удалить проект</a>
     </p>
-
-    @*<div>
-            @await Component.InvokeAsync("ProjectFoto", new { newsId = item.NewsId })
-        </div>*@
 }
-
-
-
-
-@*<table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Header)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ShortStory)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MainStory)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.KeyWord)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewsMainFoto)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Header)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ShortStory)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MainStory)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KeyWord)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NewsMainFoto)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.NewsId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.NewsId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.NewsId">Delete</a>
-                </td>
-            </tr>
-    }
-        </tbody>
-    </table>*@

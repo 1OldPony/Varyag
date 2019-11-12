@@ -383,3 +383,8 @@ $("#left.control").click(function () {
     slideNumber -= 1;
 });
 
+//////////////////////////////проверка остановки сабмита///////////////////////////////////
+$("#rar").click(function () {
+    alert("ggggggggggg");
+    $("#rer").submit();
+});
