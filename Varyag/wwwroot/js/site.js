@@ -383,8 +383,16 @@ $("#left.control").click(function () {
     slideNumber -= 1;
 });
 
-//////////////////////////////проверка остановки сабмита///////////////////////////////////
-$("#rar").click(function () {
-    alert("ggggggggggg");
-    $("#rer").submit();
+//////////////////////////////передаем в форму ///////////////////////////////////
+$("#shortFotoUpload").click(function () {
+
+    $("[name=shortFotoName]").val($("#shortFotoName").val());
+    $("[name=shortFotoAlt]").val($("#shortFotoAlt").val());
+    $("[name=shortFotoScale]").val($("#shortFotoScale").val());
+    $("[name=shortFotoX]").val($("#shortFotoX").val());
+    $("[name=shortFotoY]").val($("#shortFotoY").val());
+
+
+    $("#shortFotoForm").submit();
 });
+

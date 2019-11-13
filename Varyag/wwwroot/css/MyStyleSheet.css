@@ -1011,6 +1011,14 @@ img {
 .aboutMe {
 }
 
+.newsFotoEditor {
+    display: grid;
+    grid-template-areas: "editorShort editorShort editorShort loader" "editorMiddle editorMiddle editorMiddle loader" "editorWide editorWide editorWide loader";
+    grid-template-columns: 30% 30% 30% 10%;
+    grid-template-rows: min-content min-content min-content;
+    margin-bottom: 1vh;
+}
+
 @media (max-width:1628px) {
     .partNewsElement {
         height: 31vh;

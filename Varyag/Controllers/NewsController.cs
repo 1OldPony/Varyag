@@ -29,12 +29,6 @@ namespace Varyag.Controllers
             return View(await _context.News.ToListAsync());
         }
 
-        public IActionResult FotoEditor()
-        {
-            return PartialView();
-        }
-
-
 
         // GET: News/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -56,7 +50,9 @@ namespace Varyag.Controllers
 
         [HttpPost]
         public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto, 
-            string fotoType, string shortFotoName, string shortFotoAlt, string shortFotoScale)
+            string fotoType, string shortFotoName, string shortFotoAlt, string shortFotoScale,
+            string shortFotoX, string shortFotoY/*, string midFotoName, string midFotoAlt, string midFotoScale,*/
+            /*string midFotoX, string midFotoY*/)
         {
             if (newsFoto != null)
             {
@@ -84,12 +80,11 @@ namespace Varyag.Controllers
                 {
                     await newsFoto.CopyToAsync(fileStream);
                 }
-                //FileModel file = new FileModel { Name = fotName, Path = path };
-                //_context.Files.Add(file);
-                //_context.SaveChanges();
             }
-            ////////////////////////////тут нужен редирект на экшн, вызывающий партиал вью редактора!////////////////////////////////
-            return RedirectToAction("Create", new { shortName = shortFotoName, shortAlt = shortFotoAlt, shortScale = shortFotoScale });
+            return RedirectToAction("Create", new { shortName = shortFotoName,
+                shortAlt = shortFotoAlt, shortScale = shortFotoScale,
+                shortX = shortFotoX, shortY= shortFotoY
+            });
         }
 
 
