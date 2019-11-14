@@ -43,9 +43,10 @@
 }
 
 .annotationText {
-    font-size:23px;
-    font-weight:bold;
-    margin:20%;
+    font-size: 23px;
+    font-weight: bold;
+    margin: 20%;
+    font-family: 'Gabriela';
 }
 
 #production.about {
@@ -1013,11 +1014,39 @@ img {
 
 .newsFotoEditor {
     display: grid;
-    grid-template-areas: "editorShort editorShort editorShort loader" "editorMiddle editorMiddle editorMiddle loader" "editorWide editorWide editorWide loader";
-    grid-template-columns: 30% 30% 30% 10%;
-    grid-template-rows: min-content min-content min-content;
-    margin-bottom: 1vh;
+    grid-template-areas: "loader loader loader" "editorShort editorShort editorShort" "editorMiddle editorMiddle editorMiddle" "editorWide editorWide editorWide";
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: min-content min-content min-content min-content;
+    justify-content: center;
 }
+
+.partNewsElementViewShort {
+    width: 30%;
+    height: 31vh;
+    position: relative;
+    background: url(../images/temp/short.jpg) 50% 50% no-repeat;
+    background-size: auto 150%;
+    background-color: brown;
+}
+
+.partNewsElementViewMiddle {
+    width: 700px;
+    height: 20vh;
+    position: relative;
+    background: url(../images/temp/middle.jpg) 50% 50% no-repeat;
+    background-size: auto 150%;
+    background-color: brown;
+}
+
+.partNewsElementViewWide {
+    width: 943px;
+    height: 20vh;
+    position: relative;
+    background: url(../images/temp/wide.jpg) 50% 50% no-repeat;
+    background-size: auto 150%;
+    background-color:brown;
+}
+
 
 @media (max-width:1628px) {
     .partNewsElement {
@@ -1101,6 +1130,16 @@ img {
 
     .catalog {
         grid-template-rows: 190px min-content min-content min-content min-content min-content min-content;
+    }
+
+    /*/////////////////////////////////////////временное решение вопроса про фон на новостях!!!!//////////////////////////////////////////////*/
+
+    .annotation {
+        width: 38%;
+    }
+
+    .annotationText {
+        margin: 5%;
     }
 }
 
@@ -1661,6 +1700,12 @@ img {
     }
 }
 
+@media (max-width:400px) {
+    .annotation {
+        width: 57vw;
+    }
+}
+
 @media (max-width:383px) {
 
     #fifth-out.cellShort {
@@ -1805,10 +1850,6 @@ img {
 
     #news.about {
     height: 100vh;
-    }
-
-    .annotation {
-    width: 57vw;
     }
 
     #goto-predist.shortText {

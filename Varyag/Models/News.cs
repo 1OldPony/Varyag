@@ -61,4 +61,9 @@ namespace Varyag.Models
     {
         Жизнь_кораблей, СМИ, Новые_корабли
     }
+
+    public enum NewsFotoType
+    {
+        мелкая, средняя, широкая
+    }
 }

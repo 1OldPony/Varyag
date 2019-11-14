@@ -391,6 +391,16 @@ $("#shortFotoUpload").click(function () {
     $("[name=shortFotoScale]").val($("#shortFotoScale").val());
     $("[name=shortFotoX]").val($("#shortFotoX").val());
     $("[name=shortFotoY]").val($("#shortFotoY").val());
+    $("[name=middleFotoName]").val($("#middleFotoName").val());
+    $("[name=middleFotoAlt]").val($("#middleFotoAlt").val());
+    $("[name=middleFotoScale]").val($("#middleFotoScale").val());
+    $("[name=middleFotoX]").val($("#middleFotoX").val());
+    $("[name=middleFotoY]").val($("#middleFotoY").val());
+    $("[name=wideFotoName]").val($("#wideFotoName").val());
+    $("[name=wideFotoAlt]").val($("#wideFotoAlt").val());
+    $("[name=wideFotoScale]").val($("#wideFotoScale").val());
+    $("[name=wideFotoX]").val($("#wideFotoX").val());
+    $("[name=wideFotoY]").val($("#wideFotoY").val());
 
 
     $("#shortFotoForm").submit();

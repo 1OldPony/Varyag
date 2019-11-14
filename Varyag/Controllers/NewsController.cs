@@ -51,8 +51,9 @@ namespace Varyag.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto, 
             string fotoType, string shortFotoName, string shortFotoAlt, string shortFotoScale,
-            string shortFotoX, string shortFotoY/*, string midFotoName, string midFotoAlt, string midFotoScale,*/
-            /*string midFotoX, string midFotoY*/)
+            string shortFotoX, string shortFotoY, string middleFotoName, string middleFotoAlt, string middleFotoScale,
+            string middleFotoX, string middleFotoY, string wideFotoName, string wideFotoAlt, string wideFotoScale,
+            string wideFotoX, string wideFotoY)
         {
             if (newsFoto != null)
             {
@@ -60,13 +61,13 @@ namespace Varyag.Controllers
 
                 switch (fotoType)
                 {
-                    case "short":
+                    case "мелкая":
                         name = "short.jpg";
                         break;
-                    case "middle":
-                        name = "medium.jpg";
+                    case "средняя":
+                        name = "middle.jpg";
                         break;
-                    case "wide":
+                    case "широкая":
                         name = "wide.jpg";
                         break;
                     default:
@@ -82,8 +83,10 @@ namespace Varyag.Controllers
                 }
             }
             return RedirectToAction("Create", new { shortName = shortFotoName,
-                shortAlt = shortFotoAlt, shortScale = shortFotoScale,
-                shortX = shortFotoX, shortY= shortFotoY
+                shortAlt = shortFotoAlt,shortScale = shortFotoScale,shortX = shortFotoX,
+                shortY = shortFotoY,midName=middleFotoName,midAlt=middleFotoAlt,midScale=middleFotoScale,
+                midX=middleFotoX, midY=middleFotoY,wideName=wideFotoName,wideAlt=wideFotoAlt,wideScale=wideFotoScale,
+                wideX=wideFotoX,wideY=wideFotoY
             });
         }
 

@@ -6,10 +6,13 @@
 }
 <hr />
 <div class="newsFotoEditor">
-    <div style="display:flex;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorShort">
-        <div class="partNewsElement" style="
-        background: url(../images/temp/short.jpg) 50% 50% no-repeat;
-        background-size:cover;">
+    <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorShort">
+        <div class="partNewsElementViewShort">
+            <div class="annotation">
+                <div class="annotationText">
+                        А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
+                </div>
+            </div>
         </div>
         <div>
             <div>
@@ -36,76 +39,80 @@
             </div>
         </div>
     </div>
-    <div style="display:flex;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorMiddle">
-        <div class="partNewsElement" style="
-        background: url(../images/temp/short.jpg) 50% 50% no-repeat;
-        background-size:cover;">
+    <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorMiddle">
+        <div class="partNewsElementViewMiddle">
+            <div class="annotation">
+                <div class="annotationText">
+                    А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
+                </div>
+            </div>
         </div>
         <div>
             <div>
                 <p>Ось Х</p>
-                <input type="range" id="shortFotoX" value="50" min="0" max="100" style="width:20vw" />
+                <input type="range" id="middleFotoX" value="50" min="0" max="100" style="width:20vw" />
             </div>
             <div>
                 <p>Ось Y</p>
-                <input type="range" id="shortFotoY" value="50" min="0" max="100" style="width:20vw" />
+                <input type="range" id="middleFotoY" value="50" min="0" max="100" style="width:20vw" />
             </div>
         </div>
         <div style="display:flex;flex-direction:column">
             <div style="display:flex;flex-direction:column">
                 <div>Name</div>
-                <input type="text" id="shortFotoName" value="Имя" />
+                <input type="text" id="middleFotoName" value="Имя" />
             </div>
             <div style="display:flex;flex-direction:column">
                 <div>Alt</div>
-                <input type="text" id="shortFotoAlt" value="Альт" />
+                <input type="text" id="middleFotoAlt" value="Альт" />
             </div>
             <div style="display:flex;flex-direction:column">
                 <div>Масштаб, %</div>
-                <input type="text" id="shortFotoScale" value="150%" />
+                <input type="text" id="middleFotoScale" value="150%" />
             </div>
         </div>
     </div>
-    <div style="display:flex;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorWide">
-        <div class="partNewsElement" style="
-        background: url(../images/temp/short.jpg) 50% 50% no-repeat;
-        background-size:cover;">
+    <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorWide">
+        <div class="partNewsElementViewWide">
+            <div class="annotation">
+                <div class="annotationText">
+                    А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
+                </div>
+            </div>
         </div>
         <div>
             <div>
                 <p>Ось Х</p>
-                <input type="range" id="shortFotoX" value="50" min="0" max="100" style="width:20vw" />
+                <input type="range" id="wideFotoX" value="50" min="0" max="100" style="width:20vw" />
             </div>
             <div>
                 <p>Ось Y</p>
-                <input type="range" id="shortFotoY" value="50" min="0" max="100" style="width:20vw" />
+                <input type="range" id="wideFotoY" value="50" min="0" max="100" style="width:20vw" />
             </div>
         </div>
         <div style="display:flex;flex-direction:column">
             <div style="display:flex;flex-direction:column">
                 <div>Name</div>
-                <input type="text" id="shortFotoName" value="Имя" />
+                <input type="text" id="wideFotoName" value="Имя" />
             </div>
             <div style="display:flex;flex-direction:column">
                 <div>Alt</div>
-                <input type="text" id="shortFotoAlt" value="Альт" />
+                <input type="text" id="wideFotoAlt" value="Альт" />
             </div>
             <div style="display:flex;flex-direction:column">
                 <div>Масштаб, %</div>
-                <input type="text" id="shortFotoScale" value="150%" />
+                <input type="text" id="wideFotoScale" value="150%" />
             </div>
         </div>
     </div>
 
 
+    @*display:flex;align-items:center;*@
 
-
-    <div style="display:flex;flex-direction:column;width:7vw;justify-content:center;grid-area:loader">
-        <div>
-            <img src="~/images/temp/short.jpg" />
-        </div>
+    <div style="grid-area:loader">
         <form asp-action="SaveTempFoto" asp-route-fotoType="short" id="shortFotoForm" enctype="multipart/form-data">
             <input type="file" name="newsFoto" /><br />
+            <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
             <input type="text" name="shortFotoName" hidden />
             <input type="text" name="shortFotoAlt" hidden />
             <input type="text" name="shortFotoScale" hidden />
