@@ -9,100 +9,110 @@
     <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorShort">
         <div class="partNewsElementViewShort">
             <div class="annotation">
-                <div class="annotationText">
-                        А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <p>Ось Х</p>
-                <input type="range" id="shortFotoX" value="50" min="0" max="100" style="width:20vw" />
-            </div>
-            <div>
-                <p>Ось Y</p>
-                <input type="range" id="shortFotoY" value="50" min="0" max="100" style="width:20vw" />
-            </div>
-        </div>
-        <div style="display:flex;flex-direction:column">
-            <div style="display:flex;flex-direction:column">
-                <div>Name</div>
-                <input type="text" id="shortFotoName" value="Имя" />
-            </div>
-            <div style="display:flex;flex-direction:column">
-                <div>Alt</div>
-                <input type="text" id="shortFotoAlt" value="Альт" />
-            </div>
-            <div style="display:flex;flex-direction:column">
-                <div>Масштаб, %</div>
-                <input type="text" id="shortFotoScale" value="150%" />
-            </div>
-        </div>
-    </div>
-    <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorMiddle">
-        <div class="partNewsElementViewMiddle">
-            <div class="annotation">
-                <div class="annotationText">
+                <div class="annotationText" id="shortFotoNewsText">
                     А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
                 </div>
             </div>
         </div>
-        <div>
-            <div>
-                <p>Ось Х</p>
-                <input type="range" id="middleFotoX" value="50" min="0" max="100" style="width:20vw" />
+        <div class="newsFotoEditorControls">
+            <div class="controlGroup">
+                <div class="controlGroup">
+                    <div>Ось Х</div>
+                    <input type="range" id="shortFotoX" value="50" min="0" max="100" class="axisControl" oninput="FotoXChange('short')" />
+                </div>
+                <div class="controlGroup">
+                    <div>Ось Y</div>
+                    <input type="range" id="shortFotoY" value="50" min="0" max="100" class="axisControl" oninput="FotoYChange('short')" />
+                </div>
+                <div class="controlGroup">
+                    <div>Масштаб</div>
+                    <input type="range" id="shortFotoScale" value="150" min="50" max="300" oninput="FotoScaleChange('short')" />
+                </div>
             </div>
-            <div>
-                <p>Ось Y</p>
-                <input type="range" id="middleFotoY" value="50" min="0" max="100" style="width:20vw" />
+            <div class="controlGroup">
+                <div class="controlGroup">
+                    <div>Name</div>
+                    <input type="text" id="shortFotoName" value="Имя" />
+                </div>
+                <div class="controlGroup">
+                    <div>Alt</div>
+                    <input type="text" id="shortFotoAlt" value="Альт" />
+                </div>
+            </div>
+            <textarea rows="6" cols="30" id="shortFotoText" onkeyup="FotoTextChange('short')" ></textarea>
+        </div>
+    </div>
+
+    <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorMiddle">
+        <div class="partNewsElementViewMiddle">
+            <div class="annotation">
+                <div class="annotationText" id="middleFotoNewsText">
+                    А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
+                </div>
             </div>
         </div>
-        <div style="display:flex;flex-direction:column">
-            <div style="display:flex;flex-direction:column">
-                <div>Name</div>
-                <input type="text" id="middleFotoName" value="Имя" />
+        <div class="newsFotoEditorControls">
+            <div class="controlGroup">
+                <div class="controlGroup">
+                    <div>Ось Х</div>
+                    <input type="range" id="middleFotoX" value="50" min="0" max="100" class="axisControl" />
+                </div>
+                <div class="controlGroup">
+                    <div>Ось Y</div>
+                    <input type="range" id="middleFotoY" value="50" min="0" max="100" class="axisControl" />
+                </div>
             </div>
-            <div style="display:flex;flex-direction:column">
-                <div>Alt</div>
-                <input type="text" id="middleFotoAlt" value="Альт" />
+            <div class="controlGroup">
+                <div class="controlGroup">
+                    <div>Name</div>
+                    <input type="text" id="middleFotoName" value="Имя" />
+                </div>
+                <div class="controlGroup">
+                    <div>Alt</div>
+                    <input type="text" id="middleFotoAlt" value="Альт" />
+                </div>
+                <div class="controlGroup">
+                    <div>Масштаб, %</div>
+                    <input type="text" id="middleFotoScale" value="150%" />
+                </div>
             </div>
-            <div style="display:flex;flex-direction:column">
-                <div>Масштаб, %</div>
-                <input type="text" id="middleFotoScale" value="150%" />
-            </div>
+            <textarea rows="6" cols="30" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
         </div>
     </div>
     <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorWide">
         <div class="partNewsElementViewWide">
             <div class="annotation">
-                <div class="annotationText">
+                <div class="annotationText" id="wideFotoNewsText">
                     А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
                 </div>
             </div>
         </div>
-        <div>
-            <div>
-                <p>Ось Х</p>
-                <input type="range" id="wideFotoX" value="50" min="0" max="100" style="width:20vw" />
+        <div class="newsFotoEditorControls">
+            <div class="controlGroup">
+                <div class="controlGroup">
+                    <div>Ось Х</div>
+                    <input type="range" id="wideFotoX" value="50" min="0" max="100" class="axisControl" />
+                </div>
+                <div class="controlGroup">
+                    <div>Ось Y</div>
+                    <input type="range" id="wideFotoY" value="50" min="0" max="100" class="axisControl" />
+                </div>
             </div>
-            <div>
-                <p>Ось Y</p>
-                <input type="range" id="wideFotoY" value="50" min="0" max="100" style="width:20vw" />
+            <div class="controlGroup">
+                <div class="controlGroup">
+                    <div>Name</div>
+                    <input type="text" id="wideFotoName" value="Имя" />
+                </div>
+                <div class="controlGroup">
+                    <div>Alt</div>
+                    <input type="text" id="wideFotoAlt" value="Альт" />
+                </div>
+                <div class="controlGroup">
+                    <div>Масштаб, %</div>
+                    <input type="text" id="wideFotoScale" value="150%" />
+                </div>
             </div>
-        </div>
-        <div style="display:flex;flex-direction:column">
-            <div style="display:flex;flex-direction:column">
-                <div>Name</div>
-                <input type="text" id="wideFotoName" value="Имя" />
-            </div>
-            <div style="display:flex;flex-direction:column">
-                <div>Alt</div>
-                <input type="text" id="wideFotoAlt" value="Альт" />
-            </div>
-            <div style="display:flex;flex-direction:column">
-                <div>Масштаб, %</div>
-                <input type="text" id="wideFotoScale" value="150%" />
-            </div>
+            <textarea rows="6" cols="30" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
         </div>
     </div>
 
@@ -118,16 +128,19 @@
             <input type="text" name="shortFotoScale" hidden />
             <input type="text" name="shortFotoX" hidden />
             <input type="text" name="shortFotoY" hidden />
+            <input type="text" name="shortStory" hidden />
             <input type="text" name="middleFotoName" hidden />
             <input type="text" name="middleFotoAlt" hidden />
             <input type="text" name="middleFotoScale" hidden />
             <input type="text" name="middleFotoX" hidden />
             <input type="text" name="middleFotoY" hidden />
+            <input type="text" name="middleStory" hidden />
             <input type="text" name="wideFotoName" hidden />
             <input type="text" name="wideFotoAlt" hidden />
             <input type="text" name="wideFotoScale" hidden />
             <input type="text" name="wideFotoX" hidden />
             <input type="text" name="wideFotoY" hidden />
+            <input type="text" name="wideStory" hidden />
             <input type="button" value="Загрузить" id="shortFotoUpload" />
         </form>
     </div>

@@ -8,8 +8,6 @@ namespace Varyag.Models
         public int NewsId { get; set; }
         [DisplayName("Заголовок")]
         public string Header { get; set; }
-        [DisplayName("Краткий текст")]
-        public string ShortStory { get; set; }
         [DisplayName("Основной текст")]
         public string MainStory { get; set; }
         [DisplayName("Ключевое слово")]
@@ -27,6 +25,8 @@ namespace Varyag.Models
         public string ShortImgX { get; set; }
         [DisplayName("Y маленькой фотки")]
         public string ShortImgY { get; set; }
+        [DisplayName("Текст мелкой фотки")]
+        public string ShortStory { get; set; }
 
         [DisplayName("Средняя фотка")]
         public string MiddleImgPath { get; set; }
@@ -40,19 +40,23 @@ namespace Varyag.Models
         public string MiddleImgX { get; set; }
         [DisplayName("Y средней фотки")]
         public string MiddleImgY { get; set; }
+        [DisplayName("Текст средней фотки")]
+        public string MiddleStory { get; set; }
 
-        [DisplayName("Большая фотка")]
+        [DisplayName("Широкая фотка")]
         public string WideImgPath { get; set; }
-        [DisplayName("ALT большой фотки")]
+        [DisplayName("ALT широкой фотки")]
         public string WideImgAlt { get; set; }
-        [DisplayName("Title большой фотки")]
+        [DisplayName("Title широкой фотки")]
         public string WideImgTitle { get; set; }
-        [DisplayName("Масштаб большой фотки")]
+        [DisplayName("Масштаб широкой фотки")]
         public string WideImgScale { get; set; }
-        [DisplayName("Х большой фотки")]
+        [DisplayName("Х широкой фотки")]
         public string WideImgX { get; set; }
-        [DisplayName("Y большой фотки")]
+        [DisplayName("Y широкой фотки")]
         public string WideImgY { get; set; }
+        [DisplayName("Текст широкой фотки")]
+        public string WideStory { get; set; }
 
         public List<Foto> NewsFotos { get; set; }
     }

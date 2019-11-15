@@ -1015,17 +1015,19 @@ img {
 .newsFotoEditor {
     display: grid;
     grid-template-areas: "loader loader loader" "editorShort editorShort editorShort" "editorMiddle editorMiddle editorMiddle" "editorWide editorWide editorWide";
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 33% 33% 33%;
     grid-template-rows: min-content min-content min-content min-content;
     justify-content: center;
+    font-family: 'Gabriela';
+    font-weight:bold;
 }
 
 .partNewsElementViewShort {
-    width: 30%;
+    width: 497px;
     height: 31vh;
     position: relative;
     background: url(../images/temp/short.jpg) 50% 50% no-repeat;
-    background-size: auto 150%;
+    background-size: 150% auto;
     background-color: brown;
 }
 
@@ -1034,17 +1036,48 @@ img {
     height: 20vh;
     position: relative;
     background: url(../images/temp/middle.jpg) 50% 50% no-repeat;
-    background-size: auto 150%;
+    background-size: 150% auto;
     background-color: brown;
 }
+
+    .partNewsElementViewMiddle .annotation {
+        width: 38%;
+    }
+
+    .partNewsElementViewMiddle .annotationText {
+        margin: 5%;
+    }
 
 .partNewsElementViewWide {
     width: 943px;
     height: 20vh;
     position: relative;
     background: url(../images/temp/wide.jpg) 50% 50% no-repeat;
-    background-size: auto 150%;
-    background-color:brown;
+    background-size: 150% auto;
+    background-color: brown;
+}
+
+    .partNewsElementViewWide .annotation {
+        width: 38%;
+    }
+
+    .partNewsElementViewWide .annotationText {
+        margin: 5%;
+    }
+
+.newsFotoEditorControls {
+    display:flex;
+    align-items:center;
+}
+
+.controlGroup {
+    display: flex;
+    flex-direction: column;
+    margin-right:10px;
+}
+
+.axisControl {
+    width: 20vw;
 }
 
 

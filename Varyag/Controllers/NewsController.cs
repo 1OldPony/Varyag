@@ -51,9 +51,9 @@ namespace Varyag.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto, 
             string fotoType, string shortFotoName, string shortFotoAlt, string shortFotoScale,
-            string shortFotoX, string shortFotoY, string middleFotoName, string middleFotoAlt, string middleFotoScale,
-            string middleFotoX, string middleFotoY, string wideFotoName, string wideFotoAlt, string wideFotoScale,
-            string wideFotoX, string wideFotoY)
+            string shortFotoX, string shortFotoY, string shortStory, string middleFotoName, string middleFotoAlt, string middleFotoScale,
+            string middleFotoX, string middleFotoY, string middleStory, string wideFotoName, string wideFotoAlt, string wideFotoScale,
+            string wideFotoX, string wideFotoY,string wideStory)
         {
             if (newsFoto != null)
             {
@@ -83,10 +83,11 @@ namespace Varyag.Controllers
                 }
             }
             return RedirectToAction("Create", new { shortName = shortFotoName,
-                shortAlt = shortFotoAlt,shortScale = shortFotoScale,shortX = shortFotoX,
-                shortY = shortFotoY,midName=middleFotoName,midAlt=middleFotoAlt,midScale=middleFotoScale,
-                midX=middleFotoX, midY=middleFotoY,wideName=wideFotoName,wideAlt=wideFotoAlt,wideScale=wideFotoScale,
-                wideX=wideFotoX,wideY=wideFotoY
+                shortAlt = shortFotoAlt, shortScale = shortFotoScale, shortX = shortFotoX,
+                shortY = shortFotoY,shStory = shortStory, midName = middleFotoName, midAlt = middleFotoAlt,
+                midScale = middleFotoScale,midX = middleFotoX, midY = middleFotoY,
+                midStory = middleStory, wideName = wideFotoName,wideAlt = wideFotoAlt, wideScale = wideFotoScale,
+                wideX = wideFotoX,wideY = wideFotoY,wStory=wideStory
             });
         }
 

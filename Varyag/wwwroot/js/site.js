@@ -383,7 +383,7 @@ $("#left.control").click(function () {
     slideNumber -= 1;
 });
 
-//////////////////////////////передаем в форму ///////////////////////////////////
+//////////////////////////////передаем в форму параметры вывода фото новостных превью///////////////////////////////////
 $("#shortFotoUpload").click(function () {
 
     $("[name=shortFotoName]").val($("#shortFotoName").val());
@@ -391,18 +391,101 @@ $("#shortFotoUpload").click(function () {
     $("[name=shortFotoScale]").val($("#shortFotoScale").val());
     $("[name=shortFotoX]").val($("#shortFotoX").val());
     $("[name=shortFotoY]").val($("#shortFotoY").val());
+    $("[name=shortStory]").val($("#shortFotoText").val());
     $("[name=middleFotoName]").val($("#middleFotoName").val());
     $("[name=middleFotoAlt]").val($("#middleFotoAlt").val());
     $("[name=middleFotoScale]").val($("#middleFotoScale").val());
     $("[name=middleFotoX]").val($("#middleFotoX").val());
     $("[name=middleFotoY]").val($("#middleFotoY").val());
+    $("[name=middleStory]").val($("#middleFotoText").val());
     $("[name=wideFotoName]").val($("#wideFotoName").val());
     $("[name=wideFotoAlt]").val($("#wideFotoAlt").val());
     $("[name=wideFotoScale]").val($("#wideFotoScale").val());
     $("[name=wideFotoX]").val($("#wideFotoX").val());
     $("[name=wideFotoY]").val($("#wideFotoY").val());
-
+    $("[name=wideStory]").val($("#wideFotoText").val());
+    
 
     $("#shortFotoForm").submit();
 });
 
+
+///////////////////////////////Редактирования текста и фото новостного превью////////////////////////////////
+function FotoTextChange(fotoType) {
+
+    switch (fotoType) {
+        case "short":
+            $("#shortFotoNewsText").text($("#shortFotoText").val());
+            break;
+        case "middle":
+            $("#middleFotoNewsText").text($("#middleFotoText").val());
+            break;
+        case "wide":
+            $("#wideFotoNewsText").text($("#wideFotoText").val());
+            break;
+        default:
+            break;
+    }
+}
+
+function FotoXChange(fotoType) {
+    
+    switch (fotoType) {
+        case "short":
+            var xCoordinate = $("#shortFotoX").val();
+            var scale = $("#shortFotoScale").val();
+            $(".partNewsElementViewShort").css({
+                "background": "url(../images/temp/short.jpg) " + xCoordinate + "% 50% no-repeat",
+                "background-size": scale + "% auto"
+            });
+            break;
+        case "middle":
+            $("#middleFotoNewsText").text($("#middleFotoText").val());
+            break;
+        case "wide":
+            $("#wideFotoNewsText").text($("#wideFotoText").val());
+            break;
+        default:
+            break;
+    }
+}
+
+function FotoYChange(fotoType) {
+
+    switch (fotoType) {
+        case "short":
+            var yCoordinate = $("#shortFotoY").val();
+            var scale = $("#shortFotoScale").val();
+            $(".partNewsElementViewShort").css({
+                "background": "url(../images/temp/short.jpg) 50% " + yCoordinate + "% no-repeat",
+                "background-size": scale + "% auto"
+            });
+            break;
+        case "middle":
+            $("#middleFotoNewsText").text($("#middleFotoText").val());
+            break;
+        case "wide":
+            $("#wideFotoNewsText").text($("#wideFotoText").val());
+            break;
+        default:
+            break;
+    }
+}
+
+function FotoScaleChange(fotoType) {
+
+    switch (fotoType) {
+        case "short":
+            var scale = $("#shortFotoScale").val();
+            $(".partNewsElementViewShort").css("background-size", scale + "% auto");
+            break;
+        case "middle":
+            $("#middleFotoNewsText").text($("#middleFotoText").val());
+            break;
+        case "wide":
+            $("#wideFotoNewsText").text($("#wideFotoText").val());
+            break;
+        default:
+            break;
+    }
+}
