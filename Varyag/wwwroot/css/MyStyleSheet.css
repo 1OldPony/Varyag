@@ -1073,7 +1073,10 @@ img {
 .controlGroup {
     display: flex;
     flex-direction: column;
-    margin-right:10px;
+}
+
+#top.controlGroup {
+    margin-right: 10px;
 }
 
 .axisControl {

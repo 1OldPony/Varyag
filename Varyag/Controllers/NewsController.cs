@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
+using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
@@ -93,8 +94,34 @@ namespace Varyag.Controllers
 
 
         // GET: News/Create
-        public IActionResult Create()
+        public IActionResult Create(string shortName, string shortAlt, string shortScale, string shortX,
+            string shortY, string shStory, string midName, string midAlt, string midScale, string midX,
+            string midY, string midStory, string wideName, string wideAlt, string wideScale, string wideX,
+            string wideY, string wStory)
         {
+            ViewBag.Editor = new EditorModel()
+            {
+                shortFotoName = shortName,
+                shortFotoAlt = shortAlt,
+                shortFotoScale = shortScale,
+                shortFotoX = shortX,
+                shortFotoY = shortY,
+                shortStory = shStory,
+                middleFotoName = midName,
+                middleFotoAlt = midAlt,
+                middleFotoScale = midScale,
+                middleFotoX = midX,
+                middleFotoY = midY,
+                middleStory = midStory,
+                wideFotoName = wideName,
+                wideFotoAlt = wideAlt,
+                wideFotoScale = wideScale,
+                wideFotoX = wideX,
+                wideFotoY = wideY,
+                wideStory = wStory
+
+            };
+
             return View();
         }
 

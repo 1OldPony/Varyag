@@ -428,56 +428,17 @@ function FotoTextChange(fotoType) {
     }
 }
 
-function FotoXChange(fotoType) {
+function FotoAttrChange(fotoType) {
     
     switch (fotoType) {
         case "short":
             var xCoordinate = $("#shortFotoX").val();
-            var scale = $("#shortFotoScale").val();
-            $(".partNewsElementViewShort").css({
-                "background": "url(../images/temp/short.jpg) " + xCoordinate + "% 50% no-repeat",
-                "background-size": scale + "% auto"
-            });
-            break;
-        case "middle":
-            $("#middleFotoNewsText").text($("#middleFotoText").val());
-            break;
-        case "wide":
-            $("#wideFotoNewsText").text($("#wideFotoText").val());
-            break;
-        default:
-            break;
-    }
-}
-
-function FotoYChange(fotoType) {
-
-    switch (fotoType) {
-        case "short":
             var yCoordinate = $("#shortFotoY").val();
             var scale = $("#shortFotoScale").val();
             $(".partNewsElementViewShort").css({
-                "background": "url(../images/temp/short.jpg) 50% " + yCoordinate + "% no-repeat",
+                "background": "url(../images/temp/short.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
                 "background-size": scale + "% auto"
             });
-            break;
-        case "middle":
-            $("#middleFotoNewsText").text($("#middleFotoText").val());
-            break;
-        case "wide":
-            $("#wideFotoNewsText").text($("#wideFotoText").val());
-            break;
-        default:
-            break;
-    }
-}
-
-function FotoScaleChange(fotoType) {
-
-    switch (fotoType) {
-        case "short":
-            var scale = $("#shortFotoScale").val();
-            $(".partNewsElementViewShort").css("background-size", scale + "% auto");
             break;
         case "middle":
             $("#middleFotoNewsText").text($("#middleFotoText").val());
