@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Varyag.Models
 {
@@ -10,8 +11,13 @@ namespace Varyag.Models
         public string Header { get; set; }
         [DisplayName("Основной текст")]
         public string MainStory { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayName("Дата новости")]
+        public System.DateTime NewsDate { get; set; }
         [DisplayName("Ключевое слово")]
         public NewsKeyWord KeyWord { get; set; }
+        [DisplayName("Путь к папке с фотографиями в галерею")]
+        public string PathToGallery { get; set; }
 
         [DisplayName("Маленькая фотка")]
         public string ShortImgPath { get; set; }
@@ -68,6 +74,6 @@ namespace Varyag.Models
 
     public enum NewsFotoType
     {
-        мелкая, средняя, широкая
+        общая, мелкая, средняя, широкая
     }
 }

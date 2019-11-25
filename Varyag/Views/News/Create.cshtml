@@ -4,229 +4,142 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <hr />
-<div class="newsFotoEditor">
-    <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorShort">
-        <div class="partNewsElementViewShort">
-            <div class="annotation">
-                <div class="annotationText" id="shortFotoNewsText">
-                    А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
-                </div>
-            </div>
-        </div>
-        <div class="newsFotoEditorControls">
-            <div id="top" class="controlGroup">
-                <div class="controlGroup">
-                    <div>Ось Х</div>
-                    <input type="range" id="shortFotoX" value="50" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
-                </div>
-                <div class="controlGroup">
-                    <div>Ось Y</div>
-                    <input type="range" id="shortFotoY" value="50" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
-                </div>
-                <div class="controlGroup">
-                    <div>Масштаб</div>
-                    <input type="range" id="shortFotoScale" value="150" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
-                </div>
-            </div>
-            <div id="top" class="controlGroup">
-                <div class="controlGroup">
-                    <div>Name</div>
-                    <input type="text" id="shortFotoName" value="Имя" />
-                </div>
-                <div class="controlGroup">
-                    <div>Alt</div>
-                    <input type="text" id="shortFotoAlt" value="Альт" />
-                </div>
-            </div>
-            <textarea rows="6" cols="30" id="shortFotoText" onkeyup="FotoTextChange('short')" ></textarea>
-        </div>
-    </div>
 
-    <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorMiddle">
-        <div class="partNewsElementViewMiddle">
-            <div class="annotation">
-                <div class="annotationText" id="middleFotoNewsText">
-                    А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
-                </div>
-            </div>
-        </div>
-        <div class="newsFotoEditorControls">
-            <div id="top" class="controlGroup">
-                <div class="controlGroup">
-                    <div>Ось Х</div>
-                    <input type="range" id="middleFotoX" value="50" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
-                </div>
-                <div class="controlGroup">
-                    <div>Ось Y</div>
-                    <input type="range" id="middleFotoY" value="50" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
-                </div>
-                <div class="controlGroup">
-                    <div>Масштаб</div>
-                    <input type="range" id="middleFotoScale" value="150" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
-                </div>
-            </div>
-            <div id="top" class="controlGroup">
-                <div class="controlGroup">
-                    <div>Name</div>
-                    <input type="text" id="middleFotoName" value="Имя" />
-                </div>
-                <div class="controlGroup">
-                    <div>Alt</div>
-                    <input type="text" id="middleFotoAlt" value="Альт" />
-                </div>
-            </div>
-            <textarea rows="6" cols="30" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
-        </div>
-    </div>
-    <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorWide">
-        <div class="partNewsElementViewWide">
-            <div class="annotation">
-                <div class="annotationText" id="wideFotoNewsText">
-                    А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
-                </div>
-            </div>
-        </div>
-        <div class="newsFotoEditorControls">
-            <div id="top" class="controlGroup">
-                <div class="controlGroup">
-                    <div>Ось Х</div>
-                    <input type="range" id="wideFotoX" value="50" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
-                </div>
-                <div class="controlGroup">
-                    <div>Ось Y</div>
-                    <input type="range" id="wideFotoY" value="50" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
-                </div>
-                <div class="controlGroup">
-                    <div>Масштаб</div>
-                    <input type="range" id="wideFotoScale" value="150" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
-                </div>
-            </div>
-            <div id="top" class="controlGroup">
-                <div class="controlGroup">
-                    <div>Name</div>
-                    <input type="text" id="wideFotoName" value="Имя" />
-                </div>
-                <div class="controlGroup">
-                    <div>Alt</div>
-                    <input type="text" id="wideFotoAlt" value="Альт" />
-                </div>
-            </div>
-            <textarea rows="6" cols="30" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
-        </div>
-    </div>
-
-    <div style="grid-area:loader">
-        <form asp-action="SaveTempFoto" asp-route-fotoType="short" id="shortFotoForm" enctype="multipart/form-data">
+<form asp-action="SaveTempFoto" asp-route-fotoType="short" id="fotoEditorForm" enctype="multipart/form-data">
+    <div class="newsFotoEditor">
+        <div style="grid-area:loader">
             <input type="file" name="newsFoto" /><br />
             <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
-            <input type="text" name="shortFotoName" hidden />
-            <input type="text" name="shortFotoAlt" hidden />
-            <input type="text" name="shortFotoScale" hidden />
-            <input type="text" name="shortFotoX" hidden />
-            <input type="text" name="shortFotoY" hidden />
-            <input type="text" name="shortStory" hidden />
-            <input type="text" name="middleFotoName" hidden />
-            <input type="text" name="middleFotoAlt" hidden />
-            <input type="text" name="middleFotoScale" hidden />
-            <input type="text" name="middleFotoX" hidden />
-            <input type="text" name="middleFotoY" hidden />
-            <input type="text" name="middleStory" hidden />
-            <input type="text" name="wideFotoName" hidden />
-            <input type="text" name="wideFotoAlt" hidden />
-            <input type="text" name="wideFotoScale" hidden />
-            <input type="text" name="wideFotoX" hidden />
-            <input type="text" name="wideFotoY" hidden />
-            <input type="text" name="wideStory" hidden />
-            <input type="button" value="Загрузить" id="shortFotoUpload" />
-        </form>
+            <input type="button" id="NewsFotoUpload" value="Загрузить" />
+        </div>
+        <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorShort">
+           <div class="partNewsElementViewShort">
+                <div class="annotation">
+                    <div class="annotationText" id="shortFotoNewsText">
+                        @ViewBag.Editor.shortStory
+                    </div>
+                </div>
+            </div>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.Editor.shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.Editor.shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.Editor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" name="shortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+            </div>
+        </div>
+
+        <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorMiddle">
+            <div class="partNewsElementViewMiddle">
+                <div class="annotation">
+                    <div class="annotationText" id="middleFotoNewsText">
+                        @ViewBag.Editor.middleStory
+                    </div>
+                </div>
+            </div>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.Editor.middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.Editor.middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.Editor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" name="middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
+            </div>
+        </div>
+        <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorWide">
+            <div class="partNewsElementViewWide">
+                <div class="annotation">
+                    <div class="annotationText" id="wideFotoNewsText">
+                        @ViewBag.Editor.wideStory
+                    </div>
+                </div>
+            </div>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.Editor.wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.Editor.wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.Editor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" name="wideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
+            </div>
+        </div>
+    </div>
+</form>
+<form asp-action="Create" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
+    <div style="width:74vw">
+        <div>Заголовок, для главного вида новости</div>
+        <input asp-for="Header" class="form-control" />
+    </div>
+    <div style="display:flex;align-items:center">
+        <div style="margin-right:20px">
+            <div>Основной текст новости</div>
+            <textarea asp-for="MainStory" rows="10" cols="160"></textarea>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between;height:210px">
+            <div>
+                <div>Ключевые слова для новости</div>
+                <select asp-for="KeyWord" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsKeyWord)))"></select>
+            </div>
+            <div>
+                <div>Фотографии в галерею</div>
+                <input type="file" name="newsGallery" multiple />
+            </div>
+            <div>
+                <div>Дата новости</div>
+                <input type="date" asp-for="NewsDate" />
+            </div>
+        </div>
     </div>
 
-    <form asp-action="Create" enctype="multipart/form-data">
-        <div>
-            <div>Заголовок, для главного вида новости</div>
-            <input asp-for="Header" class="form-control" />
-        </div>
-        <div>
-            <div>Основной текст новости</div>
-            <textarea rows="10" cols="120"></textarea>
-        </div>
-        <div>
-            <div>Ключевые слова для новости</div>
-            <select asp-for="KeyWord" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsKeyWord)))"></select>
-        </div>
-        <div>
-            <div></div>
-            <input asp-for="ShortImgTitle" class="form-control" />
-        </div>
-        <div>
-            <div></div>
-            <input asp-for="ShortImgPath" class="form-control" />
-        </div>
-        <div>
-            <div></div>
-            <input asp-for="ShortImgPath" class="form-control" />
-        </div>
-        <div class="form-group">
-            <label asp-for="ShortImgScale" class="control-label"></label>
-            <input asp-for="ShortImgScale" class="form-control" />
-            <span asp-validation-for="ShortImgScale" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="ShortImgX" class="control-label"></label>
-            <input asp-for="ShortImgX" class="form-control" />
-            <span asp-validation-for="ShortImgX" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="ShortImgY" class="control-label"></label>
-            <input asp-for="ShortImgY" class="form-control" />
-            <span asp-validation-for="ShortImgY" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="MiddleImgPath" class="control-label"></label>
-            <input asp-for="MiddleImgPath" class="form-control" />
-            <span asp-validation-for="MiddleImgPath" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="MiddleImgScale" class="control-label"></label>
-            <input asp-for="MiddleImgScale" class="form-control" />
-            <span asp-validation-for="MiddleImgScale" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="MiddleImgX" class="control-label"></label>
-            <input asp-for="MiddleImgX" class="form-control" />
-            <span asp-validation-for="MiddleImgX" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="MiddleImgY" class="control-label"></label>
-            <input asp-for="MiddleImgY" class="form-control" />
-            <span asp-validation-for="MiddleImgY" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="WideImgPath" class="control-label"></label>
-            <input asp-for="WideImgPath" class="form-control" />
-            <span asp-validation-for="WideImgPath" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="WideImgScale" class="control-label"></label>
-            <input asp-for="WideImgScale" class="form-control" />
-            <span asp-validation-for="WideImgScale" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="WideImgX" class="control-label"></label>
-            <input asp-for="WideImgX" class="form-control" />
-            <span asp-validation-for="WideImgX" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="WideImgY" class="control-label"></label>
-            <input asp-for="WideImgY" class="form-control" />
-            <span asp-validation-for="WideImgY" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Create" class="btn btn-primary" />
-        </div>
-    </form>
-</div>
+    <div hidden>
+        <input asp-for="ShortImgScale" value="@ViewBag.Editor.shortFotoScale" id="ShortImgScale" />
+        <input asp-for="ShortImgX" value="@ViewBag.Editor.shortFotoX" id="ShortImgX" />
+        <input asp-for="ShortImgY" value="@ViewBag.Editor.shortFotoY" id="ShortImgY" />
+        <input asp-for="ShortStory" value="@ViewBag.Editor.shortStory" id="ShortStory" />
+        <input asp-for="MiddleImgScale" value="@ViewBag.Editor.middleFotoScale" id="MiddleImgScale" />
+        <input asp-for="MiddleImgX" value="@ViewBag.Editor.middleFotoX" id="MiddleImgX" />
+        <input asp-for="MiddleImgY" value="@ViewBag.Editor.middleFotoY" id="MiddleImgY" />
+        <input asp-for="MiddleStory" value="@ViewBag.Editor.middleStory" id="MiddleStory" />
+        <input asp-for="WideImgScale" value="@ViewBag.Editor.wideFotoScale" id="WideImgScale" />
+        <input asp-for="WideImgX" value="@ViewBag.Editor.wideFotoX" id="WideImgX" />
+        <input asp-for="WideImgY" value="@ViewBag.Editor.wideFotoY" id="WideImgY" />
+        <input asp-for="WideStory" value="@ViewBag.Editor.wideStory" id="WideStory" />
+    </div>
+    <div style="display:flex;">
+        <input type="button" value="Сохранить данные из редактора" id="saveEditorParams" style="width:300px" />
+        <input type="submit" id="newsSaveButton" value="Сохранить новость" style="width:200px;" />
+    </div>
+</form>
 
 <div>
     <a asp-action="Index">Back to List</a>

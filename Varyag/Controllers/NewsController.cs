@@ -50,71 +50,71 @@ namespace Varyag.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto, 
-            string fotoType, string shortFotoName, string shortFotoAlt, string shortFotoScale,
-            string shortFotoX, string shortFotoY, string shortStory, string middleFotoName, string middleFotoAlt, string middleFotoScale,
-            string middleFotoX, string middleFotoY, string middleStory, string wideFotoName, string wideFotoAlt, string wideFotoScale,
-            string wideFotoX, string wideFotoY,string wideStory)
+        public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto,
+            string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
+            string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
+            string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
+            string wideStory)
         {
             if (newsFoto != null)
             {
-                string name;
+                string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
 
                 switch (fotoType)
                 {
+                    case "общая":
+                        foreach (var item in names)
+                        {
+                            await SaveImgAsync(item, newsFoto);
+                        }
+                        break;
                     case "мелкая":
-                        name = "short.jpg";
+                        await SaveImgAsync(names[0], newsFoto);
                         break;
                     case "средняя":
-                        name = "middle.jpg";
+                        await SaveImgAsync(names[1], newsFoto);
                         break;
                     case "широкая":
-                        name = "wide.jpg";
+                        await SaveImgAsync(names[2], newsFoto);
                         break;
                     default:
-                        name = "wide.jpg";
                         break;
                 }
-
-                string path = "/images/temp/" + name;
-
-                using (var fileStream = new FileStream(_Environment.WebRootPath + path, FileMode.Create))
-                {
-                    await newsFoto.CopyToAsync(fileStream);
-                }
             }
-            return RedirectToAction("Create", new { shortName = shortFotoName,
-                shortAlt = shortFotoAlt, shortScale = shortFotoScale, shortX = shortFotoX,
-                shortY = shortFotoY,shStory = shortStory, midName = middleFotoName, midAlt = middleFotoAlt,
-                midScale = middleFotoScale,midX = middleFotoX, midY = middleFotoY,
-                midStory = middleStory, wideName = wideFotoName,wideAlt = wideFotoAlt, wideScale = wideFotoScale,
-                wideX = wideFotoX,wideY = wideFotoY,wStory=wideStory
+
+            return RedirectToAction("Create", new { shortScale = shortFotoScale,
+                shortX = shortFotoX, shortY = shortFotoY, shStory = shortStory,
+                midScale = middleFotoScale, midX = middleFotoX, midY = middleFotoY,
+                midStory = middleStory, wideScale = wideFotoScale,
+                wideX = wideFotoX, wideY = wideFotoY, wStory = wideStory
             });
         }
 
+        public async Task SaveImgAsync(string name, IFormFile newsFoto) {
+
+            string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
+            using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+            {
+                await newsFoto.CopyToAsync(fileStream);
+            }
+        }
 
         // GET: News/Create
-        public IActionResult Create(string shortName, string shortAlt, string shortScale, string shortX,
-            string shortY, string shStory, string midName, string midAlt, string midScale, string midX,
-            string midY, string midStory, string wideName, string wideAlt, string wideScale, string wideX,
+        public IActionResult Create(string shortScale, string shortX,
+            string shortY, string shStory, string midScale, string midX,
+            string midY, string midStory, string wideScale, string wideX,
             string wideY, string wStory)
         {
             ViewBag.Editor = new EditorModel()
             {
-                shortFotoName = shortName,
-                shortFotoAlt = shortAlt,
                 shortFotoScale = shortScale,
                 shortFotoX = shortX,
                 shortFotoY = shortY,
                 shortStory = shStory,
-                middleFotoName = midName,
-                middleFotoAlt = midAlt,
                 middleFotoScale = midScale,
                 middleFotoX = midX,
                 middleFotoY = midY,
                 middleStory = midStory,
-                wideFotoName = wideName,
-                wideFotoAlt = wideAlt,
                 wideFotoScale = wideScale,
                 wideFotoX = wideX,
                 wideFotoY = wideY,
@@ -130,11 +130,31 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NewsId,Header,ShortStory,MainStory,KeyWord,ShortImgPath,ShortImgScale,ShortImgX,ShortImgY,MiddleImgPath," +
-            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgPath,WideImgScale,WideImgX,WideImgY")] News news, IFormFile uploadedFile)
+        public async Task<IActionResult> Create([Bind("NewsId,Header,ShortStory,MainStory,KeyWord,PathToGallery,ShortImgPath,ShortImgScale,ShortImgX,ShortImgY,MiddleImgPath," +
+            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgPath,WideImgScale,WideImgX,WideImgY")] News news, IFormFileCollection newsGallery)
         {
             if (ModelState.IsValid)
             {
+
+                string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
+                string pathFinal = Path.Combine(_Environment.WebRootPath, "images", news.NewsDate.ToString());
+
+                if (!Directory.Exists(pathFinal))
+                {
+                    Directory.CreateDirectory(pathFinal);
+                }
+
+                string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
+
+                foreach (var foto in fotos)
+                {
+                    string pathStart = Path.Combine(pathTemp, foto);
+                    string pathEnd = Path.Combine(pathFinal, foto);
+                    FileInfo file = new FileInfo(pathStart);
+                    file.MoveTo(pathEnd);
+                }
+
+
                 _context.Add(news);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

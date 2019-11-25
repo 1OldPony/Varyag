@@ -34,173 +34,255 @@ $(document).ready(function () {
 
     //////////////////////////виджет контакта//////////////////////////
     VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height:"200" }, 137987101);
-
-    //////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
-    navElMinorChoose();
-
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 714 && window.innerWidth > 790) {
-            $('.sub-nav-elements').css("position", "fixed");
-        }
-        else/* if ($(this).scrollTop() < 714)*/ {
-            $('.sub-nav-elements').css("position", "relative");
-        }
-    });
-    
-    $("#lodki").mouseenter(function () {
-        hideAll();
-        $("#lodki").attr("class", "nav-element-choosen");
-        $("#lodki-Sub").show();
-    });
-
-    $("#shlupki").mouseenter(function () {
-        hideAll();
-        $("#shlupki").attr("class", "nav-element-choosen");
-        $("#shlupki-Sub").show();
-    });
-
-    $("#katera").mouseenter(function () {
-        hideAll();
-        $("#katera").attr("class", "nav-element-choosen");
-        $("#katera-Sub").show();
-    });
-
-    $("#ladiy").mouseenter(function () {
-        hideAll();
-        $("#ladiy").attr("class", "nav-element-choosen");
-        $("#ladiy-Sub").show();
-    });
-
-    $("#sailboats").mouseenter(function () {
-        hideAll();
-        $("#sailboats").attr("class", "nav-element-choosen");
-        $("#sailboats-Sub").show();
-    });
-
-    $("#models").mouseenter(function () {
-        hideAll();
-        $("#models").attr("class", "nav-element-choosen");
-        $("#models-Sub").show();
-    });
-
-    $(".nav-element-minor").mouseenter(function () {
-        deselectNavElemMinor();
-        $(this).attr("class", "nav-element-minor-choosen");
-    });
-
-    $(".nav-element-minor").mouseleave(function () {
-        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
-        navElMinorChoose();
-    });
-
-    $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
-        var page = $("#currentPage").val();
-        switch (page)
-        {
-            case "boats":
-            case "boatsrow":
-            case "boatssail":
-            case "boatstraditional":
-                if ((event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-                    && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                    && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                    && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
-                {
-                    hideAll();
-                    $("#lodki").attr("class", "nav-element-choosen");
-                    $("#lodki-Sub").show();
-                    break;
-                }
-            case "shlupki":
-            case "boatyal":
-            case "botik":
-            case "katerrow":
-                if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-                    && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-                    && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                    && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
-                {
-                    hideAll();
-                    $("#shlupki").attr("class", "nav-element-choosen");
-                    $("#shlupki-Sub").show();
-                    break;
-                }
-            case "katera":
-            case "motosailer":
-            case "katercabin":
-            case "katerfish":
-            case "katerpass":
-            case "katerproject":
-                if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-                    && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-                    && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                    && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
-                {
-                    hideAll();
-                    $("#katera").attr("class", "nav-element-choosen");
-                    $("#katera-Sub").show();
-                    break;
-                }
-            case "ladiy":
-            case "ladyarow":
-            case "ladyasail":
-            case "ladyaproject":
-                if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-                    && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-                    && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                    && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
-                {
-                    hideAll();
-                    $("#ladiy").attr("class", "nav-element-choosen");
-                    $("#ladiy-Sub").show();
-                }
-                break;
-            case "sailboats":
-            case "yacht":
-            case "sailboatstudy":
-            case "shvertbot":
-            case "sailboathistorical":
-            case "sailboatproject":
-                if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-                    && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                    && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                    && (event.currentTarget.id != "models" && event.target.id != "models-Sub"))
-                {
-                    if ($(window).width() > 383) {
-                        hideAll();
-                        $("#sailboats").attr("class", "nav-element-choosen");
-                        $("#sailboats-Sub").show();
-                    }
-                    break;
-                }
-                else
-                break;
-            case "models":
-            case "maketstudy":
-            case "maketcinema":
-            case "maketmuseum":
-                if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-                    && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-                    && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                    && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                    && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub"))
-                {
-                    hideAll();
-                    $("#models").attr("class", "nav-element-choosen");
-                    $("#models-Sub").show();
-                }
-                break;
-            default:
-                break;
-        }
-    });
-
 });
+
+/////////////////////применяем переданные настройки редактора новостных превью к превью////////////////
+FotoAttrChange('short');
+FotoAttrChange('middle');
+FotoAttrChange('wide');
+
+///////////////////////////////Редактирования текста и фото новостного превью////////////////////////////////
+function FotoTextChange(fotoType) {
+    newsSaveButtonDisable();
+    switch (fotoType) {
+        case "short":
+            $("#shortFotoNewsText").text($("#shortFotoText").val());
+            break;
+        case "middle":
+            $("#middleFotoNewsText").text($("#middleFotoText").val());
+            break;
+        case "wide":
+            $("#wideFotoNewsText").text($("#wideFotoText").val());
+            break;
+        default:
+            break;
+    }
+}
+
+function FotoAttrChange(fotoType) {
+    newsSaveButtonDisable();
+    switch (fotoType) {
+        case "short":
+            var xCoordinate = $("#shortFotoX").val();
+            var yCoordinate = $("#shortFotoY").val();
+            var scale = $("#shortFotoScale").val();
+            $(".partNewsElementViewShort").css({
+                "background": "url(../images/temp/short.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
+                "background-size": scale + "% auto"
+            });
+            break;
+        case "middle":
+            var xCoordinate = $("#middleFotoX").val();
+            var yCoordinate = $("#middleFotoY").val();
+            var scale = $("#middleFotoScale").val();
+            $(".partNewsElementViewMiddle").css({
+                "background": "url(../images/temp/middle.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
+                "background-size": scale + "% auto"
+            });
+            break;
+        case "wide":
+            var xCoordinate = $("#wideFotoX").val();
+            var yCoordinate = $("#wideFotoY").val();
+            var scale = $("#wideFotoScale").val();
+            $(".partNewsElementViewWide").css({
+                "background": "url(../images/temp/wide.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
+                "background-size": scale + "% auto"
+            });
+            break;
+        default:
+            break;
+    }
+}
+
+$("#NewsFotoUpload").click(function () {
+    $("#shortFotoText").val($("#shortFotoNewsText").text().trim());
+    $("#middleFotoText").val($("#middleFotoNewsText").text().trim());
+    $("#wideFotoText").val($("#wideFotoNewsText").text().trim());
+
+    $("#fotoEditorForm").submit();
+})
+
+///////////////сохраняем параметры редактора фоток превью новостей в основную форму,//////////////
+////////////////разблокируем кнопку сохранения новости////////////////////////////////////////////
+$("#saveEditorParams").click(function () {
+    $("#ShortImgScale").val($("#shortFotoScale").val());
+    $("#ShortImgX").val($("#shortFotoX").val());
+    $("#ShortImgY").val($("#shortFotoY").val());
+    $("#ShortStory").val($("#shortFotoText").val());
+    $("#MiddleImgScale").val($("#middleFotoScale").val());
+    $("#MiddleImgX").val($("#middleFotoX").val());
+    $("#MiddleImgY").val($("#middleFotoY").val());
+    $("#MiddleStory").val($("#middleFotoText").val());
+    $("#WideImgScale").val($("#wideFotoScale").val());
+    $("#WideImgX").val($("#wideFotoX").val());
+    $("#WideImgY").val($("#wideFotoY").val());
+    $("#WideStory").val($("#wideFotoText").val());
+    $("#newsSaveButton").removeAttr("disabled");
+})
+
+////////////////////////////деактивируем кнопку сохранения новости//////////////////////////////
+function newsSaveButtonDisable() {
+        $("#newsSaveButton").attr("disabled", "disabled");
+}
+
+//////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
+navElMinorChoose();
+
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 714 && window.innerWidth > 790) {
+        $('.sub-nav-elements').css("position", "fixed");
+    }
+    else/* if ($(this).scrollTop() < 714)*/ {
+        $('.sub-nav-elements').css("position", "relative");
+    }
+});
+
+$("#lodki").mouseenter(function () {
+    hideAll();
+    $("#lodki").attr("class", "nav-element-choosen");
+    $("#lodki-Sub").show();
+});
+
+$("#shlupki").mouseenter(function () {
+    hideAll();
+    $("#shlupki").attr("class", "nav-element-choosen");
+    $("#shlupki-Sub").show();
+});
+
+$("#katera").mouseenter(function () {
+    hideAll();
+    $("#katera").attr("class", "nav-element-choosen");
+    $("#katera-Sub").show();
+});
+
+$("#ladiy").mouseenter(function () {
+    hideAll();
+    $("#ladiy").attr("class", "nav-element-choosen");
+    $("#ladiy-Sub").show();
+});
+
+$("#sailboats").mouseenter(function () {
+    hideAll();
+    $("#sailboats").attr("class", "nav-element-choosen");
+    $("#sailboats-Sub").show();
+});
+
+$("#models").mouseenter(function () {
+    hideAll();
+    $("#models").attr("class", "nav-element-choosen");
+    $("#models-Sub").show();
+});
+
+$(".nav-element-minor").mouseenter(function () {
+    deselectNavElemMinor();
+    $(this).attr("class", "nav-element-minor-choosen");
+});
+
+$(".nav-element-minor").mouseleave(function () {
+    $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
+    navElMinorChoose();
+});
+
+$(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
+    var page = $("#currentPage").val();
+    switch (page) {
+        case "boats":
+        case "boatsrow":
+        case "boatssail":
+        case "boatstraditional":
+            if ((event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
+                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                hideAll();
+                $("#lodki").attr("class", "nav-element-choosen");
+                $("#lodki-Sub").show();
+                break;
+            }
+        case "shlupki":
+        case "boatyal":
+        case "botik":
+        case "katerrow":
+            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
+                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                hideAll();
+                $("#shlupki").attr("class", "nav-element-choosen");
+                $("#shlupki-Sub").show();
+                break;
+            }
+        case "katera":
+        case "motosailer":
+        case "katercabin":
+        case "katerfish":
+        case "katerpass":
+        case "katerproject":
+            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
+                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                hideAll();
+                $("#katera").attr("class", "nav-element-choosen");
+                $("#katera-Sub").show();
+                break;
+            }
+        case "ladiy":
+        case "ladyarow":
+        case "ladyasail":
+        case "ladyaproject":
+            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                hideAll();
+                $("#ladiy").attr("class", "nav-element-choosen");
+                $("#ladiy-Sub").show();
+            }
+            break;
+        case "sailboats":
+        case "yacht":
+        case "sailboatstudy":
+        case "shvertbot":
+        case "sailboathistorical":
+        case "sailboatproject":
+            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
+                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                if ($(window).width() > 383) {
+                    hideAll();
+                    $("#sailboats").attr("class", "nav-element-choosen");
+                    $("#sailboats-Sub").show();
+                }
+                break;
+            }
+            else
+                break;
+        case "models":
+        case "maketstudy":
+        case "maketcinema":
+        case "maketmuseum":
+            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
+                hideAll();
+                $("#models").attr("class", "nav-element-choosen");
+                $("#models-Sub").show();
+            }
+            break;
+        default:
+            break;
+    }
+});
+
 
 function hideAll() {
     $("#sailboats").attr("class", "nav-element");
@@ -276,7 +358,6 @@ function deselectNavElemMinor() {
 }
 
 function navElMinorChoose() {
-    
     var page = $("#currentPage").val();
     switch (page) {
         case "boatsrow":
@@ -383,70 +464,3 @@ $("#left.control").click(function () {
     slideNumber -= 1;
 });
 
-//////////////////////////////передаем в форму параметры вывода фото новостных превью///////////////////////////////////
-$("#shortFotoUpload").click(function () {
-
-    $("[name=shortFotoName]").val($("#shortFotoName").val());
-    $("[name=shortFotoAlt]").val($("#shortFotoAlt").val());
-    $("[name=shortFotoScale]").val($("#shortFotoScale").val());
-    $("[name=shortFotoX]").val($("#shortFotoX").val());
-    $("[name=shortFotoY]").val($("#shortFotoY").val());
-    $("[name=shortStory]").val($("#shortFotoText").val());
-    $("[name=middleFotoName]").val($("#middleFotoName").val());
-    $("[name=middleFotoAlt]").val($("#middleFotoAlt").val());
-    $("[name=middleFotoScale]").val($("#middleFotoScale").val());
-    $("[name=middleFotoX]").val($("#middleFotoX").val());
-    $("[name=middleFotoY]").val($("#middleFotoY").val());
-    $("[name=middleStory]").val($("#middleFotoText").val());
-    $("[name=wideFotoName]").val($("#wideFotoName").val());
-    $("[name=wideFotoAlt]").val($("#wideFotoAlt").val());
-    $("[name=wideFotoScale]").val($("#wideFotoScale").val());
-    $("[name=wideFotoX]").val($("#wideFotoX").val());
-    $("[name=wideFotoY]").val($("#wideFotoY").val());
-    $("[name=wideStory]").val($("#wideFotoText").val());
-    
-
-    $("#shortFotoForm").submit();
-});
-
-
-///////////////////////////////Редактирования текста и фото новостного превью////////////////////////////////
-function FotoTextChange(fotoType) {
-
-    switch (fotoType) {
-        case "short":
-            $("#shortFotoNewsText").text($("#shortFotoText").val());
-            break;
-        case "middle":
-            $("#middleFotoNewsText").text($("#middleFotoText").val());
-            break;
-        case "wide":
-            $("#wideFotoNewsText").text($("#wideFotoText").val());
-            break;
-        default:
-            break;
-    }
-}
-
-function FotoAttrChange(fotoType) {
-    
-    switch (fotoType) {
-        case "short":
-            var xCoordinate = $("#shortFotoX").val();
-            var yCoordinate = $("#shortFotoY").val();
-            var scale = $("#shortFotoScale").val();
-            $(".partNewsElementViewShort").css({
-                "background": "url(../images/temp/short.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
-                "background-size": scale + "% auto"
-            });
-            break;
-        case "middle":
-            $("#middleFotoNewsText").text($("#middleFotoText").val());
-            break;
-        case "wide":
-            $("#wideFotoNewsText").text($("#wideFotoText").val());
-            break;
-        default:
-            break;
-    }
-}
