@@ -12,39 +12,53 @@
 <p>
     <a asp-action="Create">Создать новость</a>
 </p>
-@*///////////////////////////////////все будет не так///////////////////////////////////////////*@
 
 <div style="background: url(@x) 80% 100% no-repeat;background-size: auto 135%"></div>
 
 @foreach (var item in Model)
 {
-    <div id="one" class="partNewsElement" style="background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 80% 100% no-repeat;background-size: auto 135%">
-        <div class="annotation">
-            <div class="annotationText">
-                Вот какой классный мы построили кораблик!<br /><a>Подробности...</a>
+    <div class="partNews">
+        <div id="one" class="partNewsElement">
+            <div class="annotation">
+                <div class="annotationText" id="shortStory">
+                    @Html.Raw(item.ShortStory)
+                </div>
+                <div class="annotationText" id="middleStory" style="display:none">
+                    @Html.Raw(item.MiddleStory)
+                </div>
+                <div class="annotationText" id="wideStory" style="display:none">
+                    @Html.Raw(item.WideStory)
+                </div>
             </div>
         </div>
     </div>
-    <div style="display:flex">
-        <div style="display:flex;justify-content:center;margin-right:2vw;">
-            <div style="display:flex;flex-direction:column;margin-right:2vw;">
-                <div>Заголовок</div>
-                <div>@item.Header</div>
-            </div>
-            <div style="display:flex;flex-direction:column;margin-right:2vw;">
-                <div>Ключевое слово</div>
-                <div>@item.KeyWord</div>
+    @*<div id="one" class="partNewsElement" style="background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 80% 100% no-repeat;background-size: auto 135%">
+            <div class="annotation">
+                <div class="annotationText">
+                    Вот какой классный мы построили кораблик!<br /><a>Подробности...</a>
+                </div>
             </div>
         </div>
-        <div style="display:flex;flex-direction:column;margin-right:2vw;width:10vw">
-            <div>Короткий текст на фотку</div>
-            <div>@item.ShortStory</div>
-        </div>
-        <div style="display:flex;flex-direction:column;margin-right:2vw;width:40vw">
-            <div>Длинный текст внутрь</div>
-            <div>@item.MainStory</div>
-        </div>
-    </div>
+        <div style="display:flex">
+            <div style="display:flex;justify-content:center;margin-right:2vw;">
+                <div style="display:flex;flex-direction:column;margin-right:2vw;">
+                    <div>Заголовок</div>
+                    <div>@item.Header</div>
+                </div>
+                <div style="display:flex;flex-direction:column;margin-right:2vw;">
+                    <div>Ключевое слово</div>
+                    <div>@item.KeyWord</div>
+                </div>
+            </div>
+            <div style="display:flex;flex-direction:column;margin-right:2vw;width:10vw">
+                <div>Короткий текст на фотку</div>
+                <div>@item.ShortStory</div>
+            </div>
+            <div style="display:flex;flex-direction:column;margin-right:2vw;width:40vw">
+                <div>Длинный текст внутрь</div>
+                <div>@item.MainStory</div>
+            </div>
+        </div>*@
     <p>
         <a asp-action="Edit" asp-route-id="@item.NewsId">Редактировать проект</a> |
         <a asp-action="Delete" asp-route-id="@item.NewsId">Удалить проект</a>

@@ -130,14 +130,14 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NewsId,Header,ShortStory,MainStory,KeyWord,PathToGallery,ShortImgPath,ShortImgScale,ShortImgX,ShortImgY,MiddleImgPath," +
-            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgPath,WideImgScale,WideImgX,WideImgY")] News news, IFormFileCollection newsGallery)
+        public async Task<IActionResult> Create([Bind("NewsId,Header,NewsDate,MainStory,KeyWord,PathToGallery,ShortImgScale,ShortImgX,ShortImgY," +
+            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory")] News news, IFormFileCollection newsGallery)
         {
             if (ModelState.IsValid)
             {
-
+                string n = news.NewsDate;
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
-                string pathFinal = Path.Combine(_Environment.WebRootPath, "images", news.NewsDate.ToString());
+                string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate);
 
                 if (!Directory.Exists(pathFinal))
                 {
@@ -153,7 +153,17 @@ namespace Varyag.Controllers
                     FileInfo file = new FileInfo(pathStart);
                     file.MoveTo(pathEnd);
                 }
+                for (int i = 0; i <= (newsGallery.Count()-1); i++)
+                {
+                    string name = "ВерфьВаряг" + "(" + (i+1).ToString() + ")" + news.NewsDate + ".jpg";
 
+                    using (var fileStream = new FileStream(pathFinal + "/" + name, FileMode.Create))
+                    {
+                        await newsGallery[i].CopyToAsync(fileStream);
+                    }
+                }
+
+                news.PathToGallery = pathFinal;
 
                 _context.Add(news);
                 await _context.SaveChangesAsync();
@@ -237,6 +247,15 @@ namespace Varyag.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var news = await _context.News.FindAsync(id);
+
+            string[] files = Directory.GetFiles(news.PathToGallery);
+            foreach (var file in files)
+            {
+                FileInfo foto = new FileInfo(file);
+                foto.Delete();
+            }
+            Directory.Delete(news.PathToGallery);
+
             _context.News.Remove(news);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

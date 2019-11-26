@@ -98,25 +98,25 @@
 <form asp-action="Create" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
     <div style="width:74vw">
         <div>Заголовок, для главного вида новости</div>
-        <input asp-for="Header" class="form-control" />
+        <input asp-for="Header" class="form-control" required />
     </div>
     <div style="display:flex;align-items:center">
         <div style="margin-right:20px">
             <div>Основной текст новости</div>
-            <textarea asp-for="MainStory" rows="10" cols="160"></textarea>
+            <textarea asp-for="MainStory" id="mce"></textarea>
         </div>
         <div style="display:flex;flex-direction:column;justify-content:space-between;height:210px">
             <div>
-                <div>Ключевые слова для новости</div>
+                <div>Подраздел новости</div>
                 <select asp-for="KeyWord" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsKeyWord)))"></select>
             </div>
             <div>
                 <div>Фотографии в галерею</div>
-                <input type="file" name="newsGallery" multiple />
+                <input type="file" name="newsGallery" multiple required />
             </div>
             <div>
                 <div>Дата новости</div>
-                <input type="date" asp-for="NewsDate" />
+                <input asp-for="NewsDate" required />
             </div>
         </div>
     </div>

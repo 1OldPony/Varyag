@@ -6,6 +6,17 @@ $(document).ready(function () {
     //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
     $("#left.control, #right.control").height($(".allCustomers").height());
 
+    /////////////////////////////настраиваем тайниМЦЕ/////////////////////////
+    tinymce.init({
+        selector: 'textarea#mce',
+        skin: 'oxide',
+        width: 1200,
+        height: 200,
+        language: 'ru',
+        plugins: 'code',
+        toolbar: 'code'
+    });
+
     //////////////////добавление яндекс карт, точка на варяге//////////////////////
     ymaps.ready(function () {
         var mapVaryag = new ymaps.Map("ourLocation", {
@@ -94,11 +105,11 @@ function FotoAttrChange(fotoType) {
     }
 }
 
+/////////////////////////передаем текст новостных превью при загрузках новых фото/////////////////////////////
 $("#NewsFotoUpload").click(function () {
     $("#shortFotoText").val($("#shortFotoNewsText").text().trim());
     $("#middleFotoText").val($("#middleFotoNewsText").text().trim());
     $("#wideFotoText").val($("#wideFotoNewsText").text().trim());
-
     $("#fotoEditorForm").submit();
 })
 
@@ -124,6 +135,25 @@ $("#saveEditorParams").click(function () {
 function newsSaveButtonDisable() {
         $("#newsSaveButton").attr("disabled", "disabled");
 }
+
+////////////////////////////мненяем видимый вариант текста новостных превью////////////////////////////
+$(window).on('load resize', function () {
+    if (window.innerWidth >= 1190) {
+        $("#shortStory").css("display", "initial");
+        $("#middleStory").css("display", "none");
+        $("#wideStory").css("display", "none");
+    }
+    else if (window.innerWidth >= 794 && window.innerWidth <= 1189) {
+        $("#shortStory").css("display", "none");
+        $("#middleStory").css("display", "none");
+        $("#wideStory").css("display", "initial");
+    }
+    else {
+        $("#shortStory").css("display", "none");
+        $("#middleStory").css("display", "initial");
+        $("#wideStory").css("display", "none");
+    }
+});
 
 //////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
 navElMinorChoose();

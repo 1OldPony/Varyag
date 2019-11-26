@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Varyag.Models;
 
 namespace Varyag.Migrations
 {
     [DbContext(typeof(VaryagContext))]
-    partial class VaryagContextModelSnapshot : ModelSnapshot
+    [Migration("20191126064639_backToString")]
+    partial class backToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -167,7 +169,13 @@ namespace Varyag.Migrations
 
                     b.Property<string>("MainStory");
 
+                    b.Property<string>("MiddleImgAlt");
+
+                    b.Property<string>("MiddleImgPath");
+
                     b.Property<string>("MiddleImgScale");
+
+                    b.Property<string>("MiddleImgTitle");
 
                     b.Property<string>("MiddleImgX");
 
@@ -179,7 +187,13 @@ namespace Varyag.Migrations
 
                     b.Property<string>("PathToGallery");
 
+                    b.Property<string>("ShortImgAlt");
+
+                    b.Property<string>("ShortImgPath");
+
                     b.Property<string>("ShortImgScale");
+
+                    b.Property<string>("ShortImgTitle");
 
                     b.Property<string>("ShortImgX");
 
@@ -187,7 +201,13 @@ namespace Varyag.Migrations
 
                     b.Property<string>("ShortStory");
 
+                    b.Property<string>("WideImgAlt");
+
+                    b.Property<string>("WideImgPath");
+
                     b.Property<string>("WideImgScale");
+
+                    b.Property<string>("WideImgTitle");
 
                     b.Property<string>("WideImgX");
 
@@ -401,7 +421,7 @@ namespace Varyag.Migrations
             modelBuilder.Entity("Varyag.Models.Foto", b =>
                 {
                     b.HasOne("Varyag.Models.News", "News")
-                        .WithMany()
+                        .WithMany("NewsFotos")
                         .HasForeignKey("NewsID");
 
                     b.HasOne("Varyag.Models.Project", "ShipProject")
