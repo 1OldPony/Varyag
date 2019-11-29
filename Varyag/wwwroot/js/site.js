@@ -79,7 +79,8 @@ function FotoAttrChange(fotoType) {
             var scale = $("#shortFotoScale").val();
             $(".partNewsElementViewShort").css({
                 "background": "url(../images/temp/short.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
-                "background-size": scale + "% auto"
+                "background-size": scale + "% auto",
+                "background-color": "brown"
             });
             break;
         case "middle":
@@ -88,7 +89,8 @@ function FotoAttrChange(fotoType) {
             var scale = $("#middleFotoScale").val();
             $(".partNewsElementViewMiddle").css({
                 "background": "url(../images/temp/middle.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
-                "background-size": scale + "% auto"
+                "background-size": scale + "% auto",
+                "background-color": "brown"
             });
             break;
         case "wide":
@@ -97,7 +99,8 @@ function FotoAttrChange(fotoType) {
             var scale = $("#wideFotoScale").val();
             $(".partNewsElementViewWide").css({
                 "background": "url(../images/temp/wide.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
-                "background-size": scale + "% auto"
+                "background-size": scale + "% auto",
+                "background-color": "brown"
             });
             break;
         default:
@@ -135,6 +138,17 @@ $("#saveEditorParams").click(function () {
 function newsSaveButtonDisable() {
         $("#newsSaveButton").attr("disabled", "disabled");
 }
+
+////////////////////////показываем и прячем полный вид новости в административной части///////////////////////
+$("#showFullNewsPreview").click(function () {
+    var visibility = $("#fullNewsPreview").css("display");
+    if (visibility == "none") {
+        $("#fullNewsPreview").show();
+    }
+    else {
+        $("#fullNewsPreview").hide();
+    }
+});
 
 ////////////////////////////мненяем видимый вариант текста новостных превью////////////////////////////
 $(window).on('load resize', function () {

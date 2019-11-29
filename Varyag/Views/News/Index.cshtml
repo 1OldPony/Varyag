@@ -7,17 +7,13 @@
 
 <h1>Новости</h1>
 
-@{ string x = "../images/о_нас/гото/1_Гото_Предестинация.jpg";}
-
 <p>
     <a asp-action="Create">Создать новость</a>
 </p>
 
-<div style="background: url(@x) 80% 100% no-repeat;background-size: auto 135%"></div>
-
 @foreach (var item in Model)
 {
-    <div class="partNews">
+    <div class="partNews" style="justify-content:flex-start">
         <div id="one" class="partNewsElement">
             <div class="annotation">
                 <div class="annotationText" id="shortStory">
@@ -32,35 +28,18 @@
             </div>
         </div>
     </div>
-    @*<div id="one" class="partNewsElement" style="background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 80% 100% no-repeat;background-size: auto 135%">
-            <div class="annotation">
-                <div class="annotationText">
-                    Вот какой классный мы построили кораблик!<br /><a>Подробности...</a>
-                </div>
+    <div style="margin:1vw">
+        <input type="button" value="Развернутый вид" style="margin:1vw" id="showFullNewsPreview" />
+        <div class="MyContainer" id="fullNewsPreview">
+            <h2>@item.Header</h2>
+            <div>@Html.Raw(item.MainStory)</div>
+            <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                @await Component.InvokeAsync("Fotorama", new { newsId = item.NewsId })
             </div>
         </div>
-        <div style="display:flex">
-            <div style="display:flex;justify-content:center;margin-right:2vw;">
-                <div style="display:flex;flex-direction:column;margin-right:2vw;">
-                    <div>Заголовок</div>
-                    <div>@item.Header</div>
-                </div>
-                <div style="display:flex;flex-direction:column;margin-right:2vw;">
-                    <div>Ключевое слово</div>
-                    <div>@item.KeyWord</div>
-                </div>
-            </div>
-            <div style="display:flex;flex-direction:column;margin-right:2vw;width:10vw">
-                <div>Короткий текст на фотку</div>
-                <div>@item.ShortStory</div>
-            </div>
-            <div style="display:flex;flex-direction:column;margin-right:2vw;width:40vw">
-                <div>Длинный текст внутрь</div>
-                <div>@item.MainStory</div>
-            </div>
-        </div>*@
-    <p>
-        <a asp-action="Edit" asp-route-id="@item.NewsId">Редактировать проект</a> |
-        <a asp-action="Delete" asp-route-id="@item.NewsId">Удалить проект</a>
-    </p>
+        <p>
+            <a asp-action="Edit" asp-route-id="@item.NewsId">Редактировать проект</a> |
+            <a asp-action="Delete" asp-route-id="@item.NewsId">Удалить проект</a>
+        </p>
+    </div>
 }

@@ -1023,13 +1023,33 @@ img {
     margin: 2vw
 }
 
+.editor {
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-right: 1vw;
+}
+
+#editorShort.editor {
+    grid-area: editorShort
+}
+
+#editorMiddle.editor {
+    grid-area: editorMiddle
+}
+
+#editorWide.editor {
+    grid-area: editorWide
+}
+
 .partNewsElementViewShort {
     width: 497px;
     height: 31vh;
     position: relative;
     background: url(../images/temp/short.jpg) 50% 50% no-repeat;
     background-size: 150% auto;
-    background-color: brown;
 }
 
 .partNewsElementViewMiddle {
@@ -1038,7 +1058,6 @@ img {
     position: relative;
     background: url(../images/temp/middle.jpg) 50% 50% no-repeat;
     background-size: 150% auto;
-    background-color: brown;
 }
 
     .partNewsElementViewMiddle .annotation {
@@ -1055,7 +1074,6 @@ img {
     position: relative;
     background: url(../images/temp/wide.jpg) 50% 50% no-repeat;
     background-size: 150% auto;
-    background-color: brown;
 }
 
     .partNewsElementViewWide .annotation {

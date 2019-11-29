@@ -10,11 +10,11 @@
 <form asp-action="SaveTempFoto" asp-route-fotoType="short" id="fotoEditorForm" enctype="multipart/form-data">
     <div class="newsFotoEditor">
         <div style="grid-area:loader">
-            <input type="file" name="newsFoto" /><br />
+            <input type="file" name="newsFoto" required /><br />
             <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
             <input type="button" id="NewsFotoUpload" value="Загрузить" />
         </div>
-        <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorShort">
+        <div id="editorShort" class="editor">
            <div class="partNewsElementViewShort">
                 <div class="annotation">
                     <div class="annotationText" id="shortFotoNewsText">
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorMiddle">
+        <div id="editorMiddle" class="editor">
             <div class="partNewsElementViewMiddle">
                 <div class="annotation">
                     <div class="annotationText" id="middleFotoNewsText">
@@ -67,7 +67,7 @@
                 <textarea rows="6" cols="30" name="middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
             </div>
         </div>
-        <div style="margin-bottom:1vh;display:flex;align-items:center;width:100%;justify-content:space-between;margin-right:1vw;grid-area:editorWide">
+        <div id="editorWide" class="editor">
             <div class="partNewsElementViewWide">
                 <div class="annotation">
                     <div class="annotationText" id="wideFotoNewsText">
@@ -115,8 +115,8 @@
                 <input type="file" name="newsGallery" multiple required />
             </div>
             <div>
-                <div>Дата новости</div>
-                <input asp-for="NewsDate" required />
+                <div>Дата новости (xx.xx.xxxx)</div>
+                <input asp-for="NewsDate" pattern="\d{2}[.]\d{2}[.]\d{4}" required />
             </div>
         </div>
     </div>

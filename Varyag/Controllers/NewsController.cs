@@ -137,7 +137,8 @@ namespace Varyag.Controllers
             {
                 string n = news.NewsDate;
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
-                string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate);
+                string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate);
+                string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
 
                 if (!Directory.Exists(pathFinal))
                 {
@@ -149,10 +150,11 @@ namespace Varyag.Controllers
                 foreach (var foto in fotos)
                 {
                     string pathStart = Path.Combine(pathTemp, foto);
-                    string pathEnd = Path.Combine(pathFinal, foto);
+                    string pathEnd = Path.Combine(pathForFinalTemp, foto);
                     FileInfo file = new FileInfo(pathStart);
                     file.MoveTo(pathEnd);
                 }
+
                 for (int i = 0; i <= (newsGallery.Count()-1); i++)
                 {
                     string name = "ВерфьВаряг" + "(" + (i+1).ToString() + ")" + news.NewsDate + ".jpg";
@@ -255,6 +257,18 @@ namespace Varyag.Controllers
                 foto.Delete();
             }
             Directory.Delete(news.PathToGallery);
+
+
+            //string[] fotos = Directory.GetFiles(news.PathToGallery);
+            //List<string> fotoPaths = new List<string>();
+            //foreach (var item in fotos)
+            //{
+            //    string[] pathParts = item.Split(new char[] { '\\' });
+            //    int x = pathParts.Count() - 1;
+            //    string path = "~/" + pathParts[x - 4] + pathParts[x - 3] + "/" + pathParts[x - 2] + "/" + pathParts[x - 1] + "/" + pathParts[x];
+            //    fotoPaths.Add(path);
+            //}
+
 
             _context.News.Remove(news);
             await _context.SaveChangesAsync();
