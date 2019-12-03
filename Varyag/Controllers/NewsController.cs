@@ -27,10 +27,31 @@ namespace Varyag.Controllers
         // GET: News
         public async Task<IActionResult> Index()
         {
-            return View(await _context.News.ToListAsync());
+            List<News> baseList = await _context.News.ToListAsync();
+            List<News> operateList = new List<News>();
+            foreach (var item in baseList)
+            {
+                string[] shPathParts = item.ShortFotoPreview.Split(new char[] { '\\' });
+                string[] midPathParts = item.MiddleFotoPreview.Split(new char[] { '\\' });
+                string[] widePathParts = item.WideFotoPreview.Split(new char[] { '\\' });
+
+                operateList.Add(new News { Header=item.Header, KeyWord=item.KeyWord, MainStory=item.MainStory, NewsId=item.NewsId,
+                 NewsDate=item.NewsDate, PathToGallery=item.PathToGallery, ShortStory=item.ShortStory, ShortImgY=item.ShortImgY,
+                 ShortImgX=item.ShortImgX, ShortImgScale=item.ShortImgScale, ShortFotoPreview=pathAdapter(shPathParts), MiddleStory=item.MiddleStory,
+                 MiddleImgX=item.MiddleImgX, MiddleImgY=item.MiddleImgY, MiddleImgScale=item.MiddleImgScale, MiddleFotoPreview=pathAdapter(midPathParts),
+                 WideStory=item.WideStory, WideImgX=item.WideImgX, WideImgY=item.WideImgY, WideImgScale=item.WideImgScale, WideFotoPreview=pathAdapter(widePathParts)});
+            }
+
+            return View(operateList);
         }
 
-
+        private string pathAdapter(string[]pathParts)
+        {
+            string fotoPath = "~/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
+                + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
+            return fotoPath;
+        }
+        
         // GET: News/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -50,11 +71,11 @@ namespace Varyag.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto,
+        public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto, string actionType,
             string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
             string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
             string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory)
+            string wideStory, int? newId)
         {
             if (newsFoto != null)
             {
@@ -82,15 +103,31 @@ namespace Varyag.Controllers
                 }
             }
 
-            return RedirectToAction("Create", new { shortScale = shortFotoScale,
-                shortX = shortFotoX, shortY = shortFotoY, shStory = shortStory,
-                midScale = middleFotoScale, midX = middleFotoX, midY = middleFotoY,
-                midStory = middleStory, wideScale = wideFotoScale,
-                wideX = wideFotoX, wideY = wideFotoY, wStory = wideStory
-            });
+            if (actionType == "create")
+            {
+                return RedirectToAction("Create", new
+                {
+                    shortScale = shortFotoScale,
+                    shortX = shortFotoX,
+                    shortY = shortFotoY,
+                    shStory = shortStory,
+                    midScale = middleFotoScale,
+                    midX = middleFotoX,
+                    midY = middleFotoY,
+                    midStory = middleStory,
+                    wideScale = wideFotoScale,
+                    wideX = wideFotoX,
+                    wideY = wideFotoY,
+                    wStory = wideStory
+                });
+            }
+            else
+            {
+                return RedirectToAction("Edit", new { id = newId });
+            }
         }
 
-        public async Task SaveImgAsync(string name, IFormFile newsFoto) {
+        private async Task SaveImgAsync(string name, IFormFile newsFoto) {
 
             string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
             using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
@@ -131,7 +168,7 @@ namespace Varyag.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("NewsId,Header,NewsDate,MainStory,KeyWord,PathToGallery,ShortImgScale,ShortImgX,ShortImgY," +
-            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory")] News news, IFormFileCollection newsGallery)
+            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory,ShortFotoPreview,MiddleFotoPreview,WideSFotoPreview")] News news, IFormFileCollection newsGallery)
         {
             if (ModelState.IsValid)
             {
@@ -139,6 +176,9 @@ namespace Varyag.Controllers
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
                 string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate);
                 string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
+                string shortPreview = "", middlePreview = "", widePreview = "";
+
+
 
                 if (!Directory.Exists(pathFinal))
                 {
@@ -153,6 +193,20 @@ namespace Varyag.Controllers
                     string pathEnd = Path.Combine(pathForFinalTemp, foto);
                     FileInfo file = new FileInfo(pathStart);
                     file.MoveTo(pathEnd);
+                    switch (foto)
+                    {
+                        case "short.jpg":
+                            shortPreview = pathEnd;
+                            break;
+                        case "middle.jpg":
+                            middlePreview = pathEnd;
+                            break;
+                        case "wide.jpg":
+                            widePreview = pathEnd;
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
                 for (int i = 0; i <= (newsGallery.Count()-1); i++)
@@ -166,6 +220,9 @@ namespace Varyag.Controllers
                 }
 
                 news.PathToGallery = pathFinal;
+                news.ShortFotoPreview = shortPreview;
+                news.MiddleFotoPreview = middlePreview;
+                news.WideFotoPreview = widePreview;
 
                 _context.Add(news);
                 await _context.SaveChangesAsync();
@@ -195,7 +252,8 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("NewsId,Header,ShortStory,MainStory,KeyWord,ShortImgPath,ShortImgScale,ShortImgX,ShortImgY,MiddleImgPath,MiddleImgScale,MiddleImgX,MiddleImgY,WideImgPath,WideImgScale,WideImgX,WideImgY")] News news)
+        public async Task<IActionResult> Edit(int id, [Bind("NewsId,Header,NewsDate,MainStory,KeyWord,PathToGallery,ShortImgScale,ShortImgX,ShortImgY," +
+            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory,ShortFotoPreview,MiddleFotoPreview,WideSFotoPreview")] News news)
         {
             if (id != news.NewsId)
             {
@@ -250,29 +308,34 @@ namespace Varyag.Controllers
         {
             var news = await _context.News.FindAsync(id);
 
-            string[] files = Directory.GetFiles(news.PathToGallery);
+            DeleteFiles(news.PathToGallery);
+
+            string[] pathParts = news.PathToGallery.Split(new char[] { '\\' });
+            string pathTempFiles = "";
+            for (int i = 0; i < (pathParts.Count() - 1); i++)
+            {
+                if (i==0)
+                    pathTempFiles = pathTempFiles + pathParts[i];
+                else
+                    pathTempFiles = pathTempFiles + "/" + pathParts[i];
+            }
+
+            DeleteFiles(pathTempFiles);
+
+            _context.News.Remove(news);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private void DeleteFiles(string path)
+        {
+            string[] files = Directory.GetFiles(path);
             foreach (var file in files)
             {
                 FileInfo foto = new FileInfo(file);
                 foto.Delete();
             }
-            Directory.Delete(news.PathToGallery);
-
-
-            //string[] fotos = Directory.GetFiles(news.PathToGallery);
-            //List<string> fotoPaths = new List<string>();
-            //foreach (var item in fotos)
-            //{
-            //    string[] pathParts = item.Split(new char[] { '\\' });
-            //    int x = pathParts.Count() - 1;
-            //    string path = "~/" + pathParts[x - 4] + pathParts[x - 3] + "/" + pathParts[x - 2] + "/" + pathParts[x - 1] + "/" + pathParts[x];
-            //    fotoPaths.Add(path);
-            //}
-
-
-            _context.News.Remove(news);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            Directory.Delete(path);
         }
 
         private bool NewsExists(int id)

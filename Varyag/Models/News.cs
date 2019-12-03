@@ -26,6 +26,8 @@ namespace Varyag.Models
         public string ShortImgY { get; set; }
         [DisplayName("Текст мелкой фотки")]
         public string ShortStory { get; set; }
+        [DisplayName("Фотка для маленького превью")]
+        public string ShortFotoPreview { get; set; }
 
         [DisplayName("Масштаб средней фотки")]
         public string MiddleImgScale { get; set; }
@@ -35,6 +37,8 @@ namespace Varyag.Models
         public string MiddleImgY { get; set; }
         [DisplayName("Текст средней фотки")]
         public string MiddleStory { get; set; }
+        [DisplayName("Фотка для среднего превью")]
+        public string MiddleFotoPreview { get; set; }
 
         [DisplayName("Масштаб широкой фотки")]
         public string WideImgScale { get; set; }
@@ -44,6 +48,8 @@ namespace Varyag.Models
         public string WideImgY { get; set; }
         [DisplayName("Текст широкой фотки")]
         public string WideStory { get; set; }
+        [DisplayName("Фотка для широкого превью")]
+        public string WideFotoPreview { get; set; }
     }
 
     public enum NewsKeyWord

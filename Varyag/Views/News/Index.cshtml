@@ -13,24 +13,32 @@
 
 @foreach (var item in Model)
 {
-    <div class="partNews" style="justify-content:flex-start">
-        <div id="one" class="partNewsElement">
-            <div class="annotation">
-                <div class="annotationText" id="shortStory">
-                    @Html.Raw(item.ShortStory)
-                </div>
-                <div class="annotationText" id="middleStory" style="display:none">
-                    @Html.Raw(item.MiddleStory)
-                </div>
-                <div class="annotationText" id="wideStory" style="display:none">
-                    @Html.Raw(item.WideStory)
-                </div>
+<div class="partNews" style="justify-content:flex-start">
+    <div class="partNewsElementViewShort" id="shortStory" style="background-image:@item.ShortFotoPreview" >
+        <div class="annotation">
+            <div class="annotationText">
+                @Html.Raw(item.ShortStory)
             </div>
         </div>
     </div>
+    <div class="partNewsElementViewMiddle" id="middleStory" style="display:none">
+        <div class="annotation">
+            <div class="annotationText">
+                @Html.Raw(item.MiddleStory)
+            </div>
+        </div>
+    </div>
+    <div class="partNewsElementViewWide" id="wideStory" style="display:none">
+        <div class="annotation">
+            <div class="annotationText">
+                @Html.Raw(item.WideStory)
+            </div>
+        </div>
+    </div>
+</div>
     <div style="margin:1vw">
         <input type="button" value="Развернутый вид" style="margin:1vw" id="showFullNewsPreview" />
-        <div class="MyContainer" id="fullNewsPreview">
+        <div class="MyContainer" id="fullNewsPreview" style="display:none">
             <h2>@item.Header</h2>
             <div>@Html.Raw(item.MainStory)</div>
             <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">

@@ -1,90 +1,145 @@
 ﻿@model Varyag.Models.News
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Редактировать";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
-
-<h4>News</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="NewsId" />
-            <div class="form-group">
-                <label asp-for="Header" class="control-label"></label>
-                <input asp-for="Header" class="form-control" />
-                <span asp-validation-for="Header" class="text-danger"></span>
+
+<form asp-action="SaveTempFoto" asp-route-actionType="Edit" asp-route-newId="@Model.NewsId" id="fotoEditorForm" enctype="multipart/form-data">
+    <div class="newsFotoEditor">
+        <div style="grid-area:loader">
+            <input type="file" name="newsFoto" required /><br />
+            <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
+            <input type="button" id="newsFotoUpload" value="Загрузить" />
+        </div>
+        <div id="editorShort" class="editor">
+            <div class="partNewsElementViewShort">
+                <div class="annotation">
+                    <div class="annotationText" id="shortFotoNewsText">
+                        @Model.ShortStory
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ShortStory" class="control-label"></label>
-                <input asp-for="ShortStory" class="form-control" />
-                <span asp-validation-for="ShortStory" class="text-danger"></span>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="shortFotoX" id="shortFotoX" value="@Model.ShortImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="shortFotoY" id="shortFotoY" value="@Model.ShortImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="shortFotoScale" id="shortFotoScale" value="@Model.ShortImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" asp-for="ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
             </div>
-            <div class="form-group">
-                <label asp-for="MainStory" class="control-label"></label>
-                <input asp-for="MainStory" class="form-control" />
-                <span asp-validation-for="MainStory" class="text-danger"></span>
+        </div>
+
+        <div id="editorMiddle" class="editor">
+            <div class="partNewsElementViewMiddle">
+                <div class="annotation">
+                    <div class="annotationText" id="middleFotoNewsText">
+                        @Model.MiddleStory
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="KeyWord" class="control-label"></label>
-                <select asp-for="KeyWord" class="form-control"></select>
-                <span asp-validation-for="KeyWord" class="text-danger"></span>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="middleFotoX" id="middleFotoX" value="@Model.MiddleImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="middleFotoY" id="middleFotoY" value="@Model.MiddleImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="middleFotoScale" id="middleFotoScale" value="@Model.MiddleImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" id="middleFotoText" asp-for="MiddleStory" onkeyup="FotoTextChange('middle')"></textarea>
             </div>
-            <div class="form-group">
-                <label asp-for="ShortImgScale" class="control-label"></label>
-                <input asp-for="ShortImgScale" class="form-control" />
-                <span asp-validation-for="ShortImgScale" class="text-danger"></span>
+        </div>
+        <div id="editorWide" class="editor">
+            <div class="partNewsElementViewWide">
+                <div class="annotation">
+                    <div class="annotationText" id="wideFotoNewsText">
+                        @Model.WideStory
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ShortImgX" class="control-label"></label>
-                <input asp-for="ShortImgX" class="form-control" />
-                <span asp-validation-for="ShortImgX" class="text-danger"></span>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="wideFotoX" id="wideFotoX" value="@Model.WideImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="wideFotoY" id="wideFotoY" value="@Model.WideImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="wideFotoScale" id="wideFotoScale" value="@Model.WideImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" id="wideFotoText" asp-for="WideStory" onkeyup="FotoTextChange('wide')"></textarea>
             </div>
-            <div class="form-group">
-                <label asp-for="ShortImgY" class="control-label"></label>
-                <input asp-for="ShortImgY" class="form-control" />
-                <span asp-validation-for="ShortImgY" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MiddleImgScale" class="control-label"></label>
-                <input asp-for="MiddleImgScale" class="form-control" />
-                <span asp-validation-for="MiddleImgScale" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MiddleImgX" class="control-label"></label>
-                <input asp-for="MiddleImgX" class="form-control" />
-                <span asp-validation-for="MiddleImgX" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MiddleImgY" class="control-label"></label>
-                <input asp-for="MiddleImgY" class="form-control" />
-                <span asp-validation-for="MiddleImgY" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WideImgScale" class="control-label"></label>
-                <input asp-for="WideImgScale" class="form-control" />
-                <span asp-validation-for="WideImgScale" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WideImgX" class="control-label"></label>
-                <input asp-for="WideImgX" class="form-control" />
-                <span asp-validation-for="WideImgX" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="WideImgY" class="control-label"></label>
-                <input asp-for="WideImgY" class="form-control" />
-                <span asp-validation-for="WideImgY" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</form>
+<form asp-action="Create" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
+    <div style="width:74vw">
+        <div>Заголовок, для главного вида новости</div>
+        <input asp-for="Header" class="form-control" required />
+    </div>
+    <div style="display:flex;align-items:center">
+        <div style="margin-right:20px">
+            <div>Основной текст новости</div>
+            <textarea asp-for="MainStory" id="mce"></textarea>
+        </div>
+        <div style="display:flex;flex-direction:column;justify-content:space-between;height:210px">
+            <div>
+                <div>Подраздел новости</div>
+                <select asp-for="KeyWord" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsKeyWord)))"></select>
+            </div>
+            <div>
+                <div>Фотографии в галерею</div>
+                <input type="file" name="newsGallery" multiple required />
+            </div>
+            <div>
+                <div>Дата новости (xx.xx.xxxx)</div>
+                <input asp-for="NewsDate" pattern="\d{2}[.]\d{2}[.]\d{4}" required />
+            </div>
+        </div>
+    </div>
+
+    <div hidden>
+        <input asp-for="ShortImgScale" value="@Model.ShortImgScale" id="ShortImgScale" />
+        <input asp-for="ShortImgX" value="@Model.ShortImgX" id="ShortImgX" />
+        <input asp-for="ShortImgY" value="@Model.ShortImgY" id="ShortImgY" />
+        <input asp-for="ShortStory" value="@Model.ShortStory" id="ShortStory" />
+        <input asp-for="MiddleImgScale" value="@Model.MiddleImgScale" id="MiddleImgScale" />
+        <input asp-for="MiddleImgX" value="@Model.MiddleImgX" id="MiddleImgX" />
+        <input asp-for="MiddleImgY" value="@Model.MiddleImgY" id="MiddleImgY" />
+        <input asp-for="MiddleStory" value="@Model.MiddleStory" id="MiddleStory" />
+        <input asp-for="WideImgScale" value="@Model.WideImgScale" id="WideImgScale" />
+        <input asp-for="WideImgX" value="@Model.WideImgX" id="WideImgX" />
+        <input asp-for="WideImgY" value="@Model.WideImgY" id="WideImgY" />
+        <input asp-for="WideStory" value="@Model.WideStory" id="WideStory" />
+    </div>
+    <div style="display:flex;">
+        <input type="button" value="Сохранить данные из редактора" id="saveEditorParams" style="width:300px" />
+        <input type="submit" id="newsSaveButton" value="Сохранить новость" style="width:200px;" />
+    </div>
+</form>
 
 <div>
     <a asp-action="Index">Back to List</a>

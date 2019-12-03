@@ -78,7 +78,11 @@ function FotoAttrChange(fotoType) {
             var yCoordinate = $("#shortFotoY").val();
             var scale = $("#shortFotoScale").val();
             $(".partNewsElementViewShort").css({
-                "background": "url(../images/temp/short.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
+                //"background": "url(../images/temp/short.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
+                "background": "@Url.Content(~/images/temp/short.jpg)",
+                "background-position-x": xCoordinate + "%",
+                "background-position-y": yCoordinate + "%",
+                "background-repeat": "no-repeat",
                 "background-size": scale + "% auto",
                 "background-color": "brown"
             });
@@ -88,7 +92,10 @@ function FotoAttrChange(fotoType) {
             var yCoordinate = $("#middleFotoY").val();
             var scale = $("#middleFotoScale").val();
             $(".partNewsElementViewMiddle").css({
-                "background": "url(../images/temp/middle.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
+                "background": "@Url.Content(~/images/temp/middle.jpg)",
+                "background-position-x": xCoordinate + "%",
+                "background-position-y": yCoordinate + "%",
+                "background-repeat": "no-repeat",
                 "background-size": scale + "% auto",
                 "background-color": "brown"
             });
@@ -98,7 +105,10 @@ function FotoAttrChange(fotoType) {
             var yCoordinate = $("#wideFotoY").val();
             var scale = $("#wideFotoScale").val();
             $(".partNewsElementViewWide").css({
-                "background": "url(../images/temp/wide.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
+                "background": "@Url.Content(~/images/temp/wide.jpg)",
+                "background-position-x": xCoordinate + "%",
+                "background-position-y": yCoordinate + "%",
+                "background-repeat": "no-repeat",
                 "background-size": scale + "% auto",
                 "background-color": "brown"
             });
@@ -109,7 +119,7 @@ function FotoAttrChange(fotoType) {
 }
 
 /////////////////////////передаем текст новостных превью при загрузках новых фото/////////////////////////////
-$("#NewsFotoUpload").click(function () {
+$("#newsFotoUpload").click(function () {
     $("#shortFotoText").val($("#shortFotoNewsText").text().trim());
     $("#middleFotoText").val($("#middleFotoNewsText").text().trim());
     $("#wideFotoText").val($("#wideFotoNewsText").text().trim());
