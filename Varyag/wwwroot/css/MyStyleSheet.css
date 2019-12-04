@@ -1048,16 +1048,22 @@ img {
     width: 497px;
     height: 31vh;
     position: relative;
-    background: url(../images/temp/short.jpg) 50% 50% no-repeat;
+    background-image: url(../images/temp/short.jpg);
+    background-repeat: no-repeat;
     background-size: 150% auto;
+    background-color: brown;
+    /*background: url(../images/temp/short.jpg) 50% 50% no-repeat;
+    background-size: 150% auto;*/
 }
 
 .partNewsElementViewMiddle {
     width: 700px;
     height: 20vh;
     position: relative;
-    background: url(../images/temp/middle.jpg) 50% 50% no-repeat;
+    background: url(../images/temp/middle.jpg) 50% 50%;
+    background-repeat: no-repeat;
     background-size: 150% auto;
+    background-color: brown;
 }
 
     .partNewsElementViewMiddle .annotation {
@@ -1074,6 +1080,7 @@ img {
     position: relative;
     background: url(../images/temp/wide.jpg) 50% 50% no-repeat;
     background-size: 150% auto;
+    background-color: brown;
 }
 
     .partNewsElementViewWide .annotation {

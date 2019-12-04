@@ -15,7 +15,7 @@
             <input type="button" id="newsFotoUpload" value="Загрузить" />
         </div>
         <div id="editorShort" class="editor">
-           <div class="partNewsElementViewShort">
+           <div class="partNewsElementViewShort" id="creator">
                 <div class="annotation">
                     <div class="annotationText" id="shortFotoNewsText">
                         @ViewBag.Editor.shortStory
@@ -42,7 +42,7 @@
         </div>
 
         <div id="editorMiddle" class="editor">
-            <div class="partNewsElementViewMiddle">
+            <div class="partNewsElementViewMiddle" id="creator">
                 <div class="annotation">
                     <div class="annotationText" id="middleFotoNewsText">
                         @ViewBag.Editor.middleStory
@@ -68,7 +68,7 @@
             </div>
         </div>
         <div id="editorWide" class="editor">
-            <div class="partNewsElementViewWide">
+            <div class="partNewsElementViewWide" id="creator">
                 <div class="annotation">
                     <div class="annotationText" id="wideFotoNewsText">
                         @ViewBag.Editor.wideStory

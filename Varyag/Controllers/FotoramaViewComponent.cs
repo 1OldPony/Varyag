@@ -34,9 +34,7 @@ namespace Varyag.Controllers
                 List<string> fotoPaths = new List<string>();
                 foreach (var item in fotos)
                 {
-                    string[] pathParts = item.Split(new char[] { '\\' });
-                    int x = pathParts.Count() - 1;
-                    string path = "~/" + pathParts[x - 4] + "/" + pathParts[x - 3] + "/" + pathParts[x - 2] + "/" + pathParts[x - 1] + "/" + pathParts[x];
+                    string path = LittleHelper.PathAdapter(item, "gallery");
                     fotoPaths.Add(path);
                 }
                 return View("NewsGallery",fotoPaths);

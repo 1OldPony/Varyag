@@ -72,45 +72,41 @@ function FotoTextChange(fotoType) {
 
 function FotoAttrChange(fotoType) {
     newsSaveButtonDisable();
+    var xCoordinate;
+    var yCoordinate;
+    var scale;
     switch (fotoType) {
         case "short":
-            var xCoordinate = $("#shortFotoX").val();
-            var yCoordinate = $("#shortFotoY").val();
-            var scale = $("#shortFotoScale").val();
-            $(".partNewsElementViewShort").css({
-                //"background": "url(../images/temp/short.jpg) " + xCoordinate + "% " + yCoordinate + "% no-repeat",
-                "background": "@Url.Content(~/images/temp/short.jpg)",
-                "background-position-x": xCoordinate + "%",
-                "background-position-y": yCoordinate + "%",
+            xCoordinate = $("#shortFotoX").val() + "%";
+            yCoordinate = $("#shortFotoY").val() + "%";
+            scale = $("#shortFotoScale").val() + "% auto";
+            $("#creator.partNewsElementViewShort").css({
+                "background-position-x": xCoordinate,
+                "background-position-y": yCoordinate,
                 "background-repeat": "no-repeat",
-                "background-size": scale + "% auto",
-                "background-color": "brown"
+                "background-size": scale
             });
             break;
         case "middle":
-            var xCoordinate = $("#middleFotoX").val();
-            var yCoordinate = $("#middleFotoY").val();
-            var scale = $("#middleFotoScale").val();
-            $(".partNewsElementViewMiddle").css({
-                "background": "@Url.Content(~/images/temp/middle.jpg)",
-                "background-position-x": xCoordinate + "%",
-                "background-position-y": yCoordinate + "%",
+            xCoordinate = $("#middleFotoX").val() + "%";
+            yCoordinate = $("#middleFotoY").val() + "%";
+            scale = $("#middleFotoScale").val() + "% auto";
+            $("#creator.partNewsElementViewMiddle").css({
+                "background-position-x": xCoordinate,
+                "background-position-y": yCoordinate,
                 "background-repeat": "no-repeat",
-                "background-size": scale + "% auto",
-                "background-color": "brown"
+                "background-size": scale
             });
             break;
         case "wide":
-            var xCoordinate = $("#wideFotoX").val();
-            var yCoordinate = $("#wideFotoY").val();
-            var scale = $("#wideFotoScale").val();
-            $(".partNewsElementViewWide").css({
-                "background": "@Url.Content(~/images/temp/wide.jpg)",
-                "background-position-x": xCoordinate + "%",
-                "background-position-y": yCoordinate + "%",
+            xCoordinate = $("#wideFotoX").val() + "%";
+            yCoordinate = $("#wideFotoY").val() + "%";
+            scale = $("#wideFotoScale").val() + "% auto";
+            $("#creator.partNewsElementViewWide").css({
+                "background-position-x": xCoordinate,
+                "background-position-y": yCoordinate,
                 "background-repeat": "no-repeat",
-                "background-size": scale + "% auto",
-                "background-color": "brown"
+                "background-size": scale
             });
             break;
         default:

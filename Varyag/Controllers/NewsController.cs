@@ -27,29 +27,7 @@ namespace Varyag.Controllers
         // GET: News
         public async Task<IActionResult> Index()
         {
-            List<News> baseList = await _context.News.ToListAsync();
-            List<News> operateList = new List<News>();
-            foreach (var item in baseList)
-            {
-                string[] shPathParts = item.ShortFotoPreview.Split(new char[] { '\\' });
-                string[] midPathParts = item.MiddleFotoPreview.Split(new char[] { '\\' });
-                string[] widePathParts = item.WideFotoPreview.Split(new char[] { '\\' });
-
-                operateList.Add(new News { Header=item.Header, KeyWord=item.KeyWord, MainStory=item.MainStory, NewsId=item.NewsId,
-                 NewsDate=item.NewsDate, PathToGallery=item.PathToGallery, ShortStory=item.ShortStory, ShortImgY=item.ShortImgY,
-                 ShortImgX=item.ShortImgX, ShortImgScale=item.ShortImgScale, ShortFotoPreview=pathAdapter(shPathParts), MiddleStory=item.MiddleStory,
-                 MiddleImgX=item.MiddleImgX, MiddleImgY=item.MiddleImgY, MiddleImgScale=item.MiddleImgScale, MiddleFotoPreview=pathAdapter(midPathParts),
-                 WideStory=item.WideStory, WideImgX=item.WideImgX, WideImgY=item.WideImgY, WideImgScale=item.WideImgScale, WideFotoPreview=pathAdapter(widePathParts)});
-            }
-
-            return View(operateList);
-        }
-
-        private string pathAdapter(string[]pathParts)
-        {
-            string fotoPath = "~/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
-                + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
-            return fotoPath;
+            return View(await _context.News.ToListAsync());
         }
         
         // GET: News/Details/5
@@ -196,13 +174,13 @@ namespace Varyag.Controllers
                     switch (foto)
                     {
                         case "short.jpg":
-                            shortPreview = pathEnd;
+                            shortPreview = LittleHelper.PathAdapter(pathEnd, "preview");
                             break;
                         case "middle.jpg":
-                            middlePreview = pathEnd;
+                            middlePreview = LittleHelper.PathAdapter(pathEnd, "preview");
                             break;
                         case "wide.jpg":
-                            widePreview = pathEnd;
+                            widePreview = LittleHelper.PathAdapter(pathEnd, "preview");
                             break;
                         default:
                             break;
@@ -223,6 +201,15 @@ namespace Varyag.Controllers
                 news.ShortFotoPreview = shortPreview;
                 news.MiddleFotoPreview = middlePreview;
                 news.WideFotoPreview = widePreview;
+                news.ShortImgScale = news.ShortImgScale + "%";
+                news.ShortImgX = news.ShortImgX + "%";
+                news.ShortImgY = news.ShortImgY + "%";
+                news.MiddleImgScale = news.MiddleImgScale + "%";
+                news.MiddleImgX = news.MiddleImgX + "%";
+                news.MiddleImgY = news.MiddleImgY + "%";
+                news.WideImgScale = news.WideImgScale + "%";
+                news.WideImgX = news.WideImgX + "%";
+                news.WideImgY = news.WideImgY + "%";
 
                 _context.Add(news);
                 await _context.SaveChangesAsync();
@@ -244,6 +231,21 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
+
+            news.ShortFotoPreview = "../"+news.ShortFotoPreview;
+            news.MiddleFotoPreview = "../" + news.MiddleFotoPreview;
+            news.WideFotoPreview = "../" + news.WideFotoPreview;
+
+            ViewBag.ShortImgX = LittleHelper.PercentToCoordinates(news.ShortImgX);
+            ViewBag.ShortImgY = LittleHelper.PercentToCoordinates(news.ShortImgY);
+            ViewBag.ShortImgScale = LittleHelper.PercentToCoordinates(news.ShortImgScale);
+            ViewBag.MiddleImgX = LittleHelper.PercentToCoordinates(news.MiddleImgX);
+            ViewBag.MiddleImgY = LittleHelper.PercentToCoordinates(news.MiddleImgY);
+            ViewBag.MiddleImgScale = LittleHelper.PercentToCoordinates(news.MiddleImgScale);
+            ViewBag.WideImgX = LittleHelper.PercentToCoordinates(news.WideImgX);
+            ViewBag.WideImgY = LittleHelper.PercentToCoordinates(news.WideImgY);
+            ViewBag.WideImgScale = LittleHelper.PercentToCoordinates(news.WideImgScale);
+
             return View(news);
         }
 
@@ -297,7 +299,7 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
-
+            
             return View(news);
         }
 
@@ -308,7 +310,7 @@ namespace Varyag.Controllers
         {
             var news = await _context.News.FindAsync(id);
 
-            DeleteFiles(news.PathToGallery);
+            LittleHelper.DeleteFiles(news.PathToGallery);
 
             string[] pathParts = news.PathToGallery.Split(new char[] { '\\' });
             string pathTempFiles = "";
@@ -320,22 +322,11 @@ namespace Varyag.Controllers
                     pathTempFiles = pathTempFiles + "/" + pathParts[i];
             }
 
-            DeleteFiles(pathTempFiles);
+            LittleHelper.DeleteFiles(pathTempFiles);
 
             _context.News.Remove(news);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private void DeleteFiles(string path)
-        {
-            string[] files = Directory.GetFiles(path);
-            foreach (var file in files)
-            {
-                FileInfo foto = new FileInfo(file);
-                foto.Delete();
-            }
-            Directory.Delete(path);
         }
 
         private bool NewsExists(int id)
