@@ -44,7 +44,20 @@ $(document).ready(function () {
     });
 
     //////////////////////////виджет контакта//////////////////////////
-    VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height:"200" }, 137987101);
+    VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
+
+    /////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
+    function myfunction() {
+        var buttons = $("#showFullNews").toArray();
+        var newsViews = $("#fullNewsView").toArray();
+
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].attr("id", item.attr("id") + i);
+        }
+        for (var i = 0; i < newsViews.length; i++) {
+            buttons[i].attr("id", item.attr("id") + i);
+        }
+    }
 });
 
 /////////////////////применяем переданные настройки редактора новостных превью к превью////////////////
@@ -83,7 +96,6 @@ function FotoAttrChange(fotoType) {
             $("#creator.partNewsElementViewShort").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
-                "background-repeat": "no-repeat",
                 "background-size": scale
             });
             break;
@@ -94,7 +106,6 @@ function FotoAttrChange(fotoType) {
             $("#creator.partNewsElementViewMiddle").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
-                "background-repeat": "no-repeat",
                 "background-size": scale
             });
             break;
@@ -105,7 +116,6 @@ function FotoAttrChange(fotoType) {
             $("#creator.partNewsElementViewWide").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
-                "background-repeat": "no-repeat",
                 "background-size": scale
             });
             break;
@@ -113,6 +123,39 @@ function FotoAttrChange(fotoType) {
             break;
     }
 }
+
+
+//////////////////////////////////редактируем фото при редактировании новости/////////////////////////////////////////
+$("#editorShort.editor").on("input", function () {
+    var xCoordinateShort = $("#shortFotoX").val() + "%";
+    var yCoordinateShort = $("#shortFotoY").val() + "%";
+    var scaleShort = $("#shortFotoScale").val() + "% auto";
+    $("#editor.partNewsElementViewShort").css({
+        "background-position-x": xCoordinateShort,
+        "background-position-y": yCoordinateShort,
+        "background-size": scaleShort
+    });
+})
+$("#editorMiddle.editor").on("input", function () {
+    var xCoordinateMiddle = $("#middleFotoX").val() + "%";
+    var yCoordinateMiddle = $("#middleFotoY").val() + "%";
+    var scaleMiddle = $("#middleFotoScale").val() + "% auto";
+    $("#editor.partNewsElementViewMiddle").css({
+        "background-position-x": xCoordinateMiddle,
+        "background-position-y": yCoordinateMiddle,
+        "background-size": scaleMiddle
+    });
+})
+$("#editorWide.editor").on("input", function () {
+    var xCoordinateWide = $("#wideFotoX").val() + "%";
+    var yCoordinateWide = $("#wideFotoY").val() + "%";
+    var scaleWide = $("#wideFotoScale").val() + "% auto";
+    $("#editor.partNewsElementViewWide").css({
+        "background-position-x": xCoordinateWide,
+        "background-position-y": yCoordinateWide,
+        "background-size": scaleWide
+    });
+})
 
 /////////////////////////передаем текст новостных превью при загрузках новых фото/////////////////////////////
 $("#newsFotoUpload").click(function () {
@@ -146,15 +189,20 @@ function newsSaveButtonDisable() {
 }
 
 ////////////////////////показываем и прячем полный вид новости в административной части///////////////////////
-$("#showFullNewsPreview").click(function () {
-    var visibility = $("#fullNewsPreview").css("display");
-    if (visibility == "none") {
-        $("#fullNewsPreview").show();
-    }
-    else {
-        $("#fullNewsPreview").hide();
-    }
-});
+//var idNumber = 1
+//$("#showFullNewsPreview").click(function (idNumber) {
+
+//    $("#newsIdentificator").val(idNumber);
+    
+//    var visibility = $("#fullNewsPreview" + idNumber).css("display");
+//    if (visibility == "none") {
+//        $("#fullNewsPreview" + idNumber).show();
+//    }
+//    else {
+//        $("#fullNewsPreview" + idNumber).hide();
+//    }
+//    idNumber++;
+//});
 
 ////////////////////////////мненяем видимый вариант текста новостных превью////////////////////////////
 $(window).on('load resize', function () {

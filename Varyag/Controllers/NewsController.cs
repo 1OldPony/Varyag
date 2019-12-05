@@ -134,7 +134,6 @@ namespace Varyag.Controllers
                 wideFotoX = wideX,
                 wideFotoY = wideY,
                 wideStory = wStory
-
             };
 
             return View();
@@ -155,8 +154,6 @@ namespace Varyag.Controllers
                 string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate);
                 string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
                 string shortPreview = "", middlePreview = "", widePreview = "";
-
-
 
                 if (!Directory.Exists(pathFinal))
                 {
@@ -187,9 +184,9 @@ namespace Varyag.Controllers
                     }
                 }
 
-                for (int i = 0; i <= (newsGallery.Count()-1); i++)
+                for (int i = 0; i <= (newsGallery.Count() - 1); i++)
                 {
-                    string name = "ВерфьВаряг" + "(" + (i+1).ToString() + ")" + news.NewsDate + ".jpg";
+                    string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ")" + news.NewsDate + ".jpg";
 
                     using (var fileStream = new FileStream(pathFinal + "/" + name, FileMode.Create))
                     {
@@ -254,8 +251,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("NewsId,Header,NewsDate,MainStory,KeyWord,PathToGallery,ShortImgScale,ShortImgX,ShortImgY," +
-            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory,ShortFotoPreview,MiddleFotoPreview,WideSFotoPreview")] News news)
+        public async Task<IActionResult> Edit(int id, News news)
         {
             if (id != news.NewsId)
             {
@@ -266,6 +262,16 @@ namespace Varyag.Controllers
             {
                 try
                 {
+                    news.ShortImgScale = news.ShortImgScale + "%";
+                    news.ShortImgX = news.ShortImgX + "%";
+                    news.ShortImgY = news.ShortImgY + "%";
+                    news.MiddleImgScale = news.MiddleImgScale + "%";
+                    news.MiddleImgX = news.MiddleImgX + "%";
+                    news.MiddleImgY = news.MiddleImgY + "%";
+                    news.WideImgScale = news.WideImgScale + "%";
+                    news.WideImgX = news.WideImgX + "%";
+                    news.WideImgY = news.WideImgY + "%";
+
                     _context.Update(news);
                     await _context.SaveChangesAsync();
                 }

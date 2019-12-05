@@ -10,50 +10,50 @@
 <p>
     <a asp-action="Create">Создать новость</a>
 </p>
-
+<input type="number" value="1" id="newsIdentificator" hidden/>
 @foreach (var item in Model)
 {
-<div class="partNews" style="justify-content:flex-start;background:border-box;">
-    <div id="shortStory">
-        <div class="partNewsElementViewShort" style="background-image:url(@item.ShortFotoPreview);background-position-x:@item.ShortImgX;background-position-y:@item.ShortImgY;background-size:@item.ShortImgScale;">
-            <div class="annotation">
-                <div class="annotationText">
-                    @Html.Raw(item.ShortStory)
+    <div class="partNews" style="justify-content:flex-start;background:border-box;">
+        <div id="shortStory">
+            <div class="partNewsElementViewShort" style="background-image:url(@item.ShortFotoPreview);background-position-x:@item.ShortImgX;background-position-y:@item.ShortImgY;background-size:@item.ShortImgScale;">
+                <div class="annotation">
+                    <div class="annotationText">
+                        @Html.Raw(item.ShortStory)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="middleStory">
+            <div class="partNewsElementViewMiddle" style="display:none;background-image:url(@item.MiddleFotoPreview);background-position-x:@item.MiddleImgX;background-position-y:@item.MiddleImgY;background-size:@item.MiddleImgScale;">
+                <div class="annotation">
+                    <div class="annotationText">
+                        @Html.Raw(item.MiddleStory)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="wideStory">
+            <div class="partNewsElementViewWide" style="display:none;background-image:url(@item.WideFotoPreview);background-position-x:@item.WideImgX;background-position-y:@item.WideImgY;background-size:@item.WideImgScale;">
+                <div class="annotation">
+                    <div class="annotationText">
+                        @Html.Raw(item.WideStory)
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="middleStory">
-        <div class="partNewsElementViewMiddle" style="background-image:url(@item.MiddleFotoPreview);background-position-x:@item.MiddleImgX;background-position-y:@item.MiddleImgY;background-size:@item.MiddleImgScale;">
-            <div class="annotation">
-                <div class="annotationText">
-                    @Html.Raw(item.MiddleStory)
-                </div>
+    <div style="margin:1vw">
+        <input type="button" value="Развернутый вид" style="margin:1vw" id="showFullNews" />
+        <div class="MyContainer" id="fullNewsView" style="display:none">
+            <h2>@item.Header</h2>
+            <div>@Html.Raw(item.MainStory)</div>
+            <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                @await Component.InvokeAsync("Fotorama", new { newsId = item.NewsId })
             </div>
         </div>
+        <p>
+            <a asp-action="Edit" asp-route-id="@item.NewsId">Редактировать проект</a> |
+            <a asp-action="Delete" asp-route-id="@item.NewsId">Удалить проект</a>
+        </p>
     </div>
-    <div id="wideStory">
-        <div class="partNewsElementViewWide" style="background-image:url(@item.WideFotoPreview);background-position-x:@item.WideImgX;background-position-y:@item.WideImgY;background-size:@item.WideImgScale;">
-            <div class="annotation">
-                <div class="annotationText">
-                    @Html.Raw(item.WideStory)
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div style="margin:1vw">
-    <input type="button" value="Развернутый вид" style="margin:1vw" id="showFullNewsPreview" />
-    <div class="MyContainer" id="fullNewsPreview" style="display:none">
-        <h2>@item.Header</h2>
-        <div>@Html.Raw(item.MainStory)</div>
-        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-            @await Component.InvokeAsync("Fotorama", new { newsId = item.NewsId })
-        </div>
-    </div>
-    <p>
-        <a asp-action="Edit" asp-route-id="@item.NewsId">Редактировать проект</a> |
-        <a asp-action="Delete" asp-route-id="@item.NewsId">Удалить проект</a>
-    </p>
-</div>
 }

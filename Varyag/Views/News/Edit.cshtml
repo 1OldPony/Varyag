@@ -25,15 +25,15 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.ShortImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                        <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.ShortImgX" min="0" max="100" class="axisControl" />
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.ShortImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                        <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.ShortImgY" min="0" max="100" class="axisControl" />
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                        <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" />
                     </div>
                 </div>
                 <textarea rows="6" cols="30" asp-for="ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
@@ -52,15 +52,15 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.MiddleImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.MiddleImgX" min="0" max="100" class="axisControl" />
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.MiddleImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.MiddleImgY" min="0" max="100" class="axisControl" />
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" />
                     </div>
                 </div>
                 <textarea rows="6" cols="30" id="middleFotoText" asp-for="MiddleStory" onkeyup="FotoTextChange('middle')"></textarea>
@@ -78,15 +78,15 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.WideImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.WideImgX" min="0" max="100" class="axisControl" />
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.WideImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.WideImgY" min="0" max="100" class="axisControl" />
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" />
                     </div>
                 </div>
                 <textarea rows="6" cols="30" id="wideFotoText" asp-for="WideStory" onkeyup="FotoTextChange('wide')"></textarea>
@@ -94,7 +94,7 @@
         </div>
     </div>
 </form>
-<form asp-action="Create" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
+<form asp-action="Edit" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
     <div style="width:74vw">
         <div>Заголовок, для главного вида новости</div>
         <input asp-for="Header" class="form-control" required />
@@ -111,7 +111,7 @@
             </div>
             <div>
                 <div>Фотографии в галерею</div>
-                <input type="file" name="newsGallery" multiple required />
+                <input type="file" name="newsGallery" multiple />
             </div>
             <div>
                 <div>Дата новости (xx.xx.xxxx)</div>
@@ -133,6 +133,11 @@
         <input asp-for="WideImgX" value="@Model.WideImgX" id="WideImgX" />
         <input asp-for="WideImgY" value="@Model.WideImgY" id="WideImgY" />
         <input asp-for="WideStory" value="@Model.WideStory" id="WideStory" />
+        <input asp-for="PathToGallery" value="@Model.PathToGallery" />
+        <input asp-for="ShortFotoPreview" value="@Model.ShortFotoPreview" />
+        <input asp-for="MiddleFotoPreview" value="@Model.MiddleFotoPreview" />
+        <input asp-for="WideFotoPreview" value="@Model.WideFotoPreview" />
+        <input asp-for="NewsId" />
     </div>
     <div style="display:flex;">
         <input type="button" value="Сохранить данные из редактора" id="saveEditorParams" style="width:300px" />
