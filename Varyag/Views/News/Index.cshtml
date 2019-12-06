@@ -10,50 +10,61 @@
 <p>
     <a asp-action="Create">Создать новость</a>
 </p>
-<input type="number" value="1" id="newsIdentificator" hidden/>
-@foreach (var item in Model)
+
+@for (int i = 0; i < Model.Count(); i++)
 {
-    <div class="partNews" style="justify-content:flex-start;background:border-box;">
+    <div class="partNews" style="margin:1vw;justify-content:flex-start">
         <div id="shortStory">
-            <div class="partNewsElementViewShort" style="background-image:url(@item.ShortFotoPreview);background-position-x:@item.ShortImgX;background-position-y:@item.ShortImgY;background-size:@item.ShortImgScale;">
+            <div class="partNewsElementViewShort" style="background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale;">
                 <div class="annotation">
                     <div class="annotationText">
-                        @Html.Raw(item.ShortStory)
+                        @Html.Raw(Model.ElementAt(i).ShortStory)
                     </div>
                 </div>
             </div>
         </div>
         <div id="middleStory">
-            <div class="partNewsElementViewMiddle" style="display:none;background-image:url(@item.MiddleFotoPreview);background-position-x:@item.MiddleImgX;background-position-y:@item.MiddleImgY;background-size:@item.MiddleImgScale;">
+            <div class="partNewsElementViewMiddle" style="display:none;background-image:url(@Model.ElementAt(i).MiddleFotoPreview);background-position-x:@Model.ElementAt(i).MiddleImgX;background-position-y:@Model.ElementAt(i).MiddleImgY;background-size:@Model.ElementAt(i).MiddleImgScale;">
                 <div class="annotation">
                     <div class="annotationText">
-                        @Html.Raw(item.MiddleStory)
+                        @Html.Raw(Model.ElementAt(i).MiddleStory)
                     </div>
                 </div>
             </div>
         </div>
         <div id="wideStory">
-            <div class="partNewsElementViewWide" style="display:none;background-image:url(@item.WideFotoPreview);background-position-x:@item.WideImgX;background-position-y:@item.WideImgY;background-size:@item.WideImgScale;">
+            <div class="partNewsElementViewWide" style="display:none;background-image:url(@Model.ElementAt(i).WideFotoPreview);background-position-x:@Model.ElementAt(i).WideImgX;background-position-y:@Model.ElementAt(i).WideImgY;background-size:@Model.ElementAt(i).WideImgScale;">
                 <div class="annotation">
                     <div class="annotationText">
-                        @Html.Raw(item.WideStory)
+                        @Html.Raw(Model.ElementAt(i).WideStory)
                     </div>
                 </div>
             </div>
         </div>
+        <div style="margin:1vw">
+            <h2>@Model.ElementAt(i).Header</h2>
+            <div>@Html.Raw(Model.ElementAt(i).MainStory)</div>
+        </div>
     </div>
     <div style="margin:1vw">
-        <input type="button" value="Развернутый вид" style="margin:1vw" id="showFullNews" />
-        <div class="MyContainer" id="fullNewsView" style="display:none">
-            <h2>@item.Header</h2>
-            <div>@Html.Raw(item.MainStory)</div>
+        <input type="button" name="showHideButton" value="Развернутый вид" id="@i" />
+        <div class="MyContainer" id="@i" style="display:none">
+            <h2>@Model.ElementAt(i).Header</h2>
+            <div>@Html.Raw(Model.ElementAt(i).MainStory)</div>
             <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                @await Component.InvokeAsync("Fotorama", new { newsId = item.NewsId })
+                @await Component.InvokeAsync("Fotorama", new { newsId = Model.ElementAt(i).NewsId })
             </div>
         </div>
         <p>
-            <a asp-action="Edit" asp-route-id="@item.NewsId">Редактировать проект</a> |
-            <a asp-action="Delete" asp-route-id="@item.NewsId">Удалить проект</a>
+            <a asp-action="Edit" asp-route-id="@Model.ElementAt(i).NewsId">Редактировать проект</a> |
+            <a asp-action="Delete" asp-route-id="@Model.ElementAt(i).NewsId">Удалить проект</a>
         </p>
     </div>
+    <div class="myBorder"></div>
 }
+<div style="margin:1vw">
+    @for (int i = 1; i <= ViewBag.Pages; i++)
+    {
+        <a asp-action="Index" asp-route-page="@i"><span style="color:red;text-decoration:dotted">@i </span></a>
+    }
+</div>

@@ -25,9 +25,37 @@ namespace Varyag.Controllers
         }
 
         // GET: News
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
-            return View(await _context.News.ToListAsync());
+            List<News> AllNews = await _context.News.ToListAsync();
+
+            if (AllNews.Count >= 10)
+            {
+                if (page == null)
+                    page = 0;
+                else
+                    page--;
+
+                if (AllNews.Count % 10 == 0)
+                {
+                    ViewBag.Pages = AllNews.Count / 10;
+                    AllNews = AllNews.GetRange(page.Value * 10, 10);
+                }
+                else if (page == 0)
+                {
+                    ViewBag.Pages = (AllNews.Count / 10) + 1;
+                    AllNews = AllNews.GetRange(page.Value * 10, 10);
+                }
+                else
+                {
+                    ViewBag.Pages = (AllNews.Count / 10) + 1;
+                    AllNews = AllNews.GetRange(page.Value * 10, AllNews.Count % 10);
+                }
+            }
+            else
+                AllNews = AllNews.GetRange(0, AllNews.Count);
+
+            return View(AllNews);
         }
         
         // GET: News/Details/5
@@ -53,7 +81,8 @@ namespace Varyag.Controllers
             string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
             string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
             string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory, int? newId)
+            string wideStory, int? newId, string ShortFotoPreview, string MiddleFotoPreview, 
+            string WideFotoPreview, string NewsDate)
         {
             if (newsFoto != null)
             {
@@ -101,6 +130,19 @@ namespace Varyag.Controllers
             }
             else
             {
+                string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
+                string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", NewsDate);
+                string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
+                for (int i = 0; i < fotos.Length; i++)
+                {
+                    string pathFrom = Path.Combine(pathTemp, fotos[i]);
+                    string pathTo = Path.Combine(pathForFinalTemp, fotos[i]);
+                    FileInfo fileOld = new FileInfo(pathTo);
+                    fileOld.Delete();
+                    FileInfo fileNew = new FileInfo(pathFrom);
+                    fileNew.MoveTo(pathTo);
+                }
+
                 return RedirectToAction("Edit", new { id = newId });
             }
         }
@@ -262,6 +304,7 @@ namespace Varyag.Controllers
             {
                 try
                 {
+
                     news.ShortImgScale = news.ShortImgScale + "%";
                     news.ShortImgX = news.ShortImgX + "%";
                     news.ShortImgY = news.ShortImgY + "%";

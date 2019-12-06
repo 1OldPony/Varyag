@@ -12,5 +12,10 @@ namespace Varyag.Controllers
         {
             return View();
         }
+
+        public IActionResult AllNews()
+        {
+            return View();
+        }
     }
 }

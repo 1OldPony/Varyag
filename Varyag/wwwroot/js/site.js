@@ -45,20 +45,52 @@ $(document).ready(function () {
 
     //////////////////////////виджет контакта//////////////////////////
     VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
-
-    /////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
-    function myfunction() {
-        var buttons = $("#showFullNews").toArray();
-        var newsViews = $("#fullNewsView").toArray();
-
-        for (var i = 0; i < buttons.length; i++) {
-            buttons[i].attr("id", item.attr("id") + i);
-        }
-        for (var i = 0; i < newsViews.length; i++) {
-            buttons[i].attr("id", item.attr("id") + i);
-        }
-    }
 });
+
+/////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
+$("#0[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#0.MyContainer", "#0[name = showHideButton]");
+})
+$("#1[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#1.MyContainer", "#1[name = showHideButton]");
+})
+$("#2[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#2.MyContainer", "#2[name = showHideButton]");
+})
+$("#3[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#3.MyContainer", "#3[name = showHideButton]");
+})
+$("#4[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#4.MyContainer", "#4[name = showHideButton]");
+})
+$("#5[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#5.MyContainer", "#5[name = showHideButton]");
+})
+$("#6[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#6.MyContainer", "#6[name = showHideButton]");
+})
+$("#7[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#7.MyContainer", "#7[name = showHideButton]");
+})
+$("#8[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#8.MyContainer", "#8[name = showHideButton]");
+})
+$("#9[name=showHideButton]").on("click", function () {
+    showHideFullNewsPreview("#9.MyContainer", "#9[name = showHideButton]");
+})
+
+function showHideFullNewsPreview(selectorPreview, selectorButton) {
+    var visibility = $(selectorPreview).css("display");
+    if (visibility == "none") {
+        $(selectorPreview).show();
+        $(selectorButton).val("Скрыть")
+    }
+    else {
+        $(selectorPreview).hide();
+        $(selectorButton).val("Развернутый вид")
+    }
+
+}
 
 /////////////////////применяем переданные настройки редактора новостных превью к превью////////////////
 FotoAttrChange('short');

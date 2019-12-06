@@ -8,6 +8,12 @@
 <hr />
 <form asp-action="SaveTempFoto" asp-route-actionType="Edit" asp-route-newId="@Model.NewsId" id="fotoEditorForm" enctype="multipart/form-data">
     <div class="newsFotoEditor">
+        <div hidden>
+            <input asp-for="ShortFotoPreview" value="@Model.ShortFotoPreview" />
+            <input asp-for="MiddleFotoPreview" value="@Model.MiddleFotoPreview" />
+            <input asp-for="WideFotoPreview" value="@Model.WideFotoPreview" />
+            <input asp-for="NewsDate" value="@Model.NewsDate" />
+        </div>
         <div style="grid-area:loader">
             <input type="file" name="newsFoto" required /><br />
             <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
