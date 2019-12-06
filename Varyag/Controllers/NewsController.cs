@@ -81,13 +81,11 @@ namespace Varyag.Controllers
             string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
             string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
             string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory, int? newId, string ShortFotoPreview, string MiddleFotoPreview, 
-            string WideFotoPreview, string NewsDate)
+            string wideStory, int? newId, string NewsDate)
         {
+            string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
             if (newsFoto != null)
             {
-                string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
-
                 switch (fotoType)
                 {
                     case "общая":
@@ -132,28 +130,59 @@ namespace Varyag.Controllers
             {
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
                 string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", NewsDate);
-                string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
-                for (int i = 0; i < fotos.Length; i++)
-                {
-                    string pathFrom = Path.Combine(pathTemp, fotos[i]);
-                    string pathTo = Path.Combine(pathForFinalTemp, fotos[i]);
-                    FileInfo fileOld = new FileInfo(pathTo);
-                    fileOld.Delete();
-                    FileInfo fileNew = new FileInfo(pathFrom);
-                    fileNew.MoveTo(pathTo);
-                }
 
+                switch (fotoType)
+                {
+                    case "общая":
+                        foreach (var item in names)
+                            for (int i = 0; i < names.Length; i++)
+                            {
+                                string pathFrom = Path.Combine(pathTemp, names[i]);
+                                string pathTo = Path.Combine(pathForFinalTemp, names[i]);
+                                FileInfo fileOld = new FileInfo(pathTo);
+                                fileOld.Delete();
+                                FileInfo fileNew = new FileInfo(pathFrom);
+                                fileNew.MoveTo(pathTo);
+                            }
+                        break;
+                    case "мелкая":
+                        string pathShortFrom = Path.Combine(pathTemp, names[0]);
+                        string pathShortTo = Path.Combine(pathForFinalTemp, names[0]);
+                        FileInfo fileShortOld = new FileInfo(pathShortTo);
+                        fileShortOld.Delete();
+                        FileInfo fileShortNew = new FileInfo(pathShortFrom);
+                        fileShortNew.MoveTo(pathShortTo);
+                        break;
+                    case "средняя":
+                        string pathMiddleFrom = Path.Combine(pathTemp, names[1]);
+                        string pathMiddleTo = Path.Combine(pathForFinalTemp, names[1]);
+                        FileInfo fileMiddleOld = new FileInfo(pathMiddleTo);
+                        fileMiddleOld.Delete();
+                        FileInfo fileMiddleNew = new FileInfo(pathMiddleFrom);
+                        fileMiddleNew.MoveTo(pathMiddleTo);
+                        break;
+                    case "широкая":
+                        string pathWideFrom = Path.Combine(pathTemp, names[2]);
+                        string pathWideTo = Path.Combine(pathForFinalTemp, names[2]);
+                        FileInfo fileWideOld = new FileInfo(pathWideTo);
+                        fileWideOld.Delete();
+                        FileInfo fileWideNew = new FileInfo(pathWideFrom);
+                        fileWideNew.MoveTo(pathWideTo);
+                        break;
+                    default:
+                        break;
+                }
                 return RedirectToAction("Edit", new { id = newId });
             }
         }
 
         private async Task SaveImgAsync(string name, IFormFile newsFoto) {
 
-            string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
-            using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
-            {
-                await newsFoto.CopyToAsync(fileStream);
-            }
+                string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
+                using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                {
+                    await newsFoto.CopyToAsync(fileStream);
+                }
         }
 
         // GET: News/Create
