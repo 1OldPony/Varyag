@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <None Include="Views\About\AboutUs.cshtml" />
+    <None Include="Views\About\AllNews.cshtml" />
+    <None Include="Views\About\Details.cshtml" />
     <None Include="Views\Accounts\Login.cshtml" />
     <None Include="Views\Accounts\Register-disabled.cshtml" />
     <None Include="Views\Catalog\Bigboats.cshtml" />
@@ -49,6 +51,11 @@
     <None Include="Views\Fotoes\Delete.cshtml" />
     <None Include="Views\Fotoes\Details.cshtml" />
     <None Include="Views\Fotoes\Index.cshtml" />
+    <None Include="Views\News\Create.cshtml" />
+    <None Include="Views\News\Delete.cshtml" />
+    <None Include="Views\News\Details.cshtml" />
+    <None Include="Views\News\Edit.cshtml" />
+    <None Include="Views\News\Index.cshtml" />
     <None Include="Views\Projects\Create.cshtml" />
     <None Include="Views\Projects\Delete.cshtml" />
     <None Include="Views\Projects\Details.cshtml" />
@@ -59,6 +66,8 @@
     <None Include="Views\Roles\Index.cshtml" />
     <None Include="Views\Roles\UserList.cshtml" />
     <None Include="Views\Shared\Components\Fotorama\Default.cshtml" />
+    <None Include="Views\Shared\Components\Fotorama\NewsGallery.cshtml" />
+    <None Include="Views\Shared\Components\News\Default.cshtml" />
     <None Include="Views\Shared\Components\ProjectFoto\Default.cshtml" />
     <None Include="Views\Shared\Components\ProjectsCatalog\Default.cshtml" />
     <None Include="Views\Shared\_CookieConsentPartial.cshtml" />
@@ -122,6 +131,31 @@
     <None Include="wwwroot\js\tinymce\themes\silver\theme.min.js" />
     <None Include="wwwroot\js\tinymce\tinymce.min.js" />
     <None Include="wwwroot\js\top-nav.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\LICENSE" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <None Include="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+    <None Include="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <None Include="wwwroot\lib\jquery-validation\LICENSE.md" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.js" />
+    <None Include="wwwroot\lib\jquery\dist\jquery.min.map" />
   </ItemGroup>
 
 

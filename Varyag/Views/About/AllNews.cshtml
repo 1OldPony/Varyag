@@ -1,0 +1,68 @@
+﻿@model IEnumerable<News>
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+<div style="margin:2vw"><h1>Наши новости</h1></div>
+<div class="myBorder"></div>
+<div class="newsNav">
+    <div class="nav-element-minor" id="smi">
+        <a asp-action="AllNews" asp-route-newsType="smi">
+            <div class="nav-element-inside">
+                <p>Сми о нас</p>
+            </div>
+        </a>
+    </div>
+    <div class="nav-element-minor" id="life">
+        <a asp-action="AllNews" asp-route-newsType="life">
+            <div class="nav-element-inside">
+                <p>Жизнь наших судов</p>
+            </div>
+        </a>
+    </div>
+    <div class="nav-element-minor" id="newShips">
+        <a asp-action="AllNews" asp-route-newsType="newShips">
+            <div class="nav-element-inside">
+                <p>Новые корабли</p>
+            </div>
+        </a>
+    </div>
+    <div class="nav-element-minor" id="all">
+        <a asp-action="AllNews" asp-route-newsType="all">
+            <div class="nav-element-inside">
+                <p>Все новости</p>
+            </div>
+        </a>
+    </div>
+    <input type="text" id="newsTypeSelector" value="@ViewBag.newsType" hidden/>
+</div>
+<div class="myBorder"></div>
+
+@for (int i = 0; i < Model.Count(); i++)
+{
+<a asp-action="Details" asp-route-id="@Model.ElementAt(i).NewsId">
+    <div class="newsListElement">
+        <div class="dateOfNews">@Model.ElementAt(i).NewsDate</div>
+        <div class="partNewsElement" id="allNews" style="grid-area:preview;background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale auto;background-repeat:no-repeat;margin-right:1vw">
+            <div class="annotation" id="allNews">
+                <div class="annotationText" id="allNews">
+                    @Html.Raw(Model.ElementAt(i).ShortStory)
+                </div>
+            </div>
+        </div>
+        <div class="textPartAllNews">
+            <h2>@Model.ElementAt(i).Header</h2>
+            <div>@Html.Raw(Model.ElementAt(i).MainStory)</div>
+            <div>Подробнее...</div>
+        </div>
+    </div>
+</a>
+    <div class="myBorder"></div>
+}
+
+<div style="margin:1vw">
+    @for (int i = 1; i <= ViewBag.Pages; i++)
+    {
+        <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType"><span style="color:red;text-decoration:dotted">@i </span></a>
+    }
+</div>

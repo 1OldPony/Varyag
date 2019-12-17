@@ -1,0 +1,13 @@
+﻿@model Varyag.Models.News
+
+@{ 
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+<div class="MyContainer" style="font-size:1.7rem">
+    <h1>@Model.Header</h1>
+    <div>@Html.Raw(Model.MainStory)</div>
+    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+        @await Component.InvokeAsync("Fotorama", new { newsId = Model.NewsId })
+    </div>
+</div>

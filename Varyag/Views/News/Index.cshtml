@@ -1,10 +1,8 @@
 ﻿@model IEnumerable<Varyag.Models.News>
-
 @{
     ViewData["Title"] = "Новости";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <h1>Новости</h1>
 
 <p>
@@ -13,9 +11,28 @@
 
 @for (int i = 0; i < Model.Count(); i++)
 {
-    <div class="partNews" style="margin:1vw;justify-content:flex-start">
-        <div id="shortStory">
-            <div class="partNewsElementViewShort" style="background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale;">
+    <div id="news" class="about">
+        <div class="headerAbout">
+            <div class="borderAbout"></div>
+            <div>Отследить события из нашей жизни и жизни наших кораблей можно в разделе новостей.</div>
+            <div class="borderAbout"></div>
+        </div>
+        <div class="partNews" id="shortStory">
+            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale auto;background-repeat:no-repeat;">
+                <div class="annotation">
+                    <div class="annotationText">
+                        @Html.Raw(Model.ElementAt(i).ShortStory)
+                    </div>
+                </div>
+            </div>
+            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale auto;background-repeat:no-repeat;margin-left:2vw;margin-right:2vw;">
+                <div class="annotation">
+                    <div class="annotationText">
+                        @Html.Raw(Model.ElementAt(i).ShortStory)
+                    </div>
+                </div>
+            </div>
+            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale auto;background-repeat:no-repeat;">
                 <div class="annotation">
                     <div class="annotationText">
                         @Html.Raw(Model.ElementAt(i).ShortStory)
@@ -23,8 +40,8 @@
                 </div>
             </div>
         </div>
-        <div id="middleStory">
-            <div class="partNewsElementViewMiddle" style="display:none;background-image:url(@Model.ElementAt(i).MiddleFotoPreview);background-position-x:@Model.ElementAt(i).MiddleImgX;background-position-y:@Model.ElementAt(i).MiddleImgY;background-size:@Model.ElementAt(i).MiddleImgScale;">
+        <div class="partNews" id="middleStory">
+            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(i).MiddleFotoPreview);background-position-x:@Model.ElementAt(i).MiddleImgX;background-position-y:@Model.ElementAt(i).MiddleImgY;background-size:@Model.ElementAt(i).MiddleImgScale auto;background-repeat:no-repeat;">
                 <div class="annotation">
                     <div class="annotationText">
                         @Html.Raw(Model.ElementAt(i).MiddleStory)
@@ -32,8 +49,8 @@
                 </div>
             </div>
         </div>
-        <div id="wideStory">
-            <div class="partNewsElementViewWide" style="display:none;background-image:url(@Model.ElementAt(i).WideFotoPreview);background-position-x:@Model.ElementAt(i).WideImgX;background-position-y:@Model.ElementAt(i).WideImgY;background-size:@Model.ElementAt(i).WideImgScale;">
+        <div class="partNews" id="wideStory">
+            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(i).WideFotoPreview);background-position-x:@Model.ElementAt(i).WideImgX;background-position-y:@Model.ElementAt(i).WideImgY;background-size:@Model.ElementAt(i).WideImgScale auto;background-repeat:no-repeat;">
                 <div class="annotation">
                     <div class="annotationText">
                         @Html.Raw(Model.ElementAt(i).WideStory)
@@ -41,11 +58,8 @@
                 </div>
             </div>
         </div>
-        <div style="margin:1vw">
-            <h2>@Model.ElementAt(i).Header</h2>
-            <div>@Html.Raw(Model.ElementAt(i).MainStory)</div>
-        </div>
     </div>
+    
     <div style="margin:1vw">
         <input type="button" name="showHideButton" value="Развернутый вид" id="@i" />
         <div class="MyContainer" id="@i" style="display:none">

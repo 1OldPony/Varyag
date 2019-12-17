@@ -3,7 +3,6 @@
     ViewData["Title"] = "AboutUs";
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
-
 <div id="main" class="headerAbout">
     <div class="borderAbout"></div>
     <div style="font-family:'BalticaC'">Верфь деревянного судостроения "Варяг"</div>
@@ -21,36 +20,7 @@
         </div>
     </div>
 </div>
-<div id="news" class="about">
-    <div class="headerAbout">
-        <div class="borderAbout"></div>
-        <div>Отследить события из нашей жизни и жизни наших кораблей можно в разделе новостей.</div>
-        <div class="borderAbout"></div>
-    </div>
-    <div class="partNews">
-        <div id="one" class="partNewsElement">
-            <div class="annotation">
-                <div class="annotationText">
-                    6-весёльный командирский вельбот, для клуба Русская Морская Традиция, был опробован заказчиком.
-                </div>
-            </div>
-        </div>
-        <div id="two" class="partNewsElement">
-            <div class="annotation">
-                <div class="annotationText">
-                    А вот в какое классное путешествие отправился другой!<br /><a>Подробности...</a>
-                </div>
-            </div>
-        </div>
-        <div id="three" class="partNewsElement">
-            <div class="annotation">
-                <div class="annotationText">
-                    А тут наш кораблик - гвоздь программы!<br /><a>Подробности...</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@await Component.InvokeAsync("News")
 <div id="сatalog" class="about">
     <div class="annotation">
         <div class="annotationText">
@@ -59,7 +29,7 @@
                     Мы работаем с каждым заказчиком индивидуально и
                 </span>
                 <span id="сatalog" class="shortTextSecond">Мы</span>
-                 можем модифицировать существующий проект или разработать судно согласно вашим пожеланиям.<br />
+                можем модифицировать существующий проект или разработать судно согласно вашим пожеланиям.<br />
                 <span id="сatalog" class="longText">Посмотреть на существующие проекты можно в нашел каталоге.</span>
                 <span id="сatalog" class="shortText">Наш каталог...</span>
             </p>
@@ -164,13 +134,17 @@
     <div class="contactsText">
         <p>
             Мы находимся в Карелии,<span id="contacts" class="longText">
-            приехать к нам и посмотреть на наше производство можно
-            </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">,
-            заезд с переулка спасателей.</span>
+                приехать к нам и посмотреть на наше производство можно
+            </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">
+                ,
+                заезд с переулка спасателей.
+            </span>
             <br />Связаться с нами можно по:
         </p>
-        <p style="margin-top:2vh">электронной почте&nbsp;- varyag@onego.ru<br />
-        или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80</p>
+        <p style="margin-top:2vh">
+            электронной почте&nbsp;- varyag@onego.ru<br />
+            или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
+        </p>
     </div>
     <div id="ourLocation"></div>
 </div>

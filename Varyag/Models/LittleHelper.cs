@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -41,7 +43,7 @@ namespace Varyag.Models
             return fotoPath;
         }
 
-        public static void DeleteFiles(string path)
+        public static void DeleteFiles(string path,bool deleteDir)
         {
             string[] files = Directory.GetFiles(path);
             foreach (var file in files)
@@ -49,7 +51,18 @@ namespace Varyag.Models
                 FileInfo foto = new FileInfo(file);
                 foto.Delete();
             }
-            Directory.Delete(path);
+            if (deleteDir)
+            {
+                Directory.Delete(path);
+            }
+        }
+
+        public static void MoveTo(string pathFrom, string pathTo)
+        {
+            FileInfo fileOld = new FileInfo(pathTo);
+            fileOld.Delete();
+            FileInfo fileNew = new FileInfo(pathFrom);
+            fileNew.MoveTo(pathTo);
         }
     }
 }

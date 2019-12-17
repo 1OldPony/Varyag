@@ -45,6 +45,7 @@ $(document).ready(function () {
 
     //////////////////////////виджет контакта//////////////////////////
     VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
+
 });
 
 /////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
@@ -79,6 +80,7 @@ $("#9[name=showHideButton]").on("click", function () {
     showHideFullNewsPreview("#9.MyContainer", "#9[name = showHideButton]");
 })
 
+/////////////////обрабатываем нажатие на кнопки развертывания-сокрытия полного превью новости///////////////////
 function showHideFullNewsPreview(selectorPreview, selectorButton) {
     var visibility = $(selectorPreview).css("display");
     if (visibility == "none") {
@@ -124,7 +126,7 @@ function FotoAttrChange(fotoType) {
         case "short":
             xCoordinate = $("#shortFotoX").val() + "%";
             yCoordinate = $("#shortFotoY").val() + "%";
-            scale = $("#shortFotoScale").val() + "% auto";
+            scale = $("#shortFotoScale").val() + "%";
             $("#creator.partNewsElementViewShort").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
@@ -134,7 +136,7 @@ function FotoAttrChange(fotoType) {
         case "middle":
             xCoordinate = $("#middleFotoX").val() + "%";
             yCoordinate = $("#middleFotoY").val() + "%";
-            scale = $("#middleFotoScale").val() + "% auto";
+            scale = $("#middleFotoScale").val() + "%";
             $("#creator.partNewsElementViewMiddle").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
@@ -144,7 +146,7 @@ function FotoAttrChange(fotoType) {
         case "wide":
             xCoordinate = $("#wideFotoX").val() + "%";
             yCoordinate = $("#wideFotoY").val() + "%";
-            scale = $("#wideFotoScale").val() + "% auto";
+            scale = $("#wideFotoScale").val() + "%";
             $("#creator.partNewsElementViewWide").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
@@ -161,7 +163,7 @@ function FotoAttrChange(fotoType) {
 $("#editorShort.editor").on("input", function () {
     var xCoordinateShort = $("#shortFotoX").val() + "%";
     var yCoordinateShort = $("#shortFotoY").val() + "%";
-    var scaleShort = $("#shortFotoScale").val() + "% auto";
+    var scaleShort = $("#shortFotoScale").val() + "%";
     $("#editor.partNewsElementViewShort").css({
         "background-position-x": xCoordinateShort,
         "background-position-y": yCoordinateShort,
@@ -171,7 +173,7 @@ $("#editorShort.editor").on("input", function () {
 $("#editorMiddle.editor").on("input", function () {
     var xCoordinateMiddle = $("#middleFotoX").val() + "%";
     var yCoordinateMiddle = $("#middleFotoY").val() + "%";
-    var scaleMiddle = $("#middleFotoScale").val() + "% auto";
+    var scaleMiddle = $("#middleFotoScale").val() + "%";
     $("#editor.partNewsElementViewMiddle").css({
         "background-position-x": xCoordinateMiddle,
         "background-position-y": yCoordinateMiddle,
@@ -181,7 +183,7 @@ $("#editorMiddle.editor").on("input", function () {
 $("#editorWide.editor").on("input", function () {
     var xCoordinateWide = $("#wideFotoX").val() + "%";
     var yCoordinateWide = $("#wideFotoY").val() + "%";
-    var scaleWide = $("#wideFotoScale").val() + "% auto";
+    var scaleWide = $("#wideFotoScale").val() + "%";
     $("#editor.partNewsElementViewWide").css({
         "background-position-x": xCoordinateWide,
         "background-position-y": yCoordinateWide,
@@ -220,40 +222,25 @@ function newsSaveButtonDisable() {
         $("#newsSaveButton").attr("disabled", "disabled");
 }
 
-////////////////////////показываем и прячем полный вид новости в административной части///////////////////////
-//var idNumber = 1
-//$("#showFullNewsPreview").click(function (idNumber) {
-
-//    $("#newsIdentificator").val(idNumber);
-    
-//    var visibility = $("#fullNewsPreview" + idNumber).css("display");
-//    if (visibility == "none") {
-//        $("#fullNewsPreview" + idNumber).show();
-//    }
-//    else {
-//        $("#fullNewsPreview" + idNumber).hide();
-//    }
-//    idNumber++;
-//});
-
-////////////////////////////мненяем видимый вариант текста новостных превью////////////////////////////
-$(window).on('load resize', function () {
-    if (window.innerWidth >= 1190) {
-        $("#shortStory").css("display", "initial");
-        $("#middleStory").css("display", "none");
-        $("#wideStory").css("display", "none");
+/////////////////////////выделяем выбранную категорию новостей//////////////////////////
+newsTypeSelect();
+function newsTypeSelect() {
+    var nav = $("#newsTypeSelector").val()
+    switch (nav) {
+        case "smi":
+            $("#smi").attr("class", "nav-element-minor-choosen");
+            break;
+        case "life":
+            $("#life").attr("class", "nav-element-minor-choosen");
+            break;
+        case "newShips":
+            $("#newShips").attr("class", "nav-element-minor-choosen");
+            break;
+        default:
+            $("#all").attr("class", "nav-element-minor-choosen");
+            break;
     }
-    else if (window.innerWidth >= 794 && window.innerWidth <= 1189) {
-        $("#shortStory").css("display", "none");
-        $("#middleStory").css("display", "none");
-        $("#wideStory").css("display", "initial");
-    }
-    else {
-        $("#shortStory").css("display", "none");
-        $("#middleStory").css("display", "initial");
-        $("#wideStory").css("display", "none");
-    }
-});
+}
 
 //////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
 navElMinorChoose();
@@ -262,7 +249,7 @@ $(window).scroll(function () {
     if ($(this).scrollTop() > 714 && window.innerWidth > 790) {
         $('.sub-nav-elements').css("position", "fixed");
     }
-    else/* if ($(this).scrollTop() < 714)*/ {
+    else{
         $('.sub-nav-elements').css("position", "relative");
     }
 });
@@ -309,8 +296,16 @@ $(".nav-element-minor").mouseenter(function () {
 });
 
 $(".nav-element-minor").mouseleave(function () {
-    $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
-    navElMinorChoose();
+    var nav = $("#newsTypeSelector").val()
+    if (nav == undefined) {
+        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
+        navElMinorChoose();
+    }
+    else {
+        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
+        newsTypeSelect();
+    }
+        
 });
 
 $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
@@ -559,7 +554,7 @@ function navElMinorChoose() {
         default:
     }
 };
-//////////////////Для пролистывания списка заказчиков//////////////////////
+//////////////////Для пролистывания списка заказчиков на странице "о нас"//////////////////////
 var slideNumber = 0;
 
 $("#right.control").click(function () {

@@ -57,24 +57,6 @@ namespace Varyag.Controllers
 
             return View(AllNews);
         }
-        
-        // GET: News/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var news = await _context.News
-                .FirstOrDefaultAsync(m => m.NewsId == id);
-            if (news == null)
-            {
-                return NotFound();
-            }
-
-            return View(news);
-        }
 
         [HttpPost]
         public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto, string actionType,
@@ -130,44 +112,32 @@ namespace Varyag.Controllers
             {
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
                 string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", NewsDate);
+                string pathFrom = "", pathTo = "";
 
                 switch (fotoType)
                 {
                     case "общая":
-                        foreach (var item in names)
                             for (int i = 0; i < names.Length; i++)
                             {
-                                string pathFrom = Path.Combine(pathTemp, names[i]);
-                                string pathTo = Path.Combine(pathForFinalTemp, names[i]);
-                                FileInfo fileOld = new FileInfo(pathTo);
-                                fileOld.Delete();
-                                FileInfo fileNew = new FileInfo(pathFrom);
-                                fileNew.MoveTo(pathTo);
+                                pathFrom = Path.Combine(pathTemp, names[i]);
+                                pathTo = Path.Combine(pathForFinalTemp, names[i]);
+                                LittleHelper.MoveTo(pathFrom, pathTo);
                             }
                         break;
                     case "мелкая":
-                        string pathShortFrom = Path.Combine(pathTemp, names[0]);
-                        string pathShortTo = Path.Combine(pathForFinalTemp, names[0]);
-                        FileInfo fileShortOld = new FileInfo(pathShortTo);
-                        fileShortOld.Delete();
-                        FileInfo fileShortNew = new FileInfo(pathShortFrom);
-                        fileShortNew.MoveTo(pathShortTo);
+                        pathFrom = Path.Combine(pathTemp, names[0]);
+                        pathTo = Path.Combine(pathForFinalTemp, names[0]);
+                        LittleHelper.MoveTo(pathFrom, pathTo);
                         break;
                     case "средняя":
-                        string pathMiddleFrom = Path.Combine(pathTemp, names[1]);
-                        string pathMiddleTo = Path.Combine(pathForFinalTemp, names[1]);
-                        FileInfo fileMiddleOld = new FileInfo(pathMiddleTo);
-                        fileMiddleOld.Delete();
-                        FileInfo fileMiddleNew = new FileInfo(pathMiddleFrom);
-                        fileMiddleNew.MoveTo(pathMiddleTo);
+                        pathFrom = Path.Combine(pathTemp, names[1]);
+                        pathTo = Path.Combine(pathForFinalTemp, names[1]);
+                        LittleHelper.MoveTo(pathFrom, pathTo);
                         break;
                     case "широкая":
-                        string pathWideFrom = Path.Combine(pathTemp, names[2]);
-                        string pathWideTo = Path.Combine(pathForFinalTemp, names[2]);
-                        FileInfo fileWideOld = new FileInfo(pathWideTo);
-                        fileWideOld.Delete();
-                        FileInfo fileWideNew = new FileInfo(pathWideFrom);
-                        fileWideNew.MoveTo(pathWideTo);
+                        pathFrom = Path.Combine(pathTemp, names[2]);
+                        pathTo = Path.Combine(pathForFinalTemp, names[2]);
+                        LittleHelper.MoveTo(pathFrom, pathTo);
                         break;
                     default:
                         break;
@@ -176,14 +146,23 @@ namespace Varyag.Controllers
             }
         }
 
-        private async Task SaveImgAsync(string name, IFormFile newsFoto) {
+        private async Task SaveImgAsync(string name, IFormFile newsFoto)
+        {
 
-                string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
-                using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
-                {
-                    await newsFoto.CopyToAsync(fileStream);
-                }
+            string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
+            DirectoryInfo pathFolder = new DirectoryInfo(path);
+
+            if (!pathFolder.Exists)
+            {
+                pathFolder.Create();
+            }
+
+            using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+            {
+                await newsFoto.CopyToAsync(fileStream);
+            }
         }
+
 
         // GET: News/Create
         public IActionResult Create(string shortScale, string shortX,
@@ -322,7 +301,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, News news)
+        public async Task<IActionResult> Edit(int id, News news, IFormFileCollection newsGallery)
         {
             if (id != news.NewsId)
             {
@@ -343,6 +322,21 @@ namespace Varyag.Controllers
                     news.WideImgScale = news.WideImgScale + "%";
                     news.WideImgX = news.WideImgX + "%";
                     news.WideImgY = news.WideImgY + "%";
+
+                    if (newsGallery.Count != 0)
+                    {
+                        LittleHelper.DeleteFiles(news.PathToGallery,false);
+
+                        for (int i = 0; i <= (newsGallery.Count() - 1); i++)
+                        {
+                            string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ")" + news.NewsDate + ".jpg";
+
+                            using (var fileStream = new FileStream(news.PathToGallery + "/" + name, FileMode.Create))
+                            {
+                                await newsGallery[i].CopyToAsync(fileStream);
+                            }
+                        }
+                    }
 
                     _context.Update(news);
                     await _context.SaveChangesAsync();
@@ -388,7 +382,7 @@ namespace Varyag.Controllers
         {
             var news = await _context.News.FindAsync(id);
 
-            LittleHelper.DeleteFiles(news.PathToGallery);
+            LittleHelper.DeleteFiles(news.PathToGallery,true);
 
             string[] pathParts = news.PathToGallery.Split(new char[] { '\\' });
             string pathTempFiles = "";
@@ -400,7 +394,7 @@ namespace Varyag.Controllers
                     pathTempFiles = pathTempFiles + "/" + pathParts[i];
             }
 
-            LittleHelper.DeleteFiles(pathTempFiles);
+            LittleHelper.DeleteFiles(pathTempFiles,true);
 
             _context.News.Remove(news);
             await _context.SaveChangesAsync();

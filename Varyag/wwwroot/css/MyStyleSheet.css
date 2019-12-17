@@ -96,11 +96,14 @@
 
 .partNews {
     display: flex;
-    /*top: 5vh;*/
     justify-content: center;
     position: relative;
     width: 90%;
 }
+
+    .partNews a {
+        display:contents;
+    }
 
 .partNewsElement {
     width: 30%;
@@ -109,21 +112,44 @@
     background-size: auto 150%;
 }
 
-#one.partNewsElement {
-    background: url(../images/о_нас/каталог/20160811-16-17-35.jpg) 54% 55% no-repeat;
-    background-size:cover;
+#allNews.partNewsElement {
+    width:auto;
 }
 
-#two.partNewsElement {
-    background: url(../images/о_нас/каталог/АС-67_131.jpg) 54% 48% no-repeat;
-    background-size: cover;
-    margin-left: 2%;
-    margin-right: 2%;
+.textPartAllNews {
+    grid-area: newsText
 }
 
-#three.partNewsElement {
-    background: url(../images/о_нас/каталог/120923DMI_3702.JPG) 50% 50% no-repeat;
-    background-size: cover;
+.dateOfNews {
+    font-size:1.3rem;
+    font-weight:bold;
+    grid-area:date;
+    margin-bottom:1vw;
+}
+
+#middleStory {
+    display: none;
+}
+
+#wideStory {
+    display: none;
+}
+
+.newsNav {
+    display:flex;
+    text-align:center;
+    font-size:1.5rem;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.newsListElement {
+    display:grid;
+    grid-template-areas: "date date" "preview newsText";
+    grid-template-columns:33% 66%;
+    grid-template-rows:auto;
+    margin:2vw;
+    margin-top:1vw;
 }
 
 #сatalog.about {
@@ -460,12 +486,25 @@ img {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     font-size: 15px;
     position: absolute;
     background-color: white;
-    max-width: 1350px;
     padding-bottom: 10px;
+}
+
+.topNavCategory {
+    font-size: 1rem;
+    margin-bottom:10px;
+}
+
+.topNavTopCategory {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: red;
+    text-decoration: overline;
+    text-decoration-style: dotted;
+    margin-bottom:10px;
 }
 
 .sub-nav {
@@ -970,6 +1009,7 @@ img {
     color: white;
     border-top-style:solid;
     border-color:red;
+    margin-top:3vh;
 }
 
 .aboutSite {
@@ -1045,7 +1085,7 @@ img {
 }
 
 .partNewsElementViewShort {
-    width: 497px;
+    width: 340px;
     height: 31vh;
     position: relative;
     background-image: url(../images/temp/short.jpg);
@@ -1075,7 +1115,7 @@ img {
     }
 
 .partNewsElementViewWide {
-    width: 943px;
+    width: 1053px;
     height: 20vh;
     position: relative;
     background: url(../images/temp/wide.jpg) 50% 50% no-repeat;
@@ -1114,6 +1154,10 @@ img {
     .partNewsElement {
         height: 31vh;
     }
+
+    #allNews.partNewsElement {
+        height: 35vh;
+    }
 }
 
 @media (max-width:1280px) {
@@ -1150,9 +1194,26 @@ img {
         height:20vh;
     }
 
-    #two.partNewsElement {
-        margin:0;
+    #allNews.partNewsElement {
+        width: auto;
+        height: 35vh;
     }
+
+    #shortStory {
+        display: none;
+    }
+
+    #middleStory {
+        display: none;
+    }
+
+    #wideStory {
+        display: flex;
+    }
+
+    /*#two.partNewsElement {
+        margin:0;
+    }*/
 
     .cellLong {
         display: none;
@@ -1194,14 +1255,20 @@ img {
         grid-template-rows: 190px min-content min-content min-content min-content min-content min-content;
     }
 
-    /*/////////////////////////////////////////временное решение вопроса про фон на новостях!!!!//////////////////////////////////////////////*/
-
     .annotation {
         width: 38%;
     }
 
+    #allNews.annotation {
+        width:50%;
+    }
+
     .annotationText {
         margin: 5%;
+    }
+
+    #allNews.annotationText {
+        margin: 20%;
     }
 }
 
@@ -1293,8 +1360,18 @@ img {
         width: auto;
     }
 
+    .textPartAllNews {
+        display:none;
+    }
+
+    .newsListElement {
+        grid-template-areas: "date date" "preview preview";
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+
     .control {
-        display:initial;
+        display: initial;
     }
 }
 
@@ -1443,22 +1520,24 @@ img {
     #SMI.nav-element-top {
         display: none;
     }
-
-    #about {
+    /*///////////////////////////////////////////////////////////////////////////////////////////////*/
+    /*#about {
         display: none;
     }
-
+                                            КНОПКИ АБАУТОВ
     #mobileAbout {
         display: initial;
-    }
+    }*/
+    /*///////////////////////////////////////////////////////////////////////////////////////////////*/
 
-    #ships-catalog {
+    /*#ships-catalog {
         display: none;
     }
-
+                                            КНОПКИ КАТАЛОГА
     #mobileShips-Catalog {
         display: initial;
-    }
+    }*/
+    /*///////////////////////////////////////////////////////////////////////////////////////////////*/
 
     .sub-nav-elements {
         flex-direction: column-reverse;
@@ -1535,6 +1614,18 @@ img {
 }
 
 @media (max-width:786px) {
+
+    #shortStory {
+        display: none;
+    }
+
+    #middleStory {
+        display: flex;
+    }
+
+    #wideStory {
+        display: none;
+    }
 
     .cellLong {
         display: none;
@@ -1771,6 +1862,18 @@ img {
 @media (max-width:383px) {
 
     #fifth-out.cellShort {
+        display: none;
+    }
+
+    #shortStory {
+        display: flex;
+    }
+
+    #middleStory {
+        display: none;
+    }
+
+    #wideStory {
         display: none;
     }
 
