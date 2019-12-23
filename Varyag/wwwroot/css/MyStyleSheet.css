@@ -456,12 +456,12 @@ img {
 .nav-element-top {
     justify-content: center;
     display: flex;
-    background-color: #e8cc8a;
+    background-color: #d1e0f9;
     margin: auto;
     cursor: pointer;
     flex-grow: 1;
     border-style: ridge;
-    border-right-style:none;
+    border-right-style: none;
 }
 
     .nav-element-top:hover {
@@ -486,16 +486,54 @@ img {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    align-items: flex-start;
     font-size: 15px;
     position: absolute;
-    background-color: white;
     padding-bottom: 10px;
+    z-index: 9999;
+    background-color: #eff4fd;
+    border-bottom-style: outset;
+    border-color: #91b7f7;
+}
+
+#cinemaOrders.category {
+    padding-top:10px;
+    align-items:center;
+}
+
+#catalog.category {
+    align-items: flex-start;
+}
+
+#aboutUsTopNav.category {
+    padding-top: 10px;
+    align-items: center;
+}
+
+    #aboutUsTopNav.category a {
+        width: 100%;
+    }
+
+.category a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
 }
 
 .topNavCategory {
-    font-size: 1rem;
-    margin-bottom:10px;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin-top: 10px; 
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.menu-top-element .topNavCategory {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 .topNavTopCategory {
@@ -507,6 +545,19 @@ img {
     margin-bottom:10px;
 }
 
+.topNavBorder {
+    width:2px;
+    border-left-style:ridge;
+    border-color:red;
+}
+
+#gotoTopNav {
+    display: none;
+}
+
+#cinemaTopNav {
+    display: none;
+}
 .sub-nav {
     display: none;
     flex-direction: column;
@@ -1414,6 +1465,10 @@ img {
 
 @media (max-width:820px) {
 
+    .shorterMenu {
+        display:none
+    }
+
     .projects {
         margin: 5px;
     }
@@ -1520,24 +1575,6 @@ img {
     #SMI.nav-element-top {
         display: none;
     }
-    /*///////////////////////////////////////////////////////////////////////////////////////////////*/
-    /*#about {
-        display: none;
-    }
-                                            КНОПКИ АБАУТОВ
-    #mobileAbout {
-        display: initial;
-    }*/
-    /*///////////////////////////////////////////////////////////////////////////////////////////////*/
-
-    /*#ships-catalog {
-        display: none;
-    }
-                                            КНОПКИ КАТАЛОГА
-    #mobileShips-Catalog {
-        display: initial;
-    }*/
-    /*///////////////////////////////////////////////////////////////////////////////////////////////*/
 
     .sub-nav-elements {
         flex-direction: column-reverse;
@@ -1659,6 +1696,45 @@ img {
     #contacts.longTextSecond {
         display: none;
     }
+
+    #catalog.category {
+        display: grid;
+        grid-template-areas: "boats bigboats katers" "ladiy sailboats makets";
+        grid-template-columns: 33% 33% 33% ;
+        grid-template-rows: auto;
+    }
+
+    #boatsTopNav.menu-top-element {
+        grid-area: boats;
+    }
+
+    #bigboatsTopNav.menu-top-element {
+        grid-area: bigboats;
+    }
+
+    #katersTopNav.menu-top-element {
+        grid-area: katers;
+    }
+
+    #ladiyTopNav.menu-top-element {
+        grid-area: ladiy;
+    }
+
+    #sailboatsTopNav.menu-top-element {
+        grid-area: sailboats;
+    }
+
+    #maketsTopNav.menu-top-element {
+        grid-area: makets;
+    }
+
+    .category {
+        flex-direction:column;
+    }
+
+    .menu-top-element {
+        width: auto
+    }
 }
 
 @media (max-width:761px) {
@@ -1698,6 +1774,14 @@ img {
 
     #news.about {
         height: 87vh;
+    }
+
+    #gotoTopNav {
+        display:initial;
+    }
+
+    #goto-pred.nav-element-top {
+        display: none;
     }
 }
 
@@ -1785,10 +1869,6 @@ img {
         display: flex;
     }
 
-    #Goto-Pred.nav-element-top {
-        display: none;
-    }
-
     #second-out.cellShort {
         display: none;
     }
@@ -1832,6 +1912,12 @@ img {
     #news.about {
         height: 91vh;
     }
+
+    #catalog.category {
+        grid-template-areas: "boats bigboats" "katers ladiy" "sailboats makets";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
 }
 
 @media (max-width:425px) {
@@ -1854,8 +1940,17 @@ img {
 }
 
 @media (max-width:400px) {
+
     .annotation {
         width: 57vw;
+    }
+
+    #museum {
+        display:none;
+    }
+
+    #cinemaTopNav {
+        display: initial;
     }
 }
 

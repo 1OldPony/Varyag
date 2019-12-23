@@ -42,11 +42,10 @@ $(document).ready(function () {
 
         mapVaryag.geoObjects.add(VaryagMark); 
     });
-
-    //////////////////////////виджет контакта//////////////////////////
-    VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
-
 });
+
+//////////////////////////виджет контакта//////////////////////////
+VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
 
 /////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
 $("#0[name=showHideButton]").on("click", function () {
@@ -91,7 +90,6 @@ function showHideFullNewsPreview(selectorPreview, selectorButton) {
         $(selectorPreview).hide();
         $(selectorButton).val("Развернутый вид")
     }
-
 }
 
 /////////////////////применяем переданные настройки редактора новостных превью к превью////////////////
