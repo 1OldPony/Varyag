@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Internal;
 
 namespace Varyag
 {
@@ -72,11 +73,11 @@ namespace Varyag
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
-            
+
             app.UseMvc(routes =>
             {
-                routes.MapRoute("default","{controller=Catalog}/{action=Sailboats}/{id?}");
-                routes.MapRoute("default", "{controller=Catalog}/{action=Sailboats}/{id?}");
+                routes.MapRoute("default", "{controller=About}/{action=AboutUs}");
+                routes.MapRoute("Лодки", "{controller=Catalog}/{action=Sailboats}");
             });
         }
     }

@@ -1066,13 +1066,13 @@ img {
 .aboutSite {
     display:flex;
     justify-content:space-between;
-    margin:2vh;
+    margin:1vh;
 }
 
 .logo {
     display:flex;
     align-items: center;
-    width:300px;
+    width:auto;
     margin-right:2vw;
 }
 
@@ -1088,16 +1088,23 @@ img {
 }
 
 .socialVidgets {
-    margin-top:2vh;
+    margin-top:1vh;
     display:flex;
 }
 
-.footerContacts {
-    display:flex;
-    align-items:center;
+.footerContactsLong {
+    /*display:flex;
+    align-items:center;*/
     width:260px;
     font-size:1.2rem;
     text-align:center;
+}
+
+.footerContactsShort {
+    display:none;
+    width: 260px;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
 .aboutMe {
@@ -1392,6 +1399,10 @@ img {
     #goto-predist.about {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 30% 100% no-repeat;
         background-size: auto 150%;
+    }
+
+    .logo {
+        display:none;
     }
 }
 
@@ -1735,6 +1746,14 @@ img {
     .menu-top-element {
         width: auto
     }
+
+    .footerMap {
+        display:none
+    }
+
+    .aboutSite {
+        justify-content:space-around
+    }
 }
 
 @media (max-width:761px) {
@@ -1887,6 +1906,17 @@ img {
 
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
+    }
+
+    .footerContactsLong {
+        display:none;
+    }
+
+    .footerContactsShort {
+        display:initial;
+        width: 260px;
+        font-size: 1.2rem;
+        text-align: center;
     }
 }
 

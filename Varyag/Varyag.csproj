@@ -8,7 +8,7 @@
   <ItemGroup>
     <None Include="Views\About\AboutUs.cshtml" />
     <None Include="Views\About\AllNews.cshtml" />
-    <None Include="Views\About\Details.cshtml" />
+    <None Include="Views\About\NewsDetails.cshtml" />
     <None Include="Views\Accounts\Login.cshtml" />
     <None Include="Views\Accounts\Register-disabled.cshtml" />
     <None Include="Views\Catalog\Bigboats.cshtml" />

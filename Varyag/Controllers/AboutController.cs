@@ -16,11 +16,13 @@ namespace Varyag.Controllers
         {
             _context = context;
         }
+
         public IActionResult AboutUs()
         {
             return View();
         }
 
+        [Route("О_Нас/Наши_новости")]
         public async Task<IActionResult> AllNews(string newsType, int? page)
         {
             List<News> news = new List<News>();
@@ -73,8 +75,7 @@ namespace Varyag.Controllers
             return View(news);
         }
 
-        // GET: About/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> NewsDetails(int? id)
         {
             if (id == null)
             {

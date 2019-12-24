@@ -67,7 +67,7 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Шлюпки/Шлюпки_ЯЛ 2,ЯЛ 4,ЯЛ 6")]
+        [Route("Каталог/Шлюпки/Шлюпки_ЯЛ2,ЯЛ4,ЯЛ6")]
         public IActionResult BoatsYal()
         {
             ViewData["Title"] = "Купить деревянные шлюпки ЯЛ 2, ЯЛ 4, ЯЛ 6 от производителя";
@@ -87,7 +87,7 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Шлюпки/Гребные_катера")]
+        [Route("Каталог/Шлюпки/Гребные_катера_и_вельботы")]
         public IActionResult KaterRows()
         {
             ViewData["Title"] = "Купить  деревянные гребные катера от производителя";
@@ -157,7 +157,7 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Ладьи/Ладьи")]
+        [Route("Каталог/Ладьи")]
         public IActionResult Ladiy()
         {
             ViewData["Title"] = "Купить деревянные ладьи от производителя";
@@ -197,7 +197,7 @@ namespace Varyag.Controllers
             return View();
         }
 
-        //[Route("Каталог/Парусники")]
+        [Route("Каталог/Парусники")]
         public IActionResult Sailboats()
         {
             ViewData["Title"] = "Купить деревянные парусники от производителя";
@@ -237,7 +237,7 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Парусники/Исторические парусники")]
+        [Route("Каталог/Парусники/Исторические_парусники")]
         public IActionResult SailboatsHistorical()
         {
             ViewData["Title"] = "Купить деревянные исторические парусники от производителя";
