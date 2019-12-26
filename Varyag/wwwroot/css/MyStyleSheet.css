@@ -863,6 +863,7 @@ img {
     text-align: left;
     margin: 25px;
     margin-top: 0px;
+    font-family:Tahoma;
 }
 
 .desc-top {
@@ -887,25 +888,6 @@ img {
     width: 100%;
 }
 
-.TTH-details {
-    width: 100%;
-    text-align: left;
-}
-
-    .TTH-details h4 {
-        margin-block-start: 6px;
-        margin-block-end: 6px;
-        font-size: 20px;
-    }
-
-    .TTH-details .value {
-        border-bottom: 1px dashed grey;
-    }
-
-    .TTH-details .characteristic {
-        border-bottom: 1px dashed grey;
-    }
-
 .catalogItemTop {
     grid-area: name;
     text-align: center;
@@ -928,19 +910,48 @@ img {
     grid-area: freeSpaceBottom;
 }
 
-.details-top {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
+.details-topWrapper {
+    display:flex;
+    justify-content:center;
 }
 
-.sheme-tth {
-    display: flex;
-    flex-direction: column;
-    width: 32%;
-    margin-left: 25px;
-    align-items: center;
+.details-top {
+    display: grid;
+    grid-template-areas: "sheme gallery" "tth-det gallery";
+    grid-template-rows: auto auto;
+    grid-template-columns: 35% 65%;
+    margin:2vw;
 }
+
+.gallery {
+    margin-left: 20px;
+    grid-area:gallery;
+}
+
+.sheme {
+    align-self:center;
+}
+
+.TTH-details {
+    width: 100%;
+    text-align: left;
+    grid-area:tth-det;
+    align-self:flex-end;
+}
+
+    .TTH-details h4 {
+        margin-block-start: 6px;
+        margin-block-end: 6px;
+        font-size: 20px;
+    }
+
+    .TTH-details .value {
+        border-bottom: 1px dashed grey;
+    }
+
+    .TTH-details .characteristic {
+        border-bottom: 1px dashed grey;
+    }
 
 .table-space {
     width: 20px;
@@ -949,16 +960,6 @@ img {
 .bottom-top {
     display: flex;
     justify-content: space-between;
-}
-
-.galery {
-    width: 63%;
-    margin-right: 25px;
-    margin-left: 20px;
-}
-
-.sheme {
-    width: 65%;
 }
 
 .projectListItem {
@@ -1232,9 +1233,9 @@ img {
 
 @media (max-width:1260px) {
 
-    .sheme {
+    /*.sheme {
         width: 60%;
-    }
+    }*/
 }
 
 @media (max-width:1189px) {
@@ -1268,10 +1269,6 @@ img {
     #wideStory {
         display: flex;
     }
-
-    /*#two.partNewsElement {
-        margin:0;
-    }*/
 
     .cellLong {
         display: none;
@@ -1331,11 +1328,7 @@ img {
 }
 
 @media (max-width:1160px) {
-
-    .sheme {
-        width: 55%;
-    }
-
+    
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 53% 76% no-repeat;
     }
@@ -1352,43 +1345,15 @@ img {
     }
 }
 
-@media (max-width:1060px) {
-    .sheme {
-        width: 50%;
-    }
-}
-
 @media (max-width:1042px) {
 
     .details-top {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
+        grid-template-areas: "gallery gallery" "tth-det sheme";
+        grid-template-columns: 65% 35%;
     }
 
-    .sheme-tth {
-        display: flex;
-        flex-direction: row-reverse;
-        width: 100%;
-        align-items: center;
-        margin: 0px;
-    }
-
-    .galery {
-        width: 95%;
-        margin: auto;
-    }
-
-    .TTH-details {
-        width: 55%;
-        text-align: left;
-        margin-left: 5%;
-    }
-
-    .sheme {
-        width: 33%;
-        margin-right: 5%;
-        margin-left: 3%;
+    .gallery {
+        margin-left: 0;
     }
 
     #goto-predist.about .annotation {
@@ -1461,6 +1426,10 @@ img {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 35% 100% no-repeat;
         background-size: auto 150%;
     }
+
+    .details-top {
+        grid-template-columns: 55% 45%;
+    }
 }
 
 @media (max-width:830px) {
@@ -1489,18 +1458,6 @@ img {
         margin: auto;
     }
 
-    .sheme-tth {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .TTH-details {
-        width: 90%;
-        text-align: left;
-        margin-right: 5%;
-        margin-left: 5%;
-    }
-
     .description {
         margin: 5%;
     }
@@ -1514,12 +1471,6 @@ img {
 
     #short.projectImage {
         display: none;
-    }
-
-    .sheme {
-        width: 90%;
-        margin-right: 5%;
-        margin-left: 5%;
     }
 
     .catalog {
@@ -1763,6 +1714,12 @@ img {
     }
 }
 
+@media (max-width:720px) {
+    .details-top {
+        grid-template-columns: 47% 53%;
+    }
+}
+
 @media (max-width:676px) {
 
     .singleProject {
@@ -1801,6 +1758,12 @@ img {
 
     #goto-pred.nav-element-top {
         display: none;
+    }
+
+    .details-top {
+        grid-template-areas: "gallery" "sheme" "tth-det";
+        grid-template-rows: auto;
+        grid-template-columns: 100%;
     }
 }
 

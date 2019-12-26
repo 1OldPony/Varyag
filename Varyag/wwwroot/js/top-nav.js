@@ -17,7 +17,7 @@ $(document).ready(function () {
     $("#cinema").mouseenter(function() {
         var existance = $("#cin").val();
         if (existance == 0) {
-            $(".menu-nav-top").append("<div id=cinemaOrders class=category><a asp-action=><div id=cinemaOrders class=topNavCategory>Судно &quot;Якуцк&quot; для фильма &quot;Первые&quot;</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Модели для фильма &quot;Капитан Хорнблауер&quot;</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Шхуна &quot;Святой Петр&quot;</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Модель барка &quot;Крузенштерн&quot;</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Драккары для г.Выборг</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Корабль-музей &quot;Гото Предистинация&quot;</div></a ></div >")
+            $(".menu-nav-top").append("<div id=cinemaOrders class=category><a href=><div id=cinemaOrders class=topNavCategory>Судно &quot;Якуцк&quot; для фильма &quot;Первые&quot;</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Модели для фильма &quot;Капитан Хорнблауер&quot;</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Шхуна &quot;Святой Петр&quot;</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Модель барка &quot;Крузенштерн&quot;</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Драккары для г.Выборг</div></a ><a asp-action=><div id=cinemaOrders class=topNavCategory>Корабль-музей &quot;Гото Предистинация&quot;</div></a ></div >")
             $("#cin").val(1);
         } else {
             $("#cinemaOrders.category").show();
@@ -27,7 +27,7 @@ $(document).ready(function () {
     $("#aboutUs").mouseenter(function() {
         var existance = $("#abUs").val();
         if (existance == 0) {
-            $(".menu-nav-top").append("<div id=aboutUsTopNav class=category><a asp-action=><div id=aboutUsTopNav class=topNavCategory>О нашей верфи</div></a ><a asp-action=><div id=aboutUsTopNav class=topNavCategory>О нашем производстве</div></a ><a asp-action=><div id=aboutUsTopNav class=topNavCategory>Наши новости</div></a ><a asp-action=><div id=aboutUsTopNav class=topNavCategory>СМИ о нас</div></a ><a id=aboutUsTopNav asp-action=><div class=topNavCategory>Корабль-Музей Гото Предистинация</div></a ><a id=aboutUsTopNav asp-action=><div class=topNavCategory>Музей</div></a ></div >")
+            $(".menu-nav-top").append("<div id=aboutUsTopNav class=category><a href=../../about/AboutUs><div id=aboutUsTopNav class=topNavCategory>О нашей верфи</div></a ><a href=><div id=aboutUsTopNav class=topNavCategory>О нашем производстве</div></a ><a href=../../О_Нас/Наши_новости><div id=aboutUsTopNav class=topNavCategory>Наши новости</div></a ><a href=../../О_Нас/Наши_новости?newsType=smi><div id=aboutUsTopNav class=topNavCategory>СМИ о нас</div></a ><a href=../../О_Нас/Наши_новости?newsType=life><div id=aboutUsTopNav class=topNavCategory>Из жизни наших кораблей</div></a ><a id=aboutUsTopNav><div class=topNavCategory>Корабль-Музей Гото Предистинация</div></a ><a id=aboutUsTopNav><div class=topNavCategory>Музей</div></a ></div >")
             $("#abUs").val(1);
         } else {
             $("#aboutUsTopNav.category").show();

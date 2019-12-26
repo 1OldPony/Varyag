@@ -267,7 +267,7 @@ namespace Varyag.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             return View(model);
         }

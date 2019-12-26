@@ -75,6 +75,7 @@ namespace Varyag.Controllers
             return View(news);
         }
 
+        [Route("О_Нас/Наши_новости/{id}")]
         public async Task<IActionResult> NewsDetails(int? id)
         {
             if (id == null)

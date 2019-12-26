@@ -74,11 +74,12 @@ namespace Varyag
             app.UseCookiePolicy();
             app.UseAuthentication();
 
-            app.UseMvc(routes =>
+            app.UseMvc(
+                routes =>
             {
                 routes.MapRoute("default", "{controller=About}/{action=AboutUs}");
-                routes.MapRoute("Лодки", "{controller=Catalog}/{action=Sailboats}");
-            });
+            }
+            );
         }
     }
 }
