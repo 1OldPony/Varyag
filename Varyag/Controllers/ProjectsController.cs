@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -227,7 +228,7 @@ namespace Varyag.Controllers
                         Price = model.Price
                     };
 
-                    if (model.ShipSheme != null)
+                    if (model.ShipSheme!=null)
                     {
                         using (var memoryStream = new MemoryStream())
                         {
@@ -235,6 +236,17 @@ namespace Varyag.Controllers
                             project.ShipSheme = memoryStream.ToArray();
                         }
                     }
+                    //else
+                    //{
+                    //    byte[] foto = new byte[] { } ;
+                    //    char[] she = model.ShipSheme.ToString().ToArray();
+                    //    for (int i = 0; i < she.Length; i++)
+                    //    {
+                    //        byte b = Convert.ToByte(she[i]);
+                    //        foto[i] = b;
+                    //    }
+                    //    project.ShipSheme = foto;
+                    //}
 
                     if (model.MainFoto != null)
                     {
@@ -244,6 +256,10 @@ namespace Varyag.Controllers
                             project.MainFoto = memoryStream.ToArray();
                         }
                     }
+                    //else
+                    //{
+                    //    project.MainFoto = _context.Project.Where(p => p.ProjectID == id).Single().MainFoto;
+                    //}
 
                     if (model.ShipShemeFull != null)
                     {
@@ -253,6 +269,11 @@ namespace Varyag.Controllers
                             project.ShipShemeFull = memoryStream.ToArray();
                         }
                     }
+                    //else
+                    //{
+                    //    project.ShipShemeFull = _context.Project.Where(p => p.ProjectID == id).Single().ShipShemeFull;
+                    //}
+
                     _context.Update(project);
                     await _context.SaveChangesAsync();
                 }

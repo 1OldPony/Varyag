@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale auto;background-repeat:no-repeat;margin-left:2vw;margin-right:2vw;">
+            <div id="partNewsElementShort" class="partNewsElement" style="background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale auto;background-repeat:no-repeat;margin-right:2vw;">
                 <div class="annotation">
                     <div class="annotationText">
                         @Html.Raw(Model.ElementAt(i).ShortStory)

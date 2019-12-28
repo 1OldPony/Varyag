@@ -554,33 +554,56 @@ function navElMinorChoose() {
 };
 //////////////////Для пролистывания списка заказчиков на странице "о нас"//////////////////////
 var slideNumber = 0;
+var custWidth = $(".allCustomers").width();
+var step = custWidth / 9;
 
 $("#right.control").click(function () {
 
-    var custWidth = $(".allCustomers").width();
-    var step = custWidth / 3;
-    if (slideNumber == 2) {
-        slideNumber = 0;
-        var scrollNumber = step * slideNumber;
+    if (window.innerWidth > 990) {
+        var stepWide = custWidth;
+
+        if (slideNumber == 2) {
+            slideNumber = 0;
+            var scrollNumber = stepWide * slideNumber;
+        }
+        else {
+            var scrollNumber = stepWide * (slideNumber + 1);
+            slideNumber += 1;
+        }
     }
     else {
-        var scrollNumber = step * (slideNumber + 1);
-        slideNumber += 1;
+        if (slideNumber == 8) {
+            slideNumber = 0;
+            var scrollNumber = step * slideNumber;
+        }
+        else {
+            var scrollNumber = step * (slideNumber + 1);
+            slideNumber += 1;
+        }
     }
 
     $(".allCustomers").css('transform', "translatex(-" + scrollNumber + "px)");
-
 });
 
 $("#left.control").click(function () {
 
-    if (slideNumber == 0) {
-        slideNumber = 3;
-    }
+    if (window.innerWidth > 990) {
+        var stepWide = custWidth;
 
-    var custWidth = $(".allCustomers").width();
-    var step = custWidth / 3;
-    var scrollNumber = step * (slideNumber - 1);
+        if (slideNumber == 0) {
+            slideNumber = 3;
+        }
+
+        var scrollNumber = stepWide * (slideNumber - 1);
+    }
+    else {
+
+        if (slideNumber == 0) {
+            slideNumber = 9;
+        }
+
+        var scrollNumber = step * (slideNumber - 1);
+    }
 
     $(".allCustomers").css('transform', "translatex(-" + scrollNumber + "px)");
 

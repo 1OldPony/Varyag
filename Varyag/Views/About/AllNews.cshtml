@@ -39,7 +39,7 @@
 <div class="myBorder"></div>
 <div class="MyContainer">
     @for (int i = 0; i < Model.Count(); i++)
-    {<a asp-action="Details" asp-route-id="@Model.ElementAt(i).NewsId">
+    {<a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId">
             <div class="newsListElement">
                 <div class="dateOfNews">@Model.ElementAt(i).NewsDate</div>
                 <div class="partNewsElement" id="allNews" style="grid-area:preview;background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale auto;background-repeat:no-repeat;margin-right:1vw">

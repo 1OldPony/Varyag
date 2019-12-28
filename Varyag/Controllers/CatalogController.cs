@@ -297,9 +297,9 @@ namespace Varyag.Controllers
             return View();
         }
 
+        [Route("Каталог/Проект_{id}")]
         public async Task<IActionResult> ProjectDetails(int? id)
         {
-
             ViewBag.TopPic = "details";
 
             if (id == null)
