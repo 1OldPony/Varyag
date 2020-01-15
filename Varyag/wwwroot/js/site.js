@@ -44,9 +44,6 @@ $(document).ready(function () {
     });
 });
 
-//////////////////////////виджет контакта//////////////////////////
-VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
-
 /////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
 $("#0[name=showHideButton]").on("click", function () {
     showHideFullNewsPreview("#0.MyContainer", "#0[name = showHideButton]");
@@ -609,4 +606,7 @@ $("#left.control").click(function () {
 
     slideNumber -= 1;
 });
+
+//////////////////////////виджет контакта//////////////////////////
+VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
 

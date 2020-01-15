@@ -117,12 +117,12 @@ namespace Varyag.Controllers
                 switch (fotoType)
                 {
                     case "общая":
-                            for (int i = 0; i < names.Length; i++)
-                            {
-                                pathFrom = Path.Combine(pathTemp, names[i]);
-                                pathTo = Path.Combine(pathForFinalTemp, names[i]);
-                                LittleHelper.MoveTo(pathFrom, pathTo);
-                            }
+                        for (int i = 0; i < names.Length; i++)
+                        {
+                            pathFrom = Path.Combine(pathTemp, names[i]);
+                            pathTo = Path.Combine(pathForFinalTemp, names[i]);
+                            LittleHelper.MoveTo(pathFrom, pathTo);
+                        }
                         break;
                     case "мелкая":
                         pathFrom = Path.Combine(pathTemp, names[0]);

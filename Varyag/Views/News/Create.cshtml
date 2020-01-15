@@ -37,7 +37,7 @@
                         <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.Editor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
                     </div>
                 </div>
-                <textarea rows="6" cols="30" name="shortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+                <textarea rows="6" cols="30" maxlength="55" name="shortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
             </div>
         </div>
 
@@ -64,7 +64,7 @@
                         <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.Editor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
                     </div>
                 </div>
-                <textarea rows="6" cols="30" name="middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
+                <textarea rows="6" cols="30" maxlength="55" name="middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
             </div>
         </div>
         <div id="editorWide" class="editor">
@@ -90,7 +90,7 @@
                         <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.Editor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
                     </div>
                 </div>
-                <textarea rows="6" cols="30" name="wideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
+                <textarea rows="6" cols="30" maxlength="90" name="wideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
             </div>
         </div>
     </div>

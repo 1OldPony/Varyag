@@ -39,7 +39,7 @@
                         <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" />
                     </div>
                 </div>
-                <textarea rows="6" cols="30" asp-for="ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+                <textarea rows="6" cols="30" maxlength="55" asp-for="ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
             </div>
         </div>
 
@@ -66,7 +66,7 @@
                         <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" />
                     </div>
                 </div>
-                <textarea rows="6" cols="30" id="middleFotoText" asp-for="MiddleStory" onkeyup="FotoTextChange('middle')"></textarea>
+                <textarea rows="6" cols="30" maxlength="55" id="middleFotoText" asp-for="MiddleStory" onkeyup="FotoTextChange('middle')"></textarea>
             </div>
         </div>
         <div id="editorWide" class="editor">
@@ -92,7 +92,7 @@
                         <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" />
                     </div>
                 </div>
-                <textarea rows="6" cols="30" id="wideFotoText" asp-for="WideStory" onkeyup="FotoTextChange('wide')"></textarea>
+                <textarea rows="6" cols="30" maxlength="90" id="wideFotoText" asp-for="WideStory" onkeyup="FotoTextChange('wide')"></textarea>
             </div>
         </div>
     </div>

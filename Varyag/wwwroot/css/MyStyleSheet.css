@@ -110,9 +110,11 @@
     height: 35vh;
     position: relative;
     background-size: auto 150%;
+    text-align:center;
 }
 
-#partNewsElementShort .partNewsElement {
+#middleElement.partNewsElement {
+    margin-right: 2vw;
     margin-left: 2vw;
 }
 
@@ -187,23 +189,10 @@
     width:100vw;
 }
 
-/*.allCustomers {
-    display: flex;
-    font-size: 1.8rem;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
-    margin-left: auto;
-    margin-right: auto;
-    width: 89vw;
-    transition: transform 0.6s ease;
-    justify-content:space-around;
-}*/
-
 .allCustomers {
     display: grid;
     grid-template-columns: repeat(9, 32.5vw);
     grid-template-rows: repeat(5, auto);
-    /*display: flex;*/
     grid-auto-flow: column;
     font-size: 1.8rem;
     margin-top: 1vw;
@@ -212,7 +201,6 @@
     margin-right: auto;
     width: 97.5vw;
     transition: transform 0.6s ease;
-    /*justify-content: space-around;*/
 }
 
 .customersBlock {
@@ -245,7 +233,6 @@
     margin-left: 0;
     margin-right: 0;
     z-index: 999999;
-    /*display: none;*/
     background:rgba(255, 255, 255, 0.6);
 }
 
@@ -1125,8 +1112,6 @@ img {
 }
 
 .footerContactsLong {
-    /*display:flex;
-    align-items:center;*/
     width:260px;
     font-size:1.2rem;
     text-align:center;
@@ -1185,7 +1170,7 @@ img {
 }
 
 .partNewsElementViewMiddle {
-    width: 700px;
+    width: 620px;
     height: 20vh;
     position: relative;
     background: url(../images/temp/middle.jpg) 50% 50%;
@@ -1193,10 +1178,6 @@ img {
     background-size: 150% auto;
     background-color: brown;
 }
-
-    .partNewsElementViewMiddle .annotation {
-        width: 38%;
-    }
 
     .partNewsElementViewMiddle .annotationText {
         margin: 5%;
@@ -1258,13 +1239,6 @@ img {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 80% 100% no-repeat;
         background-size: auto 135%;
     }
-}
-
-@media (max-width:1260px) {
-
-    /*.sheme {
-        width: 60%;
-    }*/
 }
 
 @media (max-width:1189px) {
@@ -1340,7 +1314,7 @@ img {
     }
 
     .annotation {
-        width: 38%;
+        width: 40vw;
     }
 
     #allNews.annotation {
@@ -1741,6 +1715,7 @@ img {
 }
 
 @media (max-width:720px) {
+
     .details-top {
         grid-template-columns: 47% 53%;
     }
@@ -1961,7 +1936,7 @@ img {
 @media (max-width:400px) {
 
     .annotation {
-        width: 57vw;
+        width: 60%;
     }
 
     #museum {
@@ -1974,6 +1949,11 @@ img {
 }
 
 @media (max-width:383px) {
+
+    #middleElement.partNewsElement {
+        margin-right: 0;
+        margin-left: 0;
+    }
 
     #fifth-out.cellShort {
         display: none;

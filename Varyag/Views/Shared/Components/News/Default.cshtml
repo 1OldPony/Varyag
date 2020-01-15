@@ -20,7 +20,7 @@
             </div>
         </a>
         <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;margin-right:2vw;">
+            <div class="partNewsElement" id="middleElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;">
                 <div class="annotation">
                     <div class="annotationText">
                         @Html.Raw(Model.ElementAt(1).ShortStory)
