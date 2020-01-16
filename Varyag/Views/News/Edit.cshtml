@@ -6,11 +6,8 @@
 }
 
 <hr />
-<form asp-action="SaveTempFoto" asp-route-actionType="Edit" asp-route-newId="@Model.NewsId" id="fotoEditorForm" enctype="multipart/form-data">
+<form asp-action="SaveTempFoto" asp-route-actionType="Edit" asp-route-newId="@Model.NewsId" asp-route-newsDate="@Model.NewsDate" id="fotoEditorForm" enctype="multipart/form-data">
     <div class="newsFotoEditor">
-        <div hidden>
-            <input asp-for="NewsDate" value="@Model.NewsDate" />
-        </div>
         <div style="grid-area:loader">
             <input type="file" name="newsFoto" required /><br />
             <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
@@ -20,7 +17,14 @@
             <div class="partNewsElementViewShort" id="editor" style="background-image:url(@Model.ShortFotoPreview);background-position-x:@Model.ShortImgX;background-position-y:@Model.ShortImgY;background-size:@Model.ShortImgScale;">
                 <div class="annotation">
                     <div class="annotationText" id="shortFotoNewsText">
-                        @Model.ShortStory
+                        @if (ViewBag.ShortStory == null)
+                        {
+                            @Model.ShortStory
+                        }
+                        else
+                        {
+                            @ViewBag.ShortStory
+                        }
                     </div>
                 </div>
             </div>
@@ -28,15 +32,39 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.ShortImgX" min="0" max="100" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.shortFotoX == null)
+                        {
+                            <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.ShortImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.RefreshEditor.shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                        }
+                        @*<input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.ShortImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.ShortImgY" min="0" max="100" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.shortFotoY == null)
+                        {
+                            <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.ShortImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.RefreshEditor.shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                        }
+                        @*<input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.ShortImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.shortFotoScale == null)
+                        {
+                            <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.RefreshEditor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                        }
+                        @*<input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />*@
                     </div>
                 </div>
                 <textarea rows="6" cols="30" maxlength="55" asp-for="ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
@@ -47,7 +75,14 @@
             <div class="partNewsElementViewMiddle" id="editor" style="background-image:url(@Model.MiddleFotoPreview);background-position-x:@Model.MiddleImgX;background-position-y:@Model.MiddleImgY;background-size:@Model.MiddleImgScale;">
                 <div class="annotation">
                     <div class="annotationText" id="middleFotoNewsText">
-                        @Model.MiddleStory
+                        @if (ViewBag.MiddleStory == null)
+                        {
+                            @Model.MiddleStory
+                        }
+                        else
+                        {
+                            @ViewBag.MiddleStory
+                        }
                     </div>
                 </div>
             </div>
@@ -55,15 +90,39 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.MiddleImgX" min="0" max="100" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.middleFotoX == null)
+                        {
+                            <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.MiddleImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.RefreshEditor.middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        }
+                        @*<input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.MiddleImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.MiddleImgY" min="0" max="100" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.middleFotoY == null)
+                        {
+                            <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.MiddleImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.RefreshEditor.middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        }
+                        @*<input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.MiddleImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.middleFotoScale == null)
+                        {
+                            <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.RefreshEditor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        }
+                        @*<input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />*@
                     </div>
                 </div>
                 <textarea rows="6" cols="30" maxlength="55" id="middleFotoText" asp-for="MiddleStory" onkeyup="FotoTextChange('middle')"></textarea>
@@ -73,7 +132,14 @@
             <div class="partNewsElementViewWide" id="editor" style="background-image:url(@Model.WideFotoPreview);background-position-x:@Model.WideImgX;background-position-y:@Model.WideImgY;background-size:@Model.WideImgScale;">
                 <div class="annotation">
                     <div class="annotationText" id="wideFotoNewsText">
-                        @Model.WideStory
+                        @if (ViewBag.WideStory == null)
+                        {
+                            @Model.WideStory
+                        }
+                        else
+                        {
+                            @ViewBag.WideStory
+                        }
                     </div>
                 </div>
             </div>
@@ -81,15 +147,39 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.WideImgX" min="0" max="100" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.wideFotoX == null)
+                        {
+                            <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.WideImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.RefreshEditor.wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        }
+                        @*<input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.WideImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.WideImgY" min="0" max="100" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.wideFotoY == null)
+                        {
+                            <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.WideImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.RefreshEditor.wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        }
+                        @*<input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.WideImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" />
+                        @if (ViewBag.RefreshEditor.wideFotoScale == null)
+                        {
+                            <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        }
+                        else
+                        {
+                            <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.RefreshEditor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        }
+                        @*<input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />*@
                     </div>
                 </div>
                 <textarea rows="6" cols="30" maxlength="90" id="wideFotoText" asp-for="WideStory" onkeyup="FotoTextChange('wide')"></textarea>
@@ -97,7 +187,7 @@
         </div>
     </div>
 </form>
-<form asp-action="Edit" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
+<form asp-action="Edit" asp-route-oldNewsDate="@ViewBag.oldNewsDate" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
     <div style="width:74vw">
         <div>Заголовок, для главного вида новости</div>
         <input asp-for="Header" class="form-control" required />

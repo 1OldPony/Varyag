@@ -55,7 +55,7 @@ namespace Varyag.Controllers
             else
                 AllNews = AllNews.GetRange(0, AllNews.Count);
 
-            return View(AllNews);
+            return View(AllNews.OrderByDescending(x=>x.NewsDate));
         }
 
         [HttpPost]
@@ -63,7 +63,7 @@ namespace Varyag.Controllers
             string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
             string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
             string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory, int? newId, string NewsDate)
+            string wideStory, int? newId, string newsDate, string mainText)
         {
             string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
             if (newsFoto != null)
@@ -111,7 +111,7 @@ namespace Varyag.Controllers
             else
             {
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
-                string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", NewsDate);
+                string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", newsDate);
                 string pathFrom = "", pathTo = "";
 
                 switch (fotoType)
@@ -142,7 +142,20 @@ namespace Varyag.Controllers
                     default:
                         break;
                 }
-                return RedirectToAction("Edit", new { id = newId });
+                return RedirectToAction("Edit", new {
+                    id = newId,
+                    shortScale = shortFotoScale,
+                    shortX = shortFotoX,
+                    shortY = shortFotoY,
+                    shStory = shortStory,
+                    midScale = middleFotoScale,
+                    midX = middleFotoX,
+                    midY = middleFotoY,
+                    midStory = middleStory,
+                    wideScale = wideFotoScale,
+                    wideX = wideFotoX,
+                    wideY = wideFotoY,
+                    wStory = wideStory });
             }
         }
 
@@ -150,11 +163,11 @@ namespace Varyag.Controllers
         {
 
             string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
-            DirectoryInfo pathFolder = new DirectoryInfo(path);
+            //Directory pathFolder = new Directory(path);
 
-            if (!pathFolder.Exists)
+            if (!Directory.Exists(path))
             {
-                pathFolder.Create();
+                Directory.CreateDirectory(path);
             }
 
             using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
@@ -216,8 +229,11 @@ namespace Varyag.Controllers
                 {
                     string pathStart = Path.Combine(pathTemp, foto);
                     string pathEnd = Path.Combine(pathForFinalTemp, foto);
-                    FileInfo file = new FileInfo(pathStart);
-                    file.MoveTo(pathEnd);
+                    //FileInfo file = new FileInfo(pathStart);
+                    //file.MoveTo(pathEnd);
+
+                    System.IO.File.Move(pathStart, pathEnd);
+
                     switch (foto)
                     {
                         case "short.jpg":
@@ -266,7 +282,9 @@ namespace Varyag.Controllers
         }
 
         // GET: News/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id, string shStory, string midStory, string wStory, 
+            string shortScale, string shortX, string shortY, string midScale, string midX, 
+            string midY, string wideScale, string wideX, string wideY)
         {
             if (id == null)
             {
@@ -283,15 +301,32 @@ namespace Varyag.Controllers
             news.MiddleFotoPreview = "../" + news.MiddleFotoPreview;
             news.WideFotoPreview = "../" + news.WideFotoPreview;
 
+            ViewBag.RefreshEditor = new EditorModel()
+            {
+                shortFotoX = shortX,
+                shortFotoY = shortY,
+                shortFotoScale = shortScale,
+                middleFotoX = midX,
+                middleFotoY = midY,
+                middleFotoScale = midScale,
+                wideFotoX = wideX,
+                wideFotoY = wideY,
+                wideFotoScale = wideScale
+            };
+
             ViewBag.ShortImgX = LittleHelper.PercentToCoordinates(news.ShortImgX);
             ViewBag.ShortImgY = LittleHelper.PercentToCoordinates(news.ShortImgY);
             ViewBag.ShortImgScale = LittleHelper.PercentToCoordinates(news.ShortImgScale);
+            ViewBag.ShortStory = shStory;
             ViewBag.MiddleImgX = LittleHelper.PercentToCoordinates(news.MiddleImgX);
             ViewBag.MiddleImgY = LittleHelper.PercentToCoordinates(news.MiddleImgY);
             ViewBag.MiddleImgScale = LittleHelper.PercentToCoordinates(news.MiddleImgScale);
+            ViewBag.MiddleStory = midStory;
             ViewBag.WideImgX = LittleHelper.PercentToCoordinates(news.WideImgX);
             ViewBag.WideImgY = LittleHelper.PercentToCoordinates(news.WideImgY);
             ViewBag.WideImgScale = LittleHelper.PercentToCoordinates(news.WideImgScale);
+            ViewBag.WideStory = wStory;
+            ViewBag.OldNewsDate = news.NewsDate;
 
             return View(news);
         }
@@ -301,7 +336,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, News news, IFormFileCollection newsGallery)
+        public async Task<IActionResult> Edit(int id, News news, IFormFileCollection newsGallery, string oldNewsDate)
         {
             if (id != news.NewsId)
             {
@@ -322,6 +357,17 @@ namespace Varyag.Controllers
                     news.WideImgScale = news.WideImgScale + "%";
                     news.WideImgX = news.WideImgX + "%";
                     news.WideImgY = news.WideImgY + "%";
+
+                    if (news.NewsDate != oldNewsDate)
+                    {
+                        news.PathToGallery = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
+                        news.ShortFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, "short.jpg"), "preview");
+                        news.MiddleFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, "middle.jpg"), "preview");
+                        news.WideFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, "wide.jpg"), "preview");
+
+                        Directory.Move(Path.Combine(_Environment.WebRootPath, "images", "news", oldNewsDate), Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate));
+                        Directory.Move(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, oldNewsDate), Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate));
+                    }
 
                     if (newsGallery.Count != 0)
                     {

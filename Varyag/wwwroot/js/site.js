@@ -93,6 +93,7 @@ function showHideFullNewsPreview(selectorPreview, selectorButton) {
 FotoAttrChange('short');
 FotoAttrChange('middle');
 FotoAttrChange('wide');
+annotationToTextarea();
 
 ///////////////////////////////Редактирования текста и фото новостного превью////////////////////////////////
 function FotoTextChange(fotoType) {
@@ -122,7 +123,7 @@ function FotoAttrChange(fotoType) {
             xCoordinate = $("#shortFotoX").val() + "%";
             yCoordinate = $("#shortFotoY").val() + "%";
             scale = $("#shortFotoScale").val() + "%";
-            $("#creator.partNewsElementViewShort").css({
+            $("#creator.partNewsElementViewShort, #editor.partNewsElementViewShort").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
                 "background-size": scale
@@ -132,7 +133,7 @@ function FotoAttrChange(fotoType) {
             xCoordinate = $("#middleFotoX").val() + "%";
             yCoordinate = $("#middleFotoY").val() + "%";
             scale = $("#middleFotoScale").val() + "%";
-            $("#creator.partNewsElementViewMiddle").css({
+            $("#creator.partNewsElementViewMiddle, #editor.partNewsElementViewMiddle").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
                 "background-size": scale
@@ -142,7 +143,7 @@ function FotoAttrChange(fotoType) {
             xCoordinate = $("#wideFotoX").val() + "%";
             yCoordinate = $("#wideFotoY").val() + "%";
             scale = $("#wideFotoScale").val() + "%";
-            $("#creator.partNewsElementViewWide").css({
+            $("#creator.partNewsElementViewWide, #editor.partNewsElementViewWide").css({
                 "background-position-x": xCoordinate,
                 "background-position-y": yCoordinate,
                 "background-size": scale
@@ -155,44 +156,48 @@ function FotoAttrChange(fotoType) {
 
 
 //////////////////////////////////редактируем фото при редактировании новости/////////////////////////////////////////
-$("#editorShort.editor").on("input", function () {
-    var xCoordinateShort = $("#shortFotoX").val() + "%";
-    var yCoordinateShort = $("#shortFotoY").val() + "%";
-    var scaleShort = $("#shortFotoScale").val() + "%";
-    $("#editor.partNewsElementViewShort").css({
-        "background-position-x": xCoordinateShort,
-        "background-position-y": yCoordinateShort,
-        "background-size": scaleShort
-    });
-})
-$("#editorMiddle.editor").on("input", function () {
-    var xCoordinateMiddle = $("#middleFotoX").val() + "%";
-    var yCoordinateMiddle = $("#middleFotoY").val() + "%";
-    var scaleMiddle = $("#middleFotoScale").val() + "%";
-    $("#editor.partNewsElementViewMiddle").css({
-        "background-position-x": xCoordinateMiddle,
-        "background-position-y": yCoordinateMiddle,
-        "background-size": scaleMiddle
-    });
-})
-$("#editorWide.editor").on("input", function () {
-    var xCoordinateWide = $("#wideFotoX").val() + "%";
-    var yCoordinateWide = $("#wideFotoY").val() + "%";
-    var scaleWide = $("#wideFotoScale").val() + "%";
-    $("#editor.partNewsElementViewWide").css({
-        "background-position-x": xCoordinateWide,
-        "background-position-y": yCoordinateWide,
-        "background-size": scaleWide
-    });
-})
+//$("#editorShort.editor").on("input", function () {
+//    var xCoordinateShort = $("#shortFotoX").val() + "%";
+//    var yCoordinateShort = $("#shortFotoY").val() + "%";
+//    var scaleShort = $("#shortFotoScale").val() + "%";
+//    $("#editor.partNewsElementViewShort").css({
+//        "background-position-x": xCoordinateShort,
+//        "background-position-y": yCoordinateShort,
+//        "background-size": scaleShort
+//    });
+//})
+//$("#editorMiddle.editor").on("input", function () {
+//    var xCoordinateMiddle = $("#middleFotoX").val() + "%";
+//    var yCoordinateMiddle = $("#middleFotoY").val() + "%";
+//    var scaleMiddle = $("#middleFotoScale").val() + "%";
+//    $("#editor.partNewsElementViewMiddle").css({
+//        "background-position-x": xCoordinateMiddle,
+//        "background-position-y": yCoordinateMiddle,
+//        "background-size": scaleMiddle
+//    });
+//})
+//$("#editorWide.editor").on("input", function () {
+//    var xCoordinateWide = $("#wideFotoX").val() + "%";
+//    var yCoordinateWide = $("#wideFotoY").val() + "%";
+//    var scaleWide = $("#wideFotoScale").val() + "%";
+//    $("#editor.partNewsElementViewWide").css({
+//        "background-position-x": xCoordinateWide,
+//        "background-position-y": yCoordinateWide,
+//        "background-size": scaleWide
+//    });
+//})
 
 /////////////////////////передаем текст новостных превью при загрузках новых фото/////////////////////////////
 $("#newsFotoUpload").click(function () {
+    annotationToTextarea();
+    $("#fotoEditorForm").submit();
+})
+
+function annotationToTextarea() {
     $("#shortFotoText").val($("#shortFotoNewsText").text().trim());
     $("#middleFotoText").val($("#middleFotoNewsText").text().trim());
     $("#wideFotoText").val($("#wideFotoNewsText").text().trim());
-    $("#fotoEditorForm").submit();
-})
+}
 
 ///////////////сохраняем параметры редактора фоток превью новостей в основную форму,//////////////
 ////////////////разблокируем кнопку сохранения новости////////////////////////////////////////////

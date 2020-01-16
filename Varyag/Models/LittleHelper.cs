@@ -48,8 +48,9 @@ namespace Varyag.Models
             string[] files = Directory.GetFiles(path);
             foreach (var file in files)
             {
-                FileInfo foto = new FileInfo(file);
-                foto.Delete();
+                File.Delete(file);
+                //FileInfo foto = new FileInfo(file);
+                //foto.Delete();
             }
             if (deleteDir)
             {
@@ -59,10 +60,12 @@ namespace Varyag.Models
 
         public static void MoveTo(string pathFrom, string pathTo)
         {
-            FileInfo fileOld = new FileInfo(pathTo);
-            fileOld.Delete();
-            FileInfo fileNew = new FileInfo(pathFrom);
-            fileNew.MoveTo(pathTo);
+            File.Delete(pathTo);
+            File.Move(pathFrom, pathTo);
+            //FileInfo fileOld = new FileInfo(pathTo);
+            //fileOld.Delete();
+            //FileInfo fileNew = new FileInfo(pathFrom);
+            //fileNew.MoveTo(pathTo);
         }
     }
 }
