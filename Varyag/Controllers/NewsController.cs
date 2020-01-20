@@ -116,7 +116,7 @@ namespace Varyag.Controllers
             else
             {
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
-                string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", newsDate);
+                string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", newsDate.ToString("dd.MM.yyyy"));
 
                 string pathFrom = "", pathTo = "";
 
@@ -174,7 +174,6 @@ namespace Varyag.Controllers
         {
 
             string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
-            //Directory pathFolder = new Directory(path);
 
             if (!Directory.Exists(path))
             {
@@ -193,7 +192,7 @@ namespace Varyag.Controllers
             string shortY, string shStory, string midScale, string midX,
             string midY, string midStory, string wideScale, string wideX,
             string wideY, string wStory, string headerR, string mainStoryR,
-            string keyWordR, string newsDateR)
+            string keyWordR, DateTime newsDateR)
         {
             ViewBag.Editor = new EditorModel()
             {
@@ -229,8 +228,8 @@ namespace Varyag.Controllers
             if (ModelState.IsValid)
             {
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
-                string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate);
-                string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
+                string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy"));
+                string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy"), news.NewsDate.Date.ToString("dd.MM.yyyy"));
                 string shortPreview = "", middlePreview = "", widePreview = "";
 
                 if (!Directory.Exists(pathFinal))
@@ -265,7 +264,7 @@ namespace Varyag.Controllers
 
                 for (int i = 0; i <= (newsGallery.Count() - 1); i++)
                 {
-                    string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ")" + news.NewsDate + ".jpg";
+                    string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ")" + news.NewsDate.Date.ToString("dd.MM.yyyy") + ".jpg";
 
                     using (var fileStream = new FileStream(pathFinal + "/" + name, FileMode.Create))
                     {
@@ -298,7 +297,7 @@ namespace Varyag.Controllers
         public async Task<IActionResult> Edit(int? id, string shStory, string midStory, string wStory, 
             string shortScale, string shortX, string shortY, string midScale, string midX, 
             string midY, string wideScale, string wideX, string wideY, string headerR, string mainStoryR,
-            string keyWordR, string newsDateR)
+            string keyWordR, DateTime newsDateR)
         {
             if (id == null)
             {
@@ -354,7 +353,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, News news, IFormFileCollection newsGallery, string oldNewsDate)
+        public async Task<IActionResult> Edit(int id, News news, IFormFileCollection newsGallery, DateTime oldNewsDate)
         {
             if (id != news.NewsId)
             {
@@ -376,15 +375,15 @@ namespace Varyag.Controllers
                     news.WideImgX = news.WideImgX + "%";
                     news.WideImgY = news.WideImgY + "%";
 
-                    if (news.NewsDate != oldNewsDate)
+                    if (news.NewsDate.Date.ToString("dd.MM.yyyy") != oldNewsDate.Date.ToString("dd.MM.yyyy"))
                     {
-                        news.PathToGallery = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
-                        news.ShortFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, "short.jpg"), "preview");
-                        news.MiddleFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, "middle.jpg"), "preview");
-                        news.WideFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, "wide.jpg"), "preview");
+                        news.PathToGallery = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy"), news.NewsDate.Date.ToString("dd.MM.yyyy"));
+                        news.ShortFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy"), "short.jpg"), "preview");
+                        news.MiddleFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy"), "middle.jpg"), "preview");
+                        news.WideFotoPreview = LittleHelper.PathAdapter(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy"), "wide.jpg"), "preview");
 
-                        Directory.Move(Path.Combine(_Environment.WebRootPath, "images", "news", oldNewsDate), Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate));
-                        Directory.Move(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, oldNewsDate), Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate));
+                        Directory.Move(Path.Combine(_Environment.WebRootPath, "images", "news", oldNewsDate.Date.ToString("dd.MM.yyyy")), Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy")));
+                        Directory.Move(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy"), oldNewsDate.Date.ToString("dd.MM.yyyy")), Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate.Date.ToString("dd.MM.yyyy"), news.NewsDate.Date.ToString("dd.MM.yyyy")));
                     }
 
                     if (newsGallery.Count != 0)
@@ -393,7 +392,7 @@ namespace Varyag.Controllers
 
                         for (int i = 0; i <= (newsGallery.Count() - 1); i++)
                         {
-                            string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ")" + news.NewsDate + ".jpg";
+                            string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ")" + news.NewsDate.Date.ToString("dd.MM.yyyy") + ".jpg";
 
                             using (var fileStream = new FileStream(news.PathToGallery + "/" + name, FileMode.Create))
                             {

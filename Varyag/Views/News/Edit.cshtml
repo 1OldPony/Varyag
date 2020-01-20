@@ -40,7 +40,6 @@
                         {
                             <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.RefreshEditor.shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
                         }
-                        @*<input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.ShortImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
@@ -52,7 +51,6 @@
                         {
                             <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.RefreshEditor.shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
                         }
-                        @*<input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.ShortImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
@@ -64,7 +62,6 @@
                         {
                             <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.RefreshEditor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
                         }
-                        @*<input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />*@
                     </div>
                 </div>
                 <textarea rows="6" cols="30" maxlength="55" asp-for="ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
@@ -98,7 +95,6 @@
                         {
                             <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.RefreshEditor.middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
                         }
-                        @*<input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.MiddleImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
@@ -110,7 +106,6 @@
                         {
                             <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.RefreshEditor.middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
                         }
-                        @*<input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.MiddleImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
@@ -122,7 +117,6 @@
                         {
                             <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.RefreshEditor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
                         }
-                        @*<input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />*@
                     </div>
                 </div>
                 <textarea rows="6" cols="30" maxlength="55" id="middleFotoText" asp-for="MiddleStory" onkeyup="FotoTextChange('middle')"></textarea>
@@ -155,7 +149,6 @@
                         {
                             <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.RefreshEditor.wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
                         }
-                        @*<input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.WideImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
@@ -167,7 +160,6 @@
                         {
                             <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.RefreshEditor.wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
                         }
-                        @*<input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.WideImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />*@
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
@@ -179,7 +171,6 @@
                         {
                             <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.RefreshEditor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
                         }
-                        @*<input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />*@
                     </div>
                 </div>
                 <textarea rows="6" cols="30" maxlength="90" id="wideFotoText" asp-for="WideStory" onkeyup="FotoTextChange('wide')"></textarea>
@@ -188,7 +179,7 @@
                 <input type="text" id="headerRefresh" name="headerRefresh" />
                 <input type="text" id="mainStoryRefresh" name="mainStoryRefresh" />
                 <input type="text" id="keyWordRefresh" name="keyWordRefresh" />
-                <input type="text" id="newsDateRefresh" name="newsDateRefresh" />
+                <input type="date" id="newsDateRefresh" name="newsDateRefresh" />
             </div>
         </div>
     </div>
@@ -209,7 +200,6 @@
         <div style="margin-right:20px">
             <div>Основной текст новости</div>
             <textarea asp-for="MainStory" id="mce" onkeyup="mainStorySave()"></textarea>
-            @*<textarea asp-for="MainStory" id="mainStory" onkeyup="mainStorySave()"></textarea>*@
         </div>
         <div style="display:flex;flex-direction:column;justify-content:space-between;height:210px">
             <div>

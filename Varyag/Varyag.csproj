@@ -167,6 +167,7 @@
 
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\news\" />
     <Folder Include="wwwroot\images\temp\" />
     <Folder Include="wwwroot\images\Thumbnails\" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,6 +26,7 @@ namespace Varyag.Models.ViewModels
         public string headerRefresh { get; set; }
         public string mainStoryRefresh { get; set; }
         public string keyWordRefresh { get; set; }
-        public string newsDateRefresh { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime newsDateRefresh { get; set; }
     }
 }
