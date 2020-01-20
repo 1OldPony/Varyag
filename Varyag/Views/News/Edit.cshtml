@@ -6,7 +6,7 @@
 }
 
 <hr />
-<form asp-action="SaveTempFoto" asp-route-actionType="Edit" asp-route-newId="@Model.NewsId" asp-route-newsDate="@Model.NewsDate" id="fotoEditorForm" enctype="multipart/form-data">
+<form asp-action="SaveTempFoto" asp-route-actionType="Edit" asp-route-newId="@Model.NewsId" asp-route-newsDate="@Model.NewsDate" asp-route-oldNewsDate="@ViewBag.oldNewsDate" id="fotoEditorForm" enctype="multipart/form-data">
     <div class="newsFotoEditor">
         <div style="grid-area:loader">
             <input type="file" name="newsFoto" required /><br />
@@ -184,23 +184,67 @@
                 </div>
                 <textarea rows="6" cols="30" maxlength="90" id="wideFotoText" asp-for="WideStory" onkeyup="FotoTextChange('wide')"></textarea>
             </div>
+            <div hidden>
+                <input type="text" id="headerRefresh" name="headerRefresh" />
+                <input type="text" id="mainStoryRefresh" name="mainStoryRefresh" />
+                <input type="text" id="keyWordRefresh" name="keyWordRefresh" />
+                <input type="text" id="newsDateRefresh" name="newsDateRefresh" />
+            </div>
         </div>
     </div>
 </form>
 <form asp-action="Edit" asp-route-oldNewsDate="@ViewBag.oldNewsDate" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
     <div style="width:74vw">
         <div>Заголовок, для главного вида новости</div>
-        <input asp-for="Header" class="form-control" required />
+        @if (ViewBag.RefreshEditor.headerRefresh != null)
+        {
+            <input asp-for="Header" id="header" value="@ViewBag.RefreshEditor.headerRefresh" class="form-control" onkeyup="headerSave()" required />
+        }
+        else
+        {
+            <input asp-for="Header" id="header" class="form-control" onkeyup="headerSave()" required />
+        }
     </div>
     <div style="display:flex;align-items:center">
         <div style="margin-right:20px">
             <div>Основной текст новости</div>
-            <textarea asp-for="MainStory" id="mce"></textarea>
+            <textarea asp-for="MainStory" id="mce" onkeyup="mainStorySave()"></textarea>
+            @*<textarea asp-for="MainStory" id="mainStory" onkeyup="mainStorySave()"></textarea>*@
         </div>
         <div style="display:flex;flex-direction:column;justify-content:space-between;height:210px">
             <div>
                 <div>Подраздел новости</div>
-                <select asp-for="KeyWord" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsKeyWord)))"></select>
+                @if (ViewBag.RefreshEditor.keyWordRefresh != null)
+                {
+                    switch (ViewBag.RefreshEditor.keyWordRefresh)
+                    {
+                        case "Жизнь_кораблей":
+                            <select asp-for="KeyWord" id="keyWord" onchange="keyWordSave()">
+                                <option selected="selected">Жизнь_кораблей</option>
+                                <option>СМИ</option>
+                                <option>Новые_корабли</option>
+                            </select>
+                            break;
+                        case "СМИ":
+                            <select asp-for="KeyWord" id="keyWord" onchange="keyWordSave()">
+                                <option>Жизнь_кораблей</option>
+                                <option selected="selected">СМИ</option>
+                                <option>Новые_корабли</option>
+                            </select>
+                            break;
+                        default:
+                            <select asp-for="KeyWord" id="keyWord" onchange="keyWordSave()">
+                                <option>Жизнь_кораблей</option>
+                                <option>СМИ</option>
+                                <option selected="selected">Новые_корабли</option>
+                            </select>
+                            break;
+                    }
+                }
+                else
+                {
+                    <select asp-for="KeyWord" id="keyWord" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsKeyWord)))" onchange="keyWordSave()"></select>
+                }
             </div>
             <div>
                 <div>Фотографии в галерею</div>
@@ -208,7 +252,14 @@
             </div>
             <div>
                 <div>Дата новости (xx.xx.xxxx)</div>
-                <input asp-for="NewsDate" pattern="\d{2}[.]\d{2}[.]\d{4}" required />
+                @if (ViewBag.RefreshEditor.newsDateRefresh != null)
+                {
+                    <input asp-for="NewsDate" id="newsDate" value="@ViewBag.RefreshEditor.newsDateRefresh" pattern="\d{2}[.]\d{2}[.]\d{4}" onkeyup="newsDateSave()" required />
+                }
+                else
+                {
+                    <input asp-for="NewsDate" id="newsDate" pattern="\d{2}[.]\d{2}[.]\d{4}" onkeyup="newsDateSave()" required />
+                }
             </div>
         </div>
     </div>

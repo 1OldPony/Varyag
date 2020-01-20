@@ -63,7 +63,8 @@ namespace Varyag.Controllers
             string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
             string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
             string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory, int? newId, string newsDate, string mainText)
+            string wideStory, int? newId, DateTime newsDate, DateTime oldNewsDate, string headerRefresh, string mainStoryRefresh, 
+            string keyWordRefresh, DateTime newsDateRefresh)
         {
             string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
             if (newsFoto != null)
@@ -105,13 +106,18 @@ namespace Varyag.Controllers
                     wideScale = wideFotoScale,
                     wideX = wideFotoX,
                     wideY = wideFotoY,
-                    wStory = wideStory
+                    wStory = wideStory,
+                    headerR = headerRefresh,
+                    mainStoryR = mainStoryRefresh,
+                    keyWordR = keyWordRefresh,
+                    newsDateR = newsDateRefresh
                 });
             }
             else
             {
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
                 string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", newsDate);
+
                 string pathFrom = "", pathTo = "";
 
                 switch (fotoType)
@@ -155,7 +161,12 @@ namespace Varyag.Controllers
                     wideScale = wideFotoScale,
                     wideX = wideFotoX,
                     wideY = wideFotoY,
-                    wStory = wideStory });
+                    wStory = wideStory,
+                    headerR = headerRefresh,
+                    mainStoryR = mainStoryRefresh,
+                    keyWordR = keyWordRefresh,
+                    newsDateR = newsDateRefresh
+                });
             }
         }
 
@@ -181,7 +192,8 @@ namespace Varyag.Controllers
         public IActionResult Create(string shortScale, string shortX,
             string shortY, string shStory, string midScale, string midX,
             string midY, string midStory, string wideScale, string wideX,
-            string wideY, string wStory)
+            string wideY, string wStory, string headerR, string mainStoryR,
+            string keyWordR, string newsDateR)
         {
             ViewBag.Editor = new EditorModel()
             {
@@ -196,7 +208,11 @@ namespace Varyag.Controllers
                 wideFotoScale = wideScale,
                 wideFotoX = wideX,
                 wideFotoY = wideY,
-                wideStory = wStory
+                wideStory = wStory,
+                headerRefresh = headerR,
+                mainStoryRefresh = mainStoryR,
+                keyWordRefresh = keyWordR,
+                newsDateRefresh = newsDateR
             };
 
             return View();
@@ -212,7 +228,6 @@ namespace Varyag.Controllers
         {
             if (ModelState.IsValid)
             {
-                string n = news.NewsDate;
                 string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
                 string pathForFinalTemp = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate);
                 string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
@@ -229,8 +244,6 @@ namespace Varyag.Controllers
                 {
                     string pathStart = Path.Combine(pathTemp, foto);
                     string pathEnd = Path.Combine(pathForFinalTemp, foto);
-                    //FileInfo file = new FileInfo(pathStart);
-                    //file.MoveTo(pathEnd);
 
                     System.IO.File.Move(pathStart, pathEnd);
 
@@ -284,7 +297,8 @@ namespace Varyag.Controllers
         // GET: News/Edit/5
         public async Task<IActionResult> Edit(int? id, string shStory, string midStory, string wStory, 
             string shortScale, string shortX, string shortY, string midScale, string midX, 
-            string midY, string wideScale, string wideX, string wideY)
+            string midY, string wideScale, string wideX, string wideY, string headerR, string mainStoryR,
+            string keyWordR, string newsDateR)
         {
             if (id == null)
             {
@@ -311,7 +325,11 @@ namespace Varyag.Controllers
                 middleFotoScale = midScale,
                 wideFotoX = wideX,
                 wideFotoY = wideY,
-                wideFotoScale = wideScale
+                wideFotoScale = wideScale,
+                headerRefresh = headerR,
+                mainStoryRefresh = mainStoryR,
+                keyWordRefresh = keyWordR,
+                newsDateRefresh = newsDateR
             };
 
             ViewBag.ShortImgX = LittleHelper.PercentToCoordinates(news.ShortImgX);

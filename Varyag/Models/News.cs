@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -12,7 +13,8 @@ namespace Varyag.Models
         [DisplayName("Основной текст")]
         public string MainStory { get; set; }
         [DisplayName("Дата новости")]
-        public string NewsDate { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime NewsDate { get; set; }
         [DisplayName("Ключевое слово")]
         public NewsKeyWord KeyWord { get; set; }
         [DisplayName("Путь к папке с фотографиями в галерею")]

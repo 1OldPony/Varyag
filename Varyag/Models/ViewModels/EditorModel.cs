@@ -21,5 +21,10 @@ namespace Varyag.Models.ViewModels
         public string wideFotoX { get; set; }
         public string wideFotoY { get; set; }
         public string wideStory { get; set; }
+
+        public string headerRefresh { get; set; }
+        public string mainStoryRefresh { get; set; }
+        public string keyWordRefresh { get; set; }
+        public string newsDateRefresh { get; set; }
     }
 }

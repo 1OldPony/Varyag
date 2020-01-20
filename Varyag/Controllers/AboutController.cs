@@ -42,7 +42,27 @@ namespace Varyag.Controllers
                     break;
             }
 
-            news = news.OrderBy(n=>n.NewsDate).ToList();
+            //List<NewsViewModel> newsDateTimeDate = new List<NewsViewModel>();
+
+            //foreach (var item in news)
+            //{
+            //    string[] stringDate = item.NewsDate.Split('.');
+            //    int[] date = new int[stringDate.Length];
+            //    for (int i = 0; i < stringDate.Length; i++)
+            //    {
+            //        date[i] = int.Parse(stringDate[i]);
+            //    }
+            //    DateTime newsDate = new DateTime(date[2], date[1], date[0]).Date;
+
+            //    newsDateTimeDate.Add(new NewsViewModel { Header=item.Header, KeyWord=item.KeyWord, MainStory=item.MainStory, MiddleFotoPreview=item.MiddleFotoPreview, MiddleImgScale=item.MiddleImgScale, MiddleImgX=item.MiddleImgX,
+            //     MiddleImgY=item.MiddleImgY, MiddleStory=item.MiddleStory, NewsId=item.NewsId, PathToGallery=item.PathToGallery, ShortFotoPreview=item.ShortFotoPreview, ShortImgScale=item.ShortImgScale, ShortImgX=item.ShortImgX,
+            //     ShortImgY=item.ShortImgY, ShortStory=item.ShortStory, WideFotoPreview=item.WideFotoPreview, WideImgScale=item.WideImgScale, WideImgX=item.WideImgX, WideImgY=item.WideImgY, WideStory=item.WideStory,
+            //     NewsDate = newsDate});
+            //}
+
+            //newsDateTimeDate.OrderByDescending(n=>n.NewsDate);
+            
+
 
             if (news.Count >= 10)
             {

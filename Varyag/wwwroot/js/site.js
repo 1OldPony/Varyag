@@ -154,39 +154,6 @@ function FotoAttrChange(fotoType) {
     }
 }
 
-
-//////////////////////////////////редактируем фото при редактировании новости/////////////////////////////////////////
-//$("#editorShort.editor").on("input", function () {
-//    var xCoordinateShort = $("#shortFotoX").val() + "%";
-//    var yCoordinateShort = $("#shortFotoY").val() + "%";
-//    var scaleShort = $("#shortFotoScale").val() + "%";
-//    $("#editor.partNewsElementViewShort").css({
-//        "background-position-x": xCoordinateShort,
-//        "background-position-y": yCoordinateShort,
-//        "background-size": scaleShort
-//    });
-//})
-//$("#editorMiddle.editor").on("input", function () {
-//    var xCoordinateMiddle = $("#middleFotoX").val() + "%";
-//    var yCoordinateMiddle = $("#middleFotoY").val() + "%";
-//    var scaleMiddle = $("#middleFotoScale").val() + "%";
-//    $("#editor.partNewsElementViewMiddle").css({
-//        "background-position-x": xCoordinateMiddle,
-//        "background-position-y": yCoordinateMiddle,
-//        "background-size": scaleMiddle
-//    });
-//})
-//$("#editorWide.editor").on("input", function () {
-//    var xCoordinateWide = $("#wideFotoX").val() + "%";
-//    var yCoordinateWide = $("#wideFotoY").val() + "%";
-//    var scaleWide = $("#wideFotoScale").val() + "%";
-//    $("#editor.partNewsElementViewWide").css({
-//        "background-position-x": xCoordinateWide,
-//        "background-position-y": yCoordinateWide,
-//        "background-size": scaleWide
-//    });
-//})
-
 /////////////////////////передаем текст новостных превью при загрузках новых фото/////////////////////////////
 $("#newsFotoUpload").click(function () {
     annotationToTextarea();
@@ -197,6 +164,25 @@ function annotationToTextarea() {
     $("#shortFotoText").val($("#shortFotoNewsText").text().trim());
     $("#middleFotoText").val($("#middleFotoNewsText").text().trim());
     $("#wideFotoText").val($("#wideFotoNewsText").text().trim());
+}
+
+function headerSave() {
+    $("#headerRefresh").val($("#header").val());
+}
+
+function mainStorySave() {
+    //var x = $("[name=mainStory]").val();
+    //alert($('#tinymce').tinymce().getContent());
+    $("#mainStoryRefresh").val($('#mce').html());
+    //$("#mainStoryRefresh").val($("#mce").val());
+}
+
+function keyWordSave() {
+    $("#keyWordRefresh").val($("#keyWord").val());
+}
+
+function newsDateSave() {
+    $("#newsDateRefresh").val($("#newsDate").val());
 }
 
 ///////////////сохраняем параметры редактора фоток превью новостей в основную форму,//////////////
