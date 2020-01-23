@@ -7,7 +7,7 @@
 
 <hr />
 
-<form asp-action="SaveTempFoto" asp-route-actionType="create" id="fotoEditorForm" enctype="multipart/form-data">
+<form asp-action="SaveTempFoto" asp-route-actionType="create" asp-route-oldNewsDate="@ViewBag.oldNewsDate" id="fotoEditorForm" enctype="multipart/form-data">
     <div class="newsFotoEditor">
         <div style="grid-area:loader">
             <input type="file" name="newsFoto" required /><br />
@@ -18,7 +18,7 @@
            <div class="partNewsElementViewShort" id="creator">
                 <div class="annotation">
                     <div class="annotationText" id="shortFotoNewsText">
-                        @ViewBag.Editor.shortStory
+                        @ViewBag.RefreshEditor.shortStory
                     </div>
                 </div>
             </div>
@@ -26,15 +26,15 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.Editor.shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                        <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.RefreshEditor.shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.Editor.shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                        <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.RefreshEditor.shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.Editor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                        <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.RefreshEditor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
                     </div>
                 </div>
                 <textarea rows="6" cols="30" maxlength="55" name="shortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
@@ -45,7 +45,7 @@
             <div class="partNewsElementViewMiddle" id="creator">
                 <div class="annotation">
                     <div class="annotationText" id="middleFotoNewsText">
-                        @ViewBag.Editor.middleStory
+                        @ViewBag.RefreshEditor.middleStory
                     </div>
                 </div>
             </div>
@@ -53,15 +53,15 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.Editor.middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.RefreshEditor.middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.Editor.middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.RefreshEditor.middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.Editor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                        <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.RefreshEditor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
                     </div>
                 </div>
                 <textarea rows="6" cols="30" maxlength="55" name="middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
@@ -71,7 +71,7 @@
             <div class="partNewsElementViewWide" id="creator">
                 <div class="annotation">
                     <div class="annotationText" id="wideFotoNewsText">
-                        @ViewBag.Editor.wideStory
+                        @ViewBag.RefreshEditor.wideStory
                     </div>
                 </div>
             </div>
@@ -79,22 +79,21 @@
                 <div id="top" class="controlGroup">
                     <div class="controlGroup">
                         <div>Ось Х</div>
-                        <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.Editor.wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.RefreshEditor.wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
                     </div>
                     <div class="controlGroup">
                         <div>Ось Y</div>
-                        <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.Editor.wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.RefreshEditor.wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
                     </div>
                     <div class="controlGroup">
                         <div>Масштаб</div>
-                        <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.Editor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                        <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.RefreshEditor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
                     </div>
                 </div>
-                <textarea rows="6" cols="30" maxlength="90" name="wideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
+                <textarea asp-for="WideStory" rows="6" cols="30" maxlength="90" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
             </div>
             <div hidden>
                 <input type="text" id="headerRefresh" name="headerRefresh" />
-                <input type="text" id="mainStoryRefresh" name="mainStoryRefresh" />
                 <input type="text" id="keyWordRefresh" name="keyWordRefresh" />
                 <input type="text" id="newsDateRefresh" name="newsDateRefresh" />
             </div>
@@ -104,7 +103,7 @@
 <form asp-action="Create" enctype="multipart/form-data" style="display:flex;flex-direction:column;margin:2vw">
     <div style="width:74vw">
         <div>Заголовок, для главного вида новости</div>
-        <input asp-for="Header" class="form-control" required />
+            <input asp-for="Header" maxlength="170" id="header" class="form-control" onkeyup="headerSave()" required />
     </div>
     <div style="display:flex;align-items:center">
         <div style="margin-right:20px">
@@ -114,7 +113,37 @@
         <div style="display:flex;flex-direction:column;justify-content:space-between;height:210px">
             <div>
                 <div>Подраздел новости</div>
-                <select asp-for="KeyWord" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsKeyWord)))"></select>
+                @if (ViewBag.RefreshEditor.keyWordRefresh != null)
+                {
+                    switch (ViewBag.RefreshEditor.keyWordRefresh)
+                    {
+                        case "Жизнь_кораблей":
+                            <select asp-for="KeyWord" id="keyWord" onchange="keyWordSave()">
+                                <option selected="selected">Жизнь_кораблей</option>
+                                <option>СМИ</option>
+                                <option>Новые_корабли</option>
+                            </select>
+                            break;
+                        case "СМИ":
+                            <select asp-for="KeyWord" id="keyWord" onchange="keyWordSave()">
+                                <option>Жизнь_кораблей</option>
+                                <option selected="selected">СМИ</option>
+                                <option>Новые_корабли</option>
+                            </select>
+                            break;
+                        default:
+                            <select asp-for="KeyWord" id="keyWord" onchange="keyWordSave()">
+                                <option>Жизнь_кораблей</option>
+                                <option>СМИ</option>
+                                <option selected="selected">Новые_корабли</option>
+                            </select>
+                            break;
+                    }
+                }
+                else
+                {
+                    <select asp-for="KeyWord" id="keyWord" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsKeyWord)))" onchange="keyWordSave()"></select>
+                }
             </div>
             <div>
                 <div>Фотографии в галерею</div>
@@ -122,24 +151,31 @@
             </div>
             <div>
                 <div>Дата новости (xx.xx.xxxx)</div>
-                <input asp-for="NewsDate" pattern="\d{2}[.]\d{2}[.]\d{4}" required />
+                @if (ViewBag.RefreshEditor.newsDateRefresh != null)
+                {
+                    <input asp-for="NewsDate" id="newsDate" value="@ViewBag.RefreshEditor.newsDateRefresh" pattern="\d{2}[.]\d{2}[.]\d{4}" onkeyup="newsDateSave()" required />
+                }
+                else
+                {
+                    <input asp-for="NewsDate" id="newsDate" pattern="\d{2}[.]\d{2}[.]\d{4}" onkeyup="newsDateSave()" required />
+                }
             </div>
         </div>
     </div>
 
     <div hidden>
-        <input asp-for="ShortImgScale" value="@ViewBag.Editor.shortFotoScale" id="ShortImgScale" />
-        <input asp-for="ShortImgX" value="@ViewBag.Editor.shortFotoX" id="ShortImgX" />
-        <input asp-for="ShortImgY" value="@ViewBag.Editor.shortFotoY" id="ShortImgY" />
-        <input asp-for="ShortStory" value="@ViewBag.Editor.shortStory" id="ShortStory" />
-        <input asp-for="MiddleImgScale" value="@ViewBag.Editor.middleFotoScale" id="MiddleImgScale" />
-        <input asp-for="MiddleImgX" value="@ViewBag.Editor.middleFotoX" id="MiddleImgX" />
-        <input asp-for="MiddleImgY" value="@ViewBag.Editor.middleFotoY" id="MiddleImgY" />
-        <input asp-for="MiddleStory" value="@ViewBag.Editor.middleStory" id="MiddleStory" />
-        <input asp-for="WideImgScale" value="@ViewBag.Editor.wideFotoScale" id="WideImgScale" />
-        <input asp-for="WideImgX" value="@ViewBag.Editor.wideFotoX" id="WideImgX" />
-        <input asp-for="WideImgY" value="@ViewBag.Editor.wideFotoY" id="WideImgY" />
-        <input asp-for="WideStory" value="@ViewBag.Editor.wideStory" id="WideStory" />
+        <input asp-for="ShortImgScale" value="@ViewBag.RefreshEditor.shortFotoScale" id="ShortImgScale" />
+        <input asp-for="ShortImgX" value="@ViewBag.RefreshEditor.shortFotoX" id="ShortImgX" />
+        <input asp-for="ShortImgY" value="@ViewBag.RefreshEditor.shortFotoY" id="ShortImgY" />
+        <input asp-for="ShortStory" value="@ViewBag.RefreshEditor.shortStory" id="ShortStory" />
+        <input asp-for="MiddleImgScale" value="@ViewBag.RefreshEditor.middleFotoScale" id="MiddleImgScale" />
+        <input asp-for="MiddleImgX" value="@ViewBag.RefreshEditor.middleFotoX" id="MiddleImgX" />
+        <input asp-for="MiddleImgY" value="@ViewBag.RefreshEditor.middleFotoY" id="MiddleImgY" />
+        <input asp-for="MiddleStory" value="@ViewBag.RefreshEditor.middleStory" id="MiddleStory" />
+        <input asp-for="WideImgScale" value="@ViewBag.RefreshEditor.wideFotoScale" id="WideImgScale" />
+        <input asp-for="WideImgX" value="@ViewBag.RefreshEditor.wideFotoX" id="WideImgX" />
+        <input asp-for="WideImgY" value="@ViewBag.RefreshEditor.wideFotoY" id="WideImgY" />
+        <input asp-for="WideStory" value="@ViewBag.RefreshEditor.wideStory" id="WideStory" />
     </div>
     <div style="display:flex;">
         <input type="button" value="Сохранить данные из редактора" id="saveEditorParams" style="width:300px" />

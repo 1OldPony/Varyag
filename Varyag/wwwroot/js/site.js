@@ -157,6 +157,9 @@ function FotoAttrChange(fotoType) {
 /////////////////////////передаем текст новостных превью при загрузках новых фото/////////////////////////////
 $("#newsFotoUpload").click(function () {
     annotationToTextarea();
+    //headerSave();
+    keyWordSave();
+    newsDateSave();
     $("#fotoEditorForm").submit();
 })
 
@@ -166,22 +169,18 @@ function annotationToTextarea() {
     $("#wideFotoText").val($("#wideFotoNewsText").text().trim());
 }
 
-function headerSave() {
-    $("#headerRefresh").val($("#header").val());
-}
-
-function mainStorySave() {
-    //var x = $("[name=mainStory]").val();
-    //alert($('#tinymce').tinymce().getContent());
-    $("#mainStoryRefresh").val($('#mce').html());
-    //$("#mainStoryRefresh").val($("#mce").val());
-}
+//function headerSave() {
+//    newsSaveButtonDisable();
+//    $("#headerRefresh").val($("#header").val());
+//}
 
 function keyWordSave() {
+    //newsSaveButtonDisable();
     $("#keyWordRefresh").val($("#keyWord").val());
 }
 
 function newsDateSave() {
+    //newsSaveButtonDisable();
     $("#newsDateRefresh").val($("#newsDate").val());
 }
 

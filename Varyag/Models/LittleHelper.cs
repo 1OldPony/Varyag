@@ -61,5 +61,45 @@ namespace Varyag.Models
             File.Delete(pathTo);
             File.Move(pathFrom, pathTo);
         }
+
+        public static List<NewsViewModel> NewsToSortedViewModel (List<News> news)
+        {
+            List<NewsViewModel> newsIntDate = new List<NewsViewModel>();
+
+            foreach (var item in news)
+            {
+                string[] stringDate = item.NewsDate.Split('.');
+                int newsDate = int.Parse(stringDate[2] + stringDate[1] + stringDate[0]);
+
+                newsIntDate.Add(new NewsViewModel
+                {
+                    Header = item.Header,
+                    KeyWord = item.KeyWord,
+                    MainStory = item.MainStory,
+                    MiddleFotoPreview = item.MiddleFotoPreview,
+                    MiddleImgScale = item.MiddleImgScale,
+                    MiddleImgX = item.MiddleImgX,
+                    MiddleImgY = item.MiddleImgY,
+                    MiddleStory = item.MiddleStory,
+                    NewsId = item.NewsId,
+                    PathToGallery = item.PathToGallery,
+                    ShortFotoPreview = item.ShortFotoPreview,
+                    ShortImgScale = item.ShortImgScale,
+                    ShortImgX = item.ShortImgX,
+                    ShortImgY = item.ShortImgY,
+                    ShortStory = item.ShortStory,
+                    WideFotoPreview = item.WideFotoPreview,
+                    WideImgScale = item.WideImgScale,
+                    WideImgX = item.WideImgX,
+                    WideImgY = item.WideImgY,
+                    WideStory = item.WideStory,
+                    NewsDate = newsDate
+                });
+            }
+
+            newsIntDate=newsIntDate.OrderByDescending(n => n.NewsDate).ToList();
+
+            return newsIntDate;
+        }
     }
 }

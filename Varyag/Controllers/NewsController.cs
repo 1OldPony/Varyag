@@ -27,35 +27,35 @@ namespace Varyag.Controllers
         // GET: News
         public async Task<IActionResult> Index(int? page)
         {
-            List<News> AllNews = await _context.News.ToListAsync();
+            List<News> allNews = await _context.News.ToListAsync();
 
-            if (AllNews.Count >= 10)
+            if (allNews.Count >= 10)
             {
                 if (page == null)
                     page = 0;
                 else
                     page--;
 
-                if (AllNews.Count % 10 == 0)
+                if (allNews.Count % 10 == 0)
                 {
-                    ViewBag.Pages = AllNews.Count / 10;
-                    AllNews = AllNews.GetRange(page.Value * 10, 10);
+                    ViewBag.Pages = allNews.Count / 10;
+                    allNews = allNews.GetRange(page.Value * 10, 10);
                 }
                 else if (page == 0)
                 {
-                    ViewBag.Pages = (AllNews.Count / 10) + 1;
-                    AllNews = AllNews.GetRange(page.Value * 10, 10);
+                    ViewBag.Pages = (allNews.Count / 10) + 1;
+                    allNews = allNews.GetRange(page.Value * 10, 10);
                 }
                 else
                 {
-                    ViewBag.Pages = (AllNews.Count / 10) + 1;
-                    AllNews = AllNews.GetRange(page.Value * 10, AllNews.Count % 10);
+                    ViewBag.Pages = (allNews.Count / 10) + 1;
+                    allNews = allNews.GetRange(page.Value * 10, allNews.Count % 10);
                 }
             }
             else
-                AllNews = AllNews.GetRange(0, AllNews.Count);
+                allNews = allNews.GetRange(0, allNews.Count);
 
-            return View(AllNews.OrderByDescending(x=>x.NewsDate));
+            return View(LittleHelper.NewsToSortedViewModel(allNews));
         }
 
         [HttpPost]
@@ -63,8 +63,8 @@ namespace Varyag.Controllers
             string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
             string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
             string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory, int? newId, DateTime newsDate, DateTime oldNewsDate, string headerRefresh, string mainStoryRefresh, 
-            string keyWordRefresh, DateTime newsDateRefresh)
+            string wideStory, int? newId, string newsDate, string oldNewsDate, 
+            string keyWordRefresh, string newsDateRefresh)
         {
             string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
             if (newsFoto != null)
@@ -107,8 +107,6 @@ namespace Varyag.Controllers
                     wideX = wideFotoX,
                     wideY = wideFotoY,
                     wStory = wideStory,
-                    headerR = headerRefresh,
-                    mainStoryR = mainStoryRefresh,
                     keyWordR = keyWordRefresh,
                     newsDateR = newsDateRefresh
                 });
@@ -162,8 +160,6 @@ namespace Varyag.Controllers
                     wideX = wideFotoX,
                     wideY = wideFotoY,
                     wStory = wideStory,
-                    headerR = headerRefresh,
-                    mainStoryR = mainStoryRefresh,
                     keyWordR = keyWordRefresh,
                     newsDateR = newsDateRefresh
                 });
@@ -192,10 +188,9 @@ namespace Varyag.Controllers
         public IActionResult Create(string shortScale, string shortX,
             string shortY, string shStory, string midScale, string midX,
             string midY, string midStory, string wideScale, string wideX,
-            string wideY, string wStory, string headerR, string mainStoryR,
-            string keyWordR, string newsDateR)
+            string wideY, string wStory, string keyWordR, string newsDateR)
         {
-            ViewBag.Editor = new EditorModel()
+            ViewBag.RefreshEditor = new EditorModel()
             {
                 shortFotoScale = shortScale,
                 shortFotoX = shortX,
@@ -209,8 +204,6 @@ namespace Varyag.Controllers
                 wideFotoX = wideX,
                 wideFotoY = wideY,
                 wideStory = wStory,
-                headerRefresh = headerR,
-                mainStoryRefresh = mainStoryR,
                 keyWordRefresh = keyWordR,
                 newsDateRefresh = newsDateR
             };
@@ -297,8 +290,7 @@ namespace Varyag.Controllers
         // GET: News/Edit/5
         public async Task<IActionResult> Edit(int? id, string shStory, string midStory, string wStory, 
             string shortScale, string shortX, string shortY, string midScale, string midX, 
-            string midY, string wideScale, string wideX, string wideY, string headerR, string mainStoryR,
-            string keyWordR, string newsDateR)
+            string midY, string wideScale, string wideX, string wideY, string keyWordR, string newsDateR)
         {
             if (id == null)
             {
@@ -326,8 +318,6 @@ namespace Varyag.Controllers
                 wideFotoX = wideX,
                 wideFotoY = wideY,
                 wideFotoScale = wideScale,
-                headerRefresh = headerR,
-                mainStoryRefresh = mainStoryR,
                 keyWordRefresh = keyWordR,
                 newsDateRefresh = newsDateR
             };

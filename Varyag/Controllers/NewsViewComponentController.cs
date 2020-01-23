@@ -21,8 +21,10 @@ namespace Varyag.Controllers
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            List<News> news = await db.News.OrderByDescending(n=>n.NewsDate).Take(3).OrderByDescending(x => x.NewsDate).ToListAsync();
-            return View(news);
+            List<News> news = await db.News.ToListAsync();
+            List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
+            List<NewsViewModel> lastNews = sortedNews.AsEnumerable().Take(3).ToList();
+            return View(lastNews);
         }
     }
 }
