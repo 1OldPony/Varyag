@@ -40,26 +40,26 @@ namespace Varyag.Models.ViewModels
         public string NumberOfOars { get; set; }
 
         [DisplayName("Мощность двигателя, л.с.")]
-        public int? EnginePower { get; set; }
+        public string EnginePower { get; set; }
 
         [DisplayName("Скорость под двигателем, узлов")]
-        public int? Speed { get; set; }
+        public string Speed { get; set; }
 
         [DisplayName("Площадь парусности, м2")]
         [MaxLength(10)]
         public string SailArea { get; set; }
 
         [DisplayName("Количество спальных мест, шт")]
-        public int? SleepingAreas { get; set; }
+        public string SleepingAreas { get; set; }
 
         [DisplayName("Пассажировместимость, чел")]
-        public int? PassengerCap { get; set; }
+        public string PassengerCap { get; set; }
 
         [DisplayName("Запас топлива, л")]
-        public int? FuelCap { get; set; }
+        public string FuelCap { get; set; }
 
         [DisplayName("Запас пресной воды, л")]
-        public int? FreshWaterCap { get; set; }
+        public string FreshWaterCap { get; set; }
 
         [DisplayName("Цена, т.р.")]
         public string Price { get; set; }

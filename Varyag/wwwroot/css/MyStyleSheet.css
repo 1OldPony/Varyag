@@ -259,9 +259,9 @@
     justify-content: center;
     font-weight: bolder;
     font-size: 2rem;
-    background: linear-gradient(to top, rgba(255, 255, 255),rgba(0, 0, 0, 0));
-    /*background: linear-gradient(to top, rgb(209, 224, 249),rgba(0, 0, 0, 0));*/
-    /*background: linear-gradient(to top, rgb(174, 201, 224),rgba(0, 0, 0, 0));*/
+    background: white;
+    background: rgba(255, 255,255,0.9);
+    box-shadow: 0px -20px 20px 0px rgba(255, 255, 255, 0.9);
 }
 
 .arrow {

@@ -113,7 +113,7 @@ namespace Varyag.Controllers
                     break;
             }
 
-            return View(items);
+            return View(LittleHelper.ProjectsToSortedViewModel(items));
         }
     }
 }

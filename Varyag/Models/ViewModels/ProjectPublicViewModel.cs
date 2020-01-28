@@ -5,9 +5,12 @@ using System.ComponentModel.DataAnnotations;
 namespace Varyag.Models
 {
 
-    public class Project
+    public class ProjectPublicViewModel
     {
         public int ProjectID { get; set; }
+
+        [DisplayName("Порядковый номер")]
+        public int Order { get; set; }
 
         [DisplayName("Название проекта")]
         public string Name { get; set; }
@@ -117,7 +120,5 @@ namespace Varyag.Models
         public byte[] ShipShemeFull { get; set; }
         [DisplayName("Главная фотка")]
         public byte[] MainFoto { get; set; }
-
-        public List<Foto> ShipFotos { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -46,8 +47,9 @@ namespace Varyag.Controllers
         // GET: Projects
         public async Task<IActionResult> Index()
         {
-            //SelectList Types = _context.Project.Ty
-            return View(await _context.Project.ToListAsync());
+            List<Project> projects = await _context.Project.ToListAsync();
+
+            return View(LittleHelper.ProjectsToSortedViewModel(projects));
         }
 
         // GET: Projects/Details/5

@@ -101,5 +101,66 @@ namespace Varyag.Models
 
             return newsIntDate;
         }
+
+        public static List<ProjectPublicViewModel> ProjectsToSortedViewModel(List<Project> projects)
+        {
+            List<ProjectPublicViewModel> orderedProjects = new List<ProjectPublicViewModel>();
+            foreach (var item in projects)
+            {
+                string[] parts1 = item.Name.Split('"');
+                string[] parts2 = parts1[1].Split('-');
+                orderedProjects.Add(new ProjectPublicViewModel
+                {
+                    Order = int.Parse(parts2[1]),
+                    BoatRow = item.BoatRow,
+                    BoatSail = item.BoatSail,
+                    BoatTraditional = item.BoatTraditional,
+                    BoatYal = item.BoatYal,
+                    Botik = item.Botik,
+                    Deep = item.Deep,
+                    Description = item.Description,
+                    EnginePower = item.EnginePower,
+                    FreshWaterCap = item.FreshWaterCap,
+                    FuelCap = item.FuelCap,
+                    KaterCabin = item.KaterCabin,
+                    KaterFish = item.KaterFish,
+                    KaterPass = item.KaterPass,
+                    KaterProject = item.KaterProject,
+                    KaterRow = item.KaterRow,
+                    LadyaProject = item.LadyaProject,
+                    LadyaRow = item.LadyaRow,
+                    LadyaSail = item.LadyaSail,
+                    Length = item.Length,
+                    MainFoto = item.MainFoto,
+                    MaketCinema = item.MaketCinema,
+                    MaketDesign = item.MaketDesign,
+                    MaketMuseum = item.MaketMuseum,
+                    MaketStudy = item.MaketStudy,
+                    Mass = item.Mass,
+                    Motosailer = item.Motosailer,
+                    Name = item.Name,
+                    NumberOfOars = item.NumberOfOars,
+                    PassengerCap = item.PassengerCap,
+                    Price = item.Price,
+                    ProjectID = item.ProjectID,
+                    SailArea = item.SailArea,
+                    SailboatHistorical = item.SailboatHistorical,
+                    SailboatProject = item.SailboatProject,
+                    SailboatStudy = item.SailboatStudy,
+                    ShipSheme = item.ShipSheme,
+                    ShipShemeFull = item.ShipShemeFull,
+                    Shvertbot = item.Shvertbot,
+                    SleepingAreas = item.SleepingAreas,
+                    Speed = item.Speed,
+                    Volume = item.Volume,
+                    Windth = item.Windth,
+                    Yacht = item.Yacht
+                });
+            }
+
+            orderedProjects = orderedProjects.OrderBy(x => x.Order).ToList();
+
+            return orderedProjects;
+        }
     }
 }
