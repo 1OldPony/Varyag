@@ -15,33 +15,33 @@ $(document).ready(function () {
         language: 'ru',
         plugins: 'code',
         toolbar: 'code'
-    });
+    });    
+});
 
-    //////////////////добавление яндекс карт, точка на варяге//////////////////////
-    ymaps.ready(function () {
-        var mapVaryag = new ymaps.Map("ourLocation", {
-            center: [61.7702, 34.4359],
-            zoom: 14
-        });
-        var VaryagMark = new ymaps.Placemark([61.7702, 34.4359], {
-            balloonContent: 'Верфь деревянного судостроения "Вряг"<br />varyag@onego.ru<br />8 814 273 35 80',
-            iconContent: ''
-        },
-            {
+//////////////////добавление яндекс карт, точка на варяге//////////////////////
+ymaps.ready(function () {
+    var mapVaryag = new ymaps.Map("ourLocation", {
+        center: [61.7702, 34.4359],
+        zoom: 14
+    });
+    var VaryagMark = new ymaps.Placemark([61.7702, 34.4359], {
+        balloonContent: 'Верфь деревянного судостроения "Вряг"<br />varyag@onego.ru<br />8 814 273 35 80',
+        iconContent: ''
+    },
+        {
             preset: 'islands#redIcon'
         });
 
-        mapVaryag.controls.remove('zoomControl');
-        mapVaryag.controls.remove('geolocationControl');
-        mapVaryag.controls.remove('searchControl');
-        mapVaryag.controls.remove('routeButtonControl');
-        mapVaryag.controls.remove('trafficControl');
-        mapVaryag.controls.remove('rulerControl');
-        mapVaryag.controls.remove('typeSelector'); 
-        mapVaryag.controls.remove('fullscreenControl');
+    mapVaryag.controls.remove('zoomControl');
+    mapVaryag.controls.remove('geolocationControl');
+    mapVaryag.controls.remove('searchControl');
+    mapVaryag.controls.remove('routeButtonControl');
+    mapVaryag.controls.remove('trafficControl');
+    mapVaryag.controls.remove('rulerControl');
+    mapVaryag.controls.remove('typeSelector');
+    mapVaryag.controls.remove('fullscreenControl');
 
-        mapVaryag.geoObjects.add(VaryagMark); 
-    });
+    mapVaryag.geoObjects.add(VaryagMark);
 });
 
 /////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
@@ -175,12 +175,10 @@ function annotationToTextarea() {
 //}
 
 function keyWordSave() {
-    //newsSaveButtonDisable();
     $("#keyWordRefresh").val($("#keyWord").val());
 }
 
 function newsDateSave() {
-    //newsSaveButtonDisable();
     $("#newsDateRefresh").val($("#newsDate").val());
 }
 

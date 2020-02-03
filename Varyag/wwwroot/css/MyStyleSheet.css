@@ -196,7 +196,7 @@
     grid-template-columns: repeat(9, 32.5vw);
     grid-template-rows: repeat(5, auto);
     grid-auto-flow: column;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     margin-top: 1vw;
     margin-bottom: 1vw;
     margin-left: auto;
@@ -214,19 +214,19 @@
 
 .singleCustomer {
     text-align: center;
-    padding: 5vh;
-    padding-bottom: 1vh;
-    padding-top: 1vh;
+    padding: 1vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.singleCustomer p{
+    font-size: 1.6rem;
+}
+
 #1.singleCustomer {
     text-align: center;
-    padding: 5vh;
-    padding-bottom: 1vh;
-    padding-top: 1vh;
+    padding: 1vh;
     grid-column: 1;
     grid-row: 1 / 2;
 }
@@ -489,6 +489,7 @@ img {
     justify-content: space-between;
     align-items: center;
     font-size: 16px;
+    font-weight:bold;
 }
 
 .nav-element-top {
@@ -508,7 +509,9 @@ img {
     }
 
 .menu-nav-top {
-    background-color: white;
+    /*background-color: white;*/
+    font-family:Tahoma;
+
 }
 
 .menu-top-element {
@@ -518,6 +521,14 @@ img {
     align-items: center;
     width: 100%;
     margin-top: 10px;
+}
+
+.aboutUsMuseum{
+    display:none;
+}
+
+.aboutUsGoto {
+    display:none;
 }
 
 .category {
@@ -578,8 +589,8 @@ img {
     font-weight: bold;
     font-size: 1.3rem;
     color: red;
-    text-decoration: overline;
-    text-decoration-style: dotted;
+    /*text-decoration: overline;*/
+    /*text-decoration-style: dotted;*/
     margin-bottom:10px;
 }
 
@@ -1123,7 +1134,6 @@ img {
 .socialNetworks {
     display: flex;
     flex-direction: column;
-    /*width:47vw;*/
 }
 
 .socialVidgets {
@@ -1131,17 +1141,26 @@ img {
     display:flex;
 }
 
+.socialButtons {
+    display: none;
+}
+
 .footerContactsLong {
+    display:flex;
+    align-items:center;
+    justify-content:center;
     width:260px;
     font-size:1.2rem;
     text-align:center;
 }
 
 .footerContactsShort {
-    display:none;
+    display: none;
     width: 260px;
     font-size: 1.2rem;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .aboutMe {
@@ -1409,6 +1428,18 @@ img {
         margin-right: auto;
         width: auto;
         grid-template-columns:repeat(9,100vw);
+    }
+
+    .singleCustomer {
+        padding: 5vh;
+        padding-bottom: 1vh;
+        padding-top: 1vh;
+    }
+
+    #1.singleCustomer {
+        padding: 5vh;
+        padding-bottom: 1vh;
+        padding-top: 1vh;
     }
 
     .control {
@@ -1805,6 +1836,10 @@ img {
         grid-template-rows: auto;
         grid-template-columns: 100%;
     }
+
+    .aboutUsGoto {
+        display: initial;
+    }
 }
 
 @media (max-width:586px) {
@@ -1916,7 +1951,7 @@ img {
     }
 
     .footerContactsShort {
-        display:initial;
+        display:flex;
         width: 260px;
         font-size: 1.2rem;
         text-align: center;
@@ -1983,6 +2018,24 @@ img {
     }
 
     #cinemaTopNav {
+        display: initial;
+    }
+
+    .socialNetworks {
+        display: flex;
+        flex-direction: column;
+        align-content:center
+    }
+
+    .socialVidgets {
+        display: none;
+    }
+
+    .socialButtons {
+        display:flex;
+    }
+
+    .aboutUsMuseum {
         display: initial;
     }
 }

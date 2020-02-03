@@ -27,7 +27,7 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Лодки/Прогулочные+гребные+лодки")]
+        [Route("Каталог/Лодки/Прогулочные_гребные_лодки")]
         public IActionResult BoatsRow()
         {
             ViewData["Title"] = "Купить деревянные прогулочные гребные лодки от производителя";
@@ -207,7 +207,7 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Парусники/Яхты")]
+        [Route("Каталог/Парусники/Парусные_яхты")]
         public IActionResult Yachts()
         {
             ViewData["Title"] = "Купить деревянные яхты от производителя";
