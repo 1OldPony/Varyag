@@ -15,8 +15,9 @@ $(document).ready(function () {
         language: 'ru',
         plugins: 'code',
         toolbar: 'code'
-    });    
+    });
 });
+
 
 //////////////////добавление яндекс карт, точка на варяге//////////////////////
 ymaps.ready(function () {
@@ -169,11 +170,6 @@ function annotationToTextarea() {
     $("#wideFotoText").val($("#wideFotoNewsText").text().trim());
 }
 
-//function headerSave() {
-//    newsSaveButtonDisable();
-//    $("#headerRefresh").val($("#header").val());
-//}
-
 function keyWordSave() {
     $("#keyWordRefresh").val($("#keyWord").val());
 }
@@ -227,7 +223,7 @@ function newsTypeSelect() {
 
 //////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
 navElMinorChoose();
-
+///////////////////заставляем поднавигацию каталога следовать за экраном при прокрутке////////////////////////
 $(window).scroll(function () {
     if ($(this).scrollTop() > 714 && window.innerWidth > 790) {
         $('.sub-nav-elements').css("position", "fixed");
@@ -237,6 +233,7 @@ $(window).scroll(function () {
     }
 });
 
+////////////////////показываем меню поднавигации при наведении на основную категорию меню, также выделяем ее/////////////////////////
 $("#lodki").mouseenter(function () {
     hideAll();
     $("#lodki").attr("class", "nav-element-choosen");
@@ -278,6 +275,8 @@ $(".nav-element-minor").mouseenter(function () {
     $(this).attr("class", "nav-element-minor-choosen");
 });
 
+//////////////////снимаем выделение с элементов подменю каталога и меню навигации по новостям,/////////////////
+/////////////////выделяем элементы показывающие, какой пункт меню видит пользователь///////////////////////////
 $(".nav-element-minor").mouseleave(function () {
     var nav = $("#newsTypeSelector").val()
     if (nav == undefined) {
@@ -376,6 +375,7 @@ $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
         case "maketstudy":
         case "maketcinema":
         case "maketmuseum":
+        case "maketdesign":
             if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                 && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                 && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
@@ -457,9 +457,11 @@ function deselectNavElemMinor() {
         case "maketstudy":
         case "maketcinema":
         case "maketmuseum":
+        case "maketdesign": 
             $('#maketmuseum').attr("class", "nav-element-minor");
             $('#maketcinema').attr("class", "nav-element-minor");
             $('#maketstudy').attr("class", "nav-element-minor");
+            $('#maketdesign').attr("class", "nav-element-minor");
             break;
         default:
     }
@@ -533,6 +535,9 @@ function navElMinorChoose() {
             break;
         case "maketmuseum":
             $('#maketmuseum').attr("class", "nav-element-minor-choosen");
+            break;
+        case "maketdesign":
+            $('#maketdesign').attr("class", "nav-element-minor-choosen"); 
             break;
         default:
     }

@@ -297,6 +297,16 @@ namespace Varyag.Controllers
             return View();
         }
 
+        [Route("Каталог/Макеты/Макеты_для_дизайна")]
+        public IActionResult MaketsDesign()
+        {
+            ViewData["Title"] = "Макеты судов для музеев";
+            ViewData["Keywords"] = "Купить макеты судов для музеев, Макеты парусников и шлюпок для музеев";
+            ViewData["Description"] = "Макеты судов и кораблей в качестве музейных экспонатов, а также судов и кораблей-музеев в качестве помещений для выставок";
+            ViewBag.TopPic = "maketsmuseum";
+            return View();
+        }
+
         [Route("Каталог/Проект_{id}")]
         public async Task<IActionResult> ProjectDetails(int? id)
         {

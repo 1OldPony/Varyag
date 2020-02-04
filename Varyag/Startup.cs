@@ -31,9 +31,6 @@ namespace Varyag
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-                //.AddRazorPagesOptions(options => {
-                //    options.Conventions.
-                //});
 
             services.AddDbContext<VaryagContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VaryagContext")));
@@ -71,7 +68,7 @@ namespace Varyag
             app.UseMvc(
                 routes =>
             {
-                routes.MapRoute("default", "{controller=About}/{action=AboutUs}/{id?}");
+                routes.MapRoute("default", "{controller=About}/{action=Index}/{id?}");
             }
             );
         }

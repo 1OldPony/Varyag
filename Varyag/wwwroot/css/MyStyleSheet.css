@@ -488,8 +488,8 @@ img {
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    font-size: 16px;
-    font-weight:bold;
+    font-size: 0.97rem;
+    font-weight: bold;
 }
 
 .nav-element-top {
@@ -532,41 +532,74 @@ img {
 }
 
 .category {
-    display: flex;
-    width: 100%;
+    display: none;
+    width: 32%;
     justify-content: space-between;
     font-size: 15px;
     position: absolute;
     padding-bottom: 10px;
     z-index: 9999;
     background-color: #eff4fd;
-    border-bottom-style: outset;
+    border-style: solid;
+    border-top-style: unset;
     border-color: #91b7f7;
 }
+
+    .category a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+    }
 
 #cinemaOrders.category {
     padding-top:10px;
     align-items:center;
+    flex-direction:column;
 }
 
 #catalog.category {
+    display: grid;
+    grid-template-areas: "boats ladiy" "bigboats sailboats" "katers makets";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
     align-items: flex-start;
 }
+
+#boatsTopNav.menu-top-element {
+    grid-area:boats;
+}
+
+#bigboatsTopNav.menu-top-element {
+    grid-area: bigboats;
+}
+
+#katersTopNav.menu-top-element {
+    grid-area: katers;
+}
+
+#ladiyTopNav.menu-top-element {
+    grid-area: ladiy;
+}
+
+#sailboatsTopNav.menu-top-element {
+    grid-area: sailboats;
+}
+
+#maketsTopNav.menu-top-element {
+    grid-area: makets;
+}
+
+/*#catalog.category {
+    align-items: flex-start;
+}*/
 
 #aboutUsTopNav.category {
     padding-top: 10px;
     align-items: center;
-}
-
-    #aboutUsTopNav.category a {
-        width: 100%;
-    }
-
-.category a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
+    flex-direction: column;
+    right:0;
+    width:auto;
 }
 
 .topNavCategory {
@@ -1120,14 +1153,15 @@ img {
 }
 
 .logo {
-    display:flex;
+    display: flex;
     align-items: center;
-    width:auto;
-    margin-right:2vw;
+    /*width: auto;*/
+    margin-right: 2vw;
+    margin-left: 2vw;
 }
 
     .logo img {
-        min-width: 275px;
+        /*min-width: 275px;*/
         max-width: 300px;
     }
 
@@ -1257,7 +1291,6 @@ img {
     width: 20vw;
 }
 
-
 @media (max-width:1628px) {
     .partNewsElement {
         height: 31vh;
@@ -1267,6 +1300,13 @@ img {
         height: 35vh;
     }
 }
+
+@media (max-width:1400px) {
+    #catalog.category {
+        width:40%;
+    }
+}
+
 
 @media (max-width:1280px) {
 
@@ -1297,12 +1337,7 @@ img {
 
     .newsListElement {
         grid-template-columns: 40% 60%;
-        /*grid-template-rows: 20vh;*/
     }
-
-    /*.textPartAllNews {
-        display: none;
-    }*/
 
     #shortStory {
         display: none;
@@ -1389,6 +1424,10 @@ img {
     .cellShort[name="midEnginePower"] {
         display: none;
     }
+
+    #catalog.category {
+        width: 45%;
+    }
 }
 
 @media (max-width:1042px) {
@@ -1455,6 +1494,10 @@ img {
 
     .newsListElement {
         grid-template-columns:50% 50%;
+    }
+
+    #catalog.category {
+        width: 55%;
     }
 }
 
@@ -1709,10 +1752,7 @@ img {
     }
 
     #catalog.category {
-        display: grid;
-        grid-template-areas: "boats bigboats katers" "ladiy sailboats makets";
-        grid-template-columns: 33% 33% 33% ;
-        grid-template-rows: auto;
+        width: 65%;
     }
 
     #boatsTopNav.menu-top-element {
@@ -1810,6 +1850,10 @@ img {
 
     .newsListElement {
         grid-template-columns: 100%;
+    }
+
+    #catalog.category {
+        width: 80%;
     }
 }
 
@@ -1918,6 +1962,10 @@ img {
     .contactsText {
         width:90vw;
     }
+
+    #cinemaOrders.category {
+        width:45%;
+    }
 }
 
 @media (max-width:525px) {
@@ -1928,6 +1976,10 @@ img {
 
     #second-out.cellShort {
         display: none;
+    }
+
+    #catalog.category {
+        width: 100%;
     }
 }
 

@@ -17,6 +17,11 @@ namespace Varyag.Controllers
             _context = context;
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [Route("О_нас/О_нашей_верфи")]
         public IActionResult AboutUs()
         {
             return View();
