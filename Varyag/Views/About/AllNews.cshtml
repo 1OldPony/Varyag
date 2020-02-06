@@ -8,33 +8,33 @@
 <div class="newsNav">
     <div class="nav-element-minor" id="smi">
         <a asp-action="AllNews" asp-route-newsType="smi">
-            <div class="nav-element-inside">
+            <div id="allNews" class="nav-element-inside">
                 <p>Сми о нас</p>
             </div>
         </a>
     </div>
     <div class="nav-element-minor" id="life">
         <a asp-action="AllNews" asp-route-newsType="life">
-            <div class="nav-element-inside">
+            <div id="allNews" class="nav-element-inside">
                 <p>Жизнь наших судов</p>
             </div>
         </a>
     </div>
     <div class="nav-element-minor" id="newShips">
         <a asp-action="AllNews" asp-route-newsType="newShips">
-            <div class="nav-element-inside">
+            <div id="allNews" class="nav-element-inside">
                 <p>Новые корабли</p>
             </div>
         </a>
     </div>
     <div class="nav-element-minor" id="all">
         <a asp-action="AllNews" asp-route-newsType="all">
-            <div class="nav-element-inside">
+            <div id="allNews" class="nav-element-inside">
                 <p>Все новости</p>
             </div>
         </a>
     </div>
-    <input type="text" id="newsTypeSelector" value="@ViewBag.newsType" hidden/>
+    <input type="text" id="newsTypeSelector" value="@ViewBag.newsType" hidden />
 </div>
 <div class="myBorder"></div>
 <div class="MyContainer">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="textPartAllNews">
-                    <div id="bottom" class="control">Смотреть</div>
+                    <div id="bottom" class="control">Смотреть...</div>
                     <h2>@Model.ElementAt(i).Header</h2>
                     <div class="newsMainStory">@Html.Raw(Model.ElementAt(i).MainStory)</div>
                 </div>
@@ -59,9 +59,21 @@
     }
 </div>
 
-<div style="margin:1vw">
+@if (ViewBag.Pages != null)
+{
+<div class="pageView">
+    <a asp-action="AllNews" asp-route-page="@ViewBag.CurrentPage" asp-route-direction="left" asp-route-newsType="@ViewBag.newsType" style="color:red">&#9668;</a>
     @for (int i = 1; i <= ViewBag.Pages; i++)
     {
-        <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType"><span style="color:red;text-decoration:dotted">@i </span></a>
+        if (i == @ViewBag.CurrentPage)
+        {
+            <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType"><span style="color:red;margin:3px;font-size:1.3rem">@i </span></a>
+        }
+        else
+        {
+            <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType"><span style="color:red;margin:3px;font-size:1.1rem">@i </span></a>
+        }
     }
+    <a asp-action="AllNews" asp-route-page="@ViewBag.CurrentPage" asp-route-direction="right" asp-route-newsType="@ViewBag.newsType" style="color:red">&#9658;</a>
 </div>
+}

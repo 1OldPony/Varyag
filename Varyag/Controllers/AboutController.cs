@@ -21,6 +21,7 @@ namespace Varyag.Controllers
         {
             return View();
         }
+
         [Route("О_нас/О_нашей_верфи")]
         public IActionResult AboutUs()
         {
@@ -28,7 +29,7 @@ namespace Varyag.Controllers
         }
 
         [Route("О_Нас/Наши_новости")]
-        public async Task<IActionResult> AllNews(string newsType, int? page)
+        public async Task<IActionResult> AllNews(string newsType, int? page, string direction)
         {
             List<News> news = new List<News>();
             switch (newsType)
@@ -47,12 +48,34 @@ namespace Varyag.Controllers
                     break;
             }
 
+            if (page == null)
+                ViewBag.CurrentPage = 1;
+            else
+                ViewBag.CurrentPage = page.Value;
+            
             if (news.Count >= 10)
             {
-                if (page == null)
-                    page = 0;
-                else
-                    page--;
+                switch (direction)
+                {
+                    case "left":
+                        if (page == null|| page == 1)
+                            page = 0;
+                        else
+                            page=page-2;
+                        break;
+                    case "right":
+                        if (page == news.Count / 10)
+                            page = news.Count / 10;
+                        else if (page == (news.Count / 10) + 1)
+                            page = (news.Count / 10) + 1;
+                        break;
+                    default:
+                        if (page == null)
+                            page = 0;
+                        else
+                            page--;
+                        break;
+                }
 
                 if (news.Count % 10 == 0)
                 {
@@ -78,7 +101,7 @@ namespace Varyag.Controllers
 
             return View(x);
         }
-
+        
         [Route("О_Нас/Наши_новости/{id}")]
         public async Task<IActionResult> NewsDetails(int? id)
         {

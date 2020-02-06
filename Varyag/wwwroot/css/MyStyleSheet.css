@@ -258,7 +258,7 @@
     align-items: center;
     justify-content: center;
     font-weight: bolder;
-    font-size: 2rem;
+    font-size: 1.8rem;
     background: white;
     background: rgba(255, 255,255,0.9);
     box-shadow: 0px -20px 20px 0px rgba(255, 255, 255, 0.9);
@@ -509,7 +509,6 @@ img {
     }
 
 .menu-nav-top {
-    /*background-color: white;*/
     font-family:Tahoma;
 
 }
@@ -590,10 +589,6 @@ img {
     grid-area: makets;
 }
 
-/*#catalog.category {
-    align-items: flex-start;
-}*/
-
 #aboutUsTopNav.category {
     padding-top: 10px;
     align-items: center;
@@ -622,8 +617,6 @@ img {
     font-weight: bold;
     font-size: 1.3rem;
     color: red;
-    /*text-decoration: overline;*/
-    /*text-decoration-style: dotted;*/
     margin-bottom:10px;
 }
 
@@ -746,6 +739,29 @@ img {
 
 #models.nav-element-grid .nav-element-inside {
     grid-area: text;
+}
+
+.newsNav .nav-element-minor-choosen {
+    background: #d1e0f9;
+}
+
+#allNews.nav-element-inside {
+    font-size:1.3rem;
+}
+
+.newsMainStory {
+    font-size:1.1rem;
+}
+
+.pageView {
+    display: flex;
+    justify-content: center;
+    margin: 1vw;
+    align-items:baseline;
+}
+
+.pageView a {
+    width:auto;
 }
 
 .nav-element {
@@ -2037,6 +2053,10 @@ img {
         grid-template-areas: "boats bigboats" "katers ladiy" "sailboats makets";
         grid-template-columns: 50% 50%;
         grid-template-rows: auto;
+    }
+
+    #allNews.nav-element-inside {
+        font-size: 1.1rem;
     }
 }
 
