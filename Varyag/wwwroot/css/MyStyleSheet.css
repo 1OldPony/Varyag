@@ -153,7 +153,7 @@
 .newsListElement {
     display:grid;
     grid-template-areas: "preview newsText";
-    grid-template-columns:33% 66%;
+    grid-template-columns:40% 60%;
     grid-template-rows:35vh;
     margin:2vw;
     margin-top:1vw;
@@ -460,6 +460,7 @@ img {
     text-align: center;
     margin: auto;
     max-width: 1350px;
+    padding-bottom:3vh;
 }
 
 .MyContainer1 {
@@ -927,7 +928,7 @@ img {
     display: grid;
     grid-template-areas: "sheme foto name" "sheme foto freeSpaceTop" "sheme foto tth" "sheme foto freeSpaceBottom" "sheme foto price";
     grid-template-columns: 35% 35% 30%;
-    grid-template-rows: 20px auto min-content auto 25px;
+    grid-template-rows: 45px auto min-content auto 25px;
     font-size: 18px;
 }
 
@@ -1120,7 +1121,7 @@ img {
 }
 
 .path {
-    margin: 15px;
+    padding: 15px;
     margin-left: 40px;
     text-align: left;
     font-size: 15px;
@@ -1159,7 +1160,6 @@ img {
     color: white;
     border-top-style:solid;
     border-color:red;
-    margin-top:3vh;
 }
 
 .aboutSite {
@@ -1433,9 +1433,9 @@ img {
 
 @media (max-width:1090px) {
 
-    .singleProject {
+    /*.singleProject {
         grid-template-rows: 45px auto min-content auto 20px;
-    }
+    }*/
 
     .cellShort[name="midEnginePower"] {
         display: none;
@@ -1707,7 +1707,7 @@ img {
 
     .singleProject {
         grid-template-columns: 0% 57% 43%;
-        grid-template-rows: 20px auto min-content auto 20px;
+        /*grid-template-rows: 20px auto min-content auto 20px;*/
     }
 
     .nav-element-choosen .nav-element-inside p {
@@ -1814,9 +1814,9 @@ img {
 
 @media (max-width:761px) {
 
-    .singleProject {
+    /*.singleProject {
         grid-template-rows: 45px auto min-content auto 20px;
-    }
+    }*/
 
     .newsListElement {
         grid-template-columns: 55% 45%;
@@ -1839,12 +1839,12 @@ img {
     }
 }
 
-@media (max-width:676px) {
+/*@media (max-width:676px) {
 
     .singleProject {
         grid-template-rows: 45px auto min-content auto 20px;
     }
-}
+}*/
 
 @media (max-width:651px) {
 
@@ -1997,6 +1997,10 @@ img {
     #catalog.category {
         width: 100%;
     }
+
+    .singleProject {
+        grid-template-rows: 66px auto min-content auto 20px;
+    }
 }
 
 
@@ -2063,7 +2067,7 @@ img {
 @media (max-width:425px) {
 
     .singleProject {
-        grid-template-rows: 66px auto min-content auto 20px;
+        grid-template-rows: 80px auto min-content auto 20px;
     }
 
     #сatalog.about {
@@ -2076,6 +2080,10 @@ img {
 
     .shortTextSecond {
         display: initial;
+    }
+
+    #fifth-out.cellShort {
+        display: none;
     }
 }
 
@@ -2117,10 +2125,6 @@ img {
     #middleElement.partNewsElement {
         margin-right: 0;
         margin-left: 0;
-    }
-
-    #fifth-out.cellShort {
-        display: none;
     }
 
     #shortStory {
@@ -2285,5 +2289,13 @@ img {
 
     #goto-predist.longTextSecond {
         display: none;
+    }
+
+    .catalogItemBottom {
+        display:none
+    }
+
+    .singleProject {
+        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name";
     }
 }

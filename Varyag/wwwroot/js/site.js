@@ -1,10 +1,9 @@
 ﻿// Please see documentation at https://docs.microsoft.com/ore/client-side/bundling-and-mini
 // for details on configuring this project to bundle and minify static web assets.
 
-$(document).ready(function () {
 
-    //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
-    $("#left.control, #right.control").height($(".allCustomers").height());
+
+$(document).ready(function () {
 
     /////////////////////////////настраиваем тайниМЦЕ/////////////////////////
     tinymce.init({
@@ -16,33 +15,10 @@ $(document).ready(function () {
         plugins: 'code',
         toolbar: 'code'
     });
-});
 
+    //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
+    $("#left.control, #right.control").height($(".allCustomers").height());
 
-//////////////////добавление яндекс карт, точка на варяге//////////////////////
-ymaps.ready(function () {
-    var mapVaryag = new ymaps.Map("ourLocation", {
-        center: [61.7702, 34.4359],
-        zoom: 14
-    });
-    var VaryagMark = new ymaps.Placemark([61.7702, 34.4359], {
-        balloonContent: 'Верфь деревянного судостроения "Вряг"<br />varyag@onego.ru<br />8 814 273 35 80',
-        iconContent: ''
-    },
-        {
-            preset: 'islands#redIcon'
-        });
-
-    mapVaryag.controls.remove('zoomControl');
-    mapVaryag.controls.remove('geolocationControl');
-    mapVaryag.controls.remove('searchControl');
-    mapVaryag.controls.remove('routeButtonControl');
-    mapVaryag.controls.remove('trafficControl');
-    mapVaryag.controls.remove('rulerControl');
-    mapVaryag.controls.remove('typeSelector');
-    mapVaryag.controls.remove('fullscreenControl');
-
-    mapVaryag.geoObjects.add(VaryagMark);
 });
 
 /////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
@@ -158,7 +134,6 @@ function FotoAttrChange(fotoType) {
 /////////////////////////передаем текст новостных превью при загрузках новых фото/////////////////////////////
 $("#newsFotoUpload").click(function () {
     annotationToTextarea();
-    //headerSave();
     keyWordSave();
     newsDateSave();
     $("#fotoEditorForm").submit();
@@ -201,6 +176,72 @@ function newsSaveButtonDisable() {
         $("#newsSaveButton").attr("disabled", "disabled");
 }
 
+
+/////////////////показываем верхние подменю////////////////////
+$("#ships-catalog").mouseenter(function () {
+    $("#catalog.category").css('display', 'grid');
+});
+
+$("#cinema").mouseenter(function () {
+    $("#cinemaOrders.category").css('display', 'flex');
+});
+
+$("#aboutUs").mouseenter(function () {
+    $("#aboutUsTopNav.category").css('display', 'flex');
+});
+
+$("#menu-nav-top, #cinema, #ships-catalog, #aboutUs").mouseleave(function (event) {
+    if (event.relatedTarget.id != "catalog" && event.relatedTarget.id != "cinemaOrders" && event.relatedTarget.id != "aboutUsTopNav") {
+        $(".category").hide();
+    }
+});
+
+////////////////////////показываем пункты верхнего подменю про музей и гото-предистинацию на девайсах///////////////////////
+museumGotoShow();
+function museumGotoShow() {
+    if (window.innerWidth < 611) {
+        $(".aboutUsGoto").attr("style", "display:flex")
+    }
+
+    if (window.innerWidth < 401) {
+        $(".aboutUsMuseum").attr("style", "display:flex")
+    }
+}
+
+cinemaAboutUsSubNavPosition();
+function cinemaAboutUsSubNavPosition() {
+    var cinemaLeft = $("#cinema.nav-element-top").offset().left;
+    var aboutUsLeft = $("#aboutUs.nav-element-top").offset().left;
+    $("#cinemaOrders.category").css("left", cinemaLeft);
+    $("#aboutUsTopNav.category").css("left", aboutUsLeft);
+}
+
+//////////////////добавление яндекс карт, точка на варяге//////////////////////
+ymaps.ready(function () {
+    var mapVaryag = new ymaps.Map("ourLocation", {
+        center: [61.7702, 34.4359],
+        zoom: 14
+    });
+    var VaryagMark = new ymaps.Placemark([61.7702, 34.4359], {
+        balloonContent: 'Верфь деревянного судостроения "Вряг"<br />varyag@onego.ru<br />8 814 273 35 80',
+        iconContent: ''
+    },
+        {
+            preset: 'islands#redIcon'
+        });
+
+    mapVaryag.controls.remove('zoomControl');
+    mapVaryag.controls.remove('geolocationControl');
+    mapVaryag.controls.remove('searchControl');
+    mapVaryag.controls.remove('routeButtonControl');
+    mapVaryag.controls.remove('trafficControl');
+    mapVaryag.controls.remove('rulerControl');
+    mapVaryag.controls.remove('typeSelector');
+    mapVaryag.controls.remove('fullscreenControl');
+
+    mapVaryag.geoObjects.add(VaryagMark);
+});
+
 /////////////////////////выделяем выбранную категорию новостей//////////////////////////
 newsTypeSelect();
 function newsTypeSelect() {
@@ -228,7 +269,7 @@ $(window).scroll(function () {
     if ($(this).scrollTop() > 714 && window.innerWidth > 790) {
         $('.sub-nav-elements').css("position", "fixed");
     }
-    else{
+    else {
         $('.sub-nav-elements').css("position", "relative");
     }
 });
@@ -287,7 +328,7 @@ $(".nav-element-minor").mouseleave(function () {
         $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
         newsTypeSelect();
     }
-        
+
 });
 
 $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
@@ -408,7 +449,7 @@ function hideAll() {
 };
 
 function deselectNavElemMinor() {
-    
+
     var page = $("#currentPage").val();
     switch (page) {
         case "boatsrow":
@@ -426,7 +467,7 @@ function deselectNavElemMinor() {
             $('#boatyal').attr("class", "nav-element-minor");
             break;
         case "motosailer":
-        case "katercabin": 
+        case "katercabin":
         case "katerfish":
         case "katerpass":
         case "katerproject":
@@ -457,7 +498,7 @@ function deselectNavElemMinor() {
         case "maketstudy":
         case "maketcinema":
         case "maketmuseum":
-        case "maketdesign": 
+        case "maketdesign":
             $('#maketmuseum').attr("class", "nav-element-minor");
             $('#maketcinema').attr("class", "nav-element-minor");
             $('#maketstudy').attr("class", "nav-element-minor");
@@ -489,47 +530,47 @@ function navElMinorChoose() {
             $('#katerrow').attr("class", "nav-element-minor-choosen");
             break;
         case "motosailer":
-            $('#motosailer').attr("class", "nav-element-minor-choosen"); 
+            $('#motosailer').attr("class", "nav-element-minor-choosen");
             break;
         case "katercabin":
-            $('#katercabin').attr("class", "nav-element-minor-choosen"); 
+            $('#katercabin').attr("class", "nav-element-minor-choosen");
             break;
         case "katerfish":
             $('#katerfish').attr("class", "nav-element-minor-choosen");
             break;
         case "katerpass":
             $('#katerpass').attr("class", "nav-element-minor-choosen");
-            break; 
+            break;
         case "katerproject":
             $('#katerproject').attr("class", "nav-element-minor-choosen");
             break;
         case "ladyarow":
             $('#ladyarow').attr("class", "nav-element-minor-choosen");
-            break; 
+            break;
         case "ladyasail":
             $('#ladyasail').attr("class", "nav-element-minor-choosen");
-            break; 
+            break;
         case "ladyaproject":
             $('#ladyaproject').attr("class", "nav-element-minor-choosen");
             break;
         case "yacht":
-            $('#yacht').attr("class", "nav-element-minor-choosen"); 
-            break; 
+            $('#yacht').attr("class", "nav-element-minor-choosen");
+            break;
         case "shvertbot":
             $('#shvertbot').attr("class", "nav-element-minor-choosen");
-            break; 
+            break;
         case "sailboatstudy":
             $('#sailboatstudy').attr("class", "nav-element-minor-choosen");
-            break; 
+            break;
         case "sailboathistorical":
             $('#sailboathistorical').attr("class", "nav-element-minor-choosen");
-            break; 
+            break;
         case "sailboatproject":
             $('#sailboatproject').attr("class", "nav-element-minor-choosen");
-            break; 
+            break;
         case "maketstudy":
             $('#maketstudy').attr("class", "nav-element-minor-choosen");
-            break; 
+            break;
         case "maketcinema":
             $('#maketcinema').attr("class", "nav-element-minor-choosen");
             break;
@@ -537,11 +578,12 @@ function navElMinorChoose() {
             $('#maketmuseum').attr("class", "nav-element-minor-choosen");
             break;
         case "maketdesign":
-            $('#maketdesign').attr("class", "nav-element-minor-choosen"); 
+            $('#maketdesign').attr("class", "nav-element-minor-choosen");
             break;
         default:
     }
 };
+
 //////////////////Для пролистывания списка заказчиков на странице "о нас"//////////////////////
 var slideNumber = 0;
 var custWidth = $(".allCustomers").width();

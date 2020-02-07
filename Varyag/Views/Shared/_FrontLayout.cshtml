@@ -305,14 +305,13 @@
                 <a href=><div id=aboutUsTopNav class=topNavCategory>О нашем производстве</div></a>
                 <a asp-action="AllNews" asp-controller="About"><div id=aboutUsTopNav class=topNavCategory>Наши новости</div></a>
                 <a asp-action="AllNews" asp-controller="About" asp-route-newsType="smi"><div id=aboutUsTopNav class=topNavCategory>СМИ о нас</div></a>
-                <a asp-action="AllNews" asp-controller="About"  asp-route-newsType="life"><div id=aboutUsTopNav class=topNavCategory>Из жизни наших кораблей</div></a>
+                <a asp-action="AllNews" asp-controller="About" asp-route-newsType="life"><div id=aboutUsTopNav class=topNavCategory>Из жизни наших кораблей</div></a>
                 <a id=aboutUsTopNav class=aboutUsGoto style="display:none"><div class=topNavCategory>Корабль-Музей Гото Предистинация</div></a>
                 <a id=aboutUsTopNav class=aboutUsMuseum style="display:none"><div class=topNavCategory>Музей</div></a>
             </div>
         </div>
     </div>
     <partial name="_CookieConsentPartial" />
-
     @RenderBody()
     <footer class="footer">
         <div class="aboutSite">
@@ -329,8 +328,8 @@
                     <div id="vk_groups"></div>
                     @*<div style="height:200px;margin-right:1vw"></div>
                             <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs=""
-                             data-width="200" data-height="200" data-small-header="true"
-                             data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                data-width="200" data-height="200" data-small-header="true"
+                                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                             <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
                             <a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
                         </div>*@
@@ -367,11 +366,11 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/fotorama.js"></script>
+    <script src="~/js/site.js"></script>
     <script src="~/js/top-nav.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a93c2bc3-57dc-4ed5-90f0-419606ca819a&lang=ru_RU" type="text/javascript"></script>
     <script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v5.0"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
