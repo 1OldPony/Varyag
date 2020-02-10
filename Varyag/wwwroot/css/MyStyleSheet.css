@@ -43,7 +43,7 @@
 }
 
 .annotationText {
-    font-size: 23px;
+    font-size: 1.5rem;
     font-weight: bold;
     margin: 20%;
     font-family: 'Gabriela';
@@ -475,14 +475,14 @@ img {
     grid-template-areas: "boats bigboats kater ladya sailboat maket" "sub-boats sub-boats sub-boats sub-boats sub-boats sub-boats" "sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats" "sub-kater sub-kater sub-kater sub-kater sub-kater sub-kater" "sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya" "sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat" "sub-maket sub-maket sub-maket sub-maket sub-maket sub-maket";
     grid-template-columns: 13.6% 11.9% 17% 17% 24.6% 16%;
     grid-template-rows: 219px min-content min-content min-content min-content min-content min-content;
-    font-size: 22px;
+    font-size: 1.44rem;
 }
 
-.nav {
+/*.nav {
     display: flex;
     align-items: flex-end;
     font-size: 22px;
-}
+}*/
 
 .nav-top {
     display: flex;
@@ -535,22 +535,24 @@ img {
     display: none;
     width: 32%;
     justify-content: space-between;
-    font-size: 15px;
+    /*font-size: 15px;*/
     position: absolute;
     padding-bottom: 10px;
     z-index: 9999;
     background-color: #eff4fd;
-    border-style: solid;
-    border-top-style: unset;
-    border-color: #91b7f7;
 }
 
     .category a {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: auto;
+        width: 100%;
     }
+
+        .category a:hover {
+            background-color: #aec9e0;
+            color: #e00e0e;
+        }
 
 #cinemaOrders.category {
     padding-top:10px;
@@ -618,7 +620,7 @@ img {
     font-weight: bold;
     font-size: 1.3rem;
     color: red;
-    margin-bottom:10px;
+    /*margin-bottom:10px;*/
 }
 
 .topNavBorder {
@@ -657,6 +659,13 @@ img {
 
 .sub-nav a {
     width: 100%;
+}
+
+.explainText {
+    font-size: 1.25rem;
+    text-align: left;
+    margin: 35px;
+    margin-top: 0px;
 }
 
 #lodki.nav-element-choosen {
@@ -865,7 +874,7 @@ img {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    font-size: 19px;
+    font-size: 1.2rem;
     background-color: rgb(255, 255, 255);
 }
 
@@ -882,7 +891,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 19px;
+    font-size: 1.2rem;
     flex-grow: 1;
     background-color: #aec9e0;
 }
@@ -906,7 +915,7 @@ img {
 
     .nav-element-choosen .nav-element-inside p {
         color: #e00e0e;
-        font-size: 26px;
+        font-size: 1.6rem;
         margin-block-start: 4px;
     }
 
@@ -915,7 +924,8 @@ img {
         margin: auto;
     }
 
-.nav-element-inside {
+.nav-element-top .nav-element-inside {
+    font-size: 1.1rem
 }
 
 .projects {
@@ -929,7 +939,7 @@ img {
     grid-template-areas: "sheme foto name" "sheme foto freeSpaceTop" "sheme foto tth" "sheme foto freeSpaceBottom" "sheme foto price";
     grid-template-columns: 35% 35% 30%;
     grid-template-rows: 45px auto min-content auto 25px;
-    font-size: 18px;
+    font-size: 1.13rem;
 }
 
     .singleProject p {
@@ -958,15 +968,15 @@ img {
 }
 
 .description {
-    font-size: 18px;
+    font-size: 1.13rem;
     text-align: left;
     margin: 25px;
     margin-top: 0px;
-    font-family:Tahoma;
+    font-family: Tahoma;
 }
 
 .desc-top {
-    font-size: 20px;
+    font-size: 1.3rem;
     font-weight: 600;
     text-align: left;
     margin-left: 25px;
@@ -1041,7 +1051,7 @@ img {
     .TTH-details h4 {
         margin-block-start: 6px;
         margin-block-end: 6px;
-        font-size: 20px;
+        font-size: 1.3rem;
     }
 
     .TTH-details .value {
@@ -1089,13 +1099,6 @@ img {
     display: none;
 }
 
-.explainText {
-    font-size: 19px;
-    text-align: left;
-    margin: 35px;
-    margin-top: 0px;
-}
-
 .cat-icons {
     display: none;
 }
@@ -1124,7 +1127,7 @@ img {
     padding: 15px;
     margin-left: 40px;
     text-align: left;
-    font-size: 15px;
+    font-size: 0.95rem;
 }
 
     .path a {
@@ -1137,7 +1140,7 @@ img {
 
     .projectName p {
         text-align: left;
-        font-size: 32px;
+        font-size: 2rem;
         font-weight: 600;
         text-decoration: underline;
         margin-block-start: 0px;
@@ -1171,13 +1174,11 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    /*width: auto;*/
     margin-right: 2vw;
     margin-left: 2vw;
 }
 
     .logo img {
-        /*min-width: 275px;*/
         max-width: 300px;
     }
 
@@ -1571,7 +1572,7 @@ img {
     }
 
     .desc-top {
-        font-size: 28px;
+        font-size: 1.75rem;
         font-weight: 600;
         text-align: left;
         margin-left: 5%;
@@ -1585,7 +1586,7 @@ img {
         grid-template-areas: "boats sub" "bigboats sub" "kater sub" "ladya sub" "sailboat sub" "maket sub";
         grid-template-columns: 1fr 1fr;
         grid-template-rows: min-content min-content min-content min-content min-content min-content;
-        font-size: 22px;
+        font-size: 1.37rem;
     }
 
     #lodki-Sub.sub-nav {
@@ -1814,10 +1815,6 @@ img {
 
 @media (max-width:761px) {
 
-    /*.singleProject {
-        grid-template-rows: 45px auto min-content auto 20px;
-    }*/
-
     .newsListElement {
         grid-template-columns: 55% 45%;
     }
@@ -1838,13 +1835,6 @@ img {
         grid-template-columns: 47% 53%;
     }
 }
-
-/*@media (max-width:676px) {
-
-    .singleProject {
-        grid-template-rows: 45px auto min-content auto 20px;
-    }
-}*/
 
 @media (max-width:651px) {
 
@@ -2257,7 +2247,7 @@ img {
     }
 
     .catalogItemBottom {
-        font-size: 19px;
+        font-size: 1.2rem;
         text-align: center;
     }
 
