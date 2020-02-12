@@ -95,7 +95,7 @@ namespace Varyag.Controllers
                     items = await db.Project.Where(w => w.BoatRow || w.BoatSail || w.BoatTraditional == true ).ToListAsync();
                     break;
                 case "bigboat":
-                    items = await db.Project.Where(w => w.BoatYal || w.Botik || w.KaterRow == true).ToListAsync();
+                    items = await db.Project.Where(w => w.BoatYal || w.Botik || w.KaterRow || w.MaketStudy == true).ToListAsync();
                     break;
                 case "kater":
                     items = await db.Project.Where(w => w.KaterCabin || w.KaterFish || w.KaterProject || w.Motosailer || w.KaterPass == true).ToListAsync();
@@ -107,7 +107,7 @@ namespace Varyag.Controllers
                     items = await db.Project.Where(w => w.Yacht || w.Shvertbot || w.SailboatStudy || w.SailboatHistorical || w.SailboatProject == true).ToListAsync();
                     break;
                 case "maket":
-                    items = await db.Project.Where(w => w.MaketCinema || w.MaketDesign || w.MaketMuseum|| w.MaketStudy == true).ToListAsync();
+                    items = await db.Project.Where(w => w.MaketCinema || w.MaketDesign || w.MaketMuseum == true).ToListAsync();
                     break;
                 default:
                     break;

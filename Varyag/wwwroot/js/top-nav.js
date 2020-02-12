@@ -135,7 +135,6 @@ $("#sailboats").mouseenter(function () {
 $("#models").mouseenter(function () {
     hideAll();
     $("#models").attr("class", "nav-element-choosen");
-    $("#models-Sub").show();
 });
 
 $(".nav-element-minor").mouseenter(function () {
@@ -168,8 +167,7 @@ $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
             if ((event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                 && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
                 && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
                 hideAll();
                 $("#lodki").attr("class", "nav-element-choosen");
                 $("#lodki-Sub").show();
@@ -179,11 +177,11 @@ $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
         case "boatyal":
         case "botik":
         case "katerrow":
+        case "maketstudy":
             if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                 && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                 && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
                 hideAll();
                 $("#shlupki").attr("class", "nav-element-choosen");
                 $("#shlupki-Sub").show();
@@ -198,8 +196,7 @@ $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
             if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                 && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                 && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
                 hideAll();
                 $("#katera").attr("class", "nav-element-choosen");
                 $("#katera-Sub").show();
@@ -212,8 +209,7 @@ $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
             if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                 && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                 && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")) {
                 hideAll();
                 $("#ladiy").attr("class", "nav-element-choosen");
                 $("#ladiy-Sub").show();
@@ -228,8 +224,7 @@ $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
             if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                 && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
                 && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")
-                && (event.currentTarget.id != "models" && event.target.id != "models-Sub")) {
+                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
                 if ($(window).width() > 383) {
                     hideAll();
                     $("#sailboats").attr("class", "nav-element-choosen");
@@ -240,10 +235,6 @@ $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
             else
                 break;
         case "models":
-        case "maketstudy":
-        case "maketcinema":
-        case "maketmuseum":
-        case "maketdesign":
             if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
                 && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
                 && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
@@ -251,7 +242,6 @@ $(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
                 && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
                 hideAll();
                 $("#models").attr("class", "nav-element-choosen");
-                $("#models-Sub").show();
             }
             break;
         default:
@@ -267,7 +257,6 @@ function hideAll() {
     $("#katera").attr("class", "nav-element");
     $("#ladiy").attr("class", "nav-element");
     $("#models").attr("class", "nav-element");
-    $("#models-Sub").hide()
     $("#sailboats-Sub").hide();
     $("#lodki-Sub").hide();
     $("#shlupki-Sub").hide();
@@ -289,9 +278,11 @@ function deselectNavElemMinor() {
         case "boatyal":
         case "botik":
         case "katerrow":
+        case "maketstudy":
             $('#katerrow').attr("class", "nav-element-minor");
             $('#botik').attr("class", "nav-element-minor");
             $('#boatyal').attr("class", "nav-element-minor");
+            $('#maketstudy').attr("class", "nav-element-minor");
             break;
         case "motosailer":
         case "katercabin":
@@ -322,16 +313,8 @@ function deselectNavElemMinor() {
             $('#shvertbot').attr("class", "nav-element-minor");
             $('#yacht').attr("class", "nav-element-minor");
             break;
-        case "maketstudy":
-        case "maketcinema":
-        case "maketmuseum":
-        case "maketdesign":
-            $('#maketmuseum').attr("class", "nav-element-minor");
-            $('#maketcinema').attr("class", "nav-element-minor");
-            $('#maketstudy').attr("class", "nav-element-minor");
-            $('#maketdesign').attr("class", "nav-element-minor");
-            break;
         default:
+            break;
     }
 }
 
@@ -398,16 +381,8 @@ function navElMinorChoose() {
         case "maketstudy":
             $('#maketstudy').attr("class", "nav-element-minor-choosen");
             break;
-        case "maketcinema":
-            $('#maketcinema').attr("class", "nav-element-minor-choosen");
-            break;
-        case "maketmuseum":
-            $('#maketmuseum').attr("class", "nav-element-minor-choosen");
-            break;
-        case "maketdesign":
-            $('#maketdesign').attr("class", "nav-element-minor-choosen");
-            break;
         default:
+            break;
     }
 };
 

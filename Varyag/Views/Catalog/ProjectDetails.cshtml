@@ -9,7 +9,7 @@
     <div class="path">
         <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > @if (Model.BoatRow == true || Model.BoatSail == true || Model.BoatTraditional == true)
         {<a asp-action="Boats">Лодки</a>}
-        else if (Model.BoatYal == true || Model.Botik == true || Model.KaterRow == true)
+        else if (Model.BoatYal == true || Model.Botik == true || Model.KaterRow == true || Model.MaketStudy == true)
         {<a asp-action="Bigboats">Шлюпки</a>}
         else if (Model.KaterCabin == true || Model.KaterFish == true || Model.KaterPass == true || Model.Motosailer == true)
         {<a asp-action="Motorboats">Катера</a>}
@@ -17,7 +17,7 @@
         {<a asp-action="Ladiy">Ладьи</a>}
         else if (Model.SailboatHistorical == true || Model.SailboatProject == true || Model.SailboatStudy == true || Model.Shvertbot == true || Model.Yacht == true)
         {<a asp-action="Sailboats">Парусники</a>}
-        else if (Model.MaketCinema == true || Model.MaketMuseum == true || Model.MaketStudy == true || Model.MaketDesign == true)
+        else if (Model.MaketCinema == true || Model.MaketMuseum == true || Model.MaketDesign == true)
         {<a asp-action="Models">Макеты</a>} > <a>@Model.Name</a>
     </div>
     <div class="MyContainer">

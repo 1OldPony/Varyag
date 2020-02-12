@@ -7,8 +7,9 @@
         <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a asp-action="Models">Макеты</a> > <a>Обучающие макеты</a>
     </div>
     <div class="explainText">
-        <span style="margin-left:100px">Верфь</span> ООО "Варяг" имеет возможность проектировать
-        и строить любые деревянные обучающие макеты под любые ваши цели
+        <span style="margin-left:100px"></span>Учебные пособия представляют собой модели шлюпок в масштабе 1:2 или 1:3. Модели предназначены для наглядного изучения устройства шлюпок учащимися 
+        морских и речных учебных заведений и клубов юных моряков. Модели являются точными копиями шлюпок типа ЯЛ-6, с максимально возможным количеством снимающихся и работающих деталей, включая 
+        парусное вооружение, рулевое и гребное устройства, рыбины, заспинную доску, сливную пробку и т.д.
     </div>
     <div class="catalog">
         <div class="nav-element" name="lodki" id="lodki">
@@ -125,7 +126,6 @@
         <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
         <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        <div name="models-Sub" id="models-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
     </div>
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "maketstudy" })
 </div>

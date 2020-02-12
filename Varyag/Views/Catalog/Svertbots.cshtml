@@ -7,9 +7,10 @@
         <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a asp-action="sailboats">Парусники</a> > <a>Швертботы</a>
     </div>
     <div class="explainText">
-        <span style="margin-left:100px">Верфь</span> ООО "Варяг" имеет возможность проектировать
-        и строить деревянные швертботы под любые ваши цели и с учетом всех ваших пожеланий, от швертботов и небольших парусных яхт для прогулок до больших учебных или исторических парусников. Все представленные в каталоге проекты разрабатывались нами под нужды конкретных людей и каждый получил такой парусник, который нужен был ему.<br />
-        <span style="margin-left:100px">За</span> время своего существования мы произвели десятки парусных судов, до сих пор бороздящих просторы морей и океанов во всех уголках нашей планеты, от Карибского моря до побережья Австралии.
+        <span style="margin-left:100px"></span>Швертботы предназначены для отдыха на воде и занятий парусным спортом. Суда могут быть как открытыми, предназначенными для коротких выходов в течении дня,
+        так и палубными, рассчитанными на многодневные походы и оборудованными спальными местами, камбузом и гальюном.
+        Небольшие размеры швертботов, имеющихавтодорожные габариты, облегчают их перевозку по дорогам общего пользования.
+        Если среди представленных на сайте вариантов вы не найдете подходящих для себя, мы можем построить деревянный швертбот по индивидуальному проекту.
     </div>
     <div class="catalog">
         <div class="nav-element" name="lodki" id="lodki">
@@ -126,7 +127,6 @@
         <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
         <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        <div name="models-Sub" id="models-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
     </div>
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot" })
 </div>

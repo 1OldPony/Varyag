@@ -7,8 +7,8 @@
         <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a asp-action="Bigboats">Шлюпки</a> > <a>Гребные катера</a>
     </div>
     <div class="explainText">
-        <span style="margin-left:100px">Верфь</span> ООО "Варяг" имеет возможность проектировать
-        и строить деревянные гребные катера под любые ваши цели.
+        <span style="margin-left:100px"></span>По сравнению с ялами вельботы и гребные катера отличаются лучшими скоростными качествами как под парусом, так и на веслах, а также красивым внешним видом.
+        В прежние времена эти шлюпки использовались на кораблях в качестве командирских и разъездных, для перевозки офицеров и команды.
     </div>
     <div class="catalog">
         <div class="nav-element" name="lodki" id="lodki">
@@ -125,7 +125,6 @@
         <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
         <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        <div name="models-Sub" id="models-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
     </div>
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "katerrow" })
 </div>

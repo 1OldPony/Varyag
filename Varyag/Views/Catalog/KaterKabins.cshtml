@@ -7,8 +7,8 @@
         <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a asp-action="Motorboats">Катера</a> > <a>Каютные катера</a>
     </div>
     <div class="explainText">
-        <span style="margin-left:100px">Верфь</span> ООО "Варяг" имеет возможность проектировать
-        и строить деревянные каютные катера под любые ваши цели и с учетом всех ваших пожеланий.
+        <span style="margin-left:100px"></span>Каютные катера предназначены для отдыха на воде и отличаются хорошими мореходными характеристикамив сочетании с прекрасной обитаемостью. 
+        Если среди представленных вариантев вы не найдете подходящий для себя, мы можем спроектировать и построить водоизмещающий каютный катер по индивидуальному проекту.
     </div>
     <div class="catalog">
         <div class="nav-element" name="lodki" id="lodki">
@@ -125,7 +125,6 @@
         <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
         <div name="katera-Sub" id="katera-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        <div name="models-Sub" id="models-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
     </div>
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "katercabin" })
 </div>

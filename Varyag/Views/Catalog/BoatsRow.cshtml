@@ -7,8 +7,8 @@
         <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a asp-action="Boats">Лодки</a> > <a>Прогулочные гребные лодки</a>
     </div>
     <div class="explainText">
-        <span style="margin-left:100px">Верфь</span> ООО "Варяг" имеет возможность проектировать
-        и строить деревянные прогулочные гребные лодки под любые ваши цели и с учетом всех ваших пожеланий.
+        <span style="margin-left:100px">Прогулочные</span> гребные лодки предназначены для занятий гребным спортом, рыбной ловли и отдыха на воде. 
+        Если среди представленных на сайте вариантов вы не найдете подходящих для себя, мы можем изготовить деревянную гребную лодку по индивидуальному проекту.
     </div>
     <div class="catalog">
         <div class="nav-element-choosen" name="lodki" id="lodki">
@@ -125,7 +125,6 @@
         <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
         <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        <div name="models-Sub" id="models-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
     </div>
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "boatrow" })
 </div>

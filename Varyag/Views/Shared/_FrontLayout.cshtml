@@ -12,7 +12,6 @@
 </head>
 <body>
     <div class="top-hat">
-        @*<div>Верфь деревянного судостроения "Варяг"</div>*@
         <div class="top-pic">
             @switch (@ViewBag.TopPic)
             {
@@ -270,6 +269,7 @@
                     <a asp-action="BoatsYal" asp-controller="Catalog"><div class=topNavCategory>Ял-6,Ял-4,Ял-2</div></a>
                     <a asp-action="KaterRows" asp-controller="Catalog"><div class=topNavCategory>Гребные катера<br />и вельботы</div></a>
                     <a asp-action="Botiks" asp-controller="Catalog"><div class=topNavCategory>Ботики</div></a>
+                    <a asp-action="MaketsStudy" asp-controller="Catalog"><div class=topNavCategory>Учебные пособия</div></a>
                 </div>
                 <div id=katersTopNav class=menu-top-element>
                     <a asp-action="Motorboats" asp-controller="Catalog"><div class=topNavTopCategory>Катера</div></a>
@@ -292,10 +292,9 @@
                 </div>
                 <div id=maketsTopNav class=menu-top-element>
                     <a asp-action="Models" asp-controller="Catalog"><div class=topNavTopCategory>Макеты</div></a>
-                    <a asp-action="MaketsStudy" asp-controller="Catalog"><div class=topNavCategory>Обучающие</div></a>
-                    <a asp-action="MaketsCinema" asp-controller="Catalog"><div class=topNavCategory>Для кино</div></a>
+                    @*<a asp-action="MaketsCinema" asp-controller="Catalog"><div class=topNavCategory>Для кино</div></a>
                     <a asp-action="MaketsMuseum" asp-controller="Catalog"><div class=topNavCategory>Для музеев</div></a>
-                    <a asp-action="MaketsDesign" asp-controller="Catalog"><div class=topNavCategory>Интерьерные</div></a>
+                    <a asp-action="MaketsDesign" asp-controller="Catalog"><div class=topNavCategory>Интерьерные</div></a>*@
                 </div>
             </div>
             <div id=cinemaOrders class=category>

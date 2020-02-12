@@ -7,8 +7,8 @@
         <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a asp-action="Bigboats">Шлюпки</a> > <a>Ботики</a>
     </div>
     <div class="explainText">
-        <span style="margin-left:100px">Верфь</span> ООО "Варяг" имеет возможность проектировать
-        и строить деревянные ботики под любые ваши цели.
+        <span style="margin-left:100px"></span>Ботики, или "Суда ботового типа" - это парусно-гребные шлюпки XVII-XVIII веков, которые использовались на крупных кораблях в качестве разъездных и рабочих судов.
+        Построенные нами реплики исторических ботиков обладвют не только максимальным соответствием оригиналу, но и прекрасными мореходными качествами.
     </div>
     <div class="catalog">
         <div class="nav-element" name="lodki" id="lodki">
@@ -125,7 +125,6 @@
         <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
         <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        <div name="models-Sub" id="models-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
     </div>
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "botik" })
 </div>

@@ -21,7 +21,6 @@
     <None Include="Views\Catalog\FotoGallery.cshtml" />
     <None Include="Views\Catalog\Katera-SubNav.cshtml" />
     <None Include="Views\Catalog\KaterKabins.cshtml" />
-    <None Include="Views\Catalog\KaterProjects.cshtml" />
     <None Include="Views\Catalog\KaterRows.cshtml" />
     <None Include="Views\Catalog\KatersFishing.cshtml" />
     <None Include="Views\Catalog\KatersPassanger.cshtml" />
@@ -31,10 +30,7 @@
     <None Include="Views\Catalog\LadyasSailMotor.cshtml" />
     <None Include="Views\Catalog\LadyasSailRow.cshtml" />
     <None Include="Views\Catalog\Lodki-SubNav.cshtml" />
-    <None Include="Views\Catalog\MaketsCinema.cshtml" />
-    <None Include="Views\Catalog\MaketsMuseum.cshtml" />
     <None Include="Views\Catalog\MaketsStudy.cshtml" />
-    <None Include="Views\Catalog\Models-SubNav.cshtml" />
     <None Include="Views\Catalog\Models.cshtml" />
     <None Include="Views\Catalog\Motorboats.cshtml" />
     <None Include="Views\Catalog\Motosailers.cshtml" />
@@ -42,7 +38,6 @@
     <None Include="Views\Catalog\Sailboats-SubNav.cshtml" />
     <None Include="Views\Catalog\Sailboats.cshtml" />
     <None Include="Views\Catalog\SailboatsHistorical.cshtml" />
-    <None Include="Views\Catalog\SailboatsProjects.cshtml" />
     <None Include="Views\Catalog\SailboatsStudy.cshtml" />
     <None Include="Views\Catalog\Shlupki-SubNav.cshtml" />
     <None Include="Views\Catalog\Svertbots.cshtml" />
