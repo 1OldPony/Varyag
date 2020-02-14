@@ -213,14 +213,17 @@
                     </div>
                     break;
                 default:
-                    <div style="background-color:#9c0f0f">
+                    <div class="longUpFoto">
                         <img src="~/images/Надверхняя-строка-на150.jpg" />
-                        <img src="~/images/Надверхняя-строка-на200-проверочный.png" style="display:none" />
-                        <img src="~/images/Надверхняя-строка-на200.jpg" style="display:none" />
-                        <img src="~/images/Надверхняя-строка-на300.jpg" style="display:none" />
+                    </div>
+                    <div class="shortUpFoto">
+                        <img src="~/images/Надверхняя-строка-на150-коротк.jpg" />
                     </div>
                     break;
             }
+        </div>
+        <div class="veryShortUpFoto">
+            <img src="~/images/Надверхняя-строка-на150-оч-коротк.jpg" />
         </div>
     </div>
     <div id="header" class="header">
@@ -292,9 +295,6 @@
                 </div>
                 <div id=maketsTopNav class=menu-top-element>
                     <a asp-action="Models" asp-controller="Catalog"><div class=topNavTopCategory>Макеты</div></a>
-                    @*<a asp-action="MaketsCinema" asp-controller="Catalog"><div class=topNavCategory>Для кино</div></a>
-                    <a asp-action="MaketsMuseum" asp-controller="Catalog"><div class=topNavCategory>Для музеев</div></a>
-                    <a asp-action="MaketsDesign" asp-controller="Catalog"><div class=topNavCategory>Интерьерные</div></a>*@
                 </div>
             </div>
             <div id=cinemaOrders class=category>
@@ -321,37 +321,53 @@
     <footer class="footer">
         <div class="aboutSite">
             <div class="logo">
-                <img src="~/images/лого-кораблик-2.png" style="display:none" />
+                <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" style="height:237px" />
+                <img src="~/images/лого-кораблик-с-текстом-еще-пожирней.png" style="display:none;height:237px" />
+                <img src="~/images/лого-кораблик-с-текстом-светлосиний.png" style="display:none;height:237px" />
+                <img src="~/images/лого-кораблик-с-текстом-светло-светлосиний.png" style="display:none;height:237px" />
                 @*<img src="~/images/лого-кораблик-с-текстом.png" style="height:237px;width:auto" />*@
-                <img src="~/images/лого-кораблик-с-текстом.png" style="height:200px;width:auto" />
+                <img src="~/images/лого-кораблик-с-текстом.png" style="display:none;height:200px;width:auto" />
             </div>
             <div class="socialNetworks">
-                <div>
+                <div style="font-size:1.4rem">
                     НАШИ СОЦСЕТИ:
                 </div>
                 <div class="socialVidgets">
-                    <div id="vk_groups"></div>
-                    @*<div style="height:200px;margin-right:1vw"></div>
-                            <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs=""
-                                data-width="200" data-height="200" data-small-header="true"
-                                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                            <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
-                            <a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
-                        </div>*@
+                    @*<div id="vk_groups"></div>*@
+                    @*<div style="height:200px;margin-right:1vw"></div>*@
+                    @*<div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs=""
+                        data-width="200" data-height="200" data-small-header="true"
+                        data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+                </div>*@
                 </div>
                 <div class="socialButtons">
                     <a href="https://vk.com/shipyard_varyag">
-                        <img src="~/images/vk_icon-icons.com_66681.png" />
+                        <img src="~/images/vkont.png" />
+                    </a>
+                    <a href="https://vk.com/shipyard_varyag">
+                        <img src="~/images/insta.png" />
+                    </a>
+                    @*<a href="https://vk.com/shipyard_varyag">
+                    <img src="~/images/pinter.png" />
+                </a>*@
+                    <a href="https://vk.com/shipyard_varyag">
+                        <img src="~/images/youtube.png" />
                     </a>
                 </div>
             </div>
             <div class="footerContactsLong">
                 <p>
-                    Наш адрес: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43,
-                    заезд с переулка спасателей.<br /><br />
                     Связаться с нами можно по:<br />
                     электронной почте&nbsp;- varyag@onego.ru<br />
                     или по телефону&nbsp;- +7&nbsp;814&nbsp;273&nbsp;35&nbsp;80
+                </p>
+            </div>
+            <div class="footerContactsLong">
+                <p>
+                    Наш адрес: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43,
+                    заезд с переулка спасателей.
                 </p>
             </div>
             <div class="footerContactsShort">
@@ -362,7 +378,8 @@
                 </p>
             </div>
             <div class="footerMap">
-                <img src="~/images/Варяг_30-10-2019_18-08-23.png" width="286" height="237" />
+                <img src="~/images/Карта_286х237.png" width="286" height="237" style="max-width:initial" />
+                <img src="~/images/Варяг_30-10-2019_18-08-23.png" width="286" height="237" style="max-width:initial;display:none" />
             </div>
         </div>
         <div class="aboutMe">

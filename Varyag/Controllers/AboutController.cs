@@ -35,7 +35,7 @@ namespace Varyag.Controllers
             switch (newsType)
             {
                 case "smi":
-                    news = await _context.News.Where(n=>n.KeyWord.ToString() == "СМИ").ToListAsync();
+                    news = await _context.News.Where(n => n.KeyWord.ToString() == "СМИ").ToListAsync();
                     break;
                 case "life":
                     news = await _context.News.Where(n => n.KeyWord.ToString() == "Жизнь_кораблей").ToListAsync();
@@ -48,32 +48,52 @@ namespace Varyag.Controllers
                     break;
             }
 
-            if (page == null)
-                ViewBag.CurrentPage = 1;
-            else
-                ViewBag.CurrentPage = page.Value;
-            
             if (news.Count >= 10)
             {
                 switch (direction)
                 {
                     case "left":
-                        if (page == null|| page == 1)
+                        if (page == null || page == 1)
+                        {
                             page = 0;
+                            ViewBag.CurrentPage = 1;
+                        }
                         else
-                            page=page-2;
+                        {
+                            page = page - 2;
+                            if (page == 0)
+                                ViewBag.CurrentPage = 1;
+                            else
+                                ViewBag.CurrentPage = page + 1;
+                        }
                         break;
                     case "right":
-                        if (page == news.Count / 10)
-                            page = news.Count / 10;
+                        if (page == news.Count / 10 && news.Count % 10 != 0)
+                            ViewBag.CurrentPage = page + 1;
                         else if (page == (news.Count / 10) + 1)
-                            page = (news.Count / 10) + 1;
+                        {
+                            page = (news.Count / 10);
+                            ViewBag.CurrentPage = page + 1;
+                        }
+                        else
+                        {
+                            ViewBag.CurrentPage = page + 1;
+                        }
                         break;
                     default:
                         if (page == null)
+                        {
                             page = 0;
+                            ViewBag.CurrentPage = 1;
+                        }
                         else
+                        {
                             page--;
+                            if (page == 0)
+                                ViewBag.CurrentPage = 1;
+                            else
+                                ViewBag.CurrentPage = page + 1;
+                        }
                         break;
                 }
 
@@ -101,7 +121,7 @@ namespace Varyag.Controllers
 
             return View(x);
         }
-        
+
         [Route("О_Нас/Наши_новости/{id}")]
         public async Task<IActionResult> NewsDetails(int? id)
         {
