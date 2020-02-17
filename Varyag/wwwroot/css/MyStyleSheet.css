@@ -220,9 +220,9 @@
     justify-content: center;
 }
 
-.singleCustomer p{
+/*.singleCustomer p{
     font-size: 1.6rem;
-}
+}*/
 
 #1.singleCustomer {
     text-align: center;
@@ -239,7 +239,10 @@
     margin-left: 0;
     margin-right: 0;
     z-index: 999999;
-    background:rgba(255, 255, 255, 0.6);
+    background:rgba(255, 255, 255, 1);
+    display:flex;
+    align-items:center;
+    opacity:0.6;
 }
 
 #left.control {
@@ -264,7 +267,7 @@
     box-shadow: 0px -20px 20px 0px rgba(255, 255, 255, 0.9);
 }
 
-.arrow {
+/*.arrow {
     cursor: pointer;
     height: -webkit-fill-available;
     width: 40px;
@@ -277,7 +280,7 @@
     height: 6px;
     left: 8px;
     position: absolute;
-    top: 48.5%;
+    top: 49%;
     width: 30px;
 }
 
@@ -302,7 +305,7 @@
     transform-origin: top right;
     left: -7px;
     top: 48%;
-}
+}*/
 
 #goto-predist.about {
     background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 60% 100% no-repeat;
@@ -490,12 +493,6 @@ img {
     font-size: 1.44rem;
 }
 
-/*.nav {
-    display: flex;
-    align-items: flex-end;
-    font-size: 22px;
-}*/
-
 .nav-top {
     display: flex;
     width: 100%;
@@ -547,7 +544,6 @@ img {
     display: none;
     width: 32%;
     justify-content: space-between;
-    /*font-size: 15px;*/
     position: absolute;
     padding-bottom: 10px;
     z-index: 9999;
@@ -632,7 +628,6 @@ img {
     font-weight: bold;
     font-size: 1.3rem;
     color: red;
-    /*margin-bottom:10px;*/
 }
 
 .topNavBorder {
@@ -859,10 +854,6 @@ img {
 #sailboats-Sub.sub-nav {
     grid-area: sub-sailboat;
 }
-
-/*#models-Sub.sub-nav {
-    grid-area: sub-maket;
-}*/
 
 .nav-element .nav-element-inside {
     height: 2em;
@@ -1495,8 +1486,13 @@ img {
 }
 
 @media (max-width:1018px) {
+
     #news.about {
         height: 83vh;
+    }
+
+    .arrow-top {
+        top: 48%;
     }
 }
 
@@ -1527,6 +1523,16 @@ img {
 
     .control {
         display: initial;
+    }
+
+    .arrow-top,
+    .arrow-bottom {
+        background: #183f61;
+        height: 6px;
+        left: 8px;
+        position: absolute;
+        top: 49.3%;
+        width: 30px;
     }
 }
 
