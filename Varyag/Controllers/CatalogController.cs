@@ -10,11 +10,11 @@ namespace Varyag.Controllers
 {
     public class CatalogController : Controller
     {
-        private readonly VaryagContext _context;
+        private readonly VaryagContext db;
 
         public CatalogController(VaryagContext context)
         {
-            _context = context;
+            db = context;
         }
 
         [Route("Каталог/Лодки")]
@@ -240,43 +240,15 @@ namespace Varyag.Controllers
         [Route("Каталог/Разное")]
         public IActionResult Models()
         {
+            List<AnythingElse> anythingItems = db.AnythingElse.ToList();
             ViewData["Title"] = "Разные заказы";
             ViewData["Keywords"] = "Дизайнерские решения на морскую тему, Корабли-инсталяции";
             ViewData["Description"] = "Дизайнерские решения, инсталяции и прочие нестандартные поекты, производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "makets";
-            return View();
+
+            return View(anythingItems);
         }
-
-        //[Route("Каталог/Макеты/Макеты_судов_и_кораблей_для_фильмов")]
-        //public IActionResult MaketsCinema()
-        //{
-        //    ViewData["Title"] = "Макеты судов и кораблей для фильмов";
-        //    ViewData["Keywords"] = "Купить макеты для съемок, Макеты судов и кораблей для фильмов";
-        //    ViewData["Description"] = "Макеты судов и кораблей для использования в съемках художественных или документальных фильмах";
-        //    ViewBag.TopPic = "maketscinema";
-        //    return View();
-        //}
-
-        //[Route("Каталог/Макеты/Макеты_судов_для_музеев")]
-        //public IActionResult MaketsMuseum()
-        //{
-        //    ViewData["Title"] = "Макеты судов для музеев";
-        //    ViewData["Keywords"] = "Купить макеты судов для музеев, Макеты парусников и шлюпок для музеев";
-        //    ViewData["Description"] = "Макеты судов и кораблей в качестве музейных экспонатов, а также судов и кораблей-музеев в качестве помещений для выставок";
-        //    ViewBag.TopPic = "maketsmuseum";
-        //    return View();
-        //}
-
-        //[Route("Каталог/Макеты/Макеты_для_дизайна")]
-        //public IActionResult MaketsDesign()
-        //{
-        //    ViewData["Title"] = "Макеты судов для музеев";
-        //    ViewData["Keywords"] = "Купить макеты судов для музеев, Макеты парусников и шлюпок для музеев";
-        //    ViewData["Description"] = "Макеты судов и кораблей в качестве музейных экспонатов, а также судов и кораблей-музеев в качестве помещений для выставок";
-        //    ViewBag.TopPic = "maketsmuseum";
-        //    return View();
-        //}
-
+        
         [Route("Каталог/Проект_{id}")]
         public async Task<IActionResult> ProjectDetails(int? id)
         {
@@ -287,7 +259,7 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            var project = await _context.Project
+            var project = await db.Project
                 .FirstOrDefaultAsync(m => m.ProjectID == id);
             if (project == null)
             {
@@ -302,6 +274,26 @@ namespace Varyag.Controllers
             {
                 ViewBag.TTHType = "AllOthers";
             }
+            return View(project);
+        }
+
+        [Route("Каталог/Разное_{id}")]
+        public async Task<IActionResult> AnythingDetails(int? id)
+        {
+            ViewBag.TopPic = "details";
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var project = await db.AnythingElse
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (project == null)
+            {
+                return NotFound();
+            }
+
             return View(project);
         }
     }

@@ -42,7 +42,7 @@ namespace Varyag.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Projects");
+                        return RedirectToAction("AboutUs", "About");
                     }
                 }
                 else

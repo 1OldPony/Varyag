@@ -29,13 +29,6 @@ namespace Varyag.Controllers
             return File(image, "image/jpg");
         }
 
-        // GET: Fotoes
-        public async Task<IActionResult> Index()
-        {
-            var varyagContext = _context.Foto.Include(f => f.News).Include(f => f.ShipProject);
-            return View(await varyagContext.ToListAsync());
-        }
-
         // GET: Fotoes/Create
         public IActionResult Create(int? ShipProjectId, int? NewsId)
         {

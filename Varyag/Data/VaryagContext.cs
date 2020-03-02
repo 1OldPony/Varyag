@@ -23,6 +23,8 @@ namespace Varyag.Models
             public DbSet<Foto> Foto { get; set; }
 
             public DbSet<News> News { get; set; }
+
+            public DbSet<AnythingElse> AnythingElse { get; set; }
     }
 
 

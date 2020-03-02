@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Varyag.Models.AnythingElse>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Проекты категории "Разное"</h1>
+
+<p>
+    <a asp-action="Create">Создать новый</a>
+</p>
+<br />
+<br />
+<div class="MyContainer">
+    <div class="myBorder"></div>
+    @foreach (var item in Model)
+    {
+    <a asp-action="AnythingDetails" asp-route-id="@item.Id">
+        <div class="singleProject">
+            <div id="short" class="projectImage"><img src="@item.FotoPath1" /></div>
+            <div class="projectImage"><img src="@item.FotoPath2" /></div>
+            <div style="grid-area:name"><h3>@item.Name</h3></div>
+            <div style="overflow:hidden;grid-area:tth">@item.ShortDescription</div>
+        </div>
+        <div>
+            <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> | <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+        </div>
+    </a>
+        <div class="myBorder"></div>
+    }
+</div>

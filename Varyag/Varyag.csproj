@@ -8,9 +8,10 @@
   <ItemGroup>
     <None Include="Views\About\AboutUs.cshtml" />
     <None Include="Views\About\AllNews.cshtml" />
+    <None Include="Views\About\Index.cshtml" />
     <None Include="Views\About\NewsDetails.cshtml" />
     <None Include="Views\Accounts\Login.cshtml" />
-    <None Include="Views\Accounts\Register-disabled.cshtml" />
+    <None Include="Views\Accounts\Register.cshtml" />
     <None Include="Views\Catalog\Bigboats.cshtml" />
     <None Include="Views\Catalog\Boats.cshtml" />
     <None Include="Views\Catalog\BoatsRow.cshtml" />
@@ -44,8 +45,6 @@
     <None Include="Views\Catalog\Yachts.cshtml" />
     <None Include="Views\Fotoes\Create.cshtml" />
     <None Include="Views\Fotoes\Delete.cshtml" />
-    <None Include="Views\Fotoes\Details.cshtml" />
-    <None Include="Views\Fotoes\Index.cshtml" />
     <None Include="Views\News\Create.cshtml" />
     <None Include="Views\News\Delete.cshtml" />
     <None Include="Views\News\Details.cshtml" />
@@ -162,6 +161,8 @@
 
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\news\02.02.2011\02.02.2011\" />
+    <Folder Include="wwwroot\images\news\12.12.2018\12.12.2018\" />
     <Folder Include="wwwroot\images\temp\" />
     <Folder Include="wwwroot\images\Thumbnails\" />
   </ItemGroup>

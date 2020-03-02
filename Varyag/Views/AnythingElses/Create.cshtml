@@ -1,0 +1,43 @@
+﻿@model Varyag.Models.AnythingElse
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div>
+        <div>
+            <p>Название проекта</p>
+            <input type="text" asp-for="Name" />
+        </div>
+        <div>
+            <p>Краткое описание</p>
+            <textarea asp-for="ShortDescription"></textarea>
+        </div>
+        <div>
+            <p>Полный текст</p>
+            <textarea asp-for="Description"></textarea>
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>Фото 1</p>
+            <input type="file" name="frontFoto1" required />
+        </div>
+        <div>
+            <p>Фото 2</p>
+            <input type="file" name="frontFoto2" required />
+        </div>
+        <div>
+            <p>Галерея</p>
+            <input type="file" name="galleryFoto" multiple required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

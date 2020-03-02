@@ -170,7 +170,6 @@ namespace Varyag.Controllers
         {
 
             string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
-            //Directory pathFolder = new Directory(path);
 
             if (!Directory.Exists(path))
             {

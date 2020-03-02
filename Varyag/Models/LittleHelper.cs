@@ -36,6 +36,10 @@ namespace Varyag.Models
                     fotoPath = "~/" + pathParts[(pathParts.Length - 1) - 4] + "/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
                         + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
                     break;
+                case "frontFoto":
+                    fotoPath = "/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
+                        + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
+                    break;
                 default:
                     break;
             }
@@ -162,5 +166,6 @@ namespace Varyag.Models
 
             return orderedProjects;
         }
+
     }
 }

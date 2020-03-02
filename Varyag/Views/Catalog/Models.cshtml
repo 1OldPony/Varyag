@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Varyag.Models.Project>
+﻿@model IEnumerable<Varyag.Models.AnythingElse>
 @{
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
@@ -7,7 +7,7 @@
         <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a>Разное</a>
     </div>
     <div class="explainText">
-        <span style="margin-left:100px"></span>Верфь деревянного судостроения "Варяг" кроме строительства обычных судов занимается изготовлением экспонатов для различных музеев, моделей судов для киносъемок, 
+        <span style="margin-left:100px"></span>Верфь деревянного судостроения "Варяг" кроме строительства обычных судов занимается изготовлением экспонатов для различных музеев, моделей судов для киносъемок,
         а также элементов интерьера и различных инсталяций.
     </div>
     <div class="catalog">
@@ -126,5 +126,17 @@
         <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
     </div>
-    @await Component.InvokeAsync("ProjectsCatalog", new { category = "maket" })
+    <div class="myBorder" style="margin-top:10px"></div>
+    @foreach (var item in Model)
+    {
+        <a asp-action="AnythingDetails" asp-route-id="@item.Id">
+            <div class="singleProject">
+                <div id="short" class="projectImage"><img src="@item.FotoPath1" /></div>
+                <div class="projectImage"><img src="@item.FotoPath2" /></div>
+                <div style="grid-area:name"><h3>@item.Name</h3></div>
+                <div style="overflow:hidden;grid-area:tth">@item.ShortDescription</div>
+            </div>
+        </a>
+        <div class="myBorder"></div>
+    }
 </div>

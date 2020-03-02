@@ -11,7 +11,7 @@ using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public class ProjectsController : Controller
     {
         private readonly VaryagContext _context;
