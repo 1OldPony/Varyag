@@ -154,31 +154,6 @@
                         <img src="~/images/узкие/Шлюпки/Учебные-пособия-коллаж.jpg" />
                     </div>
                     break;
-                @*case "maketscinema":
-                <div>
-                    <img src="~/images/узкие/Макеты/крузенштерн коллаж-2.jpg" />
-                </div>
-                <div style="display:none">
-                    <img src="~/images/узкие/Макеты/крузенштерн коллаж.jpg" />
-                </div>
-                <div style="display:none">
-                    <img src="~/images/узкие/Макеты/хорнблауер-2.jpg" />
-                </div>
-                <div style="display:none">
-                    <img src="~/images/узкие/Макеты/хорнблауер.jpg" />
-                </div>
-                break;
-            case "maketsmuseum":
-                <div>
-                    <img src="~/images/узкие/Макеты/гото-предистинация.jpg" />
-                </div>
-                <div style="display:none">
-                    <img src="~/images/узкие/Макеты/выборг-коллаж.jpg" />
-                </div>
-                <div style="display:none">
-                    <img src="~/images/узкие/Макеты/выборг.jpg" />
-                </div>
-                break;*@
                 default:
                     <div class="longUpFoto">
                         <img src="~/images/Надверхняя-строка-на150.jpg" />
@@ -273,7 +248,7 @@
                 <a asp-action=><div class=topNavCategory>Корабль-музей &quot;Гото Предистинация&quot;</div></a>
             </div>
             <div id=aboutUsTopNav class=category>
-                <a asp-action="Index" asp-controller="About"><div id=aboutUsTopNav class=topNavCategory>О нашей верфи</div></a>
+                <a asp-action="AboutUs" asp-controller="About"><div id=aboutUsTopNav class=topNavCategory>О нашей верфи</div></a>
                 <a href=><div id=aboutUsTopNav class=topNavCategory>О нашем производстве</div></a>
                 <a asp-action="AllNews" asp-controller="About"><div id=aboutUsTopNav class=topNavCategory>Наши новости</div></a>
                 <a asp-action="AllNews" asp-controller="About" asp-route-newsType="smi"><div id=aboutUsTopNav class=topNavCategory>СМИ о нас</div></a>
@@ -292,7 +267,6 @@
                 <img src="~/images/лого-кораблик-с-текстом-еще-пожирней.png" style="display:none;height:237px" />
                 <img src="~/images/лого-кораблик-с-текстом-светлосиний.png" style="display:none;height:237px" />
                 <img src="~/images/лого-кораблик-с-текстом-светло-светлосиний.png" style="display:none;height:237px" />
-                @*<img src="~/images/лого-кораблик-с-текстом.png" style="height:237px;width:auto" />*@
                 <img src="~/images/лого-кораблик-с-текстом.png" style="display:none;height:200px;width:auto" />
             </div>
             <div class="socialNetworks">
@@ -310,16 +284,13 @@
                 </div>*@
                 </div>
                 <div class="socialButtons">
-                    <a href="https://vk.com/shipyard_varyag">
+                    <a href="https://vk.com/shipyard_varyag" class="socialButton">
                         <img src="~/images/vkont.png" />
                     </a>
-                    <a href="https://vk.com/shipyard_varyag">
+                    <a href="https://vk.com/shipyard_varyag" class="socialButton">
                         <img src="~/images/insta.png" />
                     </a>
-                    @*<a href="https://vk.com/shipyard_varyag">
-                    <img src="~/images/pinter.png" />
-                </a>*@
-                    <a href="https://vk.com/shipyard_varyag">
+                    <a href="https://vk.com/shipyard_varyag" class="socialButton">
                         <img src="~/images/youtube.png" />
                     </a>
                 </div>
@@ -331,17 +302,10 @@
                     или по телефону&nbsp;- +7&nbsp;814&nbsp;273&nbsp;35&nbsp;80
                 </p>
             </div>
-            <div class="footerContactsLong">
+            <div id="contacts" class="footerContactsLong">
                 <p>
                     Наш адрес: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43,
                     заезд с переулка спасателей.
-                </p>
-            </div>
-            <div class="footerContactsShort">
-                <p>
-                    г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<br />
-                    varyag@onego.ru<br />
-                    +7&nbsp;814&nbsp;273&nbsp;35&nbsp;80
                 </p>
             </div>
             <div class="footerMap">

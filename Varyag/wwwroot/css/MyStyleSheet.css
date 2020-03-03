@@ -220,10 +220,6 @@
     justify-content: center;
 }
 
-/*.singleCustomer p{
-    font-size: 1.6rem;
-}*/
-
 #1.singleCustomer {
     text-align: center;
     padding: 1vh;
@@ -242,7 +238,7 @@
     background:rgba(255, 255, 255, 1);
     display:flex;
     align-items:center;
-    opacity:0.6;
+    opacity:0.8;
 }
 
 #left.control {
@@ -1177,8 +1173,8 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    margin-right: 2vw;
-    margin-left: 2vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
 }
 
     .logo img {
@@ -1188,6 +1184,7 @@ img {
 .socialNetworks {
     display: flex;
     flex-direction: column;
+    margin-right:1vw;
 }
 
 .socialVidgets {
@@ -1331,6 +1328,12 @@ img {
     }
 }
 
+@media (max-width:1480px) {
+    .logo {
+        display:none;
+    }
+}
+
 @media (max-width:1400px) {
     #catalog.category {
         width:40%;
@@ -1346,6 +1349,17 @@ img {
     #goto-predist.about {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 80% 100% no-repeat;
         background-size: auto 135%;
+    }
+}
+
+@media (max-width:1220px) {
+
+    .footerMap{
+        display:none;
+    }
+
+    .aboutSite {
+        justify-content:space-around;
     }
 }
 
@@ -1521,10 +1535,6 @@ img {
         padding-top: 1vh;
     }
 
-    .control {
-        display: initial;
-    }
-
     .arrow-top,
     .arrow-bottom {
         background: #183f61;
@@ -1555,6 +1565,10 @@ img {
 
     #contacts.longText {
         display: none;
+    }
+
+    #contacts.footerContactsLong {
+        display:none;
     }
 }
 
@@ -1648,11 +1662,7 @@ img {
     #sailboats-Sub.sub-nav {
         grid-area: sub;
     }
-
-    /*#models-Sub.sub-nav {
-    grid-area: sub;
-}*/
-
+    
     .nav {
         flex-direction: column;
         align-items: initial;
@@ -1880,6 +1890,13 @@ img {
     }
 }
 
+@media (max-width:658px) {
+
+    .footerContactsLong {
+        font-size:1.7rem
+    }
+}
+
 @media (max-width:651px) {
 
     #middleValue.cellShort {
@@ -1904,6 +1921,26 @@ img {
 
     #catalog.category {
         width: 80%;
+    }
+}
+
+@media (max-width:640px) {
+
+    .footerContactsLong {
+        display:none
+    }
+
+    .socialNetworks {
+        width:100%;
+        align-items:center;
+    }
+
+    .socialButtons {
+        height:auto;
+    }
+
+    .socialButton {
+        margin:1vw;
     }
 }
 
@@ -2058,16 +2095,16 @@ img {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
     }
 
-    .footerContactsLong {
+    /*.footerContactsLong {
         display: none;
-    }
+    }*/
 
-    .footerContactsShort {
+    /*.footerContactsShort {
         display: flex;
         width: 260px;
         font-size: 1.2rem;
         text-align: center;
-    }
+    }*/
 }
 
 

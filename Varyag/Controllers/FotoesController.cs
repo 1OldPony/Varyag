@@ -10,7 +10,6 @@ using Varyag.Models.ViewModels;
 namespace Varyag.Controllers
 {
     //[Authorize(Roles = "admin")]
-    [AllowAnonymous]
     public class FotoesController : Controller
     {
         private readonly VaryagContext _context;
