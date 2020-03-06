@@ -167,5 +167,27 @@ namespace Varyag.Models
             return orderedProjects;
         }
 
+        public static string UrlGiver (string iframe)
+        {
+            string[] codeParts = iframe.Split(new char[] { '\"' }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (iframe.Contains("vk.com"))
+                return (codeParts[1]);
+            else
+                return (codeParts[5]);
+        }
+
+        public static int NullCounter(params string[] parameters)
+        {
+            int nullCount = 0;
+            foreach (var item in parameters)
+            {
+                if (item==null)
+                {
+                    nullCount++;
+                }
+            }
+            return nullCount;
+        }
     }
 }

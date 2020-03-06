@@ -216,7 +216,7 @@ namespace Varyag.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("NewsId,Header,NewsDate,MainStory,KeyWord,PathToGallery,ShortImgScale,ShortImgX,ShortImgY," +
-            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory,ShortFotoPreview,MiddleFotoPreview,WideSFotoPreview")] News news, IFormFileCollection newsGallery)
+            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory,ShortFotoPreview,MiddleFotoPreview,WideSFotoPreview,PathToVideo1,PathToVideo2,PathToVideo3")] News news, IFormFileCollection newsGallery)
         {
             if (ModelState.IsValid)
             {
@@ -278,6 +278,19 @@ namespace Varyag.Controllers
                 news.WideImgScale = news.WideImgScale + "%";
                 news.WideImgX = news.WideImgX + "%";
                 news.WideImgY = news.WideImgY + "%";
+
+                if (news.PathToVideo1!=null)
+                {
+                    news.PathToVideo1 = LittleHelper.UrlGiver(news.PathToVideo1);
+                }
+                if (news.PathToVideo2!=null)
+                {
+                    news.PathToVideo2 = LittleHelper.UrlGiver(news.PathToVideo2);
+                }
+                if (news.PathToVideo3!=null)
+                {
+                    news.PathToVideo3 = LittleHelper.UrlGiver(news.PathToVideo3);
+                }
 
                 _context.Add(news);
                 await _context.SaveChangesAsync();
@@ -389,6 +402,19 @@ namespace Varyag.Controllers
                                 await newsGallery[i].CopyToAsync(fileStream);
                             }
                         }
+                    }
+
+                    if (news.PathToVideo1 != null)
+                    {
+                        news.PathToVideo1 = LittleHelper.UrlGiver(news.PathToVideo1);
+                    }
+                    if (news.PathToVideo2 != null)
+                    {
+                        news.PathToVideo2 = LittleHelper.UrlGiver(news.PathToVideo2);
+                    }
+                    if (news.PathToVideo3 != null)
+                    {
+                        news.PathToVideo3 = LittleHelper.UrlGiver(news.PathToVideo3);
                     }
 
                     _context.Update(news);

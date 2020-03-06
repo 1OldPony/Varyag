@@ -1202,7 +1202,7 @@ img {
     display:flex;
     align-items:center;
     justify-content:center;
-    width:260px;
+    width:350px;
     font-size:1.8rem;
     text-align:center;
 }
@@ -1310,8 +1310,30 @@ img {
     width: 20vw;
 }
 
-@media (max-width:1628px) {
+.newsMainForm {
+    display: grid;
+    grid-template-areas: "newsHeader newsHeader newsHeader explanation" "mainNewsText mainNewsText subForm subForm" "mainNewsText mainNewsText subForm subForm" "mainNewsText mainNewsText empty empty";
+    grid-template-columns: 35% 35% 15% 15%;
+    grid-template-rows: min-content min-content min-content min-content;
+    justify-content: center;
+}
 
+.empty {
+    height:auto;
+    width:auto;
+    grid-area:empty;
+}
+
+.mainFormSub {
+    display: grid;
+    grid-template-areas: "typeOfNews newsVideo1" "galleryFotos newsVideo2" "dateOfNews newsVideo3";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: min-content min-content min-content;
+    justify-content: center;
+    grid-area: subForm;
+}
+
+@media (max-width:1628px) {
     #allNews.partNewsElement {
         height: 35vh;
     }
@@ -1890,13 +1912,6 @@ img {
     }
 }
 
-@media (max-width:658px) {
-
-    .footerContactsLong {
-        font-size:1.7rem
-    }
-}
-
 @media (max-width:651px) {
 
     #middleValue.cellShort {
@@ -1921,26 +1936,6 @@ img {
 
     #catalog.category {
         width: 80%;
-    }
-}
-
-@media (max-width:640px) {
-
-    .footerContactsLong {
-        display:none
-    }
-
-    .socialNetworks {
-        width:100%;
-        align-items:center;
-    }
-
-    .socialButtons {
-        height:auto;
-    }
-
-    .socialButton {
-        margin:1vw;
     }
 }
 
@@ -2094,17 +2089,13 @@ img {
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
     }
+}
 
-    /*.footerContactsLong {
-        display: none;
-    }*/
+@media (max-width:490px) {
 
-    /*.footerContactsShort {
-        display: flex;
-        width: 260px;
-        font-size: 1.2rem;
-        text-align: center;
-    }*/
+    .footerContactsLong {
+        display:none
+    }
 }
 
 
@@ -2167,13 +2158,6 @@ img {
     }
 }
 
-@media (max-width:414px) {
-
-    #news.about {
-        height: 99vh;
-    }
-}
-
 @media (max-width:418px) {
 
     #museum {
@@ -2182,6 +2166,13 @@ img {
 
     .aboutUsMuseum {
         display: initial;
+    }
+}
+
+@media (max-width:414px) {
+
+    #news.about {
+        height: 99vh;
     }
 }
 
@@ -2196,7 +2187,7 @@ img {
         display: initial;
     }
 
-    .socialNetworks {
+    /*.socialNetworks {
         display: flex;
         flex-direction: column;
         align-content: center
@@ -2208,7 +2199,7 @@ img {
 
     .socialButtons {
         display: flex;
-    }
+    }*/
 }
 
 @media (max-width:398px) {

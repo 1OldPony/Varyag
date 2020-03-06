@@ -43,6 +43,20 @@ function cinemaAboutUsSubNavPosition() {
     $("#aboutUsTopNav.category").css("left", aboutUsLeft);
 }
 
+/////////////////////Перещелкиваем видео в новостях////////////////////
+$("#videoOne").click(function () {
+    var url = $("#firstVideoUrl").val();
+    $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
+});
+$("#videoTwo").click(function () {
+    var url = $("#secondVideoUrl").val();
+    $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
+});
+$("#videoThree").click(function () {
+    var url = $("#thirdVideoUrl").val();
+    $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
+});
+
 //////////////////добавление яндекс карт, точка на варяге//////////////////////
 ymaps.ready(function () {
     var mapVaryag = new ymaps.Map("ourLocation", {

@@ -1,16 +1,110 @@
 ﻿@model Varyag.Models.News
-
-@{ 
+@{
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
-
 <div class="MyContainer" style="font-size:1.3rem">
     <h2>@Model.Header</h2>
     <div style="margin-bottom:5vh">@Html.Raw(Model.MainStory)</div>
-    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-        @await Component.InvokeAsync("Fotorama", new { newsId = Model.NewsId })
-    </div>
-    <div style="position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden;">
-        <iframe src="//vk.com/video_ext.php?oid=-137987101&id=456239038&hash=05e8bb22a82cac94&hd=2" style="position:absolute;top:0;left:0;width:100%;height:100%;" width="853" height="480" frameborder="0" allowfullscreen></iframe>
-    </div>
+    @if (Model.PathToGallery != null)
+    {
+        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+            @await Component.InvokeAsync("Fotorama", new { newsId = Model.NewsId })
+        </div>
+    }
+
+    @if (LittleHelper.NullCounter(Model.PathToVideo1, Model.PathToVideo2, Model.PathToVideo3) <2)
+    {
+        <div class="newsNav">
+            @if (Model.PathToVideo1 != null)
+            {
+                <div class="nav-element-minor" style="cursor:pointer" id="videoOne">
+                    <div class="nav-element-inside">
+                        <p>Сюжет №1</p>
+                    </div>
+                    <input type="text" value="@Model.PathToVideo1" id="firstVideoUrl" hidden />
+                </div>
+            }
+            @if (Model.PathToVideo2 != null)
+            {
+                <div class="nav-element-minor" style="cursor:pointer" id="videoTwo">
+                    <div class="nav-element-inside">
+                        @if (Model.PathToVideo1 == null)
+                        {
+                            <p>Сюжет №1</p>
+                        }
+                        else
+                        {
+                            <p>Сюжет №2</p>
+                        }
+                    </div>
+                    <input type="text" value="@Model.PathToVideo2" id="secondVideoUrl" hidden />
+                </div>
+            }
+            @if (Model.PathToVideo3 != null)
+            {
+                <div class="nav-element-minor" style="cursor:pointer" id="videoThree">
+                    <div class="nav-element-inside">
+                        @if (Model.PathToVideo1 == null && Model.PathToVideo2 == null)
+                        {
+                            <p>Сюжет №1</p>
+                        }
+                        @if (Model.PathToVideo2 == null && Model.PathToVideo1 != null)
+                        {
+                            <p>Сюжет №2</p>
+                        }
+                        @if (Model.PathToVideo2 != null && Model.PathToVideo1 != null)
+                        {
+                            <p>Сюжет №3</p>
+                        }
+                    </div>
+                    <input type="text" value="@Model.PathToVideo3" id="thirdVideoUrl" hidden />
+                </div>
+            }
+        </div>
+    }
+
+    @*На случай если только 1 видео и находится оно в разных ячейках*@
+
+    @if (Model.PathToVideo1 != null && Model.PathToVideo2 == null && Model.PathToVideo3 == null)
+    {
+        <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+            <iframe src="@Model.PathToVideo1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+        </div>
+    }
+    @if (Model.PathToVideo1 == null && Model.PathToVideo2 != null && Model.PathToVideo3 == null)
+    {
+        <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+            <iframe src="@Model.PathToVideo2" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+        </div>
+    }
+    @if (Model.PathToVideo1 == null && Model.PathToVideo2 == null && Model.PathToVideo3 != null)
+    {
+        <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+            <iframe src="@Model.PathToVideo3" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+        </div>
+    }
+    @if (Model.PathToVideo1 != null && Model.PathToVideo2 != null && Model.PathToVideo3 == null)
+    {
+        <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+            <iframe src="@Model.PathToVideo1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+        </div>
+    }
+    @if (Model.PathToVideo1 != null && Model.PathToVideo2 == null && Model.PathToVideo3 != null)
+    {
+        <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+            <iframe src="@Model.PathToVideo1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+        </div>
+    }
+    @if (Model.PathToVideo1 == null && Model.PathToVideo2 != null && Model.PathToVideo3 != null)
+    {
+        <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+            <iframe src="@Model.PathToVideo2" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+        </div>
+    }
+    @if (Model.PathToVideo1 != null && Model.PathToVideo2 != null && Model.PathToVideo3 != null)
+    {
+        <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+            <iframe src="@Model.PathToVideo1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+        </div>
+    }
 </div>

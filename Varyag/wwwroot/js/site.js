@@ -9,8 +9,8 @@ $(document).ready(function () {
     tinymce.init({
         selector: 'textarea#mce',
         skin: 'oxide',
-        width: 1200,
-        height: 200,
+        width: 1250,
+        height: 400,
         language: 'ru',
         plugins: 'code',
         toolbar: 'code'
