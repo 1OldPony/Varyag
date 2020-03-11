@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Varyag.Models.Article>
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Статьи</h1>
+
+<p>
+    <a asp-action="Create">Создать новую</a>
+</p>
+
+@for (int i = 0; i < Model.Count(); i++)
+{
+<div style="margin:2vh">
+    <h2>@Model.ElementAt(i).ArticleName</h2>
+    <input type="button" name="showHideButton" value="Развернутый вид" id="@i" />
+    <div class="MyContainer" id="@i" style="display:none">
+        <div class="articleBody">
+            <div style="grid-row:1;grid-column:1/3;"><h2>@Model.ElementAt(i).ArticleName</h2></div>
+            <div>@Model.ElementAt(i).Text1</div>
+            <div><img src="@Model.ElementAt(i).FotoPath1" /></div>
+            <div><img src="@Model.ElementAt(i).FotoPath2" /></div>
+            <div>@Model.ElementAt(i).Text2</div>
+            <div>@Model.ElementAt(i).Text3</div>
+            <div><img src="@Model.ElementAt(i).FotoPath3" /></div>
+            <div><img src="@Model.ElementAt(i).FotoPath4" /></div>
+            <div>@Model.ElementAt(i).Text4</div>
+            <div>@Model.ElementAt(i).Text5</div>
+            <div><img src="@Model.ElementAt(i).FotoPath5" /></div>
+            <div><img src="@Model.ElementAt(i).FotoPath6" /></div>
+            <div>@Model.ElementAt(i).Text6</div>
+            <div>@Model.ElementAt(i).Text7</div>
+            <div><img src="@Model.ElementAt(i).FotoPath7" /></div>
+            <div><img src="@Model.ElementAt(i).FotoPath8" /></div>
+            <div>@Model.ElementAt(i).Text8</div>
+            <div>@Model.ElementAt(i).Text9</div>
+            <div><img src="@Model.ElementAt(i).FotoPath9" /></div>
+            <div><img src="@Model.ElementAt(i).FotoPath10" /></div>
+            <div>@Model.ElementAt(i).Text10</div>
+            <div>@Model.ElementAt(i).Text11</div>
+            <div><img src="@Model.ElementAt(i).FotoPath11" /></div>
+            <div><img src="@Model.ElementAt(i).FotoPath12" /></div>
+            <div>@Model.ElementAt(i).Text12</div>
+            <div>@Model.ElementAt(i).Text13</div>
+            <div><img src="@Model.ElementAt(i).FotoPath13" /></div>
+            <div><img src="@Model.ElementAt(i).FotoPath14" /></div>
+            <div>@Model.ElementAt(i).Text14</div>
+            <div>@Model.ElementAt(i).Text15</div>
+            <div><img src="@Model.ElementAt(i).FotoPath15" /></div>
+        </div>
+    </div>
+    <p>
+        <a asp-action="Edit" asp-route-id="@Model.ElementAt(i).ArticleId">Редактировать новость</a> |
+        <a asp-action="Delete" asp-route-id="@Model.ElementAt(i).ArticleId">Удалить новость</a>
+    </p>
+</div>
+    <div class="myBorder"></div>
+}

@@ -1312,6 +1312,8 @@ img {
 
 .newsMainForm {
     display: grid;
+    grid-auto-flow:row;
+
     grid-template-areas: "newsHeader newsHeader newsHeader explanation" "mainNewsText mainNewsText subForm subForm" "mainNewsText mainNewsText subForm subForm" "mainNewsText mainNewsText empty empty";
     grid-template-columns: 35% 35% 15% 15%;
     grid-template-rows: min-content min-content min-content min-content;
@@ -1331,6 +1333,12 @@ img {
     grid-template-rows: min-content min-content min-content;
     justify-content: center;
     grid-area: subForm;
+}
+
+.articleBody {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-template-rows: repeat(16,auto);
 }
 
 @media (max-width:1628px) {

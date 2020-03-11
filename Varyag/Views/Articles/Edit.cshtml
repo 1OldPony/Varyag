@@ -1,0 +1,167 @@
+﻿@model Varyag.Models.Article
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Article</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ArticleId" />
+            <div class="form-group">
+                <label asp-for="Text1" class="control-label"></label>
+                <input asp-for="Text1" class="form-control" />
+                <span asp-validation-for="Text1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath1" class="control-label"></label>
+                <input asp-for="FotoPath1" class="form-control" />
+                <span asp-validation-for="FotoPath1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text2" class="control-label"></label>
+                <input asp-for="Text2" class="form-control" />
+                <span asp-validation-for="Text2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath2" class="control-label"></label>
+                <input asp-for="FotoPath2" class="form-control" />
+                <span asp-validation-for="FotoPath2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text3" class="control-label"></label>
+                <input asp-for="Text3" class="form-control" />
+                <span asp-validation-for="Text3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath3" class="control-label"></label>
+                <input asp-for="FotoPath3" class="form-control" />
+                <span asp-validation-for="FotoPath3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text4" class="control-label"></label>
+                <input asp-for="Text4" class="form-control" />
+                <span asp-validation-for="Text4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath4" class="control-label"></label>
+                <input asp-for="FotoPath4" class="form-control" />
+                <span asp-validation-for="FotoPath4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text5" class="control-label"></label>
+                <input asp-for="Text5" class="form-control" />
+                <span asp-validation-for="Text5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath5" class="control-label"></label>
+                <input asp-for="FotoPath5" class="form-control" />
+                <span asp-validation-for="FotoPath5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text6" class="control-label"></label>
+                <input asp-for="Text6" class="form-control" />
+                <span asp-validation-for="Text6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath6" class="control-label"></label>
+                <input asp-for="FotoPath6" class="form-control" />
+                <span asp-validation-for="FotoPath6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text7" class="control-label"></label>
+                <input asp-for="Text7" class="form-control" />
+                <span asp-validation-for="Text7" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath7" class="control-label"></label>
+                <input asp-for="FotoPath7" class="form-control" />
+                <span asp-validation-for="FotoPath7" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text8" class="control-label"></label>
+                <input asp-for="Text8" class="form-control" />
+                <span asp-validation-for="Text8" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath8" class="control-label"></label>
+                <input asp-for="FotoPath8" class="form-control" />
+                <span asp-validation-for="FotoPath8" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text9" class="control-label"></label>
+                <input asp-for="Text9" class="form-control" />
+                <span asp-validation-for="Text9" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath9" class="control-label"></label>
+                <input asp-for="FotoPath9" class="form-control" />
+                <span asp-validation-for="FotoPath9" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text10" class="control-label"></label>
+                <input asp-for="Text10" class="form-control" />
+                <span asp-validation-for="Text10" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath10" class="control-label"></label>
+                <input asp-for="FotoPath10" class="form-control" />
+                <span asp-validation-for="FotoPath10" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text11" class="control-label"></label>
+                <input asp-for="Text11" class="form-control" />
+                <span asp-validation-for="Text11" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath11" class="control-label"></label>
+                <input asp-for="FotoPath11" class="form-control" />
+                <span asp-validation-for="FotoPath11" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text13" class="control-label"></label>
+                <input asp-for="Text13" class="form-control" />
+                <span asp-validation-for="Text13" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath13" class="control-label"></label>
+                <input asp-for="FotoPath13" class="form-control" />
+                <span asp-validation-for="FotoPath13" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text14" class="control-label"></label>
+                <input asp-for="Text14" class="form-control" />
+                <span asp-validation-for="Text14" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath14" class="control-label"></label>
+                <input asp-for="FotoPath14" class="form-control" />
+                <span asp-validation-for="FotoPath14" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text15" class="control-label"></label>
+                <input asp-for="Text15" class="form-control" />
+                <span asp-validation-for="Text15" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotoPath15" class="control-label"></label>
+                <input asp-for="FotoPath15" class="form-control" />
+                <span asp-validation-for="FotoPath15" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

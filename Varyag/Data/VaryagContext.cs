@@ -25,6 +25,8 @@ namespace Varyag.Models
             public DbSet<News> News { get; set; }
 
             public DbSet<AnythingElse> AnythingElse { get; set; }
+
+            public DbSet<Varyag.Models.Article> Article { get; set; }
     }
 
 

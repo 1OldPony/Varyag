@@ -15,11 +15,12 @@
         </div>
         <div>
             <p>Краткое описание</p>
-            <textarea asp-for="ShortDescription"></textarea>
+            <p>МАКСИМАЛЬНОЕ КОЛ-ВО СИМВОЛОВ ОГРАНИЧЕНО 377-Ю!!!</p>
+            <textarea asp-for="ShortDescription" rows="10" cols="170" maxlength="377"></textarea>
         </div>
         <div>
             <p>Полный текст</p>
-            <textarea asp-for="Description"></textarea>
+            <textarea asp-for="Description" id="mce"></textarea>
         </div>
     </div>
     <div>
@@ -35,7 +36,7 @@
             <p>Галерея</p>
             <input type="file" name="galleryFoto" multiple required />
         </div>
-    </div>
+    </div><br />
 
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-primary" />
