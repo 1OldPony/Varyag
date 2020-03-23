@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Internal;
 
 namespace Varyag
 {
@@ -29,6 +30,7 @@ namespace Varyag
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //services.AddRouting();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
@@ -63,12 +65,12 @@ namespace Varyag
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            app.UseAuthentication();
+            //app.UseAuthentication();
 
             app.UseMvc(
                 routes =>
             {
-                routes.MapRoute("default", "{controller=About}/{action=Index}/{id?}");
+                routes.MapRoute("default", "{controller=About}/{action=AboutUs}/{id?}");
             }
             );
         }

@@ -5,6 +5,10 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="Views\About\AboutUs.cshtml" />
     <None Include="Views\About\AllNews.cshtml" />
@@ -161,8 +165,6 @@
 
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\news\02.02.2011\02.02.2011\" />
-    <Folder Include="wwwroot\images\news\12.12.2018\12.12.2018\" />
     <Folder Include="wwwroot\images\temp\" />
     <Folder Include="wwwroot\images\Thumbnails\" />
   </ItemGroup>

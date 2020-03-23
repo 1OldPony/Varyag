@@ -25,7 +25,7 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("О_нас/О_нашей_верфи")]
+        //[Route("О_нас/О_нашей_верфи")]
         public IActionResult AboutUs()
         {
             ViewData["Title"] = "Верфь деревянного судостроения Варяг";
