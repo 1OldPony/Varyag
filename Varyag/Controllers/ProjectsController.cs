@@ -114,6 +114,7 @@ namespace Varyag.Controllers
 
                     ProjectID = model.ProjectID,
                     Name = model.Name,
+                    Route = model.Route,
                     Length = model.Length,
                     Deep = model.Deep,
                     Description = model.Description,
@@ -213,6 +214,7 @@ namespace Varyag.Controllers
 
                         ProjectID = model.ProjectID,
                         Name = model.Name,
+                        Route = model.Route,
                         Length = model.Length,
                         Deep = model.Deep,
                         Description = model.Description,
@@ -238,17 +240,6 @@ namespace Varyag.Controllers
                             project.ShipSheme = memoryStream.ToArray();
                         }
                     }
-                    //else
-                    //{
-                    //    byte[] foto = new byte[] { } ;
-                    //    char[] she = model.ShipSheme.ToString().ToArray();
-                    //    for (int i = 0; i < she.Length; i++)
-                    //    {
-                    //        byte b = Convert.ToByte(she[i]);
-                    //        foto[i] = b;
-                    //    }
-                    //    project.ShipSheme = foto;
-                    //}
 
                     if (model.MainFoto != null)
                     {
@@ -258,10 +249,6 @@ namespace Varyag.Controllers
                             project.MainFoto = memoryStream.ToArray();
                         }
                     }
-                    //else
-                    //{
-                    //    project.MainFoto = _context.Project.Where(p => p.ProjectID == id).Single().MainFoto;
-                    //}
 
                     if (model.ShipShemeFull != null)
                     {
@@ -271,10 +258,6 @@ namespace Varyag.Controllers
                             project.ShipShemeFull = memoryStream.ToArray();
                         }
                     }
-                    //else
-                    //{
-                    //    project.ShipShemeFull = _context.Project.Where(p => p.ProjectID == id).Single().ShipShemeFull;
-                    //}
 
                     _context.Update(project);
                     await _context.SaveChangesAsync();

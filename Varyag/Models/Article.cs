@@ -9,6 +9,7 @@ namespace Varyag.Models
     {
         public int ArticleId { get; set; }
         public string ArticleName { get; set; }
+        public string ArticleRoute { get; set; }
         public string Text1 { get; set; }
         public string FotoPath1 { get; set; }
         public string Text2 { get; set; }

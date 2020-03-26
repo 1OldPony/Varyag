@@ -40,7 +40,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,FotoPath1,FotoPath2,ShortDescription,Description,PathToGallery")] AnythingElse anythingElse, IFormFile frontFoto1, IFormFile frontFoto2, IFormFileCollection galleryFoto)
+        public async Task<IActionResult> Create([Bind("Id,Name,Route,FotoPath1,FotoPath2,ShortDescription,Description,PathToGallery")] AnythingElse anythingElse, IFormFile frontFoto1, IFormFile frontFoto2, IFormFileCollection galleryFoto)
         {
             await SaveImgAsync("frontFoto1.jpg", anythingElse.Name, frontFoto1);
             await SaveImgAsync("frontFoto2.jpg", anythingElse.Name, frontFoto2);
@@ -132,7 +132,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,FotoPath1,FotoPath2,ShortDescription,Description,PathToGallery")] AnythingElse anythingElse, IFormFile frontFoto1, IFormFile frontFoto2, IFormFileCollection galleryFoto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Route,FotoPath1,FotoPath2,ShortDescription,Description,PathToGallery")] AnythingElse anythingElse, IFormFile frontFoto1, IFormFile frontFoto2, IFormFileCollection galleryFoto)
         {
             if (id != anythingElse.Id)
             {

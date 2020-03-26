@@ -25,7 +25,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        //[Route("О_нас/О_нашей_верфи")]
         public IActionResult AboutUs()
         {
             ViewData["Title"] = "Верфь деревянного судостроения Варяг";
@@ -34,7 +33,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("О_Нас/Наши_новости")]
         public async Task<IActionResult> AllNews(string newsType, int? page, string direction)
         {
             ViewData["Title"] = "Новости верфи деревянного судостроения Варяг";
@@ -132,7 +130,6 @@ namespace Varyag.Controllers
             return View(x);
         }
 
-        [Route("О_Нас/Наши_новости/{id}")]
         public async Task<IActionResult> NewsDetails(int? id)
         {
             if (id == null)

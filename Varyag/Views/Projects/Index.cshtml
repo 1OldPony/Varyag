@@ -18,6 +18,8 @@
             <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "main"})" alt="@item.Name" title="@item.Name" /></div>
             <div class="catalogItemTop">@item.Name</div>
             <div id="top" class="gridFreeSpace"></div>
+            <div>Сегмент пути:</div>
+            <div>@item.Route</div>
             <div class="TTH">
                 <table>
                     <tr class="cellLong">

@@ -20,7 +20,6 @@ namespace Varyag.Controllers
         public async Task<IViewComponentResult> InvokeAsync(string category)
         {
             var items = new List<Project>();
-            var anythingItems = new List<AnythingElse>(); 
             switch (category)
             {
                 case "boatrow":
@@ -62,15 +61,6 @@ namespace Varyag.Controllers
                 case "ladyasail":
                     items = await db.Project.Where(w => w.LadyaSail == true).ToListAsync();
                     break;
-                case "maketcinema":
-                    items = await db.Project.Where(w => w.MaketCinema == true).ToListAsync();
-                    break;
-                case "maketdesign":
-                    items = await db.Project.Where(w => w.MaketDesign == true).ToListAsync();
-                    break;
-                case "maketmuseum":
-                    items = await db.Project.Where(w => w.MaketMuseum == true).ToListAsync();
-                    break;
                 case "maketstudy":
                     items = await db.Project.Where(w => w.MaketStudy == true).ToListAsync();
                     break;
@@ -107,9 +97,6 @@ namespace Varyag.Controllers
                 case "sailboat":
                     items = await db.Project.Where(w => w.Yacht || w.Shvertbot || w.SailboatStudy || w.SailboatHistorical || w.SailboatProject == true).ToListAsync();
                     break;
-                //case "maket":
-                //    anythingItems = await db.AnythingElse.ToListAsync();
-                //    break;
                 default:
                     break;
             }

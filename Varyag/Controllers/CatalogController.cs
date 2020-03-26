@@ -16,9 +16,13 @@ namespace Varyag.Controllers
         {
             db = context;
         }
+        
+             public IActionResult Catalog()
+        {
+            return RedirectToAction("Sailboats");
+        }
 
-        [Route("Каталог/Лодки")]
-             public IActionResult Boats()
+        public IActionResult CatalogNavigation()
         {
             ViewData["Title"] = "Купить деревянные лодки от производителя";
             ViewData["Keywords"] = "Купить деревянные лодки, Прогулочные лодки от производителя";
@@ -27,7 +31,15 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Лодки/Прогулочные_гребные_лодки")]
+        public IActionResult Boats()
+        {
+            ViewData["Title"] = "Купить деревянные лодки от производителя";
+            ViewData["Keywords"] = "Купить деревянные лодки, Прогулочные лодки от производителя";
+            ViewData["Description"] = "Каталог деревянных прогулочных парусных, а также гребных и народных лодок производства верфи деревянного судостроения Варяг";
+            ViewBag.TopPic = "boats";
+            return View();
+        }
+
         public IActionResult BoatsRow()
         {
             ViewData["Title"] = "Купить деревянные прогулочные гребные лодки от производителя";
@@ -37,7 +49,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Лодки/Прогулочные_парусные_лодки")]
         public IActionResult BoatsSail()
         {
             ViewData["Title"] = "Купить деревянные прогулочные парусные лодки от производителя";
@@ -47,7 +58,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Лодки/Народные_лодки")]
         public IActionResult BoatsTraditional()
         {
             ViewData["Title"] = "Купить деревянные традиционные народные лодки от производителя";
@@ -57,7 +67,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Шлюпки")]
         public IActionResult Bigboats()
         {
             ViewData["Title"] = "Купить деревянные шлюпки от производителя";
@@ -67,7 +76,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Шлюпки/Шлюпки_ЯЛ2,ЯЛ4,ЯЛ6")]
         public IActionResult BoatsYal()
         {
             ViewData["Title"] = "Купить шлюпки ЯЛ 2, ЯЛ 4, ЯЛ 6 от производителя";
@@ -77,7 +85,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Шлюпки/Ботики")]
         public IActionResult Botiks()
         {
             ViewData["Title"] = "Купить исторические ботики от производителя";
@@ -87,7 +94,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Шлюпки/Гребные_катера_и_вельботы")]
         public IActionResult KaterRows()
         {
             ViewData["Title"] = "Купить  гребные катера от производителя";
@@ -97,7 +103,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Шлюпки/Учебные_пособия")]
         public IActionResult MaketsStudy()
         {
             ViewData["Title"] = "Учебные макеты судов";
@@ -107,7 +112,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Катера")]
         public IActionResult Motorboats()
         {
             ViewData["Title"] = "Купить катера от производителя";
@@ -117,7 +121,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Катера/Мотосейлеры")]
         public IActionResult Motosailers()
         {
             ViewData["Title"] = "Купить мотосейлеры от производителя";
@@ -127,7 +130,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Катера/Каютные_катера")]
         public IActionResult KaterKabins()
         {
             ViewData["Title"] = "Купить каютные катера от производителя";
@@ -137,7 +139,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Катера/Рабочие_и_рыболовные_катера")]
         public IActionResult KatersFishing()
         {
             ViewData["Title"] = "Купить рабочие и рыболовные катера от производителя";
@@ -147,7 +148,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Катера/Пассажирские_катера")]
         public IActionResult KatersPassanger()
         {
             ViewData["Title"] = "Купить пассажирские катера от производителя";
@@ -157,7 +157,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Ладьи")]
         public IActionResult Ladiy()
         {
             ViewData["Title"] = "Купить ладьи от производителя";
@@ -167,7 +166,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Ладьи/Парусно-гребные_ладьи")]
         public IActionResult LadyasSailRow()
         {
             ViewData["Title"] = "Купить парусно-гребные ладьи от производителя";
@@ -177,7 +175,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Ладьи/Парусно-моторные_ладьи")]
         public IActionResult LadyasSailMotor()
         {
             ViewData["Title"] = "Купить парусно-моторные ладьи от производителя";
@@ -187,7 +184,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Парусники")]
         public IActionResult Sailboats()
         {
             ViewData["Title"] = "Купить парусники от производителя";
@@ -197,7 +193,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Парусники/Парусные_яхты")]
         public IActionResult Yachts()
         {
             ViewData["Title"] = "Купить яхты от производителя";
@@ -206,8 +201,7 @@ namespace Varyag.Controllers
             ViewBag.TopPic = "yachts";
             return View();
         }
-
-        [Route("Каталог/Парусники/Швертботы")]
+        
         public IActionResult Svertbots()
         {
             ViewData["Title"] = "Купить швертботы от производителя";
@@ -217,7 +211,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Парусники/Учебные_парусники")]
         public IActionResult SailboatsStudy()
         {
             ViewData["Title"] = "Купить учебные парусники от производителя";
@@ -226,8 +219,7 @@ namespace Varyag.Controllers
             ViewBag.TopPic = "sailboatsstudy";
             return View();
         }
-
-        [Route("Каталог/Парусники/Исторические_парусники")]
+        
         public IActionResult SailboatsHistorical()
         {
             ViewData["Title"] = "Купить исторические парусники от производителя";
@@ -237,7 +229,6 @@ namespace Varyag.Controllers
             return View();
         }
 
-        [Route("Каталог/Разное")]
         public IActionResult Models()
         {
             List<AnythingElse> anythingItems = db.AnythingElse.ToList();
@@ -248,19 +239,49 @@ namespace Varyag.Controllers
 
             return View(anythingItems);
         }
-        
-        [Route("Каталог/Проект_{id}")]
-        public async Task<IActionResult> ProjectDetails(int? id)
-        {
-            ViewBag.TopPic = "details";
 
-            if (id == null)
+        public async Task<IActionResult> ProjectDetails(string route)
+        //public async Task<IActionResult> ProjectDetails(int? id)
+        {
+            if (route == null)
+            //if (id == null)
             {
                 return NotFound();
             }
 
             var project = await db.Project
-                .FirstOrDefaultAsync(m => m.ProjectID == id);
+                .FirstOrDefaultAsync(m => m.Route == route);
+            //.FirstOrDefaultAsync(m => m.ProjectID == id);
+
+            ViewBag.TopPic = "details";
+            ViewData["Title"] = project.Name;
+
+            if (project.BoatRow == true || project.BoatSail == true || project.BoatTraditional == true)
+            {
+                ViewData["Keywords"] = "Купить деревянные лодки, Прогулочные лодки от производителя";
+                ViewData["Description"] = "Каталог деревянных прогулочных парусных, а также гребных и народных лодок производства верфи деревянного судостроения Варяг";
+            }
+            else if (project.BoatYal == true || project.Botik == true || project.KaterRow == true || project.MaketStudy == true)
+            {
+                ViewData["Keywords"] = "Купить деревянные шлюпки, Классические шлюпки от производителя";
+                ViewData["Description"] = "Каталог деревянных шлюпок производства верфи деревянного судостроения Варяг";
+            }
+            else if (project.KaterCabin == true || project.KaterFish == true || project.KaterPass == true || project.Motosailer == true)
+            {
+                ViewData["Keywords"] = "Купить катера, Катера от производителя";
+                ViewData["Description"] = "Каталог каютных, рыболовных и пассажирских катеров, а также мотосейлеров производства верфи деревянного судостроения Варяг";
+            }
+            else if (project.LadyaSail == true || project.LadyaRow == true || project.LadyaProject == true)
+            {
+                ViewData["Keywords"] = "Купить исторические ладьи, Ладьи от производителя";
+                ViewData["Description"] = "Каталог парусно-гребных и парусно-моторных ладей производства верфи деревянного судостроения Варяг";
+            }
+            else if (project.SailboatHistorical == true || project.SailboatProject == true || project.SailboatStudy == true || project.Shvertbot == true || project.Yacht == true)
+            {
+                ViewData["Keywords"] = "Купить деревянные парусники, Классические парусники от производителя";
+                ViewData["Description"] = "Каталог деревянных яхт, швертботов, а также учебных и исторических парусников производства верфи деревянного судостроения Варяг";
+            }
+
             if (project == null)
             {
                 return NotFound();
@@ -277,18 +298,24 @@ namespace Varyag.Controllers
             return View(project);
         }
 
-        [Route("Каталог/Разное_{id}")]
-        public async Task<IActionResult> AnythingDetails(int? id)
+        public async Task<IActionResult> AnythingDetails(string route)
+        //public async Task<IActionResult> AnythingDetails(int? id)
         {
-            ViewBag.TopPic = "details";
 
-            if (id == null)
+            if (route == null)
+            //if (id == null)
             {
                 return NotFound();
             }
 
             var project = await db.AnythingElse
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Route == route);
+
+            ViewBag.TopPic = "details";
+            ViewData["Title"] = project.Name;
+            ViewData["Keywords"] = "Дизайнерские решения на морскую тему, Корабли-инсталяции";
+            ViewData["Description"] = "Дизайнерские решения, инсталяции и прочие нестандартные поекты, производства верфи деревянного судостроения Варяг";
+
             if (project == null)
             {
                 return NotFound();

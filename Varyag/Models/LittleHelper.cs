@@ -143,6 +143,7 @@ namespace Varyag.Models
                     Mass = item.Mass,
                     Motosailer = item.Motosailer,
                     Name = item.Name,
+                    Route = item.Route,
                     NumberOfOars = item.NumberOfOars,
                     PassengerCap = item.PassengerCap,
                     Price = item.Price,
@@ -169,12 +170,17 @@ namespace Varyag.Models
 
         public static string UrlGiver (string iframe)
         {
-            string[] codeParts = iframe.Split(new char[] { '\"' }, StringSplitOptions.RemoveEmptyEntries);
+            if (iframe.ToCharArray().Contains('\"'))
+            {
+                string[] codeParts = iframe.Split(new char[] { '\"' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (iframe.Contains("vk.com"))
-                return (codeParts[1]);
+                if (iframe.Contains("vk.com"))
+                    return codeParts[1];
+                else
+                    return codeParts[5];
+            }
             else
-                return (codeParts[5]);
+                return iframe;
         }
 
         public static int NullCounter(params string[] parameters)

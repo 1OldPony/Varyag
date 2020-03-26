@@ -15,6 +15,9 @@ namespace Varyag.Models
         [DisplayName("Название проекта")]
         public string Name { get; set; }
 
+        [DisplayName("Путь для проекта")]
+        public string Route { get; set; }
+
         [DisplayName("Длина корпуса наибольшая")]
         public string Length { get; set; }
 
