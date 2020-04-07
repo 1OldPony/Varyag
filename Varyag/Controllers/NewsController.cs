@@ -170,11 +170,7 @@ namespace Varyag.Controllers
         {
 
             string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
-
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            LittleHelper.DirectoryExistCheck(path);
 
             using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
             {
@@ -225,10 +221,7 @@ namespace Varyag.Controllers
                 string pathFinal = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
                 string shortPreview = "", middlePreview = "", widePreview = "";
 
-                if (!Directory.Exists(pathFinal))
-                {
-                    Directory.CreateDirectory(pathFinal);
-                }
+                LittleHelper.DirectoryExistCheck(pathFinal);
 
                 string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
 

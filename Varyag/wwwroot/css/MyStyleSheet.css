@@ -1336,9 +1336,8 @@ img {
 }
 
 .articleBody {
-    display: grid;
-    grid-template-columns: repeat(2,auto);
-    grid-template-rows: repeat(16,auto);
+    display: flex;
+    flex-direction:column;
 }
 
 @media (max-width:1628px) {

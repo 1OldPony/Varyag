@@ -62,16 +62,10 @@ namespace Varyag.Controllers
         private async Task SaveImgAsync(string fotoName, string projectName, IFormFile anythingElseFoto)
         {
             string path = Path.Combine(_Environment.WebRootPath, "images", "projects");
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            LittleHelper.DirectoryExistCheck(path);
 
             path = Path.Combine(_Environment.WebRootPath, "images", "projects", projectName);
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            LittleHelper.DirectoryExistCheck(path);
 
             using (var fileStream = new FileStream(path + "/" + fotoName, FileMode.Create))
             {
@@ -82,22 +76,13 @@ namespace Varyag.Controllers
         private async Task SaveImgToGalleryAsync (string projectName, IFormFileCollection anythingElseFotoCollection)
         {
             string path = Path.Combine(_Environment.WebRootPath, "images", "projects");
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            LittleHelper.DirectoryExistCheck(path);
 
             path = Path.Combine(_Environment.WebRootPath, "images", "projects", projectName);
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            LittleHelper.DirectoryExistCheck(path);
 
             path = Path.Combine(_Environment.WebRootPath, "images", "projects", projectName, "gallery");
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
+            LittleHelper.DirectoryExistCheck(path);
 
             for (int i = 0; i <= (anythingElseFotoCollection.Count() - 1); i++)
             {

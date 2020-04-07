@@ -20,8 +20,7 @@ namespace Varyag.Models
             }
             return coordinates;
         }
-
-
+        
         public static string PathAdapter(string path, string forWhat)
         {
             string[] pathParts = path.Split(new char[] { '\\' });
@@ -47,16 +46,24 @@ namespace Varyag.Models
             return fotoPath;
         }
 
-        public static void DeleteFiles(string path,bool deleteDir)
+        public static void DirectoryExistCheck(string path)
         {
-            string[] files = Directory.GetFiles(path);
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+        }
+
+        public static void DeleteFiles(string pathToDirectory,bool deleteDir)
+        {
+            string[] files = Directory.GetFiles(pathToDirectory);
             foreach (var file in files)
             {
                 File.Delete(file);
             }
             if (deleteDir)
             {
-                Directory.Delete(path);
+                Directory.Delete(pathToDirectory);
             }
         }
 
@@ -64,6 +71,14 @@ namespace Varyag.Models
         {
             File.Delete(pathTo);
             File.Move(pathFrom, pathTo);
+        }
+
+        public static void SaveInTxt(string pathToText, string text)
+        {
+            using (var stream = new StreamWriter(pathToText, false, System.Text.Encoding.Default))
+            {
+                stream.WriteLine(text);
+            }
         }
 
         public static List<NewsViewModel> NewsToSortedViewModel (List<News> news)

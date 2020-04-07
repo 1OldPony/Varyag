@@ -10,10 +10,100 @@
 <h4>Article</h4>
 <hr />
 
-<div>
-    <
-</div>
-
+<form asp-action="fillArticle" enctype="multipart/form-data">
+    <div style="display:flex;">
+        @*<input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="range" min="1" max="15" />*@
+        <input id="numberOfPart" value="@ViewBag.PartNumber" type="number" min="1" max="15" width="45" placeholder="1" />
+    </div>
+    <div style="display:flex;">
+        <textarea name="currentTextPart" id="mce"></textarea>
+        <div style="display:flex;flex-direction:column">
+            <div style="color:red;font-size:1.5rem;font-weight:800">Если не пустое - не меняй!!!!!!!!</div>
+            <input type="text" name="articleFolder" value="@ViewBag.articleFolder" required />
+            <div>Загрузка файлов в галлерею</div>
+            <input name="fotos" type="file" multiple required />
+        </div>
+    </div>
+    <input type="submit" value="Загрузить" />
+    <div hidden>
+        <input type="text" name="PathToGallery1" value="@ViewBag.PathToGallery1" />
+        <input type="text" name="Text1" value="@ViewBag.Text1" />
+        <input type="text" name="PathToGallery2" value="@ViewBag.PathToGallery2" />
+        <input type="text" name="Text2" value="@ViewBag.Text2" />
+        <input type="text" name="PathToGallery3" value="@ViewBag.PathToGallery3" />
+        <input type="text" name="Text3" value="@ViewBag.Text3" />
+        <input type="text" name="PathToGallery4" value="@ViewBag.PathToGallery4" />
+        <input type="text" name="Text4" value="@ViewBag.Text4" />
+        <input type="text" name="PathToGallery5" value="@ViewBag.PathToGallery5" />
+        <input type="text" name="Text5" value="@ViewBag.Text5" />
+        <input type="text" name="PathToGallery6" value="@ViewBag.PathToGallery6" />
+        <input type="text" name="Text6" value="@ViewBag.Text6" />
+        <input type="text" name="PathToGallery7" value="@ViewBag.PathToGallery7" />
+        <input type="text" name="Text7" value="@ViewBag.Text7" />
+        <input type="text" name="PathToGallery8" value="@ViewBag.PathToGallery8" />
+        <input type="text" name="Text8" value="@ViewBag.Text8" />
+        <input type="text" name="PathToGallery9" value="@ViewBag.PathToGallery9" />
+        <input type="text" name="Text9" value="@ViewBag.Text9" />
+        <input type="text" name="PathToGallery10" value="@ViewBag.PathToGallery10" />
+        <input type="text" name="Text10" value="@ViewBag.Text10" />
+        <input type="text" name="PathToGallery11" value="@ViewBag.PathToGallery11" />
+        <input type="text" name="Text11" value="@ViewBag.Text11" />
+        <input type="text" name="PathToGallery12" value="@ViewBag.PathToGallery12" />
+        <input type="text" name="Text12" value="@ViewBag.Text12" />
+        <input type="text" name="PathToGallery13" value="@ViewBag.PathToGallery13" />
+        <input type="text" name="Text13" value="@ViewBag.Text13" />
+        <input type="text" name="PathToGallery14" value="@ViewBag.PathToGallery14" />
+        <input type="text" name="Text14" value="@ViewBag.Text14" />
+        <input type="text" name="PathToGallery15" value="@ViewBag.PathToGallery15" />
+        <input type="text" name="Text15" value="@ViewBag.Text15" />
+    </div>
+</form>
+<form asp-action="Create">
+    <div>
+        <div>Заголовок статьи</div>
+        <input type="text" />
+    </div>
+    <div hidden>
+        <input type="text" name="PathToGallery1" value="@ViewBag.PathToGallery1" />
+        <input type="text" name="Text1" value="@ViewBag.Text1" />
+        <input type="text" name="PathToGallery2" value="@ViewBag.PathToGallery2" />
+        <input type="text" name="Text2" value="@ViewBag.Text2" />
+        <input type="text" name="PathToGallery3" value="@ViewBag.PathToGallery3" />
+        <input type="text" name="Text3" value="@ViewBag.Text3" />
+        <input type="text" name="PathToGallery4" value="@ViewBag.PathToGallery4" />
+        <input type="text" name="Text4" value="@ViewBag.Text4" />
+        <input type="text" name="PathToGallery5" value="@ViewBag.PathToGallery5" />
+        <input type="text" name="Text5" value="@ViewBag.Text5" />
+        <input type="text" name="PathToGallery6" value="@ViewBag.PathToGallery6" />
+        <input type="text" name="Text6" value="@ViewBag.Text6" />
+        <input type="text" name="PathToGallery7" value="@ViewBag.PathToGallery7" />
+        <input type="text" name="Text7" value="@ViewBag.Text7" />
+        <input type="text" name="PathToGallery8" value="@ViewBag.PathToGallery8" />
+        <input type="text" name="Text8" value="@ViewBag.Text8" />
+        <input type="text" name="PathToGallery9" value="@ViewBag.PathToGallery9" />
+        <input type="text" name="Text9" value="@ViewBag.Text9" />
+        <input type="text" name="PathToGallery10" value="@ViewBag.PathToGallery10" />
+        <input type="text" name="Text10" value="@ViewBag.Text10" />
+        <input type="text" name="PathToGallery11" value="@ViewBag.PathToGallery11" />
+        <input type="text" name="Text11" value="@ViewBag.Text11" />
+        <input type="text" name="PathToGallery12" value="@ViewBag.PathToGallery12" />
+        <input type="text" name="Text12" value="@ViewBag.Text12" />
+        <input type="text" name="PathToGallery13" value="@ViewBag.PathToGallery13" />
+        <input type="text" name="Text13" value="@ViewBag.Text13" />
+        <input type="text" name="PathToGallery14" value="@ViewBag.PathToGallery14" />
+        <input type="text" name="Text14" value="@ViewBag.Text14" />
+        <input type="text" name="PathToGallery15" value="@ViewBag.PathToGallery15" />
+        <input type="text" name="Text15" value="@ViewBag.Text15" />
+    </div>
+    <input type="submit" value="Создать" />
+</form>
+@if (@ViewBag.Text1 != null)
+{
+    <div>@ViewBag.Text1</div>
+    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+        @await Component.InvokeAsync("Fotorama", new { articleId = Model.ArticleId, galleryPath = @ViewBag.pathForPartGallery })
+    </div>
+}
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
