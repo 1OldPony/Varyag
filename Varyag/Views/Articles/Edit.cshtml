@@ -1,167 +1,1267 @@
-﻿@*@model Varyag.Models.Article
+﻿@model Varyag.Models.Article
 
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<div style="max-width:1700px;margin:auto">
+    <h1>Редактировать статью</h1>
+    <hr />
 
-<h4>Article</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <form asp-action="fillArticle" asp-route-actionType="Edit" enctype="multipart/form-data">
+        <div style="display:flex;flex-direction:column">
+            <div>Порядковый номер блока текст-галлерея</div>
+            <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" />
+        </div>
+        <div style="display:flex">
+            <textarea name="currentTextPart" id="mce"></textarea>
+            <div style="display:flex;flex-direction:column;margin-left:1vw">
+                <div>
+                    <div>Заголовок статьи</div>
+                    @if (@ViewBag.Name != null)
+                    {
+                        <input type="text" name="articleName" value="@ViewBag.Name" style="width:700px" />
+                    }
+                    else
+                    {
+                        <input type="text" name="articleName" value="@Model.ArticleName" style="width:700px" />
+                    }
+                </div>
+                <div>
+                    <div>Краткое название, замени пробелы на тире(-)</div>
+                    @if (@ViewBag.Route != null)
+                    {
+                        <input type="text" name="articleRoute" value="@ViewBag.Route" />
+                    }
+                    else
+                    {
+                        <input type="text" name="articleRoute" value="@Model.ArticleRoute" />
+                    }
+                </div>
+                <div>
+                    <div>Загрузка файлов в галлерею</div>
+                    <input name="fotos" type="file" multiple />
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Загрузить" />
+        <div hidden>
+            @if (@ViewBag.PathForPartGallery1 != null)
+            {
+                <input type="text" name="PathToGallery1" value="@ViewBag.PathForPartGallery1" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery1" value="@Model.PathToGallery1" />
+            }
+            @if (@ViewBag.PathForPartGallery2 != null)
+            {
+                <input type="text" name="PathToGallery2" value="@ViewBag.PathForPartGallery2" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery2" value="@Model.PathToGallery2" />
+            }
+            @if (@ViewBag.PathForPartGallery3 != null)
+            {
+                <input type="text" name="PathToGallery3" value="@ViewBag.PathForPartGallery3" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery3" value="@Model.PathToGallery3" />
+            }
+            @if (@ViewBag.PathForPartGallery4 != null)
+            {
+                <input type="text" name="PathToGallery4" value="@ViewBag.PathForPartGallery4" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery4" value="@Model.PathToGallery4" />
+            }
+            @if (@ViewBag.PathForPartGallery5 != null)
+            {
+                <input type="text" name="PathToGallery5" value="@ViewBag.PathForPartGallery5" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery5" value="@Model.PathToGallery5" />
+            }
+            @if (@ViewBag.PathForPartGallery6 != null)
+            {
+                <input type="text" name="PathToGallery6" value="@ViewBag.PathForPartGallery6" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery6" value="@Model.PathToGallery6" />
+            }
+            @if (@ViewBag.PathForPartGallery7 != null)
+            {
+                <input type="text" name="PathToGallery7" value="@ViewBag.PathForPartGallery7" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery7" value="@Model.PathToGallery7" />
+            }
+            @if (@ViewBag.PathForPartGallery8 != null)
+            {
+                <input type="text" name="PathToGallery8" value="@ViewBag.PathForPartGallery8" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery8" value="@Model.PathToGallery8" />
+            }
+            @if (@ViewBag.PathForPartGallery9 != null)
+            {
+                <input type="text" name="PathToGallery9" value="@ViewBag.PathForPartGallery9" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery9" value="@Model.PathToGallery9" />
+            }
+            @if (@ViewBag.PathForPartGallery10 != null)
+            {
+                <input type="text" name="PathToGallery10" value="@ViewBag.PathForPartGallery10" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery10" value="@Model.PathToGallery10" />
+            }
+            @if (@ViewBag.PathForPartGallery11 != null)
+            {
+                <input type="text" name="PathToGallery11" value="@ViewBag.PathForPartGallery11" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery11" value="@Model.PathToGallery11" />
+            }
+            @if (@ViewBag.PathForPartGallery12 != null)
+            {
+                <input type="text" name="PathToGallery12" value="@ViewBag.PathForPartGallery12" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery12" value="@Model.PathToGallery12" />
+            }
+            @if (@ViewBag.PathForPartGallery13 != null)
+            {
+                <input type="text" name="PathToGallery13" value="@ViewBag.PathForPartGallery13" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery13" value="@Model.PathToGallery13" />
+            }
+            @if (@ViewBag.PathForPartGallery14 != null)
+            {
+                <input type="text" name="PathToGallery14" value="@ViewBag.PathForPartGallery14" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery14" value="@Model.PathToGallery14" />
+            }
+            @if (@ViewBag.PathForPartGallery15 != null)
+            {
+                <input type="text" name="PathToGallery15" value="@ViewBag.PathForPartGallery15" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery15" value="@Model.PathToGallery15" />
+            }
+            <input type="number" name="articleId" value="@Model.ArticleId" />
+            <input type="text" name="pathToGall" value="@Model.PathToGallery1" />
+        </div>
+    </form>
+    <form asp-action="Edit">
+        <div hidden>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ArticleId" />
-            <div class="form-group">
-                <label asp-for="Text1" class="control-label"></label>
-                <input asp-for="Text1" class="form-control" />
-                <span asp-validation-for="Text1" class="text-danger"></span>
+            <input asp-for="ArticleId" />
+            @if (@ViewBag.Name != null)
+            {
+                <input asp-for="ArticleName" value="@ViewBag.Name" />
+            }
+            else
+            {
+                <input asp-for="ArticleName" value="@Model.ArticleName" />
+            }
+            @if (@ViewBag.Route != null)
+            {
+                <input asp-for="ArticleRoute" value="@ViewBag.Route" />
+            }
+            else
+            {
+                <input asp-for="ArticleRoute" value="@Model.ArticleRoute" />
+            }
+            @if (@ViewBag.Text1 != null)
+            {
+                <input asp-for="Text1" value="@ViewBag.Text1" />
+            }
+            else
+            {
+                <input asp-for="Text1" value="@Model.Text1" />
+            }
+            @if (@ViewBag.PathForPartGallery1 != null)
+            {
+                <input asp-for="PathToGallery1" value="@ViewBag.PathForPartGallery1" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery1" value="@Model.PathToGallery1" />
+            }
+
+            @if (@ViewBag.Text2 != null)
+            {
+                <input asp-for="Text2" value="@ViewBag.Text2" />
+            }
+            else
+            {
+                <input asp-for="Text2" value="@Model.Text2" />
+            }
+            @if (@ViewBag.PathForPartGallery2 != null)
+            {
+                <input asp-for="PathToGallery2" value="@ViewBag.PathForPartGallery2" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery2" value="@Model.PathToGallery2" />
+            }
+
+            @if (@ViewBag.Text3 != null)
+            {
+                <input asp-for="Text3" value="@ViewBag.Text3" />
+            }
+            else
+            {
+                <input asp-for="Text3" value="@Model.Text3" />
+            }
+            @if (@ViewBag.PathForPartGallery3 != null)
+            {
+                <input asp-for="PathToGallery3" value="@ViewBag.PathForPartGallery3" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery3" value="@Model.PathToGallery3" />
+            }
+
+            @if (@ViewBag.Text4 != null)
+            {
+                <input asp-for="Text4" value="@ViewBag.Text4" />
+            }
+            else
+            {
+                <input asp-for="Text4" value="@Model.Text4" />
+            }
+            @if (@ViewBag.PathForPartGallery4 != null)
+            {
+                <input asp-for="PathToGallery4" value="@ViewBag.PathForPartGallery4" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery4" value="@Model.PathToGallery4" />
+            }
+
+            @if (@ViewBag.Text5 != null)
+            {
+                <input asp-for="Text5" value="@ViewBag.Text5" />
+            }
+            else
+            {
+                <input asp-for="Text5" value="@Model.Text5" />
+            }
+            @if (@ViewBag.PathForPartGallery5 != null)
+            {
+                <input asp-for="PathToGallery5" value="@ViewBag.PathForPartGallery5" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery5" value="@Model.PathToGallery5" />
+            }
+
+            @if (@ViewBag.Text6 != null)
+            {
+                <input asp-for="Text6" value="@ViewBag.Text6" />
+            }
+            else
+            {
+                <input asp-for="Text6" value="@Model.Text6" />
+            }
+            @if (@ViewBag.PathForPartGallery6 != null)
+            {
+                <input asp-for="PathToGallery6" value="@ViewBag.PathForPartGallery6" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery6" value="@Model.PathToGallery6" />
+            }
+
+            @if (@ViewBag.Text7 != null)
+            {
+                <input asp-for="Text7" value="@ViewBag.Text7" />
+            }
+            else
+            {
+                <input asp-for="Text7" value="@Model.Text7" />
+            }
+            @if (@ViewBag.PathForPartGallery7 != null)
+            {
+                <input asp-for="PathToGallery7" value="@ViewBag.PathForPartGallery7" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery7" value="@Model.PathToGallery7" />
+            }
+
+            @if (@ViewBag.Text8 != null)
+            {
+                <input asp-for="Text8" value="@ViewBag.Text8" />
+            }
+            else
+            {
+                <input asp-for="Text8" value="@Model.Text8" />
+            }
+            @if (@ViewBag.PathForPartGallery8 != null)
+            {
+                <input asp-for="PathToGallery8" value="@ViewBag.PathForPartGallery8" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery8" value="@Model.PathToGallery8" />
+            }
+
+            @if (@ViewBag.Text9 != null)
+            {
+                <input asp-for="Text9" value="@ViewBag.Text9" />
+            }
+            else
+            {
+                <input asp-for="Text9" value="@Model.Text9" />
+            }
+            @if (@ViewBag.PathForPartGallery9 != null)
+            {
+                <input asp-for="PathToGallery9" value="@ViewBag.PathForPartGallery9" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery9" value="@Model.PathToGallery9" />
+            }
+
+            @if (@ViewBag.Text10 != null)
+            {
+                <input asp-for="Text10" value="@ViewBag.Text10" />
+            }
+            else
+            {
+                <input asp-for="Text10" value="@Model.Text10" />
+            }
+            @if (@ViewBag.PathForPartGallery10 != null)
+            {
+                <input asp-for="PathToGallery10" value="@ViewBag.PathForPartGallery10" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery10" value="@Model.PathToGallery10" />
+            }
+
+            @if (@ViewBag.Text11 != null)
+            {
+                <input asp-for="Text11" value="@ViewBag.Text11" />
+            }
+            else
+            {
+                <input asp-for="Text11" value="@Model.Text11" />
+            }
+            @if (@ViewBag.PathForPartGallery11 != null)
+            {
+                <input asp-for="PathToGallery11" value="@ViewBag.PathForPartGallery11" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery11" value="@Model.PathToGallery11" />
+            }
+
+            @if (@ViewBag.Text12 != null)
+            {
+                <input asp-for="Text12" value="@ViewBag.Text12" />
+            }
+            else
+            {
+                <input asp-for="Text12" value="@Model.Text12" />
+            }
+            @if (@ViewBag.PathForPartGallery12 != null)
+            {
+                <input asp-for="PathToGallery12" value="@ViewBag.PathForPartGallery12" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery12" value="@Model.PathToGallery12" />
+            }
+
+            @if (@ViewBag.Text13 != null)
+            {
+                <input asp-for="Text13" value="@ViewBag.Text13" />
+            }
+            else
+            {
+                <input asp-for="Text13" value="@Model.Text13" />
+            }
+            @if (@ViewBag.PathForPartGallery13 != null)
+            {
+                <input asp-for="PathToGallery13" value="@ViewBag.PathForPartGallery13" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery13" value="@Model.PathToGallery13" />
+            }
+
+            @if (@ViewBag.Text14 != null)
+            {
+                <input asp-for="Text14" value="@ViewBag.Text14" />
+            }
+            else
+            {
+                <input asp-for="Text14" value="@Model.Text14" />
+            }
+            @if (@ViewBag.PathForPartGallery14 != null)
+            {
+                <input asp-for="PathToGallery14" value="@ViewBag.PathForPartGallery14" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery14" value="@Model.PathToGallery14" />
+            }
+
+            @if (@ViewBag.Text15 != null)
+            {
+                <input asp-for="Text15" value="@ViewBag.Text15" />
+            }
+            else
+            {
+                <input asp-for="Text15" value="@Model.Text15" />
+            }
+            @if (@ViewBag.PathForPartGallery15 != null)
+            {
+                <input asp-for="PathToGallery15" value="@ViewBag.PathForPartGallery15" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery15" value="@Model.PathToGallery15" />
+            }
+
+            @*<input type="text" asp-for="PathToGallery1" value="@ViewBag.PathForPartGallery1" />*@
+            @*<input type="text" asp-for="Text1" value="@ViewBag.Text1" />*@
+            @*<input type="text" asp-for="PathToGallery2" value="@ViewBag.PathForPartGallery2" />*@
+            @*<input type="text" asp-for="Text2" value="@ViewBag.Text2" />*@
+            @*<input type="text" asp-for="PathToGallery3" value="@ViewBag.PathForPartGallery3" />*@
+            @*<input type="text" asp-for="Text3" value="@ViewBag.Text3" />*@
+            @*<input type="text" asp-for="PathToGallery4" value="@ViewBag.PathForPartGallery4" />*@
+            @*<input type="text" asp-for="Text4" value="@ViewBag.Text4" />*@
+            @*<input type="text" asp-for="PathToGallery5" value="@ViewBag.PathForPartGallery5" />*@
+            @*<input type="text" asp-for="Text5" value="@ViewBag.Text5" />*@
+            @*<input type="text" asp-for="PathToGallery6" value="@ViewBag.PathForPartGallery6" />*@
+            @*<input type="text" asp-for="Text6" value="@ViewBag.Text6" />*@
+            @*<input type="text" asp-for="PathToGallery7" value="@ViewBag.PathForPartGallery7" />*@
+            @*<input type="text" asp-for="Text7" value="@ViewBag.Text7" />*@
+            @*<input type="text" asp-for="PathToGallery8" value="@ViewBag.PathForPartGallery8" />*@
+            @*<input type="text" asp-for="Text8" value="@ViewBag.Text8" />*@
+            @*<input type="text" asp-for="PathToGallery9" value="@ViewBag.PathForPartGallery9" />*@
+            @*<input type="text" asp-for="Text9" value="@ViewBag.Text9" />*@
+            @*<input type="text" asp-for="PathToGallery10" value="@ViewBag.PathForPartGallery10" />*@
+            @*<input type="text" asp-for="Text10" value="@ViewBag.Text10" />*@
+            @*<input type="text" asp-for="PathToGallery11" value="@ViewBag.PathForPartGallery11" />*@
+            @*<input type="text" asp-for="Text11" value="@ViewBag.Text11" />*@
+            @*<input type="text" asp-for="PathToGallery12" value="@ViewBag.PathForPartGallery12" />*@
+            @*<input type="text" asp-for="Text12" value="@ViewBag.Text12" />*@
+            @*<input type="text" asp-for="PathToGallery13" value="@ViewBag.PathForPartGallery13" />*@
+            @*<input type="text" asp-for="Text13" value="@ViewBag.Text13" />*@
+            @*<input type="text" asp-for="PathToGallery14" value="@ViewBag.PathForPartGallery14" />*@
+            @*<input type="text" asp-for="Text14" value="@ViewBag.Text14" />*@
+            @*<input type="text" asp-for="PathToGallery15" value="@ViewBag.PathForPartGallery15" />*@
+            @*<input type="text" asp-for="Text15" value="@ViewBag.Text15" />*@
+        </div>
+        <input type="submit" value="Создать" />
+    </form>
+    <div style="max-width:1400px;margin:auto;display:flex;flex-direction:column">
+        @if (@ViewBag.Text1 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">1</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text1)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery1 != null || @Model.PathToGallery1 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery1 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery1 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery1 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath1" class="control-label"></label>
-                <input asp-for="FotoPath1" class="form-control" />
-                <span asp-validation-for="FotoPath1" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">1</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text1)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery1 != null || @Model.PathToGallery1 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery1 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery1 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery1 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text2" class="control-label"></label>
-                <input asp-for="Text2" class="form-control" />
-                <span asp-validation-for="Text2" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text2 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">2</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text2)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery2 != null || @Model.PathToGallery2 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery2 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery2 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery2 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath2" class="control-label"></label>
-                <input asp-for="FotoPath2" class="form-control" />
-                <span asp-validation-for="FotoPath2" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">2</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text2)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery2 != null || @Model.PathToGallery2 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery2 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery2 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery2 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text3" class="control-label"></label>
-                <input asp-for="Text3" class="form-control" />
-                <span asp-validation-for="Text3" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text3 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">3</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text3)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery3 != null || @Model.PathToGallery3 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery3 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery3 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery3 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath3" class="control-label"></label>
-                <input asp-for="FotoPath3" class="form-control" />
-                <span asp-validation-for="FotoPath3" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">3</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text3)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery3 != null || @Model.PathToGallery3 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery3 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery3 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery3 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text4" class="control-label"></label>
-                <input asp-for="Text4" class="form-control" />
-                <span asp-validation-for="Text4" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text4 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">4</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text4)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery4 != null || @Model.PathToGallery4 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery4 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery4 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery4 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath4" class="control-label"></label>
-                <input asp-for="FotoPath4" class="form-control" />
-                <span asp-validation-for="FotoPath4" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">4</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text4)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery4 != null || @Model.PathToGallery4 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery4 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery4 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery4 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text5" class="control-label"></label>
-                <input asp-for="Text5" class="form-control" />
-                <span asp-validation-for="Text5" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text5 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">5</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text5)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery5 != null || @Model.PathToGallery5 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery5 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery5 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery5 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath5" class="control-label"></label>
-                <input asp-for="FotoPath5" class="form-control" />
-                <span asp-validation-for="FotoPath5" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">5</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text5)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery5 != null || @Model.PathToGallery5 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery5 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery5 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery5 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text6" class="control-label"></label>
-                <input asp-for="Text6" class="form-control" />
-                <span asp-validation-for="Text6" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text6 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">6</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text6)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery6 != null || @Model.PathToGallery6 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery6 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery6 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery6 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath6" class="control-label"></label>
-                <input asp-for="FotoPath6" class="form-control" />
-                <span asp-validation-for="FotoPath6" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">6</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text6)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery6 != null || @Model.PathToGallery6 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery6 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery6 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery6 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text7" class="control-label"></label>
-                <input asp-for="Text7" class="form-control" />
-                <span asp-validation-for="Text7" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text7 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">7</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text7)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery7 != null || @Model.PathToGallery7 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery7 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery7 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery7 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath7" class="control-label"></label>
-                <input asp-for="FotoPath7" class="form-control" />
-                <span asp-validation-for="FotoPath7" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">7</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text7)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery7 != null || @Model.PathToGallery7 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery7 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery7 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery7 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text8" class="control-label"></label>
-                <input asp-for="Text8" class="form-control" />
-                <span asp-validation-for="Text8" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text8 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">8</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text8)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery8 != null || @Model.PathToGallery8 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery8 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery8 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery8 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath8" class="control-label"></label>
-                <input asp-for="FotoPath8" class="form-control" />
-                <span asp-validation-for="FotoPath8" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">8</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text8)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery8 != null || @Model.PathToGallery8 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery8 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery8 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery8 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text9" class="control-label"></label>
-                <input asp-for="Text9" class="form-control" />
-                <span asp-validation-for="Text9" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text9 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">9</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text9)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery9 != null || @Model.PathToGallery9 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery9 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery9 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery9 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath9" class="control-label"></label>
-                <input asp-for="FotoPath9" class="form-control" />
-                <span asp-validation-for="FotoPath9" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">9</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text9)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery9 != null || @Model.PathToGallery9 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery9 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery9 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery9 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text10" class="control-label"></label>
-                <input asp-for="Text10" class="form-control" />
-                <span asp-validation-for="Text10" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text10 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">10</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text10)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery10 != null || @Model.PathToGallery10 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery10 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery10 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery10 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath10" class="control-label"></label>
-                <input asp-for="FotoPath10" class="form-control" />
-                <span asp-validation-for="FotoPath10" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">10</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text10)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery10 != null || @Model.PathToGallery10 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery10 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery10 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery10 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text11" class="control-label"></label>
-                <input asp-for="Text11" class="form-control" />
-                <span asp-validation-for="Text11" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text11 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">11</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text11)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery11 != null || @Model.PathToGallery11 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery11 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery11 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery11 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath11" class="control-label"></label>
-                <input asp-for="FotoPath11" class="form-control" />
-                <span asp-validation-for="FotoPath11" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">11</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text11)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery11 != null || @Model.PathToGallery11 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery11 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery11 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery11 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text13" class="control-label"></label>
-                <input asp-for="Text13" class="form-control" />
-                <span asp-validation-for="Text13" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text12 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">12</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text12)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery12 != null || @Model.PathToGallery12 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery12 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery12 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery12 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath13" class="control-label"></label>
-                <input asp-for="FotoPath13" class="form-control" />
-                <span asp-validation-for="FotoPath13" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">12</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text12)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery12 != null || @Model.PathToGallery12 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery12 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery12 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery12 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text14" class="control-label"></label>
-                <input asp-for="Text14" class="form-control" />
-                <span asp-validation-for="Text14" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text13 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">13</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text13)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery13 != null || @Model.PathToGallery13 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery13 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery13 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery13 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath14" class="control-label"></label>
-                <input asp-for="FotoPath14" class="form-control" />
-                <span asp-validation-for="FotoPath14" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">13</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text13)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery13 != null || @Model.PathToGallery13 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery13 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery13 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery13 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Text15" class="control-label"></label>
-                <input asp-for="Text15" class="form-control" />
-                <span asp-validation-for="Text15" class="text-danger"></span>
+        }
+        @if (@ViewBag.Text14 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">14</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text14)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery14 != null || @Model.PathToGallery14 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery14 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery14 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery14 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="FotoPath15" class="control-label"></label>
-                <input asp-for="FotoPath15" class="form-control" />
-                <span asp-validation-for="FotoPath15" class="text-danger"></span>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">14</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text14)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery14 != null || @Model.PathToGallery14 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery14 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery14 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery14 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+        }
+        @if (@ViewBag.Text15 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">15</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text15)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery15 != null || @Model.PathToGallery15 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery15 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery15 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery15 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">15</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text15)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery15 != null || @Model.PathToGallery15 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery15 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery15 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery15 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>*@
-

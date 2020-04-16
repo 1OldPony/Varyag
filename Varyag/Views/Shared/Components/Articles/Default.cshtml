@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Article>
+
+@foreach (var item in Model)
+{
+    @if (item.ArticleRoute != "Гото-Предистинация")
+    {
+        <a href="../О-нас/@item.ArticleRoute"><div class=topNavCategory>@item.ArticleName</div></a>
+    }
+}

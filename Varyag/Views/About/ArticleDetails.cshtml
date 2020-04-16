@@ -1,0 +1,234 @@
+﻿@model Varyag.Models.Article
+
+@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+<div class="articleBody">
+    <div><h1>@Model.ArticleName</h1></div>
+    @if (@Model.Text1 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text1)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery1 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text2 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text2)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery2 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text3 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text3)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery3 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text4 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text4)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery4 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text5 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text5)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery5 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text6 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text6)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery6 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text7 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text7)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery7 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text8 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text8)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery8 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text9 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text9)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery9 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text10 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text10)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery10 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text11 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text11)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery11 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text12 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text12)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery12 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text13 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text13)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery13 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text14 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text14)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery14 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @if (@Model.Text15 != null)
+    {
+        <div style="display:flex">
+            <div class="articlePreviewBlokCreate">
+                <div>
+                    @Html.Raw(@Model.Text15)
+                </div>
+                <div>
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery15 })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

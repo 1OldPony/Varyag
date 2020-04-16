@@ -19,104 +19,104 @@
     <div class="MyContainer" id="@i" style="display:none">
         <div class="articleBody">
             <div style="grid-row:1;grid-column:1/3;"><h2>@Model.ElementAt(i).ArticleName</h2></div>
-            <div>@Model.ElementAt(i).Text1</div>
+            <div>@Html.Raw(@Model.ElementAt(i).Text1)</div>
             <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                 @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery1 })
             </div>
             @if (@Model.ElementAt(i).Text2 != null)
             {
-                <div>@Model.ElementAt(i).Text2</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text2)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery2 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text3 != null)
             {
-                <div>@Model.ElementAt(i).Text3</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text3)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery3 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text4 != null)
             {
-                <div>@Model.ElementAt(i).Text4</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text4)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery4 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text5 != null)
             {
-                <div>@Model.ElementAt(i).Text5</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text5)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery5 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text6 != null)
             {
-                <div>@Model.ElementAt(i).Text6</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text6)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery6 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text7 != null)
             {
-                <div>@Model.ElementAt(i).Text7</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text7)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery7 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text8 != null)
             {
-                <div>@Model.ElementAt(i).Text8</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text8)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery8 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text9 != null)
             {
-                <div>@Model.ElementAt(i).Text9</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text9)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery9 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text10 != null)
             {
-                <div>@Model.ElementAt(i).Text10</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text10)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery10 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text11 != null)
             {
-                <div>@Model.ElementAt(i).Text11</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text11)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery11 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text12 != null)
             {
-                <div>@Model.ElementAt(i).Text12</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text12)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery12 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text13 != null)
             {
-                <div>@Model.ElementAt(i).Text13</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text13)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery13 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text14 != null)
             {
-                <div>@Model.ElementAt(i).Text14</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text14)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery14 })
                 </div>
             }
             @if (@Model.ElementAt(i).Text15 != null)
             {
-                <div>@Model.ElementAt(i).Text15</div>
+                <div>@Html.Raw(@Model.ElementAt(i).Text15)</div>
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { articleId = Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery15 })
                 </div>
@@ -124,8 +124,8 @@
         </div>
     </div>
     <p>
-        <a asp-action="Edit" asp-route-id="@Model.ElementAt(i).ArticleId">Редактировать новость</a> |
-        <a asp-action="Delete" asp-route-id="@Model.ElementAt(i).ArticleId">Удалить новость</a>
+        <a asp-action="Edit" asp-route-id="@Model.ElementAt(i).ArticleId">Редактировать статью</a> |
+        <a asp-action="Delete" asp-route-id="@Model.ElementAt(i).ArticleId">Удалить статью</a>
     </p>
 </div>
     <div class="myBorder"></div>

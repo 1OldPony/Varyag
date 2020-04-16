@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Varyag.Models;
 
 namespace Varyag.Controllers
@@ -16,16 +17,21 @@ namespace Varyag.Controllers
     {
         private readonly VaryagContext _context;
         private readonly IHostingEnvironment _Environment;
+        private readonly ILogger _logger;
 
-        public AnythingElsesController(VaryagContext context, IHostingEnvironment appEnvironment)
+        public AnythingElsesController(VaryagContext context, IHostingEnvironment appEnvironment, ILoggerFactory loggerFactory)
         {
             _context = context;
             _Environment = appEnvironment;
+            _logger = loggerFactory.CreateLogger("FileLogger");
+            LittleHelper.DirectoryExistCheck(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs"));
+            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today + ".txt"));
         }
 
         // GET: AnythingElses
         public async Task<IActionResult> Index()
         {
+            _logger.LogInformation("Ошибка!!! Дата {0}", DateTime.Now);
             return View(await _context.AnythingElse.ToListAsync());
         }
 

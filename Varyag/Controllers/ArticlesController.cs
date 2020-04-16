@@ -29,33 +29,38 @@ namespace Varyag.Controllers
             return View(await _context.Article.ToListAsync());
         }
 
-        // GET: Articles/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var article = await _context.Article
-                .FirstOrDefaultAsync(m => m.ArticleId == id);
-            if (article == null)
-            {
-                return NotFound();
-            }
-
-            return View(article);
-        }
-
-        public async Task<IActionResult> FillArticle(string currentTextPart, IFormFileCollection fotos, string articleFolder, int? partsCounter, string PathToGallery1, string Text1, string PathToGallery2, string Text2, string PathToGallery3, string Text3, 
-            string PathToGallery4, string Text4, string PathToGallery5, string Text5, string PathToGallery6, string Text6, string PathToGallery7, string Text7, string PathToGallery8, string Text8, string PathToGallery9, string Text9, string PathToGallery10, 
-            string Text10, string PathToGallery11, string Text11, string PathToGallery12, string Text12, string PathToGallery13, string Text13, string PathToGallery14, string Text14, string PathToGallery15, string Text15)
+        public async Task<IActionResult> FillArticle(int? articleId, string pathToGall, string currentTextPart, IFormFileCollection fotos, string articleFolder, string articleName, int? partsCounter, string actionType,
+            string articleRoute, string PathToGallery1, string PathToGallery2, string PathToGallery3, string PathToGallery4, string PathToGallery5, string PathToGallery6, string PathToGallery7,
+            string PathToGallery8, string PathToGallery9, string PathToGallery10, string PathToGallery11, string PathToGallery12, string PathToGallery13, string PathToGallery14, string PathToGallery15)
         {
             string path = Path.Combine(_Environment.WebRootPath, "images", "articles");
             LittleHelper.DirectoryExistCheck(path);
 
-            path = Path.Combine(path, "article"+ articleFolder);
-            LittleHelper.DirectoryExistCheck(path);
+            string fold = articleFolder;
+            if (pathToGall != null)
+            {
+                fold = LittleHelper.PathAdapter(pathToGall, "articleFolder");
+            }
+
+            string folderPath;
+            if (fold == null)
+            {
+                for (int i = 1; i < 100000; i++)
+                {
+                    folderPath = Path.Combine(path, "article" + i.ToString());
+                    if (!Directory.Exists(folderPath))
+                    {
+                        path = folderPath;
+                        LittleHelper.DirectoryExistCheck(path);
+                        fold = "article" + i.ToString();
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                path = Path.Combine(path, fold);
+            }
 
             path = Path.Combine(path, partsCounter.ToString());
             if (!Directory.Exists(path))
@@ -63,131 +68,240 @@ namespace Varyag.Controllers
             else
                 LittleHelper.DeleteFiles(path, false);
 
-            for (int i = 0; i <= (fotos.Count() - 1); i++)
+            if (fotos.Count()!=0)
             {
-                string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ").jpg";
-
-                using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                for (int i = 0; i <= (fotos.Count() - 1); i++)
                 {
-                    await fotos[i].CopyToAsync(fileStream);
+                    string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ").jpg";
+
+                    using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                    {
+                        await fotos[i].CopyToAsync(fileStream);
+                    }
                 }
             }
 
             string pathToText = Path.Combine(path, "Text.txt");
-            if (Text1!=null)
+            if (currentTextPart!=null)
             {
-                Text1 = p
+                await LittleHelper.SaveInTxt(pathToText, currentTextPart);
             }
 
-            LittleHelper.SaveInTxt(path,);
-            partsCounter++;
-
-            return RedirectToAction("Create", new { partNumber = partsCounter, pathForPartGallery = path, text = pathToText, PTG1 = PathToGallery1, T1 = Text1, PTG2 = PathToGallery2, T2 = Text2, PTG3 = PathToGallery3, T3 = Text3, PTG4 = PathToGallery4,
-                T4 = Text4, PTG5 = PathToGallery5, T5 = Text5, PTG6 = PathToGallery6, T6 = Text6, PTG7 = PathToGallery7, T7 = Text7, PTG8 = PathToGallery8, T8 = Text8, PTG9 = PathToGallery9, T9 = Text9,
-                PTG10 = PathToGallery10, T10 = Text10, PTG11 = PathToGallery11, T11 = Text11, PTG12 = PathToGallery12, T12 = Text12, PTG13 = PathToGallery13, T13 = Text13, PTG14 = PathToGallery14, T14 = Text14,
-                PTG15 = PathToGallery15, T15 = Text15, ArtFold = articleFolder});
+            if (actionType!="Edit")
+            {
+                return RedirectToAction("Create", new
+                {
+                    partNumber = partsCounter,
+                    pathForPartGallery = path,
+                    folder = fold,
+                    name = articleName,
+                    route = articleRoute,
+                    PTG1 = PathToGallery1,
+                    PTG2 = PathToGallery2,
+                    PTG3 = PathToGallery3,
+                    PTG4 = PathToGallery4,
+                    PTG5 = PathToGallery5,
+                    PTG6 = PathToGallery6,
+                    PTG7 = PathToGallery7,
+                    PTG8 = PathToGallery8,
+                    PTG9 = PathToGallery9,
+                    PTG10 = PathToGallery10,
+                    PTG11 = PathToGallery11,
+                    PTG12 = PathToGallery12,
+                    PTG13 = PathToGallery13,
+                    PTG14 = PathToGallery14,
+                    PTG15 = PathToGallery15
+                });
+            }
+            else
+            {
+                return RedirectToAction("Edit", new
+                {
+                    id= articleId,
+                    partNumber = partsCounter,
+                    pathForPartGallery = path,
+                    folder = fold,
+                    name = articleName,
+                    route = articleRoute,
+                    PTG1 = PathToGallery1,
+                    PTG2 = PathToGallery2,
+                    PTG3 = PathToGallery3,
+                    PTG4 = PathToGallery4,
+                    PTG5 = PathToGallery5,
+                    PTG6 = PathToGallery6,
+                    PTG7 = PathToGallery7,
+                    PTG8 = PathToGallery8,
+                    PTG9 = PathToGallery9,
+                    PTG10 = PathToGallery10,
+                    PTG11 = PathToGallery11,
+                    PTG12 = PathToGallery12,
+                    PTG13 = PathToGallery13,
+                    PTG14 = PathToGallery14,
+                    PTG15 = PathToGallery15
+                });
+            }
         }
 
         // GET: Articles/Create
-        public IActionResult Create(int? partNumber, string pathForPartGallery, string text, string PTG1, string T1, string PTG2, string T2, string PTG3, string T3,
-            string PTG4, string T4, string PTG5, string T5, string PTG6, string T6, string PTG7, string T7, string PTG8, string T8, string PTG9, string T9, string PTG10,
-            string T10, string PTG11, string T11, string PTG12, string T12, string PTG13, string T13, string PTG14, string T14, string PTG15, string T15)
+        public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTG1,
+            string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8, 
+            string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15)
         {
-            ViewBag.Text1 = T1;
-            ViewBag.PathForPartGallery1 = PTG1;
-            ViewBag.Text2 = T2;
-            ViewBag.PathForPartGallery2 = PTG2;
-            ViewBag.Text3 = T3;
-            ViewBag.PathForPartGallery3 = PTG3;
-            ViewBag.Text4 = T4;
-            ViewBag.PathForPartGallery4 = PTG4;
-            ViewBag.Text5 = T5;
-            ViewBag.PathForPartGallery5 = PTG5;
-            ViewBag.Text6 = T6;
-            ViewBag.PathForPartGallery6 = PTG6;
-            ViewBag.Text7 = T7;
-            ViewBag.PathForPartGallery7 = PTG7;
-            ViewBag.Text8 = T8;
-            ViewBag.PathForPartGallery8 = PTG8;
-            ViewBag.Text9 = T9;
-            ViewBag.PathForPartGallery9 = PTG9;
-            ViewBag.Text10 = T10;
-            ViewBag.PathForPartGallery10 = PTG10;
-            ViewBag.Text11 = T11;
-            ViewBag.PathForPartGallery11 = PTG11;
-            ViewBag.Text12 = T12;
-            ViewBag.PathForPartGallery12 = PTG12;
-            ViewBag.Text13 = T13;
-            ViewBag.PathForPartGallery13 = PTG13;
-            ViewBag.Text14 = T14;
-            ViewBag.PathForPartGallery14 = PTG14;
-            ViewBag.Text15 = T15;
-            ViewBag.PathForPartGallery15 = PTG15;
+            if (PTG1!=null)
+            {
+                ViewBag.Text1 = LittleHelper.TextFromPTG(PTG1).Result;
+                ViewBag.PathForPartGallery1 = PTG1;
+            }
+            if (PTG2 != null)
+            {
+                ViewBag.Text2 = LittleHelper.TextFromPTG(PTG2).Result;
+                ViewBag.PathForPartGallery2 = PTG2;
+            }
+            if (PTG3 != null)
+            {
+                ViewBag.Text = LittleHelper.TextFromPTG(PTG3).Result;
+                ViewBag.PathForPartGallery3 = PTG3;
+            }
+            if (PTG4 != null)
+            {
+                ViewBag.Text4 = LittleHelper.TextFromPTG(PTG4).Result;
+                ViewBag.PathForPartGallery4 = PTG4;
+            }
+            if (PTG5 != null)
+            {
+                ViewBag.Text = LittleHelper.TextFromPTG(PTG5).Result;
+                ViewBag.PathForPartGallery5 = PTG5;
+            }
+            if (PTG6 != null)
+            {
+                ViewBag.Text6 = LittleHelper.TextFromPTG(PTG6).Result;
+                ViewBag.PathForPartGallery6 = PTG6;
+            }
+            if (PTG7 != null)
+            {
+                ViewBag.Text7 = LittleHelper.TextFromPTG(PTG7).Result;
+                ViewBag.PathForPartGallery7 = PTG7;
+            }
+            if (PTG8 != null)
+            {
+                ViewBag.Text8 = LittleHelper.TextFromPTG(PTG8).Result;
+                ViewBag.PathForPartGallery8 = PTG8;
+            }
+            if (PTG9 != null)
+            {
+                ViewBag.Text9 = LittleHelper.TextFromPTG(PTG9).Result;
+                ViewBag.PathForPartGallery9 = PTG9;
+            }
+            if (PTG10 != null)
+            {
+                ViewBag.Text10 = LittleHelper.TextFromPTG(PTG10).Result;
+                ViewBag.PathForPartGallery10 = PTG10;
+            }
+            if (PTG11 != null)
+            {
+                ViewBag.Text11 = LittleHelper.TextFromPTG(PTG11).Result;
+                ViewBag.PathForPartGallery11 = PTG11;
+            }
+            if (PTG12 != null)
+            {
+                ViewBag.Text12 = LittleHelper.TextFromPTG(PTG12).Result;
+                ViewBag.PathForPartGallery12 = PTG12;
+            }
+            if (PTG13 != null)
+            {
+                ViewBag.Text13 = LittleHelper.TextFromPTG(PTG13).Result;
+                ViewBag.PathForPartGallery13 = PTG13;
+            }
+            if (PTG14 != null)
+            {
+                ViewBag.Text14 = LittleHelper.TextFromPTG(PTG14).Result;
+                ViewBag.PathForPartGallery14 = PTG14;
+            }
+            if (PTG15 != null)
+            {
+                ViewBag.Text15 = LittleHelper.TextFromPTG(PTG15).Result;
+                ViewBag.PathForPartGallery15 = PTG15;
+            }
 
-            ViewBag.PartNumber = partNumber;
             switch (partNumber)
             {
                 case 1:
-                    ViewBag.Text1 = text;
+                    ViewBag.Text1 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery1 = pathForPartGallery;
                     break;
                 case 2:
-                    ViewBag.Text2 = text;
+                    ViewBag.Text2 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery2 = pathForPartGallery;
                     break;
                 case 3:
-                    ViewBag.Text3 = text;
+                    ViewBag.Text3 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery3 = pathForPartGallery;
                     break;
                 case 4:
-                    ViewBag.Text4 = text;
+                    ViewBag.Text4 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery4 = pathForPartGallery;
                     break;
                 case 5:
-                    ViewBag.Text5 = text;
+                    ViewBag.Text5 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery5 = pathForPartGallery;
                     break;
                 case 6:
-                    ViewBag.Text6 = text;
+                    ViewBag.Text6 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery6 = pathForPartGallery;
                     break;
                 case 7:
-                    ViewBag.Text7 = text;
+                    ViewBag.Text7 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery7 = pathForPartGallery;
                     break;
                 case 8:
-                    ViewBag.Text8 = text;
+                    ViewBag.Text8 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery8 = pathForPartGallery;
                     break;
                 case 9:
-                    ViewBag.Text9 = text;
+                    ViewBag.Text9 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery9 = pathForPartGallery;
                     break;
                 case 10:
-                    ViewBag.Text10 = text;
+                    ViewBag.Text10 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery10 = pathForPartGallery;
                     break;
                 case 11:
-                    ViewBag.Text11 = text;
+                    ViewBag.Text11 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery11 = pathForPartGallery;
                     break;
                 case 12:
-                    ViewBag.Text12 = text;
+                    ViewBag.Text12 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery12 = pathForPartGallery;
                     break;
                 case 13:
-                    ViewBag.Text13 = text;
+                    ViewBag.Text13 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery13 = pathForPartGallery;
                     break;
                 case 14:
-                    ViewBag.Text14 = text;
+                    ViewBag.Text14 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery14 = pathForPartGallery;
                     break;
-                default:
-                    ViewBag.Text15 = text;
+                case 15:
+                    ViewBag.Text15 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
                     ViewBag.PathForPartGallery15 = pathForPartGallery;
                     break;
+                default:
+                    break;
             }
+
+            ViewBag.Folder = folder;
+            ViewBag.Name = name;
+            ViewBag.Route = route;
+            if (partNumber!=null)
+            {
+                partNumber++;
+                ViewBag.PartNumber = partNumber;
+            }
+            else
+            {
+                ViewBag.PartNumber = 1;
+            }
+
             return View();
         }
 
@@ -208,7 +322,9 @@ namespace Varyag.Controllers
         }
 
         // GET: Articles/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(int? id, int? partNumber, string pathForPartGallery, string folder,
+            string name, string route, string PTG1, string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8,
+            string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15)
         {
             if (id == null)
             {
@@ -220,6 +336,153 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
+
+            if (PTG1 != null)
+            {
+                ViewBag.Text1 = LittleHelper.TextFromPTG(PTG1).Result;
+                ViewBag.PathForPartGallery1 = PTG1;
+            }
+            if (PTG2 != null)
+            {
+                ViewBag.Text2 = LittleHelper.TextFromPTG(PTG2).Result;
+                ViewBag.PathForPartGallery2 = PTG2;
+            }
+            if (PTG3 != null)
+            {
+                ViewBag.Text = LittleHelper.TextFromPTG(PTG3).Result;
+                ViewBag.PathForPartGallery3 = PTG3;
+            }
+            if (PTG4 != null)
+            {
+                ViewBag.Text4 = LittleHelper.TextFromPTG(PTG4).Result;
+                ViewBag.PathForPartGallery4 = PTG4;
+            }
+            if (PTG5 != null)
+            {
+                ViewBag.Text = LittleHelper.TextFromPTG(PTG5).Result;
+                ViewBag.PathForPartGallery5 = PTG5;
+            }
+            if (PTG6 != null)
+            {
+                ViewBag.Text6 = LittleHelper.TextFromPTG(PTG6).Result;
+                ViewBag.PathForPartGallery6 = PTG6;
+            }
+            if (PTG7 != null)
+            {
+                ViewBag.Text7 = LittleHelper.TextFromPTG(PTG7).Result;
+                ViewBag.PathForPartGallery7 = PTG7;
+            }
+            if (PTG8 != null)
+            {
+                ViewBag.Text8 = LittleHelper.TextFromPTG(PTG8).Result;
+                ViewBag.PathForPartGallery8 = PTG8;
+            }
+            if (PTG9 != null)
+            {
+                ViewBag.Text9 = LittleHelper.TextFromPTG(PTG9).Result;
+                ViewBag.PathForPartGallery9 = PTG9;
+            }
+            if (PTG10 != null)
+            {
+                ViewBag.Text10 = LittleHelper.TextFromPTG(PTG10).Result;
+                ViewBag.PathForPartGallery10 = PTG10;
+            }
+            if (PTG11 != null)
+            {
+                ViewBag.Text11 = LittleHelper.TextFromPTG(PTG11).Result;
+                ViewBag.PathForPartGallery11 = PTG11;
+            }
+            if (PTG12 != null)
+            {
+                ViewBag.Text12 = LittleHelper.TextFromPTG(PTG12).Result;
+                ViewBag.PathForPartGallery12 = PTG12;
+            }
+            if (PTG13 != null)
+            {
+                ViewBag.Text13 = LittleHelper.TextFromPTG(PTG13).Result;
+                ViewBag.PathForPartGallery13 = PTG13;
+            }
+            if (PTG14 != null)
+            {
+                ViewBag.Text14 = LittleHelper.TextFromPTG(PTG14).Result;
+                ViewBag.PathForPartGallery14 = PTG14;
+            }
+            if (PTG15 != null)
+            {
+                ViewBag.Text15 = LittleHelper.TextFromPTG(PTG15).Result;
+                ViewBag.PathForPartGallery15 = PTG15;
+            }
+
+            switch (partNumber)
+            {
+                case 1:
+                    ViewBag.Text1 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery1 = pathForPartGallery;
+                    break;
+                case 2:
+                    ViewBag.Text2 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery2 = pathForPartGallery;
+                    break;
+                case 3:
+                    ViewBag.Text3 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery3 = pathForPartGallery;
+                    break;
+                case 4:
+                    ViewBag.Text4 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery4 = pathForPartGallery;
+                    break;
+                case 5:
+                    ViewBag.Text5 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery5 = pathForPartGallery;
+                    break;
+                case 6:
+                    ViewBag.Text6 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery6 = pathForPartGallery;
+                    break;
+                case 7:
+                    ViewBag.Text7 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery7 = pathForPartGallery;
+                    break;
+                case 8:
+                    ViewBag.Text8 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery8 = pathForPartGallery;
+                    break;
+                case 9:
+                    ViewBag.Text9 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery9 = pathForPartGallery;
+                    break;
+                case 10:
+                    ViewBag.Text10 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery10 = pathForPartGallery;
+                    break;
+                case 11:
+                    ViewBag.Text11 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery11 = pathForPartGallery;
+                    break;
+                case 12:
+                    ViewBag.Text12 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery12 = pathForPartGallery;
+                    break;
+                case 13:
+                    ViewBag.Text13 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery13 = pathForPartGallery;
+                    break;
+                case 14:
+                    ViewBag.Text14 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery14 = pathForPartGallery;
+                    break;
+                case 15:
+                    ViewBag.Text15 = LittleHelper.TextFromPTG(pathForPartGallery).Result;
+                    ViewBag.PathForPartGallery15 = pathForPartGallery;
+                    break;
+                default:
+                    break;
+            }
+
+            ViewBag.Folder = folder;
+            ViewBag.Name = name;
+            ViewBag.Route = route;
+
             return View(article);
         }
 
@@ -228,7 +491,7 @@ namespace Varyag.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ArticleId,ArticleName,Text1,FotoPath1,Text2,FotoPath2,Text3,FotoPath3,Text4,FotoPath4,Text5,FotoPath5,Text6,FotoPath6,Text7,FotoPath7,Text8,FotoPath8,Text9,FotoPath9,Text10,FotoPath10,Text11,FotoPath11,Text12,FotoPath12,Text13,FotoPath13,Text14,FotoPath14,Text15,FotoPath15")] Article article)
+        public async Task<IActionResult> Edit(int id, Article article)
         {
             if (id != article.ArticleId)
             {
@@ -282,6 +545,22 @@ namespace Varyag.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var article = await _context.Article.FindAsync(id);
+
+            string[] paths = new[] {article.PathToGallery1, article.PathToGallery2, article.PathToGallery3, article.PathToGallery4, article.PathToGallery5, article.PathToGallery6, article.PathToGallery7,
+                article.PathToGallery8, article.PathToGallery9, article.PathToGallery10, article.PathToGallery11, article.PathToGallery12, article.PathToGallery13, article.PathToGallery14, article.PathToGallery15 };
+            foreach (var item in paths)
+            {
+                LittleHelper.DeleteFiles(item,true);
+            }
+
+            paths = paths[1].Split(new char[] { '\\' });
+            string mainFolderPath = "";
+            for (int i = 0; i < (paths.Length-1); i++)
+            {
+                mainFolderPath = Path.Combine(mainFolderPath, paths[i]);
+            }
+            LittleHelper.DeleteFiles(mainFolderPath, true);
+
             _context.Article.Remove(article);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));

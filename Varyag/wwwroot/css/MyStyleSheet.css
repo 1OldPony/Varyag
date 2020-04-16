@@ -1337,7 +1337,27 @@ img {
 
 .articleBody {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
+    max-width: 1350px;
+    margin: auto;
+    margin-bottom: 5Vh;
+    align-items: center;
+    font-size: 1.3rem;
+    font-family: Tahoma, 'Gabriela', Arial, sans-serif;
+}
+
+.articlePartsCounter {
+    font-weight: 700;
+    color: red;
+    font-size: 12rem;
+    align-self: center;
+    width: 100px
+}
+
+.articlePreviewBlokCreate {
+    display: flex;
+    flex-direction: column;
+    width: 99%;
 }
 
 @media (max-width:1628px) {

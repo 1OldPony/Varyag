@@ -5,106 +5,332 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<div style="max-width:1700px;margin:auto">
+    <h1>Создать статью</h1>
+    <hr />
 
-<h4>Article</h4>
-<hr />
-
-<form asp-action="fillArticle" enctype="multipart/form-data">
-    <div style="display:flex;">
-        @*<input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="range" min="1" max="15" />*@
-        <input id="numberOfPart" value="@ViewBag.PartNumber" type="number" min="1" max="15" width="45" placeholder="1" />
-    </div>
-    <div style="display:flex;">
-        <textarea name="currentTextPart" id="mce"></textarea>
+    <form asp-action="fillArticle" enctype="multipart/form-data">
         <div style="display:flex;flex-direction:column">
-            <div style="color:red;font-size:1.5rem;font-weight:800">Если не пустое - не меняй!!!!!!!!</div>
-            <input type="text" name="articleFolder" value="@ViewBag.articleFolder" required />
-            <div>Загрузка файлов в галлерею</div>
-            <input name="fotos" type="file" multiple required />
+            <div>Порядковый номер блока текст-галлерея</div>
+            <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" />
+        </div>
+        <div style="display:flex">
+            <textarea name="currentTextPart" id="mce"></textarea>
+            <div style="display:flex;flex-direction:column;margin-left:1vw">
+                <div>
+                    <div>Заголовок статьи</div>
+                    <input type="text" name="articleName" value="@ViewBag.Name" style="width:700px" />
+                </div>
+                <div>
+                    <div>Краткое название, замени пробелы на тире(-)</div>
+                    <input type="text" name="articleRoute" value="@ViewBag.Route" />
+                </div>
+                <div>
+                    <div>Загрузка файлов в галлерею</div>
+                    <input name="fotos" type="file" multiple required />
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Загрузить" />
+        <div hidden>
+            <input type="text" name="PathToGallery1" value="@ViewBag.PathForPartGallery1" />
+            <input type="text" name="PathToGallery2" value="@ViewBag.PathForPartGallery2" />
+            <input type="text" name="PathToGallery3" value="@ViewBag.PathForPartGallery3" />
+            <input type="text" name="PathToGallery4" value="@ViewBag.PathForPartGallery4" />
+            <input type="text" name="PathToGallery5" value="@ViewBag.PathForPartGallery5" />
+            <input type="text" name="PathToGallery6" value="@ViewBag.PathForPartGallery6" />
+            <input type="text" name="PathToGallery7" value="@ViewBag.PathForPartGallery7" />
+            <input type="text" name="PathToGallery8" value="@ViewBag.PathForPartGallery8" />
+            <input type="text" name="PathToGallery9" value="@ViewBag.PathForPartGallery9" />
+            <input type="text" name="PathToGallery10" value="@ViewBag.PathForPartGallery10" />
+            <input type="text" name="PathToGallery11" value="@ViewBag.PathForPartGallery11" />
+            <input type="text" name="PathToGallery12" value="@ViewBag.PathForPartGallery12" />
+            <input type="text" name="PathToGallery13" value="@ViewBag.PathForPartGallery13" />
+            <input type="text" name="PathToGallery14" value="@ViewBag.PathForPartGallery14" />
+            <input type="text" name="PathToGallery15" value="@ViewBag.PathForPartGallery15" />
+            <input type="text" name="articleFolder" value="@ViewBag.Folder" />
+        </div>
+    </form>
+    <form asp-action="Create">
+        <div hidden>
+            <input type="text" asp-for="PathToGallery1" value="@ViewBag.PathForPartGallery1" />
+            <input type="text" asp-for="Text1" value="@ViewBag.Text1" />
+            <input type="text" asp-for="PathToGallery2" value="@ViewBag.PathForPartGallery2" />
+            <input type="text" asp-for="Text2" value="@ViewBag.Text2" />
+            <input type="text" asp-for="PathToGallery3" value="@ViewBag.PathForPartGallery3" />
+            <input type="text" asp-for="Text3" value="@ViewBag.Text3" />
+            <input type="text" asp-for="PathToGallery4" value="@ViewBag.PathForPartGallery4" />
+            <input type="text" asp-for="Text4" value="@ViewBag.Text4" />
+            <input type="text" asp-for="PathToGallery5" value="@ViewBag.PathForPartGallery5" />
+            <input type="text" asp-for="Text5" value="@ViewBag.Text5" />
+            <input type="text" asp-for="PathToGallery6" value="@ViewBag.PathForPartGallery6" />
+            <input type="text" asp-for="Text6" value="@ViewBag.Text6" />
+            <input type="text" asp-for="PathToGallery7" value="@ViewBag.PathForPartGallery7" />
+            <input type="text" asp-for="Text7" value="@ViewBag.Text7" />
+            <input type="text" asp-for="PathToGallery8" value="@ViewBag.PathForPartGallery8" />
+            <input type="text" asp-for="Text8" value="@ViewBag.Text8" />
+            <input type="text" asp-for="PathToGallery9" value="@ViewBag.PathForPartGallery9" />
+            <input type="text" asp-for="Text9" value="@ViewBag.Text9" />
+            <input type="text" asp-for="PathToGallery10" value="@ViewBag.PathForPartGallery10" />
+            <input type="text" asp-for="Text10" value="@ViewBag.Text10" />
+            <input type="text" asp-for="PathToGallery11" value="@ViewBag.PathForPartGallery11" />
+            <input type="text" asp-for="Text11" value="@ViewBag.Text11" />
+            <input type="text" asp-for="PathToGallery12" value="@ViewBag.PathForPartGallery12" />
+            <input type="text" asp-for="Text12" value="@ViewBag.Text12" />
+            <input type="text" asp-for="PathToGallery13" value="@ViewBag.PathForPartGallery13" />
+            <input type="text" asp-for="Text13" value="@ViewBag.Text13" />
+            <input type="text" asp-for="PathToGallery14" value="@ViewBag.PathForPartGallery14" />
+            <input type="text" asp-for="Text14" value="@ViewBag.Text14" />
+            <input type="text" asp-for="PathToGallery15" value="@ViewBag.PathForPartGallery15" />
+            <input type="text" asp-for="Text15" value="@ViewBag.Text15" />
+            <input asp-for="ArticleName" value="@ViewBag.Name" />
+            <input asp-for="ArticleRoute" value="@ViewBag.Route" />
+        </div>
+        <input type="submit" value="Создать" />
+    </form>
+    <div style="max-width:1400px;margin:auto;display:flex;flex-direction:column">
+        @if (@ViewBag.Text1 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">1</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text1)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery1 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text2 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">2</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text2)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery2 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text3 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">3</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text3)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery3 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text4 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">4</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text4)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery4 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text5 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">5</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text5)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery5 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text6 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">6</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text6)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery6 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text7 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">7</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text7)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery7 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text8 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">8</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text8)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery8 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text9 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">9</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text9)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery9 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text10 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">10</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text10)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery10 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text11 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">11</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text11)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery11 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text12 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">12</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text12)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery12 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text13 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">13</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text13)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery13 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text14 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">14</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text14)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery14 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text15 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">15</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text15)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery15 })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div>
+            <a asp-action="Index">Back to List</a>
         </div>
     </div>
-    <input type="submit" value="Загрузить" />
-    <div hidden>
-        <input type="text" name="PathToGallery1" value="@ViewBag.PathToGallery1" />
-        <input type="text" name="Text1" value="@ViewBag.Text1" />
-        <input type="text" name="PathToGallery2" value="@ViewBag.PathToGallery2" />
-        <input type="text" name="Text2" value="@ViewBag.Text2" />
-        <input type="text" name="PathToGallery3" value="@ViewBag.PathToGallery3" />
-        <input type="text" name="Text3" value="@ViewBag.Text3" />
-        <input type="text" name="PathToGallery4" value="@ViewBag.PathToGallery4" />
-        <input type="text" name="Text4" value="@ViewBag.Text4" />
-        <input type="text" name="PathToGallery5" value="@ViewBag.PathToGallery5" />
-        <input type="text" name="Text5" value="@ViewBag.Text5" />
-        <input type="text" name="PathToGallery6" value="@ViewBag.PathToGallery6" />
-        <input type="text" name="Text6" value="@ViewBag.Text6" />
-        <input type="text" name="PathToGallery7" value="@ViewBag.PathToGallery7" />
-        <input type="text" name="Text7" value="@ViewBag.Text7" />
-        <input type="text" name="PathToGallery8" value="@ViewBag.PathToGallery8" />
-        <input type="text" name="Text8" value="@ViewBag.Text8" />
-        <input type="text" name="PathToGallery9" value="@ViewBag.PathToGallery9" />
-        <input type="text" name="Text9" value="@ViewBag.Text9" />
-        <input type="text" name="PathToGallery10" value="@ViewBag.PathToGallery10" />
-        <input type="text" name="Text10" value="@ViewBag.Text10" />
-        <input type="text" name="PathToGallery11" value="@ViewBag.PathToGallery11" />
-        <input type="text" name="Text11" value="@ViewBag.Text11" />
-        <input type="text" name="PathToGallery12" value="@ViewBag.PathToGallery12" />
-        <input type="text" name="Text12" value="@ViewBag.Text12" />
-        <input type="text" name="PathToGallery13" value="@ViewBag.PathToGallery13" />
-        <input type="text" name="Text13" value="@ViewBag.Text13" />
-        <input type="text" name="PathToGallery14" value="@ViewBag.PathToGallery14" />
-        <input type="text" name="Text14" value="@ViewBag.Text14" />
-        <input type="text" name="PathToGallery15" value="@ViewBag.PathToGallery15" />
-        <input type="text" name="Text15" value="@ViewBag.Text15" />
-    </div>
-</form>
-<form asp-action="Create">
-    <div>
-        <div>Заголовок статьи</div>
-        <input type="text" />
-    </div>
-    <div hidden>
-        <input type="text" name="PathToGallery1" value="@ViewBag.PathToGallery1" />
-        <input type="text" name="Text1" value="@ViewBag.Text1" />
-        <input type="text" name="PathToGallery2" value="@ViewBag.PathToGallery2" />
-        <input type="text" name="Text2" value="@ViewBag.Text2" />
-        <input type="text" name="PathToGallery3" value="@ViewBag.PathToGallery3" />
-        <input type="text" name="Text3" value="@ViewBag.Text3" />
-        <input type="text" name="PathToGallery4" value="@ViewBag.PathToGallery4" />
-        <input type="text" name="Text4" value="@ViewBag.Text4" />
-        <input type="text" name="PathToGallery5" value="@ViewBag.PathToGallery5" />
-        <input type="text" name="Text5" value="@ViewBag.Text5" />
-        <input type="text" name="PathToGallery6" value="@ViewBag.PathToGallery6" />
-        <input type="text" name="Text6" value="@ViewBag.Text6" />
-        <input type="text" name="PathToGallery7" value="@ViewBag.PathToGallery7" />
-        <input type="text" name="Text7" value="@ViewBag.Text7" />
-        <input type="text" name="PathToGallery8" value="@ViewBag.PathToGallery8" />
-        <input type="text" name="Text8" value="@ViewBag.Text8" />
-        <input type="text" name="PathToGallery9" value="@ViewBag.PathToGallery9" />
-        <input type="text" name="Text9" value="@ViewBag.Text9" />
-        <input type="text" name="PathToGallery10" value="@ViewBag.PathToGallery10" />
-        <input type="text" name="Text10" value="@ViewBag.Text10" />
-        <input type="text" name="PathToGallery11" value="@ViewBag.PathToGallery11" />
-        <input type="text" name="Text11" value="@ViewBag.Text11" />
-        <input type="text" name="PathToGallery12" value="@ViewBag.PathToGallery12" />
-        <input type="text" name="Text12" value="@ViewBag.Text12" />
-        <input type="text" name="PathToGallery13" value="@ViewBag.PathToGallery13" />
-        <input type="text" name="Text13" value="@ViewBag.Text13" />
-        <input type="text" name="PathToGallery14" value="@ViewBag.PathToGallery14" />
-        <input type="text" name="Text14" value="@ViewBag.Text14" />
-        <input type="text" name="PathToGallery15" value="@ViewBag.PathToGallery15" />
-        <input type="text" name="Text15" value="@ViewBag.Text15" />
-    </div>
-    <input type="submit" value="Создать" />
-</form>
-@if (@ViewBag.Text1 != null)
-{
-    <div>@ViewBag.Text1</div>
-    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-        @await Component.InvokeAsync("Fotorama", new { articleId = Model.ArticleId, galleryPath = @ViewBag.pathForPartGallery })
-    </div>
-}
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
-

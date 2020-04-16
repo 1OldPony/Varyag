@@ -29,8 +29,8 @@ namespace Varyag.Controllers
             }
             else if (newsId != null)
             {
-                var items = await db.News.Where(i=>i.NewsId == newsId).SingleAsync();
-                string[] fotos = Directory.GetFiles(items.PathToGallery);
+                var news = await db.News.Where(i=>i.NewsId == newsId).SingleAsync();
+                string[] fotos = Directory.GetFiles(news.PathToGallery);
                 List<string> fotoPaths = new List<string>();
                 foreach (var item in fotos)
                 {
@@ -41,7 +41,6 @@ namespace Varyag.Controllers
             }
             else if (articleId != null)
             {
-                var items = await db.Article.Where(i => i.ArticleId == articleId).SingleAsync();
                 string[] fotos = Directory.GetFiles(galleryPath);
                 List<string> fotoPaths = new List<string>();
                 foreach (var item in fotos)

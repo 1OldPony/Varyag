@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Internal;
+using System.IO;
+using Microsoft.Extensions.Logging;
 
 namespace Varyag
 {
@@ -56,20 +58,19 @@ namespace Varyag
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            //app.UseAuthentication();
 
             app.UseMvc(
                 routes =>
             {
                 routes.MapRoute("default", "{controller=about}/{action=index}/{id?}");
                 routes.MapRoute("О нас", "О-нас", defaults: new { controller = "About", action = "AboutUs" });
+                routes.MapRoute("Статья", "О-нас/{route}", defaults: new { controller = "About", action = "ArticleDetails" });
                 routes.MapRoute("Наши новости", "О-нас/Наши-новости", defaults: new { controller = "About", action = "AllNews" });
                 routes.MapRoute("Конкретная новость", "О-нас/Наши-новости/{id}", defaults: new { controller = "About", action = "NewsDetails" });
                 routes.MapRoute("Каталог", "Каталог", defaults: new { controller = "Catalog", action = "CatalogNavigation" });

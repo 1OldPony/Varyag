@@ -39,6 +39,9 @@ namespace Varyag.Models
                     fotoPath = "/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
                         + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
                     break;
+                case "articleFolder":
+                    fotoPath = pathParts[(pathParts.Length - 2)];
+                    break;
                 default:
                     break;
             }
@@ -56,14 +59,18 @@ namespace Varyag.Models
 
         public static void DeleteFiles(string pathToDirectory,bool deleteDir)
         {
-            string[] files = Directory.GetFiles(pathToDirectory);
-            foreach (var file in files)
+            if (Directory.Exists(pathToDirectory))
             {
-                File.Delete(file);
-            }
-            if (deleteDir)
-            {
-                Directory.Delete(pathToDirectory);
+                string[] files = Directory.GetFiles(pathToDirectory);
+
+                foreach (var file in files)
+                {
+                    File.Delete(file);
+                }
+                if (deleteDir)
+                {
+                    Directory.Delete(pathToDirectory);
+                }
             }
         }
 
@@ -73,11 +80,22 @@ namespace Varyag.Models
             File.Move(pathFrom, pathTo);
         }
 
-        public static void SaveInTxt(string pathToText, string text)
+        public static async Task SaveInTxt(string pathToText, string text)
         {
             using (var stream = new StreamWriter(pathToText, false, System.Text.Encoding.Default))
             {
-                stream.WriteLine(text);
+                await stream.WriteLineAsync(text);
+                stream.Close();
+            }
+        }
+
+        public static async Task<string> TextFromPTG(string PTG)
+        {
+            string path = Path.Combine(PTG, "Text.txt");
+            using (StreamReader stream = new StreamReader(path))
+            {
+                string text = await stream.ReadToEndAsync();
+                return text;
             }
         }
 
