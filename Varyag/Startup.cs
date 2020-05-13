@@ -94,8 +94,8 @@ namespace Varyag
                 routes.MapRoute("Каталог парусников", "Каталог/Парусники", defaults: new { controller = "Catalog", action = "Sailboats" });
                 routes.MapRoute("Каталог парусных яхт", "Каталог/Парусники/Парусные-яхты", defaults: new { controller = "Catalog", action = "Yachts" });
                 routes.MapRoute("Каталог швертботов", "Каталог/Парусники/Швертботы", defaults: new { controller = "Catalog", action = "Svertbots" });
-                routes.MapRoute("Каталог учебных парусников", "Каталог/Парусники/Учебные_парусники", defaults: new { controller = "Catalog", action = "SailboatsStudy" });
-                routes.MapRoute("Каталог исторических парусников", "Каталог/Парусники/Исторические_парусники", defaults: new { controller = "Catalog", action = "SailboatsHistorical" });
+                routes.MapRoute("Каталог учебных парусников", "Каталог/Парусники/Учебные-парусники", defaults: new { controller = "Catalog", action = "SailboatsStudy" });
+                routes.MapRoute("Каталог исторических парусников", "Каталог/Парусники/Исторические-парусники", defaults: new { controller = "Catalog", action = "SailboatsHistorical" });
                 routes.MapRoute("Каталог разных проектов", "Каталог/Разное", defaults: new { controller = "Catalog", action = "Models" });
                 routes.MapRoute("Страница конкретного проекта", "Каталог/{route}", defaults: new { controller = "Catalog", action = "ProjectDetails" });
                 routes.MapRoute("Страница конкретного разного", "Каталог/Разное/{route}", defaults: new { controller = "Catalog", action = "AnythingDetails" });

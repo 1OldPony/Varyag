@@ -11,7 +11,7 @@ namespace Varyag.Models.ViewModels
         [DisplayName("Title для фотки")]
         public string Name { get; set; }
         [DisplayName("Фотка")]
-        public IFormFile Foto { get; set; }
+        public IFormFile ProjectFoto { get; set; }
         public int? ShipProjectID { get; set; }
         public int? NewsID { get; set; }
     }

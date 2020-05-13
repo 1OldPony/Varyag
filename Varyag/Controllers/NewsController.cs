@@ -32,9 +32,18 @@ namespace Varyag.Controllers
             if (allNews.Count >= 10)
             {
                 if (page == null)
+                {
                     page = 0;
+                    ViewBag.CurrentPage = 1;
+                }
                 else
+                {
                     page--;
+                    if (page == 0)
+                        ViewBag.CurrentPage = 1;
+                    else
+                        ViewBag.CurrentPage = page + 1;
+                }
 
                 if (allNews.Count % 10 == 0)
                 {
@@ -49,7 +58,14 @@ namespace Varyag.Controllers
                 else
                 {
                     ViewBag.Pages = (allNews.Count / 10) + 1;
-                    allNews = allNews.GetRange(page.Value * 10, allNews.Count % 10);
+                    if (ViewBag.CurrentPage != ViewBag.Pages)
+                    {
+                        allNews = allNews.GetRange(page.Value * 10, 10);
+                    }
+                    else
+                    {
+                        allNews = allNews.GetRange(page.Value * 10, allNews.Count % 10);
+                    }
                 }
             }
             else

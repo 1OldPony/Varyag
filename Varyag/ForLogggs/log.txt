@@ -1,0 +1,48 @@
+Executing action method Varyag.Controllers.AnythingElsesController.Index (Varyag) - Validation state: Valid
+Ошибка!!! Дата /AnythingElses
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Description], [a].[FotoPath1], [a].[FotoPath2], [a].[Name], [a].[PathToGallery], [a].[Route], [a].[ShortDescription]
+FROM [AnythingElse] AS [a]
+Executed action method Varyag.Controllers.AnythingElsesController.Index (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 115.2223ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 70.4064ms.
+Executed action Varyag.Controllers.AnythingElsesController.Index (Varyag) in 244.9101ms
+Executed endpoint 'Varyag.Controllers.AnythingElsesController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Request finished in 798.7731ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/projects/Парусная яхта/frontFoto1.jpg  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request finished in 81.4587ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request finished in 78.2623ms 200 application/javascript
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 647.9802ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/projects/Парусная яхта/frontFoto2.jpg  
+Sending file. Request path: '/images/projects/Парусная яхта/frontFoto1.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\images\projects\Парусная яхта\frontFoto1.jpg'
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\js\site.js'
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Request finished in 1725.3237ms 200 image/jpeg
+Request finished in 928.8467ms 200 application/javascript
+Sending file. Request path: '/images/projects/Парусная яхта/frontFoto2.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\images\projects\Парусная яхта\frontFoto2.jpg'
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Request finished in 1403.7611ms 200 image/jpeg
+Request finished in 2191.5599ms 200 application/javascript
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\css\site.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 1503.2805ms 200 text/css
+Request finished in 2469.1086ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Request finished in 2418.0213ms 200 application/javascript
+Request finished in 2793.7529ms 200 text/css
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Request finished in 2047.5383ms 200 application/javascript

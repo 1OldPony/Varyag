@@ -17,21 +17,20 @@ namespace Varyag.Controllers
     {
         private readonly VaryagContext _context;
         private readonly IHostingEnvironment _Environment;
-        private readonly ILogger _logger;
+        //private readonly ILogger _logger;
 
-        public AnythingElsesController(VaryagContext context, IHostingEnvironment appEnvironment, ILoggerFactory loggerFactory)
+        public AnythingElsesController(VaryagContext context, IHostingEnvironment appEnvironment/*, ILoggerFactory loggerFactory*/)
         {
             _context = context;
             _Environment = appEnvironment;
-            _logger = loggerFactory.CreateLogger("FileLogger");
-            LittleHelper.DirectoryExistCheck(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs"));
-            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today + ".txt"));
+            //_logger = loggerFactory.CreateLogger("FileLogger");
+            //LittleHelper.DirectoryExistCheck(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs"));
+            //loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today.ToShortDateString() + ".txt"));
         }
 
         // GET: AnythingElses
         public async Task<IActionResult> Index()
         {
-            _logger.LogInformation("Ошибка!!! Дата {0}", DateTime.Now);
             return View(await _context.AnythingElse.ToListAsync());
         }
 

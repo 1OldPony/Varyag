@@ -59,8 +59,9 @@ namespace Varyag.Controllers
                     break;
             }
 
-            if (news.Count >= 10)
+            if (news.Count > 10)
             {
+                //Устанавливаем значения номера страницы для поля навигации и для расчета диапазона загружаемых новостей
                 switch (direction)
                 {
                     case "left":
@@ -108,6 +109,8 @@ namespace Varyag.Controllers
                         break;
                 }
 
+                //Расчитываем диапазон загружаемых новостей
+
                 if (news.Count % 10 == 0)
                 {
                     ViewBag.Pages = news.Count / 10;
@@ -121,7 +124,14 @@ namespace Varyag.Controllers
                 else
                 {
                     ViewBag.Pages = (news.Count / 10) + 1;
-                    news = news.GetRange(page.Value * 10, news.Count % 10);
+                    if (ViewBag.CurrentPage != ViewBag.Pages)
+                    {
+                        news = news.GetRange(page.Value * 10, 10);
+                    }
+                    else
+                    {
+                        news = news.GetRange(page.Value * 10, news.Count % 10);
+                    }
                 }
             }
             else

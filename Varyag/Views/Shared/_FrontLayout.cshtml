@@ -16,7 +16,7 @@
             @switch (@ViewBag.TopPic)
             {
                 case "boats":
-                    <div>
+                    <div >
                         <img src="~/images/узкие/Лодки/парусные-коллаж-на300-2.jpg" />
                     </div>
                     break;
@@ -182,17 +182,17 @@
             </div>
             <div id="goto-pred" class="nav-element-top">
                 <div class="nav-element-inside">
-                    <a href="/"><span class="shorterMenu">КОРАБЛЬ-МУЗЕЙ </span>ГОТО-ПРЕДИСТИНАЦИЯ</a>
+                    <a><span class="shorterMenu">КОРАБЛЬ-МУЗЕЙ </span>ГОТО-ПРЕДИСТИНАЦИЯ</a>
                 </div>
             </div>
             <div id="museum" class="nav-element-top">
                 <div class="nav-element-inside">
-                    <a href="/">МУЗЕЙ</a>
+                    <a>МУЗЕЙ</a>
                 </div>
             </div>
             <div id="aboutUs" class="nav-element-top">
                 <div class="nav-element-inside">
-                    <a href="/">О НАС</a>
+                    <a>О НАС</a>
                 </div>
             </div>
             <div id="contacts" class="nav-element-top">
@@ -204,39 +204,39 @@
         <div id="menu-nav-top" class="menu-nav-top">
             <div id=catalog class=category style="display:none">
                 <div id=boatsTopNav class=menu-top-element>
-                    <a asp-action="Boats" asp-controller="Catalog"><div class=topNavTopCategory>Лодки</div></a>
-                    <a asp-action="BoatsRow" asp-controller="Catalog"><div class=topNavCategory>Прогулочные гребные</div></a>
-                    <a asp-action="BoatsSail" asp-controller="Catalog"><div class=topNavCategory>Прогулочные парусные</div></a>
-                    <a asp-action="BoatsTraditional" asp-controller="Catalog"><div class=topNavCategory>Народные</div></a>
+                    <a href="../Каталог/Лодки"><div class=topNavTopCategory>Лодки</div></a>
+                    <a href="../Каталог/Лодки/Прогулочные-гребные-лодки"><div class=topNavCategory>Прогулочные гребные</div></a>
+                    <a href="../Каталог/Лодки/Прогулочные-парусные-лодки"><div class=topNavCategory>Прогулочные парусные</div></a>
+                    <a href="../Каталог/Лодки/Народные-лодки"><div class=topNavCategory>Народные</div></a>
                 </div>
                 <div id=bigboatsTopNav class=menu-top-element>
-                    <a asp-action="Bigboats" asp-controller="Catalog"><div class=topNavTopCategory>Шлюпки</div></a>
-                    <a asp-action="BoatsYal" asp-controller="Catalog"><div class=topNavCategory>Ял-6,Ял-4,Ял-2</div></a>
-                    <a asp-action="KaterRows" asp-controller="Catalog"><div class=topNavCategory>Гребные катера<br />и вельботы</div></a>
-                    <a asp-action="Botiks" asp-controller="Catalog"><div class=topNavCategory>Ботики</div></a>
-                    <a asp-action="MaketsStudy" asp-controller="Catalog"><div class=topNavCategory>Учебные пособия</div></a>
+                    <a href="../Каталог/Шлюпки"><div class=topNavTopCategory>Шлюпки</div></a>
+                    <a href="../Каталог/Шлюпки/Шлюпки-ЯЛ2,ЯЛ4,ЯЛ6"><div class=topNavCategory>Ял-6,Ял-4,Ял-2</div></a>
+                    <a href="../Каталог/Шлюпки/Гребные-катера-и-вельботы"><div class=topNavCategory>Гребные катера<br />и вельботы</div></a>
+                    <a href="../Каталог/Шлюпки/Ботики"><div class=topNavCategory>Ботики</div></a>
+                    <a href="../Каталог/Шлюпки/Учебные-пособия""><div class=topNavCategory>Учебные пособия</div></a>
                 </div>
                 <div id=katersTopNav class=menu-top-element>
-                    <a asp-action="Motorboats" asp-controller="Catalog"><div class=topNavTopCategory>Катера</div></a>
-                    <a asp-action="Motosailers" asp-controller="Catalog"><div class=topNavCategory>Мотосейлеры</div></a>
-                    <a asp-action="KaterKabins" asp-controller="Catalog"><div class=topNavCategory>Каютные</div></a>
-                    <a asp-action="KatersFishing" asp-controller="Catalog"><div class=topNavCategory>Рабочие/Рыболовные</div></a>
-                    <a asp-action="KatersPassanger" asp-controller="Catalog"><div class=topNavCategory>Пассажирские</div></a>
+                    <a href="../Каталог/Катера"><div class=topNavTopCategory>Катера</div></a>
+                    <a href="../Каталог/Катера/Мотосейлеры"><div class=topNavCategory>Мотосейлеры</div></a>
+                    <a href="../Каталог/Катера/Каютные-катера"><div class=topNavCategory>Каютные</div></a>
+                    <a href="../Каталог/Катера/Рабочие-и-рыболовные-катера"><div class=topNavCategory>Рабочие/Рыболовные</div></a>
+                    <a href="../Каталог/Катера/Пассажирские-катера"><div class=topNavCategory>Пассажирские</div></a>
                 </div>
                 <div id=ladiyTopNav class=menu-top-element>
-                    <a asp-action="Ladiy" asp-controller="Catalog"><div class=topNavTopCategory>Ладьи</div></a>
-                    <a asp-action="LadyasSailRow" asp-controller="Catalog"><div class=topNavCategory>Парусно-гребные</div></a>
-                    <a asp-action="LadyasSailMotor" asp-controller="Catalog"><div class=topNavCategory>Парусно-моторные</div></a>
+                    <a href="../Каталог/Ладьи"><div class=topNavTopCategory>Ладьи</div></a>
+                    <a href="../Каталог/Ладьи/Парусно-гребные-ладьи"><div class=topNavCategory>Парусно-гребные</div></a>
+                    <a href="../Каталог/Ладьи/Парусно-моторные-ладьи"><div class=topNavCategory>Парусно-моторные</div></a>
                 </div>
                 <div id=sailboatsTopNav class=menu-top-element>
-                    <a asp-action="Sailboats" asp-controller="Catalog"><div class=topNavTopCategory>Парусники</div></a>
-                    <a asp-action="Yachts" asp-controller="Catalog"><div class=topNavCategory>Парусные яхты</div></a>
-                    <a asp-action="Svertbots" asp-controller="Catalog"><div class=topNavCategory>Швертботы</div></a>
-                    <a asp-action="SailboatsStudy" asp-controller="Catalog"><div class=topNavCategory>Учебные</div></a>
-                    <a asp-action="SailboatsHistorical" asp-controller="Catalog"><div class=topNavCategory>Исторические</div></a>
+                    <a href="../Каталог/Парусники"><div class=topNavTopCategory>Парусники</div></a>
+                    <a href="../Каталог/Парусники/Парусные-яхты"><div class=topNavCategory>Парусные яхты</div></a>
+                    <a href="../Каталог/Парусники/Швертботы"><div class=topNavCategory>Швертботы</div></a>
+                    <a href="../Каталог/Парусники/Учебные-парусники"><div class=topNavCategory>Учебные</div></a>
+                    <a href="../Каталог/Парусники/Исторические-парусники"><div class=topNavCategory>Исторические</div></a>
                 </div>
                 <div id=maketsTopNav class=menu-top-element>
-                    <a asp-action="Models" asp-controller="Catalog"><div class=topNavTopCategory>Разное</div></a>
+                    <a href="../Каталог/Разное"><div class=topNavTopCategory>Разное</div></a>
                 </div>
             </div>
             <div id=cinemaOrders class=category>
@@ -245,9 +245,9 @@
             <div id=aboutUsTopNav class=category>
                 <a asp-action="AboutUs" asp-controller="Index"><div id=aboutUsTopNav class=topNavCategory>О нашей верфи</div></a>
                 <a asp-action=><div id=aboutUsTopNav class=topNavCategory>О нашем производстве</div></a>
-                <a asp-action="AllNews" asp-controller="About"><div id=aboutUsTopNav class=topNavCategory>Наши новости</div></a>
-                <a asp-action="AllNews" asp-controller="About" asp-route-newsType="smi"><div id=aboutUsTopNav class=topNavCategory>СМИ о нас</div></a>
-                <a asp-action="AllNews" asp-controller="About" asp-route-newsType="life"><div id=aboutUsTopNav class=topNavCategory>Из жизни наших кораблей</div></a>
+                <a href="../О-нас/Наши-новости" ><div id=aboutUsTopNav class=topNavCategory>Наши новости</div></a>
+                <a href="../О-нас/Наши-новости?newsType=smi"><div id=aboutUsTopNav class=topNavCategory>СМИ о нас</div></a>
+                <a href="../О-нас/Наши-новости?newsType=life"><div id=aboutUsTopNav class=topNavCategory>Из жизни наших кораблей</div></a>
                 <a id=aboutUsTopNav class=aboutUsGoto style="display:none"><div class=topNavCategory>Корабль-музей &quot;Гото-Предистинация&quot;</div></a>
                 <a id=aboutUsTopNav class=aboutUsMuseum style="display:none"><div class=topNavCategory>Музей</div></a>
             </div>

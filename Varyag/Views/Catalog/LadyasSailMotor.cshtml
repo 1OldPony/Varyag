@@ -5,7 +5,7 @@
 }
 <div class="MyContainer" id="main">
     <div class="path">
-        <a asp-action="AboutUs" asp-controller="About">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a asp-action="Ladiy">Ладьи</a> > <a>Парусно-моторные ладьи</a>
+        <a href="../../О-Нас">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a href="../Каталог/Ладьи">Ладьи</a> > <a>Парусно-моторные ладьи</a>
     </div>
     <div class="explainText">
         <span style="margin-left:100px"></span> Парусно моторные ладьи предназначены для использования в качестве прогулочных и экспедиционных судов. Прототипами при их проектировании и постройке служат реальные исторические 
@@ -14,16 +14,10 @@
 
     <div class="catalog">
         <div class="nav-element" name="lodki" id="lodki">
-            <a asp-action="boats" asp-controller="Catalog">
+            <a href="../Каталог/Лодки">
                 <div id="lodki" class="nav-element-grid">
                     <div class="colored">
-                        <img src="~/images/icons/Цветные/Лодка.jpg" />
-                    </div>
-                    <div class="ikons">
-                        <img src="~/images/icons/Закрашенные/Лодка-закрашена.jpg" />
-                    </div>
-                    <div class="drawing">
-                        <img src="~/images/icons/Лодка.jpg" />
+                        <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
                     </div>
                     <div id="boat" class="whiteSpace"></div>
                     <div class="nav-element-inside">
@@ -33,16 +27,10 @@
             </a>
         </div>
         <div class="nav-element" name="shlupki" id="shlupki">
-            <a asp-action="bigboats" asp-controller="Catalog">
+            <a href="../Каталог/Шлюпки">
                 <div id="shlupki" class="nav-element-grid">
                     <div class="colored">
-                        <img src="~/images/icons/Цветные/Мулька_Цветная.jpg" />
-                    </div>
-                    <div class="ikons">
-                        <img src="~/images/icons/Закрашенные/Шлюпка-закрашена.jpg" />
-                    </div>
-                    <div class="drawing">
-                        <img src="~/images/icons/Шлюпка.jpg" />
+                        <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
                     </div>
                     <div id="bigboat" class="whiteSpace"></div>
                     <div class="nav-element-inside">
@@ -52,16 +40,10 @@
             </a>
         </div>
         <div class="nav-element" name="katera" id="katera">
-            <a asp-action="motorboats" asp-controller="Catalog">
+            <a href="../Каталог/Катера">
                 <div id="katera" class="nav-element-grid">
                     <div class="colored">
-                        <img src="~/images/icons/Цветные/Поморское судно2.jpg" />
-                    </div>
-                    <div class="ikons">
-                        <img src="~/images/icons/Закрашенные/Катер-закрашен.jpg" />
-                    </div>
-                    <div class="drawing">
-                        <img src="~/images/icons/Катер.jpg" />
+                        <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
                     </div>
                     <div id="kater" class="whiteSpace"></div>
                     <div class="nav-element-inside">
@@ -71,16 +53,10 @@
             </a>
         </div>
         <div class="nav-element-choosen" name="ladiy" id="ladiy">
-            <a asp-action="ladiy" asp-controller="Catalog">
+            <a href="../Каталог/Ладьи">
                 <div id="ladiy" class="nav-element-grid">
                     <div class="colored">
-                        <img src="~/images/icons/Цветные/Ладья.jpg" />
-                    </div>
-                    <div class="ikons">
-                        <img src="~/images/icons/Закрашенные/Ладья-зак.jpg" />
-                    </div>
-                    <div class="drawing">
-                        <img src="~/images/icons/Ладья.jpg" />
+                        <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
                     </div>
                     <div id="ladiy" class="whiteSpace"></div>
                     <div class="nav-element-inside">
@@ -90,16 +66,10 @@
             </a>
         </div>
         <div class="nav-element" name="sailboats" id="sailboats">
-            <a asp-action="sailboats" asp-controller="Catalog">
+            <a href="../Каталог/Парусники">
                 <div id="sailboats" class="nav-element-grid">
                     <div class="colored">
-                        <img src="~/images/icons/Цветные/Грумант-58_Цветная мулька (Пример).jpg" />
-                    </div>
-                    <div class="ikons">
-                        <img src="~/images/icons/Закрашенные/Парусник.jpg" />
-                    </div>
-                    <div class="drawing">
-                        <img src="~/images/icons/Парусник.jpg" />
+                        <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
                     </div>
                     <div id="sailboats" class="whiteSpace"></div>
                     <div class="nav-element-inside">
@@ -109,10 +79,8 @@
             </a>
         </div>
         <div class="nav-element" name="models" id="models">
-            <a asp-action="models" asp-controller="Catalog">
+            <a href="../Каталог/Разное">
                 <div id="models" class="nav-element-grid">
-                    <div style="display:none"></div>
-                    <div style="display:none"></div>
                     <img src="~/images/icons/Макет.jpg" />
                     <div id="models" class="whiteSpace"></div>
                     <div class="nav-element-inside">

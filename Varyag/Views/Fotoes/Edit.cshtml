@@ -1,0 +1,50 @@
+﻿@model Varyag.Models.Foto
+@{
+    ViewData["Title"] = "Редактировать фото";
+}
+
+<h1>Редактировать</h1>
+
+<h4>Фото</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Alt" class="control-label"></label>
+                <input asp-for="Alt" class="form-control" />
+                <span asp-validation-for="Alt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div>
+                <img alt="@Model.Alt" title="@Model.Name" width="120" height="120" src="@Url.Action("ImageRender", "Fotoes", new { id = Model.FotoID})">
+            </div>
+            <div class="form-group">
+                <label asp-for="ProjectFoto" class="control-label"></label>
+                <input type="file" asp-for="ProjectFoto" class="form-control" />
+                <span asp-validation-for="ProjectFoto" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <input asp-for="FotoID" />
+                <input asp-for="ShipProjectID" />
+                <input asp-for="NewsID" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

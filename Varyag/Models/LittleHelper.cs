@@ -95,6 +95,7 @@ namespace Varyag.Models
             using (StreamReader stream = new StreamReader(path))
             {
                 string text = await stream.ReadToEndAsync();
+                stream.Close();
                 return text;
             }
         }
@@ -139,61 +140,159 @@ namespace Varyag.Models
             return newsIntDate;
         }
 
-        public static List<ProjectPublicViewModel> ProjectsToSortedViewModel(List<Project> projects)
+        public static List<ProjectPublicViewModel> ProjectsToSortedViewModel(List<Project> projects, bool boats)
         {
             List<ProjectPublicViewModel> orderedProjects = new List<ProjectPublicViewModel>();
             foreach (var item in projects)
             {
-                string[] parts1 = item.Name.Split('"');
-                string[] parts2 = parts1[1].Split('-');
-                orderedProjects.Add(new ProjectPublicViewModel
+                if (boats)
                 {
-                    Order = int.Parse(parts2[1]),
-                    BoatRow = item.BoatRow,
-                    BoatSail = item.BoatSail,
-                    BoatTraditional = item.BoatTraditional,
-                    BoatYal = item.BoatYal,
-                    Botik = item.Botik,
-                    Deep = item.Deep,
-                    Description = item.Description,
-                    EnginePower = item.EnginePower,
-                    FreshWaterCap = item.FreshWaterCap,
-                    FuelCap = item.FuelCap,
-                    KaterCabin = item.KaterCabin,
-                    KaterFish = item.KaterFish,
-                    KaterPass = item.KaterPass,
-                    KaterProject = item.KaterProject,
-                    KaterRow = item.KaterRow,
-                    LadyaProject = item.LadyaProject,
-                    LadyaRow = item.LadyaRow,
-                    LadyaSail = item.LadyaSail,
-                    Length = item.Length,
-                    MainFoto = item.MainFoto,
-                    MaketCinema = item.MaketCinema,
-                    MaketDesign = item.MaketDesign,
-                    MaketMuseum = item.MaketMuseum,
-                    MaketStudy = item.MaketStudy,
-                    Mass = item.Mass,
-                    Motosailer = item.Motosailer,
-                    Name = item.Name,
-                    Route = item.Route,
-                    NumberOfOars = item.NumberOfOars,
-                    PassengerCap = item.PassengerCap,
-                    Price = item.Price,
-                    ProjectID = item.ProjectID,
-                    SailArea = item.SailArea,
-                    SailboatHistorical = item.SailboatHistorical,
-                    SailboatProject = item.SailboatProject,
-                    SailboatStudy = item.SailboatStudy,
-                    ShipSheme = item.ShipSheme,
-                    ShipShemeFull = item.ShipShemeFull,
-                    Shvertbot = item.Shvertbot,
-                    SleepingAreas = item.SleepingAreas,
-                    Speed = item.Speed,
-                    Volume = item.Volume,
-                    Windth = item.Windth,
-                    Yacht = item.Yacht
-                });
+                    char[] numbers = item.Length.ToCharArray();
+                    string number="";
+
+                    if (numbers.Length < 2)
+                    {
+                        number = string.Concat(numbers[0]);
+                    }
+                    else
+                    {
+                        foreach (var symbol in numbers)
+                        {
+                            if (symbol!='.' && symbol != ',')
+                                number = string.Concat(number, symbol.ToString());
+                            else
+                                break;
+                        }
+                    }
+
+                    orderedProjects.Add(new ProjectPublicViewModel
+                    {
+                        Order = int.Parse(number),
+                        BoatRow = item.BoatRow,
+                        BoatSail = item.BoatSail,
+                        BoatTraditional = item.BoatTraditional,
+                        BoatYal = item.BoatYal,
+                        Botik = item.Botik,
+                        Deep = item.Deep,
+                        Description = item.Description,
+                        EnginePower = item.EnginePower,
+                        FreshWaterCap = item.FreshWaterCap,
+                        FuelCap = item.FuelCap,
+                        KaterCabin = item.KaterCabin,
+                        KaterFish = item.KaterFish,
+                        KaterPass = item.KaterPass,
+                        KaterProject = item.KaterProject,
+                        KaterRow = item.KaterRow,
+                        LadyaProject = item.LadyaProject,
+                        LadyaRow = item.LadyaRow,
+                        LadyaSail = item.LadyaSail,
+                        Length = item.Length,
+                        MainFoto = item.MainFoto,
+                        MaketCinema = item.MaketCinema,
+                        MaketDesign = item.MaketDesign,
+                        MaketMuseum = item.MaketMuseum,
+                        MaketStudy = item.MaketStudy,
+                        Mass = item.Mass,
+                        Motosailer = item.Motosailer,
+                        Name = item.Name,
+                        Route = item.Route,
+                        NumberOfOars = item.NumberOfOars,
+                        PassengerCap = item.PassengerCap,
+                        Price = item.Price,
+                        ProjectID = item.ProjectID,
+                        SailArea = item.SailArea,
+                        SailboatHistorical = item.SailboatHistorical,
+                        SailboatProject = item.SailboatProject,
+                        SailboatStudy = item.SailboatStudy,
+                        ShipSheme = item.ShipSheme,
+                        ShipShemeFull = item.ShipShemeFull,
+                        Shvertbot = item.Shvertbot,
+                        SleepingAreas = item.SleepingAreas,
+                        Speed = item.Speed,
+                        Volume = item.Volume,
+                        Windth = item.Windth,
+                        Yacht = item.Yacht
+                    });
+                }
+                else
+                {
+                    string number = "";
+
+                    if (!item.Name.Contains('"') || !item.Name.Contains('-'))
+                    {
+                        char[] numbers = item.Length.ToCharArray();
+
+                        if (numbers.Length < 2)
+                        {
+                            number = string.Concat(numbers[0]);
+                        }
+                        else
+                        {
+                            foreach (var symbol in numbers)
+                            {
+                                if (symbol != '.' && symbol != ',')
+                                    number = string.Concat(number, symbol.ToString());
+                                else
+                                    break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string[] parts1 = item.Name.Split('"');
+                        string[] parts2 = parts1[1].Split('-');
+                        char[] numbers = parts2[1].ToCharArray();
+                        number = string.Concat(numbers[0], numbers[1]);
+                    }
+                    orderedProjects.Add(new ProjectPublicViewModel
+                    {
+                        Order = int.Parse(number),
+                        BoatRow = item.BoatRow,
+                        BoatSail = item.BoatSail,
+                        BoatTraditional = item.BoatTraditional,
+                        BoatYal = item.BoatYal,
+                        Botik = item.Botik,
+                        Deep = item.Deep,
+                        Description = item.Description,
+                        EnginePower = item.EnginePower,
+                        FreshWaterCap = item.FreshWaterCap,
+                        FuelCap = item.FuelCap,
+                        KaterCabin = item.KaterCabin,
+                        KaterFish = item.KaterFish,
+                        KaterPass = item.KaterPass,
+                        KaterProject = item.KaterProject,
+                        KaterRow = item.KaterRow,
+                        LadyaProject = item.LadyaProject,
+                        LadyaRow = item.LadyaRow,
+                        LadyaSail = item.LadyaSail,
+                        Length = item.Length,
+                        MainFoto = item.MainFoto,
+                        MaketCinema = item.MaketCinema,
+                        MaketDesign = item.MaketDesign,
+                        MaketMuseum = item.MaketMuseum,
+                        MaketStudy = item.MaketStudy,
+                        Mass = item.Mass,
+                        Motosailer = item.Motosailer,
+                        Name = item.Name,
+                        Route = item.Route,
+                        NumberOfOars = item.NumberOfOars,
+                        PassengerCap = item.PassengerCap,
+                        Price = item.Price,
+                        ProjectID = item.ProjectID,
+                        SailArea = item.SailArea,
+                        SailboatHistorical = item.SailboatHistorical,
+                        SailboatProject = item.SailboatProject,
+                        SailboatStudy = item.SailboatStudy,
+                        ShipSheme = item.ShipSheme,
+                        ShipShemeFull = item.ShipShemeFull,
+                        Shvertbot = item.Shvertbot,
+                        SleepingAreas = item.SleepingAreas,
+                        Speed = item.Speed,
+                        Volume = item.Volume,
+                        Windth = item.Windth,
+                        Yacht = item.Yacht
+                    });
+                }
             }
 
             orderedProjects = orderedProjects.OrderBy(x => x.Order).ToList();

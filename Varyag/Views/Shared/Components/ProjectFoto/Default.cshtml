@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Varyag.Models.Foto>
 
-
 <table>
     <tr>
         <td>
@@ -10,33 +9,36 @@
 </table>
 <br />
 <br />
-@foreach (var item in Model)
-{
-<table class="myFloatTable">
-    <tr>
-        <td rowspan="3">
-            <img alt="@item.Alt" title="@item.Name" width="120" height="120" src="@Url.Action("ImageRender", "Fotoes", new { id = item.FotoID})">
-        </td>
-        <td>
-            @Html.DisplayNameFor(model => model.Alt)
-        </td>
-        <td>
-            @Html.DisplayNameFor(model => model.Name)
-        </td>
-    </tr>
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Alt)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <a asp-action="Delete" asp-controller="Fotoes" asp-route-id="@item.FotoID">Удалить</a>
-        </td>
-    </tr>
-</table>
-}
+<div style="display:flex;flex-wrap:wrap">
+    @foreach (var item in Model)
+    {
+    <div style="display:flex">
+        <div style="align-self:center">
+            <img alt="@item.Alt" title="@item.Name" width="135" height="135" src="@Url.Action("ImageRender", "Fotoes", new { id = item.FotoID})">
+        </div>
+        <div style="display:flex;flex-direction:column;margin:10px;font-size:1.1rem">
+            <div style="display:flex;flex-direction:column">
+                <div style="text-decoration:underline">
+                    @Html.DisplayNameFor(model => model.Alt)
+                </div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.Alt)
+                </div>
+            </div>
+            <div style="display:flex;flex-direction:column">
+                <div style="text-decoration:underline">
+                    @Html.DisplayNameFor(model => model.Name)
+                </div>
+                <div>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </div>
+            </div>
+            <div style="margin-top:10px">
+                <a asp-action="Delete" asp-controller="Fotoes" asp-route-id="@item.FotoID">Удалить</a> |
+                <a asp-action="Edit" asp-controller="Fotoes" asp-route-id="@item.FotoID">Редактировать</a>
+            </div>
+        </div>
+    </div>
+    }
+</div>
 <br />

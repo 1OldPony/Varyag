@@ -20,88 +20,96 @@ namespace Varyag.Controllers
         public async Task<IViewComponentResult> InvokeAsync(string category)
         {
             var items = new List<Project>();
+            bool boats = false;
             switch (category)
             {
                 case "boatrow":
                     items = await db.Project.Where(w => w.BoatRow == true).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "boatsail":
                     items = await db.Project.Where(w => w.BoatSail == true).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "boattraditional":
                     items = await db.Project.Where(w => w.BoatTraditional == true).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "boatyal":
                     items = await db.Project.Where(w => w.BoatYal == true).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "botik":
                     items = await db.Project.Where(w => w.Botik == true).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katercabin":
                     items = await db.Project.Where(w => w.KaterCabin == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katerfish":
                     items = await db.Project.Where(w => w.KaterFish == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katerproject":
                     items = await db.Project.Where(w => w.KaterProject == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katerrow":
                     items = await db.Project.Where(w => w.KaterRow == true).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katerpass":
                     items = await db.Project.Where(w => w.KaterPass == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "ladyaproject":
                     items = await db.Project.Where(w => w.LadyaProject == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "ladyarow":
                     items = await db.Project.Where(w => w.LadyaRow == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "ladyasail":
                     items = await db.Project.Where(w => w.LadyaSail == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "maketstudy":
                     items = await db.Project.Where(w => w.MaketStudy == true).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "motosailer":
                     items = await db.Project.Where(w => w.Motosailer == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "sailboathistorical":
                     items = await db.Project.Where(w => w.SailboatHistorical == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "sailboatproject":
                     items = await db.Project.Where(w => w.SailboatProject == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "sailboatstudy":
                     items = await db.Project.Where(w => w.SailboatStudy == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "shvertbot":
                     items = await db.Project.Where(w => w.Shvertbot == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "yacht":
                     items = await db.Project.Where(w => w.Yacht == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "boat":
                     items = await db.Project.Where(w => w.BoatRow || w.BoatSail || w.BoatTraditional == true ).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "bigboat":
                     items = await db.Project.Where(w => w.BoatYal || w.Botik || w.KaterRow || w.MaketStudy == true).ToListAsync();
-                    break;
+                    boats = true;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "kater":
                     items = await db.Project.Where(w => w.KaterCabin || w.KaterFish || w.KaterProject || w.Motosailer || w.KaterPass == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "ladiy":
                     items = await db.Project.Where(w => w.LadyaRow || w.LadyaSail || w.LadyaProject == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "sailboat":
                     items = await db.Project.Where(w => w.Yacht || w.Shvertbot || w.SailboatStudy || w.SailboatHistorical || w.SailboatProject == true).ToListAsync();
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 default:
-                    break;
+                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
             }
-
-            return View(LittleHelper.ProjectsToSortedViewModel(items));
         }
     }
 }

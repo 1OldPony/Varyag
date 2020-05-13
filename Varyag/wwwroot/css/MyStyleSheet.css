@@ -154,7 +154,7 @@
     display:grid;
     grid-template-areas: "preview newsText";
     grid-template-columns:40% 60%;
-    grid-template-rows:35vh;
+    grid-template-rows:31vh;
     margin:2vw;
     margin-top:1vw;
     overflow:hidden;
@@ -398,21 +398,32 @@ body {
     position: relative;
 }
 
+    .top-hat img {
+        width: 100%
+    }
+
 .top-pic {
     display: flex;
     position: relative;
 }
 
+    .top-pic div {
+        width: 100%
+    }
+
 .longUpFoto {
-    display:initial
+    display:initial;
+    width:100%
 }
 
 .shortUpFoto {
-    display: none
+    display: none;
+    width:100%
 }
 
 .veryShortUpFoto {
-    display: none
+    display: none;
+    width: 100%
 }
 
 .contacts {
@@ -484,8 +495,8 @@ img {
 .catalog {
     display: grid;
     grid-template-areas: "boats bigboats kater ladya sailboat maket" "sub-boats sub-boats sub-boats sub-boats sub-boats sub-boats" "sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats sub-bigboats" "sub-kater sub-kater sub-kater sub-kater sub-kater sub-kater" "sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya sub-ladya" "sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat sub-sailboat" "sub-maket sub-maket sub-maket sub-maket sub-maket sub-maket";
-    grid-template-columns: 13.6% 11.9% 17% 17% 24.6% 16%;
-    grid-template-rows: 219px min-content min-content min-content min-content min-content min-content;
+    grid-template-columns: 13.2% 13.2% 17.1% 18.3% 22% 14%;
+    grid-template-rows: 24vH min-content min-content min-content min-content min-content min-content;
     font-size: 1.44rem;
 }
 
@@ -1479,10 +1490,6 @@ img {
         background-color: #f0f5f9;
     }
 
-    .catalog {
-        grid-template-rows: 190px min-content min-content min-content min-content min-content min-content;
-    }
-
     .annotation {
         width: 40vw;
     }
@@ -1505,6 +1512,10 @@ img {
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 53% 76% no-repeat;
     }
+
+    .catalog {
+        grid-template-rows: 20vh min-content min-content min-content min-content min-content min-content;
+    }
 }
 
 @media (max-width:1090px) {
@@ -1519,6 +1530,10 @@ img {
 }
 
 @media (max-width:1042px) {
+
+    .catalog {
+        grid-template-rows: 16vh min-content min-content min-content min-content min-content min-content;
+    }
 
     .details-top {
         grid-template-areas: "gallery gallery" "tth-det sheme";
@@ -2357,11 +2372,6 @@ img {
         position: initial;
         width: 100%;
         align-self: center;
-    }
-
-    .top-hat {
-        display: flex;
-        background-image: url(../images/небо.png)
     }
 
     .singleProject {

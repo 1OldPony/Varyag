@@ -4,11 +4,24 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h1>Новости</h1>
-
 <p>
     <a asp-action="Create">Создать новость</a>
 </p>
 
+<div style="margin:1vw">
+    @for (int i = 1; i <= ViewBag.Pages; i++)
+    {
+        if (i == @ViewBag.CurrentPage)
+        {
+            <a asp-action="Index" asp-route-page="@i"><span style="color:red;margin:3px;font-size:1.4rem">@i </span></a>
+        }
+        else
+        {
+            <a asp-action="Index" asp-route-page="@i"><span style="color:red;margin:3px;font-size:1.1rem">@i </span></a>
+        }
+    }
+</div>
+<div class="myBorder"></div>
 
 @for (int i = 0; i < Model.Count(); i++)
 {
@@ -60,7 +73,7 @@
             </div>
         </div>
     </div>
-    
+
     <div style="margin:1vw">
         <input type="button" name="showHideButton" value="Развернутый вид" id="@i" />
         <div class="MyContainer" id="@i" style="display:none">
@@ -80,6 +93,13 @@
 <div style="margin:1vw">
     @for (int i = 1; i <= ViewBag.Pages; i++)
     {
-        <a asp-action="Index" asp-route-page="@i"><span style="color:red;text-decoration:dotted">@i </span></a>
+        if (i == @ViewBag.CurrentPage)
+        {
+            <a asp-action="Index" asp-route-page="@i"><span style="color:red;margin:3px;font-size:1.4rem">@i </span></a>
+        }
+        else
+        {
+            <a asp-action="Index" asp-route-page="@i"><span style="color:red;margin:3px;font-size:1.1rem">@i </span></a>
+        }
     }
 </div>

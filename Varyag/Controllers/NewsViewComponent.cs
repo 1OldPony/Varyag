@@ -21,22 +21,24 @@ namespace Varyag.Controllers
             db = context;
             _logger = loggerFactory.CreateLogger("FileLogger");
             LittleHelper.DirectoryExistCheck(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs"));
-            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log"+DateTime.Today+".txt"));
+            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today.ToShortDateString() + ".txt"));
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            //List<NewsViewModel> lastNews = new List<NewsViewModel>();
-            //try
-            //{
+            List<NewsViewModel> lastNews = new List<NewsViewModel>();
+            try
+            {
                 List<News> news = await db.News.ToListAsync();
                 List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
-            List<NewsViewModel> lastNews = sortedNews.AsEnumerable().Take(3).ToList();
-            //}
-            //catch (ArgumentNullException e)
-            //{
-            //    _logger.LogInformation("Ошибка!!! Дата {0}, исключение {1}, источник {2}, след {3}", DateTime.Now, e.Message, e.TargetSite, e.StackTrace);
-            //}
+                lastNews = sortedNews.AsEnumerable().Take(3).ToList();
+            }
+            catch (Exception e)
+            {
+                _logger.LogInformation("ОШИБКА!!!! ВРЕМЯ {0}, СООБЩЕНИЕ {1}, МЕТОД {2}, ПУТЬ_ДО {3},", DateTime.Now.ToShortTimeString(), e.Message, e.TargetSite, e.StackTrace);
+                throw new Exception("Не удалось загрузить новостные превью");
+            }
+
             return View(lastNews);
         }
     }

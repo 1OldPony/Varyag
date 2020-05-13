@@ -241,17 +241,14 @@ namespace Varyag.Controllers
         }
 
         public async Task<IActionResult> ProjectDetails(string route)
-        //public async Task<IActionResult> ProjectDetails(int? id)
         {
             if (route == null)
-            //if (id == null)
             {
                 return NotFound();
             }
 
             var project = await db.Project
                 .FirstOrDefaultAsync(m => m.Route == route);
-            //.FirstOrDefaultAsync(m => m.ProjectID == id);
 
             ViewBag.TopPic = "details";
             ViewData["Title"] = project.Name;
@@ -299,11 +296,9 @@ namespace Varyag.Controllers
         }
 
         public async Task<IActionResult> AnythingDetails(string route)
-        //public async Task<IActionResult> AnythingDetails(int? id)
         {
 
             if (route == null)
-            //if (id == null)
             {
                 return NotFound();
             }
