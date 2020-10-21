@@ -679,7 +679,7 @@ img {
     font-size: 1.25rem;
     text-align: left;
     margin: 35px;
-    margin-top: 0px;
+    /*margin-top: 0px;*/
 }
 
 #lodki.nav-element-choosen {
