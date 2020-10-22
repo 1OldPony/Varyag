@@ -500,6 +500,15 @@ img {
     font-size: 1.44rem;
 }
 
+.catalogMain {
+    display: grid;
+    grid-template-areas: "boats ladya maket""bigboats kater sailboat";
+    grid-template-columns: 15% 20% 25%;
+    grid-template-rows: min-content min-content;
+    font-size: 1.44rem;
+    justify-content: center;
+}
+
 .nav-top {
     display: flex;
     width: 100%;
@@ -795,6 +804,18 @@ img {
     align-items: flex-end;
     flex-grow: 1;
     margin-left: 2px;
+}
+
+.nav-element-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.nav-element-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 #lodki.nav-element {

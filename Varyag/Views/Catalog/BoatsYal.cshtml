@@ -10,7 +10,7 @@
         <span style="margin-left:100px"></span>Шлюпки типов ЯЛ-2, ЯЛ-4, ЯЛ-6 предназначены для обучения будущих моряков морской практике, гребле и хождению под парусом, могут использоваться также в качестве 
         туристских или прогулочных судов. Подобные суда широко используются в специализированных учебных заведениях, клубах юных моряков и военно-морском флоте.
     </div>
-    <div class="catalog">
+    @*<div class="catalog">
         <div class="nav-element" name="lodki" id="lodki">
             <a href="../Каталог/Лодки">
                 <div id="lodki" class="nav-element-grid">
@@ -93,6 +93,6 @@
         <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
         <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-    </div>
+    </div>*@
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "boatyal" })
 </div>

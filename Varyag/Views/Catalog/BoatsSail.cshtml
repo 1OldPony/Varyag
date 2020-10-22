@@ -10,7 +10,7 @@
         <span style="margin-left:100px">Прогулочные</span> парусные лодки предназначены для туризса, занятий парусным спортом и отдыха на воде.
         Если среди представленных вариантев вы не найдете подходящий для себя, мы можем спроектировать и построить деревянную парусную лодку по индивидуальному проекту.
     </div>
-    <div class="catalog">
+    @*<div class="catalog">
         <div class="nav-element-choosen" name="lodki" id="lodki">
             <a href="../Каталог/Лодки">
                 <div id="lodki" class="nav-element-grid">
@@ -93,6 +93,6 @@
         <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
         <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
         <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-    </div>
+    </div>*@
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "BoatSail" })
 </div>

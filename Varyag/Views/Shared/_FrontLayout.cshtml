@@ -172,7 +172,9 @@
         <div id="nav-top" class="nav-top">
             <div id="ships-catalog" class="nav-element-top">
                 <div class="nav-element-inside">
-                    КАТАЛОГ
+                    <a href="../../каталог">
+                        КАТАЛОГ
+                    </a>
                 </div>
             </div>
             <div id="cinema" class="nav-element-top">
@@ -202,7 +204,7 @@
             </div>
         </div>
         <div id="menu-nav-top" class="menu-nav-top">
-            <div id=catalog class=category style="display:none">
+            @*<div id=catalog class=category style="display:none">
                 <div id=boatsTopNav class=menu-top-element>
                     <a href="../Каталог/Лодки"><div class=topNavTopCategory>Лодки</div></a>
                     <a href="../Каталог/Лодки/Прогулочные-гребные-лодки"><div class=topNavCategory>Прогулочные гребные</div></a>
@@ -238,7 +240,7 @@
                 <div id=maketsTopNav class=menu-top-element>
                     <a href="../Каталог/Разное"><div class=topNavTopCategory>Разное</div></a>
                 </div>
-            </div>
+            </div>*@
             <div id=cinemaOrders class=category>
                 @await Component.InvokeAsync("Articles")
             </div>
