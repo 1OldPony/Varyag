@@ -5,90 +5,177 @@
     <div class="path">
         <a href="../../О-нас">Главная</a> > <a>Каталог</a>
     </div>
-    <div class="explainText" style="margin:15px">
+    <div class="explainText" style="margin:15px;margin-top:0">
         <span style="margin-left:100px"></span>Верфь деревянного судостроения "Варяг" проектирует и строит деревянные суда различных типов и размерений.
         Если среди представленных на сайте судов вы не найдете подходящего для себя варианта,
         то мы можем спроектировать и построить такое по индивидуальному проекту, в том числе реплику реально существовавшего судна.
     </div>
-    <div class="catalog" style="grid-template-columns:13.5% 13.6% 17.4% 18.6% 22.4% 14.4%;grid-template-rows:min-content;grid-template-areas:'boats bigboats kater ladya sailboat maket'">
-        <div class="nav-element-choosen" name="lodki" id="lodki">
-            <a href="../Каталог/Лодки">
-                <div id="lodki" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
+
+    @*<div class="catalog" style="display:none;grid-template-columns:13.5% 13.6% 17.4% 18.6% 22.4% 14.4%;grid-template-rows:min-content;grid-template-areas:'boats bigboats kater ladya sailboat maket'">
+            <div class="nav-element-choosen" name="lodki" id="lodki">
+                <a href="../Каталог/Лодки">
+                    <div id="lodki" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="boat" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Лодки</p>
+                        </div>
                     </div>
-                    <div id="boat" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Лодки</p>
+                </a>
+            </div>
+            <div class="nav-element" name="shlupki" id="shlupki">
+                <a href="../Каталог/Шлюпки">
+                    <div id="shlupki" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="bigboat" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Шлюпки</p>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+            <div class="nav-element" name="katera" id="katera">
+                <a href="../Каталог/Катера">
+                    <div id="katera" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="kater" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Катера</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-element" name="ladiy" id="ladiy">
+                <a href="../Каталог/Ладьи">
+                    <div id="ladiy" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="ladiy" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Ладьи</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-element" name="sailboats" id="sailboats">
+                <a href="../Каталог/Парусники">
+                    <div id="sailboats" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="sailboats" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Парусники</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-element" name="models" id="models">
+                <a href="../Каталог/Разное">
+                    <div id="models" class="nav-element-grid">
+                        <img src="~/images/icons/Макет.jpg" />
+                        <div id="models" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Разное</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>*@
+    <div style="display:flex;flex-wrap:wrap">
+        <div class="catalogPlitka">
+            <div class="catalogPlitkaIcon">
+                <img src="~/images/icons/Цветные/одинаковые/лодка.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/лодка-низ.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/лодка-безмасш.jpg" style="display:block" />
+            </div>
+            <div class="catalogPlitkaCategorys">
+                <div class="plitkaCategoryHeader">Лодки</div>
+                <div class="plitkaCategory">Народные лодки</div>
+                <div class="plitkaCategory">Прогулочные парусные лодки</div>
+                <div>Прогулочные гребные лодки</div>
+            </div>
         </div>
-        <div class="nav-element" name="shlupki" id="shlupki">
-            <a href="../Каталог/Шлюпки">
-                <div id="shlupki" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
-                    </div>
-                    <div id="bigboat" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Шлюпки</p>
-                    </div>
-                </div>
-            </a>
+
+        <div id="center" class="catalogPlitka">
+            <div class="catalogPlitkaIcon">
+                <img src="~/images/icons/Цветные/одинаковые/катер.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/катер-низ.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/катер-безмасш.jpg" style="display:block" />
+            </div>
+            <div class="catalogPlitkaCategorys">
+                <div class="plitkaCategoryHeader">Катера</div>
+                <div class="plitkaCategory">Пассажирские катера</div>
+                <div class="plitkaCategory">Рабочие/Рыболовные катера</div>
+                <div class="plitkaCategory">Каютные катера</div>
+                <div>Мотосейлеры</div>
+            </div>
         </div>
-        <div class="nav-element" name="katera" id="katera">
-            <a href="../Каталог/Катера">
-                <div id="katera" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
-                    </div>
-                    <div id="kater" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Катера</p>
-                    </div>
-                </div>
-            </a>
+
+        <div class="catalogPlitka">
+            <div class="catalogPlitkaIcon">
+                <img src="~/images/icons/Цветные/одинаковые/паруник.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/паруник-низ.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/паруник-безмасш.jpg" style="display:block" />
+            </div>
+            <div class="catalogPlitkaCategorys">
+                <div class="plitkaCategoryHeader">Парусники</div>
+                <div class="plitkaCategory">Исторические парусники</div>
+                <div class="plitkaCategory">Учебные парусники</div>
+                <div class="plitkaCategory">Швертботы</div>
+                <div>Парусные яхты</div>
+            </div>
         </div>
-        <div class="nav-element" name="ladiy" id="ladiy">
-            <a href="../Каталог/Ладьи">
-                <div id="ladiy" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
-                    </div>
-                    <div id="ladiy" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Ладьи</p>
-                    </div>
-                </div>
-            </a>
+
+        <div class="catalogPlitka">
+            <div class="catalogPlitkaIcon">
+                <img src="~/images/icons/Цветные/одинаковые/шлюпка.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/шлюпка-низ.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/шлюпка-безмасш.jpg" style="display:block" />
+            </div>
+            <div class="catalogPlitkaCategorys">
+                <div class="plitkaCategoryHeader">Шлюпки</div>
+                <div class="plitkaCategory">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</div>
+                <div class="plitkaCategory">Ботики</div>
+                <div class="plitkaCategory">Гребные катера и вельботы</div>
+                <div>Учебные пособия</div>
+            </div>
         </div>
-        <div class="nav-element" name="sailboats" id="sailboats">
-            <a href="../Каталог/Парусники">
-                <div id="sailboats" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
-                    </div>
-                    <div id="sailboats" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Парусники</p>
-                    </div>
-                </div>
-            </a>
+
+        <div id="center" class="catalogPlitka">
+            <div class="catalogPlitkaIcon">
+                <img src="~/images/icons/Цветные/одинаковые/ладья.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/ладья-низ.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/ладья-безмасш.jpg" style="display:block" />
+            </div>
+            <div class="catalogPlitkaCategorys">
+                <div class="plitkaCategoryHeader">Ладьи</div>
+                <div class="plitkaCategory">Парусно-моторные ладьи</div>
+                <div>Парусно-гребные ладьи</div>
+            </div>
         </div>
-        <div class="nav-element" name="models" id="models">
-            <a href="../Каталог/Разное">
-                <div id="models" class="nav-element-grid">
-                    <img src="~/images/icons/Макет.jpg" />
-                    <div id="models" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Разное</p>
-                    </div>
-                </div>
-            </a>
+
+        <div class="catalogPlitka">
+            <div class="catalogPlitkaIcon">
+                <img src="~/images/icons/Цветные/одинаковые/лодка.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/лодка-низ.jpg" style="display:none" />
+                <img src="~/images/icons/Цветные/одинаковые/лодка-безмасш.jpg" style="display:block" />
+            </div>
+            <div class="catalogPlitkaCategorys">
+                <div class="plitkaCategoryHeader">Разное</div>
+                <div class="plitkaCategory">Народные лодки</div>
+                <div class="plitkaCategory">Прогулочные парусные лодки</div>
+                <div>Прогулочные гребные лодки</div>
+            </div>
         </div>
     </div>
-
     @*<div class="catalogMain">
             <div class="nav-element" name="lodki" id="lodki">
                 <a href="../Каталог/Лодки">
@@ -169,26 +256,31 @@
                 </a>
             </div>
         </div>*@
-    <div class="fullCategoryPreview" style="display:flex;flex-direction:column;align-items:center;margin-top:4%">
+    <div class="fullCategoryPreview" style="display:none;flex-direction:column;align-items:center;margin-top:4%">
         <div class="fullPreview" id="lodki-Sub" style="display:flex;flex-direction:column">
             <div style="display:flex;width:100%;">
                 <div class="nav-element-preview">
                     <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
                 </div>
                 <div class="fullPreviewChoises" style="display:flex;flex-direction:column;font-size:1.4rem;justify-content:space-evenly;margin-left:5%">
-                    <a href="../../каталог/Лодки/Прогулочные-гребные-лодки">Прогулочные гребные лодки</a>
-                    <a href="../../каталог/Лодки/Прогулочные-парусные-лодки">Прогулочные парусные лодки</a>
-                    <a href="../../каталог/Лодки/Народные-лодки">Народные лодки</a>
-                    <a href="../../каталог/Лодки">Все лодки</a>
+                    <a href="../../Каталог/Лодки/Прогулочные-гребные-лодки">Прогулочные гребные лодки</a>
+                    <a href="../../Каталог/Лодки/Прогулочные-парусные-лодки">Прогулочные парусные лодки</a>
+                    <a href="../../Каталог/Лодки/Народные-лодки">Народные лодки</a>
+                    <a href="../../Каталог/Лодки">Все лодки</a>
                 </div>
             </div>
             <div class="explainText">
-                <span style="margin-left:100px"></span>Верфь ООО "Варяг" проектирует и строит деревянные лодки различных типов и размерений.
-                В случае необходимости мы можем изготовить лодку по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
-                <br /><span style="margin-left:100px"></span>Верфь ООО "Варяг" проектирует и строит деревянные лодки различных типов и размерений.
-                В случае необходимости мы можем изготовить лодку по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
-                <br /><span style="margin-left:100px"></span>Верфь ООО "Варяг" проектирует и строит деревянные лодки различных типов и размерений.
-                В случае необходимости мы можем изготовить лодку по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
+                @*<span style="margin-left:100px"></span>*@Верфь деревянного судостроения "Варяг" проектирует и строит деревянные лодки различного назначения и размерений:
+                @*<br /><span style="margin-left:100px"></span>- Прогулочные гребные лодки предназначены для занятий гребным спортом, рыбной ловли и отдыха на воде. Если среди представленных на сайте вариантов вы не найдете подходящих для себя, мы можем изготовить деревянную гребную лодку по индивидуальному проекту.
+                    <br /><span style="margin-left:100px"></span>- Прогулочные парусные лодки предназначены для туризса, занятий парусным спортом и отдыха на воде. Если среди представленных вариантев вы не найдете подходящий для себя, мы можем спроектировать и построить деревянную парусную лодку по индивидуальному проекту.
+                    <br /><span style="margin-left:100px"></span>- Народные лодки - это суда традиционной постройки, которые строились в нашей стране на протяжении веков. Их обводы и конструкция доведены до совершенства опытом предшестующих поколений и отражают особенности конкретных регионов России. Народные лодки предназначеы для туризма, рыбной ловли, экспедиционной деятельности и отдыха на воде. Если среди представленных вариантов вы не найдете подходящий для себя, мы можем построить народную лодку другого типа, встречающегося в нашей стране или за рубежом.*@
+
+                <ul>
+                    <li>Прогулочные гребные лодки предназначены для занятий гребным спортом, рыбной ловли и отдыха на воде. Если среди представленных на сайте вариантов вы не найдете подходящих для себя, мы можем изготовить деревянную гребную лодку по индивидуальному проекту.</li>
+                    <li>Прогулочные парусные лодки предназначены для туризса, занятий парусным спортом и отдыха на воде. Если среди представленных вариантев вы не найдете подходящий для себя, мы можем спроектировать и построить деревянную парусную лодку по индивидуальному проекту.</li>
+                    <li>Народные лодки - это суда традиционной постройки, которые строились в нашей стране на протяжении веков. Их обводы и конструкция доведены до совершенства опытом предшестующих поколений и отражают особенности конкретных регионов России. Народные лодки предназначеы для туризма, рыбной ловли, экспедиционной деятельности и отдыха на воде. Если среди представленных вариантов вы не найдете подходящий для себя, мы можем построить народную лодку другого типа, встречающегося в нашей стране или за рубежом.</li>
+                </ul>
+
             </div>
         </div>
         <div class="fullPreview" id="shlupki-Sub" style="display:none;flex-direction:column;">
@@ -197,11 +289,11 @@
                     <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
                 </div>
                 <div class="fullPreviewChoises" style="display:flex;flex-direction:column;font-size:1.4rem;justify-content:space-evenly;margin-left:5%">
-                    <a href="../../каталог/Шлюпки/Шлюпки-ЯЛ2,ЯЛ4,ЯЛ6">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
-                    <a href="../../каталог/Шлюпки/Ботики">Ботики</a>
-                    <a href="../../каталог/Шлюпки/Гребные-катера-и-вельботы">Гребные катера и вельботы</a>
-                    <a href="../../каталог/Шлюпки/Учебные-пособия">Учебные пособия</a>
-                    <a href="../../каталог/Шлюпки">Все шлюпки</a>
+                    <a href="../../Каталог/Шлюпки/Шлюпки-ЯЛ2,ЯЛ4,ЯЛ6">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
+                    <a href="../../Каталог/Шлюпки/Ботики">Ботики</a>
+                    <a href="../../Каталог/Шлюпки/Гребные-катера-и-вельботы">Гребные катера и вельботы</a>
+                    <a href="../../Каталог/Шлюпки/Учебные-пособия">Учебные пособия</a>
+                    <a href="../../Каталог/Шлюпки">Все шлюпки</a> 
                 </div>
             </div>
             <div class="explainText">
@@ -219,11 +311,11 @@
                     <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
                 </div>
                 <div class="fullPreviewChoises" style="display:flex;flex-direction:column;font-size:1.4rem;justify-content:space-evenly;margin-left:5%">
-                    <a href="../../каталог/Катера/Мотосейлеры">Мотосейлеры</a>
-                    <a href="../../каталог/Катера/Каютные-катера">Каютные катера</a>
-                    <a href="../../каталог/Катера/Рабочие-и-рыболовные-катера">Рабочие и рыболовные катера</a>
-                    <a href="../../каталог/Катера/Пассажирские-катера">Пассажирские катера</a>
-                    <a href="../../каталог/Катера">Все катера</a>
+                    <a href="../../Каталог/Катера/Мотосейлеры">Мотосейлеры</a>
+                    <a href="../../Каталог/Катера/Каютные-катера">Каютные катера</a>
+                    <a href="../../Каталог/Катера/Рабочие-и-рыболовные-катера">Рабочие и рыболовные катера</a>
+                    <a href="../../Каталог/Катера/Пассажирские-катера">Пассажирские катера</a>
+                    <a href="../../Каталог/Катера">Все катера</a>
                 </div>
             </div>
             <div class="explainText">

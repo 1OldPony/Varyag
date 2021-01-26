@@ -103,6 +103,26 @@ function newsTypeSelect() {
     }
 }
 
+/////////////////////////выделяем выбранную подкатегорию лодок//////////////////////////
+boatsTypeSelect();
+function boatsTypeSelect() {
+    var nav = $("#boatsTypeSelector").val()
+    switch (nav) {
+        case "traditional":
+            $("#traditional").attr("class", "nav-element-minor-choosen");
+            break;
+        case "row":
+            $("#row").attr("class", "nav-element-minor-choosen");
+            break;
+        case "sail":
+            $("#sail").attr("class", "nav-element-minor-choosen");
+            break;
+        default:
+            $("#allBoats").attr("class", "nav-element-minor-choosen");
+            break;
+    }
+}
+
 //////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
 navElMinorChoose();
 ///////////////////заставляем поднавигацию каталога следовать за экраном при прокрутке////////////////////////
@@ -151,10 +171,10 @@ $("#models").mouseenter(function () {
     $("#models").attr("class", "nav-element-choosen");
 });
 
-$(".nav-element-minor").mouseenter(function () {
-    deselectNavElemMinor();
-    $(this).attr("class", "nav-element-minor-choosen");
-});
+//$(".nav-element-minor").mouseenter(function () {
+//    deselectNavElemMinor();
+//    $(this).attr("class", "nav-element-minor-choosen");
+//});
 
 //////////////////снимаем выделение с элементов подменю каталога и меню навигации по новостям,/////////////////
 /////////////////выделяем элементы показывающие, какой пункт меню видит пользователь///////////////////////////

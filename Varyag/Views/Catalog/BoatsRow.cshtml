@@ -3,96 +3,128 @@
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
 <div class="MyContainer" id="main">
+    <input type="text" id="boatsTypeSelector" value="@ViewBag.boatsType" hidden />
     <div class="path">
-        <a href="../../О-Нас">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a href="../Каталог/Лодки">Лодки</a> > <a>Прогулочные гребные лодки</a>
+        <a href="../../О-Нас">Главная</a> > <a href="../../Каталог">Каталог</a> > <a href="../Лодки">Лодки</a> > <a>Прогулочные гребные лодки</a>
     </div>
     <div class="explainText">
-        <span style="margin-left:100px">Прогулочные</span> гребные лодки предназначены для занятий гребным спортом, рыбной ловли и отдыха на воде. 
-        Если среди представленных на сайте вариантов вы не найдете подходящих для себя, мы можем изготовить деревянную гребную лодку по индивидуальному проекту.
+        Верфь ООО "Варяг" может построить для вас любой из представленных проектов или разработать новый.
     </div>
+    <div class="myBorder"></div>
+    <div class="catalogNav">
+        <div class="nav-element-minor" id="traditional">
+            <a href="../../каталог/Лодки/Народные-лодки">
+                <div id="allNews" class="nav-element-inside">
+                    <p>Народные лодки</p>
+                </div>
+            </a>
+        </div>
+        <div class="nav-element-minor" id="sail">
+            <a href="../../каталог/Лодки/Прогулочные-парусные-лодки">
+                <div id="allNews" class="nav-element-inside">
+                    <p>Парусные лодки</p>
+                </div>
+            </a>
+        </div>
+        <div class="nav-element-minor" id="row">
+            <a href="../../каталог/Лодки/Прогулочные-гребные-лодки">
+                <div id="allNews" class="nav-element-inside">
+                    <p>Гребные лодки</p>
+                </div>
+            </a>
+        </div>
+        <div class="nav-element-minor" id="allBoats">
+            <a href="../../каталог/Лодки">
+                <div id="allNews" class="nav-element-inside">
+                    <p>Все лодки</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="myBorder"></div>
     @*<div class="catalog">
-        <div class="nav-element-choosen" name="lodki" id="lodki">
-            <a href="../Каталог/Лодки">
-                <div id="lodki" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
+            <div class="nav-element-choosen" name="lodki" id="lodki">
+                <a href="../Каталог/Лодки">
+                    <div id="lodki" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="boat" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Лодки</p>
+                        </div>
                     </div>
-                    <div id="boat" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Лодки</p>
+                </a>
+            </div>
+            <div class="nav-element" name="shlupki" id="shlupki">
+                <a href="../Каталог/Шлюпки">
+                    <div id="shlupki" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="bigboat" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Шлюпки</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="shlupki" id="shlupki">
-            <a href="../Каталог/Шлюпки">
-                <div id="shlupki" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
+                </a>
+            </div>
+            <div class="nav-element" name="katera" id="katera">
+                <a href="../Каталог/Катера">
+                    <div id="katera" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="kater" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Катера</p>
+                        </div>
                     </div>
-                    <div id="bigboat" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Шлюпки</p>
+                </a>
+            </div>
+            <div class="nav-element" name="ladiy" id="ladiy">
+                <a href="../Каталог/Ладьи">
+                    <div id="ladiy" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="ladiy" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Ладьи</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="katera" id="katera">
-            <a href="../Каталог/Катера">
-                <div id="katera" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
+                </a>
+            </div>
+            <div class="nav-element" name="sailboats" id="sailboats">
+                <a href="../Каталог/Парусники">
+                    <div id="sailboats" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="sailboats" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Парусники</p>
+                        </div>
                     </div>
-                    <div id="kater" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Катера</p>
+                </a>
+            </div>
+            <div class="nav-element" name="models" id="models">
+                <a href="../Каталог/Разное">
+                    <div id="models" class="nav-element-grid">
+                        <img src="~/images/icons/Макет.jpg" />
+                        <div id="models" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Разное</p>
+                            <input type="text" value="boatsrow" id="currentPage" hidden />
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="ladiy" id="ladiy">
-            <a href="../Каталог/Ладьи">
-                <div id="ladiy" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
-                    </div>
-                    <div id="ladiy" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Ладьи</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="sailboats" id="sailboats">
-            <a href="../Каталог/Парусники">
-                <div id="sailboats" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
-                    </div>
-                    <div id="sailboats" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Парусники</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="models" id="models">
-            <a href="../Каталог/Разное">
-                <div id="models" class="nav-element-grid">
-                    <img src="~/images/icons/Макет.jpg" />
-                    <div id="models" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Разное</p>
-                        <input type="text" value="boatsrow" id="currentPage" hidden />
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div name="sailboats-Sub" id="sailboats-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
-        <div name="lodki-Sub" id="lodki-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
-        <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
-        <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
-        <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-    </div>*@
+                </a>
+            </div>
+            <div name="sailboats-Sub" id="sailboats-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
+            <div name="lodki-Sub" id="lodki-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
+            <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
+            <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
+            <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
+        </div>*@
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "boatrow" })
 </div>

@@ -184,7 +184,6 @@ namespace Varyag.Controllers
 
         private async Task SaveImgAsync(string name, IFormFile newsFoto)
         {
-
             string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
             LittleHelper.DirectoryExistCheck(path);
 
@@ -264,17 +263,24 @@ namespace Varyag.Controllers
                     }
                 }
 
-                for (int i = 0; i <= (newsGallery.Count() - 1); i++)
+                if (newsGallery.Count()!=0)
                 {
-                    string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ")" + news.NewsDate + ".jpg";
-
-                    using (var fileStream = new FileStream(pathFinal + "/" + name, FileMode.Create))
+                    for (int i = 0; i <= (newsGallery.Count() - 1); i++)
                     {
-                        await newsGallery[i].CopyToAsync(fileStream);
+                        string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ")" + news.NewsDate + ".jpg";
+
+                        using (var fileStream = new FileStream(pathFinal + "/" + name, FileMode.Create))
+                        {
+                            await newsGallery[i].CopyToAsync(fileStream);
+                        }
                     }
+                    news.PathToGallery = pathFinal;
+                }
+                else
+                {
+                    news.PathToGallery = null;
                 }
 
-                news.PathToGallery = pathFinal;
                 news.ShortFotoPreview = shortPreview;
                 news.MiddleFotoPreview = middlePreview;
                 news.WideFotoPreview = widePreview;

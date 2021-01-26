@@ -150,6 +150,60 @@
     margin-bottom:10px;
 }
 
+.catalogPlitka {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32%;
+    margin-bottom: 2%
+}
+
+#center.catalogPlitka {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%
+}
+
+.catalogPlitka img {
+    max-width:80%;
+}
+
+.catalogPlitkaIcon {
+    display:flex;
+    justify-content:center;
+    width: 90%;
+    margin-top: 2%
+}
+
+.catalogPlitkaCategorys {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 2%;
+}
+
+.plitkaCategoryHeader {
+    margin-bottom: 5px;
+    color: red;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.plitkaCategory {
+    margin-bottom: 5px;
+}
+
+.catalogNav {
+    display: flex;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 .newsListElement {
     display:grid;
     grid-template-areas: "preview newsText";

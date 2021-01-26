@@ -3,96 +3,185 @@
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
 <div class="MyContainer" id="main">
+    <input type="text" id="boatsTypeSelector" value="@ViewBag.boatsType" hidden />
     <div class="path">
-        <a href="../../О-Нас">Главная</a> > <a asp-action="sailboats">Каталог</a> > <a>Лодки</a>
+        <a href="../../О-Нас">Главная</a> > <a href="../../Каталог">Каталог</a> > <a>Лодки</a>
     </div>
-    <div class="explainText">
-        <span style="margin-left:100px"></span>Верфь ООО "Варяг" проектирует и строит деревянные лодки различных типов и размерений.
-        В случае необходимости мы можем изготовить лодку по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
+
+    @*<div style="display:flex;justify-content:center;font-size:1.25rem;margin:20px;">
+            Верфь ООО "Варяг" может построить для вас любой из представленных проектов или разработать новый.
+        </div>
+        <div class="myBorder"></div>
+        <div class="catalogNav">
+            <div class="nav-element-minor" id="traditional">
+                <a href="../../каталог/Лодки/Народные-лодки">
+                    <div id="allNews" class="nav-element-inside">
+                        <p>Народные лодки</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-element-minor" id="sail">
+                <a href="../../каталог/Лодки/Прогулочные-парусные-лодки">
+                    <div id="allNews" class="nav-element-inside">
+                        <p>Парусные лодки</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-element-minor" id="row">
+                <a href="../../каталог/Лодки/Прогулочные-гребные-лодки">
+                    <div id="allNews" class="nav-element-inside">
+                        <p>Гребные лодки</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav-element-minor" id="allBoats">
+                <a href="../../каталог/Лодки">
+                    <div id="allNews" class="nav-element-inside">
+                        <p>Все лодки</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="myBorder"></div>*@
+
+
+    <div style="background-image:url('/images/Макет-мозайка-сплошная-300dpi.png');height:289px;display:none">
+        @*<img src="~/images/макет_плашки(пробный)_с_текстом.jpg" style="display:none" />
+            <img src="~/images/макет-сужен-прозрач-37.png" style="display:none" />*@
+        @*<img src="~/images/Макет-мозайка сплошная-300dpi.png" />*@
+        @*<img src="~/images/макет-сужен-прозрач-47.png" style="display:none" />
+            <img src="~/images/макет-без-текста-37.png" style="display:none" />*@
+        <div style="width: 480px;height:289px;transform: skew(-37deg);background: #f1f1f1;top:0;margin-left:36%;display:none">
+            <div class="plitkaCategoryHeader" style="transform: skew(37deg);font-size:4rem;color:#356792;">Катера</div>
+            <div style="margin-left:20%">
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">Верфь деревянного судостроения "Варяг"</div>
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">проектирует и строит деревянные катера</div>
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">различного назначения и размерений</div>
+            </div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">Рабочие/Рыболовные катера</div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">Пассажирские катера</div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">Каютные катера</div>
+            <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">Мотосейлеры</div>
+        </div>
+        <div style="width: 480px;height:289px;transform: skew(-37deg);background: #f1f1f1;top:0;margin-left:36%;display:none">
+            <div style="margin-left:20%">
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">Верфь деревянного судостроения "Варяг"</div>
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">проектирует и строит деревянные катера</div>
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">различного назначения и размерений</div>
+            </div>
+            <div class="plitkaCategoryHeader" style="font-size:4rem;color:#356792;">Катера</div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#8226;&nbsp;Рабочие/Рыболовные катера</div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#128270;&nbsp;Пассажирские катера</div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#9675;&nbsp;Каютные катера</div>
+            <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#10040;&nbsp;Мотосейлеры</div>
+        </div>
+        <div style="width: 480px;height:289px;;background: #f1f1f1;top:0;margin-left:35%;display:none">
+            <div style="margin-left:20%">
+                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">Верфь деревянного судостроения "Варяг"</div>
+                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">проектирует и строит деревянные катера</div>
+                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">различного назначения и размерений</div>
+            </div>
+            <div class="plitkaCategoryHeader" style="font-size:4rem;color:#356792;">Катера</div>
+            <div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#8226;&nbsp;Рабочие/Рыболовные катера</div>
+            <div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#128270;&nbsp;Пассажирские катера</div>
+            <div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#9675;&nbsp;Каютные катера</div>
+            <div style="margin-left:5%;text-align:left;font-size:1.8rem;">&#10040;&nbsp;Мотосейлеры</div>
+        </div>
     </div>
+    <div class="myBorder" style="margin-bottom:0px;margin-top:10px"></div>
+    <img src="~/images/Макет-мозайка-вертикальная-короткая-обрез.png" style="position:absolute;left:10px;top:10px;width:289px;height:100%;display:none" />
+    <img src="~/images/Макет-мозайка-сплошная-вертикальная.png" style="position:absolute;left:10px;top:10px;height:100%;" />
+    <div style="background-image:url('/images/Макет-мозайка-сплошная-вертикальная.png');position:absolute;left:-289px;width:289px;height:100%;display:none"></div>
+
+    @*<div class="explainText">
+            <span style="margin-left:100px"></span>Верфь ООО "Варяг" проектирует и строит деревянные лодки различных типов и размерений.
+            В случае необходимости мы можем изготовить лодку по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
+        </div>*@
+
+
     @*<div class="catalog">
-        <div class="nav-element-choosen" name="lodki" id="lodki">
-            <a href="../Каталог/Лодки">
-                <div id="lodki" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
+            <div class="nav-element-choosen" name="lodki" id="lodki">
+                <a href="../Каталог/Лодки">
+                    <div id="lodki" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="boat" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Лодки</p>
+                        </div>
                     </div>
-                    <div id="boat" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Лодки</p>
+                </a>
+            </div>
+            <div class="nav-element" name="shlupki" id="shlupki">
+                <a href="../Каталог/Шлюпки">
+                    <div id="shlupki" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="bigboat" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Шлюпки</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="shlupki" id="shlupki">
-            <a href="../Каталог/Шлюпки">
-                <div id="shlupki" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
+                </a>
+            </div>
+            <div class="nav-element" name="katera" id="katera">
+                <a href="../Каталог/Катера">
+                    <div id="katera" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="kater" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Катера</p>
+                        </div>
                     </div>
-                    <div id="bigboat" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Шлюпки</p>
+                </a>
+            </div>
+            <div class="nav-element" name="ladiy" id="ladiy">
+                <a href="../Каталог/Ладьи">
+                    <div id="ladiy" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="ladiy" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Ладьи</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="katera" id="katera">
-            <a href="../Каталог/Катера">
-                <div id="katera" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
+                </a>
+            </div>
+            <div class="nav-element" name="sailboats" id="sailboats">
+                <a href="../Каталог/Парусники">
+                    <div id="sailboats" class="nav-element-grid">
+                        <div class="colored">
+                            <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
+                        </div>
+                        <div id="sailboats" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Парусники</p>
+                        </div>
                     </div>
-                    <div id="kater" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Катера</p>
+                </a>
+            </div>
+            <div class="nav-element" name="models" id="models">
+                <a href="../Каталог/Разное">
+                    <div id="models" class="nav-element-grid">
+                        <img src="~/images/icons/Макет.jpg" />
+                        <div id="models" class="whiteSpace"></div>
+                        <div class="nav-element-inside">
+                            <p>Разное</p>
+                            <input type="text" value="boats" id="currentPage" hidden />
+                        </div>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="ladiy" id="ladiy">
-            <a href="../Каталог/Ладьи">
-                <div id="ladiy" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
-                    </div>
-                    <div id="ladiy" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Ладьи</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="sailboats" id="sailboats">
-            <a href="../Каталог/Парусники">
-                <div id="sailboats" class="nav-element-grid">
-                    <div class="colored">
-                        <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
-                    </div>
-                    <div id="sailboats" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Парусники</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element" name="models" id="models">
-            <a href="../Каталог/Разное">
-                <div id="models" class="nav-element-grid">
-                    <img src="~/images/icons/Макет.jpg" />
-                    <div id="models" class="whiteSpace"></div>
-                    <div class="nav-element-inside">
-                        <p>Разное</p>
-                        <input type="text" value="boats" id="currentPage" hidden />
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div name="sailboats-Sub" id="sailboats-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
-        <div name="lodki-Sub" id="lodki-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
-        <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
-        <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
-        <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-    </div>*@
+                </a>
+            </div>
+            <div name="sailboats-Sub" id="sailboats-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
+            <div name="lodki-Sub" id="lodki-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
+            <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
+            <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
+            <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
+        </div>*@
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "boat" })
 </div>

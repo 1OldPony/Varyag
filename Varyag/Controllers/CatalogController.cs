@@ -37,6 +37,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Купить деревянные лодки, Прогулочные лодки от производителя";
             ViewData["Description"] = "Каталог деревянных прогулочных парусных, а также гребных и народных лодок производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "boats";
+            ViewBag.boatsType = "allBoats";
             return View();
         }
 
@@ -46,6 +47,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Деревянные лодки, Гребные лодки от производителя";
             ViewData["Description"] = "Каталог деревянных прогулочных гребных лодок производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "boatsrow";
+            ViewBag.boatsType = "row";
             return View();
         }
 
@@ -55,6 +57,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Купить прогулочные лодки, Парусные лодки от производителя";
             ViewData["Description"] = "Каталог деревянных прогулочных парусных лодок производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "boatssail";
+            ViewBag.boatsType = "sail";
             return View();
         }
 
@@ -64,6 +67,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Купить народные лодки, традиционные лодки от производителя";
             ViewData["Description"] = "Каталог деревянных народных лодок производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "boatstraditional";
+            ViewBag.boatsType = "traditional";
             return View();
         }
 
