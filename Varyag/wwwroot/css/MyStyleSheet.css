@@ -1016,7 +1016,9 @@ img {
 .projects {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: auto;
+    margin-right:0;
+    max-width:1000px;
 }
 
 .singleProject {
@@ -1160,14 +1162,6 @@ img {
     padding-bottom: 10px;
 }
 
-.cellLong {
-    display: table-row;
-}
-
-.cellShort {
-    display: none;
-}
-
 #shortNav.menu-top-element {
     display: none;
 }
@@ -1188,6 +1182,10 @@ img {
     display: none;
 }
 
+.cellShort {
+    display: none;
+}
+
 #longLength.cellLong {
     background-color: #f0f5f9;
 }
@@ -1205,6 +1203,42 @@ img {
 }
 
 #longFreshWaterCap.cellLong {
+    background-color: #f0f5f9;
+}
+
+.cellLong {
+    display: none;
+}
+
+.cellShort[name="midLength"] {
+    display: table-row;
+    background-color: #f0f5f9;
+}
+
+.cellShort[name="midWidth"] {
+    display: table-row;
+}
+
+.cellShort[name="midDeep"] {
+    display: table-row;
+    background-color: #f0f5f9;
+}
+
+.cellShort[name="midPassengerCap"] {
+    display: table-row;
+}
+
+.cellShort[name="midSleepingAreas"] {
+    display: table-row;
+    background-color: #f0f5f9;
+}
+
+.cellShort[name="midSailArea"] {
+    display: table-row;
+}
+
+.cellShort[name="midEnginePower"] {
+    display: none;
     background-color: #f0f5f9;
 }
 
@@ -1231,7 +1265,6 @@ img {
         margin-block-start: 0px;
         margin-block-end: 0px;
     }
-
 
 .infoBlocks {
     display: grid;
@@ -1529,42 +1562,6 @@ img {
         display: flex;
     }
 
-    .cellLong {
-        display: none;
-    }
-
-    .cellShort[name="midLength"] {
-        display: table-row;
-        background-color: #f0f5f9;
-    }
-
-    .cellShort[name="midWidth"] {
-        display: table-row;
-    }
-
-    .cellShort[name="midDeep"] {
-        display: table-row;
-        background-color: #f0f5f9;
-    }
-
-    .cellShort[name="midPassengerCap"] {
-        display: table-row;
-    }
-
-    .cellShort[name="midSleepingAreas"] {
-        display: table-row;
-        background-color: #f0f5f9;
-    }
-
-    .cellShort[name="midSailArea"] {
-        display: table-row;
-    }
-
-    .cellShort[name="midEnginePower"] {
-        display: table-row;
-        background-color: #f0f5f9;
-    }
-
     .annotation {
         width: 40vw;
     }
@@ -1594,10 +1591,6 @@ img {
 }
 
 @media (max-width:1090px) {
-
-    .cellShort[name="midEnginePower"] {
-        display: none;
-    }
 
     #catalog.category {
         width: 45%;

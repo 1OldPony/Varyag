@@ -2,7 +2,7 @@
 @{
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
-<div class="MyContainer" id="main">
+<div class="MyContainer">
     <input type="text" id="boatsTypeSelector" value="@ViewBag.boatsType" hidden />
     <div class="path">
         <a href="../../О-Нас">Главная</a> > <a href="../../Каталог">Каталог</a> > <a>Лодки</a>
@@ -45,13 +45,13 @@
         <div class="myBorder"></div>*@
 
 
-    <div style="background-image:url('/images/Макет-мозайка-сплошная-300dpi.png');height:289px;display:none">
+    <div style="background-image:url('/images/Макет-мозайка-сплошная-300dpi.png');height:289px;">
         @*<img src="~/images/макет_плашки(пробный)_с_текстом.jpg" style="display:none" />
             <img src="~/images/макет-сужен-прозрач-37.png" style="display:none" />*@
         @*<img src="~/images/Макет-мозайка сплошная-300dpi.png" />*@
         @*<img src="~/images/макет-сужен-прозрач-47.png" style="display:none" />
             <img src="~/images/макет-без-текста-37.png" style="display:none" />*@
-        <div style="width: 480px;height:289px;transform: skew(-37deg);background: #f1f1f1;top:0;margin-left:36%;display:none">
+        @*<div style="width: 480px;height:289px;transform: skew(-37deg);background: #f1f1f1;top:0;margin-left:36%;display:none">
             <div class="plitkaCategoryHeader" style="transform: skew(37deg);font-size:4rem;color:#356792;">Катера</div>
             <div style="margin-left:20%">
                 <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">Верфь деревянного судостроения "Варяг"</div>
@@ -62,8 +62,34 @@
             <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">Пассажирские катера</div>
             <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">Каютные катера</div>
             <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">Мотосейлеры</div>
+        </div>*@
+        @*<div style="width: 480px;height:289px;transform: skew(-37deg);background: #f1f1f1;top:0;margin-left:36%;display:none">
+            <div style="margin-left:20%">
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">Верфь деревянного судостроения "Варяг"</div>
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">проектирует и строит деревянные катера</div>
+                <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">различного назначения и размерений</div>
+            </div>
+            <div class="plitkaCategoryHeader" style="font-size:4rem;color:#356792;">Катера</div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#8226;&nbsp;Рабочие/Рыболовные катера</div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#128270;&nbsp;Пассажирские катера</div>
+            <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#9675;&nbsp;Каютные катера</div>
+            <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#10040;&nbsp;Мотосейлеры</div>
+        </div>*@
+        <div style="height:289px;background-color:#183f61;width:340px;">
+            @*<div style="margin-left:20%">
+                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">Верфь деревянного судостроения "Варяг"</div>
+                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">проектирует и строит деревянные катера</div>
+                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">различного назначения и размерений</div>
+            </div>*@
+            <div class="plitkaCategoryHeader" style="font-size:4rem;padding-top:29%;color:white;">Катера</div>
+            @*<div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#8226;&nbsp;Рабочие/Рыболовные катера</div>
+            <div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#128270;&nbsp;Пассажирские катера</div>
+            <div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#9675;&nbsp;Каютные катера</div>
+            <div style="margin-left:5%;text-align:left;font-size:1.8rem;">&#10040;&nbsp;Мотосейлеры</div>*@
         </div>
-        <div style="width: 480px;height:289px;transform: skew(-37deg);background: #f1f1f1;top:0;margin-left:36%;display:none">
+    </div>
+    @*<div style="background-image:url('/images/Макет-полосы-с-наклоном-обрез.png');height:289px">
+        <div style="width: 480px;height:289px;transform: skew(-37deg);background: #f1f1f1;top:0;margin-left:36%;display:block">
             <div style="margin-left:20%">
                 <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">Верфь деревянного судостроения "Варяг"</div>
                 <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:0.8rem;">проектирует и строит деревянные катера</div>
@@ -75,23 +101,48 @@
             <div class="plitkaCategory" style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#9675;&nbsp;Каютные катера</div>
             <div style="transform: skew(37deg);margin-left:5%;text-align:left;font-size:1.8rem;">&#10040;&nbsp;Мотосейлеры</div>
         </div>
-        <div style="width: 480px;height:289px;;background: #f1f1f1;top:0;margin-left:35%;display:none">
-            <div style="margin-left:20%">
-                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">Верфь деревянного судостроения "Варяг"</div>
-                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">проектирует и строит деревянные катера</div>
-                <div style="margin-left:5%;text-align:left;font-size:0.8rem;">различного назначения и размерений</div>
-            </div>
-            <div class="plitkaCategoryHeader" style="font-size:4rem;color:#356792;">Катера</div>
-            <div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#8226;&nbsp;Рабочие/Рыболовные катера</div>
-            <div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#128270;&nbsp;Пассажирские катера</div>
-            <div class="plitkaCategory" style="margin-left:5%;text-align:left;font-size:1.8rem;">&#9675;&nbsp;Каютные катера</div>
-            <div style="margin-left:5%;text-align:left;font-size:1.8rem;">&#10040;&nbsp;Мотосейлеры</div>
+    </div>*@
+    <div class="myBorder" style="border-style:none"></div>
+    @*<img src="~/images/Макет-мозайка-вертикальная-короткая-обрез.png" style="position:absolute;top:108px;height:69%;display:none" />
+    <img src="~/images/Макет-мозайка-сплошная-вертикальная.png" style="position:absolute;top:108px;height:100%;display:none" />*@
+    <div style="position:absolute;width: 340px;justify-content:center;text-align:left;display: flex;">
+        <div style="background-color:#f1f1f1;width:100%;margin:auto;margin-top:103%">
+            <ul style="list-style-type:none;font-size:1.5rem;font-weight:bold;">
+                <li>
+                    Лодки
+                </li>
+                <li>
+                    Шлюпки
+                </li>
+                <li>
+                    Катера
+                    <ul style="list-style-type:none;font-size:1.2rem;font-weight:300;padding-inline-start:20px">
+                        <li>
+                            Рабочие/Рыболовные катера
+                        </li>
+                        <li>
+                            Пассажирские катера
+                        </li>
+                        <li>
+                            Каютные катера
+                        </li>
+                        <li>
+                            Мотосейлеры
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Ладьи
+                </li>
+                <li>
+                    Парусники
+                </li>
+                <li>
+                    Разное
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="myBorder" style="margin-bottom:0px;margin-top:10px"></div>
-    <img src="~/images/Макет-мозайка-вертикальная-короткая-обрез.png" style="position:absolute;left:10px;top:10px;width:289px;height:100%;display:none" />
-    <img src="~/images/Макет-мозайка-сплошная-вертикальная.png" style="position:absolute;left:10px;top:10px;height:100%;" />
-    <div style="background-image:url('/images/Макет-мозайка-сплошная-вертикальная.png');position:absolute;left:-289px;width:289px;height:100%;display:none"></div>
 
     @*<div class="explainText">
             <span style="margin-left:100px"></span>Верфь ООО "Варяг" проектирует и строит деревянные лодки различных типов и размерений.
@@ -183,5 +234,8 @@
             <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
             <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
         </div>*@
+    <div style="display:flex;justify-content:space-between;align-items:center;max-width:1000px;margin:auto;margin-right:0; width:73%;">
+        <div style="font-size:1.4rem;font-weight:bold;">Все катера</div><div style="display:flex"><img src="~/images/icons/list3.png" style="height:20px;width:20px;margin-right:5px" /><img src="~/images/icons/plitca1.png" style="height:20px;width:20px;margin-right:5px" />@*<div style="border-style:solid;border-color:lightgrey;border-radius:4px;margin-right:5px">линии</div><div>плитка</div>*@</div>
+    </div>
     @await Component.InvokeAsync("ProjectsCatalog", new { category = "boat" })
 </div>

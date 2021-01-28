@@ -35,13 +35,13 @@ function museumGotoShow() {
     }
 }
 
-cinemaAboutUsSubNavPosition();
-function cinemaAboutUsSubNavPosition() {
-    var cinemaLeft = $("#cinema.nav-element-top").offset().left;
-    var aboutUsLeft = $("#aboutUs.nav-element-top").offset().left;
-    $("#cinemaOrders.category").css("left", cinemaLeft);
-    $("#aboutUsTopNav.category").css("left", aboutUsLeft);
-}
+//cinemaAboutUsSubNavPosition();
+//function cinemaAboutUsSubNavPosition() {
+//    var cinemaLeft = $("#cinema.nav-element-top").offset().left;
+//    var aboutUsLeft = $("#aboutUs.nav-element-top").offset().left;
+//    $("#cinemaOrders.category").css("left", cinemaLeft);
+//    $("#aboutUsTopNav.category").css("left", aboutUsLeft);
+//}
 
 /////////////////////Перещелкиваем видео в новостях////////////////////
 $("#videoOne").click(function () {
@@ -104,24 +104,24 @@ function newsTypeSelect() {
 }
 
 /////////////////////////выделяем выбранную подкатегорию лодок//////////////////////////
-boatsTypeSelect();
-function boatsTypeSelect() {
-    var nav = $("#boatsTypeSelector").val()
-    switch (nav) {
-        case "traditional":
-            $("#traditional").attr("class", "nav-element-minor-choosen");
-            break;
-        case "row":
-            $("#row").attr("class", "nav-element-minor-choosen");
-            break;
-        case "sail":
-            $("#sail").attr("class", "nav-element-minor-choosen");
-            break;
-        default:
-            $("#allBoats").attr("class", "nav-element-minor-choosen");
-            break;
-    }
-}
+//boatsTypeSelect();
+//function boatsTypeSelect() {
+//    var nav = $("#boatsTypeSelector").val()
+//    switch (nav) {
+//        case "traditional":
+//            $("#traditional").attr("class", "nav-element-minor-choosen");
+//            break;
+//        case "row":
+//            $("#row").attr("class", "nav-element-minor-choosen");
+//            break;
+//        case "sail":
+//            $("#sail").attr("class", "nav-element-minor-choosen");
+//            break;
+//        default:
+//            $("#allBoats").attr("class", "nav-element-minor-choosen");
+//            break;
+//    }
+//}
 
 //////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
 navElMinorChoose();
@@ -137,6 +137,7 @@ $(window).scroll(function () {
 
 ////////////////////показываем меню поднавигации при наведении на основную категорию меню, также выделяем ее/////////////////////////
 $("#lodki").mouseenter(function () {
+    alert('!!!!')
     hideAll();
     $("#lodki").attr("class", "nav-element-choosen");
     $("#lodki-Sub").show();
