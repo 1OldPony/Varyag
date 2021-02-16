@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Gabriela&display=swap&subset=cyrillic" rel="stylesheet">
     <title>@ViewData["Title"]</title>
 </head>
-<body>
-    <div class="top-hat">
+<body style="background-color:#eceef1">
+    <div class="top-hat" style="display:none">
         <div class="top-pic">
             @switch (@ViewBag.TopPic)
             {
@@ -168,25 +168,30 @@
             <img src="~/images/Надверхняя-строка-на150-оч-коротк.jpg" />
         </div>
     </div>
-    <div style="height:50px;width:100%;background-color:#183f61;color:white;display:flex;justify-content:center;position:fixed;">
-        <div style="display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1350px;font-size:21px;">
+    <div style="height:50px;width:100%;background-color:#183f61;color:white;display:flex;justify-content:center;position:fixed;z-index:10;top:0">
+        <div style="display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1350px;font-size:21px;margin-left:15px;margin-right:15px;">
             <div style="display:flex;align-items:center;justify-content:flex-start">
                 <div style="width:50px;display:flex">
                     <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
                 </div>
                 <div style="display:flex;margin-left:20px">
                     <a href="../../Каталог" style="margin-right:15px;color:white">КАТАЛОГ</a>
-                    <a style="margin-right:15px;color:white">СТАТЬИ</a>
+                    <a id="articleMenu" style="margin-right:15px;color:white">СТАТЬИ</a>
                     @*<div style="margin-right:15px">ЗАКАЗЫ ДЛЯ КИНО</div>*@
                     @*<div style="margin-right:15px">ГОТО-ПРЕДИСТИНАЦИЯ</div>*@
-                    <a style="margin-right:15px;color:white">МУЗЕЙ?</a>
-                    <a style="margin-right:15px;color:white">О НАС</a>
+                    <a id="museumMenu" style="margin-right:15px;color:white">МУЗЕЙ?</a>
+                    <a id="aboutMenu" style="margin-right:15px;color:white">О НАС</a>
                 </div>
             </div>
-            <div>КОНТАКТЫ</div>
+            <div style="display:flex;align-items:center;">
+                <div style="display:flex"><a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" class="contactsSocial" /></a><a style="cursor:pointer" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" class="contactsSocial" /></a></div>
+                <div><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div>
+                <div><img src="~/images/icons/contacts.png" class="contactsSocial" style="display:none"/></div>
+                <div id="contactsWords" style="margin-left:15px">КОНТАКТЫ</div>
+            </div>
         </div>
     </div>
-    @*<div id="header" class="header">
+    @*<div id="header" class="header" style="display:none">
         <div id="nav-top" class="nav-top">
             <div id="ships-catalog" class="nav-element-top">
                 <div class="nav-element-inside">
@@ -283,8 +288,8 @@
 
 
     @RenderBody()
-    <footer class="footer">
-        <div class="aboutSite">
+    <footer class="footerSmall">
+        @*<div class="aboutSite">
             <div class="logo">
                 <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" style="height:237px" />
                 <img src="~/images/лого-кораблик-с-текстом-еще-пожирней.png" style="display:none;height:237px" />
@@ -298,13 +303,6 @@
                 </div>
                 <div class="socialVidgets">
                     <div id="vk_groups"></div>
-                    @*<div style="height:200px;margin-right:1vw"></div>*@
-                    @*<div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs=""
-                                data-width="200" data-height="200" data-small-header="true"
-                                data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                            <blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
-                            <a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
-                        </div>*@
                 </div>
                 <div class="socialButtons" style="display:none">
                     <a href="https://vk.com/shipyard_varyag" class="socialButton">
@@ -335,10 +333,10 @@
                 <img src="~/images/Карта_286х237.png" width="286" height="237" style="max-width:initial" />
                 <img src="~/images/Варяг_30-10-2019_18-08-23.png" width="286" height="237" style="max-width:initial;display:none" />
             </div>
-        </div>
-        @*<div class="aboutMe">
-            Разработчик сайта - Михаил Мартюков.
         </div>*@
+        <div class="aboutMe">
+            <div>© 2021 Верфь деревянного судостроения «Варяг»</div><div>Разработчик - Михаил Мартюков</div>
+        </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/js/fotorama.js"></script>

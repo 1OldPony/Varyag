@@ -1,7 +1,49 @@
-﻿
+﻿var leftMenuOffset;
 $(document).ready(function () {
     //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
     $("#left.control, #right.control").height($(".allCustomers").height());
+    leftMenuOffset = $(".projectsHalf").offset().top;
+});
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() >= (leftMenuOffset-50)) {
+        if ($(".leftMenu").css('position')!='fixed') {
+            $(".leftMenu").css('position', 'fixed');
+        }
+
+        if ($(window).width() >= 1001) {
+            $('.projectsHalf').css('margin-left', '361px');
+        }
+    }
+    else {
+        if ($(".leftMenu").css('position') != 'initial') {
+            $(".leftMenu").css('position', 'initial');
+        }
+
+        if ($('.projectsHalf').css('margin-left') != 'auto') {
+            $('.projectsHalf').css('margin-left', 'auto');
+        }
+    }
+});
+
+$(window).resize(function () {
+    if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
+        if ($(".leftMenu").css('position') != 'fixed') {
+            $(".leftMenu").css('position', 'fixed');
+        }
+
+        if ($(window).width() >= 1001) {
+            $('.projectsHalf').css('margin-left', '361px');
+        }
+        else {
+            $('.projectsHalf').css('margin-left', 'auto');
+        }
+    }
+    else {
+        if ($(".leftMenu").css('position') != 'initial') {
+            $(".leftMenu").css('position', 'initial');
+        }
+    }
 });
 
 /////////////////показываем верхние подменю////////////////////
@@ -102,6 +144,22 @@ function newsTypeSelect() {
             break;
     }
 }
+//$("#lodkiOpen, #lodkiClose").click(function () {
+//    if ($("#lodkiOpen").css('display') != 'none') {
+//        $("#lodki-Sub").attr('class', 'leftSubNavOpen');
+//        $("#lodki-Sub").css('visibility', 'visible');
+//        $("#lodki-Sub").css('opacity', '1');
+//        $("#shlupkiNav").css('margin-top', '69px')
+//    }
+//    else {
+//        $("#lodki-Sub").attr('class', 'leftSubNavClose');
+//        $("#lodki-Sub").css('visibility', 'hidden');
+//        $("#lodki-Sub").css('opacity', '0');
+//        $("#shlupkiNav").css('margin-top', '0px')
+//    }
+//    $("#lodkiOpen").toggle()
+//    $("#lodkiClose").toggle()
+//});
 
 /////////////////////////выделяем выбранную подкатегорию лодок//////////////////////////
 //boatsTypeSelect();
@@ -137,16 +195,48 @@ $(window).scroll(function () {
 
 ////////////////////показываем меню поднавигации при наведении на основную категорию меню, также выделяем ее/////////////////////////
 $("#lodki").mouseenter(function () {
-    alert('!!!!')
     hideAll();
     $("#lodki").attr("class", "nav-element-choosen");
     $("#lodki-Sub").show();
 });
+$("#lodkiOpen, #lodkiClose").click(function () {
+    if ($("#lodkiOpen").css('display') != 'none') {
+        $("#lodki-Sub").attr('class', 'leftSubNavOpen');
+        $("#lodki-Sub").css('visibility', 'visible');
+        $("#lodki-Sub").css('opacity', '1');
+        $("#shlupkiNav").css('margin-top', '69px')
+    }
+    else {
+        $("#lodki-Sub").attr('class', 'leftSubNavClose');
+        $("#lodki-Sub").css('visibility', 'hidden');
+        $("#lodki-Sub").css('opacity', '0');
+        $("#shlupkiNav").css('margin-top', '0px')
+    }
+    $("#lodkiOpen").toggle()
+    $("#lodkiClose").toggle()
+});
 
 $("#shlupki").mouseenter(function () {
     hideAll();
+    hideLeftMenu();
     $("#shlupki").attr("class", "nav-element-choosen");
     $("#shlupki-Sub").show();
+});
+$("#shlupkiOpen, #shlupkiClose").click(function () {
+    if ($("#shlupkiOpen").css('display') != 'none') {
+        $("#shlupki-Sub").attr('class', 'leftSubNavOpen');
+        $("#shlupki-Sub").css('visibility', 'visible');
+        $("#shlupki-Sub").css('opacity', '1');
+        $("#kateraNav").css('margin-top', '92px')
+    }
+    else {
+        $("#shlupki-Sub").attr('class', 'leftSubNavClose');
+        $("#shlupki-Sub").css('visibility', 'hidden');
+        $("#shlupki-Sub").css('opacity', '0');
+        $("#kateraNav").css('margin-top', '0px')
+    }
+    $("#shlupkiOpen").toggle()
+    $("#shlupkiClose").toggle()
 });
 
 $("#katera").mouseenter(function () {
@@ -154,11 +244,43 @@ $("#katera").mouseenter(function () {
     $("#katera").attr("class", "nav-element-choosen");
     $("#katera-Sub").show();
 });
+$("#kateraOpen, #kateraClose").click(function () {
+    if ($("#kateraOpen").css('display') != 'none') {
+        $("#katera-Sub").attr('class', 'leftSubNavOpen');
+        $("#katera-Sub").css('visibility', 'visible');
+        $("#katera-Sub").css('opacity', '1');
+        $("#ladiyNav").css('margin-top', '92px')
+    }
+    else {
+        $("#katera-Sub").attr('class', 'leftSubNavClose');
+        $("#katera-Sub").css('visibility', 'hidden');
+        $("#katera-Sub").css('opacity', '0');
+        $("#ladiyNav").css('margin-top', '0px')
+    }
+    $("#kateraOpen").toggle()
+    $("#kateraClose").toggle()
+});
 
 $("#ladiy").mouseenter(function () {
     hideAll();
     $("#ladiy").attr("class", "nav-element-choosen");
     $("#ladiy-Sub").show();
+});
+$("#ladiyOpen, #ladiyClose").click(function () {
+    if ($("#ladiyOpen").css('display') != 'none') {
+        $("#ladiy-Sub").attr('class', 'leftSubNavOpen');
+        $("#ladiy-Sub").css('visibility', 'visible');
+        $("#ladiy-Sub").css('opacity', '1');
+        $("#sailboatsNav").css('margin-top', '46px')
+    }
+    else {
+        $("#ladiy-Sub").attr('class', 'leftSubNavClose');
+        $("#ladiy-Sub").css('visibility', 'hidden');
+        $("#ladiy-Sub").css('opacity', '0');
+        $("#sailboatsNav").css('margin-top', '0px')
+    }
+    $("#ladiyOpen").toggle()
+    $("#ladiyClose").toggle()
 });
 
 $("#sailboats").mouseenter(function () {
@@ -166,137 +288,64 @@ $("#sailboats").mouseenter(function () {
     $("#sailboats").attr("class", "nav-element-choosen");
     $("#sailboats-Sub").show();
 });
+$("#sailboatsOpen, #sailboatsClose").click(function () {
+    if ($("#sailboatsOpen").css('display') != 'none') {
+        $("#sailboats-Sub").attr('class', 'leftSubNavOpen');
+        $("#sailboats-Sub").css('visibility', 'visible');
+        $("#sailboats-Sub").css('opacity', '1');
+        $("#modelsNav").css('margin-top', '92px')
+    }
+    else {
+        $("#sailboats-Sub").attr('class', 'leftSubNavClose');
+        $("#sailboats-Sub").css('visibility', 'hidden');
+        $("#sailboats-Sub").css('opacity', '0');
+        $("#modelsNav").css('margin-top', '0px')
+    }
+    $("#sailboatsOpen").toggle()
+    $("#sailboatsClose").toggle()
+});
 
 $("#models").mouseenter(function () {
     hideAll();
     $("#models").attr("class", "nav-element-choosen");
+    $("#models-Sub").show();
+});
+$("#modelsOpen, #modelsClose").click(function () {
+    if ($("#modelsOpen").css('display') != 'none') {
+        $("#models-Sub").attr('class', 'leftSubNavOpen');
+        $("#models-Sub").css('visibility', 'visible');
+        $("#models-Sub").css('opacity', '1');
+        $(".leftNavMenu").css('padding-bottom', '107px')
+    }
+    else {
+        $("#models-Sub").attr('class', 'leftSubNavClose');
+        $("#models-Sub").css('visibility', 'hidden');
+        $("#models-Sub").css('opacity', '0');
+        $(".leftNavMenu").css('padding-bottom', '10px')
+    }
+    $("#modelsOpen").toggle()
+    $("#modelsClose").toggle()
 });
 
-//$(".nav-element-minor").mouseenter(function () {
-//    deselectNavElemMinor();
-//    $(this).attr("class", "nav-element-minor-choosen");
-//});
-
-//////////////////снимаем выделение с элементов подменю каталога и меню навигации по новостям,/////////////////
-/////////////////выделяем элементы показывающие, какой пункт меню видит пользователь///////////////////////////
-//$(".nav-element-minor").mouseleave(function () {
-//    var nav = $("#newsTypeSelector").val()
-//    if (nav == undefined) {
-//        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
-//        navElMinorChoose();
-//    }
-//    else {
-//        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
-//        newsTypeSelect();
-//    }
-
-//});
-
-//$(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
-//    var page = $("#currentPage").val();
-//    switch (page) {
-//        case "boats":
-//        case "boatsrow":
-//        case "boatssail":
-//        case "boatstraditional":
-//            if ((event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#lodki").attr("class", "nav-element-choosen");
-//                $("#lodki-Sub").show();
-//                break;
-//            }
-//        case "shlupki":
-//        case "boatyal":
-//        case "botik":
-//        case "katerrow":
-//        case "maketstudy":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#shlupki").attr("class", "nav-element-choosen");
-//                $("#shlupki-Sub").show();
-//                break;
-//            }
-//        case "katera":
-//        case "motosailer":
-//        case "katercabin":
-//        case "katerfish":
-//        case "katerpass":
-//        case "katerproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#katera").attr("class", "nav-element-choosen");
-//                $("#katera-Sub").show();
-//                break;
-//            }
-//        case "ladiy":
-//        case "ladyarow":
-//        case "ladyasail":
-//        case "ladyaproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")) {
-//                hideAll();
-//                $("#ladiy").attr("class", "nav-element-choosen");
-//                $("#ladiy-Sub").show();
-//            }
-//            break;
-//        case "sailboats":
-//        case "yacht":
-//        case "sailboatstudy":
-//        case "shvertbot":
-//        case "sailboathistorical":
-//        case "sailboatproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                if ($(window).width() > 383) {
-//                    hideAll();
-//                    $("#sailboats").attr("class", "nav-element-choosen");
-//                    $("#sailboats-Sub").show();
-//                }
-//                break;
-//            }
-//            else
-//                break;
-//        case "models":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#models").attr("class", "nav-element-choosen");
-//            }
-//            break;
-//        default:
-//            break;
-//    }
-//});
-
+function hideLeftMenu() {
+    $("#lodki-Sub").css('visibility', 'hidden');
+    $("#lodki-Sub").css('opacity', '0');
+    $("#shlupki").css('margin-top','0px')
+}
 
 function hideAll() {
     $("#sailboats").attr("class", "nav-element");
-    $("#lodki").attr("class", "nav-element");
     $("#shlupki").attr("class", "nav-element");
     $("#katera").attr("class", "nav-element");
     $("#ladiy").attr("class", "nav-element");
     $("#models").attr("class", "nav-element");
-    $("#sailboats-Sub").hide();
+    $("#lodki").attr("class", "nav-element");
     $("#lodki-Sub").hide();
+    $("#sailboats-Sub").hide();
     $("#shlupki-Sub").hide();
     $("#katera-Sub").hide();
     $("#ladiy-Sub").hide();
+    $("#models-Sub").hide();
 };
 
 function deselectNavElemMinor() {
@@ -482,3 +531,120 @@ $("#left.control").click(function () {
 //////////////////////////виджет контакта//////////////////////////
 VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
 
+
+
+
+
+
+
+//$(".nav-element-minor").mouseenter(function () {
+//    deselectNavElemMinor();
+//    $(this).attr("class", "nav-element-minor-choosen");
+//});
+
+//////////////////снимаем выделение с элементов подменю каталога и меню навигации по новостям,/////////////////
+/////////////////выделяем элементы показывающие, какой пункт меню видит пользователь///////////////////////////
+//$(".nav-element-minor").mouseleave(function () {
+//    var nav = $("#newsTypeSelector").val()
+//    if (nav == undefined) {
+//        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
+//        navElMinorChoose();
+//    }
+//    else {
+//        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
+//        newsTypeSelect();
+//    }
+
+//});
+
+//$(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
+//    var page = $("#currentPage").val();
+//    switch (page) {
+//        case "boats":
+//        case "boatsrow":
+//        case "boatssail":
+//        case "boatstraditional":
+//            if ((event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
+//                hideAll();
+//                $("#lodki").attr("class", "nav-element-choosen");
+//                $("#lodki-Sub").show();
+//                break;
+//            }
+//        case "shlupki":
+//        case "boatyal":
+//        case "botik":
+//        case "katerrow":
+//        case "maketstudy":
+//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
+//                hideAll();
+//                $("#shlupki").attr("class", "nav-element-choosen");
+//                $("#shlupki-Sub").show();
+//                break;
+//            }
+//        case "katera":
+//        case "motosailer":
+//        case "katercabin":
+//        case "katerfish":
+//        case "katerpass":
+//        case "katerproject":
+//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
+//                hideAll();
+//                $("#katera").attr("class", "nav-element-choosen");
+//                $("#katera-Sub").show();
+//                break;
+//            }
+//        case "ladiy":
+//        case "ladyarow":
+//        case "ladyasail":
+//        case "ladyaproject":
+//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")) {
+//                hideAll();
+//                $("#ladiy").attr("class", "nav-element-choosen");
+//                $("#ladiy-Sub").show();
+//            }
+//            break;
+//        case "sailboats":
+//        case "yacht":
+//        case "sailboatstudy":
+//        case "shvertbot":
+//        case "sailboathistorical":
+//        case "sailboatproject":
+//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
+//                if ($(window).width() > 383) {
+//                    hideAll();
+//                    $("#sailboats").attr("class", "nav-element-choosen");
+//                    $("#sailboats-Sub").show();
+//                }
+//                break;
+//            }
+//            else
+//                break;
+//        case "models":
+//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
+//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
+//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
+//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
+//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
+//                hideAll();
+//                $("#models").attr("class", "nav-element-choosen");
+//            }
+//            break;
+//        default:
+//            break;
+//    }
+//});

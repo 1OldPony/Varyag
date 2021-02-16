@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Varyag.Models.ProjectPublicViewModel>
 
 <div class="projects">
-    <div class="myBorder" style="margin-top:5px"></div>
+    <div class="myBorder"></div>
     @foreach (var item in Model)
     {
         <a class="projectListItem" href="../Каталог/@item.Route">
@@ -49,7 +49,7 @@
                                 <td class="characteristic">Осадка</td>
                                 <td class="value">@item.Deep&nbsp;м.</td>
                             </tr>
-                            <tr class="cellLong">
+                            <tr id="passanger" class="cellLong">
                                 <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
                                 <td class="value">@item.PassengerCap&nbsp;чел.</td>
                             </tr>
@@ -88,7 +88,7 @@
                                 {
                                     <td class="value">-</td>}
                             </tr>
-                            <tr class="cellLong">
+                            <tr id="sailArea" class="cellLong">
                                 <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
                                 @if (@item.SailArea != null)
                                 {
@@ -133,7 +133,7 @@
                                 {
                                     <td class="value">-</td>}
                             </tr>
-                            <tr class="cellLong">
+                            <tr id="fuel" class="cellLong">
                                 <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
                                 @if (@item.FuelCap != null)
                                 {

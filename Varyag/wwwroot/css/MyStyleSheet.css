@@ -32,7 +32,8 @@
 }
 
 .annotation {
-    display: flex;
+    display: none;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -60,6 +61,7 @@
         height: auto;
         width: 533px;
         border-radius: 10px;
+        display: flex;
     }
 
     #production.about .annotationText {
@@ -104,13 +106,16 @@
     .partNews a {
         display:contents;
     }
+    .partNews .annotation {
+        display:flex;
+    }
 
 .partNewsElement {
     width: 30%;
     height: 31vh;
     position: relative;
     background-size: auto 150%;
-    text-align:center;
+    text-align: center;
 }
 
 #middleElement.partNewsElement {
@@ -147,7 +152,8 @@
     text-align:center;
     font-size:1.5rem;
     font-weight:bold;
-    margin-bottom:10px;
+    max-width:1370px;
+    margin: auto 10px 10px 10px;
 }
 
 .catalogPlitka {
@@ -202,6 +208,8 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    background-color:white;
+    border-radius:10px;
 }
 
 .newsListElement {
@@ -209,9 +217,9 @@
     grid-template-areas: "preview newsText";
     grid-template-columns:40% 60%;
     grid-template-rows:31vh;
-    margin:2vw;
-    margin-top:1vw;
     overflow:hidden;
+    background-color:white;
+    border-radius:10px;
 }
 
 #сatalog.about {
@@ -225,6 +233,7 @@
         height: auto;
         width: 533px;
         border-radius: 10px;
+        display: flex;
     }
 
     #сatalog.about .annotationText {
@@ -288,7 +297,7 @@
     margin: 1vw;
     margin-left: 0;
     margin-right: 0;
-    z-index: 999999;
+    z-index: 3;
     background:rgba(255, 255, 255, 1);
     display:flex;
     align-items:center;
@@ -317,46 +326,6 @@
     box-shadow: 0px -20px 20px 0px rgba(255, 255, 255, 0.9);
 }
 
-/*.arrow {
-    cursor: pointer;
-    height: -webkit-fill-available;
-    width: 40px;
-    position: relative;
-}
-
-.arrow-top,
-.arrow-bottom {
-    background: #183f61;
-    height: 6px;
-    left: 8px;
-    position: absolute;
-    top: 49%;
-    width: 30px;
-}
-
-.arrow-top {
-    transform: rotate(60deg);
-    transform-origin: bottom left;
-    top: 47.8%;
-}
-
-.arrow-bottom {
-    transform: rotate(-60deg);
-    transform-origin: top left;
-}
-
-#right.arrow-top {
-    transform-origin: bottom right;
-    top: 48%;
-    left: -7px;
-}
-
-#right.arrow-bottom {
-    transform-origin: top right;
-    left: -7px;
-    top: 48%;
-}*/
-
 #goto-predist.about {
     background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 60% 100% no-repeat;
     background-size: auto 170%;
@@ -368,6 +337,7 @@
         height: auto;
         width: 533px;
         border-radius: 10px;
+        display: flex;
     }
 
     #goto-predist.about .annotationText {
@@ -487,6 +457,41 @@ body {
     right: 0.5%;
     width: 24%;
 }
+.contactsLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    justify-content: flex-end;
+    margin-top: 2%;
+    height: auto;
+}
+
+.contactsUnit {
+    display: flex;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    width: 225px;
+}
+
+    .contactsUnit a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+.contactsIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 1%;
+}
+
+.contactsSocial {
+    width: 35px;
+}
+#contacts.contactsSocial {
+    display: none
+}
 
 img {
     display: block;
@@ -495,8 +500,6 @@ img {
 
 .myBorder {
     width: 100%;
-    border-top-style: dashed;
-    border-width: 1px;
     margin-bottom: 10px;
 }
 
@@ -532,11 +535,9 @@ img {
     font-family: Tahoma, 'Gabriela', Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    background-color: white;
     text-align: center;
     margin: auto;
-    max-width: 1350px;
-    padding-bottom:3vh;
+    max-width: 1370px;
 }
 
 .MyContainer1 {
@@ -616,7 +617,7 @@ img {
     justify-content: space-between;
     position: absolute;
     padding-bottom: 10px;
-    z-index: 9999;
+    z-index: 2;
     background-color: #eff4fd;
 }
 
@@ -744,7 +745,98 @@ img {
     margin: 35px;
     /*margin-top: 0px;*/
 }
-
+.leftMenu {
+    width: 341px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    top: 60px;
+    margin-left: 10px;
+}
+.leftNavMenu {
+    list-style-type: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: white;
+    margin-block-start: 0;
+    margin-block-end: 10px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: padding-bottom 0.5s cubic-bezier(0, 1.1, 0.32, 1) 0s;
+    width:301px;
+}
+.leftSubNavOpen {
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-inline-start: 20px;
+    visibility: hidden;
+    transition: visibility 0.3s linear 0.2s, opacity 0.3s cubic-bezier(0.36, 0.6, 0.71, 1) 0.2s;
+    position: absolute
+}
+.leftSubNavOpenCurrent {
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-inline-start: 20px;
+    visibility: visible;
+    transition: visibility 0.3s linear 0.2s, opacity 0.3s cubic-bezier(0.36, 0.6, 0.71, 1) 0.2s;
+    position: absolute
+}
+.leftSubNavClose {
+    list-style-type: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-inline-start: 20px;
+    visibility: visible;
+    transition: visibility 0s linear 0s;
+    position: absolute
+}
+.leftNavLine {
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    transition: margin-top 0.5s cubic-bezier(0, 1.1, 0.32, 1) 0s
+}
+.navLineHeader:hover {
+    text-decoration:underline;
+}
+.leftNavClose {
+    display: none;
+    font-size: 1.6rem;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center
+}
+.leftNavOpen {
+    font-size: 1.6rem;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center
+}
+.leftNavCloseCurrent {
+    font-size: 1.6rem;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center
+}
+.leftNavOpenCurrent {
+    display: none;
+    font-size: 1.6rem;
+    margin-right: 10px;
+    width: 20px;
+    text-align: center
+}
+.categorysLineTtem {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.leftSubCategory:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
 #lodki.nav-element-choosen {
     grid-area: boats;
 }
@@ -858,6 +950,15 @@ img {
     align-items: flex-end;
     flex-grow: 1;
     margin-left: 2px;
+}
+
+ul .nav-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: unset;
+    margin-left: 0;
 }
 
 .nav-element-preview {
@@ -994,6 +1095,15 @@ img {
     align-items: flex-end;
 }
 
+ul .nav-element-choosen {
+    display: flex;
+    flex-grow: unset;
+    margin-left: unset;
+    flex-direction: unset;
+    justify-content: flex-start;
+    align-items: center;
+}
+
     .nav-element-choosen img {
         width: 100%;
     }
@@ -1017,8 +1127,14 @@ img {
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-right:0;
+    margin-right:10px;
     max-width:1000px;
+}
+
+.projectsHalf {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 auto 10px;
 }
 
 .singleProject {
@@ -1027,6 +1143,7 @@ img {
     grid-template-columns: 35% 35% 30%;
     grid-template-rows: 45px auto min-content auto 25px;
     font-size: 1.13rem;
+    padding-right:5px;
 }
 
     .singleProject p {
@@ -1041,7 +1158,7 @@ img {
 .projectImage {
     grid-area: foto;
     align-self: flex-end;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-right: 10px;
 }
 
@@ -1160,6 +1277,9 @@ img {
 
 .projectListItem {
     padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 #shortNav.menu-top-element {
@@ -1282,6 +1402,12 @@ img {
     border-top-style:solid;
     border-color:red;
 }
+.footerSmall {
+    display: flex;
+    color: gainsboro;
+    max-width: 1370px;
+    margin: auto;
+}
 
 .aboutSite {
     display:flex;
@@ -1336,6 +1462,17 @@ img {
 }
 
 .aboutMe {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    border-radius: 10px;
 }
 
 .newsFotoEditor {
@@ -1479,6 +1616,61 @@ img {
     width: 99%;
 }
 
+.largeTopFoto {
+    background-image: url('/images/коллаж-горизонт-с-пробелом.png');
+    height: 275px;
+    background-image: url('/images/Макет-мозайка-сплошная-300dpi.png');
+    background-image: url('/images/коллаж-горизонт-с-пробелом-обычный-контур.png');
+    border-radius: 0 10px 10px 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.smallTopFoto {
+    background-color: #183f61;
+    height: 80px;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center
+}
+.textOverCollage {
+    height: 275px;
+    background-color: #183f61;
+    width: 341px;
+    border-radius: 10px 0 0 10px;
+}
+#textOverCollage.plitkaCategoryHeader {
+    font-size: 4rem;
+    padding-top: 29%;
+    color: white;
+    margin-block:0;
+}
+.smallTopFotoText {
+    font-size: 3rem;
+    color: white;
+}
+.contentBlock {
+    display:flex;
+}
+.ourContacts {
+    padding-left: 40px;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+}
+.topCatalogLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto 10px 0 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
 @media (max-width:1628px) {
     #allNews.partNewsElement {
         height: 35vh;
@@ -1518,6 +1710,10 @@ img {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 80% 100% no-repeat;
         background-size: auto 135%;
     }
+
+    .cellShort[name="midSailArea"] {
+        display: none;
+    }
 }
 
 @media (max-width:1220px) {
@@ -1532,6 +1728,9 @@ img {
 }
 
 @media (max-width:1189px) {
+    .cellShort[name="midSleepingAreas"] {
+        display: none;
+    }
 
     #news.about {
         height: 80vh;
@@ -1589,11 +1788,55 @@ img {
         grid-template-rows: 20vh min-content min-content min-content min-content min-content min-content;
     }
 }
+@media (max-width:1140px) {
+
+    #short.projectImage {
+        display: none;
+    }
+
+    .singleProject {
+        grid-template-columns: 0% 57% 43%;
+    }
+
+    .cellLong {
+        display: table-row;
+    }
+        .cellLong[name="longWindth"] {
+            display: none;
+        }
+    #longLength.cellLong {
+        display: none;
+    }
+    #longDeep.cellLong {
+        display: none;
+    }
+    #passanger.cellLong {
+        display: none;
+    }
+    #longFreshWaterCap.cellLong {
+        display: none;
+    }
+}
 
 @media (max-width:1090px) {
 
     #catalog.category {
         width: 45%;
+    }
+    #longSleepingAreas.cellLong {
+        display:none
+    }
+    .cellShort[name="midSleepingAreas"] {
+        display: table-row;
+    }
+}
+@media (max-width:1050px) {
+
+    #longEnginePower.cellLong {
+        display: none;
+    }
+    #fuel.cellLong {
+        display: none;
     }
 }
 
@@ -1641,12 +1884,34 @@ img {
         top: 48%;
     }
 }
+@media (max-width:1000px) {
+
+    #short.projectImage {
+        display: block;
+    }
+
+    .singleProject {
+        grid-template-columns: 35% 35% 30%;
+    }
+
+    .leftMenu {
+        display:none;
+    }
+
+    .projectsHalf {
+        margin-left: auto;
+    }
+    .largeTopFoto {
+        display:none
+    }
+    .smallTopFoto {
+        display: flex;
+        margin-left:10px;
+        margin-right:10px;
+    }
+}
 
 @media (max-width:990px) {
-
-    .cellShort[name="midSailArea"] {
-        display: none;
-    }
 
     .allCustomers {
         margin-left: auto;
@@ -1691,6 +1956,13 @@ img {
     #catalog.category {
         width: 55%;
     }
+    
+    /*.cellShort[name="midSailArea"] {
+        display: table-row;
+    }*/
+    #sailArea.cellLong {
+        display: none;
+    }
 }
 
 @media (max-width:927px) {
@@ -1713,10 +1985,6 @@ img {
 
 @media (max-width:880px) {
 
-    .cellShort[name="midSleepingAreas"] {
-        display: none;
-    }
-
     #goto-predist.about {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 35% 100% no-repeat;
         background-size: auto 150%;
@@ -1724,6 +1992,32 @@ img {
 
     .details-top {
         grid-template-columns: 55% 45%;
+    }
+}
+
+@media (max-width:850px) {
+    #middleValue {
+        display: none
+    }
+
+    .cellShort {
+        display: table-row;
+    }
+
+    #first-out {
+        display: none;
+    }
+
+    #second-out {
+        display: none;
+    }
+
+    #fird-out {
+        display: none;
+    }
+
+    .cellShort[name="shortLength"], .cellShort[name="shortDeep"] {
+        background-color: #f0f5f9;
     }
 }
 
@@ -1762,10 +2056,6 @@ img {
         font-weight: 600;
         text-align: left;
         margin-left: 5%;
-    }
-
-    #short.projectImage {
-        display: none;
     }
 
     .catalog {
@@ -1888,11 +2178,6 @@ img {
             width: 100%;
         }
 
-    .singleProject {
-        grid-template-columns: 0% 57% 43%;
-        /*grid-template-rows: 20px auto min-content auto 20px;*/
-    }
-
     .nav-element-choosen .nav-element-inside p {
         margin-block-start: 0px;
         margin-block-end: 2px;
@@ -1916,31 +2201,6 @@ img {
     #wideStory {
         display: none;
     }
-
-    .cellLong {
-        display: none;
-    }
-
-    #middleValue.cellShort {
-        display: table-row;
-    }
-
-    .cellShort[name="midLength"] {
-        background-color: #f0f5f9;
-    }
-
-    .cellShort[name="midDeep"] {
-        background-color: #f0f5f9;
-    }
-
-    .cellShort[name="midSleepingAreas"] {
-        background-color: #f0f5f9;
-    }
-
-    .cellShort[name="midEnginePower"] {
-        background-color: #f0f5f9;
-    }
-
     #goto-predist.about {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 50% 100% no-repeat;
         background-size: auto 150%;
@@ -1995,6 +2255,12 @@ img {
     }
 }
 
+@media (max-width:775px) {
+    .singleProject {
+        grid-template-rows: 60px auto min-content auto 25px;
+    }
+}
+
 @media (max-width:764px) {
 
     .newsListElement {
@@ -2016,73 +2282,81 @@ img {
 }
 
 @media (max-width:720px) {
-
     .details-top {
         grid-template-columns: 47% 53%;
     }
 }
+@media (max-width:710px) {
+    #fourth-out[name="shortDeep"] {
+        display:none;
+    }
+    #museumMenu {
+        display:none
+    }
+}
 
 @media (max-width:651px) {
-
-    #middleValue.cellShort {
-        display: none;
-    }
-
-    .cellShort {
-        display: table-row;
-    }
-
-        .cellShort[name="shortLength"], .cellShort[name="shortDeep"], .cellShort[name="shortSleepingAreas"] {
-            background-color: #f0f5f9;
-        }
-
     .textPartAllNews {
         display: none;
     }
-
     .newsListElement {
         grid-template-columns: 100%;
     }
-
     #catalog.category {
         width: 80%;
     }
 }
-
 @media (max-width:628px) {
-
     #gotoTopNav {
         display: initial;
     }
-
     #goto-pred.nav-element-top {
         display: none;
     }
 }
 
 @media (max-width:610px) {
-
-    #first-out.cellShort {
-        display: none;
-    }
-
     #news.about {
         height: 87vh;
     }
-
     .details-top {
         grid-template-areas: "gallery" "sheme" "tth-det";
         grid-template-rows: auto;
         grid-template-columns: 100%;
     }
-
     .aboutUsGoto {
         display: initial;
+    }
+    #short.projectImage {
+        display:none;
+    }
+    .singleProject {
+        grid-template-columns: 0% 57% 43%;
+        grid-template-rows: 45px auto min-content auto 25px;
+    }
+    #fourth-out[name="shortDeep"] {
+        display: table-row;
+    }
+    #fird-out {
+        display: table-row;
+    }
+    #first-out {
+        display: table-row;
+        background-color: #f0f5f9;
+    }
+    #articleMenu {
+        display:none
+    }
+    #contacts.contactsSocial {
+        display:block;
+        cursor:pointer;
+    }
+    #contactsWords {
+        display:none;
     }
 }
 
 @media (max-width:586px) {
-
     #production.about .annotation {
         right: 0;
         bottom: 0;
@@ -2091,19 +2365,15 @@ img {
         width: auto;
         border-radius: 0;
     }
-
     #production.longText {
         display: none;
     }
-
     #production.shortText {
         display: initial;
     }
-
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 80% no-repeat;
     }
-
         #сatalog.about .annotation {
             right: 0;
             bottom: 0;
@@ -2112,20 +2382,16 @@ img {
             width: auto;
             border-radius: 0;
         }
-
     #сatalog.longText {
         display: none;
     }
-
     #сatalog.shortText {
         display: initial;
     }
-
     #goto-predist.about {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 55% 100% no-repeat;
         background-size: auto 150%;
     }
-
         #goto-predist.about .annotation {
             right: 0;
             top: 0;
@@ -2136,10 +2402,15 @@ img {
         }
 }
 
-
 @media (max-width:558px) {
     #news.about {
         height: 91vh;
+    }
+    .singleProject {
+        grid-template-rows: 60px auto min-content auto 25px;
+    }
+    #first-out {
+        display: none;
     }
 }
 
@@ -2169,35 +2440,24 @@ img {
         width: 45%;
     }
 }
-
 @media (max-width:525px) {
 
     #veryShortNav.menu-top-element {
         display: flex;
     }
-
-    #second-out.cellShort {
-        display: none;
-    }
-
     #catalog.category {
         width: 100%;
     }
-
-    .singleProject {
-        grid-template-rows: 66px auto min-content auto 20px;
-    }
 }
-
-
 @media (max-width:500px) {
-
-    #fird-out.cellShort {
-        display: none;
-    }
-
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
+    }
+    #fourth-out[name="shortDeep"] {
+        display: none;
+    }
+    #fird-out {
+        display: none;
     }
 }
 
@@ -2222,11 +2482,6 @@ img {
 }
 
 @media (max-width:440px) {
-
-    #fourth-out.cellShort {
-        display: none;
-    }
-
     #catalog.category {
         grid-template-areas: "boats bigboats" "katers ladiy" "sailboats makets";
         grid-template-columns: 50% 50%;
@@ -2239,11 +2494,6 @@ img {
 }
 
 @media (max-width:425px) {
-
-    .singleProject {
-        grid-template-rows: 80px auto min-content auto 20px;
-    }
-
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 60% 85% no-repeat;
     }
@@ -2255,110 +2505,82 @@ img {
     .shortTextSecond {
         display: initial;
     }
-
-    #fifth-out.cellShort {
-        display: none;
+    #aboutMenu {
+        display:none;
     }
 }
-
 @media (max-width:421px) {
-
     #news.about {
         height: 95vh;
     }
+    .TTH {
+        display: none;
+    }
+    .singleProject {
+        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
+    }
+    .catalogItemBottom {
+        font-size: 1.2rem;
+        text-align: center;
+    }
 }
-
 @media (max-width:418px) {
-
     #museum {
         display: none;
     }
-
     .aboutUsMuseum {
         display: initial;
     }
 }
-
 @media (max-width:414px) {
 
     #news.about {
         height: 99vh;
     }
 }
-
-
 @media (max-width:400px) {
-
     .annotation {
         width: 60%;
     }
-
     #cinemaTopNav {
         display: initial;
     }
-
-    /*.socialNetworks {
-        display: flex;
-        flex-direction: column;
-        align-content: center
-    }
-
-    .socialVidgets {
-        display: none;
-    }
-
-    .socialButtons {
-        display: flex;
-    }*/
 }
-
 @media (max-width:398px) {
-
     #news.about {
         height: 104vh;
     }
 }
-
 @media (max-width:383px) {
-
     #middleElement.partNewsElement {
         margin-right: 0;
         margin-left: 0;
     }
-
     #shortStory {
         display: flex;
     }
-
     #middleStory {
         display: none;
     }
-
     #wideStory {
         display: none;
     }
-
     .explainText {
         display: none;
     }
-
     .category {
         flex-direction: column;
     }
-
     .nav {
         width: 100%;
     }
-
     .nav-element .nav-element-inside {
         padding-top: 2px;
         padding-bottom: 2px;
     }
-
     .sub-nav {
         margin-bottom: 2px;
     }
-
     .catalog {
         margin-top: 10px;
         display: grid;
@@ -2366,35 +2588,27 @@ img {
         grid-template-columns: 1fr;
         grid-template-rows: 50px min-content 50px min-content 50px min-content 50px min-content 50px min-content 50px min-content;
     }
-
     #lodki.nav-element, #lodki.nav-element-choosen {
         grid-area: boats;
     }
-
     #lodki-Sub.sub-nav {
         grid-area: sub-boats;
     }
-
     #shlupki.nav-element, #shlupki.nav-element-choosen {
         grid-area: bigboats;
     }
-
     #shlupki-Sub.sub-nav {
         grid-area: sub-bigboats;
     }
-
     #katera.nav-element, #katera.nav-element-choosen {
         grid-area: kater;
     }
-
     #katera-Sub.sub-nav {
         grid-area: sub-kater;
     }
-
     #ladiy.nav-element, #ladiy.nav-element-choosen {
         grid-area: ladya;
     }
-
     #ladiy-Sub.sub-nav {
         grid-area: sub-ladya;
     }
@@ -2430,9 +2644,9 @@ img {
         display: none;
     }
 
-    .veryShortUpFoto {
+    /*.veryShortUpFoto {
         display: initial
-    }
+    }*/
 
     .contacts {
         display: flex;
@@ -2442,17 +2656,8 @@ img {
         align-self: center;
     }
 
-    .singleProject {
-        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
-    }
-
     #post-first-out.cellShort {
         display: none;
-    }
-
-    .catalogItemBottom {
-        font-size: 1.2rem;
-        text-align: center;
     }
 
     .nav-element-choosen .nav-element-inside p {
@@ -2465,31 +2670,26 @@ img {
 }
 
 @media (max-width:359px) {
-
     #news.about {
         height: 108vh;
     }
-
     .nav-element-top .nav-element-inside {
         font-size: 0.97rem
+    }
+    .singleProject {
+        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name";
+    }
+    .catalogItemBottom {
+        display: none
     }
 }
 
 @media (max-width:346px) {
-
     #goto-predist.shortText {
         text-decoration: underline;
     }
 
     #goto-predist.longTextSecond {
         display: none;
-    }
-
-    .catalogItemBottom {
-        display: none
-    }
-
-    .singleProject {
-        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name";
     }
 }
