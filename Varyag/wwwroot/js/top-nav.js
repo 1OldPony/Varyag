@@ -20,8 +20,8 @@ $(window).scroll(function() {
             $(".leftMenu").css('position', 'initial');
         }
 
-        if ($('.projectsHalf').css('margin-left') != 'auto') {
-            $('.projectsHalf').css('margin-left', 'auto');
+        if ($('.projectsHalf').css('margin-left') != '10px') {
+            $('.projectsHalf').css('margin-left', '10px');
         }
     }
 });
@@ -36,7 +36,7 @@ $(window).resize(function () {
             $('.projectsHalf').css('margin-left', '361px');
         }
         else {
-            $('.projectsHalf').css('margin-left', 'auto');
+            $('.projectsHalf').css('margin-left', '10px');
         }
     }
     else {
@@ -131,34 +131,92 @@ function newsTypeSelect() {
     var nav = $("#newsTypeSelector").val()
     switch (nav) {
         case "smi":
-            $("#smi").attr("class", "nav-element-minor-choosen");
+            $("#smiNav").css("color", "red");
+            //$("#smiOpen").attr("class", "leftNavOpenCurrent");
+            //$("#smiClose").attr("class", "leftNavCloseCurrent");
+            //$("#smi-Sub").attr("class", "leftSubNavOpenCurrent");
             break;
         case "life":
-            $("#life").attr("class", "nav-element-minor-choosen");
+            $("#lifeNav").css("color", "red");
             break;
         case "newShips":
-            $("#newShips").attr("class", "nav-element-minor-choosen");
+            $("#newShipsNav").css("color", "red");
             break;
         default:
-            $("#all").attr("class", "nav-element-minor-choosen");
+            $("#allNewsNav").css("color", "red");
+            $("#allNewsOpen").attr("class", "leftNavOpenCurrent");
+            $("#allNewsClose").attr("class", "leftNavCloseCurrent");
+            $("#allNews-Sub").attr("class", "leftSubNavOpenCurrent");
             break;
     }
 }
-//$("#lodkiOpen, #lodkiClose").click(function () {
-//    if ($("#lodkiOpen").css('display') != 'none') {
-//        $("#lodki-Sub").attr('class', 'leftSubNavOpen');
-//        $("#lodki-Sub").css('visibility', 'visible');
-//        $("#lodki-Sub").css('opacity', '1');
-//        $("#shlupkiNav").css('margin-top', '69px')
+$("#allNewsOpen, #allNewsClose").click(function () {
+    if ($("#allNewsOpen").css('display') != 'none') {
+        $("#allNews-Sub").attr('class', 'leftSubNavOpen');
+        $("#allNews-Sub").css('visibility', 'visible');
+        $("#allNews-Sub").css('opacity', '1');
+        $(".leftNavMenu").css('padding-bottom', '79px')
+        //$("#smiNav").css('margin-top', '69px')
+    }
+    else {
+        $("#allNews-Sub").attr('class', 'leftSubNavClose');
+        $("#allNews-Sub").css('visibility', 'hidden');
+        $("#allNews-Sub").css('opacity', '0');
+        $(".leftNavMenu").css('padding-bottom', '10px')
+        //$("#smiNav").css('margin-top', '0px')
+    }
+    $("#allNewsOpen").toggle()
+    $("#allNewsClose").toggle()
+});
+//$("#smiOpen, #smiClose").click(function () {
+//    if ($("#smiOpen").css('display') != 'none') {
+//        $("#smi-Sub").attr('class', 'leftSubNavOpen');
+//        $("#smi-Sub").css('visibility', 'visible');
+//        $("#smi-Sub").css('opacity', '1');
+//        $("#lifeNav").css('margin-top', '69px')
 //    }
 //    else {
-//        $("#lodki-Sub").attr('class', 'leftSubNavClose');
-//        $("#lodki-Sub").css('visibility', 'hidden');
-//        $("#lodki-Sub").css('opacity', '0');
-//        $("#shlupkiNav").css('margin-top', '0px')
+//        $("#smi-Sub").attr('class', 'leftSubNavClose');
+//        $("#smi-Sub").css('visibility', 'hidden');
+//        $("#smi-Sub").css('opacity', '0');
+//        $("#lifeNav").css('margin-top', '0px')
 //    }
-//    $("#lodkiOpen").toggle()
-//    $("#lodkiClose").toggle()
+//    $("#smiOpen").toggle()
+//    $("#smiClose").toggle()
+//});
+//$("#lifeOpen, #lifeClose").click(function () {
+//    if ($("#lifeOpen").css('display') != 'none') {
+//        $("#life-Sub").attr('class', 'leftSubNavOpen');
+//        $("#life-Sub").css('visibility', 'visible');
+//        $("#life-Sub").css('opacity', '1');
+//        $("#newShipsNav").css('margin-top', '69px')
+//    }
+//    else {
+//        $("#life-Sub").attr('class', 'leftSubNavClose');
+//        $("#life-Sub").css('visibility', 'hidden');
+//        $("#life-Sub").css('opacity', '0');
+//        $("#newShipsNav").css('margin-top', '0px')
+//    }
+//    $("#lifeOpen").toggle()
+//    $("#lifeClose").toggle()
+//});
+//$("#newShipsOpen, #newShipsClose").click(function () {
+//    if ($("#newShipsOpen").css('display') != 'none') {
+//        $("#newShips-Sub").attr('class', 'leftSubNavOpen');
+//        $("#newShips-Sub").css('visibility', 'visible');
+//        $("#newShips-Sub").css('opacity', '1');
+//        $("#allNewsNav").css('margin-top', '69px')
+//        //$(".leftNavMenu").css('padding-bottom', '79px')
+//    }
+//    else {
+//        $("#newShips-Sub").attr('class', 'leftSubNavClose');
+//        $("#newShips-Sub").css('visibility', 'hidden');
+//        $("#newShips-Sub").css('opacity', '0');
+//        $("#allNewsNav").css('margin-top', '0px')
+//        //$(".leftNavMenu").css('padding-bottom', '10px')
+//    }
+//    $("#newShipsOpen").toggle()
+//    $("#newShipsClose").toggle()
 //});
 
 /////////////////////////выделяем выбранную подкатегорию лодок//////////////////////////

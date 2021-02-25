@@ -213,13 +213,14 @@
 }
 
 .newsListElement {
-    display:grid;
+    display: grid;
     grid-template-areas: "preview newsText";
-    grid-template-columns:40% 60%;
-    grid-template-rows:31vh;
-    overflow:hidden;
-    background-color:white;
-    border-radius:10px;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 31vh;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    margin: auto 10px auto 0;
 }
 
 #сatalog.about {
@@ -800,8 +801,11 @@ img {
     justify-content: space-between;
     transition: margin-top 0.5s cubic-bezier(0, 1.1, 0.32, 1) 0s
 }
+#allNews.navLineHeader {
+    font-size:1.8rem;
+}
 .navLineHeader:hover {
-    text-decoration:underline;
+    text-decoration: underline;
 }
 .leftNavClose {
     display: none;
@@ -1665,7 +1669,7 @@ ul .nav-element-choosen {
     justify-content: space-between;
     align-items: center;
     max-width: 1000px;
-    margin: auto 10px 0 10px;
+    margin: auto 10px 0 0;
     padding: 10px;
     background-color: white;
     border-radius: 10px;

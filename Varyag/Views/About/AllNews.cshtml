@@ -6,7 +6,10 @@
 
 
 <div class="MyContainer">
-    <h1>Наши новости</h1>
+    <div class="path">
+        <a href="../../О-Нас">Главная</a> > <a>Наши новости</a>
+    </div>
+    @*<h1>Наши новости</h1>*@
     @*<div class="myBorder"></div>*@
     @*<div class="newsNav">
             <div class="nav-element-minor" id="smi">
@@ -43,13 +46,10 @@
     <div class="contentBlock">
         <div class="leftMenu">
             <nav>
-                <ul class="leftNavMenu" style="justify-content:flex-start">
+                <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom: 79px;">
                     <li>
-                        <div class="navLineHeader">Все новости</div>
-                    </li>
-                    <li>
-                        <div id="smiNav" class="leftNavLine"><div class="navLineHeader">СМИ о нас</div><div id="smiOpen" class="leftNavOpen">+</div><div id="smiClose" class="leftNavClose">-</div></div>
-                        <ul id="smi-Sub" class="leftSubNavOpen">
+                        <div id="smiNav" class="leftNavLine"><div class="navLineHeader">СМИ о нас</div>@*<div id="smiOpen" class="leftNavOpen">+</div><div id="smiClose" class="leftNavClose">-</div>*@</div>
+                        @*<ul id="smi-Sub" class="leftSubNavOpen">
                             <li class="leftSubCategory">
                                 Народные лодки
                             </li>
@@ -59,11 +59,11 @@
                             <li class="leftSubCategory">
                                 Прогулочные гребные лодки
                             </li>
-                        </ul>
+                        </ul>*@
                     </li>
                     <li>
-                        <div id="lifeNav" class="leftNavLine"><div class="navLineHeader">Жизнь наших судов</div><div id="lifeOpen" class="leftNavOpen">+</div><div id="lifeClose" class="leftNavClose">-</div></div>
-                        <ul id="life-Sub" class="leftSubNavOpen">
+                        <div id="lifeNav" class="leftNavLine"><div class="navLineHeader">Жизнь наших судов</div>@*<div id="lifeOpen" class="leftNavOpen">+</div><div id="lifeClose" class="leftNavClose">-</div>*@</div>
+                        @*<ul id="life-Sub" class="leftSubNavOpen">
                             <li class="leftSubCategory">
                                 Шлюпки ЯЛ2, ЯЛ4, ЯЛ6
                             </li>
@@ -73,14 +73,11 @@
                             <li class="leftSubCategory">
                                 Гребные катера и вельботы
                             </li>
-                            <li class="leftSubCategory">
-                                Учебные пособия
-                            </li>
-                        </ul>
+                        </ul>*@
                     </li>
                     <li>
-                        <div id="newShipsNav" class="leftNavLine"><div class="navLineHeader" style="color:red">Новые корабли</div><div id="newShipsOpen" class="leftNavOpenCurrent">+</div><div id="newShipsClose" class="leftNavCloseCurrent">-</div></div>
-                        <ul id="newShips-Sub" class="leftSubNavOpenCurrent">
+                        <div id="newShipsNav" class="leftNavLine"><div class="navLineHeader">Новости верфи</div>@*<div id="newShipsOpen" class="leftNavOpen">+</div><div id="newShipsClose" class="leftNavClose">-</div>*@</div>
+                        @*<ul id="newShips-Sub" class="leftSubNavOpen">
                             <li class="leftSubCategory">
                                 Рабочие/Рыболовные катера
                             </li>
@@ -90,8 +87,19 @@
                             <li class="leftSubCategory">
                                 Каютные катера
                             </li>
+                        </ul>*@
+                    </li>
+                    <li>
+                        <div id="allNewsNav" class="leftNavLine"><div class="navLineHeader">Все новости</div><div id="allNewsOpen" class="leftNavOpen">+</div><div id="allNewsClose" class="leftNavClose">-</div></div>
+                        <ul id="allNews-Sub" class="leftSubNavOpen">
                             <li class="leftSubCategory">
-                                Мотосейлеры
+                                <a asp-action="AllNews">@ViewBag.actualNews</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="recent">@ViewBag.recentNews</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="old">@ViewBag.oldNews</a>
                             </li>
                         </ul>
                     </li>
@@ -110,7 +118,7 @@
             <div class="topCatalogLine">
                 <h1 class="categorysLineTtem" style="margin-block:0;justify-content:flex-start">Наши новости</h1>
             </div>
-            <div>
+            <div style="margin-top:10px">
                 @for (int i = 0; i < Model.Count(); i++)
                 {<a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId">
                         <div class="newsListElement">
