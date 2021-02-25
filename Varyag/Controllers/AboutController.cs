@@ -43,34 +43,48 @@ namespace Varyag.Controllers
             ViewData["Description"] = "Новости верфи деревянного судостроения Варяг";
 
             List<News> news = new List<News>();
-            News[] technical = new News [100];
-            //List<News> technical = new List<News>();
+            news = await _context.News.ToListAsync();
+
+            int currentYear = DateTime.Today.Year, lastYear = currentYear, date = 0;
+
+            foreach (var item in news)
+            {
+                date = int.Parse(item.NewsDate.Substring(item.NewsDate.Length - 4));
+                if (date < lastYear)
+                {
+                    lastYear = date;
+                }
+            };
+            ViewBag.actualNews = currentYear.ToString() + " - " + (currentYear - 1).ToString();
+            ViewBag.recentNews = (currentYear - 2).ToString() + " - " + (currentYear - 4).ToString();
+            ViewBag.oldNews = (currentYear - 5).ToString() + " - " + lastYear;
+
             switch (newsType)
             {
                 case "smi":
-                    news = await _context.News.Where(n => n.KeyWord.ToString() == "СМИ").ToListAsync();
+                    news = news.Where(n => n.KeyWord.ToString() == "СМИ").ToList();
                     break;
                 case "life":
-                    news = await _context.News.Where(n => n.KeyWord.ToString() == "Жизнь_кораблей").ToListAsync();
+                    news = news.Where(n => n.KeyWord.ToString() == "Жизнь_кораблей").ToList();
                     break;
                 case "newShips":
-                    news = await _context.News.Where(n => n.KeyWord.ToString() == "Новые_корабли").ToListAsync();
+                    news = news.Where(n => n.KeyWord.ToString() == "Новые_корабли").ToList();
                     break;
                 default:
                     switch (part)
                     {
                         case "old":
-                            news = await _context.News.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) <= int.Parse(DateTime.Today.Year.ToString()) - 6).ToListAsync();
-                            news.CopyTo(technical);
+                            news = news.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) <= currentYear - 5).ToList();
                             break;
                         case "recent":
-                            news = await _context.News.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) <= int.Parse(DateTime.Today.Year.ToString()) - 3 && int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) >= int.Parse(DateTime.Today.Year.ToString()) - 5).ToListAsync();
+                            news = news.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) <= currentYear - 3/*2 по настоящему*/ && int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) >= currentYear - 4).ToList();
+                            break;
+                        case "new":
+                            news = news.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) >= currentYear - 2/*1 по настоящему*/).ToList();
                             break;
                         default:
-                            news = await _context.News.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) >= int.Parse(DateTime.Today.Year.ToString()) - 2/*1 по настоящему*/).ToListAsync();
                             break;
                     }
-
                     break;
             }
 
@@ -151,10 +165,7 @@ namespace Varyag.Controllers
             }
             else
                 news = news.GetRange(0, news.Count);
-
-            ViewBag.actualNews = DateTime.Today.Year.ToString()+ " - "+(int.Parse(DateTime.Today.Year.ToString()) - 1).ToString();
-            ViewBag.recentNews = (int.Parse(DateTime.Today.Year.ToString()) - 2).ToString() + " - " + (int.Parse(DateTime.Today.Year.ToString()) - 4).ToString();
-            ViewBag.oldNews = (int.Parse(DateTime.Today.Year.ToString()) - 5).ToString() + " - ...";
+            ViewBag.part = part;
             ViewBag.newsType = newsType;
             List<NewsViewModel> x = LittleHelper.NewsToSortedViewModel(news);
 

@@ -131,22 +131,29 @@ function newsTypeSelect() {
     var nav = $("#newsTypeSelector").val()
     switch (nav) {
         case "smi":
-            $("#smiNav").css("color", "red");
-            //$("#smiOpen").attr("class", "leftNavOpenCurrent");
-            //$("#smiClose").attr("class", "leftNavCloseCurrent");
-            //$("#smi-Sub").attr("class", "leftSubNavOpenCurrent");
+            //$("#smiNav").css("color", "red");
+            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
+            //    $(".leftNavMenu").css('padding-bottom', '0px')
+            //}
             break;
         case "life":
-            $("#lifeNav").css("color", "red");
+            //$("#lifeNav").css("color", "red");
+            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
+            //    $(".leftNavMenu").css('padding-bottom', '0px')
+            //}
             break;
         case "newShips":
-            $("#newShipsNav").css("color", "red");
+            //$("#newShipsNav").css("color", "red");
+            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
+            //    $(".leftNavMenu").css('padding-bottom', '0px')
+            //}
             break;
         default:
-            $("#allNewsNav").css("color", "red");
-            $("#allNewsOpen").attr("class", "leftNavOpenCurrent");
-            $("#allNewsClose").attr("class", "leftNavCloseCurrent");
-            $("#allNews-Sub").attr("class", "leftSubNavOpenCurrent");
+            //$("#allNewsNav").css("color", "red");
+            $(".leftNavMenu").css('padding-bottom', '79px');
+            //$("#allNewsOpen").attr("class", "leftNavOpenCurrent");
+            //$("#allNewsClose").attr("class", "leftNavCloseCurrent");
+            //$("#allNews-Sub").attr("class", "leftSubNavOpenCurrent");
             break;
     }
 }
