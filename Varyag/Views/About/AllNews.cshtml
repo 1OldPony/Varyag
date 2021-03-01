@@ -14,11 +14,11 @@
     <div class="contentBlock">
         <div class="leftMenu">
             <nav>
-                @if (@ViewBag.newsType == null)
+                @if (ViewBag.newsType == null)
                 {
                     <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
                         <li>
-                            @if (@ViewBag.newsType == "smi")
+                            @if (ViewBag.newsType == "smi")
                             {
                                 <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine" style="color:red"><div class="navLineHeader">СМИ о нас</div></a>
 
@@ -30,7 +30,7 @@
                             }
                         </li>
                         <li>
-                            @if (@ViewBag.newsType == "life")
+                            @if (ViewBag.newsType == "life")
                             {
                                 <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine" style="color:red"><div class="navLineHeader">Жизнь наших судов</div></a>
 
@@ -41,7 +41,7 @@
                             }
                         </li>
                         <li>
-                            @if (@ViewBag.newsType == "newShips")
+                            @if (ViewBag.newsType == "newShips")
                             {
                                 <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine" style="color:red"><div class="navLineHeader">Новости верфи</div></a>
 
@@ -52,7 +52,7 @@
                             }
                         </li>
                         <li>
-                            @if (@ViewBag.newsType == null)
+                            @if (ViewBag.newsType == null)
                             {
                                 <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader" style="color:red">Все новости</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
                             }
@@ -60,7 +60,7 @@
                             {
                                 <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader">Все новости</a><div id="allNewsOpen" class="leftNavOpen">+</div><div id="allNewsClose" class="leftNavClose">-</div></div>
                             }
-                            @if (@ViewBag.newsType == null)
+                            @if (ViewBag.newsType == null)
                             {
                                 <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
                                     @if (ViewBag.part == "new")
@@ -150,7 +150,7 @@
                 {
                     <ul class="leftNavMenu" style="justify-content:flex-start;">
                         <li>
-                            @if (@ViewBag.newsType == "smi")
+                            @if (ViewBag.newsType == "smi")
                             {
                                 <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine" style="color:red"><div class="navLineHeader">СМИ о нас</div></a>
 
@@ -162,7 +162,7 @@
                             }
                         </li>
                         <li>
-                            @if (@ViewBag.newsType == "life")
+                            @if (ViewBag.newsType == "life")
                             {
                                 <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine" style="color:red"><div class="navLineHeader">Жизнь наших судов</div></a>
 
@@ -173,7 +173,7 @@
                             }
                         </li>
                         <li>
-                            @if (@ViewBag.newsType == "newShips")
+                            @if (ViewBag.newsType == "newShips")
                             {
                                 <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine" style="color:red"><div class="navLineHeader">Новости верфи</div></a>
 
@@ -184,7 +184,7 @@
                             }
                         </li>
                         <li>
-                            @if (@ViewBag.newsType == null)
+                            @if (ViewBag.newsType == null)
                             {
                                 <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader" style="color:red">Все новости</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
                             }
@@ -192,7 +192,7 @@
                             {
                                 <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader">Все новости</a><div id="allNewsOpen" class="leftNavOpen">+</div><div id="allNewsClose" class="leftNavClose">-</div></div>
                             }
-                            @if (@ViewBag.newsType == null)
+                            @if (ViewBag.newsType == null)
                             {
                                 <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
                                     @if (ViewBag.part == "new")

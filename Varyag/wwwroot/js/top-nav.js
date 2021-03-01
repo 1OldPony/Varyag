@@ -150,7 +150,7 @@ function newsTypeSelect() {
             break;
         default:
             //$("#allNewsNav").css("color", "red");
-            $(".leftNavMenu").css('padding-bottom', '79px');
+            //$(".leftNavMenu").css('padding-bottom', '79px');
             //$("#allNewsOpen").attr("class", "leftNavOpenCurrent");
             //$("#allNewsClose").attr("class", "leftNavCloseCurrent");
             //$("#allNews-Sub").attr("class", "leftSubNavOpenCurrent");
