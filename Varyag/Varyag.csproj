@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Views\About\AboutUs.cshtml" />
+    <None Include="Views\AnythingElses\AboutUs.cshtml" />
     <None Include="Views\About\AllNews.cshtml" />
     <None Include="Views\About\Index.cshtml" />
     <None Include="Views\About\NewsDetails.cshtml" />
@@ -160,7 +160,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
 

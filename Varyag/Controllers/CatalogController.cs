@@ -28,6 +28,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Купить деревянные лодки, Прогулочные лодки от производителя";
             ViewData["Description"] = "Каталог деревянных прогулочных парусных, а также гребных и народных лодок производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "boats";
+            ViewBag.catalogPage = "catalog";
             return View();
         }
 

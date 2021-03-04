@@ -17,16 +17,27 @@
     </div>
     <div class="myBorder"></div>
     <div class="contentBlock">
-        <div class="leftMenu">
+        <partial name="~/Views/Shared/LeftMenu.cshtml"/>
+        @*<div class="leftMenu">
             <nav>
                 @if (ViewBag.catalogPage != "models")
                 {
                     <ul class="leftNavMenu">
                         <li>
+                            @if (ViewBag.catalogPage == "catalog")
+                            {
+                                <div class="leftNavLine"><a asp-action="CatalogNavigation" class="navLineHeader" style="color:red">Каталог</a></div>
+                            }
+                            else
+                            {
+                                <div class="leftNavLine"><a asp-action="CatalogNavigation" class="navLineHeader">Каталог</a></div>
+                            }
+                        </li>
+                        <li>
                             @if (ViewBag.catalogPage == "boats")
                             {
                                 <div class="leftNavLine"><a asp-action="Boats" class="navLineHeader" style="color:red">Лодки</a><div id="lodkiOpen" class="leftNavOpenCurrent">+</div><div id="lodkiClose" class="leftNavCloseCurrent">-</div></div>
-                                <ul id="lodki-Sub" class="leftSubNavOpen">
+                                <ul id="lodki-Sub" class="leftSubNavOpenCurrent">
                                     @if (ViewBag.TopPic == "boatstraditional")
                                     {
                                         <li class="leftSubCategory" style="color:red">
@@ -85,7 +96,7 @@
                             @if (ViewBag.catalogPage == "bigboats")
                             {
                                 <div id="shlupkiNav" class="leftNavLine"><a asp-action="Bigboats" class="navLineHeader" style="color:red">Шлюпки</a><div id="shlupkiOpen" class="leftNavOpenCurrent">+</div><div id="shlupkiClose" class="leftNavCloseCurrent">-</div></div>
-                                <ul id="shlupki-Sub" class="leftSubNavOpen">
+                                <ul id="shlupki-Sub" class="leftSubNavOpenCurrent">
                                     @if (ViewBag.TopPic == "boatsYal")
                                     {
                                         <li class="leftSubCategory" style="color:red">
@@ -140,7 +151,7 @@
                             {
                                 @if (ViewBag.catalogPage == "boats")
                                 {
-                                    <div id="shlupkiNav" class="leftNavLine"><a asp-action="Bigboats" style="margin-top:72px" class="navLineHeader">Шлюпки</a><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
+                                    <div id="shlupkiNav" class="leftNavLine" style="margin-top:72px"><a asp-action="Bigboats" class="navLineHeader">Шлюпки</a><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
                                 }
                                 else
                                 {
@@ -227,7 +238,7 @@
                                 {
                                     <div id="kateraNav" class="leftNavLine"><a asp-action="Motorboats" class="navLineHeader">Катера</a><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div></div>
                                 }
-                                <ul id="katera-Sub" class="leftSubNavOpenCurrent">
+                                <ul id="katera-Sub" class="leftSubNavOpen">
                                     <li class="leftSubCategory">
                                         <a asp-action="KatersFishing">Рабочие/Рыболовные катера</a>
                                     </li>
@@ -247,7 +258,7 @@
                             @if (ViewBag.catalogPage == "ladiy")
                             {
                                 <div id="ladiyNav" class="leftNavLine"><a asp-action="Ladiy" class="navLineHeader" style="color:red">Ладьи</a><div id="ladiyOpen" class="leftNavOpenCurrent">+</div><div id="ladiyClose" class="leftNavCloseCurrent">-</div></div>
-                                <ul id="ladiy-Sub" class="leftSubNavOpen">
+                                <ul id="ladiy-Sub" class="leftSubNavOpenCurrent">
                                     @if (ViewBag.TopPic == "ladyassailmotor")
                                     {
                                         <li class="leftSubCategory">
@@ -298,7 +309,7 @@
                             @if (ViewBag.catalogPage == "sailboats")
                             {
                                 <div id="sailboatsNav" class="leftNavLine"><a asp-action="Sailboats" class="navLineHeader" style="color:red">Парусники</a><div id="sailboatsOpen" class="leftNavOpenCurrent">+</div><div id="sailboatsClose" class="leftNavCloseCurrent">-</div></div>
-                                <ul id="sailboats-Sub" class="leftSubNavOpen">
+                                <ul id="sailboats-Sub" class="leftSubNavOpenCurrent">
                                     @if (ViewBag.TopPic == "sailboatshistorical")
                                     {
                                         <li class="leftSubCategory" style="color:red">
@@ -376,7 +387,7 @@
                             }
                         </li>
                         <li>
-                            <div id="modelsNav" class="leftNavLine"><a class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
+                            <div id="modelsNav" class="leftNavLine"><a asp-action="Models" class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
                             <ul id="models-Sub" class="leftSubNavOpen">
                                 <li class="leftSubCategory">
                                     Тренажеры
@@ -398,84 +409,87 @@
                 {
                     <ul class="leftNavMenu" style="padding-bottom:107px">
                         <li>
-                            <div class="leftNavLine"><a class="navLineHeader">Лодки</a><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div></div>
+                            <div class="leftNavLine"><a asp-action="CatalogNavigation" class="navLineHeader">Каталог</a></div>
+                        </li>
+                        <li>
+                            <div class="leftNavLine"><a asp-action="Boats" class="navLineHeader">Лодки</a><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div></div>
                             <ul id="lodki-Sub" class="leftSubNavOpen">
                                 <li class="leftSubCategory">
-                                    Народные лодки
+                                    <a asp-action="BoatsTraditional">Народные лодки</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Прогулочные парусные лодки
+                                    <a asp-action="BoatsSail">Прогулочные парусные лодки</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Прогулочные гребные лодки
+                                    <a asp-action="BoatsRow">Прогулочные гребные лодки</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <div id="shlupkiNav" class="leftNavLine"><a class="navLineHeader">Шлюпки</a><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
+                            <div id="shlupkiNav" class="leftNavLine"><a asp-action="Bigboats" class="navLineHeader">Шлюпки</a><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
                             <ul id="shlupki-Sub" class="leftSubNavOpen">
                                 <li class="leftSubCategory">
-                                    Шлюпки ЯЛ2, ЯЛ4, ЯЛ6
+                                    <a asp-action="BoatsYal">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Ботики
+                                    <a asp-action="Botiks">Ботики</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Гребные катера и вельботы
+                                    <a asp-action="KaterRows">Гребные катера и вельботы</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Учебные пособия
+                                    <a asp-action="BoatsYal">Учебные пособия</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <div id="kateraNav" class="leftNavLine"><a class="navLineHeader" style="color:red">Катера</a><div id="kateraOpen" class="leftNavOpenCurrent">+</div><div id="kateraClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="katera-Sub" class="leftSubNavOpenCurrent">
+                            <div id="kateraNav" class="leftNavLine"><a asp-action="Motorboats" class="navLineHeader" style="color:red">Катера</a><div id="kateraOpen" class="leftNavOpenCurrent">+</div><div id="kateraClose" class="leftNavCloseCurrent">-</div></div>
+                            <ul id="katera-Sub" class="leftSubNavOpen">
                                 <li class="leftSubCategory">
-                                    Рабочие/Рыболовные катера
+                                    <a asp-action="KatersFishing">Рабочие/Рыболовные катера</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Пассажирские катера
+                                    <a asp-action="KatersPassanger">Пассажирские катера</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Каютные катера
+                                    <a asp-action="KaterKabins">Каютные катера</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Мотосейлеры
+                                    <a asp-action="Motosailers">Мотосейлеры</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <div id="ladiyNav" class="leftNavLine" style="margin-top:92px"><a class="navLineHeader">Ладьи</a><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
+                            <div id="ladiyNav" class="leftNavLine"><a asp-action="Ladiy" class="navLineHeader">Ладьи</a><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
                             <ul id="ladiy-Sub" class="leftSubNavOpen">
                                 <li class="leftSubCategory">
-                                    Парусно-моторные ладьи
+                                    <a asp-action="LadyasSailMotor">Парусно-моторные ладьи</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Парусно-гребные ладьи
+                                    <a asp-action="LadyasSailRow">Парусно-гребные ладьи</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <div id="sailboatsNav" class="leftNavLine"><a class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
+                            <div id="sailboatsNav" class="leftNavLine"><a asp-action="Sailboats" class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
                             <ul id="sailboats-Sub" class="leftSubNavOpen">
                                 <li class="leftSubCategory">
-                                    Исторические парусники
+                                    <a asp-action="SailboatsHistorical">Исторические парусники</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Учебные парусники
+                                    <a asp-action="SailboatsStudy">Учебные парусники</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Швертботы
+                                    <a asp-action="Svertbots">Швертботы</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    Парусные яхты
+                                    <a asp-action="Yachts">Парусные яхты</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <div id="modelsNav" class="leftNavLine"><a class="navLineHeader" style="color:red">Разное</a><div id="modelsOpen" class="leftNavOpenCurrent">+</div><div id="modelsClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="models-Sub" class="leftSubNavOpen">
+                            <div id="modelsNav" class="leftNavLine"><a asp-action="Models" class="navLineHeader" style="color:red">Разное</a><div id="modelsOpen" class="leftNavOpenCurrent">+</div><div id="modelsClose" class="leftNavCloseCurrent">-</div></div>
+                            <ul id="models-Sub" class="leftSubNavOpenCurrent">
                                 <li class="leftSubCategory">
                                     Тренажеры
                                 </li>
@@ -501,13 +515,20 @@
                     <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;varyag@onego.ru</div>
                 </div>
             </div>
-        </div>
+        </div>*@
         <div class="projectsHalf">
-            <div class="topCatalogLine">
-                <div class="categorysLineTtem">Все катера</div><div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" style="margin-right:5px" /></div>
+            <div style="background-color:white;border-radius:10px;display:flex;flex-direction:column;margin-right: 10px;">
+                <div class="topCatalogLine">
+                    <div class="categorysLineTtem">Все катера</div><div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div style="font-size:0.9rem;text-align:left;padding:0px 10px 10px 10px">
+                    Верфь деревянного судостроения "Варяг" проектирует и строит катера различных типов и размерений, в том числе мотосейлеры.
+                    В случае необходимости мы можем изготовить катер по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
+                </div>
             </div>
             @await Component.InvokeAsync("ProjectsCatalog", new { category = "boat" })
         </div>
     </div>
-    <input type="text" id="currentPage" value="katera" hidden/>
+    @*<input type="text" id="currentPage" value="katera" hidden/>*@
 </div>
