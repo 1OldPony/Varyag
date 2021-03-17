@@ -88,7 +88,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Купить шлюпки ЯЛ 2, ЯЛ 4, ЯЛ 6, деревянные шлюпки ЯЛ 2, ЯЛ 4, ЯЛ 6 от производителя";
             ViewData["Description"] = "Каталог шлюпок ЯЛ 2, ЯЛ 4, ЯЛ 6 производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "boatsyal";
-            ViewBag.catalogPage = "boatsYal";
+            ViewBag.catalogPage = "bigboats";
             return View();
         }
 
@@ -98,7 +98,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Купить ботики, Исторические ботики от производителя";
             ViewData["Description"] = "Каталог исторических ботиков производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "botiks";
-            ViewBag.catalogPage = "botiks";
+            ViewBag.catalogPage = "bigboats";
             return View();
         }
 
@@ -108,7 +108,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Купить гребные катера, Гребные катера от производителя";
             ViewData["Description"] = "Каталог гребных катеров производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "katerrows";
-            ViewBag.catalogPage = "katerRows";
+            ViewBag.catalogPage = "bigboats";
             return View();
         }
 
@@ -118,7 +118,7 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "Купить учебные макеты, Учебные макеты судов";
             ViewData["Description"] = "Учебные макеты для изучения конструкции судов";
             ViewBag.TopPic = "maketsstudy";
-            ViewBag.catalogPage = "maketsStudy";
+            ViewBag.catalogPage = "bigboats";
             return View();
         }
 

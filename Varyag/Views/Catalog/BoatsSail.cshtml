@@ -3,45 +3,34 @@
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
 <div class="MyContainer" id="main">
-    <input type="text" id="boatsTypeSelector" value="@ViewBag.boatsType" hidden />
+    @*<input type="text" id="boatsTypeSelector" value="@ViewBag.boatsType" hidden />*@
     <div class="path">
         <a href="../../О-Нас">Главная</a> > <a href="../../Каталог">Каталог</a> > <a href="../Лодки">Лодки</a> > <a>Прогулочные парусные лодки</a>
     </div>
-    <div class="explainText">
-        Верфь ООО "Варяг" может построить для вас любой из представленных проектов или разработать новый.
-    </div>
-    <div class="myBorder"></div>
-    <div class="catalogNav">
-        <div class="nav-element-minor" id="traditional">
-            <a href="../../каталог/Лодки/Народные-лодки">
-                <div id="allNews" class="nav-element-inside">
-                    <p>Народные лодки</p>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element-minor" id="sail">
-            <a href="../../каталог/Лодки/Прогулочные-парусные-лодки">
-                <div id="allNews" class="nav-element-inside">
-                    <p>Парусные лодки</p>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element-minor" id="row">
-            <a href="../../каталог/Лодки/Прогулочные-гребные-лодки">
-                <div id="allNews" class="nav-element-inside">
-                    <p>Гребные лодки</p>
-                </div>
-            </a>
-        </div>
-        <div class="nav-element-minor" id="allBoats">
-            <a href="../../каталог/Лодки">
-                <div id="allNews" class="nav-element-inside">
-                    <p>Все лодки</p>
-                </div>
-            </a>
+    <div class="largeTopFoto">
+        <div class="textOverCollage">
+            <h1 id="textOverCollage" class="plitkaCategoryHeader" style="font-size:2.9rem;padding-top:16%;">Прогулочные парусные лодки</h1>
         </div>
     </div>
+    <div class="smallTopFoto">
+        <h2 class="smallTopFotoText">Прогулочные парусные лодки</h2>
+    </div>
     <div class="myBorder"></div>
+    <div class="contentBlock">
+        <partial name="~/Views/Shared/LeftMenu.cshtml" />
+        <div class="projectsHalf">
+            <div class="projectsHalfTop">
+                <div class="topCatalogLine">
+                    <div class="categorysLineTtem">Все прогулочные парусные лодки</div><div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div class="projectsHalfText">
+                    Верфь ООО "Варяг" может построить для вас любой из представленных проектов или разработать новый.
+                </div>
+            </div>
+            @await Component.InvokeAsync("ProjectsCatalog", new { category = "boatsail" })
+        </div>
+    </div>
     @*<div class="catalog">
             <div class="nav-element-choosen" name="lodki" id="lodki">
                 <a href="../Каталог/Лодки">
@@ -126,5 +115,4 @@
             <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
             <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
         </div>*@
-    @await Component.InvokeAsync("ProjectsCatalog", new { category = "boatsail" })
 </div>

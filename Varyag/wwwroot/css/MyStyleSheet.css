@@ -754,6 +754,23 @@ img {
     margin: 35px;
     /*margin-top: 0px;*/
 }
+.articleLeftMenu {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-style: solid;
+    border-color: white;
+}
+#centerArticle.articleLeftMenu {
+    margin: 10px 0 10px 0;
+}
+#bottomArticle.articleLeftMenu {
+    margin: 0 0 10px 0;
+}
+.articleLeftMenu:hover {
+    border-color: darkred;
+}
 .leftMenu {
     width: 341px;
     text-align: left;
@@ -1148,6 +1165,34 @@ ul .nav-element-choosen {
     display: flex;
     flex-direction: column;
     margin: auto 0 auto 10px;
+    max-width:1000px;
+}
+
+.projectsHalfTop {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+.articleBody {
+    display: flex;
+    flex-direction: column;
+    max-width: 1350px;
+    margin: auto;
+    margin-bottom: 5Vh;
+    align-items: center;
+    font-size: 1.3rem;
+    font-family: Tahoma, 'Gabriela', Arial, sans-serif;
+}
+.articleBlock {
+    display: flex;
+    margin-right:10px;
+}
+.projectsHalfText {
+    font-size: 0.9rem;
+    text-align: left;
+    padding: 0px 10px 10px 10px
 }
 
 .singleProject {
@@ -1156,7 +1201,7 @@ ul .nav-element-choosen {
     grid-template-columns: 35% 35% 30%;
     grid-template-rows: 45px auto min-content auto 25px;
     font-size: 1.13rem;
-    padding-right:5px;
+    padding-right: 5px;
 }
 
     .singleProject p {
@@ -1626,7 +1671,8 @@ ul .nav-element-choosen {
 .articlePreviewBlokCreate {
     display: flex;
     flex-direction: column;
-    width: 99%;
+    max-width: 98%;
+    margin:auto;
 }
 
 .largeTopFoto {
