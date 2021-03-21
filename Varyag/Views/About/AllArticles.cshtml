@@ -1,8 +1,10 @@
-﻿@model List<NewsViewModel>
+﻿@model IEnumerable<Varyag.Models.Article>
+
 @{
-    ViewData["Title"] = "Наши новости";
+    ViewData["Title"] = "Статьи об особых заказах";
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
+
 
 
 <div class="MyContainer">
@@ -31,44 +33,44 @@
                         </li>
                         <li>
                             <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader" style="color:red">Все новости</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
-                                <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
-                                    @if (ViewBag.part == "new")
-                                    {
-                                        <li class="leftSubCategory">
-                                            <a asp-action="AllNews" asp-route-part="new" style="color:red">@ViewBag.actualNews</a>
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li class="leftSubCategory">
-                                            <a asp-action="AllNews" asp-route-part="new">@ViewBag.actualNews</a>
-                                        </li>
-                                    }
-                                    @if (ViewBag.part == "recent")
-                                    {
-                                        <li class="leftSubCategory">
-                                            <a asp-action="AllNews" asp-route-part="recent" style="color:red">@ViewBag.recentNews</a>
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li class="leftSubCategory">
-                                            <a asp-action="AllNews" asp-route-part="recent">@ViewBag.recentNews</a>
-                                        </li>
-                                    }
-                                    @if (ViewBag.part == "old")
-                                    {
-                                        <li class="leftSubCategory">
-                                            <a asp-action="AllNews" asp-route-part="old" style="color:red">@ViewBag.oldNews</a>
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li class="leftSubCategory">
-                                            <a asp-action="AllNews" asp-route-part="old">@ViewBag.oldNews</a>
-                                        </li>
-                                    }
-                                </ul>
+                            <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
+                                @if (ViewBag.part == "new")
+                                {
+                                    <li class="leftSubCategory">
+                                        <a asp-action="AllNews" asp-route-part="new" style="color:red">@ViewBag.actualNews</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="leftSubCategory">
+                                        <a asp-action="AllNews" asp-route-part="new">@ViewBag.actualNews</a>
+                                    </li>
+                                }
+                                @if (ViewBag.part == "recent")
+                                {
+                                    <li class="leftSubCategory">
+                                        <a asp-action="AllNews" asp-route-part="recent" style="color:red">@ViewBag.recentNews</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="leftSubCategory">
+                                        <a asp-action="AllNews" asp-route-part="recent">@ViewBag.recentNews</a>
+                                    </li>
+                                }
+                                @if (ViewBag.part == "old")
+                                {
+                                    <li class="leftSubCategory">
+                                        <a asp-action="AllNews" asp-route-part="old" style="color:red">@ViewBag.oldNews</a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="leftSubCategory">
+                                        <a asp-action="AllNews" asp-route-part="old">@ViewBag.oldNews</a>
+                                    </li>
+                                }
+                            </ul>
                         </li>
                     </ul>
                 }
@@ -260,3 +262,216 @@
         </div>
     </div>
 </div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArticleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArticleRoute)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery6)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery7)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery8)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery9)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery13)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text14)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery14)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text15)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PathToGallery15)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArticleName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArticleRoute)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text6)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery6)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text7)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery7)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text8)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery8)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text9)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery9)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text10)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery10)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text11)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery11)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text12)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery12)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text13)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery13)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text14)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery14)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text15)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PathToGallery15)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ArticleId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ArticleId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ArticleId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

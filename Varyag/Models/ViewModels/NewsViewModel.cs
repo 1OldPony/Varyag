@@ -18,6 +18,12 @@ namespace Varyag.Models
         public NewsKeyWord KeyWord { get; set; }
         [DisplayName("Путь к папке с фотографиями в галерею")]
         public string PathToGallery { get; set; }
+        [DisplayName("Путь к 1 ролику")]
+        public string PathToVideo1 { get; set; }
+        [DisplayName("Путь ко 2 ролику")]
+        public string PathToVideo2 { get; set; }
+        [DisplayName("Путь к 3 ролику")]
+        public string PathToVideo3 { get; set; }
 
         [DisplayName("Масштаб маленькой фотки")]
         public string ShortImgScale { get; set; }

@@ -179,16 +179,48 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            var news = await _context.News
-                .FirstOrDefaultAsync(m => m.NewsId == id);
-            if (news == null)
+
+
+            List<News> news = new List<News>();
+            news = await _context.News.ToListAsync();
+            List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
+            List<NewsViewModel> newsLeftMenu = new List<NewsViewModel>();
+            newsLeftMenu = sortedNews.Where(n=>n.NewsId==id).ToList();
+
+            for (int i = sortedNews.Count-1; i > news.Count - 6; i--)
+            {
+                if (sortedNews.ElementAt(i).NewsId!= id)
+                {
+                    newsLeftMenu.Add(sortedNews.ElementAt(i));
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+            //var news = await _context.News
+            //    .FirstOrDefaultAsync(m => m.NewsId == id);
+            //if (news == null)
+            //{
+            //    return NotFound();
+            //}
+            //List<News> newsMultiply = new List<News>();
+
+
+            return View(sortedNews);
+        }
+        public async Task<IActionResult> AllArticles()
+        {
+            List<Article> articles = await _context.Article.ToListAsync();
+
+            if (articles == null)
             {
                 return NotFound();
             }
 
-            return View(news);
+            return View(articles);
         }
-
         public async Task<IActionResult> ArticleDetails(string route)
         {
             if (route == null)

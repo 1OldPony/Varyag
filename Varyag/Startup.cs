@@ -69,10 +69,12 @@ namespace Varyag
                 routes =>
             {
                 routes.MapRoute("default", "{controller=about}/{action=index}/{id?}");
-                routes.MapRoute("О нас", "О-нас", defaults: new { controller = "About", action = "AboutUs" });
-                routes.MapRoute("Статья", "О-нас/{route}", defaults: new { controller = "About", action = "ArticleDetails" });
-                routes.MapRoute("Наши новости", "О-нас/Наши-новости", defaults: new { controller = "About", action = "AllNews" });
-                routes.MapRoute("Конкретная новость", "О-нас/Наши-новости/{id}", defaults: new { controller = "About", action = "NewsDetails" });
+                routes.MapRoute("О нас", "О-нас", defaults: new { controller = "About", action = "AllNews" });
+                routes.MapRoute("Статья", "О-нас/Особые-заказы", defaults: new { controller = "About", action = "AllArticles" });
+                routes.MapRoute("Статья", "О-нас/Особые-заказы/{route}", defaults: new { controller = "About", action = "ArticleDetails" });
+                routes.MapRoute("Конкретная новость", "О-нас/{id}", defaults: new { controller = "About", action = "NewsDetails" });
+                //routes.MapRoute("Наши новости", "О-нас/Наши-новости", defaults: new { controller = "About", action = "AllNews" });
+                //routes.MapRoute("Конкретная новость", "О-нас/Наши-новости/{id}", defaults: new { controller = "About", action = "NewsDetails" });
                 routes.MapRoute("Каталог", "Каталог", defaults: new { controller = "Catalog", action = "CatalogNavigation" });
                 routes.MapRoute("Каталог лодок", "Каталог/Лодки", defaults: new { controller = "Catalog", action = "Boats" });
                 routes.MapRoute("Каталог прогулочных гребных лодок", "Каталог/Лодки/Прогулочные-гребные-лодки", defaults: new { controller = "Catalog", action = "BoatsRow" });

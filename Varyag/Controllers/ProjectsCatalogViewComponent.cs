@@ -93,7 +93,8 @@ namespace Varyag.Controllers
                 case "boat":
                     items = await db.Project.Where(w => w.BoatRow || w.BoatSail || w.BoatTraditional == true ).ToListAsync();
                     boats = true;
-                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
+                    //return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
+                    return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "bigboat":
                     items = await db.Project.Where(w => w.BoatYal || w.Botik || w.KaterRow || w.MaketStudy == true).ToListAsync();
                     boats = true;
