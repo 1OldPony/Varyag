@@ -68,16 +68,61 @@ namespace Varyag.Controllers
             else
                 LittleHelper.DeleteFiles(path, false);
 
+
+            /////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////
+            string previewPath = Path.Combine(path, "preview");
+            if (!Directory.Exists(previewPath))
+                LittleHelper.DirectoryExistCheck(previewPath);
+            else
+                LittleHelper.DeleteFiles(previewPath, false);
+            /////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////
+
+
             if (fotos.Count()!=0)
             {
                 for (int i = 0; i <= (fotos.Count() - 1); i++)
                 {
                     string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ").jpg";
-
-                    using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                    /////////////////////////////////////////////////////////
+                    /////////////////////////////////////////////////////////
+                    /////////////////////////////////////////////////////////
+                    if (i==0)
                     {
-                        await fotos[i].CopyToAsync(fileStream);
+                        if (path.EndsWith('1'))
+                        {
+                            name = "ВерфьВаряг(превью).jpg";
+                            using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
+                            {
+                                await fotos[i].CopyToAsync(fileStream);
+                            }
+                        }
+                        else
+                        {
+                            using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                            {
+                                await fotos[i].CopyToAsync(fileStream);
+                            }
+                        }
                     }
+                    else
+                    {
+                        using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                        {
+                            await fotos[i].CopyToAsync(fileStream);
+                        }
+                    }
+                    /////////////////////////////////////////////////////////
+                    /////////////////////////////////////////////////////////
+                    /////////////////////////////////////////////////////////
+                    //string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ").jpg";
+                    //using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                    //{
+                    //    await fotos[i].CopyToAsync(fileStream);
+                    //}
                 }
             }
 

@@ -19,7 +19,7 @@ namespace Varyag.Controllers
             db = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int? shipProjectId, int? newsId, int? anythingId, int? articleId, string galleryPath)
+        public async Task<IViewComponentResult> InvokeAsync(int? shipProjectId, int? newsId, int? anythingId, int? articleId, string galleryPath, bool singleFoto)
         {
             if (shipProjectId != null)
             {
@@ -43,10 +43,22 @@ namespace Varyag.Controllers
             {
                 string[] fotos = Directory.GetFiles(galleryPath);
                 List<string> fotoPaths = new List<string>();
-                foreach (var item in fotos)
+                if (singleFoto)
                 {
-                    string path = LittleHelper.PathAdapter(item, "gallery");
-                    fotoPaths.Add(path);
+                    for (int i = 1; i < 2; i++)
+                    {
+                        string path = LittleHelper.PathAdapter(fotos[i], "gallery");
+                        fotoPaths.Add(path);
+                    }
+                    ViewBag.singleFoto = singleFoto;
+                }
+                else
+                {
+                    foreach (var item in fotos)
+                    {
+                        string path = LittleHelper.PathAdapter(item, "gallery");
+                        fotoPaths.Add(path);
+                    }
                 }
                 return View("NewsGallery", fotoPaths);
             }

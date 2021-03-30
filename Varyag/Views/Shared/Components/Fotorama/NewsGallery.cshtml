@@ -1,4 +1,11 @@
 ﻿@foreach (var item in Model)
 {
-    <img src="@Url.Content(item)" />
+    @if (ViewBag.singleFoto)
+    {
+        <img style="position:absolute;max-width:unset;width:120%;left:-10%;min-height:100%;" src="@Url.Content(item)" />
+    }
+    else
+    {
+        <img src="@Url.Content(item)" />
+    }
 }

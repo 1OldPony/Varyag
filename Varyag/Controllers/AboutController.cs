@@ -185,9 +185,9 @@ namespace Varyag.Controllers
             news = await _context.News.ToListAsync();
             List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
             List<NewsViewModel> newsLeftMenu = new List<NewsViewModel>();
-            newsLeftMenu = sortedNews.Where(n=>n.NewsId==id).ToList();
+            newsLeftMenu.Add(sortedNews.FirstOrDefault(n => n.NewsId == id));
 
-            for (int i = sortedNews.Count-1; i > news.Count - 6; i--)
+            for (int i = 0; i < 6; i++)
             {
                 if (sortedNews.ElementAt(i).NewsId!= id)
                 {
@@ -208,9 +208,9 @@ namespace Varyag.Controllers
             //List<News> newsMultiply = new List<News>();
 
 
-            return View(sortedNews);
+            return View(newsLeftMenu);
         }
-        public async Task<IActionResult> AllArticles()
+        public async Task<IActionResult> AllArticles(string actualNews, string recentNews, string oldNews)
         {
             List<Article> articles = await _context.Article.ToListAsync();
 
@@ -218,7 +218,9 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
-
+            ViewBag.actualNews = actualNews;
+            ViewBag.recentNews = recentNews;
+            ViewBag.oldNews = oldNews;
             return View(articles);
         }
         public async Task<IActionResult> ArticleDetails(string route)
