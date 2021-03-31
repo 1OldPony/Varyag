@@ -35,6 +35,10 @@ namespace Varyag.Models
                     fotoPath = "~/" + pathParts[(pathParts.Length - 1) - 4] + "/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
                         + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
                     break;
+                case "articlePreview":
+                    fotoPath = "~/" + pathParts[(pathParts.Length - 1) - 5] + "/" + pathParts[(pathParts.Length - 1) - 4] + "/" + pathParts[(pathParts.Length - 1) - 3] + "/"
+                        + pathParts[(pathParts.Length - 1) - 2] + "/" + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
+                    break;
                 case "frontFoto":
                     fotoPath = "/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
                         + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
@@ -297,7 +301,6 @@ namespace Varyag.Models
                     });
                 }
             }
-
             orderedProjects = orderedProjects.OrderBy(x => x.Order).ToList();
 
             return orderedProjects;

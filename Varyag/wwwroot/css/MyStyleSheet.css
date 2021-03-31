@@ -1241,6 +1241,35 @@ ul .nav-element-choosen {
     grid-area: sheme;
 }
 
+.tthOverFoto {
+    display: flex;
+    width: 323px;
+    flex-direction: column;
+    position: relative;
+    height: min-content;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.tthUnderFoto {
+    display: flex;
+    width: 323px;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.tthSliderFoto {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 323px;
+    height: min-content;
+    position: relative;
+    margin-right: 10px;
+    margin-top:10px;
+}
+
 .whiteSpace {
     background-color: white;
     height: 10px;
@@ -1747,12 +1776,6 @@ ul .nav-element-choosen {
     border-radius: 10px;
 }
 
-/*@media (max-width:1628px) {
-    #allNews.partNewsElement {
-        height: 35vh;
-    }
-}*/
-
 @media (min-width:1500px) {
 
     #cinemaOrders.category {
@@ -1816,7 +1839,7 @@ ul .nav-element-choosen {
         flex-direction: column;
     }
 
-    .partNewsElement {
+    #mainPage.partNewsElement {
         width: 100%;
         height: 20vh;
     }

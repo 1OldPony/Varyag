@@ -591,14 +591,31 @@ namespace Varyag.Controllers
         {
             var article = await _context.Article.FindAsync(id);
 
-            string[] paths = new[] {article.PathToGallery1, article.PathToGallery2, article.PathToGallery3, article.PathToGallery4, article.PathToGallery5, article.PathToGallery6, article.PathToGallery7,
-                article.PathToGallery8, article.PathToGallery9, article.PathToGallery10, article.PathToGallery11, article.PathToGallery12, article.PathToGallery13, article.PathToGallery14, article.PathToGallery15 };
-            foreach (var item in paths)
-            {
-                LittleHelper.DeleteFiles(item,true);
-            }
+            List<Article> article2 = _context.Article.Where(a=>a.ArticleId==id).ToList();
+            //string[] paths = new[] {article.PathToGallery1, article.PathToGallery2, article.PathToGallery3, article.PathToGallery4, article.PathToGallery5, article.PathToGallery6, article.PathToGallery7,
+            //    article.PathToGallery8, article.PathToGallery9, article.PathToGallery10, article.PathToGallery11, article.PathToGallery12, article.PathToGallery13, article.PathToGallery14, article.PathToGallery15 };
+            ClearGallery(article2.First().PathToGallery1);
+            ClearGallery(article.PathToGallery2);
+            ClearGallery(article.PathToGallery3);
+            ClearGallery(article.PathToGallery4);
+            ClearGallery(article.PathToGallery5);
+            ClearGallery(article.PathToGallery6);
+            ClearGallery(article.PathToGallery7);
+            ClearGallery(article.PathToGallery8);
+            ClearGallery(article.PathToGallery9);
+            ClearGallery(article.PathToGallery10);
+            ClearGallery(article.PathToGallery11);
+            ClearGallery(article.PathToGallery12);
+            ClearGallery(article.PathToGallery13);
+            ClearGallery(article.PathToGallery14);
+            ClearGallery(article.PathToGallery15);
+            //foreach (var item in paths)
+            //{
+            //    LittleHelper.DeleteFiles(item, true);
+            //    LittleHelper.DeleteFiles(item + "\\preview", true);
+            //}
 
-            paths = paths[1].Split(new char[] { '\\' });
+            string[] paths = article.PathToGallery1.Split(new char[] { '\\' });
             string mainFolderPath = "";
             for (int i = 0; i < (paths.Length-1); i++)
             {
@@ -609,6 +626,15 @@ namespace Varyag.Controllers
             _context.Article.Remove(article);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private void ClearGallery(string path)
+        {
+            if (path!=null)
+            {
+                LittleHelper.DeleteFiles(path, true);
+                LittleHelper.DeleteFiles(path + "\\preview", true);
+            }
         }
 
         private bool ArticleExists(int id)

@@ -45,9 +45,9 @@ namespace Varyag.Controllers
                 List<string> fotoPaths = new List<string>();
                 if (singleFoto)
                 {
-                    for (int i = 1; i < 2; i++)
+                    foreach (var item in fotos)
                     {
-                        string path = LittleHelper.PathAdapter(fotos[i], "gallery");
+                        string path = LittleHelper.PathAdapter(item, "articlePreview");
                         fotoPaths.Add(path);
                     }
                     ViewBag.singleFoto = singleFoto;
