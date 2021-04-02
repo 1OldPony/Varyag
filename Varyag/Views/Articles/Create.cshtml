@@ -26,8 +26,18 @@
                     <input type="text" name="articleRoute" value="@ViewBag.Route" />
                 </div>
                 <div>
-                    <div>Загрузка файлов в галлерею</div>
+                    <div>Загрузка файлов в галлерею(Кнопка "Загрузить")</div>
                     <input name="fotos" type="file" multiple required />
+                </div>
+                <div style="display:flex;">
+                    @if (ViewBag.PathForPartGallery1 != null)
+                    {
+                        <img style="width:304px;margin:10px 10px 0 0;" src='@Url.Content(LittleHelper.PathAdapter(ViewBag.PathForPreview+"\\ВерфьВаряг(превью).jpg","articlePreview"))' />
+                    }
+                    <div style="display:flex;flex-direction:column;">
+                        <div>Заменить фотку на превью можно тут(Кнопка "Загрузить")</div>
+                        <input type="file" name="preview" required />
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,7 +109,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery1 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery1, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -115,7 +125,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery2 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery2, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -131,7 +141,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery3 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery3, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -147,7 +157,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery4 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery4, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -163,7 +173,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery5 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery5, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -179,7 +189,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery6 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery6, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -195,7 +205,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery7 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery7, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -211,7 +221,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery8 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery8, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -227,7 +237,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery9 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery9, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -243,7 +253,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery10 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery10, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -259,7 +269,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery11 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery11, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -275,7 +285,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery12 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery12, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -291,7 +301,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery13 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery13, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -307,7 +317,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery14 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery14, singleFoto = false })
                         </div>
                     </div>
                 </div>
@@ -323,7 +333,7 @@
                     </div>
                     <div>
                         <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery15 })
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.pathForPartGallery15, singleFoto = false })
                         </div>
                     </div>
                 </div>

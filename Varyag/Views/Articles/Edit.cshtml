@@ -40,8 +40,15 @@
                     }
                 </div>
                 <div>
-                    <div>Загрузка файлов в галлерею</div>
+                    <div>Загрузка файлов в галлерею(Кнопка "Загрузить")</div>
                     <input name="fotos" type="file" multiple />
+                </div>
+                <div style="display:flex;">
+                    <img style="width:304px;margin:10px 10px 0 0;" src='@Url.Content(LittleHelper.PathAdapter(Model.PathToGallery1+"\\preview\\ВерфьВаряг(превью).jpg","articlePreview"))' />
+                    <div style="display:flex;flex-direction:column;">
+                        <div>Заменить фотку на превью можно тут(Кнопка "Загрузить")</div>
+                        <input type="file" name="preview" />
+                    </div>
                 </div>
             </div>
         </div>

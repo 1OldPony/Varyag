@@ -4,16 +4,6 @@
     font-style: normal;
     font-weight: normal;
 }
-#firstVar {
-    display: none;
-    flex-direction: column;
-    background-color: #000000b0;
-    position: absolute;
-    color: white;
-    justify-content: space-around;
-    height: 100%;
-    padding: 0 10px 0 10px;
-}
 .about {
     height: 80vh;
     position: relative;
@@ -1249,6 +1239,17 @@ ul .nav-element-choosen {
     height: min-content;
     margin-right: 10px;
     margin-top: 10px;
+}
+.hiddenTTH {
+    display: none;
+    flex-direction: column;
+    background-color: #000000b0;
+    position: absolute;
+    color: white;
+    justify-content: space-around;
+    height: 100%;
+    padding: 0 10px 0 10px;
+    width: 323px;
 }
 .tthUnderFoto {
     display: flex;

@@ -29,9 +29,9 @@ namespace Varyag.Controllers
             return View(await _context.Article.ToListAsync());
         }
 
-        public async Task<IActionResult> FillArticle(int? articleId, string pathToGall, string currentTextPart, IFormFileCollection fotos, string articleFolder, string articleName, int? partsCounter, string actionType,
-            string articleRoute, string PathToGallery1, string PathToGallery2, string PathToGallery3, string PathToGallery4, string PathToGallery5, string PathToGallery6, string PathToGallery7,
-            string PathToGallery8, string PathToGallery9, string PathToGallery10, string PathToGallery11, string PathToGallery12, string PathToGallery13, string PathToGallery14, string PathToGallery15)
+        public async Task<IActionResult> FillArticle(int? articleId, string pathToGall, string currentTextPart, IFormFileCollection fotos, IFormFileCollection preview, string articleFolder, string articleName,
+            int? partsCounter, string actionType, string articleRoute, string PathToGallery1, string PathToGallery2, string PathToGallery3, string PathToGallery4, string PathToGallery5, string PathToGallery6, 
+            string PathToGallery7, string PathToGallery8, string PathToGallery9, string PathToGallery10, string PathToGallery11, string PathToGallery12, string PathToGallery13, string PathToGallery14, string PathToGallery15)
         {
             string path = Path.Combine(_Environment.WebRootPath, "images", "articles");
             LittleHelper.DirectoryExistCheck(path);
@@ -72,11 +72,23 @@ namespace Varyag.Controllers
             /////////////////////////////////////////////////////////
             /////////////////////////////////////////////////////////
             /////////////////////////////////////////////////////////
-            string previewPath = Path.Combine(path, "preview");
-            if (!Directory.Exists(previewPath))
-                LittleHelper.DirectoryExistCheck(previewPath);
-            else
-                LittleHelper.DeleteFiles(previewPath, false);
+            string previewPath;
+            if (partsCounter == null)
+            {
+                previewPath = Path.Combine(path,"1", "preview");
+            }
+            else{
+                previewPath = Path.Combine(_Environment.WebRootPath, "images", "articles", fold, "1", "preview");
+            }
+            if (preview.Count != 0)
+            {
+                if (!Directory.Exists(previewPath))
+                    LittleHelper.DirectoryExistCheck(previewPath);
+                else
+                    LittleHelper.DeleteFiles(previewPath, false);
+
+                FillPreview(preview, previewPath);
+            }
             /////////////////////////////////////////////////////////
             /////////////////////////////////////////////////////////
             /////////////////////////////////////////////////////////
@@ -90,31 +102,31 @@ namespace Varyag.Controllers
                     /////////////////////////////////////////////////////////
                     /////////////////////////////////////////////////////////
                     /////////////////////////////////////////////////////////
-                    if (i==0)
-                    {
-                        if (path.EndsWith('1'))
-                        {
-                            name = "ВерфьВаряг(превью).jpg";
-                            using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
-                            {
-                                await fotos[i].CopyToAsync(fileStream);
-                            }
-                        }
-                        else
-                        {
-                            using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
-                            {
-                                await fotos[i].CopyToAsync(fileStream);
-                            }
-                        }
-                    }
-                    else
-                    {
+                    //if (i==0)
+                    //{
+                        //if (path.EndsWith('1'))
+                        //{
+                        //    name = "ВерфьВаряг(превью).jpg";
+                        //    using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
+                        //    {
+                        //        await fotos[i].CopyToAsync(fileStream);
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                            //{
+                            //    await fotos[i].CopyToAsync(fileStream);
+                            //}
+                        //}
+                    //}
+                    //else
+                    //{
                         using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
                         {
                             await fotos[i].CopyToAsync(fileStream);
                         }
-                    }
+                    //}
                     /////////////////////////////////////////////////////////
                     /////////////////////////////////////////////////////////
                     /////////////////////////////////////////////////////////
@@ -141,6 +153,7 @@ namespace Varyag.Controllers
                     folder = fold,
                     name = articleName,
                     route = articleRoute,
+                    PTPREVIEW = previewPath,
                     PTG1 = PathToGallery1,
                     PTG2 = PathToGallery2,
                     PTG3 = PathToGallery3,
@@ -187,11 +200,24 @@ namespace Varyag.Controllers
             }
         }
 
+        public async void FillPreview(IFormFileCollection preview, string previewPath)
+        {
+                string name = "ВерфьВаряг(превью).jpg";
+                using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
+                {
+                    await preview[0].CopyToAsync(fileStream);
+                }
+        }
+
         // GET: Articles/Create
-        public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTG1,
+        public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTPREVIEW, string PTG1,
             string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8, 
             string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15)
         {
+            if (PTPREVIEW!=null)
+            {
+                ViewBag.PathForPreview = PTPREVIEW;
+            }
             if (PTG1!=null)
             {
                 ViewBag.Text1 = LittleHelper.TextFromPTG(PTG1).Result;
@@ -632,8 +658,8 @@ namespace Varyag.Controllers
         {
             if (path!=null)
             {
-                LittleHelper.DeleteFiles(path, true);
                 LittleHelper.DeleteFiles(path + "\\preview", true);
+                LittleHelper.DeleteFiles(path, true);
             }
         }
 

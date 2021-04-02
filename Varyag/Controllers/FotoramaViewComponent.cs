@@ -42,6 +42,7 @@ namespace Varyag.Controllers
             else if (articleId != null)
             {
                 string[] fotos = Directory.GetFiles(galleryPath);
+                ViewBag.singleFoto = singleFoto;
                 List<string> fotoPaths = new List<string>();
                 if (singleFoto)
                 {
@@ -50,7 +51,6 @@ namespace Varyag.Controllers
                         string path = LittleHelper.PathAdapter(item, "articlePreview");
                         fotoPaths.Add(path);
                     }
-                    ViewBag.singleFoto = singleFoto;
                 }
                 else
                 {

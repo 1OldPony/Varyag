@@ -6,7 +6,7 @@
     {
         <a href="../Каталог/@Model.ElementAt(i).Route" class="tthOverFoto" onmouseover="$('#'+@i).css('display','flex')" onmouseout="$('#'+@i).css('display','none')">
             <div class="projectImage" style="margin:0;"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ElementAt(i).ProjectID, fot = "main"})" style="border-radius:10px" alt="@Model.ElementAt(i).Name" title="@Model.ElementAt(i).Name" /></div>
-            <div id="@i">
+            <div class="hiddenTTH" id="@i">
                 <div class="catalogItemTop">@Model.ElementAt(i).Name</div>
                 <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Длина корпуса</div><div>@Model.ElementAt(i).Length&nbsp;м.</div></div>
                 <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Ширина корпуса</div><div>@Model.ElementAt(i).Windth&nbsp;м.</div></div>
