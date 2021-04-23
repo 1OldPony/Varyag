@@ -78,7 +78,7 @@
                     {
                         <div id="shlupkiNav" class="leftNavLine"><a asp-action="Bigboats" class="navLineHeader" style="color:red">Шлюпки</a><div id="shlupkiOpen" class="leftNavOpenCurrent">+</div><div id="shlupkiClose" class="leftNavCloseCurrent">-</div></div>
                         <ul id="shlupki-Sub" class="leftSubNavOpenCurrent">
-                            @if (ViewBag.TopPic == "boatsYal")
+                            @if (ViewBag.TopPic == "boatsyal")
                             {
                                 <li class="leftSubCategory">
                                     <a asp-action="BoatsYal" style="color:red">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
@@ -433,7 +433,7 @@
                     </ul>
                 </li>
                 <li>
-                    <div id="kateraNav" class="leftNavLine"><a asp-action="Motorboats" class="navLineHeader">Катера</a><div id="kateraOpen" class="leftNavOpenCurrent">+</div><div id="kateraClose" class="leftNavCloseCurrent">-</div></div>
+                    <div id="kateraNav" class="leftNavLine"><a asp-action="Motorboats" class="navLineHeader">Катера</a><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div></div>
                     <ul id="katera-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <a asp-action="KatersFishing">Рабочие/Рыболовные катера</a>
