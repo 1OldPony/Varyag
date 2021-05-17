@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Varyag.Models.ProjectPublicViewModel>
 
 <div class="projects">
-    <div class="myBorder"></div>
+    @*<div class="myBorder"></div>*@
     @foreach (var item in Model)
     {
         <a class="projectListItem" href="../Каталог/@item.Route">
@@ -153,7 +153,14 @@
                     </table>
                 </div>
                 <div id="bottom" class="gridFreeSpace"></div>
-                <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @item.Price&nbsp;тыс.р.</div>
+                @if (item.Price != "по запросу")
+                {
+                    <div id="listPrice" class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @item.Price&nbsp;тыс.р.</div>
+                }
+                else
+                {
+                    <div id="listPrice" class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @item.Price</div>
+                }
             </div>
         </a>
         <div class="myBorder"></div>

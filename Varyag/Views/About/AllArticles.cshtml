@@ -112,57 +112,8 @@
                             }
                         </li>
                         <li>
-                            @*@if (ViewBag.newsType == null)
-        {
-            <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader" style="color:red">Все новости</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
-        }
-        else
-        {*@
-                            <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader">Все новости</a><div id="allNewsOpen" class="leftNavOpen">+</div><div id="allNewsClose" class="leftNavClose">-</div></div>
-                            @*}*@
-                            @*@if (ViewBag.newsType == null)
-        {
-            <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
-                @if (ViewBag.part == "new")
-                {
-                    <li class="leftSubCategory">
-                        <a asp-action="AllNews" asp-route-part="new" style="color:red">@ViewBag.actualNews</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="leftSubCategory">
-                        <a asp-action="AllNews" asp-route-part="new">@ViewBag.actualNews</a>
-                    </li>
-                }
-                @if (ViewBag.part == "recent")
-                {
-                    <li class="leftSubCategory">
-                        <a asp-action="AllNews" asp-route-part="recent" style="color:red">@ViewBag.recentNews</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="leftSubCategory">
-                        <a asp-action="AllNews" asp-route-part="recent">@ViewBag.recentNews</a>
-                    </li>
-                }
-                @if (ViewBag.part == "old")
-                {
-                    <li class="leftSubCategory">
-                        <a asp-action="AllNews" asp-route-part="old" style="color:red">@ViewBag.oldNews</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="leftSubCategory">
-                        <a asp-action="AllNews" asp-route-part="old">@ViewBag.oldNews</a>
-                    </li>
-                }
-            </ul>
-        }
-        else
-        {*@
+                        <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader">Все новости</a><div id="allNewsOpen" class="leftNavOpen">+</div><div id="allNewsClose" class="leftNavClose">-</div></div>
+                          
                             <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
                                 @if (ViewBag.part == "new")
                                 {
@@ -201,46 +152,6 @@
                                     </li>
                                 }
                             </ul>
-                            @*<ul id="allNews-Sub" class="leftSubNavOpen">
-                                @if (ViewBag.part == "new")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="new" style="color:red">@ViewBag.actualNews</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="new">@ViewBag.actualNews</a>
-                                    </li>
-                                }
-                                @if (ViewBag.part == "recent")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="recent" style="color:red">@ViewBag.recentNews</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="recent">@ViewBag.recentNews</a>
-                                    </li>
-                                }
-                                @if (ViewBag.part == "old")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="old" style="color:red">@ViewBag.oldNews</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="old">@ViewBag.oldNews</a>
-                                    </li>
-                                }
-                            </ul>*@
-                            @*}*@
-
                         </li>
                     </ul>
                 }
@@ -261,7 +172,7 @@
             <div style="margin-top:10px">
                 @for (int i = 0; i < Model.Count(); i++)
                 {
-                    <a asp-action="ArticleDetails" asp-route-id="@Model.ElementAt(i).ArticleRoute">
+                    <a href="../../О-нас/Особые-заказы/@Model.ElementAt(i).ArticleRoute">
                         <div class="newsListElement">
                             <div class="partNewsElement" id="allNews" style="overflow:hidden;">
                                 @await Component.InvokeAsync("Fotorama", new { articleId = @Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery1 + "\\preview", singleFoto=true })

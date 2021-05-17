@@ -20,7 +20,7 @@
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все швертботы</div><div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>
+                    <div class="categorysLineTtem">Все швертботы</div><div style="display:flex"><img src="~/images/icons/list3.png" id="iconList" style="margin-right:5px;cursor:pointer;display:none;" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="iconListRed" style="margin-right:5px;cursor:pointer;" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="iconPlitca" style="cursor:pointer;" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="iconPlitcaRed" style="cursor:pointer;display:none" onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
@@ -30,91 +30,12 @@
                     Если среди представленных на сайте вариантов вы не найдете подходящих для себя, мы можем построить деревянный швертбот по индивидуальному проекту.
                 </div>
             </div>
-            @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot" })
+            <div id="plitcaStyle" style="display:none">
+                @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot", plitca = true })
+            </div>
+            <div id="lineStyle" style="display:initial">
+                @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot", plitca = false })
+            </div>
         </div>
     </div>
-    @*<div class="catalog">
-            <div class="nav-element" name="lodki" id="lodki">
-                <a href="../Каталог/Лодки">
-                    <div id="lodki" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="boat" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Лодки</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="shlupki" id="shlupki">
-                <a href="../Каталог/Шлюпки">
-                    <div id="shlupki" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="bigboat" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Шлюпки</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="katera" id="katera">
-                <a href="../Каталог/Катера">
-                    <div id="katera" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="kater" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Катера</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="ladiy" id="ladiy">
-                <a href="../Каталог/Ладьи">
-                    <div id="ladiy" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="ladiy" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Ладьи</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element-choosen" name="sailboats" id="sailboats">
-                <a href="../Каталог/Парусники">
-                    <div id="sailboats" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="sailboats" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Парусники</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="models" id="models">
-                <a href="../Каталог/Разное">
-                    <div id="models" class="nav-element-grid">
-                        <img src="~/images/icons/Макет.jpg" />
-                        <div id="models" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Разное</p>
-                            <input type="text" value="shvertbot" id="currentPage" hidden />
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div name="sailboats-Sub" id="sailboats-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
-            <div name="lodki-Sub" id="lodki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
-            <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
-            <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
-            <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        </div>*@
 </div>

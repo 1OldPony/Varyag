@@ -137,15 +137,12 @@
     grid-area:date;
     margin-bottom:1vw;
 }
-
 #middleStory {
     display: none;
 }
-
 #wideStory {
     display: none;
 }
-
 .newsNav {
     display:flex;
     text-align:center;
@@ -154,7 +151,6 @@
     max-width:1370px;
     margin: auto 10px 10px 10px;
 }
-
 .catalogPlitka {
     display: flex;
     flex-direction: column;
@@ -164,22 +160,18 @@
     background-color:white;
     border-radius:10px;
 }
-
 #center.catalogPlitka {
     margin:0 10px 10px 10px;
 }
-
 .catalogPlitka img {
     max-width:80%;
 }
-
 .catalogPlitkaIcon {
     display:flex;
     justify-content:center;
     width: 95%;
     margin-top: 2%
 }
-
 .catalogPlitkaCategorys {
     display: flex;
     flex-direction: column;
@@ -189,18 +181,15 @@
     margin-top: 10px;
     margin-bottom: 2%;
 }
-
 .plitkaCategoryHeader {
     margin-bottom: 5px;
     color: red;
     font-size: 1.3rem;
     font-weight: bold;
 }
-
 .plitkaCategory {
     margin-bottom: 5px;
 }
-
 .catalogNav {
     display: flex;
     text-align: center;
@@ -210,7 +199,15 @@
     background-color:white;
     border-radius:10px;
 }
-
+.navigationPlitka {
+    display: none;
+}
+.navigationButton {
+    display: none;
+}
+.navigationShip {
+    display: none;
+}
 .newsListElement {
     display: grid;
     grid-template-areas: "preview newsText";
@@ -221,12 +218,10 @@
     border-radius: 10px;
     margin: auto 10px auto 0;
 }
-
 #сatalog.about {
     background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 76% no-repeat;
     background-size: auto 170%;
 }
-
     #сatalog.about .annotation {
         left: 2vh;
         bottom: 2vh;
@@ -1173,6 +1168,7 @@ ul .nav-element-choosen {
     flex-direction: column;
     margin: auto 0 auto 10px;
     max-width:1010px;
+    width:100%;
 }
 
 .projectsHalfTop {
@@ -1253,7 +1249,8 @@ ul .nav-element-choosen {
 }
 .tthUnderFoto {
     display: flex;
-    width: 323px;
+    /*width: 323px;*/
+    width: 32.29%;
     flex-direction: column;
     background-color: white;
     border-radius: 10px;
@@ -1312,8 +1309,15 @@ ul .nav-element-choosen {
     font-weight: 600;
     text-decoration: underline;
     align-self: center;
+    min-height:38px;
 }
-
+.underFoto {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px 5px 10px;
+    height: 151px;
+    justify-content: space-between;
+}
 .catalogItemBottom {
     grid-area: price;
     font-weight: 600;
@@ -1800,6 +1804,13 @@ ul .nav-element-choosen {
     background-color: white;
     border-radius: 10px;
 }
+.navigationTopBlock {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
 
 @media (min-width:1500px) {
 
@@ -1823,7 +1834,16 @@ ul .nav-element-choosen {
         width:40%;
     }
 }
-
+@media (max-width:1335px) {
+    .tthUnderFoto {
+        width: 32.18%;
+    }
+}
+@media (max-width:1300px) {
+    .catalogPlitka {
+        width: 32%;
+    }
+}
 @media (max-width:1280px) {
 
     #production.about {
@@ -1837,6 +1857,11 @@ ul .nav-element-choosen {
 
     .cellShort[name="midSailArea"] {
         display: none;
+    }
+}
+@media (max-width:1246px) {
+    .tthUnderFoto {
+        width: 32%;
     }
 }
 
@@ -1941,6 +1966,11 @@ ul .nav-element-choosen {
         display: none;
     }
 }
+@media (max-width:1128px) {
+    .tthUnderFoto {
+        width: 31.6%;
+    }
+}
 
 @media (max-width:1090px) {
 
@@ -1965,6 +1995,9 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:1042px) {
+    .tthUnderFoto {
+        width: 48.2%;
+    }
 
     .catalog {
         grid-template-rows: 16vh min-content min-content min-content min-content min-content min-content;
@@ -1972,7 +2005,10 @@ ul .nav-element-choosen {
 
     .details-top {
         grid-template-areas: "gallery gallery" "tth-det sheme";
-        grid-template-columns: 65% 35%;
+        grid-template-columns: 52.5% 469px;
+    }
+    .sheme {
+        margin: 10px 0 0 10px;
     }
 
     .gallery {
@@ -2025,6 +2061,9 @@ ul .nav-element-choosen {
     .projectsHalf {
         margin-left: auto;
     }
+    .projectsHalfTop {
+        margin: 0 10px 0 10px;
+    }
     .largeTopFoto {
         display:none
     }
@@ -2037,6 +2076,15 @@ ul .nav-element-choosen {
         margin-left: 10px;
     }
     .projects {
+        margin-left:10px;
+    }
+    .tthUnderFoto {
+        width:32.2%
+    }
+    #catalogPlates {
+        margin-left:10px;
+    }
+    .navigationTopBlock {
         margin-left:10px;
     }
 }
@@ -2086,10 +2134,6 @@ ul .nav-element-choosen {
     #catalog.category {
         width: 55%;
     }
-    
-    /*.cellShort[name="midSailArea"] {
-        display: table-row;
-    }*/
     #sailArea.cellLong {
         display: none;
     }
@@ -2103,6 +2147,11 @@ ul .nav-element-choosen {
 
     #contacts.footerContactsLong {
         display:none;
+    }
+}
+@media (max-width:919px) {
+    .tthUnderFoto {
+        width: 32%;
     }
 }
 
@@ -2162,9 +2211,6 @@ ul .nav-element-choosen {
     .topCatalogLine {
         margin:0 5px 0 5px;
     }
-    .smallTopFoto {
-        margin:auto 5px auto 5px;
-    }
 
     .longUpFoto {
         display: none
@@ -2174,9 +2220,12 @@ ul .nav-element-choosen {
         display: initial
     }
 
+    /*.smallTopFoto {
+        margin: auto 5px auto 5px;
+    }
     .projects {
         margin: 5px;
-    }
+    }*/
 
     #sailboats-Sub.sub-nav img {
         width: auto;
@@ -2391,12 +2440,44 @@ ul .nav-element-choosen {
     }
 }
 
-@media (max-width:775px) {
+@media (max-width:776px) {
     .singleProject {
         grid-template-rows: 60px auto min-content auto 25px;
     }
 }
-
+@media (max-width:768px) {
+    .leftMenu {
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        margin: auto;
+        top: 0;
+        z-index: 10;
+    }
+    .ourContacts {
+        display: none;
+    }
+    .navigationButton {
+        display: initial;
+        cursor: pointer;
+    }
+        .navigationButton:hover {
+            text-decoration: underline;
+        }
+    .navigationShip {
+        display: initial;
+        margin-left: 40px;
+    }
+    #catalogHeder.leftNavLine {
+        display: none;
+    }
+    .leftNavMenu {
+        margin-bottom: auto;
+    }
+}
 @media (max-width:764px) {
 
     .newsListElement {
@@ -2414,6 +2495,11 @@ ul .nav-element-choosen {
 
     #news.about {
         height: 87vh;
+    }
+}
+@media (max-width:730px) {
+    .tthUnderFoto {
+        width: 48%;
     }
 }
 
@@ -2577,7 +2663,9 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:525px) {
-
+    .tthUnderFoto {
+        width: 47.7%;
+    }
     #veryShortNav.menu-top-element {
         display: flex;
     }
@@ -2586,6 +2674,16 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:500px) {
+    .tthUnderFoto {
+        width: 100%;
+    }
+    .catalogItemTop {
+        min-height: unset;
+        margin-bottom:5px;
+    }
+    .underFoto {
+        height: auto;
+    }
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
     }
@@ -2655,7 +2753,7 @@ ul .nav-element-choosen {
     .singleProject {
         grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
     }
-    .catalogItemBottom {
+    #listPrice.catalogItemBottom {
         font-size: 1.2rem;
         text-align: center;
     }
@@ -2815,7 +2913,7 @@ ul .nav-element-choosen {
     .singleProject {
         grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto name";
     }
-    .catalogItemBottom {
+    #listPrice.catalogItemBottom {
         display: none
     }
 }
