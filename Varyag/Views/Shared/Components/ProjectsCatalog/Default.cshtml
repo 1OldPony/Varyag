@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Varyag.Models.ProjectPublicViewModel>
 
 <div class="projects">
-    @*<div class="myBorder"></div>*@
+    <div id="topCatalogBorder" class="myBorder"></div>
     @foreach (var item in Model)
     {
         <a class="projectListItem" href="../Каталог/@item.Route">

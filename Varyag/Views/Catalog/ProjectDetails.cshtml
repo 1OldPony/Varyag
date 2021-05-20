@@ -19,133 +19,148 @@
             {<a href="../Каталог/Парусники">Парусники</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
         </div>
         <div class="projectName"><p>@Model.Name</p></div>
-        <div class="details-top" style="margin:0 10px 10px 10px">
-            <div class="sheme" style="padding:10px;background-color:white;border-radius:10px;">
-                <div class="fotorama" data-allowfullscreen="native">
-                    <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" />
+        <div class="projectsDetailsTop">
+            <div class="sheme-TTH">
+                <div class="shemeFlex">
+                    <div class="fotorama" data-allowfullscreen="native">
+                        <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" />
+                    </div>
                 </div>
-            </div>
-            <div class="TTH-details" style="padding:10px;margin-top:10px;background-color:white;border-radius:10px;width:auto;height:91.5%">
-                <table>
-                    <tr>
-                        <td colspan="3"><h4>Характеристики</h4></td>
-                    </tr>
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
-                        <td class="value">@Model.Length&nbsp;м.</td>
-                    </tr>
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
-                        <td class="value">@Model.Windth&nbsp;м.</td>
-                    </tr>
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
-                        <td class="value">@Model.Deep&nbsp;м.</td>
-                    </tr>
-                    @if (@Model.Volume != null)
-                    {
+                <div class="TTH-detailsFlex">
+                    <table style="margin-bottom:5px">
+                        <tr>
+                            <td colspan="3"><h4>Характеристики</h4></td>
+                        </tr>
+                        <tr>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Длина корпуса</td>
+                            <td class="value">@Model.Length&nbsp;м.</td>
+                        </tr>
+                        <tr>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Ширина корпуса</td>
+                            <td class="value">@Model.Windth&nbsp;м.</td>
+                        </tr>
+                        <tr>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Осадка судна</td>
+                            <td class="value">@Model.Deep&nbsp;м.</td>
+                        </tr>
+                        @if (@Model.Volume != null)
+                        {
                         <tr>
                             <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Водоизмещение</td>
                             <td class="value">@Model.Volume&nbsp;т.</td>
                         </tr>
-                    }
-                    @if (@Model.Mass != null)
-                    {
+                        }
+                        @if (@Model.Mass != null)
+                        {
                         <tr>
                             <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Вес корпуса</td>
                             <td class="value">@Model.Mass&nbsp;кг.</td>
                         </tr>
-                    }
-                    @if (@Model.NumberOfOars != null)
-                    {
+                        }
+                        @if (@Model.NumberOfOars != null)
+                        {
                         <tr>
                             <td class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Весла</td>
                             <td class="value">@Model.NumberOfOars&nbsp;шт.</td>
                         </tr>
-                    }
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
-                        @if (@Model.EnginePower != null)
-                        {
-                            <td class="value">@Model.EnginePower&nbsp;л.с.</td>
                         }
-                        else
-                        {
-                            <td class="value">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
-                        @if (@Model.Speed != null)
-                        {
-                            <td class="value">@Model.Speed&nbsp;узлов</td>
-                        }
-                        else
-                        {
-                            <td class="value">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
-                        @if (@Model.SailArea != null)
-                        {
-                            <td class="value">@Model.SailArea&nbsp;м<sup>2</sup></td>
-                        }
-                        else
-                        {
-                            <td class="value">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
-                        @if (@Model.SleepingAreas != null)
-                        {
-                            <td class="value">@Model.SleepingAreas&nbsp;шт.</td>
-                        }
-                        else
-                        {
-                            <td class="value">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
-                        @if (@Model.PassengerCap != null)
-                        {
-                            <td class="value">@Model.PassengerCap&nbsp;чел.</td>
-                        }
-                        else
-                        {
-                            <td class="value">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
-                        @if (@Model.FuelCap != null)
-                        {
-                            <td class="value">@Model.FuelCap&nbsp;л.</td>
-                        }
-                        else
-                        {
-                            <td class="value">-</td>
-                        }
-                    </tr>
-                    @if (@Model.FreshWaterCap != null)
-                    {
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
-                            <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Мощность двигателя</td>
+                            @if (@Model.EnginePower != null)
+                            {
+                                <td class="value">@Model.EnginePower&nbsp;л.с.</td>
+                            }
+                            else
+                            {
+                                <td class="value">-</td>
+                            }
                         </tr>
-                    }
-                </table>
-                <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.Price&nbsp;тыс.р.</div>
+                        <tr>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Скорость (двигатель)</td>
+                            @if (@Model.Speed != null)
+                            {
+                                <td class="value">@Model.Speed&nbsp;узлов</td>
+                            }
+                            else
+                            {
+                                <td class="value">-</td>
+                            }
+                        </tr>
+                        <tr>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Площадь парусности</td>
+                            @if (@Model.SailArea != null)
+                            {
+                                <td class="value">@Model.SailArea&nbsp;м<sup>2</sup></td>
+                            }
+                            else
+                            {
+                                <td class="value">-</td>
+                            }
+                        </tr>
+                        <tr>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Спальные места</td>
+                            @if (@Model.SleepingAreas != null)
+                            {
+                                <td class="value">@Model.SleepingAreas&nbsp;шт.</td>
+                            }
+                            else
+                            {
+                                <td class="value">-</td>
+                            }
+                        </tr>
+                        <tr>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Кол-во пассажиров</td>
+                            @if (@Model.PassengerCap != null)
+                            {
+                                <td class="value">@Model.PassengerCap&nbsp;чел.</td>
+                            }
+                            else
+                            {
+                                <td class="value">-</td>
+                            }
+                        </tr>
+                        <tr>
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Запас топлива</td>
+                            @if (@Model.FuelCap != null)
+                            {
+                                <td class="value">@Model.FuelCap&nbsp;л.</td>
+                            }
+                            else
+                            {
+                                <td class="value">-</td>
+                            }
+                        </tr>
+                        @if (@Model.FreshWaterCap != null)
+                        {
+                            <tr>
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Запас пресной воды</td>
+                                <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
+                            </tr>
+                        }
+                    </table>
+                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.Price&nbsp;тыс.р.</div>
+                </div>
             </div>
-            <div class="gallery" style="padding:10px;background-color:white;border-radius:10px;margin-left:10px;">
+            <div class="galleryFlex">
                 <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
                     @await Component.InvokeAsync("Fotorama", new { shipProjectId = Model.ProjectID })
                 </div>
             </div>
         </div>
-        <div style="display:flex;flex-direction:column;padding:10px;background-color:white;border-radius:10px;margin: 0 10px 10px 10px;">
+        <div style="display:flex;flex-direction:column;padding:10px;background-color:white;border-radius:10px;margin: 10px 10px 10px 10px;">
             <div class="desc-top">Описание:</div>
             <div class="description">
                 @Html.Raw(Model.Description)
@@ -153,3 +168,134 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+@*<div class="details-top" style="margin:0 10px 10px 10px">
+    <div class="sheme" style="padding:10px;background-color:white;border-radius:10px;">
+        <div class="fotorama" data-allowfullscreen="native">
+            <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" />
+        </div>
+    </div>
+    <div class="TTH-details" style="padding:10px;margin-top:10px;background-color:white;border-radius:10px;width:auto;height:91.5%">
+        <table>
+            <tr>
+                <td colspan="3"><h4>Характеристики</h4></td>
+            </tr>
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
+                <td class="value">@Model.Length&nbsp;м.</td>
+            </tr>
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
+                <td class="value">@Model.Windth&nbsp;м.</td>
+            </tr>
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                <td class="value">@Model.Deep&nbsp;м.</td>
+            </tr>
+            @if (@Model.Volume != null)
+            {
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
+                    <td class="value">@Model.Volume&nbsp;т.</td>
+                </tr>
+            }
+            @if (@Model.Mass != null)
+            {
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                    <td class="value">@Model.Mass&nbsp;кг.</td>
+                </tr>
+            }
+            @if (@Model.NumberOfOars != null)
+            {
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                    <td class="value">@Model.NumberOfOars&nbsp;шт.</td>
+                </tr>
+            }
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                @if (@Model.EnginePower != null)
+                {
+                    <td class="value">@Model.EnginePower&nbsp;л.с.</td>
+                }
+                else
+                {
+                    <td class="value">-</td>
+                }
+            </tr>
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
+                @if (@Model.Speed != null)
+                {
+                    <td class="value">@Model.Speed&nbsp;узлов</td>
+                }
+                else
+                {
+                    <td class="value">-</td>
+                }
+            </tr>
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                @if (@Model.SailArea != null)
+                {
+                    <td class="value">@Model.SailArea&nbsp;м<sup>2</sup></td>
+                }
+                else
+                {
+                    <td class="value">-</td>
+                }
+            </tr>
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                @if (@Model.SleepingAreas != null)
+                {
+                    <td class="value">@Model.SleepingAreas&nbsp;шт.</td>
+                }
+                else
+                {
+                    <td class="value">-</td>
+                }
+            </tr>
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                @if (@Model.PassengerCap != null)
+                {
+                    <td class="value">@Model.PassengerCap&nbsp;чел.</td>
+                }
+                else
+                {
+                    <td class="value">-</td>
+                }
+            </tr>
+            <tr>
+                <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                @if (@Model.FuelCap != null)
+                {
+                    <td class="value">@Model.FuelCap&nbsp;л.</td>
+                }
+                else
+                {
+                    <td class="value">-</td>
+                }
+            </tr>
+            @if (@Model.FreshWaterCap != null)
+            {
+                <tr>
+                    <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                    <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
+                </tr>
+            }
+        </table>
+        <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.Price&nbsp;тыс.р.</div>
+    </div>
+    <div class="gallery" style="padding:10px;background-color:white;border-radius:10px;margin-left:10px;">
+        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+            @await Component.InvokeAsync("Fotorama", new { shipProjectId = Model.ProjectID })
+        </div>
+    </div>
+</div>*@

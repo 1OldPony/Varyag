@@ -26,6 +26,8 @@ namespace Varyag.Controllers
                 case "boatrow":
                     items = await db.Project.Where(w => w.BoatRow == true).ToListAsync();
                     boats = true;
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
@@ -33,6 +35,8 @@ namespace Varyag.Controllers
                 case "boatsail":
                     items = await db.Project.Where(w => w.BoatSail == true).ToListAsync();
                     boats = true;
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
@@ -40,6 +44,8 @@ namespace Varyag.Controllers
                 case "boattraditional":
                     items = await db.Project.Where(w => w.BoatTraditional == true).ToListAsync();
                     boats = true;
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
@@ -47,6 +53,8 @@ namespace Varyag.Controllers
                 case "boatyal":
                     items = await db.Project.Where(w => w.BoatYal == true).ToListAsync();
                     boats = true;
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
@@ -54,24 +62,32 @@ namespace Varyag.Controllers
                 case "botik":
                     items = await db.Project.Where(w => w.Botik == true).ToListAsync();
                     boats = true;
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katercabin":
                     items = await db.Project.Where(w => w.KaterCabin == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katerfish":
                     items = await db.Project.Where(w => w.KaterFish == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katerproject":
                     items = await db.Project.Where(w => w.KaterProject == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
@@ -79,30 +95,40 @@ namespace Varyag.Controllers
                 case "katerrow":
                     items = await db.Project.Where(w => w.KaterRow == true).ToListAsync();
                     boats = true;
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "katerpass":
                     items = await db.Project.Where(w => w.KaterPass == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "ladyaproject":
                     items = await db.Project.Where(w => w.LadyaProject == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sailArea";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "ladyarow":
                     items = await db.Project.Where(w => w.LadyaRow == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sailArea";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "ladyasail":
                     items = await db.Project.Where(w => w.LadyaSail == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sailArea";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
@@ -110,42 +136,56 @@ namespace Varyag.Controllers
                 case "maketstudy":
                     items = await db.Project.Where(w => w.MaketStudy == true).ToListAsync();
                     boats = true;
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "motosailer":
                     items = await db.Project.Where(w => w.Motosailer == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "sailboathistorical":
                     items = await db.Project.Where(w => w.SailboatHistorical == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "sailboatproject":
                     items = await db.Project.Where(w => w.SailboatProject == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "sailboatstudy":
                     items = await db.Project.Where(w => w.SailboatStudy == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "shvertbot":
                     items = await db.Project.Where(w => w.Shvertbot == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "yacht":
                     items = await db.Project.Where(w => w.Yacht == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
@@ -153,6 +193,8 @@ namespace Varyag.Controllers
                 case "boat":
                     items = await db.Project.Where(w => w.BoatRow || w.BoatSail || w.BoatTraditional == true ).ToListAsync();
                     boats = true;
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
@@ -160,25 +202,32 @@ namespace Varyag.Controllers
                 case "bigboat":
                     items = await db.Project.Where(w => w.BoatYal || w.Botik || w.KaterRow || w.MaketStudy == true).ToListAsync();
                     boats = true;
-                    //return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
+                    ViewBag.secondCharacteristic = "weight";
+                    ViewBag.thirdCharacteristic = "passanger";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "kater":
                     items = await db.Project.Where(w => w.KaterCabin || w.KaterFish || w.KaterProject || w.Motosailer || w.KaterPass == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "ladiy":
                     items = await db.Project.Where(w => w.LadyaRow || w.LadyaSail || w.LadyaProject == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sailArea";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats));
                 case "sailboat":
                     items = await db.Project.Where(w => w.Yacht || w.Shvertbot || w.SailboatStudy || w.SailboatHistorical || w.SailboatProject == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sleepingAreas";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats));
                     else

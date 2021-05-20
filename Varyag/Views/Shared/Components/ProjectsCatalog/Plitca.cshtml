@@ -4,48 +4,36 @@
     @*<div class="myBorder"></div>*@
     @for (int i = 0; i < Model.Count(); i++)
     {
-        @*<a href="../Каталог/@Model.ElementAt(i).Route" class="tthOverFoto" onmouseover="$('#'+@i).css('display','flex')" onmouseout="$('#'+@i).css('display','none')">
-            <div class="projectImage" style="margin:0;"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ElementAt(i).ProjectID, fot = "main"})" style="border-radius:10px" alt="@Model.ElementAt(i).Name" title="@Model.ElementAt(i).Name" /></div>
-            <div class="hiddenTTH" id="@i">
-                <div class="catalogItemTop">@Model.ElementAt(i).Name</div>
-                <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Длина корпуса</div><div>@Model.ElementAt(i).Length&nbsp;м.</div></div>
-                <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Ширина корпуса</div><div>@Model.ElementAt(i).Windth&nbsp;м.</div></div>
-                <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Осадка судна</div><div>@Model.ElementAt(i).Deep&nbsp;м.</div></div>
-                <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Кол-во пассажиров</div><div>@Model.ElementAt(i).PassengerCap&nbsp;чел.</div></div>
-                <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.ElementAt(i).Price&nbsp;тыс.р.</div>
-            </div>
-        </a>*@
-
         <a href="../Каталог/@Model.ElementAt(i).Route" class="tthUnderFoto">
             <div class="projectImage" style="margin:0;"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ElementAt(i).ProjectID, fot = "main"})" style="border-radius:10px 10px 0 0" alt="@Model.ElementAt(i).Name" title="@Model.ElementAt(i).Name" /></div>
             <div class="underFoto">
                 <div class="catalogItemTop">@Model.ElementAt(i).Name</div>
                 <div>
                     <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Длина корпуса</div><div>@Model.ElementAt(i).Length&nbsp;м.</div></div>
-                    <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Ширина корпуса</div><div>@Model.ElementAt(i).Windth&nbsp;м.</div></div>
-                    <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Осадка судна</div><div>@Model.ElementAt(i).Deep&nbsp;м.</div></div>
+                    @if (ViewBag.secondCharacteristic == "weight")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Вес корпуса</div><div>@Model.ElementAt(i).Mass&nbsp;кг.</div></div>
+                    }
+                    @if (ViewBag.secondCharacteristic == "volume")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Водоизмещение</div><div>@Model.ElementAt(i).Volume&nbsp;т.</div></div>
+                    }
+                    @if (ViewBag.thirdCharacteristic == "passanger")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Пассажиры</div><div>@Model.ElementAt(i).PassengerCap&nbsp;чел.</div></div>
+                    }
+                    @if (ViewBag.thirdCharacteristic == "sleepingAreas")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Спальные места</div><div>@Model.ElementAt(i).SleepingAreas&nbsp;шт.</div></div>
+                    }
+                    @if (ViewBag.thirdCharacteristic == "sailArea")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Площадь парусности</div><div>@Model.ElementAt(i).SailArea&nbsp;м<sup>2</sup></div></div>
+                    }
                 </div>
                 <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.ElementAt(i).Price&nbsp;тыс.р.</div>
             </div>
         </a>
-
-        @*<div class="tthSliderFoto">
-            <a href="../Каталог/@Model.ElementAt(i).Route" style="display:flex;">
-                <div id="plitcaSqueare" style="width:200%;display:flex;transition:transform 0.3s ease;">
-                    <div class="projectImage" style="width:323px;margin:0;"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ElementAt(i).ProjectID, fot = "main"})" style="border-radius:10px 10px 0 0" alt="@Model.ElementAt(i).Name" title="@Model.ElementAt(i).Name" /></div>
-                    <div style="display:flex;flex-direction:column;background-color:white;width:323px;justify-content: space-around;height: 100%;">
-                        <div class="catalogItemTop">@Model.ElementAt(i).Name</div>
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem;padding: 0 10px 0 10px;"><div>Длина корпуса</div><div>@Model.ElementAt(i).Length&nbsp;м.</div></div>
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem;padding: 0 10px 0 10px;"><div>Ширина корпуса</div><div>@Model.ElementAt(i).Windth&nbsp;м.</div></div>
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem;padding: 0 10px 0 10px;"><div>Осадка судна</div><div>@Model.ElementAt(i).Deep&nbsp;м.</div></div>
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem;padding: 0 10px 0 10px;"><div>Кол-во пассажиров</div><div>@Model.ElementAt(i).PassengerCap&nbsp;чел.</div></div>
-                        <div class="catalogItemBottom" style="padding: 0 10px 0 10px;">@Html.DisplayNameFor(model => model.Price) : @Model.ElementAt(i).Price&nbsp;тыс.р.</div>
-                    </div>
-                </div>
-            </a>
-            <div id="tthPlitka" style="position:absolute;right:10px;bottom:43px;color:white;font-weight:bold;font-size:1.2rem" onclick="$('#plitcaSqueare').css('transform', 'translateX(-323px)'), $('#tthPlitka').toggle(), $('#shemePlitka').toggle()">ТТХ</div>
-            <div id="shemePlitka" style="display:none;position:absolute;left:10px;bottom:43px;color:#183f61;font-weight:bold;font-size:1.2rem" onclick="$('#plitcaSqueare').css('transform', 'translateX(0px)'), $('#shemePlitka').toggle(), $('#tthPlitka').toggle()">ФОТО</div>
-            <div class="catalogItemTop" style="background-color:white">@Model.ElementAt(i).Name</div>
-        </div>*@
     }
+    <div class="myBorder"></div>
 </div>
