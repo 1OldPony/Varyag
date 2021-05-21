@@ -151,6 +151,11 @@
     max-width:1370px;
     margin: auto 10px 10px 10px;
 }
+.catalogPlates {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
 .catalogPlitka {
     display: flex;
     flex-direction: column;
@@ -512,7 +517,7 @@ img {
     border-color: rgba(24, 63, 97, 0.4);
     margin:0 10px 0px 10px;
     margin-bottom:5px;
-    width:98%;
+    width:auto;
 }
 
 .borderAbout {
@@ -2051,7 +2056,7 @@ ul .nav-element-choosen {
 }
 @media (max-width:1128px) {
     .tthUnderFoto {
-        width: 31.6%;
+        width: 31.5%;
     }
 }
 @media (max-width:1100px) {
@@ -2061,6 +2066,9 @@ ul .nav-element-choosen {
 
     .galleryFlex {
         width: 67%;
+    }
+    .catalogPlitka {
+        width: 31.5%;
     }
 }
 @media (max-width:1090px) {
@@ -2179,11 +2187,14 @@ ul .nav-element-choosen {
     .tthUnderFoto {
         width:32.2%
     }
-    #catalogPlates {
+    .catalogPlates {
         margin-left:10px;
     }
     .navigationTopBlock {
         margin-left:10px;
+    }
+    .catalogPlitka {
+        width: 32.2%;
     }
 }
 
@@ -2289,6 +2300,9 @@ ul .nav-element-choosen {
     .shorterMenu {
         display: none
     }
+    .catalogPlitka {
+        width: 32%;
+    }
 }
 
 @media (max-width:880px) {
@@ -2349,14 +2363,6 @@ ul .nav-element-choosen {
     .shortUpFoto {
         display: initial
     }
-
-    /*.smallTopFoto {
-        margin: auto 5px auto 5px;
-    }
-    .projects {
-        margin: 5px;
-    }*/
-
     #sailboats-Sub.sub-nav img {
         width: auto;
         margin: auto;
@@ -2641,24 +2647,28 @@ ul .nav-element-choosen {
     .characteristic {
         display: table-cell;
     }
+    .catalogPlitka {
+        width: 48.5%;
+    }
+    #shlupki.catalogPlitka {
+        margin-left:10px;
+    }
+    .catalogPlitka[name="ladiy"] {
+        margin-left: 0px;
+    }
 }
 @media (max-width:730px) {
     .tthUnderFoto {
         width: 48%;
     }
 }
-
 @media (max-width:720px) {
     .details-top {
         grid-template-columns: 47% 53%;
     }
-}
-@media (max-width:710px) {
-    #fourth-out[name="shortDeep"] {
-        display:none;
-    }
-    #museumMenu {
-        display:none
+
+    .catalogPlitka {
+        width: 48%;
     }
 }
 
@@ -2807,6 +2817,11 @@ ul .nav-element-choosen {
         width: 45%;
     }
 }
+@media (max-width:530px) {
+    .catalogPlitka {
+        width: 47%;
+    }
+}
 @media (max-width:525px) {
     .tthUnderFoto {
         width: 47.7%;
@@ -2853,13 +2868,25 @@ ul .nav-element-choosen {
     #goto-predist.longText {
         display: none;
     }
-
     #goto-predist.shortText {
         display: initial;
         text-decoration: none;
     }
 }
-
+@media (max-width:475px) {
+    .catalogPlitka {
+        width: 100%;
+    }
+    #center.catalogPlitka {
+        margin:0 0 10px 0;
+    }
+    #shlupki.catalogPlitka {
+        margin-left: 0;
+    }
+    .catalogPlates {
+        margin-right: 10px;
+    }
+}
 @media (max-width:440px) {
     #catalog.category {
         grid-template-areas: "boats bigboats" "katers ladiy" "sailboats makets";

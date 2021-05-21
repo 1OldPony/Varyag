@@ -33,7 +33,13 @@ $(window).scroll(function () {
     }
     else {
         if ($(".leftMenu").attr('style') != null) {
-            $(".leftMenu").removeAttr('style');
+            if ($(".leftMenu").css('display') != 'none') {
+                $(".leftMenu").rcss('display', 'flex');
+            }
+            else {
+                $(".leftMenu").removeAttr('style');
+            }
+
         }
     }
 });
