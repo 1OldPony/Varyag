@@ -836,13 +836,24 @@ function navigationButton() {
         }
     }
     else if (width < 769) {
-        if ($(".leftMenu").css("display") != "none") {
-            $(".leftMenu").css("display", "none");
-            $('body').css('overflow', 'unset');
+        //if ($(".leftMenu").css("display") != "none") {
+        //    $(".leftMenu").css("display", "none");
+        //    $('body').css('overflow', 'unset');
+        //}
+        //else {
+        //    $(".leftMenu").css("display", "flex");
+        //    $('body').css('overflow', 'hidden');
+        //}
+        if ($(".leftMenu").css("left") == '-31px') {
+            $(".leftMenu").css("left", "-341px");
+            $(".leftMenu").css("overflow", "unset");
+            $("body").css("overflow", "unset");
         }
         else {
-            $(".leftMenu").css("display", "flex");
-            $('body').css('overflow', 'hidden');
+            $(".leftMenu").css("left", "-31px");
+            $("body").css("overflow", "hidden");
+            $(".leftMenu").css("overflow", "scroll");
+
         }
     }
 }

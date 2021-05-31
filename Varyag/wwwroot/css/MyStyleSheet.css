@@ -571,6 +571,9 @@ img {
     grid-template-rows: 24vH min-content min-content min-content min-content min-content min-content;
     font-size: 1.44rem;
 }
+#catalogWord {
+    display: none;
+}
 
 .catalogMain {
     display: grid;
@@ -1837,7 +1840,7 @@ ul .nav-element-choosen {
     font-size: 4rem;
     padding-top: 29%;
     color: white;
-    margin-block:0;
+    margin-block-start:0;
 }
 .smallTopFotoText {
     font-size: 3rem;
@@ -2159,11 +2162,21 @@ ul .nav-element-choosen {
     .singleProject {
         grid-template-columns: 35% 35% 30%;
     }
-
-    .leftMenu {
-        display:none;
+    #catalogWord {
+        display: list-item;
     }
-
+    .leftMenu {
+        position: absolute;
+        z-index: 10;
+        background-color: white;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        left: -341px;
+        transition: left 0.6s ease-out;
+        top: 0;
+        height: 100%
+    }
     .projectsHalf {
         margin-left: auto;
     }
@@ -2582,7 +2595,7 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:768px) {
-    .leftMenu {
+    /*.leftMenu {
         align-items: center;
         justify-content: center;
         position: absolute;
@@ -2592,13 +2605,14 @@ ul .nav-element-choosen {
         margin: auto;
         top: 0;
         z-index: 10;
-    }
+    }*/
     .ourContacts {
         display: none;
     }
     .navigationButton {
-        display: initial;
+        display: flex;
         cursor: pointer;
+        align-items:center;
     }
         .navigationButton:hover {
             text-decoration: underline;
