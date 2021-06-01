@@ -504,13 +504,17 @@
         </div>
     </div>*@
 
-<div class="leftMenu" style="background-color:unset;justify-content:flex-start;">
-    <div class="navigationShip" style="display:none"><img src="~/images/icons/кораблик.png" /></div>
-    <div style="display:flex;justify-content:space-between;min-height:50px;width:100%">
-        <div style="margin-left:31px;width:22%"></div>
-        <div id="navigationButton" class="navigationButton" style="padding-right:15px;background-color:white;width:78%;justify-content:flex-end"> @*onclick="navigationButton()"Назад*@</div>
+<div class="leftMenu" style="justify-content:flex-start;">
+    @*<div class="navigationShip" style="display:none"><img src="~/images/icons/кораблик.png" /></div>*@
+    <div id="secondVar" style="display:flex;width:310px;height:50px;margin-left:31px;background-color:white;justify-content:flex-start;">
+        <div id="navigationButton" onclick="navigationButton()" style="display:flex;align-items:center;margin:auto 10px auto 10px"><img width="25" height="25" src="~/images/icons/бургер-син-лин.png" /></div>
+        <div style="height:50px;position:absolute;color:#183f61;align-items:center;font-size:2.5rem;">ВАРЯГ</div>
     </div>
-    <nav style="background-color:white">
+    <div class="leftMenuTopLine">
+        <div style="background-color:#183f61;width:15px;height:50px;border-top-right-radius:10px;border-bottom-right-radius:10px;position:absolute;z-index:17;"></div>
+        <div id="navigationButton" class="navigationButton" style="padding-right:15px;background-color:white;width:100%;justify-content:flex-end;"> @*onclick="navigationButton()"Назад*@</div>
+    </div>
+    <nav>
         @if (ViewBag.catalogPage != "models")
         {
             <ul class="leftNavMenu">

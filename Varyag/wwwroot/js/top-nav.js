@@ -848,11 +848,13 @@ function navigationButton() {
             $(".leftMenu").css("left", "-341px");
             $(".leftMenu").css("overflow", "unset");
             $("body").css("overflow", "unset");
+            $('#newBurger').css('display', 'none');
         }
         else {
-            $(".leftMenu").css("left", "-31px");
-            $("body").css("overflow", "hidden");
-            $(".leftMenu").css("overflow", "scroll");
+            $('.leftMenu').css('left', '-31px');
+            $('body').css('overflow', 'hidden');
+            $('.leftMenu').css('overflow', 'scroll');
+            $('#newBurger').css('display', 'flex');
 
         }
     }
