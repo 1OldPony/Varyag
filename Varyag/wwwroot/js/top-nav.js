@@ -823,19 +823,19 @@ VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 13798710
 //    }
 //});
 function navigationButton() {
-    let width = $('body').width();
-    if (width < 1001 && width > 768) {
-        if ($(".navigationPlitka").css("display") != "none") {
-            $(".navigationPlitka").css("display", "none");
-        }
-        else {
-            $(".navigationPlitka").css({
-                'display': 'flex'
-            });
+    //let width = $('body').width();
+    //if (width < 1001 && width > 768) {
+    //    if ($(".navigationPlitka").css("display") != "none") {
+    //        $(".navigationPlitka").css("display", "none");
+    //    }
+    //    else {
+    //        $(".navigationPlitka").css({
+    //            'display': 'flex'
+    //        });
             //naviPlitkaHeight();
-        }
-    }
-    else if (width < 769) {
+    //    }
+    //}
+    //else if (width < 769) {
         //if ($(".leftMenu").css("display") != "none") {
         //    $(".leftMenu").css("display", "none");
         //    $('body').css('overflow', 'unset');
@@ -857,5 +857,5 @@ function navigationButton() {
             $('#newBurger').css('display', 'flex');
 
         }
-    }
+    //}
 }

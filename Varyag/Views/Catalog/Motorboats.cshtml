@@ -28,9 +28,9 @@
                     В случае необходимости мы можем изготовить катер по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
                 </div>
             </div>
-            <div class="navigationPlitka">
+            @*<div class="navigationPlitka">
                 <partial name="~/Views/Shared/CatalogPlitka.cshtml" />
-            </div>
+            </div>*@
             <div id="plitcaStyle" style="display:none">
                 @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater", plitca = true })
             </div>
