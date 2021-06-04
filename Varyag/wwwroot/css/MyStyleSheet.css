@@ -726,6 +726,21 @@ img {
     border-left-style:ridge;
     border-color:red;
 }
+.topMenuIcon {
+    display:flex;
+    height: 50px;
+    margin-right: 20px
+}
+.fullTopMenu {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+.shortTopMenu {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+}
 
 #gotoTopNav {
     display: none;
@@ -1860,6 +1875,9 @@ ul .nav-element-choosen {
     color: white;
     margin-block-start:0;
 }
+#textOverCollage.plitkaCategoryHeader:hover {
+    text-decoration:none;
+}
 .smallTopFotoText {
     font-size: 3rem;
     color: white;
@@ -2106,7 +2124,7 @@ ul .nav-element-choosen {
 }
 @media (max-width:1050px) {
 
-    .characteristic {
+    #details.characteristic {
         display: none;
     }
 
@@ -2173,13 +2191,13 @@ ul .nav-element-choosen {
 }
 @media (max-width:1000px) {
 
-    #short.projectImage {
+    /*#short.projectImage {
         display: block;
     }
 
     .singleProject {
         grid-template-columns: 35% 35% 30%;
-    }
+    }*/
     #catalogWord {
         display: none;
     }
@@ -2248,7 +2266,11 @@ ul .nav-element-choosen {
         width: 30px;
     }
 }
-
+@media (max-width:971px) {
+    #sailArea.cellLong {
+        display: none;
+    }
+}
 @media (max-width:960px) {
 
     #post-first-out.cellShort {
@@ -2261,9 +2283,6 @@ ul .nav-element-choosen {
 
     #catalog.category {
         width: 55%;
-    }
-    #sailArea.cellLong {
-        display: none;
     }
     .sheme-TTH {
         width: 28.7%;
@@ -2312,6 +2331,13 @@ ul .nav-element-choosen {
     .tthUnderFoto {
         width: 32%;
     }
+    .cellShort[name="midSleepingAreas"] {
+        display: none;
+    }
+    .cellShort[name="midPassengerCap"] {
+        display: none;
+    }
+    
 }
 
 @media (max-width:900px) {
@@ -2322,6 +2348,9 @@ ul .nav-element-choosen {
     .catalogPlitka {
         width: 32%;
     }
+    .singleProject {
+        grid-template-rows: 60px auto min-content auto 25px;
+    }
 }
 
 @media (max-width:880px) {
@@ -2330,36 +2359,41 @@ ul .nav-element-choosen {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 35% 100% no-repeat;
         background-size: auto 150%;
     }
-
     .details-top {
         grid-template-columns: 55% 45%;
     }
-    
+    #middleValue {
+        display: none
+    }
+    .cellShort {
+        display: table-row;
+    }
+    #first-out {
+        display: none;
+    }
+    #second-out {
+        display: none;
+    }
+    #fird-out {
+        display: none;
+    }
+    #fifth-out.cellShort[name="shortLength"] {
+        background-color: #f0f5f9;
+    }
+    #fourth-out.cellShort[name="shortDeep"] {
+        background-color: #f0f5f9;
+    }
 }
 
 @media (max-width:850px) {
     #middleValue {
         display: none
     }
-
     .cellShort {
         display: table-row;
     }
-
-    #first-out {
-        display: none;
-    }
-
-    #second-out {
-        display: none;
-    }
-
     #fird-out {
         display: none;
-    }
-
-    .cellShort[name="shortLength"], .cellShort[name="shortDeep"] {
-        background-color: #f0f5f9;
     }
 }
 
@@ -2371,6 +2405,9 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:820px) {
+    #fourth-out.cellShort[name="shortDeep"] {
+        display: none;
+    }
     .topCatalogLine {
         margin:0 5px 0 5px;
     }
@@ -2527,6 +2564,14 @@ ul .nav-element-choosen {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 90% no-repeat;
     }
 }
+@media (max-width:806px) {
+    .TTH {
+        display: none;
+    }
+    .singleProject {
+        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
+    }
+}
 
 @media (max-width:786px) {
 
@@ -2601,11 +2646,22 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:768px) {
+    .topMenuIcon {
+        display: none;
+        width: 50px;
+        margin-left: 50px
+    }
+    .fullTopMenu {
+        display: none;
+    }
+    .shortTopMenu {
+        display: flex;
+    }
     .leftMenu {
-        position: absolute;
-        z-index: 10;
+        position: fixed;
         background-color: white;
         align-items: center;
+        z-index:9;
         margin: auto;
         left: -341px;
         transition: left 0.6s ease-out;
@@ -2614,7 +2670,6 @@ ul .nav-element-choosen {
         justify-content: flex-start;
         padding-top: 50px;
     }
-
     .leftMenuTopLine {
         display: flex;
     }
@@ -2628,7 +2683,7 @@ ul .nav-element-choosen {
         margin: auto 15px auto auto;
     }
     #windowFor.navigationButton {
-        height: 50px;
+        height: 51px;
         margin: auto;
     }
     .ourContacts {
@@ -2700,6 +2755,11 @@ ul .nav-element-choosen {
 
     .catalogPlitka {
         width: 48%;
+    }
+}
+@media (max-width:700px) {
+    #fourth-out.cellShort[name="shortDeep"] {
+        display:none;
     }
 }
 
@@ -2892,8 +2952,6 @@ ul .nav-element-choosen {
         display:none
     }
 }
-
-
 @media (max-width:484px) {
 
     #goto-predist.longText {
@@ -2947,6 +3005,9 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:421px) {
+    .catalogItemTop {
+        font-size: 1rem;
+    }
     #news.about {
         height: 95vh;
     }
@@ -2957,7 +3018,7 @@ ul .nav-element-choosen {
         grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
     }
     #listPrice.catalogItemBottom {
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-align: center;
     }
 }
@@ -2970,7 +3031,6 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:414px) {
-
     #news.about {
         height: 99vh;
     }

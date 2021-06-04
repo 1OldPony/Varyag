@@ -32,24 +32,24 @@
                             <td colspan="3"><h4>Характеристики</h4></td>
                         </tr>
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
                             <td id="shortCharacteristicName" class="characteristic">Длина корпуса</td>
                             <td class="value">@Model.Length&nbsp;м.</td>
                         </tr>
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
                             <td id="shortCharacteristicName" class="characteristic">Ширина корпуса</td>
                             <td class="value">@Model.Windth&nbsp;м.</td>
                         </tr>
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
                             <td id="shortCharacteristicName" class="characteristic">Осадка судна</td>
                             <td class="value">@Model.Deep&nbsp;м.</td>
                         </tr>
                         @if (@Model.Volume != null)
                         {
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
                             <td id="shortCharacteristicName" class="characteristic">Водоизмещение</td>
                             <td class="value">@Model.Volume&nbsp;т.</td>
                         </tr>
@@ -57,7 +57,7 @@
                         @if (@Model.Mass != null)
                         {
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
                             <td id="shortCharacteristicName" class="characteristic">Вес корпуса</td>
                             <td class="value">@Model.Mass&nbsp;кг.</td>
                         </tr>
@@ -65,13 +65,13 @@
                         @if (@Model.NumberOfOars != null)
                         {
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
                             <td id="shortCharacteristicName" class="characteristic">Весла</td>
                             <td class="value">@Model.NumberOfOars&nbsp;шт.</td>
                         </tr>
                         }
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
                             <td id="shortCharacteristicName" class="characteristic">Мощность двигателя</td>
                             @if (@Model.EnginePower != null)
                             {
@@ -83,7 +83,7 @@
                             }
                         </tr>
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
                             <td id="shortCharacteristicName" class="characteristic">Скорость (двигатель)</td>
                             @if (@Model.Speed != null)
                             {
@@ -95,7 +95,7 @@
                             }
                         </tr>
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
                             <td id="shortCharacteristicName" class="characteristic">Площадь парусности</td>
                             @if (@Model.SailArea != null)
                             {
@@ -107,7 +107,7 @@
                             }
                         </tr>
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
                             <td id="shortCharacteristicName" class="characteristic">Спальные места</td>
                             @if (@Model.SleepingAreas != null)
                             {
@@ -119,7 +119,7 @@
                             }
                         </tr>
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
                             <td id="shortCharacteristicName" class="characteristic">Кол-во пассажиров</td>
                             @if (@Model.PassengerCap != null)
                             {
@@ -131,7 +131,7 @@
                             }
                         </tr>
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
                             <td id="shortCharacteristicName" class="characteristic">Запас топлива</td>
                             @if (@Model.FuelCap != null)
                             {
@@ -145,7 +145,7 @@
                         @if (@Model.FreshWaterCap != null)
                         {
                             <tr>
-                                <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
                                 <td id="shortCharacteristicName" class="characteristic">Запас пресной воды</td>
                                 <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
                             </tr>

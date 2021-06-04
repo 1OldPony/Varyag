@@ -171,20 +171,21 @@
     <div style="height:50px;width:100%;background-color:#183f61;color:white;display:flex;justify-content:center;position:fixed;z-index:10;top:0">
         <div style="display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1350px;font-size:21px;margin-left:15px;margin-right:15px;">
             <div style="display:flex;align-items:center;justify-content:flex-start">
-                <div style="display:flex;">
+                <div class="shortTopMenu">
                     <div class="navigationButton" onclick="navigationButton()"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
-                    @*<a href="../../Каталог" style="margin-right:15px;color:white">КАТАЛОГ</a>*@
-                    @*<a id="articleMenu" style="margin-right:15px;color:white">СТАТЬИ</a>*@
-                    @*<div style="margin-right:15px">ЗАКАЗЫ ДЛЯ КИНО</div>*@
-                    @*<div style="margin-right:15px">ГОТО-ПРЕДИСТИНАЦИЯ</div>*@
-                    @*<a id="museumMenu" style="margin-right:15px;color:white">МУЗЕЙ?</a>*@
-                    <div style="width:50px;display:none;margin-left:50px">
+                    <div class="topMenuIcon">
                         <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
                     </div>
                     <div style="display:flex;align-items:center;font-size:2.5rem;">
                         ВАРЯГ
                     </div>
-                    @*<a id="aboutMenu" href="../../О-Нас" style="margin-right:15px;color:white">О НАС</a>*@
+                </div>
+                <div id="secondVarMenu"  class="fullTopMenu">
+                    <div class="topMenuIcon">
+                        <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
+                    </div>
+                    <a href="../../Каталог" style="margin-right:15px;color:white">КАТАЛОГ</a>
+                    <a id="aboutMenu" href="../../О-Нас" style="margin-right:15px;color:white">О НАС</a>
                 </div>
             </div>
             <div style="display:flex;align-items:center;">

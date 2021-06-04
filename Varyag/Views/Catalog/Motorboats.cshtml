@@ -16,11 +16,12 @@
     </div>
     <div class="myBorder"></div>
     <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" style="display:none;width:100%;height:100%;background-color:black;opacity:0.4;position:fixed;z-index:8;top:0;"></div>
         <partial name="~/Views/Shared/LeftMenu.cshtml" />
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все катера</div>@*<div class="categorysLineTtem" id="navigationButton" onclick="navigationButton()" style="display:flex"><img style="width:20px;height:20px;margin:auto 3px auto auto;" src="~/images/icons/бургер-син-лин.png" />Каталог</div>*@<div style="display:flex"><img src="~/images/icons/list3.png" id="iconList" style="margin-right:5px;cursor:pointer;display:none;" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="iconListRed" style="margin-right:5px;cursor:pointer;" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="iconPlitca" style="cursor:pointer;" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="iconPlitcaRed" style="cursor:pointer;display:none" onclick="switchProjectsViewPlitca()" /></div>
+                    <div class="categorysLineTtem">Все катера</div><div style="display:flex"><img src="~/images/icons/list3.png" id="iconList" style="margin-right:5px;cursor:pointer;display:none;" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="iconListRed" style="margin-right:5px;cursor:pointer;" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="iconPlitca" style="cursor:pointer;" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="iconPlitcaRed" style="cursor:pointer;display:none" onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
@@ -28,9 +29,6 @@
                     В случае необходимости мы можем изготовить катер по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
                 </div>
             </div>
-            @*<div class="navigationPlitka">
-                <partial name="~/Views/Shared/CatalogPlitka.cshtml" />
-            </div>*@
             <div id="plitcaStyle" style="display:none">
                 @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater", plitca = true })
             </div>
