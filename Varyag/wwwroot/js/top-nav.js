@@ -5,7 +5,7 @@ $(document).ready(function () {
     leftMenuOffset = $(".projectsHalf").offset().top;
 });
 $(window).scroll(function () {
-    if ($(window).width() > 768) {
+    if ($(window).width() > 1000) {
         if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
             if ($(".leftMenu").css('position') != 'fixed') {
                 $(".leftMenu").css('position', 'fixed');
@@ -72,7 +72,7 @@ $(window).scroll(function () {
 //});
 
 $(window).resize(function () {
-    if ($(window).width() > 768) {
+    if ($(window).width() > 1000) {
         if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
             if ($(".leftMenu").css('position') != 'fixed') {
                 $(".leftMenu").css('position', 'fixed');
@@ -98,9 +98,10 @@ $(window).resize(function () {
         }
     }
     else {
-        if ($(".leftMenu").css('display') != '') {
+        //if ($(".leftMenu").css('display') != '') {
             $(".leftMenu").removeAttr('style');
-        }
+            $(".projectsHalf").removeAttr('style'); 
+        //}
     }
 });
 //$(window).resize(function () {
@@ -678,28 +679,84 @@ $("#left.control").click(function () {
 
 /////////////////////////Переключение видов выдачи проектов//////////////////////////
 function switchProjectsViewList() {
-    if ($('#lineStyle').css('display')=='none') {
-        $('#lineStyle').css('display', 'initial');
-        $('#plitcaStyle').css('display', 'none');
-        $('#iconListRed').css('display', 'initial');
-        $('#iconList').css('display', 'none');
-        $('#iconPlitcaRed').css('display', 'none');
-        $('#iconPlitca').css('display', 'initial');
+    if ($('.lineStyleCatalog').attr('id') != 'activated') {
+        $('.lineStyleCatalog').attr('id', 'activated')
+        $('.plitcaStyleCatalog').attr('id', 'deactivated')
+        $('.iconListRed').attr('id', 'activated');
+        $('.iconList').attr('id', 'deactivated');
+        $('.iconPlitcaRed').attr('id', 'deactivated');
+        $('.iconPlitca').attr('id', 'activated');
+
+
+
+
+        //$('.lineStyleCatalog').attr('id', 'deactivated')
+        //$('.plitcaStyleCatalog').attr('id', 'activated')
+        //$('.iconListRed').attr('id', 'deactivated');
+        //$('.iconList').attr('id', 'activated');
+        //$('.iconPlitcaRed').attr('id', 'activated');
+        //$('.iconPlitca').attr('id', 'deactivated');
     }
+    //else {
+    //    $('.lineStyleCatalog').attr('id', 'activated')
+    //    $('.plitcaStyleCatalog').attr('id', 'deactivated')
+    //    $('.iconListRed').attr('id', 'activated');
+    //    $('.iconList').attr('id', 'deactivated');
+    //    $('.iconPlitcaRed').attr('id', 'deactivated');
+    //    $('.iconPlitca').attr('id', 'activated');
+    //}
+
+
+
+    //if ($('.lineStyle').css('display')=='none') {
+    //    $('#lineStyle').css('display', 'initial');
+    //    $('#plitcaStyle').css('display', 'none');
+    //    $('#iconListRed').css('display', 'initial');
+    //    $('#iconList').css('display', 'none');
+    //    $('#iconPlitcaRed').css('display', 'none');
+    //    $('#iconPlitca').css('display', 'initial');
+    //}
 } 
 
 function switchProjectsViewPlitca() {
-    if ($('#plitcaStyle').css('display') == 'none') {
+    if ($('.plitcaStyleCatalog').attr('id') != 'activated') {
+        $('.plitcaStyleCatalog').attr('id', 'activated')
+        $('.lineStyleCatalog').attr('id', 'deactivated')
+        $('.iconPlitcaRed').attr('id', 'activated');
+        $('.iconPlitca').attr('id', 'deactivated');
+        $('.iconListRed').attr('id', 'deactivated');
+        $('.iconList').attr('id', 'activated');
 
-        $('#plitcaStyle').css('display', 'initial');
-        $('#lineStyle').css('display', 'none');
 
-        $('#iconPlitcaRed').css('display', 'initial');
-        $('#iconPlitca').css('display', 'none');
 
-        $('#iconListRed').css('display', 'none');
-        $('#iconList').css('display', 'initial');
+        //$('.plitcaStyleCatalog').attr('id', 'deactivated')
+        //$('.lineStyleCatalog').attr('id', 'activated')
+        //$('.iconListRed').attr('id', 'deactivated');
+        //$('.iconList').attr('id', 'activated');
+        //$('.iconPlitcaRed').attr('id', 'deactivated');
+        //$('.iconPlitca').attr('id', 'activated');
     }
+    //else {
+    //    $('.plitcaStyleCatalog').attr('id', 'activated')
+    //    $('.lineStyleCatalog').attr('id', 'deactivated')
+    //    $('.iconPlitcaRed').attr('id', 'activated');
+    //    $('.iconPlitca').attr('id', 'deactivated');
+    //    $('.iconListRed').attr('id', 'deactivated');
+    //    $('.iconList').attr('id', 'activated');
+    //}
+
+
+    //if ($('#plitcaStyle').css('display') == 'none') {
+
+    //    $('#plitcaStyle').css('display', 'initial');
+    //    $('#lineStyle').css('display', 'none');
+
+    //    $('#iconPlitcaRed').css('display', 'initial');
+    //    $('#iconPlitca').css('display', 'none');
+
+    //    $('#iconListRed').css('display', 'none');
+    //    $('#iconList').css('display', 'initial');
+    //}
 } 
 
 //////////////////////////виджет контакта//////////////////////////

@@ -21,16 +21,22 @@
                             <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Особые заказы</div></a>
                         </li>
                         <li>
-                            <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine"><div class="navLineHeader">СМИ о нас</div></a>
+
+                            <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader" style="color:red">Новости по темам</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
+                            <ul>
+                                <li>
+                                    <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine"><div class="navLineHeader">СМИ о нас</div></a>
+                                </li>
+                                <li>
+                                    <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine"><div class="navLineHeader">Жизнь наших судов</div></a>
+                                </li>
+                                <li>
+                                    <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine"><div class="navLineHeader">Новости верфи</div></a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine"><div class="navLineHeader">Жизнь наших судов</div></a>
-                        </li>
-                        <li>
-                            <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine"><div class="navLineHeader">Новости верфи</div></a>
-                        </li>
-                        <li>
-                            <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader" style="color:red">Все новости</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
+                            <div id="allNewsNav" class="leftNavLine"><a asp-action="AllNews" class="navLineHeader" style="color:red">Новости по годам</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
                                 <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
                                     @if (ViewBag.part == "new")
                                     {

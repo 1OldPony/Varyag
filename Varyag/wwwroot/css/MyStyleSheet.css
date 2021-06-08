@@ -583,6 +583,70 @@ img {
     font-size: 1.44rem;
     justify-content: center;
 }
+.catalogIcons {
+    display: flex;
+    min-width: 67px;
+    margin-left: 10px;
+}
+/*.plitcaStyleCatalog {
+    display: none;
+}
+.lineStyleCatalog {
+    display: initial;
+}*/
+.iconList {
+    margin-right: 5px;
+    cursor: pointer;
+}
+.iconListRed {
+    margin-right: 5px;
+    cursor: pointer;
+}
+.iconPlitca {
+    cursor: pointer;
+}
+.iconPlitcaRed {
+    cursor: pointer;
+}
+
+#activated.plitcaStyleCatalog {
+    display: initial;
+}
+#deactivated.plitcaStyleCatalog {
+    display: none;
+}
+#activated.lineStyleCatalog {
+    display: initial;
+}
+#deactivated.lineStyleCatalog {
+    display: none;
+}
+
+#deactivated.iconListRed {
+    display: none;
+}
+#deactivated.iconList {
+    display: none;
+}
+#activated.iconListRed {
+    display: initial;
+}
+#activated.iconList {
+    display: initial;
+}
+
+#activated.iconPlitca {
+    display: initial;
+}
+#activated.iconPlitcaRed {
+    display: initial;
+}
+#deactivated.iconPlitca {
+    display: none;
+}
+#deactivated.iconPlitcaRed {
+    display: none;
+}
 
 .nav-top {
     display: flex;
@@ -728,8 +792,9 @@ img {
 }
 .topMenuIcon {
     display:flex;
-    height: 50px;
-    margin-right: 20px
+    /*height: 50px;*/
+    margin-right: 20px;
+    max-width:54px;
 }
 .fullTopMenu {
     display: flex;
@@ -1055,7 +1120,7 @@ ul .nav-element {
     justify-content: flex-end;
 }
 
-#lodki.nav-element {
+/*#lodki.nav-element {
     grid-area: boats;
     margin-left: 0px;
 }
@@ -1118,7 +1183,7 @@ ul .nav-element {
 
 #sailboats-Sub.sub-nav {
     grid-area: sub-sailboat;
-}
+}*/
 
 .nav-element .nav-element-inside {
     height: 2em;
@@ -2190,14 +2255,50 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:1000px) {
+    .navigationButton {
+        display: flex;
+        margin: auto 15px auto auto;
+    }
+    .topMenuIcon {
+        display: none;
+        width: 50px;
+        margin-left: 50px
+    }
 
-    /*#short.projectImage {
+    .fullTopMenu {
+        display: none;
+    }
+
+    .shortTopMenu {
+        display: flex;
+    }
+
+    .leftMenu {
+        position: fixed;
+        background-color: white;
+        align-items: center;
+        z-index: 9;
+        margin: auto;
+        left: -341px;
+        transition: left 0.6s ease-out;
+        top: 0;
+        height: 100%;
+        justify-content: flex-start;
+        padding-top: 50px;
+    }
+
+    .leftMenuTopLine {
+        display: flex;
+    }
+
+
+    #short.projectImage {
         display: block;
     }
 
     .singleProject {
         grid-template-columns: 35% 35% 30%;
-    }*/
+    }
     #catalogWord {
         display: none;
     }
@@ -2266,11 +2367,11 @@ ul .nav-element-choosen {
         width: 30px;
     }
 }
-@media (max-width:971px) {
+/*@media (max-width:971px) {
     #sailArea.cellLong {
         display: none;
     }
-}
+}*/
 @media (max-width:960px) {
 
     #post-first-out.cellShort {
@@ -2290,6 +2391,9 @@ ul .nav-element-choosen {
 
     .galleryFlex {
         width: 68.7%;
+    }
+    #sailArea.cellLong {
+        display: none;
     }
 }
 
@@ -2331,12 +2435,12 @@ ul .nav-element-choosen {
     .tthUnderFoto {
         width: 32%;
     }
-    .cellShort[name="midSleepingAreas"] {
+    /*.cellShort[name="midSleepingAreas"] {
         display: none;
     }
     .cellShort[name="midPassengerCap"] {
         display: none;
-    }
+    }*/
     
 }
 
@@ -2348,9 +2452,9 @@ ul .nav-element-choosen {
     .catalogPlitka {
         width: 32%;
     }
-    .singleProject {
+    /*.singleProject {
         grid-template-rows: 60px auto min-content auto 25px;
-    }
+    }*/
 }
 
 @media (max-width:880px) {
@@ -2377,15 +2481,21 @@ ul .nav-element-choosen {
     #fird-out {
         display: none;
     }
-    #fifth-out.cellShort[name="shortLength"] {
+    .cellShort[name="shortLength"], .cellShort[name="shortDeep"] {
+        background-color: #f0f5f9;
+    }
+    /*#fifth-out.cellShort[name="shortLength"] {
         background-color: #f0f5f9;
     }
     #fourth-out.cellShort[name="shortDeep"] {
         background-color: #f0f5f9;
-    }
+    }*/
 }
 
-@media (max-width:850px) {
+/*@media (max-width:850px) {
+    .cellShort[name="shortLength"], .cellShort[name="shortDeep"] {
+        background-color: #f0f5f9;
+    }
     #middleValue {
         display: none
     }
@@ -2395,7 +2505,7 @@ ul .nav-element-choosen {
     #fird-out {
         display: none;
     }
-}
+}*/
 
 @media (max-width:830px) {
 
@@ -2405,9 +2515,9 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:820px) {
-    #fourth-out.cellShort[name="shortDeep"] {
+    /*#fourth-out.cellShort[name="shortDeep"] {
         display: none;
-    }
+    }*/
     .topCatalogLine {
         margin:0 5px 0 5px;
     }
@@ -2564,14 +2674,14 @@ ul .nav-element-choosen {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 90% no-repeat;
     }
 }
-@media (max-width:806px) {
+/*@media (max-width:806px) {
     .TTH {
         display: none;
     }
     .singleProject {
         grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
     }
-}
+}*/
 
 @media (max-width:786px) {
 
@@ -2646,7 +2756,7 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:768px) {
-    .topMenuIcon {
+    /*.topMenuIcon {
         display: none;
         width: 50px;
         margin-left: 50px
@@ -2672,15 +2782,10 @@ ul .nav-element-choosen {
     }
     .leftMenuTopLine {
         display: flex;
-    }
+    }*/
 
     #secondVar {
         display: flex;
-    }
-
-    .navigationButton {
-        display: flex;
-        margin: auto 15px auto auto;
     }
     #windowFor.navigationButton {
         height: 51px;
@@ -2705,16 +2810,13 @@ ul .nav-element-choosen {
     .newsListElement {
         grid-template-columns: 55% 45%;
     }
-
     .newsMainStory {
         display: none
     }
-
     .textPartAllNews {
         display: flex;
         align-items: center;
     }
-
     #news.about {
         height: 87vh;
     }
@@ -2726,6 +2828,9 @@ ul .nav-element-choosen {
     }
     .TTH-detailsFlex {
         width: auto;
+    }
+    .tthUnderFoto {
+        width: 31.9%;
     }
     #shortCharacteristicName.characteristic {
         display: none;
@@ -2953,14 +3058,66 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:484px) {
+    #activated.plitcaStyleCatalog {
+        display: initial;
+    }
+    #deactivated.plitcaStyleCatalog {
+        display: initial;
+    }
+    #activated.lineStyleCatalog {
+        display: none;
+    }
+    #deactivated.lineStyleCatalog {
+        display: none;
+    }
+    .catalogIcons {
+        display: none;
+    }
+    /*#deactivated.iconListRed {
+        display:none;
+    }
+    #deactivated.iconList {
+        display: none;
+    }
+    #activated.iconListRed {
+        display: none;
+    }
+    #activated.iconList {
+        display: none;
+    }
 
-    #goto-predist.longText {
+    #activated.iconPlitca {
+        display: none;
+    }
+    #activated.iconPlitcaRed {
+        display: none;
+    }
+    #deactivated.iconPlitca {
+        display: none;
+    }
+    #deactivated.iconPlitcaRed {
+        display: none;
+    }*/
+
+    /*#goto-predist.longText {
         display: none;
     }
     #goto-predist.shortText {
         display: initial;
         text-decoration: none;
+    }*/
+    .path {
+        display:none;
     }
+    .smallTopFoto {
+        margin-top:10px;
+    }
+    #border.myBorder {
+        display:none;
+    }
+    .projectsHalfText {
+        display: none;
+    }    
 }
 @media (max-width:475px) {
     .catalogPlitka {
@@ -2974,6 +3131,11 @@ ul .nav-element-choosen {
     }
     .catalogPlates {
         margin-right: 10px;
+    }
+}
+@media (max-width:461px) {
+    .catalogItemTop {
+        font-size: 1rem;
     }
 }
 @media (max-width:440px) {
@@ -3005,9 +3167,6 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:421px) {
-    .catalogItemTop {
-        font-size: 1rem;
-    }
     #news.about {
         height: 95vh;
     }
