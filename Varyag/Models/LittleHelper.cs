@@ -138,7 +138,8 @@ namespace Varyag.Models
                     WideImgX = item.WideImgX,
                     WideImgY = item.WideImgY,
                     WideStory = item.WideStory,
-                    NewsDate = newsDate
+                    NewsDate = newsDate,
+                    NewsDatePreview = item.NewsDate.Substring(3,7)
                 });
             }
 

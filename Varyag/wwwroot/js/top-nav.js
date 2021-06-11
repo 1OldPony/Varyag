@@ -210,106 +210,39 @@ ymaps.ready(function () {
 });
 
 /////////////////////////выделяем выбранную категорию новостей//////////////////////////
-//newsTypeSelect();
-//function newsTypeSelect() {
-//    var nav = $("#newsTypeSelector").val()
-//    switch (nav) {
-//        case "smi":
-            //$("#smiNav").css("color", "red");
-            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
-            //    $(".leftNavMenu").css('padding-bottom', '0px')
-            //}
-        //    break;
-        //case "life":
-            //$("#lifeNav").css("color", "red");
-            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
-            //    $(".leftNavMenu").css('padding-bottom', '0px')
-            //}
-        //    break;
-        //case "newShips":
-            //$("#newShipsNav").css("color", "red");
-            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
-            //    $(".leftNavMenu").css('padding-bottom', '0px')
-            //}
-        //    break;
-        //default:
-            //$("#allNewsNav").css("color", "red");
-            //$(".leftNavMenu").css('padding-bottom', '79px');
-            //$("#allNewsOpen").attr("class", "leftNavOpenCurrent");
-            //$("#allNewsClose").attr("class", "leftNavCloseCurrent");
-            //$("#allNews-Sub").attr("class", "leftSubNavOpenCurrent");
-//            break;
-//    }
-//}
+
 $("#allNewsOpen, #allNewsClose").click(function () {
     if ($("#allNewsOpen").css('display') != 'none') {
         $("#allNews-Sub").attr('class', 'leftSubNavOpen');
         $("#allNews-Sub").css('visibility', 'visible');
         $("#allNews-Sub").css('opacity', '1');
         $(".leftNavMenu").css('padding-bottom', '79px')
-        //$("#smiNav").css('margin-top', '69px')
     }
     else {
         $("#allNews-Sub").attr('class', 'leftSubNavClose');
         $("#allNews-Sub").css('visibility', 'hidden');
         $("#allNews-Sub").css('opacity', '0');
         $(".leftNavMenu").css('padding-bottom', '10px')
-        //$("#smiNav").css('margin-top', '0px')
     }
     $("#allNewsOpen").toggle()
     $("#allNewsClose").toggle()
 });
-//$("#smiOpen, #smiClose").click(function () {
-//    if ($("#smiOpen").css('display') != 'none') {
-//        $("#smi-Sub").attr('class', 'leftSubNavOpen');
-//        $("#smi-Sub").css('visibility', 'visible');
-//        $("#smi-Sub").css('opacity', '1');
-//        $("#lifeNav").css('margin-top', '69px')
-//    }
-//    else {
-//        $("#smi-Sub").attr('class', 'leftSubNavClose');
-//        $("#smi-Sub").css('visibility', 'hidden');
-//        $("#smi-Sub").css('opacity', '0');
-//        $("#lifeNav").css('margin-top', '0px')
-//    }
-//    $("#smiOpen").toggle()
-//    $("#smiClose").toggle()
-//});
-//$("#lifeOpen, #lifeClose").click(function () {
-//    if ($("#lifeOpen").css('display') != 'none') {
-//        $("#life-Sub").attr('class', 'leftSubNavOpen');
-//        $("#life-Sub").css('visibility', 'visible');
-//        $("#life-Sub").css('opacity', '1');
-//        $("#newShipsNav").css('margin-top', '69px')
-//    }
-//    else {
-//        $("#life-Sub").attr('class', 'leftSubNavClose');
-//        $("#life-Sub").css('visibility', 'hidden');
-//        $("#life-Sub").css('opacity', '0');
-//        $("#newShipsNav").css('margin-top', '0px')
-//    }
-//    $("#lifeOpen").toggle()
-//    $("#lifeClose").toggle()
-//});
-//$("#newShipsOpen, #newShipsClose").click(function () {
-//    if ($("#newShipsOpen").css('display') != 'none') {
-//        $("#newShips-Sub").attr('class', 'leftSubNavOpen');
-//        $("#newShips-Sub").css('visibility', 'visible');
-//        $("#newShips-Sub").css('opacity', '1');
-//        $("#allNewsNav").css('margin-top', '69px')
-//        //$(".leftNavMenu").css('padding-bottom', '79px')
-//    }
-//    else {
-//        $("#newShips-Sub").attr('class', 'leftSubNavClose');
-//        $("#newShips-Sub").css('visibility', 'hidden');
-//        $("#newShips-Sub").css('opacity', '0');
-//        $("#allNewsNav").css('margin-top', '0px')
-//        //$(".leftNavMenu").css('padding-bottom', '10px')
-//    }
-//    $("#newShipsOpen").toggle()
-//    $("#newShipsClose").toggle()
-//});
-
+$("#themeNewsOpen, #themeNewsClose").click(function () {
+    if ($("#themeNewsOpen").css('display') != 'none') {
+        $("#themeNews-sub").attr('class', 'leftSubNavOpen');
+        $("#themeNews-sub").css('visibility', 'visible');
+        $("#themeNews-sub").css('opacity', '1');
+        $("#allNewsNav").css('margin-top', '69px');
+    }
+    else {
+        $("#themeNews-sub").attr('class', 'leftSubNavClose');
+        $("#themeNews-sub").css('visibility', 'hidden');
+        $("#themeNews-sub").css('opacity', '0');
+        $("#allNewsNav").css('margin-top', '0px');
+    }
+    $("#themeNewsOpen").toggle()
+    $("#themeNewsClose").toggle()
+});
 /////////////////////////выделяем выбранную подкатегорию лодок//////////////////////////
 //boatsTypeSelect();
 //function boatsTypeSelect() {
@@ -342,12 +275,8 @@ $("#allNewsOpen, #allNewsClose").click(function () {
 //    }
 //});
 
-////////////////////показываем меню поднавигации при наведении на основную категорию меню, также выделяем ее/////////////////////////
-//$("#lodki").mouseenter(function () {
-//    hideAll();
-//    $("#lodki").attr("class", "nav-element-choosen");
-//    $("#lodki-Sub").show();
-//});
+////////////////////показываем подменю на левом меню, меняем + на -/////////////////////////
+
 $("#lodkiOpen, #lodkiClose").click(function () {
     if ($("#lodkiOpen").css('display') != 'none') {
         $("#lodki-Sub").attr('class', 'leftSubNavOpen');
@@ -364,13 +293,6 @@ $("#lodkiOpen, #lodkiClose").click(function () {
     $("#lodkiOpen").toggle()
     $("#lodkiClose").toggle()
 });
-
-//$("#shlupki").mouseenter(function () {
-//    hideAll();
-//    hideLeftMenu();
-//    $("#shlupki").attr("class", "nav-element-choosen");
-//    $("#shlupki-Sub").show();
-//});
 $("#shlupkiOpen, #shlupkiClose").click(function () {
     if ($("#shlupkiOpen").css('display') != 'none') {
         $("#shlupki-Sub").attr('class', 'leftSubNavOpen');
@@ -387,12 +309,6 @@ $("#shlupkiOpen, #shlupkiClose").click(function () {
     $("#shlupkiOpen").toggle()
     $("#shlupkiClose").toggle()
 });
-
-//$("#katera").mouseenter(function () {
-//    hideAll();
-//    $("#katera").attr("class", "nav-element-choosen");
-//    $("#katera-Sub").show();
-//});
 $("#kateraOpen, #kateraClose").click(function () {
     if ($("#kateraOpen").css('display') != 'none') {
         $("#katera-Sub").attr('class', 'leftSubNavOpen');
@@ -409,12 +325,6 @@ $("#kateraOpen, #kateraClose").click(function () {
     $("#kateraOpen").toggle()
     $("#kateraClose").toggle()
 });
-
-//$("#ladiy").mouseenter(function () {
-//    hideAll();
-//    $("#ladiy").attr("class", "nav-element-choosen");
-//    $("#ladiy-Sub").show();
-//});
 $("#ladiyOpen, #ladiyClose").click(function () {
     if ($("#ladiyOpen").css('display') != 'none') {
         $("#ladiy-Sub").attr('class', 'leftSubNavOpen');
@@ -431,12 +341,6 @@ $("#ladiyOpen, #ladiyClose").click(function () {
     $("#ladiyOpen").toggle()
     $("#ladiyClose").toggle()
 });
-
-//$("#sailboats").mouseenter(function () {
-//    hideAll();
-//    $("#sailboats").attr("class", "nav-element-choosen");
-//    $("#sailboats-Sub").show();
-//});
 $("#sailboatsOpen, #sailboatsClose").click(function () {
     if ($("#sailboatsOpen").css('display') != 'none') {
         $("#sailboats-Sub").attr('class', 'leftSubNavOpen');
@@ -454,11 +358,6 @@ $("#sailboatsOpen, #sailboatsClose").click(function () {
     $("#sailboatsClose").toggle()
 });
 
-//$("#models").mouseenter(function () {
-//    hideAll();
-//    $("#models").attr("class", "nav-element-choosen");
-//    $("#models-Sub").show();
-//});
 $("#modelsOpen, #modelsClose").click(function () {
     if ($("#modelsOpen").css('display') != 'none') {
         $("#models-Sub").attr('class', 'leftSubNavOpen');
@@ -475,149 +374,6 @@ $("#modelsOpen, #modelsClose").click(function () {
     $("#modelsOpen").toggle()
     $("#modelsClose").toggle()
 });
-
-//function hideLeftMenu() {
-//    $("#lodki-Sub").css('visibility', 'hidden');
-//    $("#lodki-Sub").css('opacity', '0');
-//    $("#shlupki").css('margin-top','0px')
-//}
-
-//function hideAll() {
-//    $("#sailboats").attr("class", "nav-element");
-//    $("#shlupki").attr("class", "nav-element");
-//    $("#katera").attr("class", "nav-element");
-//    $("#ladiy").attr("class", "nav-element");
-//    $("#models").attr("class", "nav-element");
-//    $("#lodki").attr("class", "nav-element");
-//    $("#lodki-Sub").hide();
-//    $("#sailboats-Sub").hide();
-//    $("#shlupki-Sub").hide();
-//    $("#katera-Sub").hide();
-//    $("#ladiy-Sub").hide();
-//    $("#models-Sub").hide();
-//};
-
-//function deselectNavElemMinor() {
-
-//    var page = $("#currentPage").val();
-//    switch (page) {
-//        case "boatsrow":
-//        case "boatssail":
-//        case "boatstraditional":
-//            $('#boatsrow').attr("class", "nav-element-minor");
-//            $('#boatssail').attr("class", "nav-element-minor");
-//            $('#boatstraditional').attr("class", "nav-element-minor");
-//            break;
-//        case "boatyal":
-//        case "botik":
-//        case "katerrow":
-//        case "maketstudy":
-//            $('#katerrow').attr("class", "nav-element-minor");
-//            $('#botik').attr("class", "nav-element-minor");
-//            $('#boatyal').attr("class", "nav-element-minor");
-//            $('#maketstudy').attr("class", "nav-element-minor");
-//            break;
-//        case "motosailer":
-//        case "katercabin":
-//        case "katerfish":
-//        case "katerpass":
-//        case "katerproject":
-//            $('#katerproject').attr("class", "nav-element-minor");
-//            $('#katerpass').attr("class", "nav-element-minor");
-//            $('#katerfish').attr("class", "nav-element-minor");
-//            $('#katercabin').attr("class", "nav-element-minor");
-//            $('#motosailer').attr("class", "nav-element-minor");
-//            break;
-//        case "ladyarow":
-//        case "ladyasail":
-//        case "ladyaproject":
-//            $('#ladyaproject').attr("class", "nav-element-minor");
-//            $('#ladyasail').attr("class", "nav-element-minor");
-//            $('#ladyarow').attr("class", "nav-element-minor");
-//            break;
-//        case "yacht":
-//        case "shvertbot":
-//        case "sailboatstudy":
-//        case "sailboathistorical":
-//        case "sailboatproject":
-//            $('#sailboatproject').attr("class", "nav-element-minor");
-//            $('#sailboathistorical').attr("class", "nav-element-minor");
-//            $('#sailboatstudy').attr("class", "nav-element-minor");
-//            $('#shvertbot').attr("class", "nav-element-minor");
-//            $('#yacht').attr("class", "nav-element-minor");
-//            break;
-//        default:
-//            break;
-//    }
-//}
-
-//function navElMinorChoose() {
-//    var page = $("#currentPage").val();
-//    switch (page) {
-//        case "boatsrow":
-//            $('#boatsrow').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "boatssail":
-//            $('#boatssail').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "boatstraditional":
-//            $('#boatstraditional').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "boatyal":
-//            $('#boatyal').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "botik":
-//            $('#botik').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katerrow":
-//            $('#katerrow').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "motosailer":
-//            $('#motosailer').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katercabin":
-//            $('#katercabin').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katerfish":
-//            $('#katerfish').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katerpass":
-//            $('#katerpass').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katerproject":
-//            $('#katerproject').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "ladyarow":
-//            $('#ladyarow').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "ladyasail":
-//            $('#ladyasail').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "ladyaproject":
-//            $('#ladyaproject').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "yacht":
-//            $('#yacht').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "shvertbot":
-//            $('#shvertbot').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "sailboatstudy":
-//            $('#sailboatstudy').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "sailboathistorical":
-//            $('#sailboathistorical').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "sailboatproject":
-//            $('#sailboatproject').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "maketstudy":
-//            $('#maketstudy').attr("class", "nav-element-minor-choosen");
-//            break;
-//        default:
-//            break;
-//    }
-//};
 
 //////////////////Для пролистывания списка заказчиков на странице "о нас"//////////////////////
 var slideNumber = 0;
@@ -687,9 +443,6 @@ function switchProjectsViewList() {
         $('.iconPlitcaRed').attr('id', 'deactivated');
         $('.iconPlitca').attr('id', 'activated');
 
-
-
-
         //$('.lineStyleCatalog').attr('id', 'deactivated')
         //$('.plitcaStyleCatalog').attr('id', 'activated')
         //$('.iconListRed').attr('id', 'deactivated');
@@ -705,8 +458,6 @@ function switchProjectsViewList() {
     //    $('.iconPlitcaRed').attr('id', 'deactivated');
     //    $('.iconPlitca').attr('id', 'activated');
     //}
-
-
 
     //if ($('.lineStyle').css('display')=='none') {
     //    $('#lineStyle').css('display', 'initial');
@@ -726,9 +477,6 @@ function switchProjectsViewPlitca() {
         $('.iconPlitca').attr('id', 'deactivated');
         $('.iconListRed').attr('id', 'deactivated');
         $('.iconList').attr('id', 'activated');
-
-
-
         //$('.plitcaStyleCatalog').attr('id', 'deactivated')
         //$('.lineStyleCatalog').attr('id', 'activated')
         //$('.iconListRed').attr('id', 'deactivated');

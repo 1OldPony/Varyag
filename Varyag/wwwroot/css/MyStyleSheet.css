@@ -225,8 +225,8 @@
 .newsListElement {
     display: grid;
     grid-template-areas: "preview newsText";
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 31vh;
+    grid-template-columns: 29% 71%;
+    grid-template-rows: auto;
     overflow: hidden;
     background-color: white;
     border-radius: 10px;
@@ -329,10 +329,11 @@
     align-items: center;
     justify-content: center;
     font-weight: bolder;
-    font-size: 1.8rem;
-    background: white;
+    font-size: 1.4rem;
+    opacity:1;
+    /*background: white;
     background: rgba(255, 255,255,0.9);
-    box-shadow: 0px -20px 20px 0px rgba(255, 255, 255, 0.9);
+    box-shadow: 0px -20px 20px 0px rgba(255, 255, 255, 0.9);*/
 }
 
 #goto-predist.about {
@@ -1120,71 +1121,9 @@ ul .nav-element {
     justify-content: flex-end;
 }
 
-/*#lodki.nav-element {
-    grid-area: boats;
-    margin-left: 0px;
+.newsBlock {
+    margin: 10px 0 0 0
 }
-
-#shlupki.nav-element {
-    grid-area: bigboats;
-}
-
-#shlupki.nav-element-choosen {
-    grid-area: bigboats;
-}
-
-#katera.nav-element {
-    grid-area: kater;
-}
-
-#katera.nav-element-choosen {
-    grid-area: kater;
-}
-
-#ladiy.nav-element {
-    grid-area: ladya;
-}
-
-#ladiy.nav-element-choosen {
-    grid-area: ladya;
-}
-
-#sailboats.nav-element {
-    grid-area: sailboat;
-}
-
-#sailboats.nav-element-choosen {
-    grid-area: sailboat;
-}
-
-#models.nav-element {
-    grid-area: maket;
-}
-
-#models.nav-element-choosen {
-    grid-area: maket;
-}
-
-#lodki-Sub.sub-nav {
-    grid-area: sub-boats;
-}
-
-#shlupki-Sub.sub-nav {
-    grid-area: sub-bigboats;
-}
-
-#katera-Sub.sub-nav {
-    grid-area: sub-kater;
-}
-
-#ladiy-Sub.sub-nav {
-    grid-area: sub-ladya;
-}
-
-#sailboats-Sub.sub-nav {
-    grid-area: sub-sailboat;
-}*/
-
 .nav-element .nav-element-inside {
     height: 2em;
     background-color: #d1e0f9;
@@ -1192,7 +1131,6 @@ ul .nav-element {
     align-items: center;
     justify-content: center;
 }
-
 .nav-element-choosen .nav-element-inside {
     height: 2em;
 }
@@ -1273,7 +1211,6 @@ ul .nav-element-choosen {
 .projects {
     display: flex;
     flex-direction: column;
-    /*margin: auto;*/
     margin-right:10px;
     max-width:1000px;
 }
@@ -1364,7 +1301,6 @@ ul .nav-element-choosen {
 }
 .tthUnderFoto {
     display: flex;
-    /*width: 323px;*/
     width: 32.29%;
     flex-direction: column;
     background-color: white;
@@ -2087,7 +2023,7 @@ ul .nav-element-choosen {
     }
 
     .newsListElement {
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 34% 66%;
     }
 
     #shortStory {
@@ -2186,6 +2122,9 @@ ul .nav-element-choosen {
     .cellShort[name="midSleepingAreas"] {
         display: table-row;
     }
+    .newsListElement {
+        grid-template-columns: 43% 57%;
+    }
 }
 @media (max-width:1050px) {
 
@@ -2249,12 +2188,21 @@ ul .nav-element-choosen {
     #news.about {
         height: 83vh;
     }
-
+    o
     .arrow-top {
         top: 48%;
     }
 }
 @media (max-width:1000px) {
+    .ourContacts {
+        display: none;
+    }
+    .newsBlock {
+        margin: 10px 0 0 10px
+    }
+    .newsListElement {
+        grid-template-columns: 30% 70%;
+    }
     .navigationButton {
         display: flex;
         margin: auto 15px auto auto;
@@ -2264,15 +2212,12 @@ ul .nav-element-choosen {
         width: 50px;
         margin-left: 50px
     }
-
     .fullTopMenu {
         display: none;
     }
-
     .shortTopMenu {
         display: flex;
     }
-
     .leftMenu {
         position: fixed;
         background-color: white;
@@ -2286,16 +2231,12 @@ ul .nav-element-choosen {
         justify-content: flex-start;
         padding-top: 50px;
     }
-
     .leftMenuTopLine {
         display: flex;
     }
-
-
     #short.projectImage {
         display: block;
     }
-
     .singleProject {
         grid-template-columns: 35% 35% 30%;
     }
@@ -2344,19 +2285,16 @@ ul .nav-element-choosen {
         width: auto;
         grid-template-columns: repeat(9,100vw);
     }
-
     .singleCustomer {
         padding: 5vh;
         padding-bottom: 1vh;
         padding-top: 1vh;
     }
-
     #1.singleCustomer {
         padding: 5vh;
         padding-bottom: 1vh;
         padding-top: 1vh;
     }
-
     .arrow-top,
     .arrow-bottom {
         background: #183f61;
@@ -2367,28 +2305,17 @@ ul .nav-element-choosen {
         width: 30px;
     }
 }
-/*@media (max-width:971px) {
-    #sailArea.cellLong {
-        display: none;
-    }
-}*/
 @media (max-width:960px) {
 
     #post-first-out.cellShort {
         display: none;
     }
-
-    .newsListElement {
-        grid-template-columns: 50% 50%;
-    }
-
     #catalog.category {
         width: 55%;
     }
     .sheme-TTH {
         width: 28.7%;
     }
-
     .galleryFlex {
         width: 68.7%;
     }
@@ -2398,7 +2325,6 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:927px) {
-
     #contacts.longText {
         display: none;
     }
@@ -2410,23 +2336,19 @@ ul .nav-element-choosen {
         flex-direction: column-reverse;
         margin-left: 0;
     }
-
     .sheme-TTH {
         width: auto;
         display: flex;
         flex-direction: row-reverse;
     }
-
     .shemeFlex {
         width: 436px;
         margin: 10px 0 0 10px;
     }
-
     .TTH-detailsFlex {
         width: 51%;
         margin-left: 10px;
     }
-
     .galleryFlex {
         width: auto;
     }
@@ -2435,15 +2357,7 @@ ul .nav-element-choosen {
     .tthUnderFoto {
         width: 32%;
     }
-    /*.cellShort[name="midSleepingAreas"] {
-        display: none;
-    }
-    .cellShort[name="midPassengerCap"] {
-        display: none;
-    }*/
-    
 }
-
 @media (max-width:900px) {
 
     .shorterMenu {
@@ -2452,9 +2366,6 @@ ul .nav-element-choosen {
     .catalogPlitka {
         width: 32%;
     }
-    /*.singleProject {
-        grid-template-rows: 60px auto min-content auto 25px;
-    }*/
 }
 
 @media (max-width:880px) {
@@ -2484,29 +2395,7 @@ ul .nav-element-choosen {
     .cellShort[name="shortLength"], .cellShort[name="shortDeep"] {
         background-color: #f0f5f9;
     }
-    /*#fifth-out.cellShort[name="shortLength"] {
-        background-color: #f0f5f9;
-    }
-    #fourth-out.cellShort[name="shortDeep"] {
-        background-color: #f0f5f9;
-    }*/
 }
-
-/*@media (max-width:850px) {
-    .cellShort[name="shortLength"], .cellShort[name="shortDeep"] {
-        background-color: #f0f5f9;
-    }
-    #middleValue {
-        display: none
-    }
-    .cellShort {
-        display: table-row;
-    }
-    #fird-out {
-        display: none;
-    }
-}*/
-
 @media (max-width:830px) {
 
     #production.about {
@@ -2515,9 +2404,6 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:820px) {
-    /*#fourth-out.cellShort[name="shortDeep"] {
-        display: none;
-    }*/
     .topCatalogLine {
         margin:0 5px 0 5px;
     }
@@ -2533,88 +2419,69 @@ ul .nav-element-choosen {
         width: auto;
         margin: auto;
     }
-
     .description {
         margin: 5%;
     }
-
     .desc-top {
         font-size: 1.75rem;
         font-weight: 600;
         text-align: left;
         margin-left: 5%;
     }
-
     .catalog {
         grid-template-areas: "boats sub" "bigboats sub" "kater sub" "ladya sub" "sailboat sub" "maket sub";
         grid-template-columns: 1fr 1fr;
         grid-template-rows: min-content min-content min-content min-content min-content min-content;
         font-size: 1.37rem;
     }
-
     #lodki-Sub.sub-nav {
         grid-area: sub;
     }
-
     #shlupki-Sub.sub-nav {
         grid-area: sub;
     }
-
     #katera-Sub.sub-nav {
         grid-area: sub;
     }
-
     #ladiy-Sub.sub-nav {
         grid-area: sub;
     }
-
     #sailboats-Sub.sub-nav {
         grid-area: sub;
     }
-    
     .nav {
         flex-direction: column;
         align-items: initial;
         width: 50%;
     }
-
     .nav-element img {
         display: none;
     }
-
     .nav-element-choosen img {
         display: none;
     }
-
     .cellLong {
         display: table-row;
     }
-
     #middleValue.cellShort {
         display: none;
     }
-
     #shortNav.menu-top-element {
         display: flex;
     }
-
     #news.nav-element-top {
         display: none;
     }
-
     #SMI.nav-element-top {
         display: none;
     }
-
     .sub-nav-elements {
         flex-direction: column-reverse;
     }
-
     .sub-nav {
         padding-left: 10px;
         padding-right: 10px;
     }
-
     .nav-element-minor {
         width: 100%;
         margin-right: 10px;
@@ -2674,25 +2541,13 @@ ul .nav-element-choosen {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 90% no-repeat;
     }
 }
-/*@media (max-width:806px) {
-    .TTH {
-        display: none;
-    }
-    .singleProject {
-        grid-template-areas: "sheme foto name" "sheme foto name" "sheme foto name" "sheme foto price" "sheme foto price";
-    }
-}*/
-
 @media (max-width:786px) {
-
     #shortStory {
         display: none;
     }
-
     #middleStory {
         display: flex;
     }
-
     #wideStory {
         display: none;
     }
@@ -2700,31 +2555,24 @@ ul .nav-element-choosen {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 50% 100% no-repeat;
         background-size: auto 150%;
     }
-
     #contacts.longTextSecond {
         display: none;
     }
-
     #catalog.category {
         width: 65%;
     }
-
     #boatsTopNav.menu-top-element {
         grid-area: boats;
     }
-
     #bigboatsTopNav.menu-top-element {
         grid-area: bigboats;
     }
-
     #katersTopNav.menu-top-element {
         grid-area: katers;
     }
-
     #ladiyTopNav.menu-top-element {
         grid-area: ladiy;
     }
-
     #sailboatsTopNav.menu-top-element {
         grid-area: sailboats;
     }
@@ -2756,43 +2604,15 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:768px) {
-    /*.topMenuIcon {
-        display: none;
-        width: 50px;
-        margin-left: 50px
+    .newsListElement {
+        grid-template-columns: 35% 65%;
     }
-    .fullTopMenu {
-        display: none;
-    }
-    .shortTopMenu {
-        display: flex;
-    }
-    .leftMenu {
-        position: fixed;
-        background-color: white;
-        align-items: center;
-        z-index:9;
-        margin: auto;
-        left: -341px;
-        transition: left 0.6s ease-out;
-        top: 0;
-        height: 100%;
-        justify-content: flex-start;
-        padding-top: 50px;
-    }
-    .leftMenuTopLine {
-        display: flex;
-    }*/
-
     #secondVar {
         display: flex;
     }
     #windowFor.navigationButton {
         height: 51px;
         margin: auto;
-    }
-    .ourContacts {
-        display: none;
     }
     .navigationShip {
         display: initial;
@@ -2806,13 +2626,6 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:764px) {
-
-    .newsListElement {
-        grid-template-columns: 55% 45%;
-    }
-    .newsMainStory {
-        display: none
-    }
     .textPartAllNews {
         display: flex;
         align-items: center;
@@ -2866,14 +2679,14 @@ ul .nav-element-choosen {
     #fourth-out.cellShort[name="shortDeep"] {
         display:none;
     }
+    .newsListElement {
+        grid-template-columns: 0% 100%;
+    }
 }
 
 @media (max-width:651px) {
     .textPartAllNews {
         display: none;
-    }
-    .newsListElement {
-        grid-template-columns: 100%;
     }
     #catalog.category {
         width: 80%;
