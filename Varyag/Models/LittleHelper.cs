@@ -104,6 +104,7 @@ namespace Varyag.Models
             }
         }
 
+        enum DateMonth { январь, февраль, март, апрель, май, июнь, июль, август, сентябрь, октябрь, ноябрь, декабрь }
         public static List<NewsViewModel> NewsToSortedViewModel (List<News> news)
         {
             List<NewsViewModel> newsIntDate = new List<NewsViewModel>();
@@ -112,6 +113,10 @@ namespace Varyag.Models
             {
                 string[] stringDate = item.NewsDate.Split('.');
                 int newsDate = int.Parse(stringDate[2] + stringDate[1] + stringDate[0]);
+                string[] months = { "ЯНВАРЬ", "ФЕВРАЛЬ", "МАРТ", "АПРЕЛЬ", "МАЙ", "ИЮНЬ", "ИЮЛЬ", "АВГУСТ", "СЕНТЯБРЬ", "ОКТЯБРЬ", "НОЯБРЬ", "ДЕКАБРЬ" };
+                string month = string.Concat(months[int.Parse(item.NewsDate.Substring(3, 2)) - 1], " ", item.NewsDate.Substring(6, 4));
+
+
 
                 newsIntDate.Add(new NewsViewModel
                 {
@@ -139,11 +144,10 @@ namespace Varyag.Models
                     WideImgY = item.WideImgY,
                     WideStory = item.WideStory,
                     NewsDate = newsDate,
-                    NewsDatePreview = item.NewsDate.Substring(3,7)
+                    NewsDatePreview = month
                 });
             }
-
-            newsIntDate=newsIntDate.OrderByDescending(n => n.NewsDate).ToList();
+            newsIntDate =newsIntDate.OrderByDescending(n => n.NewsDate).ToList();
 
             return newsIntDate;
         }
