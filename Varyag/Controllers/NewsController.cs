@@ -217,7 +217,6 @@ namespace Varyag.Controllers
                 keyWordRefresh = keyWordR,
                 newsDateRefresh = newsDateR
             };
-
             return View();
         }
 

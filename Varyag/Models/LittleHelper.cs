@@ -104,7 +104,6 @@ namespace Varyag.Models
             }
         }
 
-        enum DateMonth { январь, февраль, март, апрель, май, июнь, июль, август, сентябрь, октябрь, ноябрь, декабрь }
         public static List<NewsViewModel> NewsToSortedViewModel (List<News> news)
         {
             List<NewsViewModel> newsIntDate = new List<NewsViewModel>();
@@ -144,7 +143,8 @@ namespace Varyag.Models
                     WideImgY = item.WideImgY,
                     WideStory = item.WideStory,
                     NewsDate = newsDate,
-                    NewsDatePreview = month
+                    NewsDatePreview = month,
+                    LinkedProjectName = item.LinkedProjectName
                 });
             }
             newsIntDate =newsIntDate.OrderByDescending(n => n.NewsDate).ToList();

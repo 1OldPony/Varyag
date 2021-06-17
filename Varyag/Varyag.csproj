@@ -165,4 +165,11 @@
     <Folder Include="wwwroot\images\Thumbnails\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Content Update="Views\Shared\Components\LinkToProject\Default.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

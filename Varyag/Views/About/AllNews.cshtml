@@ -180,7 +180,6 @@
                 @for (int i = 0; i < Model.Count(); i++)
                 {
                     <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId">
-
                         <div class="newsListElement">
                             <div class="partNewsElement" id="allNews" style="grid-area:preview;height:auto">
                                 <img src="@Model.ElementAt(i).ShortFotoPreview" />

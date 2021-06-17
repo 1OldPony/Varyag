@@ -1,0 +1,18 @@
+﻿@*@model List<Varyag.Models.NewsViewModel>*@
+
+@for (int i = 0; i < Model.Count(); i++)
+{
+    <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId">
+        <div class="newsListElement">
+            <div class="partNewsElement" id="allNews" style="grid-area:preview;height:auto">
+                <img src="@Model.ElementAt(i).ShortFotoPreview" />
+            </div>
+            <div class="textPartAllNews" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;margin:10px 0 10px 0;justify-self:center;width:96%;">
+                <div style="font-size:1.6rem;font-weight:bold;">@Model.ElementAt(i).NewsDatePreview</div>
+                <h2 class="newsMainStory">@Model.ElementAt(i).Header</h2>
+                <div style="display: flex;align-items: center;justify-content: center;font-weight: bolder;font-size: 1.4rem;">Смотреть...</div>
+            </div>
+        </div>
+    </a>
+    <div class="myBorder"></div>
+}

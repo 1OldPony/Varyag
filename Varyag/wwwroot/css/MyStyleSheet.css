@@ -1326,18 +1326,30 @@ ul .nav-element-choosen {
 }
 
 .description {
-    font-size: 1.13rem;
-    text-align: left;
-    margin: 25px;
-    margin-top: 0px;
-    font-family: Tahoma;
+    /*text-align: left;*/
+    padding: 25px;
+    padding-top: 5px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-style:solid;
+    border-width:thin;
+    border-top:none;
 }
 
 .desc-top {
-    font-size: 1.3rem;
-    font-weight: 600;
-    text-align: left;
-    margin-left: 25px;
+    /*text-align: left;*/
+    border-top: thin solid;
+    border-left: thin solid;
+    border-right: thin solid;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-right: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: white;
+    padding-bottom: 5px;
+    width: 47%;
 }
 
 .TTH {
@@ -1792,9 +1804,9 @@ ul .nav-element-choosen {
 
 .mainFormSub {
     display: grid;
-    grid-template-areas: "typeOfNews newsVideo1" "galleryFotos newsVideo2" "dateOfNews newsVideo3";
+    grid-template-areas: "typeOfNews newsVideo1" "galleryFotos newsVideo2" "dateOfNews newsVideo3" "linkedProjects linkedProjects";
     grid-template-columns: 50% 50%;
-    grid-template-rows: min-content min-content min-content;
+    grid-template-rows: repeat(3,min-content) 262px;
     justify-content: center;
     grid-area: subForm;
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
 
 namespace Varyag.Models
 {
@@ -16,6 +13,8 @@ namespace Varyag.Models
         public int NewsDate { get; set; }
         [DisplayName("Дата новости для превью")]
         public string NewsDatePreview { get; set; }
+        [DisplayName("Связанный проект")]
+        public string LinkedProjectName { get; set; }
         [DisplayName("Ключевое слово")]
         public NewsKeyWord KeyWord { get; set; }
         [DisplayName("Путь к папке с фотографиями в галерею")]

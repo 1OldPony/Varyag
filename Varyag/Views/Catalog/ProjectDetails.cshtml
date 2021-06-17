@@ -160,8 +160,11 @@
                 </div>
             </div>
         </div>
-        <div style="display:flex;flex-direction:column;padding:10px;background-color:white;border-radius:10px;margin: 10px 10px 10px 10px;">
-            <div class="desc-top">Описание:</div>
+        <div style="display:flex;flex-direction:column;padding:10px;">
+            <div style="display:flex;justify-content:flex-start;font-size:1.3rem;font-weight:bold;align-items:center;">
+                <div class="desc-top">Описание:</div>
+                <div style="border-top-left-radius: 10px;border-top-right-radius: 10px;background-color:#c3e3ff;padding-left: 20px;padding-top:5px;padding-right:20px;padding-bottom:5px;width:47%;border-bottom: thin solid;">Новости о проекте</div>
+            </div>
             <div class="description">
                 @Html.Raw(Model.Description)
             </div>

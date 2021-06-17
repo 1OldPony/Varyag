@@ -79,9 +79,124 @@
         <div class="MyContainer" id="@i" style="display:none">
             <h2>@Model.ElementAt(i).Header</h2>
             <div>@Html.Raw(Model.ElementAt(i).MainStory)</div>
-            <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                @await Component.InvokeAsync("Fotorama", new { newsId = Model.ElementAt(i).NewsId })
+            @if (Model.ElementAt(i).PathToGallery != null)
+            {
+                <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                    @await Component.InvokeAsync("Fotorama", new { newsId = Model.ElementAt(i).NewsId })
+                </div>
+            }
+            <div class="projectsHalf" style="background-color:white;border-radius:10px;margin-bottom:10px;padding:10px;margin-right:10px;max-width:980px;">
+                <div class="topCatalogLine" style="margin-right:0;">
+                    <h1 class="categorysLineTtem" style="margin-block:0;justify-content:flex-start">@Model.ElementAt(0).Header</h1>
+                </div><div style="padding:2vh 0 2vh 0;background-color:white">@Html.Raw(Model.ElementAt(0).MainStory)</div>
+                @if (Model.ElementAt(0).PathToGallery != null)
+                {
+                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { newsId = Model.ElementAt(0).NewsId })
+                    </div>
+                }
+                @*/////////////////////////////////////////
+            ///////////////////////////////////////////
+            ////////////////////////////////////////////*@
+                @if (LittleHelper.NullCounter(Model.ElementAt(0).PathToVideo1, Model.ElementAt(0).PathToVideo2, Model.ElementAt(0).PathToVideo3) < 2)
+                {
+                    <div class="newsNav">
+                        @if (Model.ElementAt(0).PathToVideo1 != null)
+                        {
+                            <div class="nav-element-minor" style="cursor:pointer" id="videoOne">
+                                <div class="nav-element-inside">
+                                    <p>Сюжет №1</p>
+                                </div>
+                                <input type="text" value="@Model.ElementAt(0).PathToVideo1" id="firstVideoUrl" hidden />
+                            </div>
+                        }
+                        @if (Model.ElementAt(0).PathToVideo2 != null)
+                        {
+                            <div class="nav-element-minor" style="cursor:pointer" id="videoTwo">
+                                <div class="nav-element-inside">
+                                    @if (Model.ElementAt(0).PathToVideo1 == null)
+                                    {
+                                        <p>Сюжет №1</p>
+                                    }
+                                    else
+                                    {
+                                        <p>Сюжет №2</p>
+                                    }
+                                </div>
+                                <input type="text" value="@Model.ElementAt(0).PathToVideo2" id="secondVideoUrl" hidden />
+                            </div>
+                        }
+                        @if (Model.ElementAt(0).PathToVideo3 != null)
+                        {
+                            <div class="nav-element-minor" style="cursor:pointer" id="videoThree">
+                                <div class="nav-element-inside">
+                                    @if (Model.ElementAt(0).PathToVideo1 == null && Model.ElementAt(0).PathToVideo2 == null)
+                                    {
+                                        <p>Сюжет №1</p>
+                                    }
+                                    @if (Model.ElementAt(0).PathToVideo2 == null && Model.ElementAt(0).PathToVideo1 != null)
+                                    {
+                                        <p>Сюжет №2</p>
+                                    }
+                                    @if (Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo1 != null)
+                                    {
+                                        <p>Сюжет №3</p>
+                                    }
+                                </div>
+                                <input type="text" value="@Model.ElementAt(0).PathToVideo3" id="thirdVideoUrl" hidden />
+                            </div>
+                        }
+                    </div>
+                }<br />
+
+                @*На случай если только 1 видео и находится оно в разных ячейках*@
+
+                @if (Model.ElementAt(0).PathToVideo1 != null && Model.ElementAt(0).PathToVideo2 == null && Model.ElementAt(0).PathToVideo3 == null)
+                {
+                    <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+                        <iframe src="@Model.ElementAt(0).PathToVideo1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    </div>
+                }
+                @if (Model.ElementAt(0).PathToVideo1 == null && Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo3 == null)
+                {
+                    <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+                        <iframe src="@Model.ElementAt(0).PathToVideo2" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    </div>
+                }
+                @if (Model.ElementAt(0).PathToVideo1 == null && Model.ElementAt(0).PathToVideo2 == null && Model.ElementAt(0).PathToVideo3 != null)
+                {
+                    <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+                        <iframe src="@Model.ElementAt(0).PathToVideo3" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    </div>
+                }
+                @if (Model.ElementAt(0).PathToVideo1 != null && Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo3 == null)
+                {
+                    <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+                        <iframe src="@Model.ElementAt(0).PathToVideo1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    </div>
+                }
+                @if (Model.ElementAt(0).PathToVideo1 != null && Model.ElementAt(0).PathToVideo2 == null && Model.ElementAt(0).PathToVideo3 != null)
+                {
+                    <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+                        <iframe src="@Model.ElementAt(0).PathToVideo1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    </div>
+                }
+                @if (Model.ElementAt(0).PathToVideo1 == null && Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo3 != null)
+                {
+                    <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+                        <iframe src="@Model.ElementAt(0).PathToVideo2" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    </div>
+                }
+                @if (Model.ElementAt(0).PathToVideo1 != null && Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo3 != null)
+                {
+                    <div style="position:relative;padding-bottom:54.25%;padding-top:30px;height:0;overflow:hidden;" id="videoPlayer">
+                        <iframe src="@Model.ElementAt(0).PathToVideo1" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    </div>
+                }
             </div>
+            @*/////////////////////////////////////////
+        ///////////////////////////////////////////
+        ////////////////////////////////////////////*@
         </div>
         <p>
             <a asp-action="Edit" asp-route-id="@Model.ElementAt(i).NewsId">Редактировать новость</a> |
