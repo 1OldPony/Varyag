@@ -13,8 +13,8 @@ namespace Varyag.Models
         public int NewsDate { get; set; }
         [DisplayName("Дата новости для превью")]
         public string NewsDatePreview { get; set; }
-        [DisplayName("Связанный проект")]
-        public string LinkedProjectName { get; set; }
+        [DisplayName("Связанные проекты")]
+        public string LinkedProjectNames { get; set; }
         [DisplayName("Ключевое слово")]
         public NewsKeyWord KeyWord { get; set; }
         [DisplayName("Путь к папке с фотографиями в галерею")]

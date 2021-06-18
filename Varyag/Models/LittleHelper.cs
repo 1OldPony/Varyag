@@ -143,8 +143,7 @@ namespace Varyag.Models
                     WideImgY = item.WideImgY,
                     WideStory = item.WideStory,
                     NewsDate = newsDate,
-                    NewsDatePreview = month,
-                    LinkedProjectName = item.LinkedProjectName
+                    NewsDatePreview = month
                 });
             }
             newsIntDate =newsIntDate.OrderByDescending(n => n.NewsDate).ToList();
