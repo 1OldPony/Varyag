@@ -23,9 +23,9 @@ namespace Varyag.Controllers
         {
             List<Project> items = new List<Project>();
             items = await db.Project.ToListAsync();
-            LittleHelper.ProjectsToSortedViewModel(items,true);
+            //LittleHelper.ProjectsToSortedViewModel(items,true,"Up");
 
-            MultiSelectList projectsNames = new MultiSelectList(LittleHelper.ProjectsToSortedViewModel(items, true), "Length", "Name");
+            SelectList projectsNames = new SelectList(LittleHelper.ProjectsToSortedViewModel(items, true, "Up"), "Length", "Name");
             ViewData["projectNames"] = projectsNames;
             return View();
         }

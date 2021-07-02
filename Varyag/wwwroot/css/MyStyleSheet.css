@@ -1326,22 +1326,48 @@ ul .nav-element-choosen {
 }
 
 .description {
-    /*text-align: left;*/
+    text-align: left;
     padding: 25px;
     padding-top: 5px;
     background-color: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    border-style:solid;
-    border-width:thin;
-    border-top:none;
 }
-
+.projectNews {
+    display: none;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 25px;
+    padding-top: 5px;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content:space-between;
+}
+.projectNewsElement {
+    width: 49%;
+    margin-top:10px;
+}
+.projectNewsFoto {
+    margin-right: 10px;
+    height: auto;
+    width: 57%;
+}
+#even.projectNewsFoto {
+    margin-left: 10px;
+}
+.projectNewsTextPart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 10px 0;
+    justify-content: space-between;
+    width: 43%;
+}
+#even.projectNewsTextPart {
+    margin-right: 10px;
+}
 .desc-top {
-    /*text-align: left;*/
-    border-top: thin solid;
-    border-left: thin solid;
-    border-right: thin solid;
     padding-left: 25px;
     padding-top: 5px;
     padding-right: 20px;
@@ -1350,6 +1376,21 @@ ul .nav-element-choosen {
     background-color: white;
     padding-bottom: 5px;
     width: 47%;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.newsOfProject {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #c3e3ff;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    width: 47%;
+    margin-left: 3px;
+    cursor: pointer;
 }
 
 .TTH {
@@ -1963,18 +2004,21 @@ ul .nav-element-choosen {
     }
 }
 @media (max-width:1280px) {
-
     #production.about {
         background-position: 87% 60%;
     }
-
     #goto-predist.about {
         background: url(../images/о_нас/гото/1_Гото_Предестинация.jpg) 80% 100% no-repeat;
         background-size: auto 135%;
     }
-
     .cellShort[name="midSailArea"] {
         display: none;
+    }
+    .projectNewsFoto {
+        display:none;
+    }
+    .projectNewsTextPart {
+        width: 100%;
     }
 }
 @media (max-width:1270px) {
@@ -2432,7 +2476,7 @@ ul .nav-element-choosen {
         width: auto;
         margin: auto;
     }
-    .description {
+    /*.description {
         margin: 5%;
     }
     .desc-top {
@@ -2440,7 +2484,7 @@ ul .nav-element-choosen {
         font-weight: 600;
         text-align: left;
         margin-left: 5%;
-    }
+    }*/
     .catalog {
         grid-template-areas: "boats sub" "bigboats sub" "kater sub" "ladya sub" "sailboat sub" "maket sub";
         grid-template-columns: 1fr 1fr;
@@ -2664,6 +2708,9 @@ ul .nav-element-choosen {
     .characteristic {
         display: table-cell;
     }
+    #details.characteristic {
+        display: table-cell;
+    }
     .catalogPlitka {
         width: 48.5%;
     }
@@ -2753,6 +2800,15 @@ ul .nav-element-choosen {
     #contactsWords {
         display:none;
     }
+    .projectNews {
+        flex-wrap: nowrap;
+        flex-direction:column;
+        justify-content: flex-start;
+    }
+    .projectNewsElement {
+        width: 100%;
+        margin-top: 0;
+    }
 }
 
 @media (max-width:586px) {
@@ -2838,6 +2894,7 @@ ul .nav-element-choosen {
     #cinemaOrders.category {
         width: 45%;
     }
+    
 }
 @media (max-width:530px) {
     .catalogPlitka {
@@ -2853,6 +2910,14 @@ ul .nav-element-choosen {
     }
     #catalog.category {
         width: 100%;
+    }
+}
+@media (max-width:515px) {
+    .desc-top {
+        height: 50px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
     }
 }
 @media (max-width:500px) {
@@ -3168,6 +3233,9 @@ ul .nav-element-choosen {
         display: table-cell;
     }
     .characteristic {
+        display: none;
+    }
+    #details.characteristic {
         display: none;
     }
 }

@@ -257,10 +257,14 @@
                 <div>Путь к третьему видео</div>
                 <input asp-for="PathToVideo3" />
             </div>
+            <div style="display:flex;flex-direction:column;grid-area:linkedProjects">
+                <div>Подключите новость к проектам</div>
+                <div style="display:flex;justify-content:flex-start;width:100%;">@await Component.InvokeAsync("LinkToProject")</div>
+                <div style="display:flex;flex-direction:column;" id="LinkedProjectsList">
+                </div>
+            </div>
         </div>
     </div>
-
-
     <div hidden>
         <input asp-for="ShortImgScale" value="@Model.ShortImgScale" id="ShortImgScale" />
         <input asp-for="ShortImgX" value="@Model.ShortImgX" id="ShortImgX" />
@@ -279,6 +283,8 @@
         <input asp-for="MiddleFotoPreview" value="@Model.MiddleFotoPreview" />
         <input asp-for="WideFotoPreview" value="@Model.WideFotoPreview" />
         <input asp-for="NewsId" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="LinkedProjectNames" value="@Model.LinkedProjectNames" id="LinkedProjectNames" />
     </div>
     <div style="display:flex;">
         <input type="button" value="Сохранить данные из редактора" id="saveEditorParams" style="width:300px" />

@@ -1,1 +1,1 @@
-﻿@Html.ListBox("LinkedProjectNames", ViewData["projectNames"] as MultiSelectList, htmlAttributes: new { @style = "height:100%;", @SelectionMode = "Multiple" })
+﻿@Html.DropDownList("LinkedProjects", ViewData["projectNames"] as SelectList, htmlAttributes: new { @style = "height:100%;width:100%;", @onchange = "newsLinkToProject()" })

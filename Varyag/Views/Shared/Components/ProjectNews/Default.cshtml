@@ -1,18 +1,38 @@
-﻿@*@model List<Varyag.Models.NewsViewModel>*@
-
-@for (int i = 0; i < Model.Count(); i++)
+﻿@model List<NewsViewModel>
+@{
+    int x = 1;
+ }
+@for (int i = 0; i < Model.Count; i++)
 {
-    <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId">
-        <div class="newsListElement">
-            <div class="partNewsElement" id="allNews" style="grid-area:preview;height:auto">
-                <img src="@Model.ElementAt(i).ShortFotoPreview" />
+    @if (x % 2 != 0)
+    {
+        <a asp-controller="About" asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId" class="projectNewsElement">
+            <div style="display:flex;margin:10px auto auto 0;height:100%;">
+                <div class="projectNewsFoto">
+                    <img src="@Model.ElementAt(i).ShortFotoPreview" />
+                </div>
+                <div id="even" class="projectNewsTextPart">
+                    <div style="font-size:1.6rem;font-weight:bold;">@Model.ElementAt(i).NewsDatePreview</div>
+                    <h2 class="newsMainStory">@Model.ElementAt(i).Header</h2>
+                    <div style="display: flex;align-items: center;justify-content: center;font-weight: bolder;font-size: 1.4rem;">Смотреть...</div>
+                </div>
             </div>
-            <div class="textPartAllNews" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;margin:10px 0 10px 0;justify-self:center;width:96%;">
-                <div style="font-size:1.6rem;font-weight:bold;">@Model.ElementAt(i).NewsDatePreview</div>
-                <h2 class="newsMainStory">@Model.ElementAt(i).Header</h2>
-                <div style="display: flex;align-items: center;justify-content: center;font-weight: bolder;font-size: 1.4rem;">Смотреть...</div>
+        </a>
+    }
+    else
+    {
+        <a asp-controller="About" asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId" class="projectNewsElement">
+            <div style="display:flex;margin:10px auto auto 0;height:100%;">
+                <div id="even" class="projectNewsFoto">
+                    <img src="@Model.ElementAt(i).ShortFotoPreview" />
+                </div>
+                <div class="projectNewsTextPart">
+                    <div style="font-size:1.6rem;font-weight:bold;">@Model.ElementAt(i).NewsDatePreview</div>
+                    <h2 class="newsMainStory">@Model.ElementAt(i).Header</h2>
+                    <div style="display: flex;align-items: center;justify-content: center;font-weight: bolder;font-size: 1.4rem;">Смотреть...</div>
+                </div>
             </div>
-        </div>
-    </a>
-    <div class="myBorder"></div>
+        </a>
+    }
+    x++;
 }

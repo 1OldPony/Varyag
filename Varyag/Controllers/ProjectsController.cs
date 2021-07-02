@@ -49,7 +49,7 @@ namespace Varyag.Controllers
         {
             List<Project> projects = await _context.Project.ToListAsync();
 
-            return View(LittleHelper.ProjectsToSortedViewModel(projects, true));
+            return View(LittleHelper.ProjectsToSortedViewModel(projects, true, "Up"));
         }
 
         // GET: Projects/Details/5

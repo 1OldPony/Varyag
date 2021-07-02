@@ -439,6 +439,7 @@ namespace Varyag.Controllers
 
                     _context.Update(news);
                     await _context.SaveChangesAsync();
+                    //return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {

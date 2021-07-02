@@ -27,17 +27,17 @@ namespace Varyag.Controllers
         public async Task<IViewComponentResult> InvokeAsync()
         {
             List<NewsViewModel> lastNews = new List<NewsViewModel>();
-            try
-            {
+            //try
+            //{
                 List<News> news = await db.News.ToListAsync();
                 List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
                 lastNews = sortedNews.AsEnumerable().Take(3).ToList();
-            }
-            catch (Exception e)
-            {
-                _logger.LogInformation("ОШИБКА!!!! ВРЕМЯ {0}, СООБЩЕНИЕ {1}, МЕТОД {2}, ПУТЬ_ДО {3},", DateTime.Now.ToShortTimeString(), e.Message, e.TargetSite, e.StackTrace);
-                throw new Exception("Не удалось загрузить новостные превью");
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    _logger.LogInformation("ОШИБКА!!!! ВРЕМЯ {0}, СООБЩЕНИЕ {1}, МЕТОД {2}, ПУТЬ_ДО {3},", DateTime.Now.ToShortTimeString(), e.Message, e.TargetSite, e.StackTrace);
+            //    throw new Exception("Не удалось загрузить новостные превью");
+            //}
 
             return View(lastNews);
         }

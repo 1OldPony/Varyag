@@ -143,7 +143,8 @@ namespace Varyag.Models
                     WideImgY = item.WideImgY,
                     WideStory = item.WideStory,
                     NewsDate = newsDate,
-                    NewsDatePreview = month
+                    NewsDatePreview = month,
+                    LinkedProjectNames = item.LinkedProjectNames
                 });
             }
             newsIntDate =newsIntDate.OrderByDescending(n => n.NewsDate).ToList();
@@ -151,7 +152,7 @@ namespace Varyag.Models
             return newsIntDate;
         }
 
-        public static List<ProjectPublicViewModel> ProjectsToSortedViewModel(List<Project> projects, bool boats)
+        public static List<ProjectPublicViewModel> ProjectsToSortedViewModel(List<Project> projects, bool boats, string lengthSort)
         {
             List<ProjectPublicViewModel> orderedProjects = new List<ProjectPublicViewModel>();
             foreach (var item in projects)
@@ -305,7 +306,14 @@ namespace Varyag.Models
                     });
                 }
             }
-            orderedProjects = orderedProjects.OrderBy(x => x.Order).ToList();
+            if (lengthSort == "Up")
+            {
+                orderedProjects = orderedProjects.OrderBy(x => x.Order).ToList();
+            }
+            else
+            {
+                orderedProjects = orderedProjects.OrderByDescending(x => x.Order).ToList();
+            }
 
             return orderedProjects;
         }

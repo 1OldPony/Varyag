@@ -505,7 +505,42 @@ function switchProjectsViewPlitca() {
     //    $('#iconListRed').css('display', 'none');
     //    $('#iconList').css('display', 'initial');
     //}
-} 
+}
+
+//////////////////////Сортируем по длинне///////////////////////
+function lengthSort(category, plitca, lengthSort) {
+    //$.ajax({
+        //url: '@Url.Action("CatalogSort", "Catalog")',
+        //data: {
+        //    showPrevious: document.getElementById("cbShowPrevious").checked,
+        //    showUpcoming: document.getElementById("cbShowUpcoming").checked
+        //},
+    //    success: function (data) {
+    //        $("#moore").html(data);
+    //    }
+    //})
+    //let url = new URL('https://localhost:44325/Catalog/CatalogSort'); 
+
+    //url.searchParams.set('category', category);
+    //url.searchParams.set('plitca', plitca);
+    //url.searchParams.set('lengthSort', lengthSort);
+    $('#moore').load("../Catalog/CatalogSort?category=" + category + "&plitca=" + plitca + "&lengthSort=" + lengthSort);
+}
+
+function navigationButton() {
+    if ($(".leftMenu").css("left") == '-31px') {
+        $(".leftMenu").css("left", "-341px");
+        $(".leftMenu").css("overflow", "unset");
+        $("body").css("overflow", "unset");
+        $('#blackScreen').css('display', 'none');
+    }
+    else {
+        $('.leftMenu').css('left', '-31px');
+        $('body').css('overflow', 'hidden');
+        $('.leftMenu').css('overflow', 'scroll');
+        $('#blackScreen').css('display', 'block');
+    }
+}
 
 //////////////////////////виджет контакта//////////////////////////
 VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
@@ -627,17 +662,3 @@ VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 13798710
 //            break;
 //    }
 //});
-function navigationButton() {
-    if ($(".leftMenu").css("left") == '-31px') {
-        $(".leftMenu").css("left", "-341px");
-        $(".leftMenu").css("overflow", "unset");
-        $("body").css("overflow", "unset");
-        $('#blackScreen').css('display', 'none');
-    }
-    else {
-        $('.leftMenu').css('left', '-31px');
-        $('body').css('overflow', 'hidden');
-        $('.leftMenu').css('overflow', 'scroll');
-        $('#blackScreen').css('display', 'block');
-    }
-}

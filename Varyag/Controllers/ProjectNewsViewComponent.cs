@@ -19,8 +19,19 @@ namespace Varyag.Controllers
         public async Task<IViewComponentResult> InvokeAsync(string projectName)
         {
             List<News> items = new List<News>();
-            items = await db.News.Where(w => w.LinkedProjectNames == projectName).ToListAsync();
-            return View(items);
+            items = await db.News.ToListAsync();
+            List<News> neededNews = new List<News>();
+            foreach (var item in items)
+            {
+                if (item.LinkedProjectNames!=null)
+                {
+                    if (item.LinkedProjectNames.Contains(projectName))
+                    {
+                        neededNews.Add(item);
+                    }
+                }
+            }
+            return View(LittleHelper.NewsToSortedViewModel(neededNews));
         }
     }
 }

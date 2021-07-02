@@ -21,7 +21,7 @@
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все катера</div><div class="catalogIcons"><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png"  id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
+                    <div class="categorysLineTtem">Все катера</div><div class="catalogIcons"><div id="sortUp" onclick="lengthSort('kater', true, 'Up')">По возрастанию длинны</div><div id="sortDown" onclick="lengthSort('kater', true, 'Down')">По убыванию длинны</div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
@@ -30,11 +30,12 @@
                 </div>
             </div>
             <div id="deactivated" class="plitcaStyleCatalog">
-                @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater", plitca = true })
+                @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater", plitca = true, lengthSort = "Up" })
             </div>
             <div id="activated" class="lineStyleCatalog">
-                @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater", plitca = false })
+                @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater", plitca = false, lengthSort = "Up" })
             </div>
+            <div id="moore"></div>
         </div>
     </div>
 </div>

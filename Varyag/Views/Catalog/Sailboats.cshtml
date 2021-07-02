@@ -20,7 +20,7 @@
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все парусники</div><div style="display:flex"><img src="~/images/icons/list3.png" id="iconList" style="margin-right:5px;cursor:pointer;display:none;" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="iconListRed" style="margin-right:5px;cursor:pointer;" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="iconPlitca" style="cursor:pointer;" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="iconPlitcaRed" style="cursor:pointer;display:none" onclick="switchProjectsViewPlitca()" /></div>
+                    <div class="categorysLineTtem">Все парусники</div><div class="catalogIcons"><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
@@ -29,10 +29,10 @@
                     и построить парусно-моторное судно по индивидуальному проекту, в том числе реплику исторического корабля.
                 </div>
             </div>
-            <div id="plitcaStyle" style="display:none">
+            <div id="deactivated" class="plitcaStyleCatalog">
                 @await Component.InvokeAsync("ProjectsCatalog", new { category = "sailboat", plitca = true })
             </div>
-            <div id="lineStyle" style="display:initial">
+            <div id="activated" class="lineStyleCatalog">
                 @await Component.InvokeAsync("ProjectsCatalog", new { category = "sailboat", plitca = false })
             </div>
         </div>

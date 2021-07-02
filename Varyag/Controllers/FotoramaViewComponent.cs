@@ -31,6 +31,7 @@ namespace Varyag.Controllers
             {
                 var news = await db.News.Where(i=>i.NewsId == newsId).SingleAsync();
                 string[] fotos = Directory.GetFiles(news.PathToGallery);
+                ViewBag.singleFoto = false;
                 List<string> fotoPaths = new List<string>();
                 foreach (var item in fotos)
                 {
