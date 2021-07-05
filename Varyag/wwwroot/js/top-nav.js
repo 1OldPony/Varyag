@@ -442,32 +442,8 @@ function switchProjectsViewList() {
         $('.iconList').attr('id', 'deactivated');
         $('.iconPlitcaRed').attr('id', 'deactivated');
         $('.iconPlitca').attr('id', 'activated');
-
-        //$('.lineStyleCatalog').attr('id', 'deactivated')
-        //$('.plitcaStyleCatalog').attr('id', 'activated')
-        //$('.iconListRed').attr('id', 'deactivated');
-        //$('.iconList').attr('id', 'activated');
-        //$('.iconPlitcaRed').attr('id', 'activated');
-        //$('.iconPlitca').attr('id', 'deactivated');
     }
-    //else {
-    //    $('.lineStyleCatalog').attr('id', 'activated')
-    //    $('.plitcaStyleCatalog').attr('id', 'deactivated')
-    //    $('.iconListRed').attr('id', 'activated');
-    //    $('.iconList').attr('id', 'deactivated');
-    //    $('.iconPlitcaRed').attr('id', 'deactivated');
-    //    $('.iconPlitca').attr('id', 'activated');
-    //}
-
-    //if ($('.lineStyle').css('display')=='none') {
-    //    $('#lineStyle').css('display', 'initial');
-    //    $('#plitcaStyle').css('display', 'none');
-    //    $('#iconListRed').css('display', 'initial');
-    //    $('#iconList').css('display', 'none');
-    //    $('#iconPlitcaRed').css('display', 'none');
-    //    $('#iconPlitca').css('display', 'initial');
-    //}
-} 
+}
 
 function switchProjectsViewPlitca() {
     if ($('.plitcaStyleCatalog').attr('id') != 'activated') {
@@ -477,54 +453,28 @@ function switchProjectsViewPlitca() {
         $('.iconPlitca').attr('id', 'deactivated');
         $('.iconListRed').attr('id', 'deactivated');
         $('.iconList').attr('id', 'activated');
-        //$('.plitcaStyleCatalog').attr('id', 'deactivated')
-        //$('.lineStyleCatalog').attr('id', 'activated')
-        //$('.iconListRed').attr('id', 'deactivated');
-        //$('.iconList').attr('id', 'activated');
-        //$('.iconPlitcaRed').attr('id', 'deactivated');
-        //$('.iconPlitca').attr('id', 'activated');
     }
-    //else {
-    //    $('.plitcaStyleCatalog').attr('id', 'activated')
-    //    $('.lineStyleCatalog').attr('id', 'deactivated')
-    //    $('.iconPlitcaRed').attr('id', 'activated');
-    //    $('.iconPlitca').attr('id', 'deactivated');
-    //    $('.iconListRed').attr('id', 'deactivated');
-    //    $('.iconList').attr('id', 'activated');
-    //}
-
-
-    //if ($('#plitcaStyle').css('display') == 'none') {
-
-    //    $('#plitcaStyle').css('display', 'initial');
-    //    $('#lineStyle').css('display', 'none');
-
-    //    $('#iconPlitcaRed').css('display', 'initial');
-    //    $('#iconPlitca').css('display', 'none');
-
-    //    $('#iconListRed').css('display', 'none');
-    //    $('#iconList').css('display', 'initial');
-    //}
 }
 
 //////////////////////Сортируем по длинне///////////////////////
-function lengthSort(category, plitca, lengthSort) {
-    //$.ajax({
-        //url: '@Url.Action("CatalogSort", "Catalog")',
-        //data: {
-        //    showPrevious: document.getElementById("cbShowPrevious").checked,
-        //    showUpcoming: document.getElementById("cbShowUpcoming").checked
-        //},
-    //    success: function (data) {
-    //        $("#moore").html(data);
-    //    }
-    //})
-    //let url = new URL('https://localhost:44325/Catalog/CatalogSort'); 
+function lengthSort(category, lengthSort) {
+    if (lengthSort != 'Down') {
+        $('#sortDown').css('display', 'none');
+        $('#sortUp').css('display', 'block');
+    }
+    else {
+        $('#sortDown').css('display', 'block');
+        $('#sortUp').css('display', 'none');
+    }
+    refreshCatalog(category, lengthSort);
+    $('#sortScreen').css('display', 'block');
+    $('.sortOptions').css('color', 'lightgrey');
+    setTimeout(() => { $('#sortScreen').css('display', 'none'); $('.sortOptions').css('color', '#183f61'); }, 500);
+}
 
-    //url.searchParams.set('category', category);
-    //url.searchParams.set('plitca', plitca);
-    //url.searchParams.set('lengthSort', lengthSort);
-    $('#moore').load("../Catalog/CatalogSort?category=" + category + "&plitca=" + plitca + "&lengthSort=" + lengthSort);
+function refreshCatalog(category, lengthSort) {
+    $('.plitcaStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=true" + "&lengthSort=" + lengthSort);
+    $('.lineStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=false" + "&lengthSort=" + lengthSort);
 }
 
 function navigationButton() {
@@ -541,6 +491,7 @@ function navigationButton() {
         $('#blackScreen').css('display', 'block');
     }
 }
+
 
 //////////////////////////виджет контакта//////////////////////////
 VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);

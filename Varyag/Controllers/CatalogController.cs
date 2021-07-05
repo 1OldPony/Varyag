@@ -23,7 +23,7 @@ namespace Varyag.Controllers
         }
 
         public IActionResult CatalogSort(string category, bool plitca, string lengthSort)
-        {
+        {            
             return ViewComponent("ProjectsCatalog", new { category, plitca, lengthSort });
         }
 

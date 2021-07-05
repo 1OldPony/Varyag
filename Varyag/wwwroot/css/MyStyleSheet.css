@@ -331,9 +331,6 @@
     font-weight: bolder;
     font-size: 1.4rem;
     opacity:1;
-    /*background: white;
-    background: rgba(255, 255,255,0.9);
-    box-shadow: 0px -20px 20px 0px rgba(255, 255, 255, 0.9);*/
 }
 
 #goto-predist.about {
@@ -1964,9 +1961,17 @@ ul .nav-element-choosen {
     flex-direction: column;
     margin-right: 10px;
 }
+.sortOptions {
+    display: flex;
+    align-self: center;
+    margin-right: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    position: relative;
+    user-select:none;
+}
 
 @media (min-width:1500px) {
-
     #cinemaOrders.category {
         max-width: 25%;
     }

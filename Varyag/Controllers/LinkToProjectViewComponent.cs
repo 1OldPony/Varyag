@@ -17,8 +17,6 @@ namespace Varyag.Controllers
             db = context;
         }
 
-        //enum ProjectsNames { };
-
         public async Task<IViewComponentResult> InvokeAsync()
         {
             List<Project> items = new List<Project>();
