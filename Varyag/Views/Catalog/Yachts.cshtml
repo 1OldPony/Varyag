@@ -20,7 +20,7 @@
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все парусные яхты</div><div style="display:flex"><img src="~/images/icons/list3.png" id="iconList" style="margin-right:5px;cursor:pointer;display:none;" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="iconListRed" style="margin-right:5px;cursor:pointer;" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="iconPlitca" style="cursor:pointer;" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="iconPlitcaRed" style="cursor:pointer;display:none" onclick="switchProjectsViewPlitca()" /></div>
+                    <div class="categorysLineTtem">Парусные яхты</div><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div>Длинна:&nbsp;<div id="sortUp" style="cursor:pointer;" onclick="lengthSort('yacht', 'Down')">По возрастанию</div><div id="sortDown" style="display:none;cursor:pointer;" onclick="lengthSort('yacht', 'Up')">По убыванию</div></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
@@ -29,11 +29,14 @@
                     В случае необходимости мы можем построить деревянную яхту по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
                 </div>
             </div>
-            <div id="plitcaStyle" style="display:none">
-                @await Component.InvokeAsync("ProjectsCatalog", new { category = "yacht", plitca = true })
-            </div>
-            <div id="lineStyle" style="display:initial">
-                @await Component.InvokeAsync("ProjectsCatalog", new { category = "yacht", plitca = false })
+            <div style="position:relative">
+                <div id="sortScreen2" class="sortScreen2"><div class="loadingGif"><img src="~/images/icons/loading-11.gif" class="gif" /><img src="~/images/icons/loading-105.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-73.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-99.gif" style="width:50%;display:none" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "yacht", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "yacht", plitca = false, lengthSort = "Up" })
+                </div>
             </div>
         </div>
     </div>

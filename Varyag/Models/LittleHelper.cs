@@ -164,16 +164,16 @@ namespace Varyag.Models
 
                     if (numbers.Length < 2)
                     {
-                        number = string.Concat(numbers[0]);
+                        number = string.Concat(numbers[0], '0');
                     }
                     else
                     {
                         foreach (var symbol in numbers)
                         {
-                            if (symbol!='.' && symbol != ',')
+                            if (symbol != '.' && symbol != ',')
                                 number = string.Concat(number, symbol.ToString());
                             else
-                                break;
+                                continue;
                         }
                     }
 
@@ -236,7 +236,7 @@ namespace Varyag.Models
 
                         if (numbers.Length < 2)
                         {
-                            number = string.Concat(numbers[0]);
+                            number = string.Concat(numbers[0], '0');
                         }
                         else
                         {
@@ -245,7 +245,7 @@ namespace Varyag.Models
                                 if (symbol != '.' && symbol != ',')
                                     number = string.Concat(number, symbol.ToString());
                                 else
-                                    break;
+                                    continue; ;
                             }
                         }
                     }

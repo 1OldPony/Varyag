@@ -3,6 +3,12 @@ $(document).ready(function () {
     //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
     $("#left.control, #right.control").height($(".allCustomers").height());
     leftMenuOffset = $(".projectsHalf").offset().top;
+
+
+
+    //document.addEventListener("DOMContentLoaded", () => {
+    //    alert("DOM готов!");
+    //});
 });
 $(window).scroll(function () {
     if ($(window).width() > 1000) {
@@ -466,15 +472,24 @@ function lengthSort(category, lengthSort) {
         $('#sortDown').css('display', 'block');
         $('#sortUp').css('display', 'none');
     }
-    refreshCatalog(category, lengthSort);
     $('#sortScreen').css('display', 'block');
+    $('#sortScreen2').css('display', 'block');
     $('.sortOptions').css('color', 'lightgrey');
-    setTimeout(() => { $('#sortScreen').css('display', 'none'); $('.sortOptions').css('color', '#183f61'); }, 500);
-}
 
-function refreshCatalog(category, lengthSort) {
-    $('.plitcaStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=true" + "&lengthSort=" + lengthSort);
-    $('.lineStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=false" + "&lengthSort=" + lengthSort);
+    $('.plitcaStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=true" + "&lengthSort=" + lengthSort, function () {
+        if ($('#sortScreen').css('display') == 'block') {
+            $('#sortScreen').css('display', 'none');
+            $('.sortOptions').css('color', '#183f61');
+            $('#sortScreen2').css('display', 'none');
+        }
+    });
+    $('.lineStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=false" + "&lengthSort=" + lengthSort, function () {
+        if ($('#sortScreen').css('display') == 'block') {
+            $('#sortScreen').css('display', 'none');
+            $('.sortOptions').css('color', '#183f61');
+            $('#sortScreen2').css('display', 'none');
+        }
+    });
 }
 
 function navigationButton() {
