@@ -172,7 +172,7 @@ $("#saveEditorParams").click(function () {
     $("#newsSaveButton").removeAttr("disabled");
 })
 
-////////////////////////////деактивируем кнопку сохранения новости//////////////////////////////
+/////////////////////////деактивируем кнопку сохранения новости////////////////////////////
 function newsSaveButtonDisable() {
         $("#newsSaveButton").attr("disabled", "disabled");
 }

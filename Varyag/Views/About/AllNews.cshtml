@@ -11,17 +11,25 @@
 
     <input type="text" id="newsTypeSelector" value="@ViewBag.newsType" hidden />
     <div class="contentBlock">
-        <div id="blackScreen" onclick="navigationButton()" style="display:none;width:100%;height:100%;background-color:black;opacity:0.4;position:fixed;z-index:8;top:0;"></div>
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
         <div class="leftMenu">
             <nav>
                 @if (ViewBag.newsType != "byType")
                 {
                     <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
                         <li>
-                            <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Особые заказы</div></a>
+                            <div class="leftNavLine"><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
+                            <ul id="articles-sub" class="leftSubNavOpenCurrent">
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a>
+                                </li>
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="movies">Заказы для кино</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
-                            <div class="leftNavLine"><a asp-action="AllNews" class="navLineHeader" style="color:red">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
+                            <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a asp-action="AllNews" class="navLineHeader" style="color:red">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
                             <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
                                 @if (ViewBag.newsType == "smi")
                                 {
@@ -64,15 +72,15 @@
                         <li>
                             <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
                             <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
-                                    </li>
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
-                                    </li>
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
-                                    </li>
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
+                                </li>
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
+                                </li>
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -151,31 +159,10 @@
             </div>
         </div>
         <div class="projectsHalf">
-            <div class="topCatalogLine">
+            <div class="topCatalogLine" id="newsTopLine">
                 <h1 class="categorysLineTtem" style="margin-block:0;justify-content:flex-start">Наши новости</h1>
             </div>
             <div class="newsBlock">
-                @*@for (int i = 0; i < Model.Count(); i++)
-                    {<a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId">
-                            <div class="newsListElement">
-                                <div class="partNewsElement" id="allNews" style="grid-area:preview;background-image:url(@Model.ElementAt(i).ShortFotoPreview);background-position-x:@Model.ElementAt(i).ShortImgX;background-position-y:@Model.ElementAt(i).ShortImgY;background-size:@Model.ElementAt(i).ShortImgScale auto;background-repeat:no-repeat;margin-right:1vw">
-                                    <div class="annotation" id="allNews">
-                                        <div class="annotationText" id="allNews">
-                                            @Html.Raw(Model.ElementAt(i).ShortStory)
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="textPartAllNews">
-                                    <div id="bottom" class="control">Смотреть...</div>
-                                    <div style="font-size:1.6rem;font-weight:bold;">@Model.ElementAt(i).NewsDate</div>
-                                    <h3 class="newsMainStory">@Model.ElementAt(i).Header</h3>*@
-                @*<div class="newsMainStory">@Html.Raw(Model.ElementAt(i).MainStory)</div>*@
-                @*</div>
-                            </div>
-                        </a>
-                        <div class="myBorder"></div>
-                    }*@
-
 
                 @for (int i = 0; i < Model.Count(); i++)
                 {

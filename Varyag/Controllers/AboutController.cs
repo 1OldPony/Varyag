@@ -210,9 +210,21 @@ namespace Varyag.Controllers
 
             return View(newsLeftMenu);
         }
-        public async Task<IActionResult> AllArticles(string actualNews, string recentNews, string oldNews)
+        public async Task<IActionResult> AllArticles(string actualNews, string recentNews, string oldNews, string type)
         {
-            List<Article> articles = await _context.Article.ToListAsync();
+            List<Article> articles = new List<Article>();
+            if (type == "Заказы для кино")
+            {
+                articles = await _context.Article.Where(a => a.ArticleType == "Заказы для кино").ToListAsync();
+            }
+            else if(type == "Заказы для музеев")
+            {
+                articles = await _context.Article.Where(a => a.ArticleType == "Заказы для музеев").ToListAsync();
+            }
+            else
+            {
+                articles = await _context.Article.ToListAsync();
+            }
 
             if (articles == null)
             {
@@ -221,6 +233,7 @@ namespace Varyag.Controllers
             ViewBag.actualNews = actualNews;
             ViewBag.recentNews = recentNews;
             ViewBag.oldNews = oldNews;
+            ViewBag.type = type;
             return View(articles);
         }
         public async Task<IActionResult> ArticleDetails(string route)

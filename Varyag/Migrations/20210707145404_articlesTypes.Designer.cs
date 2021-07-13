@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Varyag.Models;
 
 namespace Varyag.Migrations
 {
     [DbContext(typeof(VaryagContext))]
-    partial class VaryagContextModelSnapshot : ModelSnapshot
+    [Migration("20210707145404_articlesTypes")]
+    partial class articlesTypes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -164,7 +166,9 @@ namespace Varyag.Migrations
 
                     b.Property<string>("ArticleRoute");
 
-                    b.Property<string>("ArticleType");
+                    b.Property<bool>("Movies");
+
+                    b.Property<bool>("Museums");
 
                     b.Property<string>("PathToGallery1");
 

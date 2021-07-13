@@ -236,16 +236,22 @@ namespace Varyag.Models
 
                         if (numbers.Length < 2)
                         {
-                            number = string.Concat(numbers[0], '0');
+                            number = string.Concat(numbers[0], "0");
                         }
                         else
                         {
+                            int pointCounter = 0;
                             foreach (var symbol in numbers)
                             {
                                 if (symbol != '.' && symbol != ',')
                                     number = string.Concat(number, symbol.ToString());
                                 else
-                                    continue; ;
+                                    pointCounter++;
+                                continue;
+                            }
+                            if (pointCounter == 0)
+                            {
+                                number = string.Concat(number, "0");
                             }
                         }
                     }
@@ -314,7 +320,6 @@ namespace Varyag.Models
             {
                 orderedProjects = orderedProjects.OrderByDescending(x => x.Order).ToList();
             }
-
             return orderedProjects;
         }
 

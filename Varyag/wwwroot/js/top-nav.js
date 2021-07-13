@@ -249,6 +249,22 @@ $("#themeNewsOpen, #themeNewsClose").click(function () {
     $("#themeNewsOpen").toggle()
     $("#themeNewsClose").toggle()
 });
+$("#articlesOpen, #articlesClose").click(function () {
+    if ($("#articlesOpen").css('display') != 'none') {
+        $("#articles-sub").attr('class', 'leftSubNavOpen');
+        $("#articles-sub").css('visibility', 'visible');
+        $("#articles-sub").css('opacity', '1');
+        $("#themeNewsNav").css('margin-top', '46px');
+    }
+    else {
+        $("#articles-sub").attr('class', 'leftSubNavClose');
+        $("#articles-sub").css('visibility', 'hidden');
+        $("#articles-sub").css('opacity', '0');
+        $("#themeNewsNav").css('margin-top', '0px');
+    }
+    $("#articlesOpen").toggle()
+    $("#articlesClose").toggle()
+});
 /////////////////////////выделяем выбранную подкатегорию лодок//////////////////////////
 //boatsTypeSelect();
 //function boatsTypeSelect() {
@@ -415,7 +431,6 @@ $("#right.control").click(function () {
 });
 
 $("#left.control").click(function () {
-
     if (window.innerWidth > 990) {
         var stepWide = custWidth;
 

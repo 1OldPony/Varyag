@@ -46,8 +46,26 @@
                 <div style="display:flex;">
                     <img style="width:304px;margin:10px 10px 0 0;" src='@Url.Content(LittleHelper.PathAdapter(Model.PathToGallery1+"\\preview\\ВерфьВаряг(превью).jpg","articlePreview"))' />
                     <div style="display:flex;flex-direction:column;">
-                        <div>Заменить фотку на превью можно тут(Кнопка "Загрузить")</div>
+                        <div>Фото на превью(нужно нажать кнопку "Загрузить")</div>
                         <input type="file" name="preview" />
+                        <div>Выберите тип статьи</div>
+                        <select name="articleType">
+                            @if (ViewBag.Type == "Заказы для кино")
+                            {
+                                <option value="Заказы для кино" selected>Заказы для кино</option>
+                                <option value="Заказы для музеев">Заказы для музеев</option>
+                            }
+                            @if (ViewBag.Type == "Заказы для музеев")
+                            {
+                                <option value="Заказы для кино">Заказы для кино</option>
+                                <option value="Заказы для музеев" selected>Заказы для музеев</option>
+                            }
+                            @if (ViewBag.Type == null)
+                            {
+                                <option value="Заказы для кино">Заказы для кино</option>
+                                <option value="Заказы для музеев">Заказы для музеев</option>
+                            }
+                        </select>
                     </div>
                 </div>
             </div>
@@ -182,6 +200,7 @@
         <div hidden>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input asp-for="ArticleId" />
+            <input asp-for="ArticleType" value="@ViewBag.Type" />
             @if (@ViewBag.Name != null)
             {
                 <input asp-for="ArticleName" value="@ViewBag.Name" />
@@ -350,7 +369,6 @@
             {
                 <input asp-for="PathToGallery9" value="@Model.PathToGallery9" />
             }
-
             @if (@ViewBag.Text10 != null)
             {
                 <input asp-for="Text10" value="@ViewBag.Text10" />
@@ -367,7 +385,6 @@
             {
                 <input asp-for="PathToGallery10" value="@Model.PathToGallery10" />
             }
-
             @if (@ViewBag.Text11 != null)
             {
                 <input asp-for="Text11" value="@ViewBag.Text11" />
@@ -384,7 +401,6 @@
             {
                 <input asp-for="PathToGallery11" value="@Model.PathToGallery11" />
             }
-
             @if (@ViewBag.Text12 != null)
             {
                 <input asp-for="Text12" value="@ViewBag.Text12" />
@@ -401,7 +417,6 @@
             {
                 <input asp-for="PathToGallery12" value="@Model.PathToGallery12" />
             }
-
             @if (@ViewBag.Text13 != null)
             {
                 <input asp-for="Text13" value="@ViewBag.Text13" />
@@ -418,7 +433,6 @@
             {
                 <input asp-for="PathToGallery13" value="@Model.PathToGallery13" />
             }
-
             @if (@ViewBag.Text14 != null)
             {
                 <input asp-for="Text14" value="@ViewBag.Text14" />
@@ -435,7 +449,6 @@
             {
                 <input asp-for="PathToGallery14" value="@Model.PathToGallery14" />
             }
-
             @if (@ViewBag.Text15 != null)
             {
                 <input asp-for="Text15" value="@ViewBag.Text15" />
@@ -453,7 +466,7 @@
                 <input asp-for="PathToGallery15" value="@Model.PathToGallery15" />
             }
         </div>
-        <input type="submit" value="Создать" />
+        <input type="submit" value="Сохранить" />
     </form>
     <div style="max-width:1400px;margin:auto;display:flex;flex-direction:column">
         @if (@ViewBag.Text1 != null)

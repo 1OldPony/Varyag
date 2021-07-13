@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <div>Загрузка файлов в галлерею(Кнопка "Загрузить")</div>
-                    <input name="fotos" type="file" multiple required />
+                    <input name="fotos" type="file" multiple />
                 </div>
                 <div style="display:flex;">
                     @if (ViewBag.PathForPartGallery1 != null)
@@ -35,8 +35,26 @@
                         <img style="width:304px;margin:10px 10px 0 0;" src='@Url.Content(LittleHelper.PathAdapter(ViewBag.PathForPreview+"\\ВерфьВаряг(превью).jpg","articlePreview"))' />
                     }
                     <div style="display:flex;flex-direction:column;">
-                        <div>Заменить фотку на превью можно тут(Кнопка "Загрузить")</div>
-                        <input type="file" name="preview" required />
+                        <div>Фото на превью(нужно нажать кнопку "Загрузить")</div>
+                        <input type="file" name="preview" />
+                        <div>Выберите тип статьи</div>
+                        <select name="articleType">
+                            @if (ViewBag.Type == "Заказы для кино")
+                            {
+                                <option value="Заказы для кино" selected>Заказы для кино</option>
+                                <option value="Заказы для музеев">Заказы для музеев</option>
+                            }
+                            @if (ViewBag.Type == "Заказы для музеев")
+                            {
+                                <option value="Заказы для кино">Заказы для кино</option>
+                                <option value="Заказы для музеев" selected>Заказы для музеев</option>
+                            }
+                            @if (ViewBag.Type == null)
+                            {
+                                <option value="Заказы для кино" >Заказы для кино</option>
+                                <option value="Заказы для музеев">Заказы для музеев</option>
+                            }
+                        </select>
                     </div>
                 </div>
             </div>
@@ -95,6 +113,7 @@
             <input type="text" asp-for="Text15" value="@ViewBag.Text15" />
             <input asp-for="ArticleName" value="@ViewBag.Name" />
             <input asp-for="ArticleRoute" value="@ViewBag.Route" />
+            <input asp-for="ArticleType" value="@ViewBag.Type" />
         </div>
         <input type="submit" value="Создать" />
     </form>

@@ -31,7 +31,8 @@ namespace Varyag.Controllers
 
         public async Task<IActionResult> FillArticle(int? articleId, string pathToGall, string currentTextPart, IFormFileCollection fotos, IFormFileCollection preview, string articleFolder, string articleName,
             int? partsCounter, string actionType, string articleRoute, string PathToGallery1, string PathToGallery2, string PathToGallery3, string PathToGallery4, string PathToGallery5, string PathToGallery6, 
-            string PathToGallery7, string PathToGallery8, string PathToGallery9, string PathToGallery10, string PathToGallery11, string PathToGallery12, string PathToGallery13, string PathToGallery14, string PathToGallery15)
+            string PathToGallery7, string PathToGallery8, string PathToGallery9, string PathToGallery10, string PathToGallery11, string PathToGallery12, string PathToGallery13, string PathToGallery14, string PathToGallery15, 
+            string articleType)
         {
             string path = Path.Combine(_Environment.WebRootPath, "images", "articles");
             LittleHelper.DirectoryExistCheck(path);
@@ -68,10 +69,6 @@ namespace Varyag.Controllers
             else
                 LittleHelper.DeleteFiles(path, false);
 
-
-            /////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////
             string previewPath;
             if (partsCounter == null)
             {
@@ -89,52 +86,16 @@ namespace Varyag.Controllers
 
                 FillPreview(preview, previewPath);
             }
-            /////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////
-            /////////////////////////////////////////////////////////
-
 
             if (fotos.Count()!=0)
             {
                 for (int i = 0; i <= (fotos.Count() - 1); i++)
                 {
                     string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ").jpg";
-                    /////////////////////////////////////////////////////////
-                    /////////////////////////////////////////////////////////
-                    /////////////////////////////////////////////////////////
-                    //if (i==0)
-                    //{
-                        //if (path.EndsWith('1'))
-                        //{
-                        //    name = "ВерфьВаряг(превью).jpg";
-                        //    using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
-                        //    {
-                        //        await fotos[i].CopyToAsync(fileStream);
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
-                            //{
-                            //    await fotos[i].CopyToAsync(fileStream);
-                            //}
-                        //}
-                    //}
-                    //else
-                    //{
-                        using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
-                        {
-                            await fotos[i].CopyToAsync(fileStream);
-                        }
-                    //}
-                    /////////////////////////////////////////////////////////
-                    /////////////////////////////////////////////////////////
-                    /////////////////////////////////////////////////////////
-                    //string name = "ВерфьВаряг" + "(" + (i + 1).ToString() + ").jpg";
-                    //using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
-                    //{
-                    //    await fotos[i].CopyToAsync(fileStream);
-                    //}
+                    using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+                    {
+                        await fotos[i].CopyToAsync(fileStream);
+                    }
                 }
             }
 
@@ -153,6 +114,7 @@ namespace Varyag.Controllers
                     folder = fold,
                     name = articleName,
                     route = articleRoute,
+                    type = articleType,
                     PTPREVIEW = previewPath,
                     PTG1 = PathToGallery1,
                     PTG2 = PathToGallery2,
@@ -181,6 +143,7 @@ namespace Varyag.Controllers
                     folder = fold,
                     name = articleName,
                     route = articleRoute,
+                    type = articleType,
                     PTG1 = PathToGallery1,
                     PTG2 = PathToGallery2,
                     PTG3 = PathToGallery3,
@@ -211,8 +174,8 @@ namespace Varyag.Controllers
 
         // GET: Articles/Create
         public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTPREVIEW, string PTG1,
-            string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8, 
-            string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15)
+            string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8, string PTG9, string PTG10, string PTG11, string PTG12, 
+            string PTG13, string PTG14, string PTG15, string type)
         {
             if (PTPREVIEW!=null)
             {
@@ -363,6 +326,7 @@ namespace Varyag.Controllers
             ViewBag.Folder = folder;
             ViewBag.Name = name;
             ViewBag.Route = route;
+            ViewBag.Type = type;
             if (partNumber!=null)
             {
                 partNumber++;
@@ -395,7 +359,7 @@ namespace Varyag.Controllers
         // GET: Articles/Edit/5
         public async Task<IActionResult> Edit(int? id, int? partNumber, string pathForPartGallery, string folder,
             string name, string route, string PTG1, string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8,
-            string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15)
+            string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15, string type)
         {
             if (id == null)
             {
@@ -553,6 +517,7 @@ namespace Varyag.Controllers
             ViewBag.Folder = folder;
             ViewBag.Name = name;
             ViewBag.Route = route;
+            ViewBag.Type = type;
 
             return View(article);
         }
