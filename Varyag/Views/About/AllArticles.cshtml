@@ -186,9 +186,10 @@
             <div class="newsBlock">
                 @for (int i = 0; i < Model.Count(); i++)
                 {
-                    <a href="../../О-нас/Особые-заказы/@Model.ElementAt(i).ArticleRoute">
+                    <a href="../../О-нас/Особые-заказы/@Model.ElementAt(i).ArticleRoute?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews">
                         <div class="newsListElement">
-                            <div class="partNewsElement" id="allNews" style="grid-area:preview;height:auto">
+                            @*class="partNewsElement" id="allNews" style="grid-area:preview;height:auto"*@
+                            <div>
                                 @await Component.InvokeAsync("Fotorama", new { articleId = @Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery1 + "\\preview", singleFoto = true })
                             </div>
                             <div class="textPartAllNews" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;margin:10px 0 10px 0;justify-self:center;width:96%;text-align:left">
@@ -199,24 +200,6 @@
                     </a>
                     <div class="myBorder"></div>
                 }
-
-
-                @*@for (int i = 0; i < Model.Count(); i++)
-                {
-                    <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId">
-                        <div class="newsListElement">
-                            <div class="partNewsElement" id="allNews" style="grid-area:preview;height:auto">
-                                <img src="@Model.ElementAt(i).ShortFotoPreview" />
-                            </div>
-                            <div class="textPartAllNews">
-                                <div style="font-size:1.6rem;font-weight:bold;">@Model.ElementAt(i).NewsDatePreview</div>
-                                <h2 class="newsMainStory">@Model.ElementAt(i).Header</h2>
-                                <div style="display: flex;align-items: center;justify-content: center;font-weight: bolder;font-size: 1.4rem;">Смотреть...</div>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="myBorder"></div>
-                }*@
             </div>
         </div>
     </div>

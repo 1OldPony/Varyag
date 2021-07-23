@@ -478,7 +478,14 @@ function switchProjectsViewPlitca() {
 }
 
 //////////////////////Сортируем по длинне///////////////////////
-function lengthSort(category, lengthSort) {
+function lengthSort(category) {
+    let lengthSort;
+    if ($('#sortOptions').val() == 'По возрастанию длинны') {
+        lengthSort = 'Up';
+    }
+    else {
+        lengthSort = 'Down';
+    }
     if (lengthSort != 'Down') {
         $('#sortDown').css('display', 'none');
         $('#sortUp').css('display', 'block');
@@ -522,124 +529,5 @@ function navigationButton() {
     }
 }
 
-
 //////////////////////////виджет контакта//////////////////////////
 VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
-
-
-
-
-
-
-
-//$(".nav-element-minor").mouseenter(function () {
-//    deselectNavElemMinor();
-//    $(this).attr("class", "nav-element-minor-choosen");
-//});
-
-//////////////////снимаем выделение с элементов подменю каталога и меню навигации по новостям,/////////////////
-/////////////////выделяем элементы показывающие, какой пункт меню видит пользователь///////////////////////////
-//$(".nav-element-minor").mouseleave(function () {
-//    var nav = $("#newsTypeSelector").val()
-//    if (nav == undefined) {
-//        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
-//        navElMinorChoose();
-//    }
-//    else {
-//        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
-//        newsTypeSelect();
-//    }
-
-//});
-
-//$(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
-//    var page = $("#currentPage").val();
-//    switch (page) {
-//        case "boats":
-//        case "boatsrow":
-//        case "boatssail":
-//        case "boatstraditional":
-//            if ((event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#lodki").attr("class", "nav-element-choosen");
-//                $("#lodki-Sub").show();
-//                break;
-//            }
-//        case "shlupki":
-//        case "boatyal":
-//        case "botik":
-//        case "katerrow":
-//        case "maketstudy":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#shlupki").attr("class", "nav-element-choosen");
-//                $("#shlupki-Sub").show();
-//                break;
-//            }
-//        case "katera":
-//        case "motosailer":
-//        case "katercabin":
-//        case "katerfish":
-//        case "katerpass":
-//        case "katerproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#katera").attr("class", "nav-element-choosen");
-//                $("#katera-Sub").show();
-//                break;
-//            }
-//        case "ladiy":
-//        case "ladyarow":
-//        case "ladyasail":
-//        case "ladyaproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")) {
-//                hideAll();
-//                $("#ladiy").attr("class", "nav-element-choosen");
-//                $("#ladiy-Sub").show();
-//            }
-//            break;
-//        case "sailboats":
-//        case "yacht":
-//        case "sailboatstudy":
-//        case "shvertbot":
-//        case "sailboathistorical":
-//        case "sailboatproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                if ($(window).width() > 383) {
-//                    hideAll();
-//                    $("#sailboats").attr("class", "nav-element-choosen");
-//                    $("#sailboats-Sub").show();
-//                }
-//                break;
-//            }
-//            else
-//                break;
-//        case "models":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#models").attr("class", "nav-element-choosen");
-//            }
-//            break;
-//        default:
-//            break;
-//    }
-//});

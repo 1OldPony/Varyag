@@ -172,14 +172,16 @@ namespace Varyag.Controllers
             return View(x);
         }
 
-        public async Task<IActionResult> NewsDetails(int? id)
+        public async Task<IActionResult> NewsDetails(int? id, string actualNews, string recentNews, string oldNews)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-
+            ViewBag.actualNews = actualNews;
+            ViewBag.recentNews = recentNews;
+            ViewBag.oldNews = oldNews;
 
             List<News> news = new List<News>();
             news = await _context.News.ToListAsync();
@@ -236,13 +238,16 @@ namespace Varyag.Controllers
             ViewBag.type = type;
             return View(articles);
         }
-        public async Task<IActionResult> ArticleDetails(string route)
+        public async Task<IActionResult> ArticleDetails(string route, string actualNews, string recentNews, string oldNews)
         {
             if (route == null)
             {
                 return NotFound();
             }
 
+            ViewBag.actualNews = actualNews;
+            ViewBag.recentNews = recentNews;
+            ViewBag.oldNews = oldNews;
             var article = await _context.Article.Where(a => a.ArticleRoute == route).SingleAsync();
 
             if (article == null)
