@@ -104,10 +104,10 @@ $(window).resize(function () {
         }
     }
     else {
-        //if ($(".leftMenu").css('display') != '') {
-            $(".leftMenu").removeAttr('style');
-            $(".projectsHalf").removeAttr('style'); 
-        //}
+        $(".leftMenu").removeAttr('style');
+        $(".projectsHalf").removeAttr('style');
+        $("body").css("overflow", "unset");
+        $('#blackScreen').css('display', 'none');
     }
 });
 //$(window).resize(function () {
@@ -514,6 +514,7 @@ function lengthSort(category) {
     });
 }
 
+////////////////////////Показываем и прячем левое меню////////////////////////
 function navigationButton() {
     if ($(".leftMenu").css("left") == '-31px') {
         $(".leftMenu").css("left", "-341px");

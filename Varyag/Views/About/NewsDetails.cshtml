@@ -1,86 +1,89 @@
-﻿@model List<NewsViewModel>
+﻿@model Varyag.Models.News
 @{
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
 <div class="MyContainer" style="font-size:1.3rem">
     <div class="path">
-        <a href="../../О-Нас">Главная</a> > <a>О нас</a> > <a>@Model.ElementAt(0).Header</a>
+        <a href="../../О-Нас">Главная</a> > <a>О нас</a> > <a>@Model.Header</a>
     </div>
 
     <div class="contentBlock">
         <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
-        <div class="leftMenu">
+        <div class="leftMenu" id="newAndArticles">
             <nav>
                 @if (ViewBag.newsType != "byType")
                 {
-                    <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
-                        <li>
-                            <div class="leftNavLine"><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="articles-sub" class="leftSubNavOpenCurrent">
+                <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
+                    <li>
+                        <div class="leftNavLine"><a asp-action="CatalogNavigation" asp-controller="Catalog" class="navLineHeader">Каталог</a></div>
+                    </li>
+                    <li>
+                        <div class="leftNavLine"><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
+                        <ul id="articles-sub" class="leftSubNavOpenCurrent">
+                            <li class="leftSubCategory">
+                                <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="movies">Заказы для кино</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a asp-action="AllNews" class="navLineHeader" style="color:red">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
+                            @if (ViewBag.newsType == "smi")
+                            {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a>
+                                    <a asp-action="AllNews" asp-route-newsType="smi" style="color:red" id="smiNav">СМИ о нас</a>
                                 </li>
+                            }
+                            else
+                            {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="movies">Заказы для кино</a>
+                                    <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav">СМИ о нас</a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a asp-action="AllNews" class="navLineHeader" style="color:red">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
-                                @if (ViewBag.newsType == "smi")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="smi" style="color:red" id="smiNav">СМИ о нас</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav">СМИ о нас</a>
-                                    </li>
-                                }
-                                @if (ViewBag.newsType == "life")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="life" style="color:red" id="lifeNav">Жизнь наших судов</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav">Жизнь наших судов</a>
-                                    </li>
-                                }
-                                @if (ViewBag.newsType == "newShips")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="newShips" style="color:red" id="newShipsNav">Новости верфи</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav">Новости верфи</a>
-                                    </li>
-                                }
-                            </ul>
-                        </li>
-                        <li>
-                            <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
+                            }
+                            @if (ViewBag.newsType == "life")
+                            {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
+                                    <a asp-action="AllNews" asp-route-newsType="life" style="color:red" id="lifeNav">Жизнь наших судов</a>
                                 </li>
+                            }
+                            else
+                            {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
+                                    <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav">Жизнь наших судов</a>
                                 </li>
+                            }
+                            @if (ViewBag.newsType == "newShips")
+                            {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
+                                    <a asp-action="AllNews" asp-route-newsType="newShips" style="color:red" id="newShipsNav">Новости верфи</a>
                                 </li>
-                            </ul>
-                        </li>
-                    </ul>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav">Новости верфи</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
                 }
                 else
                 {
@@ -157,33 +160,33 @@
         </div>
         <div class="projectsHalf" id="newsProjectsHalf">
             <div class="topCatalogLine" id="newsDetails">
-                <h1 class="categorysLineTtem" style="margin-block:0;justify-content:flex-start">@Model.ElementAt(0).Header</h1>
-                <div style="text-align:left;">@Html.Raw(Model.ElementAt(0).MainStory)</div>
+                <h1 class="categorysLineTtem" style="margin-block:0;justify-content:flex-start">@Model.Header</h1>
+                <div style="text-align:left;">@Html.Raw(Model.MainStory)</div>
+                    @if (Model.PathToGallery != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { newsId = Model.NewsId })
+                        </div>
+                    }
             </div>
-            @if (Model.ElementAt(0).PathToGallery != null)
-            {
-                <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                    @await Component.InvokeAsync("Fotorama", new { newsId = Model.ElementAt(0).NewsId })
-                </div>
-            }
 
-            @if (LittleHelper.NullCounter(Model.ElementAt(0).PathToVideo1, Model.ElementAt(0).PathToVideo2, Model.ElementAt(0).PathToVideo3) < 2)
+            @if (LittleHelper.NullCounter(Model.PathToVideo1, Model.PathToVideo2, Model.PathToVideo3) < 2)
             {
                 <div class="newsNav">
-                    @if (Model.ElementAt(0).PathToVideo1 != null)
+                    @if (Model.PathToVideo1 != null)
                     {
                         <div class="nav-element-minor" style="cursor:pointer" id="videoOne">
                             <div class="nav-element-inside">
                                 <p>Сюжет №1</p>
                             </div>
-                            <input type="text" value="@Model.ElementAt(0).PathToVideo1" id="firstVideoUrl" hidden />
+                            <input type="text" value="@Model.PathToVideo1" id="firstVideoUrl" hidden />
                         </div>
                     }
-                    @if (Model.ElementAt(0).PathToVideo2 != null)
+                    @if (Model.PathToVideo2 != null)
                     {
                         <div class="nav-element-minor" style="cursor:pointer" id="videoTwo">
                             <div class="nav-element-inside">
-                                @if (Model.ElementAt(0).PathToVideo1 == null)
+                                @if (Model.PathToVideo1 == null)
                                 {
                                     <p>Сюжет №1</p>
                                 }
@@ -192,27 +195,27 @@
                                     <p>Сюжет №2</p>
                                 }
                             </div>
-                            <input type="text" value="@Model.ElementAt(0).PathToVideo2" id="secondVideoUrl" hidden />
+                            <input type="text" value="@Model.PathToVideo2" id="secondVideoUrl" hidden />
                         </div>
                     }
-                    @if (Model.ElementAt(0).PathToVideo3 != null)
+                    @if (Model.PathToVideo3 != null)
                     {
                         <div class="nav-element-minor" style="cursor:pointer" id="videoThree">
                             <div class="nav-element-inside">
-                                @if (Model.ElementAt(0).PathToVideo1 == null && Model.ElementAt(0).PathToVideo2 == null)
+                                @if (Model.PathToVideo1 == null && Model.PathToVideo2 == null)
                                 {
                                     <p>Сюжет №1</p>
                                 }
-                                @if (Model.ElementAt(0).PathToVideo2 == null && Model.ElementAt(0).PathToVideo1 != null)
+                                @if (Model.PathToVideo2 == null && Model.PathToVideo1 != null)
                                 {
                                     <p>Сюжет №2</p>
                                 }
-                                @if (Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo1 != null)
+                                @if (Model.PathToVideo2 != null && Model.PathToVideo1 != null)
                                 {
                                     <p>Сюжет №3</p>
                                 }
                             </div>
-                            <input type="text" value="@Model.ElementAt(0).PathToVideo3" id="thirdVideoUrl" hidden />
+                            <input type="text" value="@Model.PathToVideo3" id="thirdVideoUrl" hidden />
                         </div>
                     }
                 </div>
@@ -220,46 +223,46 @@
 
             @*На случай если только 1 видео и находится оно в разных ячейках*@
 
-            @if (Model.ElementAt(0).PathToVideo1 != null && Model.ElementAt(0).PathToVideo2 == null && Model.ElementAt(0).PathToVideo3 == null)
+            @if (Model.PathToVideo1 != null && Model.PathToVideo2 == null && Model.PathToVideo3 == null)
             {
                 <div class="newsVideoPlayer" id="videoPlayer">
-                    <iframe src="@Model.ElementAt(0).PathToVideo1" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    <iframe src="@Model.PathToVideo1" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
                 </div>
             }
-            @if (Model.ElementAt(0).PathToVideo1 == null && Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo3 == null)
+            @if (Model.PathToVideo1 == null && Model.PathToVideo2 != null && Model.PathToVideo3 == null)
             {
                 <div class="newsVideoPlayer" id="videoPlayer">
-                    <iframe src="@Model.ElementAt(0).PathToVideo2" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    <iframe src="@Model.PathToVideo2" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
                 </div>
             }
-            @if (Model.ElementAt(0).PathToVideo1 == null && Model.ElementAt(0).PathToVideo2 == null && Model.ElementAt(0).PathToVideo3 != null)
+            @if (Model.PathToVideo1 == null && Model.PathToVideo2 == null && Model.PathToVideo3 != null)
             {
                 <div class="newsVideoPlayer" id="videoPlayer">
-                    <iframe src="@Model.ElementAt(0).PathToVideo3" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    <iframe src="@Model.PathToVideo3" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
                 </div>
             }
-            @if (Model.ElementAt(0).PathToVideo1 != null && Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo3 == null)
+            @if (Model.PathToVideo1 != null && Model.PathToVideo2 != null && Model.PathToVideo3 == null)
             {
                 <div class="newsVideoPlayer" id="videoPlayer">
-                    <iframe src="@Model.ElementAt(0).PathToVideo1" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    <iframe src="@Model.PathToVideo1" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
                 </div>
             }
-            @if (Model.ElementAt(0).PathToVideo1 != null && Model.ElementAt(0).PathToVideo2 == null && Model.ElementAt(0).PathToVideo3 != null)
+            @if (Model.PathToVideo1 != null && Model.PathToVideo2 == null && Model.PathToVideo3 != null)
             {
                 <div class="newsVideoPlayer" id="videoPlayer">
-                    <iframe src="@Model.ElementAt(0).PathToVideo1" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    <iframe src="@Model.PathToVideo1" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
                 </div>
             }
-            @if (Model.ElementAt(0).PathToVideo1 == null && Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo3 != null)
+            @if (Model.PathToVideo1 == null && Model.PathToVideo2 != null && Model.PathToVideo3 != null)
             {
                 <div class="newsVideoPlayer" id="videoPlayer">
-                    <iframe src="@Model.ElementAt(0).PathToVideo2" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    <iframe src="@Model.PathToVideo2" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
                 </div>
             }
-            @if (Model.ElementAt(0).PathToVideo1 != null && Model.ElementAt(0).PathToVideo2 != null && Model.ElementAt(0).PathToVideo3 != null)
+            @if (Model.PathToVideo1 != null && Model.PathToVideo2 != null && Model.PathToVideo3 != null)
             {
                 <div class="newsVideoPlayer" id="videoPlayer">
-                    <iframe src="@Model.ElementAt(0).PathToVideo1" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
+                    <iframe src="@Model.PathToVideo1" class="iframeForVideo" frameborder="0" id="firstVideo" allowfullscreen></iframe>
                 </div>
             }
         </div>

@@ -183,34 +183,33 @@ namespace Varyag.Controllers
             ViewBag.recentNews = recentNews;
             ViewBag.oldNews = oldNews;
 
-            List<News> news = new List<News>();
-            news = await _context.News.ToListAsync();
-            List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
-            List<NewsViewModel> newsLeftMenu = new List<NewsViewModel>();
-            newsLeftMenu.Add(sortedNews.FirstOrDefault(n => n.NewsId == id));
+            //List<News> news = new List<News>();
+            //news = await _context.News.ToListAsync();
+            //List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
+            //List<NewsViewModel> newsLeftMenu = new List<NewsViewModel>();
+            //newsLeftMenu.Add(sortedNews.FirstOrDefault(n => n.NewsId == id));
 
-            for (int i = 0; i < 6; i++)
-            {
-                if (sortedNews.ElementAt(i).NewsId!= id)
-                {
-                    newsLeftMenu.Add(sortedNews.ElementAt(i));
-                }
-                else
-                {
-                    continue;
-                }
-            }
-
-            //var news = await _context.News
-            //    .FirstOrDefaultAsync(m => m.NewsId == id);
-            //if (news == null)
+            //for (int i = 0; i < 6; i++)
             //{
-            //    return NotFound();
+            //    if (sortedNews.ElementAt(i).NewsId!= id)
+            //    {
+            //        newsLeftMenu.Add(sortedNews.ElementAt(i));
+            //    }
+            //    else
+            //    {
+            //        continue;
+            //    }
             //}
+
+            var news = await _context.News.Where(m => m.NewsId == id).SingleAsync();
+            if (news == null)
+            {
+                return NotFound();
+            }
             //List<News> newsMultiply = new List<News>();
 
 
-            return View(newsLeftMenu);
+            return View(news);
         }
         public async Task<IActionResult> AllArticles(string actualNews, string recentNews, string oldNews, string type)
         {

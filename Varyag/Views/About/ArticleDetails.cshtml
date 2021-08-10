@@ -12,155 +12,158 @@
             <nav>
                 @if (ViewBag.newsType != "byType")
                 {
-                    <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
-                        <li>
-                            <div class="leftNavLine"><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader" style="color:red">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="articles-sub" class="leftSubNavOpenCurrent">
-                                @if (ViewBag.type == "Заказы для музеев")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" style="color:red" id="museums">Заказы для музеев</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a>
-                                    </li>
-                                }
-                                @if (ViewBag.type == "Заказы для кино")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" style="color:red" id="museums">Заказы для кино</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="museums">Заказы для кино</a>
-                                    </li>
-                                }
-                            </ul>
-                        </li>
-                        <li>
-                            <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a asp-action="AllNews" class="navLineHeader">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
-                                @if (ViewBag.newsType == "smi")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="smi" style="color:red" id="smiNav">СМИ о нас</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav">СМИ о нас</a>
-                                    </li>
-                                }
-                                @if (ViewBag.newsType == "life")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="life" style="color:red" id="lifeNav">Жизнь наших судов</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav">Жизнь наших судов</a>
-                                    </li>
-                                }
-                                @if (ViewBag.newsType == "newShips")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="newShips" style="color:red" id="newShipsNav">Новости верфи</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav">Новости верфи</a>
-                                    </li>
-                                }
-                            </ul>
-                        </li>
-                        <li>
-                            <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
+                <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
+                    <li>
+                        <div class="leftNavLine"><a asp-action="CatalogNavigation" asp-controller="Catalog" class="navLineHeader">Каталог</a></div>
+                    </li>
+                    <li>
+                        <div class="leftNavLine"><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader" style="color:red">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
+                        <ul id="articles-sub" class="leftSubNavOpenCurrent">
+                            @if (ViewBag.type == "Заказы для музеев")
+                            {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
+                                    <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" style="color:red" id="museums">Заказы для музеев</a>
                                 </li>
+                            }
+                            else
+                            {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
+                                    <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a>
                                 </li>
+                            }
+                            @if (ViewBag.type == "Заказы для кино")
+                            {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
+                                    <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" style="color:red" id="museums">Заказы для кино</a>
                                 </li>
-                            </ul>
-                        </li>
-                    </ul>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="museums">Заказы для кино</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a asp-action="AllNews" class="navLineHeader">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
+                            @if (ViewBag.newsType == "smi")
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-newsType="smi" style="color:red" id="smiNav">СМИ о нас</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav">СМИ о нас</a>
+                                </li>
+                            }
+                            @if (ViewBag.newsType == "life")
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-newsType="life" style="color:red" id="lifeNav">Жизнь наших судов</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav">Жизнь наших судов</a>
+                                </li>
+                            }
+                            @if (ViewBag.newsType == "newShips")
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-newsType="newShips" style="color:red" id="newShipsNav">Новости верфи</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav">Новости верфи</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
                 }
                 else
                 {
-                    <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
-                        <li>
-                            <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Особые заказы</div></a>
-                        </li>
-                        <li>
-                            <div class="leftNavLine"><a asp-action="AllNews" class="navLineHeader">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
-                                <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine">СМИ о нас</a>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine">Жизнь наших судов</a>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine">Новости верфи</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader" style="color:red">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
-                            <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
-                                @if (ViewBag.part == "new")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType" style="color:red">@ViewBag.actualNews</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
-                                    </li>
-                                }
-                                @if (ViewBag.part == "recent")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType" style="color:red">@ViewBag.recentNews</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
-                                    </li>
-                                }
-                                @if (ViewBag.part == "old")
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType" style="color:red">@ViewBag.oldNews</a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li class="leftSubCategory">
-                                        <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
-                                    </li>
-                                }
-                            </ul>
-                        </li>
-                    </ul>
+                <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
+                    <li>
+                        <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Особые заказы</div></a>
+                    </li>
+                    <li>
+                        <div class="leftNavLine"><a asp-action="AllNews" class="navLineHeader">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine">СМИ о нас</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine">Жизнь наших судов</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine">Новости верфи</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader" style="color:red">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
+                            @if (ViewBag.part == "new")
+                            {
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType" style="color:red">@ViewBag.actualNews</a>
+                            </li>
+                            }
+                            else
+                            {
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
+                            </li>
+                            }
+                            @if (ViewBag.part == "recent")
+                            {
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType" style="color:red">@ViewBag.recentNews</a>
+                            </li>
+                            }
+                            else
+                            {
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
+                            </li>
+                            }
+                            @if (ViewBag.part == "old")
+                            {
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType" style="color:red">@ViewBag.oldNews</a>
+                            </li>
+                            }
+                            else
+                            {
+                            <li class="leftSubCategory">
+                                <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
+                            </li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
                 }
             </nav>
             <div class="ourContacts">
@@ -174,293 +177,185 @@
         </div>
         <div class="projectsHalf" id="newsProjectsHalf">
             <div class="topCatalogLine" id="newsDetails">
-                <h1 class="categorysLineTtem" style="margin-block:0;justify-content:flex-start">@Model.ArticleName</h1>
-                <div style="display:flex;width:100%">
-                    @*<div style="width:20%"></div>*@
-                    <div class="galleryFlex" style="width:80%">
-                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery1, singleFoto = false })
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top:10px;background-color: white;border-radius: 10px;display:none">
                 @if (@Model.Text1 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text1)
-                            </div>
-                            @if (@Model.PathToGallery1 != null)
-                            {
-                                @*<div style="width:90%">
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery1, singleFoto = false })
-                                    </div>
-                                </div>*@
-
-                                <div class="galleryFlex">
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery1, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text1)
                     </div>
+                    @if (@Model.PathToGallery1 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = @Model.ArticleId, galleryPath = @Model.PathToGallery1, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text2 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text2)
-                            </div>
-                            @if (@Model.PathToGallery2 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery2, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text2)
                     </div>
+                    @if (@Model.PathToGallery2 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = @Model.ArticleId, galleryPath = @Model.PathToGallery2, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text3 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text3)
-                            </div>
-                            @if (@Model.PathToGallery3 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery3, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text3)
                     </div>
+                    @if (@Model.PathToGallery3 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery3, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text4 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text4)
-                            </div>
-                            @if (@Model.PathToGallery4 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery4, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text4)
                     </div>
+                    @if (@Model.PathToGallery4 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery4, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text5 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text5)
-                            </div>
-                            @if (@Model.PathToGallery5 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery5, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text5)
                     </div>
+                    @if (@Model.PathToGallery5 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery5, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text6 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text6)
-                            </div>
-                            @if (@Model.PathToGallery6 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery6, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text6)
                     </div>
+                    @if (@Model.PathToGallery6 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery6, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text7 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text7)
-                            </div>
-                            @if (@Model.PathToGallery7 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery7, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text7)
                     </div>
+                    @if (@Model.PathToGallery7 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery7, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text8 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text8)
-                            </div>
-                            @if (@Model.PathToGallery8 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery8, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text8)
                     </div>
+                    @if (@Model.PathToGallery8 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery8, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text9 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text9)
-                            </div>
-                            @if (@Model.PathToGallery9 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery9, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text9)
                     </div>
+                    @if (@Model.PathToGallery9 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery9, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text10 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text10)
-                            </div>
-                            @if (@Model.PathToGallery10 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery10, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text10)
                     </div>
+                    @if (@Model.PathToGallery10 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery10, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text11 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text11)
-                            </div>
-                            @if (@Model.PathToGallery11 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery11, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text11)
                     </div>
+                    @if (@Model.PathToGallery11 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery11, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text12 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text12)
-                            </div>
-                            @if (@Model.PathToGallery12 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery12, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text12)
                     </div>
+                    @if (@Model.PathToGallery12 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery12, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text13 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text13)
-                            </div>
-                            @if (@Model.PathToGallery13 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery13, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text13)
                     </div>
+                    @if (@Model.PathToGallery13 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery13, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text14 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text14)
-                            </div>
-                            @if (@Model.PathToGallery14 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery14, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text14)
                     </div>
+                    @if (@Model.PathToGallery14 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery14, singleFoto = false })
+                        </div>
+                    }
                 }
                 @if (@Model.Text15 != null)
                 {
-                    <div class="articleBlock">
-                        <div class="articlePreviewBlokCreate">
-                            <div>
-                                @Html.Raw(@Model.Text15)
-                            </div>
-                            @if (@Model.PathToGallery15 != null)
-                            {
-                                <div>
-                                    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                                        @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery15, singleFoto = false })
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                    <div>
+                        @Html.Raw(@Model.Text15)
                     </div>
+                    @if (@Model.PathToGallery15 != null)
+                    {
+                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery15, singleFoto = false })
+                        </div>
+                    }
                 }
             </div>
         </div>
