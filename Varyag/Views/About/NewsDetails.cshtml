@@ -14,7 +14,7 @@
                 @if (ViewBag.newsType != "byType")
                 {
                 <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
-                    <li>
+                    <li id="catalogWord">
                         <div class="leftNavLine"><a asp-action="CatalogNavigation" asp-controller="Catalog" class="navLineHeader">Каталог</a></div>
                     </li>
                     <li>
@@ -158,18 +158,17 @@
                 </div>
             </div>
         </div>
-        <div class="projectsHalf" id="newsProjectsHalf">
+        <div class="projectsHalf" id="newsDetailsProjectsHalf">
             <div class="topCatalogLine" id="newsDetails">
                 <h1 class="categorysLineTtem" style="margin-block:0;justify-content:flex-start">@Model.Header</h1>
                 <div style="text-align:left;">@Html.Raw(Model.MainStory)</div>
-                    @if (Model.PathToGallery != null)
-                    {
-                        <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                            @await Component.InvokeAsync("Fotorama", new { newsId = Model.NewsId })
-                        </div>
-                    }
+                @if (Model.PathToGallery != null)
+                {
+                    <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                        @await Component.InvokeAsync("Fotorama", new { newsId = Model.NewsId })
+                    </div>
+                }
             </div>
-
             @if (LittleHelper.NullCounter(Model.PathToVideo1, Model.PathToVideo2, Model.PathToVideo3) < 2)
             {
                 <div class="newsNav">

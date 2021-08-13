@@ -570,7 +570,10 @@ img {
     font-size: 1.44rem;
 }
 #catalogWord {
-    display: list-item;
+    display: none;
+}
+#aboutUs {
+    display: none;
 }
 
 .catalogMain {
@@ -1088,8 +1091,11 @@ img {
 .pageView {
     display: flex;
     justify-content: center;
-    margin: 1vw;
-    align-items:baseline;
+    margin: auto 10px 10px 0px;
+    align-items: baseline;
+    background-color:white;
+    border-radius:10px;
+    padding:5px;
 }
 
 .pageView a {
@@ -1872,35 +1878,30 @@ ul .nav-element-choosen {
 
 
 .largeTopFoto {
-    background-image: url('/images/collages/КоллажЛодки-обр.png');
+    background-image: url('/images/collages/boats.png');
     height: 275px;
-    background-image: url('/images/collages//Коллаж2Лодки-обр.png');
-    background-image: url('/images/collages/Коллаж3Лодки-обр.png');
-    background-image: url('/images/collages/Коллаж4Лодки-обр.png');
-    border-radius: 0 10px 10px 0;
+    border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
+    background-color: #183f61;
 }
 #shlupkiCollage.largeTopFoto {
-    background-image: url('/images/collages/коллажШлюпки-обр.png');
+    background-image: url('/images/collages/bigboats.png');
 }
 #different.largeTopFoto {
-    background-image: url('/images/collages/коллажРазное-обр.png');
+    background-image: url('/images/collages/models.png');
 }
 #kateraCollage.largeTopFoto {
-    background-image: url('/images/collages/коллаж-горизонт-с-пробелом.png');
-    background-image: url('/images/collages/Макет-мозайка-сплошная-300dpi.png');
-    background-image: url('/images/collages/коллаж-горизонт-с-пробелом-обычный-контур.png');
+    background-image: url('/images/collages/motorboats.png');
 }
 #ladiyCollage.largeTopFoto {
-    background-image: url('/images/collages/коллажЛадьи-обр.png');
+    background-image: url('/images/collages/drakkar.png');
 }
 #sailboatsCollage.largeTopFoto {
-    background-image: url('/images/collages/коллажПарус-обр.png');
-    background-image: url('/images/collages/коллаж2Парус-обр.png');
+    background-image: url('/images/collages/sailboats.png');
 }
 #catalogCollage.largeTopFoto {
-    background-image: url('/images/collages/общий.png');
+    background-image: url('/images/collages/catalog.png');
 }
 
 .smallTopFoto {
@@ -1961,20 +1962,29 @@ ul .nav-element-choosen {
     padding-top: 30px;
     height: 0;
     overflow: hidden;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 #newsProjectsHalf.projectsHalf {
-    /*background-color: white;*/
-    /*border-radius: 10px;*/
     margin-bottom: 10px;
-    /*padding: 10px;*/
-    /*margin-right: 10px;
-    margin-left: 10px;*/
+    margin-right: 10px;
+    max-width: 1010px;
+}
+#newsDetailsProjectsHalf {
+    margin-bottom: 10px;
+    margin-right: 10px;
     max-width: 980px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
 }
 .iframeForVideo {
     position: absolute;
     top: 0;
     left: 0;
+    /*margin:0 10px 0 10px;*/
     width: 100%;
     height: 100%;
 }
@@ -2370,7 +2380,10 @@ ul .nav-element-choosen {
         grid-template-columns: 35% 35% 30%;
     }
     #catalogWord {
-        display: none;
+        display: list-item;
+    }
+    #aboutUs {
+        display: list-item;
     }
     .projectsHalf {
         margin-left: auto;
@@ -2410,6 +2423,12 @@ ul .nav-element-choosen {
     }
     #newsTopLine.topCatalogLine {
         margin: 0 10px 0 10px;
+    }
+    #newsDetailsProjectsHalf {
+        margin-left: 10px;
+    }
+    #newsProjectsHalf.projectsHalf {
+        margin-left: 10px;
     }
 }
 
