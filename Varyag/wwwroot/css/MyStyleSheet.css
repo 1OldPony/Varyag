@@ -359,14 +359,14 @@
 }
 
 .contactsText {
-    width: 50vw;
+    width: 60%;
     margin: auto;
 }
 
 #ourLocation {
-    width: 40vw;
-    height: 42vh;
-    margin: 2vw;
+    width: 40%;
+    height: 43vh;
+    margin: 10px;
 }
 
 
@@ -2985,15 +2985,15 @@ ul .nav-element-choosen {
         height: auto;
     }
 
-    #ourLocation {
+    /*#ourLocation {
         height: 40vh;
         width: 90vw;
         margin: 2vh;
-    }
+    }*/
 
-    .contactsText {
+    /*.contactsText {
         width: 90vw;
-    }
+    }*/
 
     #cinemaOrders.category {
         width: 45%;

@@ -2,218 +2,372 @@
 @{
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
-<div id="production" class="about">
-    <div class="annotation">
-        <div class="annotationText">
+
+<div id="firstVar" class="MyContainer">
+    <div style="display:flex;position:relative;">
+        <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px;width:100%">
+            <div style="background:white;border-top-left-radius:10px;border-top-right-radius:10px;height:55vh;">
+                <div style="position:relative;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:115%;max-height:730px;height:100%;">
+                    @*<img src="~/images/о_нас/гото/1_Гото_Предестинация.jpg" style="border-top-left-radius:10px;border-top-right-radius:10px;" />*@
+                    <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:10px;right:10px">
+                        <div style="font-size:3rem;font-weight:bold;color:#e81010;text-decoration:underline">
+                            Каталог
+                        </div>
+                        <div style="font-size:1rem;font-weight:bold;text-align:right;margin-right:8px;">
+                            Все проекты в каталоге спроектированы и построены нашей верфью
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:15px;left:35px;height:73%;">
+                        <div style="font-size:1.2rem;font-weight:bold;position:relative;"><div style="position:absolute;top:-34px;left:-40px;font-size:8rem;color:#f9cf00;">(</div>Современные деревянные корабли - это <span style="color:#e81010">надежность</span>, <span style="color:#e81010">комфорт</span> и <span style="color:#e81010">долговечность</span><div style="position:absolute;top:-34px;right:-40px;font-size:8rem;">)</div></div>
+                        <div style="font-size:1.2rem;font-weight:bold;position:relative;margin:40px 0 49px 0;"><div style="position:absolute;top:-46px;left:-40px;font-size:8rem">(</div>За <span style="color:#e81010">30 лет</span> построено <span style="color:#e81010">более 450 судов</span>, из них <span style="color:#e81010">более 60 - крупные</span><div style="position:absolute;top:-46px;right:-40px;font-size:8rem;color:#f9cf00">)</div></div>
+                        <div style="font-size:1.2rem;font-weight:bold;position:relative;"><div style="position:absolute;top:-46px;left:-40px;font-size:8rem;color:#f9cf00;">(</div>Наши специалисты спроектируют <span style="color:#e81010">судно под ваши требования</span><div style="position:absolute;top:-46px;right:-40px;font-size:8rem;">)</div></div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;flex-direction:column;background-color:white;padding:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;">
+                <div class="borderAbout" style="margin:10px 30px 10px 30px;border-color:rgb(24 63 97);"></div>
+                <div>
+                    Среди наших заказчиков крупные НКО, национальные парки, администрации городов и регионов, а также другие государственные структуры и клубы юных моряков
+                </div>
+                <div class="borderAbout" style="margin:10px 30px 10px 30px;border-color:rgb(24 63 97);"></div>
+                <div style="margin:30px">
+                    А тут у нас логотипы стройным рядом со стрелочками
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ourContacts"></div>
+    <div style="display: flex;text-align:center;align-items:center;background-color:white;border-radius:10px;margin:10px;">
+        <div class="contactsText" style="font-size:2rem">
             <p>
-                За 30 лет нами было построено около 50 моторных и парусно-моторных судов и более 200 лодок и шлюпок.<br />
-                <span id="production" class="longText">Подробнее о нашем производстве можно узнать здесь</span>
-                <span id="production" class="shortText">Подробнее...</span>
-            </p>
-        </div>
-    </div>
-</div>
-<a name="новости"></a>
-@await Component.InvokeAsync("News")
-<div id="сatalog" class="about">
-    <div class="annotation">
-        <div class="annotationText">
-            <p>
-                Мы <span id="сatalog" class="longText">работаем с каждым заказчиком индивидуально и </span>можем предложить как постройку судна по существующим проектам, так и
-                разработать проект согласно вашим пожеланиям
-                <span id="сatalog" class="longText"><br />Посмотреть на существующие проекты можно в нашем каталоге.</span>
-                <span id="сatalog" class="shortText"><br />Наш каталог...</span>
-            </p>
-        </div>
-    </div>
-</div>
-<div id="customers" class="about">
-    <div class="headerAbout">
-        <div class="borderAbout"></div>
-        <div>За время существования верфи "Варяг" нашими заказчиками стали:</div>
-        <div class="borderAbout"></div>
-    </div>
-    <div id="viewPort">
-        <div id="left" class="control">
-            <img src="~/images/left-arrow-button.png" />
-        </div>
-        <div id="right" class="control">
-            <img src="~/images/right-arrow-button.png" />
-        </div>
-        <div class="allCustomers">
-            <div id="1" class="singleCustomer">
-                РОО "Морская Молодежная Лига", ВДЦ "Артек" и "Орленок"
-            </div>
-            <div class="singleCustomer">
-                Комитет по физической культуре и спорту Новгородской области
-            </div>
-            <div class="singleCustomer">
-                Федеральное гос. учреждение "Национальный парк "Паанаярви""
-            </div>
-            <div class="singleCustomer">
-                Федеральное гос. учреждение "Национальный парк "Водлозерский""
-            </div>
-            <div class="singleCustomer">
-                Гос. музей-заповедник "Царское село", г.&nbsp;Санкт-Петербург
-            </div>
-            <div class="singleCustomer">
-                Новосибирская государственная академия водного транспорта
-            </div>
-            <div class="singleCustomer">
-                ООО Киностудия "Вертикаль", Говорухин Станислав
-            </div>
-            <div class="singleCustomer">
-                Британская кинокомпания "Picture palace", Malcolm Craddock
-            </div>
-            <div class="singleCustomer">
-                ФГОУ Всероссийский центр "Орленок", г.&nbsp;Туапсе
-            </div>
-            <div class="singleCustomer">
-                ФГОУ ВПО "Волжская государственная академия водного транспорта"
-            </div>
-            <div class="singleCustomer">
-                ФГОУ "Государственная морская академия имени адмирала С.О.&nbsp;Макарова"
-            </div>
-            <div class="singleCustomer">
-                ФГОУ "Новороссийская Государственная Морская Академия" им.&nbsp;Ф.Ф.&nbsp;Ушакова
-            </div>
-            <div class="singleCustomer">
-                Учебный центр ФСБ России, г. Анапа
-            </div>
-            <div class="singleCustomer">
-                ГОУ НПО "Морской профессиональный лицей №9 им. С.Н.&nbsp;Орешкова", г.&nbsp;Архангельск
-            </div>
-            <div class="singleCustomer">
-                ГОУ СПО Спб Морской технический колледж
-            </div>
-            <div class="singleCustomer">
-                Самарский речной техникум
-            </div>
-            <div class="singleCustomer">
-                Клубы Юный Моряков более чем 15 городов нашей страны
-            </div>
-            <div class="singleCustomer">
-                Московский Государственный Университет имени М.В.&nbsp;Ломоносова
-            </div>
-            <div class="singleCustomer">
-                МАОУ "Детская флотилия "Парус""
-            </div>
-            <div class="singleCustomer">
-                МРМОО "Союз православной молодежи Мордовии", г.&nbsp;Саранск
-            </div>
-            <div class="singleCustomer">
-                Адм. Воронежской обл., Деп. промышленности, транспорта, связи и инноваций
-            </div>
-            <div class="singleCustomer">
-                МГУ им.&nbsp;адм.&nbsp;Невельского, г.&nbsp;Владивосток
-            </div>
-            <div class="singleCustomer">
-                ПРОО "Яхт-клуб Навигатор", г.&nbsp;Владивосток
-            </div>
-            <div class="singleCustomer">
-                МРОПП Борисо-Глебский храм, Священик о.&nbsp;Дмитрий
-            </div>
-            <div class="singleCustomer">
-                ФГБОУ ВДЦ "Океан", Владивосток
-            </div>
-            <div class="singleCustomer">
-                Санкт-Петербургский "Морской технический колледж"
-            </div>
-            <div class="singleCustomer">
-                Спб Государственное учреждение культуры "Парк культуры и отдыха "Дубки""
-            </div>
-            <div class="singleCustomer">
-                Череповецкий музей археологии
-            </div>
-            <div class="singleCustomer">
-                МБУ ДО г.&nbsp;Мурманска детский морской центр "Океан"
-            </div>
-            <div class="singleCustomer">
-                МБОУ ДО "Детский морской центр "Североморец"", г.&nbsp;Северодвинск
-            </div>
-            <div class="singleCustomer">
-                Рыболовецкий колхоз "Беломор", с.&nbsp;Нюхча, РК
-            </div>
-            <div class="singleCustomer">
-                Адм. образования "Кингисепский муниципальный район Ленинградской области"
-            </div>
-            <div class="singleCustomer">
-                ЦУ "Нарвский Бизнес-Центр", Эстония
-            </div>
-            <div class="singleCustomer">
-                СПб гос. уч. "Центр "Адмиралтейский" по работе с подростками и молодежью"
-            </div>
-            <div class="singleCustomer">
-                Мэрия городского округа Тольятти
-            </div>
-            <div class="singleCustomer">
-                Управление образования г.&nbsp;Пензы
-            </div>
-            <div class="singleCustomer">
-                Упр. молодежной политики и туризма Адм. Пуровского района Ямало-Ненецкого авт. округа
-            </div>
-            <div class="singleCustomer">
-                Администрация муниципального образования "Выборгское городское поселение"
-            </div>
-            <div class="singleCustomer">
-                Товарищество Северного Мореходства, Соловки
-            </div>
-            <div class="singleCustomer">
-                РМОО "Молодежный морской совет", г.&nbsp;Санкт-Петербург
-            </div>
-            <div class="singleCustomer">
-                КШИ "Навигаторская школа", г.&nbsp;Москва
-            </div>
-            <div class="singleCustomer">
-                Иртышский филиал ФГОУ ВПО "НГАВТ" в г.&nbsp;Омске
-            </div>
-            <div class="singleCustomer">
-                Калининградский морской рыбопромышленный колледж
-            </div>
-            <div class="singleCustomer">
-                Свято-Благовещенский мужской монастырь, г.&nbsp;Муром
-            </div>
-            <div class="singleCustomer">
-                Мастерская дизайна "Фартук", г.&nbsp;Москва
-            </div>
-        </div>
-    </div>
-</div>
-<div id="goto-predist" class="about">
-    <div class="annotation">
-        <div class="annotationText">
-            <p>
-                Крупнейший наш проект - строительство корабля-музея
-                "Гото-Предистинация"
-                <span id="goto-predist" class="longText">
-                    для Воронежской области.
-                </span><br />
-                <span id="goto-predist" class="longText">
-                    Подробно историю создания этого судна
+                Мы находимся в Карелии,<span id="contacts" class="longText">
+                    приехать к нам и посмотреть наше производство можно
+                </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">
+                    , заезд с переулка Спасателей.
                 </span>
-                <span id="goto-predist" class="shortText">
-                    Подробнее...
-                </span>
-                <span id="goto-predist" class="longTextSecond"> можно увидеть тут.</span>
+                <br />Связаться с нами можно по:
+            </p>
+            <p style="margin-top:2vh">
+                электронной почте&nbsp;- varyag@onego.ru<br />
+                или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
             </p>
         </div>
+        <div id="ourLocation"></div>
     </div>
 </div>
-<div id="ourContacts"></div>
-<div id="contacts" class="about">
-    <div class="contactsText">
-        <p>
-            Мы находимся в Карелии,<span id="contacts" class="longText">
-                приехать к нам и посмотреть наше производство можно
-            </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">
-                , заезд с переулка Спасателей.
-            </span>
-            <br />Связаться с нами можно по:
-        </p>
-        <p style="margin-top:2vh">
-            электронной почте&nbsp;- varyag@onego.ru<br />
-            или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
-        </p>
+
+
+
+
+
+
+
+
+
+
+<div id="secondVar" class="MyContainer" style="display:none">
+    <div style="display:flex;position:relative;">
+        <div style="display:flex;flex-direction:column;width:20%;margin:10px 10px 0 10px;font-weight:bold;font-size:1.4rem;">
+            <div style="display:flex;flex-direction:column;padding:10px;background-color:white;border-radius:10px;">
+                <div style="color:#e81010;">
+                    Вековые традиции - современные (новые?) технологии
+                </div>
+                <div class="borderAbout" style="margin:10px;border-color:rgb(24 63 97);"></div>
+                <div>
+                    Современные(наши?) деревянные корабли - это <span style="color:#e81010">надежность</span>, <span style="color:#e81010">комфорт</span> и <span style="color:#e81010">долговечность</span>!
+                </div>
+            </div>
+            <div style="display:flex;flex-direction:column;padding:10px;margin:10px 0 10px 0;background-color:white;border-radius:10px;">
+                <div style="color:#e81010;">
+                    30 лет опыта деревянного судостроения
+                </div>
+                <div class="borderAbout" style="margin:10px;border-color:rgb(24 63 97);"></div>
+                <div>
+                    За время работы нашей верфи, нами было <span style="color:#e81010">построено более 450 судов</span>, из них <span style="color:#e81010">более 60 - крупные</span>
+                </div>
+            </div>
+            <div style="display:flex;flex-direction:column;padding:10px;background-color:white;border-radius:10px;">
+                <div style="color:#e81010;">
+                    Уникальный опыт проектирования
+                </div>
+                <div class="borderAbout" style="margin:10px;border-color:rgb(24 63 97);"></div>
+                <div>
+                    Наш проектный отдел обладает <span style="color:#e81010">колоссальным опытом</span> и может спроектировать <span style="color:#e81010">судно под ваши требования</span>
+                </div>
+            </div>
+        </div>
+        <div style="display:flex;flex-direction:column;width:80%;margin:10px 10px 0 0;">
+            <div style="background:white;border-top-left-radius:10px;border-top-right-radius:10px;height:100%;">
+                <div style="position:relative;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:100%;max-height:730px;height:100%;">
+                    @*<img src="~/images/о_нас/гото/1_Гото_Предестинация.jpg" style="border-top-left-radius:10px;border-top-right-radius:10px;" />*@
+                    <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:0px;right:10px">
+                        <div style="font-size:3rem;font-weight:bold;color:#e81010;text-decoration:underline">Каталог</div>
+                        <div style="font-size:1rem;font-weight:bold;text-align:right;margin-right:8px;">
+                            Все проекты в каталоге спроектированы и построены нашей верфью
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;flex-direction:column;background-color:white;padding:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;">
+                <div class="borderAbout" style="margin:10px 30px 10px 30px;border-color:rgb(24 63 97);"></div>
+                <div>
+                    Среди наших заказчиков крупные НКО, национальные парки, администрации городов и регионов, а также другие государственные структуры и клубы юных моряков
+                </div>
+                <div class="borderAbout" style="margin:10px 30px 10px 30px;border-color:rgb(24 63 97);"></div>
+                <div style="margin:30px">
+                    А тут у нас логотипы стройным рядом со стрелочками
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="ourLocation"></div>
+    <div id="ourContacts"></div>
+    <div style="display: flex;text-align:center;align-items:center;background-color:white;border-radius:10px;margin:10px;">
+        <div class="contactsText" style="font-size:2rem">
+            <p>
+                Мы находимся в Карелии,<span id="contacts" class="longText">
+                    приехать к нам и посмотреть наше производство можно
+                </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">
+                    , заезд с переулка Спасателей.
+                </span>
+                <br />Связаться с нами можно по:
+            </p>
+            <p style="margin-top:2vh">
+                электронной почте&nbsp;- varyag@onego.ru<br />
+                или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
+            </p>
+        </div>
+        <div id="ourLocation"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="display:none">
+    <div id="production" class="about">
+        <div class="annotation">
+            <div class="annotationText">
+                <p>
+                    За 30 лет нами было построено около 50 моторных и парусно-моторных судов и более 200 лодок и шлюпок.<br />
+                    <span id="production" class="longText">Подробнее о нашем производстве можно узнать здесь</span>
+                    <span id="production" class="shortText">Подробнее...</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <a name="новости"></a>
+    @await Component.InvokeAsync("News")
+    <div id="сatalog" class="about">
+        <div class="annotation">
+            <div class="annotationText">
+                <p>
+                    Мы <span id="сatalog" class="longText">работаем с каждым заказчиком индивидуально и </span>можем предложить как постройку судна по существующим проектам, так и
+                    разработать проект согласно вашим пожеланиям
+                    <span id="сatalog" class="longText"><br />Посмотреть на существующие проекты можно в нашем каталоге.</span>
+                    <span id="сatalog" class="shortText"><br />Наш каталог...</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="customers" class="about">
+        <div class="headerAbout">
+            <div class="borderAbout"></div>
+            <div>За время существования верфи "Варяг" нашими заказчиками стали:</div>
+            <div class="borderAbout"></div>
+        </div>
+        <div id="viewPort">
+            <div id="left" class="control">
+                <img src="~/images/left-arrow-button.png" />
+            </div>
+            <div id="right" class="control">
+                <img src="~/images/right-arrow-button.png" />
+            </div>
+            <div class="allCustomers">
+                <div id="1" class="singleCustomer">
+                    РОО "Морская Молодежная Лига", ВДЦ "Артек" и "Орленок"
+                </div>
+                <div class="singleCustomer">
+                    Комитет по физической культуре и спорту Новгородской области
+                </div>
+                <div class="singleCustomer">
+                    Федеральное гос. учреждение "Национальный парк "Паанаярви""
+                </div>
+                <div class="singleCustomer">
+                    Федеральное гос. учреждение "Национальный парк "Водлозерский""
+                </div>
+                <div class="singleCustomer">
+                    Гос. музей-заповедник "Царское село", г.&nbsp;Санкт-Петербург
+                </div>
+                <div class="singleCustomer">
+                    Новосибирская государственная академия водного транспорта
+                </div>
+                <div class="singleCustomer">
+                    ООО Киностудия "Вертикаль", Говорухин Станислав
+                </div>
+                <div class="singleCustomer">
+                    Британская кинокомпания "Picture palace", Malcolm Craddock
+                </div>
+                <div class="singleCustomer">
+                    ФГОУ Всероссийский центр "Орленок", г.&nbsp;Туапсе
+                </div>
+                <div class="singleCustomer">
+                    ФГОУ ВПО "Волжская государственная академия водного транспорта"
+                </div>
+                <div class="singleCustomer">
+                    ФГОУ "Государственная морская академия имени адмирала С.О.&nbsp;Макарова"
+                </div>
+                <div class="singleCustomer">
+                    ФГОУ "Новороссийская Государственная Морская Академия" им.&nbsp;Ф.Ф.&nbsp;Ушакова
+                </div>
+                <div class="singleCustomer">
+                    Учебный центр ФСБ России, г. Анапа
+                </div>
+                <div class="singleCustomer">
+                    ГОУ НПО "Морской профессиональный лицей №9 им. С.Н.&nbsp;Орешкова", г.&nbsp;Архангельск
+                </div>
+                <div class="singleCustomer">
+                    ГОУ СПО Спб Морской технический колледж
+                </div>
+                <div class="singleCustomer">
+                    Самарский речной техникум
+                </div>
+                <div class="singleCustomer">
+                    Клубы Юный Моряков более чем 15 городов нашей страны
+                </div>
+                <div class="singleCustomer">
+                    Московский Государственный Университет имени М.В.&nbsp;Ломоносова
+                </div>
+                <div class="singleCustomer">
+                    МАОУ "Детская флотилия "Парус""
+                </div>
+                <div class="singleCustomer">
+                    МРМОО "Союз православной молодежи Мордовии", г.&nbsp;Саранск
+                </div>
+                <div class="singleCustomer">
+                    Адм. Воронежской обл., Деп. промышленности, транспорта, связи и инноваций
+                </div>
+                <div class="singleCustomer">
+                    МГУ им.&nbsp;адм.&nbsp;Невельского, г.&nbsp;Владивосток
+                </div>
+                <div class="singleCustomer">
+                    ПРОО "Яхт-клуб Навигатор", г.&nbsp;Владивосток
+                </div>
+                <div class="singleCustomer">
+                    МРОПП Борисо-Глебский храм, Священик о.&nbsp;Дмитрий
+                </div>
+                <div class="singleCustomer">
+                    ФГБОУ ВДЦ "Океан", Владивосток
+                </div>
+                <div class="singleCustomer">
+                    Санкт-Петербургский "Морской технический колледж"
+                </div>
+                <div class="singleCustomer">
+                    Спб Государственное учреждение культуры "Парк культуры и отдыха "Дубки""
+                </div>
+                <div class="singleCustomer">
+                    Череповецкий музей археологии
+                </div>
+                <div class="singleCustomer">
+                    МБУ ДО г.&nbsp;Мурманска детский морской центр "Океан"
+                </div>
+                <div class="singleCustomer">
+                    МБОУ ДО "Детский морской центр "Североморец"", г.&nbsp;Северодвинск
+                </div>
+                <div class="singleCustomer">
+                    Рыболовецкий колхоз "Беломор", с.&nbsp;Нюхча, РК
+                </div>
+                <div class="singleCustomer">
+                    Адм. образования "Кингисепский муниципальный район Ленинградской области"
+                </div>
+                <div class="singleCustomer">
+                    ЦУ "Нарвский Бизнес-Центр", Эстония
+                </div>
+                <div class="singleCustomer">
+                    СПб гос. уч. "Центр "Адмиралтейский" по работе с подростками и молодежью"
+                </div>
+                <div class="singleCustomer">
+                    Мэрия городского округа Тольятти
+                </div>
+                <div class="singleCustomer">
+                    Управление образования г.&nbsp;Пензы
+                </div>
+                <div class="singleCustomer">
+                    Упр. молодежной политики и туризма Адм. Пуровского района Ямало-Ненецкого авт. округа
+                </div>
+                <div class="singleCustomer">
+                    Администрация муниципального образования "Выборгское городское поселение"
+                </div>
+                <div class="singleCustomer">
+                    Товарищество Северного Мореходства, Соловки
+                </div>
+                <div class="singleCustomer">
+                    РМОО "Молодежный морской совет", г.&nbsp;Санкт-Петербург
+                </div>
+                <div class="singleCustomer">
+                    КШИ "Навигаторская школа", г.&nbsp;Москва
+                </div>
+                <div class="singleCustomer">
+                    Иртышский филиал ФГОУ ВПО "НГАВТ" в г.&nbsp;Омске
+                </div>
+                <div class="singleCustomer">
+                    Калининградский морской рыбопромышленный колледж
+                </div>
+                <div class="singleCustomer">
+                    Свято-Благовещенский мужской монастырь, г.&nbsp;Муром
+                </div>
+                <div class="singleCustomer">
+                    Мастерская дизайна "Фартук", г.&nbsp;Москва
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="goto-predist" class="about">
+        <div class="annotation">
+            <div class="annotationText">
+                <p>
+                    Крупнейший наш проект - строительство корабля-музея
+                    "Гото-Предистинация"
+                    <span id="goto-predist" class="longText">
+                        для Воронежской области.
+                    </span><br />
+                    <span id="goto-predist" class="longText">
+                        Подробно историю создания этого судна
+                    </span>
+                    <span id="goto-predist" class="shortText">
+                        Подробнее...
+                    </span>
+                    <span id="goto-predist" class="longTextSecond"> можно увидеть тут.</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="ourContacts"></div>
+    <div id="contacts" class="about">
+        <div class="contactsText">
+            <p>
+                Мы находимся в Карелии,<span id="contacts" class="longText">
+                    приехать к нам и посмотреть наше производство можно
+                </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">
+                    , заезд с переулка Спасателей.
+                </span>
+                <br />Связаться с нами можно по:
+            </p>
+            <p style="margin-top:2vh">
+                электронной почте&nbsp;- varyag@onego.ru<br />
+                или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
+            </p>
+        </div>
+        <div id="ourLocation"></div>
+    </div>
 </div>
