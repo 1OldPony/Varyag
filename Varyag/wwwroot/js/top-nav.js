@@ -1,7 +1,7 @@
 ﻿var leftMenuOffset;
 $(document).ready(function () {
     //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
-    $("#left.control, #right.control").height($(".allCustomers").height());
+    //$("#left.control, #right.control").height($(".allCustomers").height());
     leftMenuOffset = $(".projectsHalf").offset().top;
 
 
@@ -83,7 +83,6 @@ $(window).resize(function () {
             if ($(".leftMenu").css('position') != 'fixed') {
                 $(".leftMenu").css('position', 'fixed');
             }
-
             if ($(window).width() >= 1001) {
                 $('.projectsHalf').css('margin-left', '361px');
             }
