@@ -3,12 +3,10 @@
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
 
-<div id="firstVar" class="MyContainer">
-    @*<div style="display:flex;position:relative;">*@
+<div id="firstVar" class="MyContainer" style="display:none">
     <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px">
         <div style="background:white;border-top-left-radius:10px;border-top-right-radius:10px;height:55vh;">
             <div style="position:relative;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:115%;max-height:730px;height:100%;">
-                @*<img src="~/images/о_нас/гото/1_Гото_Предестинация.jpg" style="border-top-left-radius:10px;border-top-right-radius:10px;" />*@
                 <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:10px;right:10px">
                     <div style="font-size:3rem;font-weight:bold;color:#e81010;text-decoration:underline">
                         Каталог
@@ -70,7 +68,6 @@
         </div>
         <div id="ourLocation"></div>
     </div>
-    @*</div>*@
 </div>
 
 
@@ -78,65 +75,53 @@
 
 
 
-
-
-
-
-<div id="secondVar" class="MyContainer" style="display:none">
-    <div style="display:flex;position:relative;">
-        <div style="display:flex;flex-direction:column;width:20%;margin:10px 10px 0 10px;font-weight:bold;font-size:1.4rem;">
-            <div style="display:flex;flex-direction:column;padding:10px;background-color:white;border-radius:10px;">
-                <div style="color:#e81010;">
-                    Вековые традиции - современные (новые?) технологии
-                </div>
-                <div class="borderAbout" style="margin:10px;border-color:rgb(24 63 97);"></div>
-                <div>
-                    Современные(наши?) деревянные корабли - это <span style="color:#e81010">надежность</span>, <span style="color:#e81010">комфорт</span> и <span style="color:#e81010">долговечность</span>!
-                </div>
-            </div>
-            <div style="display:flex;flex-direction:column;padding:10px;margin:10px 0 10px 0;background-color:white;border-radius:10px;">
-                <div style="color:#e81010;">
-                    30 лет опыта деревянного судостроения
-                </div>
-                <div class="borderAbout" style="margin:10px;border-color:rgb(24 63 97);"></div>
-                <div>
-                    За время работы нашей верфи, нами было <span style="color:#e81010">построено более 450 судов</span>, из них <span style="color:#e81010">более 60 - крупные</span>
-                </div>
-            </div>
-            <div style="display:flex;flex-direction:column;padding:10px;background-color:white;border-radius:10px;">
-                <div style="color:#e81010;">
-                    Уникальный опыт проектирования
-                </div>
-                <div class="borderAbout" style="margin:10px;border-color:rgb(24 63 97);"></div>
-                <div>
-                    Наш проектный отдел обладает <span style="color:#e81010">колоссальным опытом</span> и может спроектировать <span style="color:#e81010">судно под ваши требования</span>
-                </div>
-            </div>
-        </div>
-        <div style="display:flex;flex-direction:column;width:80%;margin:10px 10px 0 0;">
-            <div style="background:white;border-top-left-radius:10px;border-top-right-radius:10px;height:100%;">
-                <div style="position:relative;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:100%;max-height:730px;height:100%;">
-                    @*<img src="~/images/о_нас/гото/1_Гото_Предестинация.jpg" style="border-top-left-radius:10px;border-top-right-radius:10px;" />*@
-                    <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:0px;right:10px">
-                        <div style="font-size:3rem;font-weight:bold;color:#e81010;text-decoration:underline">Каталог</div>
+<div id="second" class="MyContainer" style="display:none;">
+        <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px;background:white;border-radius:10px;">
+            <div style="height:55vh;">
+                <div style="position:relative;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:115%;max-height:730px;height:100%;border-radius:10px;">
+                    <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:10px;right:10px">
+                        <div style="font-size:3rem;font-weight:bold;color:#e81010;text-decoration:underline">
+                            Каталог
+                        </div>
                         <div style="font-size:1rem;font-weight:bold;text-align:right;margin-right:8px;">
                             Все проекты в каталоге спроектированы и построены нашей верфью
                         </div>
                     </div>
                 </div>
             </div>
-            <div style="display:flex;flex-direction:column;background-color:white;padding:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;">
-                <div class="borderAbout" style="margin:10px 30px 10px 30px;border-color:rgb(24 63 97);"></div>
-                <div>
-                    Среди наших заказчиков крупные НКО, национальные парки, администрации городов и регионов, а также другие государственные структуры и клубы юных моряков
-                </div>
-                <div class="borderAbout" style="margin:10px 30px 10px 30px;border-color:rgb(24 63 97);"></div>
-                <div style="margin:30px">
-                    А тут у нас логотипы стройным рядом со стрелочками
-                </div>
+        </div>
+    <div style="display:flex;width:100%;">
+        <div id="leftLittleBlock" class="littleBlock"><div class="borderAbout"></div><div>Современные деревянные корабли - это <span style="color:#e81010">надежность</span>, <span style="color:#e81010">комфорт</span> и <span style="color:#e81010">долговечность</span></div><div class="borderAbout"></div></div>
+        <div class="littleBlock"><div class="borderAbout"></div><div>За <span style="color:#e81010">30 лет</span> построено <span style="color:#e81010">более 450 судов</span>, из них <span style="color:#e81010">более 60 - крупные</span></div><div class="borderAbout"></div></div>
+        <div id="rightLittleBlock" class="littleBlock"><div class="borderAbout"></div><div>Наши специалисты спроектируют <span style="color:#e81010">судно под ваши требования</span></div><div class="borderAbout"></div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;background-color:white;border-radius:10px;overflow:hidden;max-width:1350px;margin:0 10px 0 10px;">
+        <div class="borderAbout" style="margin:10px 30px 10px 30px;"></div>
+        <div style="font-size:1.5rem;font-weight:bold;font-family:'Gabriela';">
+            Среди наших заказчиков крупные НКО, национальные парки, администрации городов и регионов, а также другие государственные структуры и клубы юных моряков
+        </div>
+        <div class="borderAbout" style="margin:10px 30px 10px 30px;"></div>
+
+        <div id="viewPort" style="position:relative;width:100%;">
+            <div id="left" class="control" style="left:0px;height:100%;margin:0;">
+                <img src="~/images/left-arrow-button.png" />
+            </div>
+            <div id="right" class="control" style="right:0px;height:100%;margin:0;">
+                <img src="~/images/right-arrow-button.png" />
+            </div>
+            <div class="allCustomers" style="grid-template-columns:repeat(10, 16.6%);grid-auto-flow:unset;grid-template-rows:unset;">
+                <div style="margin:0 10% 0 10%"><img src="~/images/logo-artek.png" /></div>
+                <div style="margin:0 10% 0 10%"><img src="~/images/logo-fss.png" /></div>
+                <div style="margin:0 10% 0 10%"><img src="~/images/logo-artek.png" /></div>
+                <div style="margin:0 10% 0 10%"><img src="~/images/logo-fss.png" /></div>
+                <div style="margin:0 10% 0 10%"><img src="~/images/logo-artek.png" /></div>
+                <div style="margin:0 10% 0 10%"><img src="~/images/logo-fss.png" /></div>
+                <div style="margin:0 10% 0 10%"><img src="~/images/logo-artek.png" /></div>
+                <div style="margin:0 10% 0 10%"><img src="~/images/logo-fss.png" /></div>
             </div>
         </div>
     </div>
+    @await Component.InvokeAsync("News")
     <div id="ourContacts"></div>
     <div style="display: flex;text-align:center;align-items:center;background-color:white;border-radius:10px;margin:10px;">
         <div class="contactsText" style="font-size:2rem">
@@ -163,6 +148,177 @@
 
 
 
+
+<div id="thrird" class="MyContainer">
+    <div style="display:flex;">
+        <div style="display:flex;flex-direction:column;margin-top:10px;">
+            <div style="color:white;background-color:#183f61;border-radius:10px;padding:25px;margin-left:10px;font-size:2.5rem;font-weight:bold;">КАТАЛОГ</div>
+            <div class="leftMenu" style="justify-content:flex-start;margin-top:10px;">
+                <ul class="leftNavMenu">
+                    <li>
+                        <div class="leftNavLine"><a asp-action="Boats" class="navLineHeader">Лодки</a><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div></div>
+                        <ul id="lodki-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <a asp-action="BoatsTraditional">Народные лодки</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="BoatsSail">Прогулочные парусные лодки</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="BoatsRow">Прогулочные гребные лодки</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="shlupkiNav" class="leftNavLine"><a asp-action="Bigboats" class="navLineHeader">Шлюпки</a><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
+                        <ul id="shlupki-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <a asp-action="BoatsYal">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="Botiks">Ботики</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="KaterRows">Гребные катера и вельботы</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="MaketsStudy">Учебные пособия</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="kateraNav" class="leftNavLine"><a asp-action="Motorboats" class="navLineHeader">Катера</a><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div></div>
+                        <ul id="katera-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <a asp-action="KatersFishing">Рабочие/Рыболовные катера</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="KatersPassanger">Пассажирские катера</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="KaterKabins">Каютные катера</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="Motosailers">Мотосейлеры</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="ladiyNav" class="leftNavLine"><a asp-action="Ladiy" class="navLineHeader">Ладьи</a><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
+                        <ul id="ladiy-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <a asp-action="LadyasSailMotor">Парусно-моторные ладьи</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="LadyasSailRow">Парусно-гребные ладьи</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="sailboatsNav" class="leftNavLine"><a asp-action="Sailboats" class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
+                        <ul id="sailboats-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <a asp-action="SailboatsHistorical">Исторические парусники</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="SailboatsStudy">Учебные парусники</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="Svertbots">Швертботы</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a asp-action="Yachts">Парусные яхты</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="modelsNav" class="leftNavLine"><a asp-action="Models" class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
+                        <ul id="models-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                Тренажеры
+                            </li>
+                            <li class="leftSubCategory">
+                                Флагштоки
+                            </li>
+                            <li class="leftSubCategory">
+                                Клумбы
+                            </li>
+                            <li class="leftSubCategory">
+                                Кровати
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="display:flex;flex-direction:column;max-width:1010px;">
+            <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px;background:white;border-radius:10px;">
+                <div style="height:55vh;">
+                    <div style="position:relative;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:115%;max-height:730px;height:100%;border-radius:10px;">
+                        <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:10px;right:10px">
+                            <div style="font-size:3rem;font-weight:bold;color:#e81010;text-decoration:underline">
+                                Каталог
+                            </div>
+                            <div style="font-size:1rem;font-weight:bold;text-align:right;margin-right:8px;">
+                                Все проекты в каталоге спроектированы и построены нашей верфью
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;width:100%;">
+                <div id="leftLittleBlock" class="littleBlock"><div class="borderAbout"></div><div>Современные деревянные корабли - это <span style="color:#e81010">надежность</span>, <span style="color:#e81010">комфорт</span> и <span style="color:#e81010">долговечность</span></div><div class="borderAbout"></div></div>
+                <div class="littleBlock"><div class="borderAbout"></div><div>За <span style="color:#e81010">30 лет</span> построено <span style="color:#e81010">более 450 судов</span>, из них <span style="color:#e81010">более 60 - крупные</span></div><div class="borderAbout"></div></div>
+                <div id="rightLittleBlock" class="littleBlock"><div class="borderAbout"></div><div>Наши специалисты спроектируют <span style="color:#e81010">судно под ваши требования</span></div><div class="borderAbout"></div></div>
+            </div>
+            <div style="display:flex;flex-direction:column;background-color:white;border-radius:10px;overflow:hidden;max-width:1350px;margin:0 10px 0 10px;">
+                <div class="borderAbout" style="margin:10px 30px 10px 30px;"></div>
+                <div style="font-size:1.5rem;font-weight:bold;font-family:'Gabriela';">
+                    Среди наших заказчиков крупные НКО, национальные парки, администрации городов и регионов, а также другие государственные структуры и клубы юных моряков
+                </div>
+                <div class="borderAbout" style="margin:10px 30px 10px 30px;"></div>
+
+                <div id="viewPort" style="position:relative;width:100%;">
+                    <div id="left" class="control" style="left:0px;height:100%;margin:0;">
+                        <img src="~/images/left-arrow-button.png" />
+                    </div>
+                    <div id="right" class="control" style="right:0px;height:100%;margin:0;">
+                        <img src="~/images/right-arrow-button.png" />
+                    </div>
+                    <div class="allCustomers" style="grid-template-columns:repeat(10, 16.6%);grid-auto-flow:unset;grid-template-rows:unset;">
+                        <div style="margin:0 10% 0 10%"><img src="~/images/logo-artek.png" /></div>
+                        <div style="margin:0 10% 0 10%"><img src="~/images/logo-fss.png" /></div>
+                        <div style="margin:0 10% 0 10%"><img src="~/images/logo-artek.png" /></div>
+                        <div style="margin:0 10% 0 10%"><img src="~/images/logo-fss.png" /></div>
+                        <div style="margin:0 10% 0 10%"><img src="~/images/logo-artek.png" /></div>
+                        <div style="margin:0 10% 0 10%"><img src="~/images/logo-fss.png" /></div>
+                        <div style="margin:0 10% 0 10%"><img src="~/images/logo-artek.png" /></div>
+                        <div style="margin:0 10% 0 10%"><img src="~/images/logo-fss.png" /></div>
+                    </div>
+                </div>
+            </div>
+            @await Component.InvokeAsync("News")
+            <div id="ourContacts"></div>
+            <div style="display: flex;text-align:center;align-items:center;background-color:white;border-radius:10px;margin:10px;">
+                <div class="contactsText" style="font-size:2rem">
+                    <p>
+                        Мы находимся в Карелии,<span id="contacts" class="longText">
+                            приехать к нам и посмотреть наше производство можно
+                        </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">
+                            , заезд с переулка Спасателей.
+                        </span>
+                        <br />Связаться с нами можно по:
+                    </p>
+                    <p style="margin-top:2vh">
+                        электронной почте&nbsp;- varyag@onego.ru<br />
+                        или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
+                    </p>
+                </div>
+                <div id="ourLocation"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

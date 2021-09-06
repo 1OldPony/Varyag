@@ -13,6 +13,28 @@
         font-size:2rem;
     }
 
+.littleBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    font-weight: bold;
+    position: relative;
+    margin: 10px;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Gabriela';
+    padding: 25px;
+    width: 32%;
+}
+
+#leftLittleBlock.littleBlock {
+    margin: 10px 0 10px 10px;
+}
+#rightLittleBlock.littleBlock {
+    margin: 10px 10px 10px 0;
+}
+
 #main.headerAbout {
     font-size: 2.5rem;
 }
