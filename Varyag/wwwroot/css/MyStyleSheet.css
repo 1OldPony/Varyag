@@ -35,6 +35,52 @@
     margin: 10px 10px 10px 0;
 }
 
+.mainPageMenu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: left;
+}
+.mainPageMenuTop {
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+    background-color: #183f61;
+    border-radius: 15px;
+    padding: 10px;
+    width: 250px;
+}
+.mainPageMenuElementBottom {
+    position: relative;
+    background-color: #d00000;
+    border-radius: 15px;
+    width: 100px;
+    margin-top: 10px;
+    height: 49px;
+}
+.mainPageMenuElement {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+    background-color: #183f61;
+    padding: 10px;
+    border-radius: 15px;
+    width: 200px;
+    transition: transform 0.5s cubic-bezier(0.71, 0.22, 0.22, 0.81);
+}
+    .mainPageMenuElement:hover {
+        transform: translateX(50px);
+    }
+
 #main.headerAbout {
     font-size: 2.5rem;
 }

@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
 
-<div id="firstVar" class="MyContainer" style="display:none">
+@*<div id="firstVar" class="MyContainer" style="display:none">
     <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px">
         <div style="background:white;border-top-left-radius:10px;border-top-right-radius:10px;height:55vh;">
             <div style="position:relative;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:115%;max-height:730px;height:100%;">
@@ -68,28 +68,279 @@
         </div>
         <div id="ourLocation"></div>
     </div>
-</div>
+</div>*@
 
 
 
 
 
 
-<div id="second" class="MyContainer" style="display:none;">
-        <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px;background:white;border-radius:10px;">
-            <div style="height:55vh;">
-                <div style="position:relative;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:115%;max-height:730px;height:100%;border-radius:10px;">
-                    <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:10px;right:10px">
-                        <div style="font-size:3rem;font-weight:bold;color:#e81010;text-decoration:underline">
-                            Каталог
+<div id="second" class="MyContainer">
+    <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px;background:white;border-radius:10px;">
+        <div style="height:55vh;">
+            <div style="position:relative;background-image:url(../images/о_нас/производство/производство.JPG);background-position:0% 58%;background-image:url(/images/о_нас/гото/1_Гото_Предестинация.jpg);background-position: 0% 87%;background-size:115%;max-height:730px;height:100%;border-radius:10px;">
+                <div style="display:flex;flex-direction:column;width:216px;position:absolute;top:10px;right:10px">
+                    <div style="font-size:1.3rem;font-weight:bold;text-align:center;margin-right:8px;">
+                        Все проекты в каталоге спроектированы и построены нашей верфью
+                    </div>
+                </div>
+                <div class="mainPageMenu" id="first" style="display:none">
+                    <div class="mainPageMenuTop">
+                        Наша продукция
+                    </div>
+                    <div class="mainPageMenuElementBottom">
+                        <div class="mainPageMenuElement">
+                            Лодки
                         </div>
-                        <div style="font-size:1rem;font-weight:bold;text-align:right;margin-right:8px;">
-                            Все проекты в каталоге спроектированы и построены нашей верфью
+                    </div>
+                    <div class="mainPageMenuElementBottom">
+                        <div class="mainPageMenuElement">
+                            Шлюпки
+                        </div>
+                    </div>
+                    <div class="mainPageMenuElementBottom">
+                        <div class="mainPageMenuElement">
+                            Катера
+                        </div>
+                    </div>
+                    <div class="mainPageMenuElementBottom">
+                        <div class="mainPageMenuElement">
+                            Ладьи
+                        </div>
+                    </div>
+                    <div class="mainPageMenuElementBottom">
+                        <div class="mainPageMenuElement">
+                            Парусники
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mainPageMenu" id="second" style="display:none">
+                    <div class="mainPageMenuTop" style="font-size:1.6rem;color:unset;background-color:unset;text-decoration:none;width:260px;padding:7px;">
+                        НАША ПРОДУКЦИЯ
+                    </div>
+                    <div class="mainPageMenuElementBottom" style="width:274px;background-color:#0629652e;height:53px;margin-top:1px;border-style:solid;border-width:1px;">
+                        <div class="mainPageMenuElement" style="top:2px;left:2px">
+                            Лодки
+                        </div>
+                    </div>
+                    <div class="mainPageMenuElementBottom" style="width:274px;background-color:#d00000;height:53px;margin-top:1px;border-style:solid;border-width:1px;">
+                        <div class="mainPageMenuElement" style="top:2px;left:2px">
+                            Шлюпки
+                        </div>
+                    </div>
+                    <div class="mainPageMenuElementBottom">
+                        <div class="mainPageMenuElement">
+                            Катера
+                        </div>
+                    </div>
+                    <div class="mainPageMenuElementBottom">
+                        <div class="mainPageMenuElement">
+                            Ладьи
+                        </div>
+                    </div>
+                    <div class="mainPageMenuElementBottom">
+                        <div class="mainPageMenuElement">
+                            Парусники
+                        </div>
+                    </div>
+                </div>
+                <div id="fird" style="display:flex;position:absolute;bottom:0px;left:0px;width:100%;border-top-style:solid;background-color:#00000087">
+                    <div style="width:16.6%;display:flex;flex-direction:column;justify-content:center;">
+                        <div style="font-size:2rem;text-align:center;color:white;">
+                            Наша продукция
+                        </div>
+                    </div>
+                    <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;">
+                        <div style="width:75%;">
+                            <img src="~/images/icons/Цветные/одинаковые/лодка-безфона.png" />
+                        </div>
+                        <div style="font-size:1.3rem;text-align:center;color:white;">
+                            Лодки
+                        </div>
+                    </div>
+                    <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;">
+                        <div style="width:75%;">
+                            <img src="~/images/icons/Цветные/одинаковые/шлюпка-безфона.png" />
+                        </div>
+                        <div style="font-size:1.3rem;text-align:center;color:white;">
+                            Шлюпки
+                        </div>
+                    </div>
+                    <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;">
+                        <div style="width:75%;">
+                            <img src="~/images/icons/Цветные/одинаковые/катер-безфона.png" />
+                        </div>
+                        <div style="font-size:1.3rem;text-align:center;color:white;">
+                            Катера
+                        </div>
+                    </div>
+                    <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;">
+                        <div style="width:75%;">
+                            <img src="~/images/icons/Цветные/одинаковые/ладья-безфона-1200.png" />
+                        </div>
+                        <div style="font-size:1.3rem;text-align:center;color:white;">
+                            Ладьи
+                        </div>
+                    </div>
+                    <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;">
+                        <div style="width:75%;">
+                            <img src="~/images/icons/Цветные/одинаковые/парусник-безфона.png" />
+                        </div>
+                        <div style="font-size:1.3rem;text-align:center;color:white;">
+                            Парусники
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div style="display:flex;background-color:white;margin:0 10px 0 10px;">
+        <div style="width:16.6%;display:flex;flex-direction:column;justify-content:center;">
+            <div style="font-size:2rem;text-align:center;">
+                Наша продукция
+            </div>
+        </div>
+        <div style="width:14.6%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;">
+            <div style="width:75%;">
+                <img src="~/images/icons/Цветные/одинаковые/лодка-безфона.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Лодки
+            </div>
+        </div>
+        <div style="width:12.6%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;">
+            <div style="width:75%;">
+                <img src="~/images/icons/Цветные/одинаковые/шлюпка-безфона.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Шлюпки
+            </div>
+        </div>
+        <div style="width:18.6%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;">
+            <div style="width:75%;">
+                <img src="~/images/icons/Цветные/одинаковые/катер-безфона.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Катера
+            </div>
+        </div>
+        <div style="width:18.6%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;">
+            <div style="width:75%;">
+                <img src="~/images/icons/Цветные/одинаковые/ладья-безфона-1200.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Ладьи
+            </div>
+        </div>
+        <div style="width:18.6%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;">
+            <div style="width:75%;">
+                <img src="~/images/icons/Цветные/одинаковые/парусник-безфона.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Парусники
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;margin:10px 10px 0 10px;">
+        <div style="width:16.6%;display:flex;flex-direction:column;justify-content:center;background-color:white;margin-right:10px;border-radius:10px;">
+            <div style="font-size:2rem;text-align:center;">
+                Наша продукция
+            </div>
+        </div>
+        <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;background-color:white;margin-right:10px;border-radius:10px;justify-content:flex-end;">
+            <div style="width:65%;">
+                <img src="~/images/icons/Цветные/одинаковые/лодка-безфона.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Лодки
+            </div>
+        </div>
+        <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;background-color:white;margin-right:10px;border-radius:10px;justify-content:flex-end;">
+            <div style="width:55%;">
+                <img src="~/images/icons/Цветные/одинаковые/шлюпка-безфона.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Шлюпки
+            </div>
+        </div>
+        <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;background-color:white;margin-right:10px;border-radius:10px;justify-content:flex-end;">
+            <div style="width:65%;">
+                <img src="~/images/icons/Цветные/одинаковые/катер-безфона.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Катера
+            </div>
+        </div>
+        <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;background-color:white;margin-right:10px;border-radius:10px;justify-content:flex-end;">
+            <div style="width:65%;">
+                <img src="~/images/icons/Цветные/одинаковые/ладья-безфона-1200.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Ладьи
+            </div>
+        </div>
+        <div style="width:16.6%;display:flex;flex-direction:column;align-items:center;background-color:white;border-radius:10px;justify-content:flex-end;">
+            <div style="width:65%;">
+                <img src="~/images/icons/Цветные/одинаковые/парусник-безфона.png" />
+            </div>
+            <div style="font-size:1.3rem;text-align:center;">
+                Парусники
+            </div>
+        </div>
+    </div>
+    <div style="display:flex;margin:10px 10px 0 10px;">
+        <div style="width:16.6%;display:flex;flex-direction:column;justify-content:center;background-color:#183f61;">
+            <div style="font-size:2rem;text-align:center;color:white;">
+                Наша продукция
+            </div>
+        </div>
+        <div style="display:flex;flex-direction:column;width:83.4%;">
+            <div style="display:flex;">
+                <div style="width:20%;display:flex;flex-direction:column;align-items:center;background-color:white;justify-content:space-between;">
+                    <div style="font-size:1.3rem;text-align:center;">
+                        Лодки
+                    </div>
+                    <div style="width:65%;">
+                        <img src="~/images/icons/Цветные/одинаковые/лодка-безфона.png" />
+                    </div>
+                </div>
+                <div style="width:20%;display:flex;flex-direction:column;align-items:center;background-color:white;justify-content:space-between;">
+                    <div style="font-size:1.3rem;text-align:center;">
+                        Шлюпки
+                    </div>
+                    <div style="width:55%;">
+                        <img src="~/images/icons/Цветные/одинаковые/шлюпка-безфона.png" />
+                    </div>
+                </div>
+                <div style="width:20%;display:flex;flex-direction:column;align-items:center;background-color:white;justify-content:space-between;">
+                    <div style="font-size:1.3rem;text-align:center;">
+                        Катера
+                    </div>
+                    <div style="width:65%;">
+                        <img src="~/images/icons/Цветные/одинаковые/катер-безфона.png" />
+                    </div>
+                </div>
+                <div style="width:20%;display:flex;flex-direction:column;align-items:center;background-color:white;justify-content:space-between;">
+                    <div style="font-size:1.3rem;text-align:center;">
+                        Ладьи
+                    </div>
+                    <div style="width:65%;">
+                        <img src="~/images/icons/Цветные/одинаковые/ладья-безфона-1200.png" />
+                    </div>
+                </div>
+                <div style="width:20%;display:flex;flex-direction:column;align-items:center;background-color:white;justify-content:space-between;">
+                    <div style="font-size:1.3rem;text-align:center;">
+                        Парусники
+                    </div>
+                    <div style="width:65%;">
+                        <img src="~/images/icons/Цветные/одинаковые/парусник-безфона.png" />
+                    </div>
+                </div>
+            </div>
+            <div style="width:100%;background-color:#183f61;height:20px;"></div>
+        </div>
+    </div>
     <div style="display:flex;width:100%;">
         <div id="leftLittleBlock" class="littleBlock"><div class="borderAbout"></div><div>Современные деревянные корабли - это <span style="color:#e81010">надежность</span>, <span style="color:#e81010">комфорт</span> и <span style="color:#e81010">долговечность</span></div><div class="borderAbout"></div></div>
         <div class="littleBlock"><div class="borderAbout"></div><div>За <span style="color:#e81010">30 лет</span> построено <span style="color:#e81010">более 450 судов</span>, из них <span style="color:#e81010">более 60 - крупные</span></div><div class="borderAbout"></div></div>
@@ -149,7 +400,7 @@
 
 
 
-<div id="thrird" class="MyContainer">
+<div id="thrird" class="MyContainer" style="display:none;">
     <div style="display:flex;">
         <div style="display:flex;flex-direction:column;margin-top:10px;">
             <div style="color:white;background-color:#183f61;border-radius:10px;padding:25px;margin-left:10px;font-size:2.5rem;font-weight:bold;">КАТАЛОГ</div>
