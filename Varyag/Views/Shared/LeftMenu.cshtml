@@ -1,5 +1,6 @@
 ﻿
 <div class="leftMenu">
+    <div class="navigationShip"><img src="~/images/icons/кораблик.png" /></div>
     <nav>
         @if (ViewBag.catalogPage != "models")
         {
@@ -7,11 +8,11 @@
                 <li>
                     @if (ViewBag.catalogPage == "catalog")
                     {
-                        <div class="leftNavLine"><a asp-action="CatalogNavigation" class="navLineHeader" style="color:red">Каталог</a></div>
+                        <div class="leftNavLine"><a asp-action="CatalogNavigation" id="catalogHeder" class="navLineHeader" style="color:red">Каталог</a></div>
                     }
                     else
                     {
-                        <div class="leftNavLine"><a asp-action="CatalogNavigation" class="navLineHeader">Каталог</a></div>
+                        <div class="leftNavLine"><a asp-action="CatalogNavigation" id="catalogHeder" class="navLineHeader">Каталог</a></div>
                     }
                 </li>
                 <li>
@@ -497,6 +498,7 @@
             </ul>
         }
     </nav>
+    <div id="navigationButton" class="navigationButton" onclick="navigationButton()">Назад</div>
     <div class="ourContacts">
         <div>НАШИ КОНТАКТЫ</div>
         <div class="contactsLeft">
