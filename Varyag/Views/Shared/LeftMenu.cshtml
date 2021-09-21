@@ -1,11 +1,12 @@
-﻿
-<div class="leftMenu">
-    <div class="navigationShip"><img src="~/images/icons/кораблик.png" /></div>
+﻿<div class="leftMenu" style="justify-content:flex-start;">
     <nav>
         @if (ViewBag.catalogPage != "models")
         {
             <ul class="leftNavMenu">
-                <li>
+                <li id="aboutUs">
+                    <div class="leftNavLine"><a asp-action="AllNews" asp-controller="About" class="navLineHeader">О нас</a></div>
+                </li>
+                <li id="catalogWord">
                     @if (ViewBag.catalogPage == "catalog")
                     {
                         <div class="leftNavLine"><a asp-action="CatalogNavigation" id="catalogHeder" class="navLineHeader" style="color:red">Каталог</a></div>
@@ -400,6 +401,9 @@
         {
             <ul class="leftNavMenu" style="padding-bottom:107px">
                 <li>
+                    <div class="leftNavLine"><a asp-action="AllNews" asp-controller="About" class="navLineHeader">О нас</a></div>
+                </li>
+                <li>
                     <div class="leftNavLine"><a asp-action="CatalogNavigation" class="navLineHeader">Каталог</a></div>
                 </li>
                 <li>
@@ -498,7 +502,6 @@
             </ul>
         }
     </nav>
-    <div id="navigationButton" class="navigationButton" onclick="navigationButton()">Назад</div>
     <div class="ourContacts">
         <div>НАШИ КОНТАКТЫ</div>
         <div class="contactsLeft">

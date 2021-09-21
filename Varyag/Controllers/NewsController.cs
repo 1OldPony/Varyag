@@ -217,7 +217,6 @@ namespace Varyag.Controllers
                 keyWordRefresh = keyWordR,
                 newsDateRefresh = newsDateR
             };
-
             return View();
         }
 
@@ -227,7 +226,7 @@ namespace Varyag.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("NewsId,Header,NewsDate,MainStory,KeyWord,PathToGallery,ShortImgScale,ShortImgX,ShortImgY," +
-            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory,ShortFotoPreview,MiddleFotoPreview,WideSFotoPreview,PathToVideo1,PathToVideo2,PathToVideo3")] News news, IFormFileCollection newsGallery)
+            "MiddleImgScale,MiddleImgX,MiddleImgY,WideImgScale,WideImgX,WideImgY,ShortStory,MiddleStory,WideStory,ShortFotoPreview,MiddleFotoPreview,WideSFotoPreview,PathToVideo1,PathToVideo2,PathToVideo3,LinkedProjectNames")] News news, IFormFileCollection newsGallery)
         {
             if (ModelState.IsValid)
             {
@@ -306,7 +305,13 @@ namespace Varyag.Controllers
                 {
                     news.PathToVideo3 = LittleHelper.UrlGiver(news.PathToVideo3);
                 }
-
+                //string projectsNames = "";
+                //foreach (var item in news.LinkedProjectNames)
+                //{
+                //    projectsNames += item;
+                //    projectsNames += "/";
+                //}
+                
                 _context.Add(news);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -434,6 +439,7 @@ namespace Varyag.Controllers
 
                     _context.Update(news);
                     await _context.SaveChangesAsync();
+                    //return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {

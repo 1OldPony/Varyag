@@ -17,9 +17,14 @@ namespace Varyag.Controllers
             db = context;
         }
         
-             public IActionResult Catalog()
+        public IActionResult Catalog()
         {
             return RedirectToAction("Sailboats");
+        }
+
+        public IActionResult CatalogSort(string category, bool plitca, string lengthSort)
+        {            
+            return ViewComponent("ProjectsCatalog", new { category, plitca, lengthSort });
         }
 
         public IActionResult CatalogNavigation()

@@ -1,0 +1,828 @@
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1,071ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 17250.3128ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 20916.3976ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request finished in 23314.8485ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 1396.7762ms 200 text/css
+Request finished in 1428.0419ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 2097.6582ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 1359.8647ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 2908.8639ms 200 application/javascript
+Request finished in 2691.7333ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 36.0648ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 250.3999ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request finished in 588.3965ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 48.2014ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/производство/производство.JPG  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Request finished in 79.8305ms 200 image/jpeg
+Sending file. Request path: '/images/о_нас/производство/производство.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\производство\производство.JPG'
+Request finished in 302.749ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Request finished in 26.0826ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/09.10.2019/short.jpg  
+Sending file. Request path: '/images/news/09.10.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\09.10.2019\short.jpg'
+Request finished in 40.5006ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 13.5889ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 21.0516ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Request finished in 34.9802ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702—копия.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702—копия.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702—копия.JPG'
+Request finished in 33.8511ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 151.7696ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/news/create  
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 269.1532ms.
+Executing ViewResult, running view Create.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProjectID], [p].[BoatRow], [p].[BoatSail], [p].[BoatTraditional], [p].[BoatYal], [p].[Botik], [p].[Deep], [p].[Description], [p].[EnginePower], [p].[FreshWaterCap], [p].[FuelCap], [p].[KaterCabin], [p].[KaterFish], [p].[KaterPass], [p].[KaterProject], [p].[KaterRow], [p].[LadyaProject], [p].[LadyaRow], [p].[LadyaSail], [p].[Length], [p].[MainFoto], [p].[MaketCinema], [p].[MaketDesign], [p].[MaketMuseum], [p].[MaketStudy], [p].[Mass], [p].[Motosailer], [p].[Name], [p].[NumberOfOars], [p].[PassengerCap], [p].[Price], [p].[Route], [p].[SailArea], [p].[SailboatHistorical], [p].[SailboatProject], [p].[SailboatStudy], [p].[ShipSheme], [p].[ShipShemeFull], [p].[Shvertbot], [p].[SleepingAreas], [p].[Speed], [p].[Volume], [p].[Windth], [p].[Yacht]
+FROM [Project] AS [p]
+Executed ViewResult - view Create executed in 2512.2818ms.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 3040.3542ms
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request finished in 3695.73ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 168.5096ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request finished in 127.4338ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Request finished in 277.2134ms 200 application/javascript
+Request finished in 251.9955ms 200 text/css
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 552.641ms 200 text/css
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Request finished in 339.0069ms 200 application/javascript
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 481.9632ms 200 application/javascript
+Request finished in 459.5778ms 200 text/css
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request finished in 894.0226ms 200 application/javascript
+Request finished in 360.7951ms 404 
+Request finished in 360.861ms 404 
+Request finished in 362.6995ms 404 
+Request finished in 1021.3698ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/themes/silver/theme.min.js  
+Sending file. Request path: '/js/tinymce/themes/silver/theme.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\themes\silver\theme.min.js'
+Request finished in 373.372ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/langs/ru.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/plugins/code/plugin.min.js  
+Sending file. Request path: '/js/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\plugins\code\plugin.min.js'
+Sending file. Request path: '/js/tinymce/langs/ru.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\langs\ru.js'
+Request finished in 56.2774ms 200 application/javascript
+Request finished in 62.5965ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/skin.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/skin.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\skin.min.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/content.min.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/content/default/content.min.css  
+Request finished in 51.9754ms 200 text/css
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\content.min.css'
+Sending file. Request path: '/js/tinymce/skins/content/default/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\content\default\content.min.css'
+Request finished in 257.9529ms 200 text/css
+Request finished in 338.0921ms 200 text/css
+Request starting HTTP/2.0 POST https://localhost:44325/News/SaveTempFoto?actionType=create multipart/form-data; boundary=----WebKitFormBoundary6Dlz7C5VnxOwXUle 155466
+Executing endpoint 'Varyag.Controllers.NewsController.SaveTempFoto (Varyag)'
+Route matched with {action = "SaveTempFoto", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SaveTempFoto(Microsoft.AspNetCore.Http.IFormFile, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.SaveTempFoto (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.SaveTempFoto (Varyag), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 250.4143ms.
+Executing RedirectResult, redirecting to /News/Create?shortScale=175&shortX=50&shortY=50&midScale=175&midX=50&midY=50&wideScale=175&wideX=50&wideY=50&keyWordR=%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9.
+Executed action Varyag.Controllers.NewsController.SaveTempFoto (Varyag) in 633.959ms
+Executed endpoint 'Varyag.Controllers.NewsController.SaveTempFoto (Varyag)'
+Request finished in 839.1386ms 302 
+Request starting HTTP/2.0 GET https://localhost:44325/News/Create?shortScale=175&shortX=50&shortY=50&midScale=175&midX=50&midY=50&wideScale=175&wideX=50&wideY=50&keyWordR=%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9  
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0698ms.
+Executing ViewResult, running view Create.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProjectID], [p].[BoatRow], [p].[BoatSail], [p].[BoatTraditional], [p].[BoatYal], [p].[Botik], [p].[Deep], [p].[Description], [p].[EnginePower], [p].[FreshWaterCap], [p].[FuelCap], [p].[KaterCabin], [p].[KaterFish], [p].[KaterPass], [p].[KaterProject], [p].[KaterRow], [p].[LadyaProject], [p].[LadyaRow], [p].[LadyaSail], [p].[Length], [p].[MainFoto], [p].[MaketCinema], [p].[MaketDesign], [p].[MaketMuseum], [p].[MaketStudy], [p].[Mass], [p].[Motosailer], [p].[Name], [p].[NumberOfOars], [p].[PassengerCap], [p].[Price], [p].[Route], [p].[SailArea], [p].[SailboatHistorical], [p].[SailboatProject], [p].[SailboatStudy], [p].[ShipSheme], [p].[ShipShemeFull], [p].[Shvertbot], [p].[SleepingAreas], [p].[Speed], [p].[Volume], [p].[Windth], [p].[Yacht]
+FROM [Project] AS [p]
+Executed ViewResult - view Create executed in 5456.2888ms.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 5607.0981ms
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request finished in 6027.267ms 200 text/html; charset=utf-8
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Request finished in 189.9995ms 200 text/css
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 290.0091ms 200 text/css
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request finished in 83.4973ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Request finished in 347.6679ms 200 application/javascript
+Request finished in 347.8876ms 200 application/javascript
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 365.2291ms 200 application/javascript
+Request finished in 399.3994ms 200 application/javascript
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Request finished in 833.5325ms 200 application/javascript
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Request finished in 1486.2684ms 200 text/css
+Request finished in 940.3266ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/themes/silver/theme.min.js  
+Sending file. Request path: '/images/temp/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\short.jpg'
+Sending file. Request path: '/images/temp/middle.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\middle.jpg'
+Request finished in 1497.9055ms 200 image/jpeg
+Request finished in 1390.2898ms 200 image/jpeg
+Sending file. Request path: '/images/temp/wide.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\wide.jpg'
+Sending file. Request path: '/js/tinymce/themes/silver/theme.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\themes\silver\theme.min.js'
+Request finished in 1881.9017ms 200 image/jpeg
+Request finished in 1601.8807ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/plugins/code/plugin.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/langs/ru.js  
+Sending file. Request path: '/js/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\plugins\code\plugin.min.js'
+Sending file. Request path: '/js/tinymce/langs/ru.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\langs\ru.js'
+Request finished in 213.1053ms 200 application/javascript
+Request finished in 135.855ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/skin.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/skin.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\skin.min.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/content.min.css  
+Request finished in 67.4182ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/content/default/content.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\content.min.css'
+Sending file. Request path: '/js/tinymce/skins/content/default/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\content\default\content.min.css'
+Request finished in 258.47ms 200 text/css
+Request finished in 296.9756ms 200 text/css
+Request starting HTTP/2.0 POST https://localhost:44325/News/Create multipart/form-data; boundary=----WebKitFormBoundaryLQAWX57kkg5gGHPO 2729
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Varyag.Models.News, Microsoft.AspNetCore.Http.IFormFileCollection) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (74ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 2564.9066ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 3297.5424ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 3936.4432ms 200 text/html; charset=utf-8
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 379.2506ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request finished in 630.4349ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 155.2218ms 200 image/png
+Request finished in 63.6964ms 200 image/png
+Request finished in 127.371ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request finished in 364.8012ms 200 image/png
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 530.2123ms 200 text/css
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 667.1621ms 200 image/png
+Request finished in 682.5625ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 566.0947ms 200 application/javascript
+Request finished in 1243.1019ms 200 image/png
+Request finished in 616.5121ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/производство/производство.JPG  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/09.10.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702—копия.JPG  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Request finished in 407.9058ms 200 image/jpeg
+Sending file. Request path: '/images/news/09.10.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\09.10.2019\short.jpg'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 605.8935ms 200 image/jpeg
+Request finished in 1514.5459ms 200 application/javascript
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Request finished in 1405.6371ms 200 image/jpeg
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702—копия.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702—копия.JPG'
+Request finished in 2450.3814ms 200 image/jpeg
+Sending file. Request path: '/images/о_нас/производство/производство.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\производство\производство.JPG'
+Request finished in 4030.8536ms 200 image/jpeg
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 3953.7675ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/news/create  
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 241.6597ms.
+Executing ViewResult, running view Create.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (63ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProjectID], [p].[BoatRow], [p].[BoatSail], [p].[BoatTraditional], [p].[BoatYal], [p].[Botik], [p].[Deep], [p].[Description], [p].[EnginePower], [p].[FreshWaterCap], [p].[FuelCap], [p].[KaterCabin], [p].[KaterFish], [p].[KaterPass], [p].[KaterProject], [p].[KaterRow], [p].[LadyaProject], [p].[LadyaRow], [p].[LadyaSail], [p].[Length], [p].[MainFoto], [p].[MaketCinema], [p].[MaketDesign], [p].[MaketMuseum], [p].[MaketStudy], [p].[Mass], [p].[Motosailer], [p].[Name], [p].[NumberOfOars], [p].[PassengerCap], [p].[Price], [p].[Route], [p].[SailArea], [p].[SailboatHistorical], [p].[SailboatProject], [p].[SailboatStudy], [p].[ShipSheme], [p].[ShipShemeFull], [p].[Shvertbot], [p].[SleepingAreas], [p].[Speed], [p].[Volume], [p].[Windth], [p].[Yacht]
+FROM [Project] AS [p]
+Executed ViewResult - view Create executed in 3265.6601ms.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 3874.6121ms
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request finished in 4949.099ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 175.2314ms 200 text/css
+Request finished in 84.957ms 200 text/css
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request finished in 351.2509ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Request finished in 63.7614ms 200 application/javascript
+Request finished in 60.2062ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Request finished in 117.365ms 200 application/javascript
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Request finished in 527.5781ms 200 application/javascript
+Request finished in 646.4361ms 200 application/javascript
+Request finished in 1604.3204ms 200 text/css
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request finished in 1049.9872ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request finished in 341.3771ms 404 
+Request finished in 135.9762ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request finished in 178.1739ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/themes/silver/theme.min.js  
+Sending file. Request path: '/js/tinymce/themes/silver/theme.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\themes\silver\theme.min.js'
+Request finished in 76.8027ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/langs/ru.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/plugins/code/plugin.min.js  
+Sending file. Request path: '/js/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\plugins\code\plugin.min.js'
+Sending file. Request path: '/js/tinymce/langs/ru.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\langs\ru.js'
+Request finished in 113.9511ms 200 application/javascript
+Request finished in 142.0293ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/skin.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/skin.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\skin.min.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/content.min.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/content/default/content.min.css  
+Request finished in 89.008ms 200 text/css
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\content.min.css'
+Request finished in 30.3349ms 200 text/css
+Sending file. Request path: '/js/tinymce/skins/content/default/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\content\default\content.min.css'
+Request finished in 120.8487ms 200 text/css
+Request starting HTTP/2.0 POST https://localhost:44325/News/SaveTempFoto?actionType=create multipart/form-data; boundary=----WebKitFormBoundaryrV9B2ZVS5OooxAbN 280155
+Executing endpoint 'Varyag.Controllers.NewsController.SaveTempFoto (Varyag)'
+Route matched with {action = "SaveTempFoto", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SaveTempFoto(Microsoft.AspNetCore.Http.IFormFile, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.SaveTempFoto (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.SaveTempFoto (Varyag), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 64.7796ms.
+Executing RedirectResult, redirecting to /News/Create?shortScale=175&shortX=50&shortY=50&midScale=175&midX=50&midY=50&wideScale=175&wideX=50&wideY=50&keyWordR=%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9.
+Executed action Varyag.Controllers.NewsController.SaveTempFoto (Varyag) in 383.6905ms
+Executed endpoint 'Varyag.Controllers.NewsController.SaveTempFoto (Varyag)'
+Request finished in 640.6671ms 302 
+Request starting HTTP/2.0 GET https://localhost:44325/News/Create?shortScale=175&shortX=50&shortY=50&midScale=175&midX=50&midY=50&wideScale=175&wideX=50&wideY=50&keyWordR=%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9  
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0629ms.
+Executing ViewResult, running view Create.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1,112ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProjectID], [p].[BoatRow], [p].[BoatSail], [p].[BoatTraditional], [p].[BoatYal], [p].[Botik], [p].[Deep], [p].[Description], [p].[EnginePower], [p].[FreshWaterCap], [p].[FuelCap], [p].[KaterCabin], [p].[KaterFish], [p].[KaterPass], [p].[KaterProject], [p].[KaterRow], [p].[LadyaProject], [p].[LadyaRow], [p].[LadyaSail], [p].[Length], [p].[MainFoto], [p].[MaketCinema], [p].[MaketDesign], [p].[MaketMuseum], [p].[MaketStudy], [p].[Mass], [p].[Motosailer], [p].[Name], [p].[NumberOfOars], [p].[PassengerCap], [p].[Price], [p].[Route], [p].[SailArea], [p].[SailboatHistorical], [p].[SailboatProject], [p].[SailboatStudy], [p].[ShipSheme], [p].[ShipShemeFull], [p].[Shvertbot], [p].[SleepingAreas], [p].[Speed], [p].[Volume], [p].[Windth], [p].[Yacht]
+FROM [Project] AS [p]
+Executed ViewResult - view Create executed in 5287.9653ms.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 5608.4246ms
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Request finished in 6529.6594ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request finished in 34.1624ms 200 application/javascript
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request finished in 25.6595ms 200 application/javascript
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 30.2146ms 200 application/javascript
+Request finished in 408.2193ms 200 text/css
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Request finished in 450.0916ms 200 text/css
+Request finished in 145.7792ms 200 text/css
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Request finished in 326.2596ms 200 application/javascript
+Request finished in 677.281ms 200 text/css
+Request finished in 352.7564ms 200 application/javascript
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request finished in 762.011ms 200 application/javascript
+Sending file. Request path: '/images/temp/middle.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\middle.jpg'
+Sending file. Request path: '/images/temp/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\short.jpg'
+Request finished in 862.8023ms 200 image/jpeg
+Request finished in 1130.4994ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/themes/silver/theme.min.js  
+Sending file. Request path: '/images/temp/wide.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\wide.jpg'
+Request finished in 1603.6912ms 200 image/jpeg
+Sending file. Request path: '/js/tinymce/themes/silver/theme.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\themes\silver\theme.min.js'
+Request finished in 790.7543ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/langs/ru.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/plugins/code/plugin.min.js  
+Sending file. Request path: '/js/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\plugins\code\plugin.min.js'
+Sending file. Request path: '/js/tinymce/langs/ru.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\langs\ru.js'
+Request finished in 54.1909ms 200 application/javascript
+Request finished in 72.2878ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/skin.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/skin.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\skin.min.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/content.min.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/content/default/content.min.css  
+Request finished in 98.4624ms 200 text/css
+Sending file. Request path: '/js/tinymce/skins/content/default/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\content\default\content.min.css'
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\content.min.css'
+Request finished in 49.5738ms 200 text/css
+Request finished in 270.848ms 200 text/css
+Request starting HTTP/2.0 POST https://localhost:44325/News/Create multipart/form-data; boundary=----WebKitFormBoundaryBVtQB2ox7C4MGxaQ 2826
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Varyag.Models.News, Microsoft.AspNetCore.Http.IFormFileCollection) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (266ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [News] ([Header], [KeyWord], [LinkedProjectNames], [MainStory], [MiddleFotoPreview], [MiddleImgScale], [MiddleImgX], [MiddleImgY], [MiddleStory], [NewsDate], [PathToGallery], [PathToVideo1], [PathToVideo2], [PathToVideo3], [ShortFotoPreview], [ShortImgScale], [ShortImgX], [ShortImgY], [ShortStory], [WideFotoPreview], [WideImgScale], [WideImgX], [WideImgY], [WideStory])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [NewsId]
+FROM [News]
+WHERE @@ROWCOUNT = 1 AND [NewsId] = scope_identity();
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 84876.6189ms.
+Executing RedirectResult, redirecting to /News.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 84949.4684ms
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request finished in 85061.6389ms 302 
+Request starting HTTP/2.0 GET https://localhost:44325/News  
+Executing endpoint 'Varyag.Controllers.NewsController.Index (Varyag)'
+Route matched with {action = "Index", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.Nullable`1[System.Int32]) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Index (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed action method Varyag.Controllers.NewsController.Index (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 123.9838ms.
+Executing ViewResult, running view Index.
+Executed DbCommand (37ms) [Parameters=[@__newsId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [i].[NewsId], [i].[Header], [i].[KeyWord], [i].[LinkedProjectNames], [i].[MainStory], [i].[MiddleFotoPreview], [i].[MiddleImgScale], [i].[MiddleImgX], [i].[MiddleImgY], [i].[MiddleStory], [i].[NewsDate], [i].[PathToGallery], [i].[PathToVideo1], [i].[PathToVideo2], [i].[PathToVideo3], [i].[ShortFotoPreview], [i].[ShortImgScale], [i].[ShortImgX], [i].[ShortImgY], [i].[ShortStory], [i].[WideFotoPreview], [i].[WideImgScale], [i].[WideImgX], [i].[WideImgY], [i].[WideStory]
+FROM [News] AS [i]
+WHERE [i].[NewsId] = @__newsId_0
+Executed action Varyag.Controllers.NewsController.Index (Varyag) in 1474.1475ms
+Executed endpoint 'Varyag.Controllers.NewsController.Index (Varyag)'
+An unhandled exception has occurred while executing the request.
+Request finished in 2163.1457ms 500 text/html; charset=utf-8
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (102ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+ОШИБКА!!!! ВРЕМЯ 14:49, СООБЩЕНИЕ Index was outside the bounds of the array., МЕТОД System.Collections.Generic.List`1[Varyag.Models.NewsViewModel] NewsToSortedViewModel(System.Collections.Generic.List`1[Varyag.Models.News]), ПУТЬ_ДО    at Varyag.Models.LittleHelper.NewsToSortedViewModel(List`1 news) in C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\Models\LittleHelper.cs:line 116
+   at Varyag.Controllers.NewsViewComponent.InvokeAsync() in C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\Controllers\NewsViewComponent.cs:line 33,
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 8005.333ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+An unhandled exception has occurred while executing the request.
+Request finished in 9427.5549ms 500 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/news/create  
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 185.124ms.
+Executing ViewResult, running view Create.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProjectID], [p].[BoatRow], [p].[BoatSail], [p].[BoatTraditional], [p].[BoatYal], [p].[Botik], [p].[Deep], [p].[Description], [p].[EnginePower], [p].[FreshWaterCap], [p].[FuelCap], [p].[KaterCabin], [p].[KaterFish], [p].[KaterPass], [p].[KaterProject], [p].[KaterRow], [p].[LadyaProject], [p].[LadyaRow], [p].[LadyaSail], [p].[Length], [p].[MainFoto], [p].[MaketCinema], [p].[MaketDesign], [p].[MaketMuseum], [p].[MaketStudy], [p].[Mass], [p].[Motosailer], [p].[Name], [p].[NumberOfOars], [p].[PassengerCap], [p].[Price], [p].[Route], [p].[SailArea], [p].[SailboatHistorical], [p].[SailboatProject], [p].[SailboatStudy], [p].[ShipSheme], [p].[ShipShemeFull], [p].[Shvertbot], [p].[SleepingAreas], [p].[Speed], [p].[Volume], [p].[Windth], [p].[Yacht]
+FROM [Project] AS [p]
+Executed ViewResult - view Create executed in 2514.2173ms.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 2815.3453ms
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request finished in 3538.937ms 200 text/html; charset=utf-8
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 381.9721ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 216.2493ms 200 text/css
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request finished in 209.1691ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request finished in 130.0918ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Request finished in 310.5169ms 200 application/javascript
+Request finished in 197.5856ms 200 application/javascript
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Request finished in 606.1725ms 200 text/css
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 799.2799ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request finished in 496.8269ms 404 
+Request finished in 453.5054ms 404 
+Request finished in 831.0367ms 200 application/javascript
+Request finished in 672.4774ms 404 
+Request finished in 690.391ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/themes/silver/theme.min.js  
+Sending file. Request path: '/js/tinymce/themes/silver/theme.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\themes\silver\theme.min.js'
+Request finished in 88.2968ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/langs/ru.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/plugins/code/plugin.min.js  
+Sending file. Request path: '/js/tinymce/langs/ru.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\langs\ru.js'
+Sending file. Request path: '/js/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\plugins\code\plugin.min.js'
+Request finished in 98.231ms 200 application/javascript
+Request finished in 45.6338ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/skin.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/skin.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\skin.min.css'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/content.min.css  
+Request finished in 88.3952ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/content/default/content.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\content.min.css'
+Request finished in 118.3717ms 200 text/css
+Sending file. Request path: '/js/tinymce/skins/content/default/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\content\default\content.min.css'
+Request finished in 232.196ms 200 text/css
+Request starting HTTP/2.0 POST https://localhost:44325/News/SaveTempFoto?actionType=create multipart/form-data; boundary=----WebKitFormBoundaryYyTK5CnvMFPKleHC 228982
+Executing endpoint 'Varyag.Controllers.NewsController.SaveTempFoto (Varyag)'
+Route matched with {action = "SaveTempFoto", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SaveTempFoto(Microsoft.AspNetCore.Http.IFormFile, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.SaveTempFoto (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.SaveTempFoto (Varyag), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 485.5804ms.
+Executing RedirectResult, redirecting to /News/Create?shortScale=175&shortX=50&shortY=50&midScale=175&midX=50&midY=50&wideScale=175&wideX=50&wideY=50&keyWordR=%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9.
+Executed action Varyag.Controllers.NewsController.SaveTempFoto (Varyag) in 2384.8515ms
+Executed endpoint 'Varyag.Controllers.NewsController.SaveTempFoto (Varyag)'
+Request finished in 5406.7897ms 302 
+Request starting HTTP/2.0 GET https://localhost:44325/News/Create?shortScale=175&shortX=50&shortY=50&midScale=175&midX=50&midY=50&wideScale=175&wideX=50&wideY=50&keyWordR=%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9  
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0638ms.
+Executing ViewResult, running view Create.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (150ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProjectID], [p].[BoatRow], [p].[BoatSail], [p].[BoatTraditional], [p].[BoatYal], [p].[Botik], [p].[Deep], [p].[Description], [p].[EnginePower], [p].[FreshWaterCap], [p].[FuelCap], [p].[KaterCabin], [p].[KaterFish], [p].[KaterPass], [p].[KaterProject], [p].[KaterRow], [p].[LadyaProject], [p].[LadyaRow], [p].[LadyaSail], [p].[Length], [p].[MainFoto], [p].[MaketCinema], [p].[MaketDesign], [p].[MaketMuseum], [p].[MaketStudy], [p].[Mass], [p].[Motosailer], [p].[Name], [p].[NumberOfOars], [p].[PassengerCap], [p].[Price], [p].[Route], [p].[SailArea], [p].[SailboatHistorical], [p].[SailboatProject], [p].[SailboatStudy], [p].[ShipSheme], [p].[ShipShemeFull], [p].[Shvertbot], [p].[SleepingAreas], [p].[Speed], [p].[Volume], [p].[Windth], [p].[Yacht]
+FROM [Project] AS [p]
+Executed ViewResult - view Create executed in 7193.8897ms.
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 702.7633ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Request finished in 2749.2712ms 200 text/css
+Request finished in 2335.1837ms 200 text/css
+Request finished in 1165.4581ms 200 application/javascript
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 3546.1287ms 200 text/css
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Request finished in 3771.8364ms 200 text/css
+Request finished in 3790.7709ms 200 application/javascript
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 8987.9485ms
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Request finished in 17732.5202ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 6672.8873ms 200 application/javascript
+Sending file. Request path: '/images/temp/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\short.jpg'
+Request finished in 4181.0648ms 200 image/jpeg
+Sending file. Request path: '/images/temp/wide.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\wide.jpg'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 4706.818ms 200 image/jpeg
+Request finished in 8111.0729ms 200 application/javascript
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Sending file. Request path: '/images/temp/middle.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\middle.jpg'
+Request finished in 9172.2753ms 200 application/javascript
+Request finished in 6553.7869ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/themes/silver/theme.min.js  
+Sending file. Request path: '/js/tinymce/themes/silver/theme.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\themes\silver\theme.min.js'
+Request finished in 1070.0572ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/langs/ru.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/plugins/code/plugin.min.js  
+Sending file. Request path: '/js/tinymce/langs/ru.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\langs\ru.js'
+Sending file. Request path: '/js/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\plugins\code\plugin.min.js'
+Request finished in 848.3062ms 200 application/javascript
+Request finished in 1008.3061ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css.map  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/content/default/content.min.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/skin.min.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/content.min.css  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js.map  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/skin.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\skin.min.css'
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\content.min.css'
+Request finished in 3172.7559ms 200 text/css
+Request finished in 4261.3961ms 200 text/css
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css.map'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map'
+Sending file. Request path: '/js/tinymce/skins/content/default/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\content\default\content.min.css'
+Request finished in 6386.9533ms 200 text/plain
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js.map'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map'
+Request finished in 5102.304ms 200 text/css
+Request finished in 6932.7128ms 200 text/plain
+Request starting HTTP/2.0 POST https://localhost:44325/News/Create multipart/form-data; boundary=----WebKitFormBoundaryvtcenL2TBFmqZqYj 2584
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Varyag.Models.News, Microsoft.AspNetCore.Http.IFormFileCollection) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1,269ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [News] ([Header], [KeyWord], [LinkedProjectNames], [MainStory], [MiddleFotoPreview], [MiddleImgScale], [MiddleImgX], [MiddleImgY], [MiddleStory], [NewsDate], [PathToGallery], [PathToVideo1], [PathToVideo2], [PathToVideo3], [ShortFotoPreview], [ShortImgScale], [ShortImgX], [ShortImgY], [ShortStory], [WideFotoPreview], [WideImgScale], [WideImgX], [WideImgY], [WideStory])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23);
+SELECT [NewsId]
+FROM [News]
+WHERE @@ROWCOUNT = 1 AND [NewsId] = scope_identity();
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 21914.0817ms.
+Executing RedirectResult, redirecting to /News.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 22316.1507ms
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request finished in 22680.6642ms 302 
+Request starting HTTP/2.0 GET https://localhost:44325/News  
+Executing endpoint 'Varyag.Controllers.NewsController.Index (Varyag)'
+Route matched with {action = "Index", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.Nullable`1[System.Int32]) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Index (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (22ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed action method Varyag.Controllers.NewsController.Index (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 464.7624ms.
+Executing ViewResult, running view Index.
+Executed DbCommand (390ms) [Parameters=[@__newsId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [i].[NewsId], [i].[Header], [i].[KeyWord], [i].[LinkedProjectNames], [i].[MainStory], [i].[MiddleFotoPreview], [i].[MiddleImgScale], [i].[MiddleImgX], [i].[MiddleImgY], [i].[MiddleStory], [i].[NewsDate], [i].[PathToGallery], [i].[PathToVideo1], [i].[PathToVideo2], [i].[PathToVideo3], [i].[ShortFotoPreview], [i].[ShortImgScale], [i].[ShortImgX], [i].[ShortImgY], [i].[ShortStory], [i].[WideFotoPreview], [i].[WideImgScale], [i].[WideImgX], [i].[WideImgY], [i].[WideStory]
+FROM [News] AS [i]
+WHERE [i].[NewsId] = @__newsId_0
+Executed action Varyag.Controllers.NewsController.Index (Varyag) in 2067.7848ms
+Executed endpoint 'Varyag.Controllers.NewsController.Index (Varyag)'
+An unhandled exception has occurred while executing the request.
+Request finished in 2838.973ms 500 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/News/create  
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0416ms.
+Executing ViewResult, running view Create.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (602ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProjectID], [p].[BoatRow], [p].[BoatSail], [p].[BoatTraditional], [p].[BoatYal], [p].[Botik], [p].[Deep], [p].[Description], [p].[EnginePower], [p].[FreshWaterCap], [p].[FuelCap], [p].[KaterCabin], [p].[KaterFish], [p].[KaterPass], [p].[KaterProject], [p].[KaterRow], [p].[LadyaProject], [p].[LadyaRow], [p].[LadyaSail], [p].[Length], [p].[MainFoto], [p].[MaketCinema], [p].[MaketDesign], [p].[MaketMuseum], [p].[MaketStudy], [p].[Mass], [p].[Motosailer], [p].[Name], [p].[NumberOfOars], [p].[PassengerCap], [p].[Price], [p].[Route], [p].[SailArea], [p].[SailboatHistorical], [p].[SailboatProject], [p].[SailboatStudy], [p].[ShipSheme], [p].[ShipShemeFull], [p].[Shvertbot], [p].[SleepingAreas], [p].[Speed], [p].[Volume], [p].[Windth], [p].[Yacht]
+FROM [Project] AS [p]
+Executed ViewResult - view Create executed in 5563.1795ms.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 5930.5876ms
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request finished in 7381.1909ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Request finished in 336.5333ms 200 application/javascript
+Request finished in 992.3344ms 200 application/javascript
+Request finished in 1883.5233ms 200 application/javascript
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Request finished in 3271.4552ms 200 text/css
+Request finished in 1783.2384ms 200 application/javascript
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 3575.2794ms 200 application/javascript
+Request finished in 3312.4687ms 200 application/javascript
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 5125.6543ms 200 text/css
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 5688.1345ms 200 text/css
+Request finished in 3375.4947ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css.map  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/themes/silver/theme.min.js  
+Request finished in 2038.4294ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js.map  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request finished in 6977.8898ms 404 
+Request finished in 8224.3329ms 404 
+Request starting HTTP/2.0 POST https://localhost:44325/News/SaveTempFoto?actionType=create multipart/form-data; boundary=----WebKitFormBoundary0dtOwAfNMywhE3wY 280155
+Executing endpoint 'Varyag.Controllers.NewsController.SaveTempFoto (Varyag)'
+Route matched with {action = "SaveTempFoto", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SaveTempFoto(Microsoft.AspNetCore.Http.IFormFile, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css.map'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map'
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js.map'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map'
+Request finished in 10926.9276ms 200 text/plain
+Request finished in 9554.5769ms 200 text/plain
+Sending file. Request path: '/js/tinymce/themes/silver/theme.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\themes\silver\theme.min.js'
+Request finished in 10025.0367ms 200 application/javascript
+Executing action method Varyag.Controllers.NewsController.SaveTempFoto (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.NewsController.SaveTempFoto (Varyag), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 98.0455ms.
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/plugins/code/plugin.min.js  
+Executing RedirectResult, redirecting to /News/Create?shortScale=175&shortX=50&shortY=50&midScale=175&midX=50&midY=50&wideScale=175&wideX=50&wideY=50&keyWordR=%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9.
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/langs/ru.js  
+Executed action Varyag.Controllers.NewsController.SaveTempFoto (Varyag) in 2706.1089ms
+Sending file. Request path: '/js/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\plugins\code\plugin.min.js'
+Executed endpoint 'Varyag.Controllers.NewsController.SaveTempFoto (Varyag)'
+Request finished in 1794.9049ms 200 application/javascript
+Sending file. Request path: '/js/tinymce/langs/ru.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\langs\ru.js'
+Request finished in 6620.9094ms 302 
+Request starting HTTP/2.0 GET https://localhost:44325/News/Create?shortScale=175&shortX=50&shortY=50&midScale=175&midX=50&midY=50&wideScale=175&wideX=50&wideY=50&keyWordR=%D0%96%D0%B8%D0%B7%D0%BD%D1%8C_%D0%BA%D0%BE%D1%80%D0%B0%D0%B1%D0%BB%D0%B5%D0%B9  
+Request finished in 3425.0711ms 200 application/javascript
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/content/default/content.min.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/skin.min.css  
+Executed action method Varyag.Controllers.NewsController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0352ms.
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/content.min.css  
+Executing ViewResult, running view Create.
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/skin.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\skin.min.css'
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\content.min.css'
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Request finished in 660.9699ms 200 text/css
+Request finished in 655.379ms 200 text/css
+Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[ProjectID], [p].[BoatRow], [p].[BoatSail], [p].[BoatTraditional], [p].[BoatYal], [p].[Botik], [p].[Deep], [p].[Description], [p].[EnginePower], [p].[FreshWaterCap], [p].[FuelCap], [p].[KaterCabin], [p].[KaterFish], [p].[KaterPass], [p].[KaterProject], [p].[KaterRow], [p].[LadyaProject], [p].[LadyaRow], [p].[LadyaSail], [p].[Length], [p].[MainFoto], [p].[MaketCinema], [p].[MaketDesign], [p].[MaketMuseum], [p].[MaketStudy], [p].[Mass], [p].[Motosailer], [p].[Name], [p].[NumberOfOars], [p].[PassengerCap], [p].[Price], [p].[Route], [p].[SailArea], [p].[SailboatHistorical], [p].[SailboatProject], [p].[SailboatStudy], [p].[ShipSheme], [p].[ShipShemeFull], [p].[Shvertbot], [p].[SleepingAreas], [p].[Speed], [p].[Volume], [p].[Windth], [p].[Yacht]
+FROM [Project] AS [p]
+Sending file. Request path: '/js/tinymce/skins/content/default/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\content\default\content.min.css'
+Request finished in 968.4609ms 200 text/css
+Executed ViewResult - view Create executed in 7240.871ms.
+Executed action Varyag.Controllers.NewsController.Create (Varyag) in 8272.0051ms
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Executed endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 12133.1261ms 200 text/html; charset=utf-8
+Request finished in 689.9004ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Request finished in 149.3521ms 200 text/css
+Request finished in 277.7844ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Request finished in 810.1167ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Request finished in 708.5333ms 200 application/javascript
+Request finished in 1327.2267ms 200 application/javascript
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 1430.5326ms 200 application/javascript
+Request finished in 1913.146ms 200 application/javascript
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Request finished in 2048.8265ms 200 text/css
+Request finished in 2078.5778ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css.map  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/themes/silver/theme.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js.map  
+Sending file. Request path: '/images/temp/middle.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\middle.jpg'
+Sending file. Request path: '/images/temp/wide.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\wide.jpg'
+Request finished in 6324.6784ms 200 image/jpeg
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js.map'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map'
+Request finished in 6279.2403ms 200 image/jpeg
+Request finished in 1934.3315ms 200 text/plain
+Sending file. Request path: '/js/tinymce/themes/silver/theme.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\themes\silver\theme.min.js'
+Sending file. Request path: '/images/temp/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\temp\short.jpg'
+Request finished in 6713.5975ms 200 application/javascript
+Request finished in 8517.2916ms 200 image/jpeg
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css.map'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map'
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/langs/ru.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/plugins/code/plugin.min.js  
+Request finished in 9735.0317ms 200 text/plain
+Sending file. Request path: '/js/tinymce/plugins/code/plugin.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\plugins\code\plugin.min.js'
+Sending file. Request path: '/js/tinymce/langs/ru.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\langs\ru.js'
+Request finished in 3765.6566ms 200 application/javascript
+Request finished in 4243.6301ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/content.min.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/content/default/content.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\content.min.css'
+Sending file. Request path: '/js/tinymce/skins/content/default/content.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\content\default\content.min.css'
+Request finished in 1173.9936ms 200 text/css
+Request finished in 908.7985ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/skins/ui/oxide/skin.min.css  
+Sending file. Request path: '/js/tinymce/skins/ui/oxide/skin.min.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\skins\ui\oxide\skin.min.css'
+Request finished in 909.0652ms 200 text/css
+Request starting HTTP/2.0 POST https://localhost:44325/News/Create multipart/form-data; boundary=----WebKitFormBoundaryRG2F4A0oXBBrOER6 2804
+Executing endpoint 'Varyag.Controllers.NewsController.Create (Varyag)'
+Route matched with {action = "Create", controller = "News"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Varyag.Models.News, Microsoft.AspNetCore.Http.IFormFileCollection) on controller Varyag.Controllers.NewsController (Varyag).
+Executing action method Varyag.Controllers.NewsController.Create (Varyag) - Validation state: Valid

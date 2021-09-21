@@ -12,26 +12,32 @@
         </div>
     </div>
     <div class="smallTopFoto">
-        <div style="margin-right:5px"><img src="~/images/icons/бургер-бел-спис2.png" /></div><h2 class="smallTopFotoText">Катера</h2>
+        <h2 class="smallTopFotoText">Катера</h2>
     </div>
     <div class="myBorder"></div>
     <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
         <partial name="~/Views/Shared/LeftMenu.cshtml" />
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все катера</div><div class="categorysLineTtem" id="navigationButton" onclick="navigationButton()" style="display:flex"><img style="width:20px;height:20px;margin:auto 3px auto auto;" src="~/images/icons/бургер-син-лин.png" />Каталог</div><div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>
+                    <div class="categorysLineTtem">Все катера</div><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('kater')" class="selectSortOption"><option value="По возрастанию длинны" selected>По возрастанию длинны</option><option value="По убыванию длинны">По убыванию длинны</option></select>@*<div id="sortUp" style="cursor:pointer;" onclick="lengthSort('kater', 'Down')">По возрастанию</div>*@@*<div id="sortDown" style="display:none;cursor:pointer;" onclick="lengthSort('kater', 'Up')">По убыванию</div>*@</div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
                     Верфь деревянного судостроения "Варяг" проектирует и строит катера различных типов и размерений, в том числе мотосейлеры.
                     В случае необходимости мы можем изготовить катер по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
                 </div>
-                <div class="navigationPlitka">
-                    <partial name="~/Views/Shared/CatalogPlitka.cshtml" />
-                </div>
             </div>
-            @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater" })
+            <div style="position:relative">
+                <div id="sortScreen2" class="sortScreen2"><div class="loadingGif"><img src="~/images/icons/loading-11.gif" class="gif" /><img src="~/images/icons/loading-105.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-73.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-99.gif" style="width:50%;display:none" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "kater", plitca = false, lengthSort = "Up" })
+                </div>
+            </div>            
         </div>
     </div>
 </div>

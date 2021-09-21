@@ -15,11 +15,12 @@
     </div>
     <div class="myBorder"></div>
     <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
         <partial name="~/Views/Shared/LeftMenu.cshtml" />
         <div class="projectsHalf">
-            <div style="background-color:white;border-radius:10px;display:flex;flex-direction:column;margin-right: 10px;">
+            <div class="navigationTopBlock">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Наш каталог</div><div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>
+                    <div class="categorysLineTtem">Наш каталог</div>@*<div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>*@
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div style="font-size:0.9rem;text-align:left;padding:0px 10px 10px 10px">
@@ -29,7 +30,6 @@
                 </div>
             </div>
             <partial name="~/Views/Shared/CatalogPlitka.cshtml" />
-            <partial name="~/Views/Shared/CatalogLines.cshtml" />
         </div>
     </div>
 </div>

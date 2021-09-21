@@ -164,6 +164,8 @@ namespace Varyag.Migrations
 
                     b.Property<string>("ArticleRoute");
 
+                    b.Property<string>("ArticleType");
+
                     b.Property<string>("PathToGallery1");
 
                     b.Property<string>("PathToGallery10");
@@ -264,6 +266,8 @@ namespace Varyag.Migrations
                     b.Property<string>("Header");
 
                     b.Property<int>("KeyWord");
+
+                    b.Property<string>("LinkedProjectNames");
 
                     b.Property<string>("MainStory");
 

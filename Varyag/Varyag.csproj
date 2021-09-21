@@ -24,27 +24,21 @@
     <None Include="Views\Catalog\BoatsYal.cshtml" />
     <None Include="Views\Catalog\Botiks.cshtml" />
     <None Include="Views\Catalog\FotoGallery.cshtml" />
-    <None Include="Views\Catalog\Katera-SubNav.cshtml" />
     <None Include="Views\Catalog\KaterKabins.cshtml" />
     <None Include="Views\Catalog\KaterRows.cshtml" />
     <None Include="Views\Catalog\KatersFishing.cshtml" />
     <None Include="Views\Catalog\KatersPassanger.cshtml" />
-    <None Include="Views\Catalog\Ladiy-SubNav.cshtml" />
     <None Include="Views\Catalog\Ladiy.cshtml" />
-    <None Include="Views\Catalog\LadyaProjects.cshtml" />
     <None Include="Views\Catalog\LadyasSailMotor.cshtml" />
     <None Include="Views\Catalog\LadyasSailRow.cshtml" />
-    <None Include="Views\Catalog\Lodki-SubNav.cshtml" />
     <None Include="Views\Catalog\MaketsStudy.cshtml" />
     <None Include="Views\Catalog\Models.cshtml" />
     <None Include="Views\Catalog\Motorboats.cshtml" />
     <None Include="Views\Catalog\Motosailers.cshtml" />
     <None Include="Views\Catalog\ProjectDetails.cshtml" />
-    <None Include="Views\Catalog\Sailboats-SubNav.cshtml" />
     <None Include="Views\Catalog\Sailboats.cshtml" />
     <None Include="Views\Catalog\SailboatsHistorical.cshtml" />
     <None Include="Views\Catalog\SailboatsStudy.cshtml" />
-    <None Include="Views\Catalog\Shlupki-SubNav.cshtml" />
     <None Include="Views\Catalog\Svertbots.cshtml" />
     <None Include="Views\Catalog\Yachts.cshtml" />
     <None Include="Views\Fotoes\Create.cshtml" />
@@ -169,6 +163,13 @@
     <Folder Include="wwwroot\images\articles\article2\" />
     <Folder Include="wwwroot\images\temp\" />
     <Folder Include="wwwroot\images\Thumbnails\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Update="Views\Shared\Components\LinkToProject\Default.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

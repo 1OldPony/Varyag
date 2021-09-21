@@ -16,11 +16,12 @@
     </div>
     <div class="myBorder"></div>
     <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
         <partial name="~/Views/Shared/LeftMenu.cshtml" />
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все шлюпки</div><div class="categorysLineTtem" id="navigationButton" onclick="navigationButton()" style="display:flex"><img style="width:20px;height:20px;margin:auto 3px auto auto;" src="~/images/icons/бургер-син-лин.png" />Каталог</div><div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>
+                    <div class="categorysLineTtem">Все шлюпки</div><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div>Сортировка:&nbsp;<div id="sortUp" style="cursor:pointer;" onclick="lengthSort('bigboat', 'Down')">По возрастанию</div><div id="sortDown" style="display:none;cursor:pointer;" onclick="lengthSort('bigboat', 'Up')">По убыванию</div></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed"onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
@@ -28,96 +29,15 @@
                     образцов, мы можем спроектировать и построить шлюпку по индивидуальному проекту, в том числе реплики исторических гребных судов XVII-XIX веков.
                 </div>
             </div>
-            @await Component.InvokeAsync("ProjectsCatalog", new { category = "bigboat" })
+            <div style="position:relative">
+                <div id="sortScreen2" style="opacity:0.5;background-color:lightgray;display:none;position:absolute;width:99%;height:100%;margin:10px 10px 0 0;max-width:1000px;border-radius:10px;"><div style="position:absolute;display:flex;justify-content:center;top:5%;width:100%"><img src="~/images/icons/loading-11.gif" style="width:50%" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "bigboat", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "bigboat", plitca = false, lengthSort = "Up" })
+                </div>
+            </div>
         </div>
     </div>
-    @*<div class="catalog">
-            <div class="nav-element" name="lodki" id="lodki">
-                <a href="../Каталог/Лодки">
-                    <div id="lodki" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="boat" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Лодки</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element-choosen" name="shlupki" id="shlupki">
-                <a href="../Каталог/Шлюпки">
-                    <div id="shlupki" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="bigboat" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Шлюпки</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="katera" id="katera">
-                <a href="../Каталог/Катера">
-                    <div id="katera" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="kater" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Катера</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="ladiy" id="ladiy">
-                <a href="../Каталог/Ладьи">
-                    <div id="ladiy" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="ladiy" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Ладьи</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="sailboats" id="sailboats">
-                <a href="../Каталог/Парусники">
-                    <div id="sailboats" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="sailboats" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Парусники</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="models" id="models">
-                <a href="../Каталог/Разное">
-                    <div id="models" class="nav-element-grid">
-                        <img src="~/images/icons/Макет.jpg" />
-                        <div id="models" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Разное</p>
-                            <input type="text" value="shlupki" id="currentPage" hidden />
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div name="sailboats-Sub" id="sailboats-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
-            <div name="lodki-Sub" id="lodki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
-            <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
-            <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
-            <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        </div>*@
-    @*<div class="explainText">
-        <span style="margin-left:100px"></span>Верфь деревянного судостроения "Варяг" проектирует и строит шлюпки различных типов и размерений. Кроме серийно выпускаемых
-        образцов, мы можем спроектировать и построить шлюпку по индивидуальному проекту, в том числе реплики исторических гребных судов XVII-XIX веков.
-    </div>
-    @await Component.InvokeAsync("ProjectsCatalog", new { category = "bigboat" })*@
 </div>

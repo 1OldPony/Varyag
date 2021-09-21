@@ -112,6 +112,10 @@ namespace Varyag.Models
             {
                 string[] stringDate = item.NewsDate.Split('.');
                 int newsDate = int.Parse(stringDate[2] + stringDate[1] + stringDate[0]);
+                string[] months = { "ЯНВАРЬ", "ФЕВРАЛЬ", "МАРТ", "АПРЕЛЬ", "МАЙ", "ИЮНЬ", "ИЮЛЬ", "АВГУСТ", "СЕНТЯБРЬ", "ОКТЯБРЬ", "НОЯБРЬ", "ДЕКАБРЬ" };
+                string month = string.Concat(months[int.Parse(item.NewsDate.Substring(3, 2)) - 1], " ", item.NewsDate.Substring(6, 4));
+
+
 
                 newsIntDate.Add(new NewsViewModel
                 {
@@ -138,16 +142,17 @@ namespace Varyag.Models
                     WideImgX = item.WideImgX,
                     WideImgY = item.WideImgY,
                     WideStory = item.WideStory,
-                    NewsDate = newsDate
+                    NewsDate = newsDate,
+                    NewsDatePreview = month,
+                    LinkedProjectNames = item.LinkedProjectNames
                 });
             }
-
-            newsIntDate=newsIntDate.OrderByDescending(n => n.NewsDate).ToList();
+            newsIntDate =newsIntDate.OrderByDescending(n => n.NewsDate).ToList();
 
             return newsIntDate;
         }
 
-        public static List<ProjectPublicViewModel> ProjectsToSortedViewModel(List<Project> projects, bool boats)
+        public static List<ProjectPublicViewModel> ProjectsToSortedViewModel(List<Project> projects, bool boats, string lengthSort)
         {
             List<ProjectPublicViewModel> orderedProjects = new List<ProjectPublicViewModel>();
             foreach (var item in projects)
@@ -159,16 +164,16 @@ namespace Varyag.Models
 
                     if (numbers.Length < 2)
                     {
-                        number = string.Concat(numbers[0]);
+                        number = string.Concat(numbers[0], '0');
                     }
                     else
                     {
                         foreach (var symbol in numbers)
                         {
-                            if (symbol!='.' && symbol != ',')
+                            if (symbol != '.' && symbol != ',')
                                 number = string.Concat(number, symbol.ToString());
                             else
-                                break;
+                                continue;
                         }
                     }
 
@@ -231,16 +236,22 @@ namespace Varyag.Models
 
                         if (numbers.Length < 2)
                         {
-                            number = string.Concat(numbers[0]);
+                            number = string.Concat(numbers[0], "0");
                         }
                         else
                         {
+                            int pointCounter = 0;
                             foreach (var symbol in numbers)
                             {
                                 if (symbol != '.' && symbol != ',')
                                     number = string.Concat(number, symbol.ToString());
                                 else
-                                    break;
+                                    pointCounter++;
+                                continue;
+                            }
+                            if (pointCounter == 0)
+                            {
+                                number = string.Concat(number, "0");
                             }
                         }
                     }
@@ -301,8 +312,14 @@ namespace Varyag.Models
                     });
                 }
             }
-            orderedProjects = orderedProjects.OrderBy(x => x.Order).ToList();
-
+            if (lengthSort == "Up")
+            {
+                orderedProjects = orderedProjects.OrderBy(x => x.Order).ToList();
+            }
+            else
+            {
+                orderedProjects = orderedProjects.OrderByDescending(x => x.Order).ToList();
+            }
             return orderedProjects;
         }
 

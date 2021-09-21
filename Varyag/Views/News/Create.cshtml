@@ -174,6 +174,12 @@
                 <div>Путь к третьему видео</div>
                 <input asp-for="PathToVideo3" />
             </div>
+            <div style="display:flex;flex-direction:column;grid-area:linkedProjects">
+                <div>Подключите новость к проектам</div>
+                <div style="display:flex;justify-content:flex-start;width:100%;">@await Component.InvokeAsync("LinkToProject")</div>
+                <div style="display:flex;flex-direction:column;" id="LinkedProjectsList">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -190,6 +196,7 @@
         <input asp-for="WideImgX" value="@ViewBag.RefreshEditor.wideFotoX" id="WideImgX" />
         <input asp-for="WideImgY" value="@ViewBag.RefreshEditor.wideFotoY" id="WideImgY" />
         <input asp-for="WideStory" value="@ViewBag.RefreshEditor.wideStory" id="WideStory" />
+        <input asp-for="LinkedProjectNames" id="LinkedProjectNames" />
     </div>
     <div style="display:flex;">
         <input type="button" value="Сохранить данные из редактора" id="saveEditorParams" style="width:300px" />

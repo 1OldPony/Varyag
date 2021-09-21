@@ -1,40 +1,17 @@
 ﻿var leftMenuOffset;
 $(document).ready(function () {
     //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
-    $("#left.control, #right.control").height($(".allCustomers").height());
+    //$("#left.control, #right.control").height($(".allCustomers").height());
     leftMenuOffset = $(".projectsHalf").offset().top;
-});
 
+
+
+    //document.addEventListener("DOMContentLoaded", () => {
+    //    alert("DOM готов!");
+    //});
+});
 $(window).scroll(function () {
-    if ($(window).width() > 768) {
-        if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
-            if ($(".leftMenu").css('position') != 'fixed') {
-                $(".leftMenu").css('position', 'fixed');
-            }
-
-            if ($(window).width() >= 1001) {
-                $('.projectsHalf').css('margin-left', '361px');
-            }
-        }
-        else {
-            if ($(".leftMenu").css('position') != 'initial') {
-                $(".leftMenu").css('position', 'initial');
-            }
-
-            if ($('.projectsHalf').css('margin-left') != '10px') {
-                $('.projectsHalf').css('margin-left', '10px');
-            }
-        }
-    }
-    else {
-        if ($(".leftMenu").attr('style') != null) {
-            $(".leftMenu").removeAttr('style');
-        }
-    }
-});
-
-$(window).resize(function () {
-    if ($(window).width() > 768) {
+    if ($(window).width() > 1000) {
         if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
             if ($(".leftMenu").css('position') != 'fixed') {
                 $(".leftMenu").css('position', 'fixed');
@@ -44,21 +21,119 @@ $(window).resize(function () {
                 $('.projectsHalf').css('margin-left', '361px');
             }
             else {
-                $('.projectsHalf').css('margin-left', '10px');
+                $('.projectsHalf').css('margin-left', 'auto');
             }
         }
         else {
             if ($(".leftMenu").css('position') != 'initial') {
                 $(".leftMenu").css('position', 'initial');
             }
+
+            if ($(window).width() >= 1001) {
+                $('.projectsHalf').css('margin-left', '10px');
+            }
+            else {
+                $('.projectsHalf').css('margin-left', 'auto');
+            }
         }
     }
     else {
-        if ($(".leftMenu").css('display') != '') {
-            $(".leftMenu").removeAttr('style');
+        if ($(".leftMenu").attr('style') != null) {
+            if ($(".leftMenu").css('display') != 'none') {
+                $(".leftMenu").css('display', 'flex');
+            }
+            else {
+                $(".leftMenu").removeAttr('style');
+            }
+
         }
     }
 });
+
+//$(window).scroll(function() {
+//    if ($(this).scrollTop() >= (leftMenuOffset-50)) {
+//        if ($(".leftMenu").css('position')!='fixed') {
+//            $(".leftMenu").css('position', 'fixed');
+//        }
+
+//        if ($(window).width() >= 1001) {
+//            $('.projectsHalf').css('margin-left', '361px');
+//        }
+//        else {
+//            $('.projectsHalf').css('margin-left', 'auto');
+//        }
+//    }
+//    else {
+//        if ($(".leftMenu").css('position') != 'initial') {
+//            $(".leftMenu").css('position', 'initial');
+//        }
+
+//            if ($(window).width() >= 1001) {
+//                $('.projectsHalf').css('margin-left', '10px');
+//            }
+//            else {
+//                $('.projectsHalf').css('margin-left', 'auto');
+//            }
+//    }
+//});
+
+$(window).resize(function () {
+    if ($(window).width() > 1000) {
+        if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
+            if ($(".leftMenu").css('position') != 'fixed') {
+                $(".leftMenu").css('position', 'fixed');
+            }
+            if ($(window).width() >= 1001) {
+                $('.projectsHalf').css('margin-left', '361px');
+            }
+            else {
+                $('.projectsHalf').css('margin-left', 'auto');
+            }
+        }
+        else {
+            if ($(".leftMenu").css('position') != 'initial') {
+                $(".leftMenu").css('position', 'initial');
+            }
+            if ($(window).width() >= 1001) {
+                $('.projectsHalf').css('margin-left', '10px');
+            }
+            else {
+                $('.projectsHalf').css('margin-left', 'auto');
+            }
+        }
+    }
+    else {
+        $(".leftMenu").removeAttr('style');
+        $(".projectsHalf").removeAttr('style');
+        $("body").css("overflow", "unset");
+        $('#blackScreen').css('display', 'none');
+    }
+});
+//$(window).resize(function () {
+    //if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
+    //    if ($(".leftMenu").css('position') != 'fixed') {
+    //        $(".leftMenu").css('position', 'fixed');
+    //    }
+
+    //    if ($(window).width() >= 1001) {
+    //        $('.projectsHalf').css('margin-left', '361px');
+    //    }
+    //    else {
+    //        $('.projectsHalf').css('margin-left', 'auto');
+    //    }
+    //}
+    //else {
+    //    if ($(".leftMenu").css('position') != 'initial') {
+    //        $(".leftMenu").css('position', 'initial');
+    //    }
+    //    if ($(window).width() >= 1001) {
+    //        $('.projectsHalf').css('margin-left', '10px');
+    //    }
+    //    else {
+    //        $('.projectsHalf').css('margin-left', 'auto');
+    //    }
+    //}
+//});
 
 /////////////////показываем верхние подменю////////////////////
 //$("#ships-catalog").mouseenter(function () {
@@ -140,106 +215,55 @@ ymaps.ready(function () {
 });
 
 /////////////////////////выделяем выбранную категорию новостей//////////////////////////
-//newsTypeSelect();
-//function newsTypeSelect() {
-//    var nav = $("#newsTypeSelector").val()
-//    switch (nav) {
-//        case "smi":
-            //$("#smiNav").css("color", "red");
-            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
-            //    $(".leftNavMenu").css('padding-bottom', '0px')
-            //}
-        //    break;
-        //case "life":
-            //$("#lifeNav").css("color", "red");
-            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
-            //    $(".leftNavMenu").css('padding-bottom', '0px')
-            //}
-        //    break;
-        //case "newShips":
-            //$("#newShipsNav").css("color", "red");
-            //if ($(".leftNavMenu").css('padding-bottom') == "79px") {
-            //    $(".leftNavMenu").css('padding-bottom', '0px')
-            //}
-        //    break;
-        //default:
-            //$("#allNewsNav").css("color", "red");
-            //$(".leftNavMenu").css('padding-bottom', '79px');
-            //$("#allNewsOpen").attr("class", "leftNavOpenCurrent");
-            //$("#allNewsClose").attr("class", "leftNavCloseCurrent");
-            //$("#allNews-Sub").attr("class", "leftSubNavOpenCurrent");
-//            break;
-//    }
-//}
+
 $("#allNewsOpen, #allNewsClose").click(function () {
     if ($("#allNewsOpen").css('display') != 'none') {
         $("#allNews-Sub").attr('class', 'leftSubNavOpen');
         $("#allNews-Sub").css('visibility', 'visible');
         $("#allNews-Sub").css('opacity', '1');
         $(".leftNavMenu").css('padding-bottom', '79px')
-        //$("#smiNav").css('margin-top', '69px')
     }
     else {
         $("#allNews-Sub").attr('class', 'leftSubNavClose');
         $("#allNews-Sub").css('visibility', 'hidden');
         $("#allNews-Sub").css('opacity', '0');
         $(".leftNavMenu").css('padding-bottom', '10px')
-        //$("#smiNav").css('margin-top', '0px')
     }
     $("#allNewsOpen").toggle()
     $("#allNewsClose").toggle()
 });
-//$("#smiOpen, #smiClose").click(function () {
-//    if ($("#smiOpen").css('display') != 'none') {
-//        $("#smi-Sub").attr('class', 'leftSubNavOpen');
-//        $("#smi-Sub").css('visibility', 'visible');
-//        $("#smi-Sub").css('opacity', '1');
-//        $("#lifeNav").css('margin-top', '69px')
-//    }
-//    else {
-//        $("#smi-Sub").attr('class', 'leftSubNavClose');
-//        $("#smi-Sub").css('visibility', 'hidden');
-//        $("#smi-Sub").css('opacity', '0');
-//        $("#lifeNav").css('margin-top', '0px')
-//    }
-//    $("#smiOpen").toggle()
-//    $("#smiClose").toggle()
-//});
-//$("#lifeOpen, #lifeClose").click(function () {
-//    if ($("#lifeOpen").css('display') != 'none') {
-//        $("#life-Sub").attr('class', 'leftSubNavOpen');
-//        $("#life-Sub").css('visibility', 'visible');
-//        $("#life-Sub").css('opacity', '1');
-//        $("#newShipsNav").css('margin-top', '69px')
-//    }
-//    else {
-//        $("#life-Sub").attr('class', 'leftSubNavClose');
-//        $("#life-Sub").css('visibility', 'hidden');
-//        $("#life-Sub").css('opacity', '0');
-//        $("#newShipsNav").css('margin-top', '0px')
-//    }
-//    $("#lifeOpen").toggle()
-//    $("#lifeClose").toggle()
-//});
-//$("#newShipsOpen, #newShipsClose").click(function () {
-//    if ($("#newShipsOpen").css('display') != 'none') {
-//        $("#newShips-Sub").attr('class', 'leftSubNavOpen');
-//        $("#newShips-Sub").css('visibility', 'visible');
-//        $("#newShips-Sub").css('opacity', '1');
-//        $("#allNewsNav").css('margin-top', '69px')
-//        //$(".leftNavMenu").css('padding-bottom', '79px')
-//    }
-//    else {
-//        $("#newShips-Sub").attr('class', 'leftSubNavClose');
-//        $("#newShips-Sub").css('visibility', 'hidden');
-//        $("#newShips-Sub").css('opacity', '0');
-//        $("#allNewsNav").css('margin-top', '0px')
-//        //$(".leftNavMenu").css('padding-bottom', '10px')
-//    }
-//    $("#newShipsOpen").toggle()
-//    $("#newShipsClose").toggle()
-//});
-
+$("#themeNewsOpen, #themeNewsClose").click(function () {
+    if ($("#themeNewsOpen").css('display') != 'none') {
+        $("#themeNews-sub").attr('class', 'leftSubNavOpen');
+        $("#themeNews-sub").css('visibility', 'visible');
+        $("#themeNews-sub").css('opacity', '1');
+        $("#allNewsNav").css('margin-top', '69px');
+    }
+    else {
+        $("#themeNews-sub").attr('class', 'leftSubNavClose');
+        $("#themeNews-sub").css('visibility', 'hidden');
+        $("#themeNews-sub").css('opacity', '0');
+        $("#allNewsNav").css('margin-top', '0px');
+    }
+    $("#themeNewsOpen").toggle()
+    $("#themeNewsClose").toggle()
+});
+$("#articlesOpen, #articlesClose").click(function () {
+    if ($("#articlesOpen").css('display') != 'none') {
+        $("#articles-sub").attr('class', 'leftSubNavOpen');
+        $("#articles-sub").css('visibility', 'visible');
+        $("#articles-sub").css('opacity', '1');
+        $("#themeNewsNav").css('margin-top', '46px');
+    }
+    else {
+        $("#articles-sub").attr('class', 'leftSubNavClose');
+        $("#articles-sub").css('visibility', 'hidden');
+        $("#articles-sub").css('opacity', '0');
+        $("#themeNewsNav").css('margin-top', '0px');
+    }
+    $("#articlesOpen").toggle()
+    $("#articlesClose").toggle()
+});
 /////////////////////////выделяем выбранную подкатегорию лодок//////////////////////////
 //boatsTypeSelect();
 //function boatsTypeSelect() {
@@ -272,12 +296,8 @@ $("#allNewsOpen, #allNewsClose").click(function () {
 //    }
 //});
 
-////////////////////показываем меню поднавигации при наведении на основную категорию меню, также выделяем ее/////////////////////////
-//$("#lodki").mouseenter(function () {
-//    hideAll();
-//    $("#lodki").attr("class", "nav-element-choosen");
-//    $("#lodki-Sub").show();
-//});
+////////////////////показываем подменю на левом меню, меняем + на -/////////////////////////
+
 $("#lodkiOpen, #lodkiClose").click(function () {
     if ($("#lodkiOpen").css('display') != 'none') {
         $("#lodki-Sub").attr('class', 'leftSubNavOpen');
@@ -294,13 +314,6 @@ $("#lodkiOpen, #lodkiClose").click(function () {
     $("#lodkiOpen").toggle()
     $("#lodkiClose").toggle()
 });
-
-//$("#shlupki").mouseenter(function () {
-//    hideAll();
-//    hideLeftMenu();
-//    $("#shlupki").attr("class", "nav-element-choosen");
-//    $("#shlupki-Sub").show();
-//});
 $("#shlupkiOpen, #shlupkiClose").click(function () {
     if ($("#shlupkiOpen").css('display') != 'none') {
         $("#shlupki-Sub").attr('class', 'leftSubNavOpen');
@@ -317,12 +330,6 @@ $("#shlupkiOpen, #shlupkiClose").click(function () {
     $("#shlupkiOpen").toggle()
     $("#shlupkiClose").toggle()
 });
-
-//$("#katera").mouseenter(function () {
-//    hideAll();
-//    $("#katera").attr("class", "nav-element-choosen");
-//    $("#katera-Sub").show();
-//});
 $("#kateraOpen, #kateraClose").click(function () {
     if ($("#kateraOpen").css('display') != 'none') {
         $("#katera-Sub").attr('class', 'leftSubNavOpen');
@@ -339,12 +346,6 @@ $("#kateraOpen, #kateraClose").click(function () {
     $("#kateraOpen").toggle()
     $("#kateraClose").toggle()
 });
-
-//$("#ladiy").mouseenter(function () {
-//    hideAll();
-//    $("#ladiy").attr("class", "nav-element-choosen");
-//    $("#ladiy-Sub").show();
-//});
 $("#ladiyOpen, #ladiyClose").click(function () {
     if ($("#ladiyOpen").css('display') != 'none') {
         $("#ladiy-Sub").attr('class', 'leftSubNavOpen');
@@ -361,12 +362,6 @@ $("#ladiyOpen, #ladiyClose").click(function () {
     $("#ladiyOpen").toggle()
     $("#ladiyClose").toggle()
 });
-
-//$("#sailboats").mouseenter(function () {
-//    hideAll();
-//    $("#sailboats").attr("class", "nav-element-choosen");
-//    $("#sailboats-Sub").show();
-//});
 $("#sailboatsOpen, #sailboatsClose").click(function () {
     if ($("#sailboatsOpen").css('display') != 'none') {
         $("#sailboats-Sub").attr('class', 'leftSubNavOpen');
@@ -384,11 +379,6 @@ $("#sailboatsOpen, #sailboatsClose").click(function () {
     $("#sailboatsClose").toggle()
 });
 
-//$("#models").mouseenter(function () {
-//    hideAll();
-//    $("#models").attr("class", "nav-element-choosen");
-//    $("#models-Sub").show();
-//});
 $("#modelsOpen, #modelsClose").click(function () {
     if ($("#modelsOpen").css('display') != 'none') {
         $("#models-Sub").attr('class', 'leftSubNavOpen');
@@ -405,149 +395,6 @@ $("#modelsOpen, #modelsClose").click(function () {
     $("#modelsOpen").toggle()
     $("#modelsClose").toggle()
 });
-
-//function hideLeftMenu() {
-//    $("#lodki-Sub").css('visibility', 'hidden');
-//    $("#lodki-Sub").css('opacity', '0');
-//    $("#shlupki").css('margin-top','0px')
-//}
-
-//function hideAll() {
-//    $("#sailboats").attr("class", "nav-element");
-//    $("#shlupki").attr("class", "nav-element");
-//    $("#katera").attr("class", "nav-element");
-//    $("#ladiy").attr("class", "nav-element");
-//    $("#models").attr("class", "nav-element");
-//    $("#lodki").attr("class", "nav-element");
-//    $("#lodki-Sub").hide();
-//    $("#sailboats-Sub").hide();
-//    $("#shlupki-Sub").hide();
-//    $("#katera-Sub").hide();
-//    $("#ladiy-Sub").hide();
-//    $("#models-Sub").hide();
-//};
-
-//function deselectNavElemMinor() {
-
-//    var page = $("#currentPage").val();
-//    switch (page) {
-//        case "boatsrow":
-//        case "boatssail":
-//        case "boatstraditional":
-//            $('#boatsrow').attr("class", "nav-element-minor");
-//            $('#boatssail').attr("class", "nav-element-minor");
-//            $('#boatstraditional').attr("class", "nav-element-minor");
-//            break;
-//        case "boatyal":
-//        case "botik":
-//        case "katerrow":
-//        case "maketstudy":
-//            $('#katerrow').attr("class", "nav-element-minor");
-//            $('#botik').attr("class", "nav-element-minor");
-//            $('#boatyal').attr("class", "nav-element-minor");
-//            $('#maketstudy').attr("class", "nav-element-minor");
-//            break;
-//        case "motosailer":
-//        case "katercabin":
-//        case "katerfish":
-//        case "katerpass":
-//        case "katerproject":
-//            $('#katerproject').attr("class", "nav-element-minor");
-//            $('#katerpass').attr("class", "nav-element-minor");
-//            $('#katerfish').attr("class", "nav-element-minor");
-//            $('#katercabin').attr("class", "nav-element-minor");
-//            $('#motosailer').attr("class", "nav-element-minor");
-//            break;
-//        case "ladyarow":
-//        case "ladyasail":
-//        case "ladyaproject":
-//            $('#ladyaproject').attr("class", "nav-element-minor");
-//            $('#ladyasail').attr("class", "nav-element-minor");
-//            $('#ladyarow').attr("class", "nav-element-minor");
-//            break;
-//        case "yacht":
-//        case "shvertbot":
-//        case "sailboatstudy":
-//        case "sailboathistorical":
-//        case "sailboatproject":
-//            $('#sailboatproject').attr("class", "nav-element-minor");
-//            $('#sailboathistorical').attr("class", "nav-element-minor");
-//            $('#sailboatstudy').attr("class", "nav-element-minor");
-//            $('#shvertbot').attr("class", "nav-element-minor");
-//            $('#yacht').attr("class", "nav-element-minor");
-//            break;
-//        default:
-//            break;
-//    }
-//}
-
-//function navElMinorChoose() {
-//    var page = $("#currentPage").val();
-//    switch (page) {
-//        case "boatsrow":
-//            $('#boatsrow').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "boatssail":
-//            $('#boatssail').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "boatstraditional":
-//            $('#boatstraditional').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "boatyal":
-//            $('#boatyal').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "botik":
-//            $('#botik').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katerrow":
-//            $('#katerrow').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "motosailer":
-//            $('#motosailer').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katercabin":
-//            $('#katercabin').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katerfish":
-//            $('#katerfish').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katerpass":
-//            $('#katerpass').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "katerproject":
-//            $('#katerproject').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "ladyarow":
-//            $('#ladyarow').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "ladyasail":
-//            $('#ladyasail').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "ladyaproject":
-//            $('#ladyaproject').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "yacht":
-//            $('#yacht').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "shvertbot":
-//            $('#shvertbot').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "sailboatstudy":
-//            $('#sailboatstudy').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "sailboathistorical":
-//            $('#sailboathistorical').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "sailboatproject":
-//            $('#sailboatproject').attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "maketstudy":
-//            $('#maketstudy').attr("class", "nav-element-minor-choosen");
-//            break;
-//        default:
-//            break;
-//    }
-//};
 
 //////////////////Для пролистывания списка заказчиков на странице "о нас"//////////////////////
 var slideNumber = 0;
@@ -583,7 +430,6 @@ $("#right.control").click(function () {
 });
 
 $("#left.control").click(function () {
-
     if (window.innerWidth > 990) {
         var stepWide = custWidth;
 
@@ -607,152 +453,81 @@ $("#left.control").click(function () {
     slideNumber -= 1;
 });
 
-//////////////////////////виджет контакта//////////////////////////
-VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
-
-
-
-
-
-
-
-//$(".nav-element-minor").mouseenter(function () {
-//    deselectNavElemMinor();
-//    $(this).attr("class", "nav-element-minor-choosen");
-//});
-
-//////////////////снимаем выделение с элементов подменю каталога и меню навигации по новостям,/////////////////
-/////////////////выделяем элементы показывающие, какой пункт меню видит пользователь///////////////////////////
-//$(".nav-element-minor").mouseleave(function () {
-//    var nav = $("#newsTypeSelector").val()
-//    if (nav == undefined) {
-//        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
-//        navElMinorChoose();
-//    }
-//    else {
-//        $(".nav-element-minor-choosen").attr("class", "nav-element-minor");
-//        newsTypeSelect();
-//    }
-
-//});
-
-//$(".nav-element, .sub-nav, .catalog").mouseleave(function (event) {
-//    var page = $("#currentPage").val();
-//    switch (page) {
-//        case "boats":
-//        case "boatsrow":
-//        case "boatssail":
-//        case "boatstraditional":
-//            if ((event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#lodki").attr("class", "nav-element-choosen");
-//                $("#lodki-Sub").show();
-//                break;
-//            }
-//        case "shlupki":
-//        case "boatyal":
-//        case "botik":
-//        case "katerrow":
-//        case "maketstudy":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#shlupki").attr("class", "nav-element-choosen");
-//                $("#shlupki-Sub").show();
-//                break;
-//            }
-//        case "katera":
-//        case "motosailer":
-//        case "katercabin":
-//        case "katerfish":
-//        case "katerpass":
-//        case "katerproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#katera").attr("class", "nav-element-choosen");
-//                $("#katera-Sub").show();
-//                break;
-//            }
-//        case "ladiy":
-//        case "ladyarow":
-//        case "ladyasail":
-//        case "ladyaproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")) {
-//                hideAll();
-//                $("#ladiy").attr("class", "nav-element-choosen");
-//                $("#ladiy-Sub").show();
-//            }
-//            break;
-//        case "sailboats":
-//        case "yacht":
-//        case "sailboatstudy":
-//        case "shvertbot":
-//        case "sailboathistorical":
-//        case "sailboatproject":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                if ($(window).width() > 383) {
-//                    hideAll();
-//                    $("#sailboats").attr("class", "nav-element-choosen");
-//                    $("#sailboats-Sub").show();
-//                }
-//                break;
-//            }
-//            else
-//                break;
-//        case "models":
-//            if ((event.currentTarget.id != "lodki" && event.target.id != "lodki-Sub")
-//                && (event.currentTarget.id != "sailboats" && event.target.id != "sailboats-Sub")
-//                && (event.currentTarget.id != "shlupki" && event.target.id != "shlupki-Sub")
-//                && (event.currentTarget.id != "katera" && event.target.id != "katera-Sub")
-//                && (event.currentTarget.id != "ladiy" && event.target.id != "ladiy-Sub")) {
-//                hideAll();
-//                $("#models").attr("class", "nav-element-choosen");
-//            }
-//            break;
-//        default:
-//            break;
-//    }
-//});
-//$("#navigationButton").click(navigationButton());
-
-function navigationButton() {
-    let width = $('body').width();
-    if (width < 1001 && width > 768) {
-        if ($(".navigationPlitka").css("display") != "none") {
-            $(".navigationPlitka").css("display", "none");
-        }
-        else {
-            $(".navigationPlitka").css({
-                'display': 'flex'
-            });
-            //naviPlitkaHeight();
-        }
-    }
-    else if (width < 769) {
-        if ($(".leftMenu").css("display") != "none") {
-            $(".leftMenu").css("display", "none");
-            $('body').css('overflow', 'unset');
-        }
-        else {
-            $(".leftMenu").css("display", "flex");
-            $('body').css('overflow', 'hidden');
-        }
+/////////////////////////Переключение видов выдачи проектов//////////////////////////
+function switchProjectsViewList() {
+    if ($('.lineStyleCatalog').attr('id') != 'activated') {
+        $('.lineStyleCatalog').attr('id', 'activated')
+        $('.plitcaStyleCatalog').attr('id', 'deactivated')
+        $('.iconListRed').attr('id', 'activated');
+        $('.iconList').attr('id', 'deactivated');
+        $('.iconPlitcaRed').attr('id', 'deactivated');
+        $('.iconPlitca').attr('id', 'activated');
     }
 }
-//function naviPlitkaHeight() {
-//    $(".navigationPlitka").css("height", "unset");
-//}
+
+function switchProjectsViewPlitca() {
+    if ($('.plitcaStyleCatalog').attr('id') != 'activated') {
+        $('.plitcaStyleCatalog').attr('id', 'activated')
+        $('.lineStyleCatalog').attr('id', 'deactivated')
+        $('.iconPlitcaRed').attr('id', 'activated');
+        $('.iconPlitca').attr('id', 'deactivated');
+        $('.iconListRed').attr('id', 'deactivated');
+        $('.iconList').attr('id', 'activated');
+    }
+}
+
+//////////////////////Сортируем по длинне///////////////////////
+function lengthSort(category) {
+    let lengthSort;
+    if ($('#sortOptions').val() == 'По возрастанию длинны') {
+        lengthSort = 'Up';
+    }
+    else {
+        lengthSort = 'Down';
+    }
+    if (lengthSort != 'Down') {
+        $('#sortDown').css('display', 'none');
+        $('#sortUp').css('display', 'block');
+    }
+    else {
+        $('#sortDown').css('display', 'block');
+        $('#sortUp').css('display', 'none');
+    }
+    $('#sortScreen').css('display', 'block');
+    $('#sortScreen2').css('display', 'block');
+    $('.sortOptions').css('color', 'lightgrey');
+
+    $('.plitcaStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=true" + "&lengthSort=" + lengthSort, function () {
+        if ($('#sortScreen').css('display') == 'block') {
+            $('#sortScreen').css('display', 'none');
+            $('.sortOptions').css('color', '#183f61');
+            $('#sortScreen2').css('display', 'none');
+        }
+    });
+    $('.lineStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=false" + "&lengthSort=" + lengthSort, function () {
+        if ($('#sortScreen').css('display') == 'block') {
+            $('#sortScreen').css('display', 'none');
+            $('.sortOptions').css('color', '#183f61');
+            $('#sortScreen2').css('display', 'none');
+        }
+    });
+}
+
+////////////////////////Показываем и прячем левое меню////////////////////////
+function navigationButton() {
+    if ($(".leftMenu").css("left") == '-31px') {
+        $(".leftMenu").css("left", "-341px");
+        $(".leftMenu").css("overflow", "unset");
+        $("body").css("overflow", "unset");
+        $('#blackScreen').css('display', 'none');
+    }
+    else {
+        $('.leftMenu').css('left', '-31px');
+        $('body').css('overflow', 'hidden');
+        $('.leftMenu').css('overflow', 'scroll');
+        $('#blackScreen').css('display', 'block');
+    }
+}
+
+//////////////////////////виджет контакта//////////////////////////
+VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);

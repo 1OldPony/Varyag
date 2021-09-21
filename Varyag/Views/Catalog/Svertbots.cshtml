@@ -12,15 +12,16 @@
         </div>
     </div>
     <div class="smallTopFoto">
-        <h2 class="smallTopFotoText">Швертботы</h2>
+        <h2 class="smallTopFotoText">Парусники</h2>
     </div>
     <div class="myBorder"></div>
     <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
         <partial name="~/Views/Shared/LeftMenu.cshtml" />
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все швертботы</div><div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>
+                    <div class="categorysLineTtem">Швертботы</div><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div>Сортировка:&nbsp;<div id="sortUp" style="cursor:pointer;" onclick="lengthSort('shvertbot', 'Down')">По возрастанию</div><div id="sortDown" style="display:none;cursor:pointer;" onclick="lengthSort('shvertbot', 'Up')">По убыванию</div></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
@@ -30,91 +31,15 @@
                     Если среди представленных на сайте вариантов вы не найдете подходящих для себя, мы можем построить деревянный швертбот по индивидуальному проекту.
                 </div>
             </div>
-            @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot" })
+            <div style="position:relative">
+                <div id="sortScreen2" class="sortScreen2"><div class="loadingGif"><img src="~/images/icons/loading-11.gif" class="gif" /><img src="~/images/icons/loading-105.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-73.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-99.gif" style="width:50%;display:none" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot", plitca = false, lengthSort = "Up" })
+                </div>
+            </div>
         </div>
     </div>
-    @*<div class="catalog">
-            <div class="nav-element" name="lodki" id="lodki">
-                <a href="../Каталог/Лодки">
-                    <div id="lodki" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/лодки-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="boat" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Лодки</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="shlupki" id="shlupki">
-                <a href="../Каталог/Шлюпки">
-                    <div id="shlupki" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/шлюпки-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="bigboat" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Шлюпки</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="katera" id="katera">
-                <a href="../Каталог/Катера">
-                    <div id="katera" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/катера-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="kater" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Катера</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="ladiy" id="ladiy">
-                <a href="../Каталог/Ладьи">
-                    <div id="ladiy" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/ладьи-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="ladiy" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Ладьи</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element-choosen" name="sailboats" id="sailboats">
-                <a href="../Каталог/Парусники">
-                    <div id="sailboats" class="nav-element-grid">
-                        <div class="colored">
-                            <img src="~/images/icons/Цветные/парусники-400-300dpi-низ.jpg" />
-                        </div>
-                        <div id="sailboats" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Парусники</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="nav-element" name="models" id="models">
-                <a href="../Каталог/Разное">
-                    <div id="models" class="nav-element-grid">
-                        <img src="~/images/icons/Макет.jpg" />
-                        <div id="models" class="whiteSpace"></div>
-                        <div class="nav-element-inside">
-                            <p>Разное</p>
-                            <input type="text" value="shvertbot" id="currentPage" hidden />
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div name="sailboats-Sub" id="sailboats-Sub" class="sub-nav" style="display:flex">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
-            <div name="lodki-Sub" id="lodki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
-            <div name="shlupki-Sub" id="shlupki-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
-            <div name="katera-Sub" id="katera-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
-            <div name="ladiy-Sub" id="ladiy-Sub" class="sub-nav">@await Html.PartialAsync("~/Views/Catalog/Ladiy-SubNav.cshtml")</div>
-        </div>*@
 </div>

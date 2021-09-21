@@ -1,0 +1,719 @@
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (84ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 3803.295ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 4528.244ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request finished in 5594.8222ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request finished in 83.6146ms 200 image/png
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request finished in 227.3245ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 215.852ms 200 image/png
+Request finished in 847.6751ms 200 application/javascript
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 883.9093ms 200 application/javascript
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 712.2219ms 200 image/png
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 703.5834ms 200 image/png
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 789.2549ms 200 image/png
+Request finished in 634.8427ms 200 image/png
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 662.0975ms 200 image/png
+Request finished in 657.0544ms 200 text/css
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 1255.1035ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 1435.6091ms 200 application/javascript
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 2616.4835ms 200 image/jpeg
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (68ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 1964.208ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 2460.5659ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request finished in 2766.0567ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 465.7682ms 200 application/javascript
+Request finished in 232.7578ms 200 image/png
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request finished in 70.4378ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request finished in 40.8775ms 200 image/png
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 43.5267ms 200 image/png
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 673.8298ms 200 application/javascript
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request finished in 538.0247ms 200 image/png
+Request finished in 327.0115ms 200 image/png
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 451.8796ms 200 image/png
+Request finished in 511.4177ms 200 image/png
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 587.4603ms 200 text/css
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 813.1215ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 790.337ms 200 application/javascript
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 3918.0279ms 200 image/jpeg
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (105ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 2132.8108ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 2847.1637ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request finished in 3837.8729ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 97.6573ms 200 application/javascript
+Request finished in 36.2978ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 28.644ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 25.2969ms 200 image/png
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 55.1697ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request finished in 54.834ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Request finished in 112.0669ms 200 image/png
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 110.3436ms 200 image/png
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 207.8094ms 200 image/png
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 535.6397ms 200 image/png
+Request finished in 542.2535ms 200 image/png
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 567.695ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 849.0834ms 200 application/javascript
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1491.9384ms 200 image/jpeg
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 2213.1701ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 2560.8338ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request finished in 3251.6295ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request finished in 140.6205ms 200 image/png
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request finished in 152.3533ms 200 image/png
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request finished in 37.5965ms 200 image/png
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request finished in 26.2102ms 200 image/png
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 455.7694ms 200 application/javascript
+Request finished in 94.1289ms 200 text/css
+Request finished in 87.6235ms 200 image/png
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 467.4881ms 200 image/png
+Request finished in 436.7183ms 200 image/png
+Request finished in 496.1408ms 200 application/javascript
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 490.5969ms 200 image/png
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 639.568ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 798.6979ms 200 application/javascript
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1676.9833ms 200 image/jpeg
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (60ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 1855.4192ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 2328.3642ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request finished in 2720.5007ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request finished in 199.2292ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request finished in 167.3013ms 200 image/png
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request finished in 397.7996ms 200 image/png
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 24.9387ms 200 image/png
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 29.8988ms 200 text/css
+Request finished in 37.697ms 200 image/png
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 1001.4229ms 200 application/javascript
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 950.651ms 200 application/javascript
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 233.0424ms 200 image/png
+Request finished in 864.2185ms 200 image/png
+Request finished in 799.711ms 200 image/png
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 912.443ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 417.9944ms 200 application/javascript
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 2937.5836ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 984.4325ms 200 image/jpeg
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (67ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 2749.5008ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 3381.6741ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request finished in 4248.8609ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 34.9728ms 200 text/css
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 144.8463ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 100.2004ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 20.5664ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 20.9423ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 35.9463ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 30.0876ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 21.07ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request finished in 39.4953ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 36.0311ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 56.6035ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 17.0786ms 200 image/png
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 168.6136ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Request finished in 29.8735ms 200 image/png
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (71ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 3571.274ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 4577.2191ms
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 5655.7236ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request finished in 159.4166ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 142.0049ms 200 application/javascript
+Request finished in 115.82ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 142.2032ms 200 image/png
+Request finished in 34.5703ms 200 image/png
+Request finished in 49.1721ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 47.7535ms 200 image/png
+Request finished in 35.9484ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request finished in 528.0602ms 200 application/javascript
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 298.2073ms 200 image/png
+Request finished in 277.9384ms 200 image/png
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 1048.4636ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 979.4879ms 200 application/javascript
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1933.6813ms 200 image/jpeg
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (145ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 5777.544ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 7414.6594ms
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request finished in 9071.7634ms 200 text/html; charset=utf-8
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 817.57ms 200 application/javascript
+Request finished in 578.4216ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request finished in 666.5558ms 200 image/png
+Request finished in 822.4745ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 558.3924ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request finished in 225.4356ms 200 image/png
+Request finished in 2529.9094ms 200 image/png
+Request finished in 2273.5723ms 200 image/png
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 1531.8096ms 200 image/png
+Request finished in 1208.6173ms 200 text/css
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 1854.7381ms 200 image/png
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 3169.4137ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 2440.3754ms 200 application/javascript
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 4683.3795ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1920.0207ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 2000.2498ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1550.5288ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1930.3771ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1883.3429ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 3204.2994ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1137.8175ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1107.0672ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 3429.1237ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 3015.7073ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1449.1425ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1054.6074ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1634.8426ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1884.7358ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1823.4375ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1591.9759ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1366.9552ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 2116.8327ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1560.4165ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 4061.6049ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1365.6008ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 700.4699ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 2299.1282ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1482.4154ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1835.7755ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 1709.1518ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 3546.1891ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/120923DMI_3702.JPG  
+Request finished in 88.8588ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/120923DMI_3702.JPG  
+Request finished in 284.7705ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/120923DMI_3702.JPG  
+Request finished in 80.9252ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/120923DMI_3702.JPG  
+Request finished in 41.9436ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/120923DMI_3702.JPG  
+Request finished in 216.7752ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_наскаталог�DMI_3702.JPG  
+Request finished in 524.3893ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог�DMI_3702.JPG  
+Request finished in 139.1669ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 1537.9051ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 999.9257ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 2520.4983ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 1088.6418ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 755.7101ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 1581.9964ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 1335.1268ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 1928.5191ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 1299.0179ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/каталог/120923DMI_3702.JPG  
+Sending file. Request path: '/images/о_нас/каталог/120923DMI_3702.JPG'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\каталог\120923DMI_3702.JPG'
+Request finished in 1133.9457ms 200 image/jpeg
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (108ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 2142.3161ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 2604.677ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request finished in 3878.4875ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 139.0149ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 60.0454ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request finished in 44.6855ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 285.5808ms 200 application/javascript
+Request finished in 504.923ms 200 application/javascript
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 342.8721ms 200 image/png
+Request finished in 365.6958ms 200 image/png
+Request finished in 404.537ms 200 image/png
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 324.407ms 200 image/png
+Request finished in 391.7853ms 200 image/png
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 432.7586ms 200 image/png
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 729.7111ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request starting HTTP/2.0 GET https://localhost:44325/~/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request finished in 989.8636ms 200 application/javascript
+Request finished in 95.5589ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/~/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request finished in 74.5598ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/~/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request finished in 47.2798ms 404 
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 1877.8411ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 2158.4043ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request finished in 2540.8198ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 78.9362ms 200 application/javascript
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request finished in 77.4748ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request finished in 34.3236ms 200 image/png
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request finished in 41.1416ms 200 image/png
+Request finished in 37.642ms 200 image/png
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 236.5045ms 200 image/png
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request finished in 133.3982ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Request finished in 81.389ms 200 image/png
+Request finished in 45.4051ms 200 image/png
+Request finished in 42.9459ms 200 image/png
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 295.6316ms 200 image/png
+Request finished in 399.6381ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 699.8424ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/~/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request finished in 215.617ms 404 
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 374.9517ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 584.2795ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 238.472ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 960.6277ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 685.0004ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 652.7909ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 342.5244ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 666.4679ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 342.3025ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 567.8441ms 200 image/jpeg
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (66ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 1981.7963ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 2280.3261ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request finished in 3369.0902ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 34.1421ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request finished in 35.8908ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 21.552ms 200 image/png
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request finished in 24.3899ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 74.4543ms 200 image/png
+Request finished in 57.0806ms 200 image/png
+Request finished in 76.6506ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 64.5669ms 200 image/png
+Request finished in 85.3208ms 200 image/png
+Request finished in 62.0388ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 439.4895ms 200 image/png
+Request finished in 1106.386ms 200 text/css
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 731.8663ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 929.2673ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 702.5094ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 102.3508ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 617.475ms 200 image/jpeg

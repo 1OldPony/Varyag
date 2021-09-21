@@ -1,0 +1,317 @@
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+An error occurred using the connection to database 'Varyag' on server 'DESKTOP-ING71VV'.
+An exception occurred while iterating over the results of a query for context type 'Varyag.Models.VaryagContext'.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): Не найден сетевой путь
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\Select.cs:line 106
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken) in D:\a\1\s\Ix.NET\Source\System.Interactive.Async\AsyncIterator.cs:line 98
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 26392.242ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+An unhandled exception has occurred while executing the request.
+Request finished in 27535.6063ms 500 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\favicon.ico'
+Request finished in 60.9895ms 200 image/x-icon
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (297ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 2609.9782ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+An unhandled exception has occurred while executing the request.
+Request finished in 2907.1246ms 500 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/каталог  
+Executing endpoint 'Varyag.Controllers.CatalogController.CatalogNavigation (Varyag)'
+Route matched with {action = "CatalogNavigation", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CatalogNavigation() on controller Varyag.Controllers.CatalogController (Varyag).
+Executing action method Varyag.Controllers.CatalogController.CatalogNavigation (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.CatalogController.CatalogNavigation (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 92.8214ms.
+Executing ViewResult, running view CatalogNavigation.
+Executed ViewResult - view CatalogNavigation executed in 508.8822ms.
+Executed action Varyag.Controllers.CatalogController.CatalogNavigation (Varyag) in 619.292ms
+Executed endpoint 'Varyag.Controllers.CatalogController.CatalogNavigation (Varyag)'
+Request finished in 696.7688ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/phone.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/email.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-низ.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безмасш.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-низ.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/паруник.jpg  
+Request finished in 166.1733ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/паруник-низ.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безмасш.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/паруник-безмасш.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-низ.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-низ.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безмасш.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/global_114550x96.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безмасш.jpg  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 223.4395ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 242.2134ms 200 image/png
+Request finished in 184.9254ms 200 image/png
+Sending file. Request path: '/images/icons/email.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\email.png'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 335.9356ms 200 image/png
+Sending file. Request path: '/images/icons/phone.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\phone.png'
+Request finished in 208.2639ms 200 application/javascript
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-низ.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-низ.jpg'
+Request finished in 390.137ms 200 image/png
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка.jpg'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безмасш.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безмасш.jpg'
+Request finished in 338.4619ms 200 image/jpeg
+Request finished in 333.9404ms 200 image/jpeg
+Request finished in 346.8153ms 200 image/jpeg
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-низ.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-низ.jpg'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер.jpg'
+Request finished in 316.5398ms 200 application/javascript
+Request finished in 358.1698ms 200 image/jpeg
+Request finished in 353.3174ms 200 image/jpeg
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-низ.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-низ.jpg'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка.jpg'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 366.2411ms 200 image/jpeg
+Request finished in 363.4006ms 200 image/jpeg
+Sending file. Request path: '/images/icons/global_114550x96.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\global_114550x96.png'
+Request finished in 367.1878ms 200 image/png
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-низ.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-низ.jpg'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безмасш.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безмасш.jpg'
+Request finished in 349.9581ms 200 image/png
+Request finished in 364.0492ms 200 image/jpeg
+Request finished in 372.6301ms 200 image/jpeg
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безмасш.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безмасш.jpg'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья.jpg'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 363.8509ms 200 image/jpeg
+Request finished in 385.7816ms 200 image/jpeg
+Request finished in 376.5497ms 200 image/png
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безмасш.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безмасш.jpg'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request finished in 434.6279ms 200 image/jpeg
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/паруник.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\паруник.jpg'
+Request finished in 649.9272ms 200 text/css
+Request finished in 477.1063ms 200 image/jpeg
+Sending file. Request path: '/images/icons/Цветные/одинаковые/паруник-низ.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\паруник-низ.jpg'
+Request finished in 475.1966ms 200 image/png
+Request finished in 501.9492ms 200 image/jpeg
+Sending file. Request path: '/images/icons/Цветные/одинаковые/паруник-безмасш.jpg'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\паруник-безмасш.jpg'
+Request finished in 527.0641ms 200 image/jpeg
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 526.4485ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/collages/общий.png  
+Sending file. Request path: '/images/collages/общий.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\collages\общий.png'
+Request finished in 557.8479ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/Catalog/Bigboats  
+Executing endpoint 'Varyag.Controllers.CatalogController.Bigboats (Varyag)'
+Route matched with {action = "Bigboats", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Bigboats() on controller Varyag.Controllers.CatalogController (Varyag).
+Executing action method Varyag.Controllers.CatalogController.Bigboats (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.CatalogController.Bigboats (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 4.2166ms.
+Executing ViewResult, running view Bigboats.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [w].[ProjectID], [w].[BoatRow], [w].[BoatSail], [w].[BoatTraditional], [w].[BoatYal], [w].[Botik], [w].[Deep], [w].[Description], [w].[EnginePower], [w].[FreshWaterCap], [w].[FuelCap], [w].[KaterCabin], [w].[KaterFish], [w].[KaterPass], [w].[KaterProject], [w].[KaterRow], [w].[LadyaProject], [w].[LadyaRow], [w].[LadyaSail], [w].[Length], [w].[MainFoto], [w].[MaketCinema], [w].[MaketDesign], [w].[MaketMuseum], [w].[MaketStudy], [w].[Mass], [w].[Motosailer], [w].[Name], [w].[NumberOfOars], [w].[PassengerCap], [w].[Price], [w].[Route], [w].[SailArea], [w].[SailboatHistorical], [w].[SailboatProject], [w].[SailboatStudy], [w].[ShipSheme], [w].[ShipShemeFull], [w].[Shvertbot], [w].[SleepingAreas], [w].[Speed], [w].[Volume], [w].[Windth], [w].[Yacht]
+FROM [Project] AS [w]
+WHERE ((([w].[BoatYal] = 1) OR ([w].[Botik] = 1)) OR ([w].[KaterRow] = 1)) OR ([w].[MaketStudy] = 1)
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [w].[ProjectID], [w].[BoatRow], [w].[BoatSail], [w].[BoatTraditional], [w].[BoatYal], [w].[Botik], [w].[Deep], [w].[Description], [w].[EnginePower], [w].[FreshWaterCap], [w].[FuelCap], [w].[KaterCabin], [w].[KaterFish], [w].[KaterPass], [w].[KaterProject], [w].[KaterRow], [w].[LadyaProject], [w].[LadyaRow], [w].[LadyaSail], [w].[Length], [w].[MainFoto], [w].[MaketCinema], [w].[MaketDesign], [w].[MaketMuseum], [w].[MaketStudy], [w].[Mass], [w].[Motosailer], [w].[Name], [w].[NumberOfOars], [w].[PassengerCap], [w].[Price], [w].[Route], [w].[SailArea], [w].[SailboatHistorical], [w].[SailboatProject], [w].[SailboatStudy], [w].[ShipSheme], [w].[ShipShemeFull], [w].[Shvertbot], [w].[SleepingAreas], [w].[Speed], [w].[Volume], [w].[Windth], [w].[Yacht]
+FROM [Project] AS [w]
+WHERE ((([w].[BoatYal] = 1) OR ([w].[Botik] = 1)) OR ([w].[KaterRow] = 1)) OR ([w].[MaketStudy] = 1)
+Executed ViewResult - view Bigboats executed in 549.3557ms.
+Executed action Varyag.Controllers.CatalogController.Bigboats (Varyag) in 566.2799ms
+Executed endpoint 'Varyag.Controllers.CatalogController.Bigboats (Varyag)'
+Request finished in 597.8622ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/list3.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/plitca1-2-red.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/list3-red.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/collages/коллажШлюпки-обр.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/plitca1-2.png  
+Sending file. Request path: '/images/icons/plitca1-2-red.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\plitca1-2-red.png'
+Sending file. Request path: '/images/icons/list3-red.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\list3-red.png'
+Request finished in 63.6441ms 200 image/png
+Request finished in 69.4289ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/loading-11.gif  
+Sending file. Request path: '/images/icons/plitca1-2.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\plitca1-2.png'
+Sending file. Request path: '/images/icons/list3.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\list3.png'
+Request finished in 98.1612ms 200 image/png
+Request finished in 106.3261ms 200 image/png
+Sending file. Request path: '/images/icons/loading-11.gif'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\loading-11.gif'
+Request finished in 77.2784ms 200 image/gif
+Sending file. Request path: '/images/collages/коллажШлюпки-обр.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\collages\коллажШлюпки-обр.png'
+Request finished in 310.6893ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/Catalog/Motorboats  
+Executing endpoint 'Varyag.Controllers.CatalogController.Motorboats (Varyag)'
+Route matched with {action = "Motorboats", controller = "Catalog"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Motorboats() on controller Varyag.Controllers.CatalogController (Varyag).
+Executing action method Varyag.Controllers.CatalogController.Motorboats (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.CatalogController.Motorboats (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.929ms.
+Executing ViewResult, running view Motorboats.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [w].[ProjectID], [w].[BoatRow], [w].[BoatSail], [w].[BoatTraditional], [w].[BoatYal], [w].[Botik], [w].[Deep], [w].[Description], [w].[EnginePower], [w].[FreshWaterCap], [w].[FuelCap], [w].[KaterCabin], [w].[KaterFish], [w].[KaterPass], [w].[KaterProject], [w].[KaterRow], [w].[LadyaProject], [w].[LadyaRow], [w].[LadyaSail], [w].[Length], [w].[MainFoto], [w].[MaketCinema], [w].[MaketDesign], [w].[MaketMuseum], [w].[MaketStudy], [w].[Mass], [w].[Motosailer], [w].[Name], [w].[NumberOfOars], [w].[PassengerCap], [w].[Price], [w].[Route], [w].[SailArea], [w].[SailboatHistorical], [w].[SailboatProject], [w].[SailboatStudy], [w].[ShipSheme], [w].[ShipShemeFull], [w].[Shvertbot], [w].[SleepingAreas], [w].[Speed], [w].[Volume], [w].[Windth], [w].[Yacht]
+FROM [Project] AS [w]
+WHERE (((([w].[KaterCabin] = 1) OR ([w].[KaterFish] = 1)) OR ([w].[KaterProject] = 1)) OR ([w].[Motosailer] = 1)) OR ([w].[KaterPass] = 1)
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [w].[ProjectID], [w].[BoatRow], [w].[BoatSail], [w].[BoatTraditional], [w].[BoatYal], [w].[Botik], [w].[Deep], [w].[Description], [w].[EnginePower], [w].[FreshWaterCap], [w].[FuelCap], [w].[KaterCabin], [w].[KaterFish], [w].[KaterPass], [w].[KaterProject], [w].[KaterRow], [w].[LadyaProject], [w].[LadyaRow], [w].[LadyaSail], [w].[Length], [w].[MainFoto], [w].[MaketCinema], [w].[MaketDesign], [w].[MaketMuseum], [w].[MaketStudy], [w].[Mass], [w].[Motosailer], [w].[Name], [w].[NumberOfOars], [w].[PassengerCap], [w].[Price], [w].[Route], [w].[SailArea], [w].[SailboatHistorical], [w].[SailboatProject], [w].[SailboatStudy], [w].[ShipSheme], [w].[ShipShemeFull], [w].[Shvertbot], [w].[SleepingAreas], [w].[Speed], [w].[Volume], [w].[Windth], [w].[Yacht]
+FROM [Project] AS [w]
+WHERE (((([w].[KaterCabin] = 1) OR ([w].[KaterFish] = 1)) OR ([w].[KaterProject] = 1)) OR ([w].[Motosailer] = 1)) OR ([w].[KaterPass] = 1)
+Executed ViewResult - view Motorboats executed in 2534.0513ms.
+Executed action Varyag.Controllers.CatalogController.Motorboats (Varyag) in 2549.9204ms
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/loading-73.gif  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/loading-99.gif  
+Request starting HTTP/2.0 GET https://localhost:44325/Projects/ProjectImageRender/3?fot=main  
+Executed endpoint 'Varyag.Controllers.CatalogController.Motorboats (Varyag)'
+Executing endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Request finished in 2653.0844ms 200 text/html; charset=utf-8
+Sending file. Request path: '/images/icons/loading-99.gif'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\loading-99.gif'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/loading-105.gif  
+Request finished in 88.5578ms 200 image/gif
+Sending file. Request path: '/images/icons/loading-73.gif'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\loading-73.gif'
+Request starting HTTP/2.0 GET https://localhost:44325/Projects/ProjectImageRender/2?fot=main  
+Request finished in 117.8508ms 200 image/gif
+Executing endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/images/collages/коллаж-горизонт-с-пробелом-обычный-контур.png  
+Route matched with {action = "ProjectImageRender", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProjectImageRender(System.Nullable`1[System.Int32], System.String) on controller Varyag.Controllers.ProjectsController (Varyag).
+Route matched with {action = "ProjectImageRender", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProjectImageRender(System.Nullable`1[System.Int32], System.String) on controller Varyag.Controllers.ProjectsController (Varyag).
+Sending file. Request path: '/images/icons/loading-105.gif'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\loading-105.gif'
+Request finished in 164.6593ms 200 image/gif
+Request starting HTTP/2.0 GET https://localhost:44325/Projects/ProjectImageRender/1?fot=main  
+Request starting HTTP/2.0 GET https://localhost:44325/Projects/ProjectImageRender/1?fot=sheme  
+Executing action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) - Validation state: Valid
+Executing endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Executing endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Route matched with {action = "ProjectImageRender", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProjectImageRender(System.Nullable`1[System.Int32], System.String) on controller Varyag.Controllers.ProjectsController (Varyag).
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) - Validation state: Valid
+Route matched with {action = "ProjectImageRender", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProjectImageRender(System.Nullable`1[System.Int32], System.String) on controller Varyag.Controllers.ProjectsController (Varyag).
+Executing action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Request starting HTTP/2.0 GET https://localhost:44325/Projects/ProjectImageRender/3?fot=sheme  
+Request starting HTTP/2.0 GET https://localhost:44325/Projects/ProjectImageRender/2?fot=sheme  
+Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [f].[ProjectID], [f].[BoatRow], [f].[BoatSail], [f].[BoatTraditional], [f].[BoatYal], [f].[Botik], [f].[Deep], [f].[Description], [f].[EnginePower], [f].[FreshWaterCap], [f].[FuelCap], [f].[KaterCabin], [f].[KaterFish], [f].[KaterPass], [f].[KaterProject], [f].[KaterRow], [f].[LadyaProject], [f].[LadyaRow], [f].[LadyaSail], [f].[Length], [f].[MainFoto], [f].[MaketCinema], [f].[MaketDesign], [f].[MaketMuseum], [f].[MaketStudy], [f].[Mass], [f].[Motosailer], [f].[Name], [f].[NumberOfOars], [f].[PassengerCap], [f].[Price], [f].[Route], [f].[SailArea], [f].[SailboatHistorical], [f].[SailboatProject], [f].[SailboatStudy], [f].[ShipSheme], [f].[ShipShemeFull], [f].[Shvertbot], [f].[SleepingAreas], [f].[Speed], [f].[Volume], [f].[Windth], [f].[Yacht]
+FROM [Project] AS [f]
+WHERE [f].[ProjectID] = @__id_0
+Executing endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Executed DbCommand (22ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [f].[ProjectID], [f].[BoatRow], [f].[BoatSail], [f].[BoatTraditional], [f].[BoatYal], [f].[Botik], [f].[Deep], [f].[Description], [f].[EnginePower], [f].[FreshWaterCap], [f].[FuelCap], [f].[KaterCabin], [f].[KaterFish], [f].[KaterPass], [f].[KaterProject], [f].[KaterRow], [f].[LadyaProject], [f].[LadyaRow], [f].[LadyaSail], [f].[Length], [f].[MainFoto], [f].[MaketCinema], [f].[MaketDesign], [f].[MaketMuseum], [f].[MaketStudy], [f].[Mass], [f].[Motosailer], [f].[Name], [f].[NumberOfOars], [f].[PassengerCap], [f].[Price], [f].[Route], [f].[SailArea], [f].[SailboatHistorical], [f].[SailboatProject], [f].[SailboatStudy], [f].[ShipSheme], [f].[ShipShemeFull], [f].[Shvertbot], [f].[SleepingAreas], [f].[Speed], [f].[Volume], [f].[Windth], [f].[Yacht]
+FROM [Project] AS [f]
+WHERE [f].[ProjectID] = @__id_0
+Route matched with {action = "ProjectImageRender", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProjectImageRender(System.Nullable`1[System.Int32], System.String) on controller Varyag.Controllers.ProjectsController (Varyag).
+Executed DbCommand (30ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [f].[ProjectID], [f].[BoatRow], [f].[BoatSail], [f].[BoatTraditional], [f].[BoatYal], [f].[Botik], [f].[Deep], [f].[Description], [f].[EnginePower], [f].[FreshWaterCap], [f].[FuelCap], [f].[KaterCabin], [f].[KaterFish], [f].[KaterPass], [f].[KaterProject], [f].[KaterRow], [f].[LadyaProject], [f].[LadyaRow], [f].[LadyaSail], [f].[Length], [f].[MainFoto], [f].[MaketCinema], [f].[MaketDesign], [f].[MaketMuseum], [f].[MaketStudy], [f].[Mass], [f].[Motosailer], [f].[Name], [f].[NumberOfOars], [f].[PassengerCap], [f].[Price], [f].[Route], [f].[SailArea], [f].[SailboatHistorical], [f].[SailboatProject], [f].[SailboatStudy], [f].[ShipSheme], [f].[ShipShemeFull], [f].[Shvertbot], [f].[SleepingAreas], [f].[Speed], [f].[Volume], [f].[Windth], [f].[Yacht]
+FROM [Project] AS [f]
+WHERE [f].[ProjectID] = @__id_0
+Executing action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) - Validation state: Valid
+Executed DbCommand (109ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [f].[ProjectID], [f].[BoatRow], [f].[BoatSail], [f].[BoatTraditional], [f].[BoatYal], [f].[Botik], [f].[Deep], [f].[Description], [f].[EnginePower], [f].[FreshWaterCap], [f].[FuelCap], [f].[KaterCabin], [f].[KaterFish], [f].[KaterPass], [f].[KaterProject], [f].[KaterRow], [f].[LadyaProject], [f].[LadyaRow], [f].[LadyaSail], [f].[Length], [f].[MainFoto], [f].[MaketCinema], [f].[MaketDesign], [f].[MaketMuseum], [f].[MaketStudy], [f].[Mass], [f].[Motosailer], [f].[Name], [f].[NumberOfOars], [f].[PassengerCap], [f].[Price], [f].[Route], [f].[SailArea], [f].[SailboatHistorical], [f].[SailboatProject], [f].[SailboatStudy], [f].[ShipSheme], [f].[ShipShemeFull], [f].[Shvertbot], [f].[SleepingAreas], [f].[Speed], [f].[Volume], [f].[Windth], [f].[Yacht]
+FROM [Project] AS [f]
+WHERE [f].[ProjectID] = @__id_0
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Route matched with {action = "ProjectImageRender", controller = "Projects"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ProjectImageRender(System.Nullable`1[System.Int32], System.String) on controller Varyag.Controllers.ProjectsController (Varyag).
+Executing action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (48ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [f].[ProjectID], [f].[BoatRow], [f].[BoatSail], [f].[BoatTraditional], [f].[BoatYal], [f].[Botik], [f].[Deep], [f].[Description], [f].[EnginePower], [f].[FreshWaterCap], [f].[FuelCap], [f].[KaterCabin], [f].[KaterFish], [f].[KaterPass], [f].[KaterProject], [f].[KaterRow], [f].[LadyaProject], [f].[LadyaRow], [f].[LadyaSail], [f].[Length], [f].[MainFoto], [f].[MaketCinema], [f].[MaketDesign], [f].[MaketMuseum], [f].[MaketStudy], [f].[Mass], [f].[Motosailer], [f].[Name], [f].[NumberOfOars], [f].[PassengerCap], [f].[Price], [f].[Route], [f].[SailArea], [f].[SailboatHistorical], [f].[SailboatProject], [f].[SailboatStudy], [f].[ShipSheme], [f].[ShipShemeFull], [f].[Shvertbot], [f].[SleepingAreas], [f].[Speed], [f].[Volume], [f].[Windth], [f].[Yacht]
+FROM [Project] AS [f]
+WHERE [f].[ProjectID] = @__id_0
+Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [f].[ProjectID], [f].[BoatRow], [f].[BoatSail], [f].[BoatTraditional], [f].[BoatYal], [f].[Botik], [f].[Deep], [f].[Description], [f].[EnginePower], [f].[FreshWaterCap], [f].[FuelCap], [f].[KaterCabin], [f].[KaterFish], [f].[KaterPass], [f].[KaterProject], [f].[KaterRow], [f].[LadyaProject], [f].[LadyaRow], [f].[LadyaSail], [f].[Length], [f].[MainFoto], [f].[MaketCinema], [f].[MaketDesign], [f].[MaketMuseum], [f].[MaketStudy], [f].[Mass], [f].[Motosailer], [f].[Name], [f].[NumberOfOars], [f].[PassengerCap], [f].[Price], [f].[Route], [f].[SailArea], [f].[SailboatHistorical], [f].[SailboatProject], [f].[SailboatStudy], [f].[ShipSheme], [f].[ShipShemeFull], [f].[Shvertbot], [f].[SleepingAreas], [f].[Speed], [f].[Volume], [f].[Windth], [f].[Yacht]
+FROM [Project] AS [f]
+WHERE [f].[ProjectID] = @__id_0
+Sending file. Request path: '/images/collages/коллаж-горизонт-с-пробелом-обычный-контур.png'. Physical path: 'C:\Users\Дом\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\collages\коллаж-горизонт-с-пробелом-обычный-контур.png'
+Request finished in 784.622ms 200 image/png
+Executed action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 877.7163ms.
+Executed action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 900.3225ms.
+Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+Executed action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 952.3201ms.
+Executed action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 627.8313ms.
+Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+Executed action Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) in 983.2606ms
+Executed action Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) in 707.5882ms
+Executed endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Executed endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Request finished in 1053.8157ms 200 image/jpg
+Executed action Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) in 1124.4698ms
+Executed action Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) in 1028.3531ms
+Request finished in 849.4224ms 200 image/jpg
+Executed endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Executed endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Request finished in 1411.6ms 200 image/jpg
+Request finished in 1138.2352ms 200 image/jpg
+Executed action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 1164.5119ms.
+Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+Executed action Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) in 1320.3856ms
+Executed endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Request finished in 1440.3112ms 200 image/jpg
+Executed action method Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag), returned result Microsoft.AspNetCore.Mvc.FileContentResult in 992.3914ms.
+Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name '' ...
+Executed action Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag) in 1020.2439ms
+Executed endpoint 'Varyag.Controllers.ProjectsController.ProjectImageRender (Varyag)'
+Request finished in 1064.1567ms 200 image/jpg
+Request starting HTTP/2.0 GET https://localhost:44325/О-Нас  
+Executing endpoint 'Varyag.Controllers.AboutController.AllNews (Varyag)'
+Route matched with {action = "AllNews", controller = "About"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AllNews(System.String, System.Nullable`1[System.Int32], System.String, System.String) on controller Varyag.Controllers.AboutController (Varyag).
+Executing action method Varyag.Controllers.AboutController.AllNews (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed action method Varyag.Controllers.AboutController.AllNews (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 32.3412ms.
+Executing ViewResult, running view AllNews.
+Executed ViewResult - view AllNews executed in 222.4191ms.
+Executed action Varyag.Controllers.AboutController.AllNews (Varyag) in 265.5191ms
+Executed endpoint 'Varyag.Controllers.AboutController.AllNews (Varyag)'
+Request finished in 316.4748ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/about/AllArticles?actualNews=2021%20-%202020&recentNews=2019%20-%202017&oldNews=2016%20-%202021  
+Executing endpoint 'Varyag.Controllers.AboutController.AllArticles (Varyag)'
+Route matched with {action = "AllArticles", controller = "About"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AllArticles(System.String, System.String, System.String, System.String) on controller Varyag.Controllers.AboutController (Varyag).
+Executing action method Varyag.Controllers.AboutController.AllArticles (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ArticleId], [a].[ArticleName], [a].[ArticleRoute], [a].[ArticleType], [a].[PathToGallery1], [a].[PathToGallery10], [a].[PathToGallery11], [a].[PathToGallery12], [a].[PathToGallery13], [a].[PathToGallery14], [a].[PathToGallery15], [a].[PathToGallery2], [a].[PathToGallery3], [a].[PathToGallery4], [a].[PathToGallery5], [a].[PathToGallery6], [a].[PathToGallery7], [a].[PathToGallery8], [a].[PathToGallery9], [a].[Text1], [a].[Text10], [a].[Text11], [a].[Text12], [a].[Text13], [a].[Text14], [a].[Text15], [a].[Text2], [a].[Text3], [a].[Text4], [a].[Text5], [a].[Text6], [a].[Text7], [a].[Text8], [a].[Text9]
+FROM [Article] AS [a]
+Executed action method Varyag.Controllers.AboutController.AllArticles (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 38.8842ms.
+Executing ViewResult, running view AllArticles.
+Executed ViewResult - view AllArticles executed in 420.099ms.
+Executed action Varyag.Controllers.AboutController.AllArticles (Varyag) in 468.0847ms
+Executed endpoint 'Varyag.Controllers.AboutController.AllArticles (Varyag)'
+Request finished in 493.0581ms 200 text/html; charset=utf-8

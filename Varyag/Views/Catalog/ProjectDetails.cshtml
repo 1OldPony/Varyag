@@ -4,67 +4,192 @@
 }
 
 @*style="background:url('../images/Гравюра_большое_разрешение_засветленное-с-небом5.jpg') bottom center no-repeat;background-size:cover;"*@
-<div>
-    <div class="MyContainer">
-        <div class="path">
-            <a href="../../О-нас">Главная</a> > <a href="../../Каталог">Каталог</a> > @if (Model.BoatRow == true || Model.BoatSail == true || Model.BoatTraditional == true)
-            {<a href="../../Каталог/Лодки">Лодки</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
-            else if (Model.BoatYal == true || Model.Botik == true || Model.KaterRow == true || Model.MaketStudy == true)
-            {<a href="../../Каталог/Шлюпки">Шлюпки</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
-            else if (Model.KaterCabin == true || Model.KaterFish == true || Model.KaterPass == true || Model.Motosailer == true)
-            {<a href="../Каталог/Катера">Катера</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
-            else if (Model.LadyaSail == true || Model.LadyaRow == true || Model.LadyaProject == true)
-            {<a href="../Каталог/Ладьи">Ладьи</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
-            else if (Model.SailboatHistorical == true || Model.SailboatProject == true || Model.SailboatStudy == true || Model.Shvertbot == true || Model.Yacht == true)
-            {<a href="../Каталог/Парусники">Парусники</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
+
+<div class="MyContainer">
+    <div class="path">
+        <a href="../../О-нас">Главная</a> > <a href="../../Каталог">Каталог</a> > @if (Model.BoatRow == true || Model.BoatSail == true || Model.BoatTraditional == true)
+        {<a href="../../Каталог/Лодки">Лодки</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
+    else if (Model.BoatYal == true || Model.Botik == true || Model.KaterRow == true || Model.MaketStudy == true)
+    {<a href="../../Каталог/Шлюпки">Шлюпки</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
+else if (Model.KaterCabin == true || Model.KaterFish == true || Model.KaterPass == true || Model.Motosailer == true)
+{<a href="../Каталог/Катера">Катера</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
+else if (Model.LadyaSail == true || Model.LadyaRow == true || Model.LadyaProject == true)
+{<a href="../Каталог/Ладьи">Ладьи</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
+else if (Model.SailboatHistorical == true || Model.SailboatProject == true || Model.SailboatStudy == true || Model.Shvertbot == true || Model.Yacht == true)
+{<a href="../Каталог/Парусники">Парусники</a><a style="text-decoration:none"> > </a><a>@Model.Name</a>}
+    </div>
+    <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+    @*<partial name="~/Views/Shared/LeftMenu.cshtml" />*@
+
+    <div class="leftMenu" id="projectDetails">
+        <nav>
+            <ul class="leftNavMenu" style="padding-bottom:107px">
+                <li id="aboutUs">
+                    <div class="leftNavLine"><a asp-action="AllNews" asp-controller="About" class="navLineHeader">О нас</a></div>
+                </li>
+                <li>
+                    <div class="leftNavLine"><a asp-action="Boats" class="navLineHeader">Лодки</a><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div></div>
+                    <ul id="lodki-Sub" class="leftSubNavOpen">
+                        <li class="leftSubCategory">
+                            <a asp-action="BoatsTraditional">Народные лодки</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="BoatsSail">Прогулочные парусные лодки</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="BoatsRow">Прогулочные гребные лодки</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div id="shlupkiNav" class="leftNavLine"><a asp-action="Bigboats" class="navLineHeader">Шлюпки</a><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
+                    <ul id="shlupki-Sub" class="leftSubNavOpen">
+                        <li class="leftSubCategory">
+                            <a asp-action="BoatsYal">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="Botiks">Ботики</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="KaterRows">Гребные катера и вельботы</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="MaketsStudy">Учебные пособия</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div id="kateraNav" class="leftNavLine"><a asp-action="Motorboats" class="navLineHeader">Катера</a><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div></div>
+                    <ul id="katera-Sub" class="leftSubNavOpen">
+                        <li class="leftSubCategory">
+                            <a asp-action="KatersFishing">Рабочие/Рыболовные катера</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="KatersPassanger">Пассажирские катера</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="KaterKabins">Каютные катера</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="Motosailers">Мотосейлеры</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div id="ladiyNav" class="leftNavLine"><a asp-action="Ladiy" class="navLineHeader">Ладьи</a><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
+                    <ul id="ladiy-Sub" class="leftSubNavOpen">
+                        <li class="leftSubCategory">
+                            <a asp-action="LadyasSailMotor">Парусно-моторные ладьи</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="LadyasSailRow">Парусно-гребные ладьи</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div id="sailboatsNav" class="leftNavLine"><a asp-action="Sailboats" class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
+                    <ul id="sailboats-Sub" class="leftSubNavOpen">
+                        <li class="leftSubCategory">
+                            <a asp-action="SailboatsHistorical">Исторические парусники</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="SailboatsStudy">Учебные парусники</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="Svertbots">Швертботы</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="Yachts">Парусные яхты</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div id="modelsNav" class="leftNavLine"><a asp-action="Models" class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
+                    <ul id="models-Sub" class="leftSubNavOpen">
+                        <li class="leftSubCategory">
+                            Тренажеры
+                        </li>
+                        <li class="leftSubCategory">
+                            Флагштоки
+                        </li>
+                        <li class="leftSubCategory">
+                            Клумбы
+                        </li>
+                        <li class="leftSubCategory">
+                            Кровати
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="ourContacts">
+            <div>НАШИ КОНТАКТЫ</div>
+            <div class="contactsLeft">
+                <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
+                <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.varyag-onego.ru</a>
+                <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;varyag@onego.ru</div>
+            </div>
         </div>
-        <div class="projectName"><p>@Model.Name</p></div>
-        <div class="details-top" style="margin:0 10px 10px 10px">
-            <div class="sheme" style="padding:10px;background-color:white;border-radius:10px;">
+    </div>
+
+
+
+
+    <div class="projectName"><p>@Model.Name</p></div>
+    <div class="projectsDetailsTop">
+        <div class="sheme-TTH">
+            <div class="shemeFlex">
                 <div class="fotorama" data-allowfullscreen="native">
                     <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" />
                 </div>
             </div>
-            <div class="TTH-details" style="padding:10px;margin-top:10px;background-color:white;border-radius:10px;width:auto">
-                <table>
+            <div class="TTH-detailsFlex">
+                <table style="margin-bottom:5px">
                     <tr>
                         <td colspan="3"><h4>Характеристики</h4></td>
                     </tr>
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
+                        <td id="details" class="characteristic">Длина корпуса наибольшая</td>
+                        <td id="shortCharacteristicName" class="characteristic">Длина корпуса</td>
                         <td class="value">@Model.Length&nbsp;м.</td>
                     </tr>
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
+                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
+                        <td id="shortCharacteristicName" class="characteristic">Ширина корпуса</td>
                         <td class="value">@Model.Windth&nbsp;м.</td>
                     </tr>
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                        <td id="shortCharacteristicName" class="characteristic">Осадка судна</td>
                         <td class="value">@Model.Deep&nbsp;м.</td>
                     </tr>
                     @if (@Model.Volume != null)
                     {
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Водоизмещение</td>
                             <td class="value">@Model.Volume&nbsp;т.</td>
                         </tr>
                     }
                     @if (@Model.Mass != null)
                     {
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Вес корпуса</td>
                             <td class="value">@Model.Mass&nbsp;кг.</td>
                         </tr>
                     }
                     @if (@Model.NumberOfOars != null)
                     {
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Весла</td>
                             <td class="value">@Model.NumberOfOars&nbsp;шт.</td>
                         </tr>
                     }
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                        <td id="shortCharacteristicName" class="characteristic">Мощность двигателя</td>
                         @if (@Model.EnginePower != null)
                         {
                             <td class="value">@Model.EnginePower&nbsp;л.с.</td>
@@ -75,7 +200,8 @@
                         }
                     </tr>
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
+                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
+                        <td id="shortCharacteristicName" class="characteristic">Скорость (двигатель)</td>
                         @if (@Model.Speed != null)
                         {
                             <td class="value">@Model.Speed&nbsp;узлов</td>
@@ -86,7 +212,8 @@
                         }
                     </tr>
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                        <td id="shortCharacteristicName" class="characteristic">Площадь парусности</td>
                         @if (@Model.SailArea != null)
                         {
                             <td class="value">@Model.SailArea&nbsp;м<sup>2</sup></td>
@@ -97,7 +224,8 @@
                         }
                     </tr>
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                        <td id="shortCharacteristicName" class="characteristic">Спальные места</td>
                         @if (@Model.SleepingAreas != null)
                         {
                             <td class="value">@Model.SleepingAreas&nbsp;шт.</td>
@@ -108,7 +236,8 @@
                         }
                     </tr>
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                        <td id="shortCharacteristicName" class="characteristic">Кол-во пассажиров</td>
                         @if (@Model.PassengerCap != null)
                         {
                             <td class="value">@Model.PassengerCap&nbsp;чел.</td>
@@ -119,7 +248,8 @@
                         }
                     </tr>
                     <tr>
-                        <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                        <td id="shortCharacteristicName" class="characteristic">Запас топлива</td>
                         @if (@Model.FuelCap != null)
                         {
                             <td class="value">@Model.FuelCap&nbsp;л.</td>
@@ -132,24 +262,31 @@
                     @if (@Model.FreshWaterCap != null)
                     {
                         <tr>
-                            <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Запас пресной воды</td>
                             <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
                         </tr>
                     }
                 </table>
                 <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.Price&nbsp;тыс.р.</div>
             </div>
-            <div class="gallery" style="padding:10px;background-color:white;border-radius:10px;margin-left:10px;">
-                <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
-                    @await Component.InvokeAsync("Fotorama", new { shipProjectId = Model.ProjectID })
-                </div>
+        </div>
+        <div class="galleryFlex">
+            <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                @await Component.InvokeAsync("Fotorama", new { shipProjectId = Model.ProjectID })
             </div>
         </div>
-        <div style="display:flex;flex-direction:column;padding:10px;background-color:white;border-radius:10px;margin: 0 10px 10px 10px;">
-            <div class="desc-top">Описание:</div>
-            <div class="description">
-                @Html.Raw(Model.Description)
-            </div>
+    </div>
+    <div style="display:flex;flex-direction:column;padding:10px;">
+        <div style="display:flex;justify-content:flex-start;font-size:1.3rem;font-weight:bold;align-items:center;">
+            <div class="desc-top" onclick="$('.description').css('display','block'), $('.projectNews').css('display','none'), $('.newsOfProject').css('background-color','#c3e3ff'), $('.desc-top').css('background-color','white')"><div>Описание:</div></div>
+            <div class="newsOfProject" onclick="$('.description').css('display','none'), $('.projectNews').css('display','flex'), $('.newsOfProject').css('background-color','white'), $('.desc-top').css('background-color','#c3e3ff')">Новости о проекте</div>
+        </div>
+        <div class="description">
+            @Html.Raw(Model.Description)
+        </div>
+        <div class="projectNews">
+            @await Component.InvokeAsync("ProjectNews", new { projectName = Model.Name })
         </div>
     </div>
 </div>
