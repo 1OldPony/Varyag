@@ -31,7 +31,7 @@ namespace Varyag.Controllers
             //{
                 List<News> news = await db.News.ToListAsync();
                 List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
-                lastNews = sortedNews.AsEnumerable().Take(3).ToList();
+                lastNews = sortedNews.AsEnumerable().Take(2).ToList();
             //}
             //catch (Exception e)
             //{

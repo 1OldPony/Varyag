@@ -335,9 +335,9 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            news.ShortFotoPreview = "../"+news.ShortFotoPreview;
-            news.MiddleFotoPreview = "../" + news.MiddleFotoPreview;
-            news.WideFotoPreview = "../" + news.WideFotoPreview;
+            //news.ShortFotoPreview = "../"+news.ShortFotoPreview;
+            //news.MiddleFotoPreview = "../" + news.MiddleFotoPreview;
+            //news.WideFotoPreview = "../" + news.WideFotoPreview;
 
             ViewBag.RefreshEditor = new EditorModel()
             {

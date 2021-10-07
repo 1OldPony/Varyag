@@ -28,7 +28,7 @@ namespace Varyag.Models
             switch (forWhat)
             {
                 case "preview":
-                    fotoPath = "../" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
+                    fotoPath = "/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
                         + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
                     break;
                 case "gallery":
