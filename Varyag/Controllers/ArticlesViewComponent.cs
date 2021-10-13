@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
@@ -21,8 +18,12 @@ namespace Varyag.Controllers
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            List<Article> articles = await db.Article.ToListAsync();
-            return View(articles);
+            var articles = await db.Article.ToListAsync();
+
+            List<Article> Articles = articles.Take(2).ToList();
+            //lastNews = sortedNews.AsEnumerable().Take(2).ToList();
+
+            return View(Articles);
         }
     }
 }

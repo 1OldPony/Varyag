@@ -1,0 +1,95 @@
+﻿
+<form asp-action="SaveTempFoto" asp-route-actionType="create" id="fotoEditorForm" enctype="multipart/form-data">
+    <div class="newsFotoEditor">
+        <div style="grid-area:loader">
+            <input type="file" name="newsFoto" required /><br />
+            <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
+            <input type="button" id="newsFotoUpload" value="Загрузить" />
+        </div>
+    </div>
+</form>
+<div class="newsFotoEditor">
+    <div id="editorShort" class="editor">
+        <div class="partNewsElementViewShort" id="creator">
+            <div class="annotation">
+                <div class="annotationText" id="shortFotoNewsText">
+                    @ViewBag.RefreshEditor.shortStory
+                </div>
+            </div>
+        </div>
+        <div class="newsFotoEditorControls">
+            <div id="top" class="controlGroup">
+                <div class="controlGroup">
+                    <div>Ось Х</div>
+                    <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.RefreshEditor.shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                </div>
+                <div class="controlGroup">
+                    <div>Ось Y</div>
+                    <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.RefreshEditor.shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                </div>
+                <div class="controlGroup">
+                    <div>Масштаб</div>
+                    <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.RefreshEditor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                </div>
+            </div>
+            <textarea rows="6" cols="30" maxlength="55" name="shortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+        </div>
+    </div>
+    <div id="editorMiddle" class="editor">
+        <div class="partNewsElementViewMiddle" id="creator">
+            <div class="annotation">
+                <div class="annotationText" id="middleFotoNewsText">
+                    @ViewBag.RefreshEditor.middleStory
+                </div>
+            </div>
+        </div>
+        <div class="newsFotoEditorControls">
+            <div id="top" class="controlGroup">
+                <div class="controlGroup">
+                    <div>Ось Х</div>
+                    <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.RefreshEditor.middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                </div>
+                <div class="controlGroup">
+                    <div>Ось Y</div>
+                    <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.RefreshEditor.middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                </div>
+                <div class="controlGroup">
+                    <div>Масштаб</div>
+                    <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.RefreshEditor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                </div>
+            </div>
+            <textarea rows="6" cols="30" maxlength="55" name="middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
+        </div>
+    </div>
+    <div id="editorWide" class="editor">
+        <div class="partNewsElementViewWide" id="creator">
+            <div class="annotation">
+                <div class="annotationText" id="wideFotoNewsText">
+                    @ViewBag.RefreshEditor.wideStory
+                </div>
+            </div>
+        </div>
+        <div class="newsFotoEditorControls">
+            <div id="top" class="controlGroup">
+                <div class="controlGroup">
+                    <div>Ось Х</div>
+                    <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.RefreshEditor.wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                </div>
+                <div class="controlGroup">
+                    <div>Ось Y</div>
+                    <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.RefreshEditor.wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                </div>
+                <div class="controlGroup">
+                    <div>Масштаб</div>
+                    <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.RefreshEditor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                </div>
+            </div>
+            <textarea rows="6" cols="30" maxlength="90" name="wideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
+        </div>
+        @*<div hidden>
+                <input type="text" id="headerRefresh" name="headerRefresh" />
+                <input type="text" id="keyWordRefresh" name="keyWordRefresh" />
+                <input type="text" id="newsDateRefresh" name="newsDateRefresh" />
+            </div>*@
+    </div>
+</div>

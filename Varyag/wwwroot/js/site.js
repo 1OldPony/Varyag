@@ -177,6 +177,30 @@ function newsSaveButtonDisable() {
         $("#newsSaveButton").attr("disabled", "disabled");
 }
 
+////////////////////////Обслуживаем механизм создания превью статей//////////////////////////
+function refreshPreviewEditor() {
+    //$('#sortScreen').css('display', 'block');
+    //$('#sortScreen2').css('display', 'block');
+    //$('.sortOptions').css('color', 'lightgrey');
+
+    let response = await fetch('/article/SaveTempFoto', {
+        method: 'POST',
+        body: new FormData(fotoEditorForm)
+    });
+    //document.getElementById('fotoEditorForm')
+
+    let result = await response.json();
+    $('#previewEditorForm').html(result);
+
+    //$('#previewEditorForm').load("../Articles/SaveTempFoto?fotoType=" + category + "&plitca=true" + "&lengthSort=" + lengthSort, function () {
+    //    if ($('#sortScreen').css('display') == 'block') {
+    //        $('#sortScreen').css('display', 'none');
+    //        $('.sortOptions').css('color', '#183f61');
+    //        $('#sortScreen2').css('display', 'none');
+    //    }
+    //});
+}
+
 ////////////////////////////Создаем список связанных проектов//////////////////////////////
 function newsLinkToProject(firstTimeEdit) {
     let projects = $("[name='LinkedProjectNames']").val();

@@ -8,7 +8,12 @@
 <div style="max-width:1700px;margin:auto">
     <h1>Создать статью</h1>
     <hr />
+    
+    <div id="previewEditorForm">
+        @await Component.InvokeAsync("ArticlePreview")
+    </div>
 
+    <hr />
     <form asp-action="fillArticle" enctype="multipart/form-data">
         <div style="display:flex;flex-direction:column">
             <div>Порядковый номер блока текст-галлерея</div>
@@ -35,8 +40,8 @@
                         <img style="width:304px;margin:10px 10px 0 0;" src='@Url.Content(LittleHelper.PathAdapter(ViewBag.PathForPreview+"\\ВерфьВаряг(превью).jpg","articlePreview"))' />
                     }
                     <div style="display:flex;flex-direction:column;">
-                        <div>Фото на превью(нужно нажать кнопку "Загрузить")</div>
-                        <input type="file" name="preview" />
+                        @*<div>Фото на превью(нужно нажать кнопку "Загрузить")</div>
+                        <input type="file" name="preview" />*@
                         <div>Выберите тип статьи</div>
                         <select name="articleType">
                             @if (ViewBag.Type == "Заказы для кино")
@@ -51,7 +56,7 @@
                             }
                             @if (ViewBag.Type == null)
                             {
-                                <option value="Заказы для кино" >Заказы для кино</option>
+                                <option value="Заказы для кино">Заказы для кино</option>
                                 <option value="Заказы для музеев">Заказы для музеев</option>
                             }
                         </select>

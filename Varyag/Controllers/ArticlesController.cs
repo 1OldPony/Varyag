@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
+using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
@@ -163,13 +164,38 @@ namespace Varyag.Controllers
             }
         }
 
+
+        //[HttpPost]
+        public IActionResult SaveTempFoto(IFormFile newsFoto,
+            string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
+            string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
+            string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
+            string wideStory, int? newId)
+        {
+            return ViewComponent("ArticlePreview", new {
+                newsFoto,fotoType,shortFotoScale,shortFotoX,shortFotoY,shortStory,middleFotoScale,middleFotoX,
+                middleFotoY,middleStory,wideFotoScale,wideFotoX,wideFotoY,wideStory,newId });
+        }
+        //private async Task SaveImgAsync(string name, IFormFile newsFoto)
+        //{
+        //    string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
+        //    LittleHelper.DirectoryExistCheck(path);
+
+        //    using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+        //    {
+        //        await newsFoto.CopyToAsync(fileStream);
+        //    }
+        //}
+
+
+
         public async void FillPreview(IFormFileCollection preview, string previewPath)
         {
-                string name = "ВерфьВаряг(превью).jpg";
-                using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
-                {
-                    await preview[0].CopyToAsync(fileStream);
-                }
+            string name = "ВерфьВаряг(превью).jpg";
+            using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
+            {
+                await preview[0].CopyToAsync(fileStream);
+            }
         }
 
         // GET: Articles/Create
@@ -177,6 +203,22 @@ namespace Varyag.Controllers
             string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8, string PTG9, string PTG10, string PTG11, string PTG12, 
             string PTG13, string PTG14, string PTG15, string type)
         {
+            ViewBag.RefreshEditor = new EditorModel()
+            {
+                shortFotoScale = shortFotoScale,
+                shortFotoX = shortFotoX,
+                shortFotoY = shortFotoY,
+                shortStory = shortStory,
+                middleFotoScale = middleFotoScale,
+                middleFotoX = middleFotoX,
+                middleFotoY = middleFotoY,
+                middleStory = middleStory,
+                wideFotoScale = wideFotoScale,
+                wideFotoX = wideFotoX,
+                wideFotoY = wideFotoY,
+                wideStory = wideStory
+            };
+
             if (PTPREVIEW!=null)
             {
                 ViewBag.PathForPreview = PTPREVIEW;

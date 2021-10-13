@@ -1,201 +1,48 @@
 ﻿@model List<Varyag.Models.NewsViewModel>
 
 
-<div class="previewsBlock">
-    <div class="newsPreviewBlock">
-        <a asp-action="AllNews" style="height:100%;">
-            <div class="headerAbout" style="font-size:1.5rem;margin:0 20px 0 20px;justify-content:space-between;height:100%;">
-                <div class="borderAbout"></div>
-                <div class="longPreviewBlockText">Узнать о деятельности нашего предприятия и жизни построенных нами кораблей можно в разделе новостей</div>
-                <div class="shortPreviewBlockText">Узнать последние события можно разделе новостей</div>
-                <div class="borderAbout"></div>
-            </div>
-        </a>
-        <div class="partNews" id="shortStory" style="width:100%">
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).ShortFotoPreview);background-position-x:@Model.ElementAt(0).ShortImgX;background-position-y:@Model.ElementAt(0).ShortImgY;background-size:@Model.ElementAt(0).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(0).ShortStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <div style="width:10px;height:10px"></div>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(1).ShortStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="partNews" id="middleStory" style="width:100%">
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).MiddleFotoPreview);background-position-x:@Model.ElementAt(0).MiddleImgX;background-position-y:@Model.ElementAt(0).MiddleImgY;background-size:@Model.ElementAt(0).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(0).MiddleStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).MiddleFotoPreview);background-position-x:@Model.ElementAt(1).MiddleImgX;background-position-y:@Model.ElementAt(1).MiddleImgY;background-size:@Model.ElementAt(1).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(1).MiddleStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="partNews" id="wideStory" style="width:100%">
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
-                <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(0).WideFotoPreview);background-position-x:@Model.ElementAt(0).WideImgX;background-position-y:@Model.ElementAt(0).WideImgY;background-size:@Model.ElementAt(0).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(0).WideStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-                <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(1).WideFotoPreview);background-position-x:@Model.ElementAt(1).WideImgX;background-position-y:@Model.ElementAt(1).WideImgY;background-size:@Model.ElementAt(1).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(1).WideStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="articlesPreviewBlock">
-        <a asp-action="AllArticles" style="height:100%;">
-            <div class="headerAbout" style="font-size:1.5rem;margin:0 20px 0 20px;justify-content:space-between;height:100%;">
-                <div class="borderAbout"></div>
-                <div class="longPreviewBlockText">Статьи о наших работах для музеев, а также отечественных и зарубежных киностудий можно посмотреть тут</div>
-                <div class="shortPreviewBlockText">Отдельные статьи о наших заказах для музеев и кино</div>
-                <div class="borderAbout"></div>
-            </div>
-        </a>
-        <div class="partNews" id="shortStory" style="width:100%">
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).ShortFotoPreview);background-position-x:@Model.ElementAt(0).ShortImgX;background-position-y:@Model.ElementAt(0).ShortImgY;background-size:@Model.ElementAt(0).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(0).ShortStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <div class="newsPreviewSpace"></div>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(1).ShortStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="partNews" id="middleStory" style="width:100%">
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).MiddleFotoPreview);background-position-x:@Model.ElementAt(0).MiddleImgX;background-position-y:@Model.ElementAt(0).MiddleImgY;background-size:@Model.ElementAt(0).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(0).MiddleStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).MiddleFotoPreview);background-position-x:@Model.ElementAt(1).MiddleImgX;background-position-y:@Model.ElementAt(1).MiddleImgY;background-size:@Model.ElementAt(1).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(1).MiddleStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="partNews" id="wideStory" style="width:100%">
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
-                <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(0).WideFotoPreview);background-position-x:@Model.ElementAt(0).WideImgX;background-position-y:@Model.ElementAt(0).WideImgY;background-size:@Model.ElementAt(0).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(0).WideStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-                <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(1).WideFotoPreview);background-position-x:@Model.ElementAt(1).WideImgX;background-position-y:@Model.ElementAt(1).WideImgY;background-size:@Model.ElementAt(1).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(1).WideStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-
-
-<div style="display: none;flex-direction: column;align-items: center;position:relative;background-color:white;margin-top:10px;border-radius:10px;padding-bottom:10px;margin:10px 10px 0 10px;">
-    <a asp-action="AllNews">
-        <div class="headerAbout">
+<div class="newsPreviewBlock">
+    <a asp-action="AllNews" style="height:100%;">
+        <div class="headerAbout" style="font-size:1.5rem;margin:0 20px 0 20px;justify-content:space-between;height:100%;">
             <div class="borderAbout"></div>
-            <div>Узнать о деятельности нашего предприятия и жизни построенных нами кораблей можно в разделе новостей</div>
+            <div class="longPreviewBlockText">Узнать о деятельности нашего предприятия и жизни построенных нами кораблей можно в разделе новостей</div>
+            <div class="shortPreviewBlockText">Узнать последние события можно разделе новостей</div>
             <div class="borderAbout"></div>
         </div>
     </a>
-    <div class="partNews" id="shortStory">
+    <div class="partNews" id="shortStory" style="width:100%">
         <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
             <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).ShortFotoPreview);background-position-x:@Model.ElementAt(0).ShortImgX;background-position-y:@Model.ElementAt(0).ShortImgY;background-size:@Model.ElementAt(0).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
                 <div class="annotation">
-                    <div class="annotationText">
+                    <div class="annotationText" style="font-size:1.2rem">
                         @Html.Raw(Model.ElementAt(0).ShortStory)
                     </div>
                 </div>
             </div>
         </a>
+        <div style="width:10px;height:10px"></div>
         <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-            <div class="partNewsElement" id="middleElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
+            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
                 <div class="annotation">
-                    <div class="annotationText">
+                    <div class="annotationText" style="font-size:1.2rem">
                         @Html.Raw(Model.ElementAt(1).ShortStory)
                     </div>
                 </div>
             </div>
         </a>
-        @*<a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(2).NewsId">
-            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(2).ShortFotoPreview);background-position-x:@Model.ElementAt(2).ShortImgX;background-position-y:@Model.ElementAt(2).ShortImgY;background-size:@Model.ElementAt(2).ShortImgScale auto;background-repeat:no-repeat;">
-                <div class="annotation">
-                    <div class="annotationText">
-                        @Html.Raw(Model.ElementAt(2).ShortStory)
-                    </div>
-                </div>
-            </div>
-        </a>*@
     </div>
-    <div class="partNews" id="middleStory">
+    <div class="partNews" id="middleStory" style="width:100%">
         <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
-            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).MiddleFotoPreview);background-position-x:@Model.ElementAt(0).MiddleImgX;background-position-y:@Model.ElementAt(0).MiddleImgY;background-size:@Model.ElementAt(0).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
+            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).MiddleFotoPreview);background-position-x:@Model.ElementAt(0).MiddleImgX;background-position-y:@Model.ElementAt(0).MiddleImgY;background-size:@Model.ElementAt(0).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
                 <div class="annotation">
-                    <div class="annotationText">
+                    <div class="annotationText" style="font-size:1.2rem">
                         @Html.Raw(Model.ElementAt(0).MiddleStory)
                     </div>
                 </div>
             </div>
         </a>
         <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).MiddleFotoPreview);background-position-x:@Model.ElementAt(1).MiddleImgX;background-position-y:@Model.ElementAt(1).MiddleImgY;background-size:@Model.ElementAt(1).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
+            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).MiddleFotoPreview);background-position-x:@Model.ElementAt(1).MiddleImgX;background-position-y:@Model.ElementAt(1).MiddleImgY;background-size:@Model.ElementAt(1).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
                 <div class="annotation">
                     <div class="annotationText">
                         @Html.Raw(Model.ElementAt(1).MiddleStory)
@@ -203,19 +50,10 @@
                 </div>
             </div>
         </a>
-        @*<a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(2).NewsId">
-            <div class="partNewsElement" style="background-image:url(@Model.ElementAt(2).MiddleFotoPreview);background-position-x:@Model.ElementAt(2).MiddleImgX;background-position-y:@Model.ElementAt(2).MiddleImgY;background-size:@Model.ElementAt(2).MiddleImgScale auto;background-repeat:no-repeat;">
-                <div class="annotation">
-                    <div class="annotationText">
-                        @Html.Raw(Model.ElementAt(2).MiddleStory)
-                    </div>
-                </div>
-            </div>
-        </a>*@
     </div>
-    <div class="partNews" id="wideStory">
+    <div class="partNews" id="wideStory" style="width:100%">
         <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
-            <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(0).WideFotoPreview);background-position-x:@Model.ElementAt(0).WideImgX;background-position-y:@Model.ElementAt(0).WideImgY;background-size:@Model.ElementAt(0).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
+            <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(0).WideFotoPreview);background-position-x:@Model.ElementAt(0).WideImgX;background-position-y:@Model.ElementAt(0).WideImgY;background-size:@Model.ElementAt(0).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
                 <div class="annotation">
                     <div class="annotationText">
                         @Html.Raw(Model.ElementAt(0).WideStory)
@@ -224,7 +62,7 @@
             </div>
         </a>
         <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
-            <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(1).WideFotoPreview);background-position-x:@Model.ElementAt(1).WideImgX;background-position-y:@Model.ElementAt(1).WideImgY;background-size:@Model.ElementAt(1).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
+            <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(1).WideFotoPreview);background-position-x:@Model.ElementAt(1).WideImgX;background-position-y:@Model.ElementAt(1).WideImgY;background-size:@Model.ElementAt(1).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
                 <div class="annotation">
                     <div class="annotationText">
                         @Html.Raw(Model.ElementAt(1).WideStory)
@@ -232,20 +70,10 @@
                 </div>
             </div>
         </a>
-        @*<a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(2).NewsId">
-            <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(2).WideFotoPreview);background-position-x:@Model.ElementAt(2).WideImgX;background-position-y:@Model.ElementAt(2).WideImgY;background-size:@Model.ElementAt(2).WideImgScale auto;background-repeat:no-repeat;">
-                <div class="annotation">
-                    <div class="annotationText">
-                        @Html.Raw(Model.ElementAt(2).WideStory)
-                    </div>
-                </div>
-            </div>
-        </a>*@
     </div>
 </div>
 
-
-@*<div id="news" class="about">
+@*<div style="display: none;flex-direction: column;align-items: center;position:relative;background-color:white;margin-top:10px;border-radius:10px;padding-bottom:10px;margin:10px 10px 0 10px;">
         <a asp-action="AllNews">
             <div class="headerAbout">
                 <div class="borderAbout"></div>
@@ -272,15 +100,6 @@
                     </div>
                 </div>
             </a>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(2).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(2).ShortFotoPreview);background-position-x:@Model.ElementAt(2).ShortImgX;background-position-y:@Model.ElementAt(2).ShortImgY;background-size:@Model.ElementAt(2).ShortImgScale auto;background-repeat:no-repeat;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(2).ShortStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
         </div>
         <div class="partNews" id="middleStory">
             <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
@@ -301,15 +120,6 @@
                     </div>
                 </div>
             </a>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(2).NewsId">
-                <div class="partNewsElement" style="background-image:url(@Model.ElementAt(2).MiddleFotoPreview);background-position-x:@Model.ElementAt(2).MiddleImgX;background-position-y:@Model.ElementAt(2).MiddleImgY;background-size:@Model.ElementAt(2).MiddleImgScale auto;background-repeat:no-repeat;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(2).MiddleStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
         </div>
         <div class="partNews" id="wideStory">
             <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
@@ -326,15 +136,6 @@
                     <div class="annotation">
                         <div class="annotationText">
                             @Html.Raw(Model.ElementAt(1).WideStory)
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(2).NewsId">
-                <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(2).WideFotoPreview);background-position-x:@Model.ElementAt(2).WideImgX;background-position-y:@Model.ElementAt(2).WideImgY;background-size:@Model.ElementAt(2).WideImgScale auto;background-repeat:no-repeat;">
-                    <div class="annotation">
-                        <div class="annotationText">
-                            @Html.Raw(Model.ElementAt(2).WideStory)
                         </div>
                     </div>
                 </div>

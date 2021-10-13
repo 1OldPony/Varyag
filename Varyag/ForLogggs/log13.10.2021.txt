@@ -1,0 +1,1462 @@
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (2,882ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (1,435ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ArticleId], [a].[ArticleName], [a].[ArticleRoute], [a].[ArticleType], [a].[PathToGallery1], [a].[PathToGallery10], [a].[PathToGallery11], [a].[PathToGallery12], [a].[PathToGallery13], [a].[PathToGallery14], [a].[PathToGallery15], [a].[PathToGallery2], [a].[PathToGallery3], [a].[PathToGallery4], [a].[PathToGallery5], [a].[PathToGallery6], [a].[PathToGallery7], [a].[PathToGallery8], [a].[PathToGallery9], [a].[Text1], [a].[Text10], [a].[Text11], [a].[Text12], [a].[Text13], [a].[Text14], [a].[Text15], [a].[Text2], [a].[Text3], [a].[Text4], [a].[Text5], [a].[Text6], [a].[Text7], [a].[Text8], [a].[Text9]
+FROM [Article] AS [a]
+Executed DbCommand (896ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (896ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 17697.2994ms.
+Executed ViewResult - view Index executed in 17697.2994ms.
+Executed ViewResult - view Index executed in 17697.2994ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 20109.2861ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 20109.2861ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 20109.2861ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request finished in 21724.8866ms 200 text/html; charset=utf-8
+Request finished in 21724.8866ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request finished in 21724.8866ms 200 text/html; charset=utf-8
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request finished in 2676.4328ms 200 application/javascript
+Request finished in 2676.4328ms 200 application/javascript
+Request finished in 2676.4328ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request finished in 699.0635ms 200 image/png
+Request finished in 699.0635ms 200 image/png
+Request finished in 699.0635ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 596.5531ms 200 image/png
+Request finished in 596.5531ms 200 image/png
+Request finished in 596.5531ms 200 image/png
+Request finished in 5316.8579ms 200 application/javascript
+Request finished in 5316.8579ms 200 application/javascript
+Request finished in 5316.8579ms 200 application/javascript
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request finished in 3951.5915ms 200 image/png
+Request finished in 3951.5915ms 200 image/png
+Request finished in 3951.5915ms 200 image/png
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 3231.109ms 200 image/png
+Request finished in 3231.109ms 200 image/png
+Request finished in 3231.109ms 200 image/png
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 4395.1199ms 200 image/png
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 5837.6678ms 200 image/png
+Request finished in 4395.1199ms 200 image/png
+Request finished in 4395.1199ms 200 image/png
+Request finished in 5837.6678ms 200 image/png
+Request finished in 5837.6678ms 200 image/png
+Request finished in 4717.596ms 200 image/png
+Request finished in 4717.596ms 200 image/png
+Request finished in 4717.596ms 200 image/png
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Request finished in 4859.4622ms 200 image/png
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 5082.075ms 200 image/png
+Request finished in 4859.4622ms 200 image/png
+Request finished in 4859.4622ms 200 image/png
+Request finished in 5082.075ms 200 image/png
+Request finished in 5082.075ms 200 image/png
+Request finished in 3870.1836ms 200 text/css
+Request finished in 3870.1836ms 200 text/css
+Request finished in 3870.1836ms 200 text/css
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Request finished in 5687.8999ms 200 image/png
+Request finished in 5687.8999ms 200 image/png
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Request finished in 5687.8999ms 200 image/png
+Request finished in 6693.9143ms 200 image/png
+Request finished in 6693.9143ms 200 image/png
+Request finished in 6693.9143ms 200 image/png
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 7520.6448ms 200 image/png
+Request finished in 7520.6448ms 200 image/png
+Request finished in 6345.1703ms 200 text/css
+Request finished in 6345.1703ms 200 text/css
+Request finished in 6345.1703ms 200 text/css
+Request finished in 7520.6448ms 200 image/png
+Request finished in 7860.6555ms 200 image/png
+Request finished in 7860.6555ms 200 image/png
+Request finished in 7860.6555ms 200 image/png
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Request finished in 6543.7647ms 200 image/png
+Request finished in 6543.7647ms 200 image/png
+Request finished in 6543.7647ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request finished in 9566.3883ms 200 image/png
+Request finished in 9566.3883ms 200 image/png
+Request finished in 9566.3883ms 200 image/png
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Request finished in 10743.9099ms 200 application/javascript
+Request finished in 10743.9099ms 200 application/javascript
+Request finished in 10743.9099ms 200 application/javascript
+Request finished in 837.0681ms 200 image/jpeg
+Request finished in 837.0681ms 200 image/jpeg
+Request finished in 837.0681ms 200 image/jpeg
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Request finished in 3519.2544ms 200 image/jpeg
+Request finished in 3519.2544ms 200 image/jpeg
+Request finished in 3519.2544ms 200 image/jpeg
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 4502.6249ms 200 image/jpeg
+Request finished in 4502.6249ms 200 image/jpeg
+Request finished in 4502.6249ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2051602.6251ms.
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2051602.6251ms.
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2051602.6251ms.
+Executing ViewResult, running view Create.
+Executing ViewResult, running view Create.
+Executing ViewResult, running view Create.
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 2053021.7333ms
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 2053021.7333ms
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 2053021.7333ms
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Request finished in 2054612.2055ms 500 text/html; charset=utf-8
+Request finished in 2054612.2055ms 500 text/html; charset=utf-8
+Request finished in 2054612.2055ms 500 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/  
+Request starting HTTP/2.0 GET https://localhost:44325/  
+Request starting HTTP/2.0 GET https://localhost:44325/  
+Executing endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executing endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executing endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Route matched with {action = "Index", controller = "About"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Varyag.Controllers.AboutController (Varyag).
+Route matched with {action = "Index", controller = "About"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Varyag.Controllers.AboutController (Varyag).
+Route matched with {action = "Index", controller = "About"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Varyag.Controllers.AboutController (Varyag).
+Executing action method Varyag.Controllers.AboutController.Index (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.AboutController.Index (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.AboutController.Index (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.AboutController.Index (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0424ms.
+Executed action method Varyag.Controllers.AboutController.Index (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0424ms.
+Executed action method Varyag.Controllers.AboutController.Index (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0424ms.
+Executing ViewResult, running view Index.
+Executing ViewResult, running view Index.
+Executing ViewResult, running view Index.
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ArticleId], [a].[ArticleName], [a].[ArticleRoute], [a].[ArticleType], [a].[PathToGallery1], [a].[PathToGallery10], [a].[PathToGallery11], [a].[PathToGallery12], [a].[PathToGallery13], [a].[PathToGallery14], [a].[PathToGallery15], [a].[PathToGallery2], [a].[PathToGallery3], [a].[PathToGallery4], [a].[PathToGallery5], [a].[PathToGallery6], [a].[PathToGallery7], [a].[PathToGallery8], [a].[PathToGallery9], [a].[Text1], [a].[Text10], [a].[Text11], [a].[Text12], [a].[Text13], [a].[Text14], [a].[Text15], [a].[Text2], [a].[Text3], [a].[Text4], [a].[Text5], [a].[Text6], [a].[Text7], [a].[Text8], [a].[Text9]
+FROM [Article] AS [a]
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ArticleId], [a].[ArticleName], [a].[ArticleRoute], [a].[ArticleType], [a].[PathToGallery1], [a].[PathToGallery10], [a].[PathToGallery11], [a].[PathToGallery12], [a].[PathToGallery13], [a].[PathToGallery14], [a].[PathToGallery15], [a].[PathToGallery2], [a].[PathToGallery3], [a].[PathToGallery4], [a].[PathToGallery5], [a].[PathToGallery6], [a].[PathToGallery7], [a].[PathToGallery8], [a].[PathToGallery9], [a].[Text1], [a].[Text10], [a].[Text11], [a].[Text12], [a].[Text13], [a].[Text14], [a].[Text15], [a].[Text2], [a].[Text3], [a].[Text4], [a].[Text5], [a].[Text6], [a].[Text7], [a].[Text8], [a].[Text9]
+FROM [Article] AS [a]
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ArticleId], [a].[ArticleName], [a].[ArticleRoute], [a].[ArticleType], [a].[PathToGallery1], [a].[PathToGallery10], [a].[PathToGallery11], [a].[PathToGallery12], [a].[PathToGallery13], [a].[PathToGallery14], [a].[PathToGallery15], [a].[PathToGallery2], [a].[PathToGallery3], [a].[PathToGallery4], [a].[PathToGallery5], [a].[PathToGallery6], [a].[PathToGallery7], [a].[PathToGallery8], [a].[PathToGallery9], [a].[Text1], [a].[Text10], [a].[Text11], [a].[Text12], [a].[Text13], [a].[Text14], [a].[Text15], [a].[Text2], [a].[Text3], [a].[Text4], [a].[Text5], [a].[Text6], [a].[Text7], [a].[Text8], [a].[Text9]
+FROM [Article] AS [a]
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ArticleId], [a].[ArticleName], [a].[ArticleRoute], [a].[ArticleType], [a].[PathToGallery1], [a].[PathToGallery10], [a].[PathToGallery11], [a].[PathToGallery12], [a].[PathToGallery13], [a].[PathToGallery14], [a].[PathToGallery15], [a].[PathToGallery2], [a].[PathToGallery3], [a].[PathToGallery4], [a].[PathToGallery5], [a].[PathToGallery6], [a].[PathToGallery7], [a].[PathToGallery8], [a].[PathToGallery9], [a].[Text1], [a].[Text10], [a].[Text11], [a].[Text12], [a].[Text13], [a].[Text14], [a].[Text15], [a].[Text2], [a].[Text3], [a].[Text4], [a].[Text5], [a].[Text6], [a].[Text7], [a].[Text8], [a].[Text9]
+FROM [Article] AS [a]
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 447.9171ms.
+Executed ViewResult - view Index executed in 447.9171ms.
+Executed ViewResult - view Index executed in 447.9171ms.
+Executed ViewResult - view Index executed in 447.9171ms.
+Executed ViewResult - view Index executed in 447.9171ms.
+Executed ViewResult - view Index executed in 447.9171ms.
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 719.8615ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 719.8615ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 719.8615ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 719.8615ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 719.8615ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 719.8615ms
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request finished in 165.2949ms 200 image/png
+Request finished in 165.2949ms 200 image/png
+Request finished in 165.2949ms 200 image/png
+Request finished in 165.2949ms 200 image/png
+Request finished in 165.2949ms 200 image/png
+Request finished in 165.2949ms 200 image/png
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 1048.9145ms 200 text/html; charset=utf-8
+Request finished in 1048.9145ms 200 text/html; charset=utf-8
+Request finished in 1048.9145ms 200 text/html; charset=utf-8
+Request finished in 1048.9145ms 200 text/html; charset=utf-8
+Request finished in 1048.9145ms 200 text/html; charset=utf-8
+Request finished in 1048.9145ms 200 text/html; charset=utf-8
+Request finished in 317.336ms 200 text/css
+Request finished in 317.336ms 200 text/css
+Request finished in 317.336ms 200 text/css
+Request finished in 317.336ms 200 text/css
+Request finished in 317.336ms 200 text/css
+Request finished in 317.336ms 200 text/css
+Request finished in 306.3541ms 200 image/png
+Request finished in 306.3541ms 200 image/png
+Request finished in 306.3541ms 200 image/png
+Request finished in 306.3541ms 200 image/png
+Request finished in 306.3541ms 200 image/png
+Request finished in 306.3541ms 200 image/png
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 663.5059ms 200 image/png
+Request finished in 663.5059ms 200 image/png
+Request finished in 663.5059ms 200 image/png
+Request finished in 663.5059ms 200 image/png
+Request finished in 663.5059ms 200 image/png
+Request finished in 663.5059ms 200 image/png
+Request finished in 964.0502ms 200 text/css
+Request finished in 964.0502ms 200 text/css
+Request finished in 964.0502ms 200 text/css
+Request finished in 964.0502ms 200 text/css
+Request finished in 964.0502ms 200 text/css
+Request finished in 964.0502ms 200 text/css
+Request finished in 299.7473ms 200 image/png
+Request finished in 299.7473ms 200 image/png
+Request finished in 299.7473ms 200 image/png
+Request finished in 299.7473ms 200 image/png
+Request finished in 299.7473ms 200 image/png
+Request finished in 299.7473ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 1489.1177ms 200 image/png
+Request finished in 1489.1177ms 200 image/png
+Request finished in 1489.1177ms 200 image/png
+Request finished in 1489.1177ms 200 image/png
+Request finished in 1489.1177ms 200 image/png
+Request finished in 1489.1177ms 200 image/png
+Request finished in 966.4714ms 200 image/png
+Request finished in 966.4714ms 200 image/png
+Request finished in 966.4714ms 200 image/png
+Request finished in 966.4714ms 200 image/png
+Request finished in 966.4714ms 200 image/png
+Request finished in 966.4714ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Request finished in 2567.0951ms 200 image/png
+Request finished in 2567.0951ms 200 image/png
+Request finished in 2567.0951ms 200 image/png
+Request finished in 2567.0951ms 200 image/png
+Request finished in 2567.0951ms 200 image/png
+Request finished in 2567.0951ms 200 image/png
+Request finished in 505.9473ms 200 image/png
+Request finished in 505.9473ms 200 image/png
+Request finished in 505.9473ms 200 image/png
+Request finished in 505.9473ms 200 image/png
+Request finished in 505.9473ms 200 image/png
+Request finished in 505.9473ms 200 image/png
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 588.827ms 200 application/javascript
+Request finished in 588.827ms 200 application/javascript
+Request finished in 588.827ms 200 application/javascript
+Request finished in 588.827ms 200 application/javascript
+Request finished in 588.827ms 200 application/javascript
+Request finished in 588.827ms 200 application/javascript
+Request finished in 646.1178ms 200 application/javascript
+Request finished in 646.1178ms 200 application/javascript
+Request finished in 646.1178ms 200 application/javascript
+Request finished in 646.1178ms 200 application/javascript
+Request finished in 646.1178ms 200 application/javascript
+Request finished in 646.1178ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Request finished in 3523.4178ms 200 image/png
+Request finished in 3523.4178ms 200 image/png
+Request finished in 3523.4178ms 200 image/png
+Request finished in 3523.4178ms 200 image/png
+Request finished in 3523.4178ms 200 image/png
+Request finished in 3523.4178ms 200 image/png
+Request finished in 1505.3453ms 200 image/jpeg
+Request finished in 1505.3453ms 200 image/jpeg
+Request finished in 1505.3453ms 200 image/jpeg
+Request finished in 1505.3453ms 200 image/jpeg
+Request finished in 1505.3453ms 200 image/jpeg
+Request finished in 1505.3453ms 200 image/jpeg
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 3328.3406ms 200 image/png
+Request finished in 3328.3406ms 200 image/png
+Request finished in 3328.3406ms 200 image/png
+Request finished in 3328.3406ms 200 image/png
+Request finished in 3328.3406ms 200 image/png
+Request finished in 3328.3406ms 200 image/png
+Request finished in 1773.5838ms 200 application/javascript
+Request finished in 1773.5838ms 200 application/javascript
+Request finished in 1773.5838ms 200 application/javascript
+Request finished in 1773.5838ms 200 application/javascript
+Request finished in 1773.5838ms 200 application/javascript
+Request finished in 1773.5838ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Request finished in 4459.7547ms 200 image/png
+Request finished in 4459.7547ms 200 image/png
+Request finished in 4459.7547ms 200 image/png
+Request finished in 4459.7547ms 200 image/png
+Request finished in 4459.7547ms 200 image/png
+Request finished in 4459.7547ms 200 image/png
+Request finished in 4572.6997ms 200 image/png
+Request finished in 4572.6997ms 200 image/png
+Request finished in 4572.6997ms 200 image/png
+Request finished in 4572.6997ms 200 image/png
+Request finished in 4572.6997ms 200 image/png
+Request finished in 4572.6997ms 200 image/png
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Request finished in 2714.9984ms 200 image/png
+Request finished in 2714.9984ms 200 image/png
+Request finished in 2714.9984ms 200 image/png
+Request finished in 2714.9984ms 200 image/png
+Request finished in 2714.9984ms 200 image/png
+Request finished in 2714.9984ms 200 image/png
+Request finished in 4677.4225ms 200 image/png
+Request finished in 4677.4225ms 200 image/png
+Request finished in 4677.4225ms 200 image/png
+Request finished in 4677.4225ms 200 image/png
+Request finished in 4677.4225ms 200 image/png
+Request finished in 4677.4225ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Request finished in 3263.3925ms 200 image/jpeg
+Request finished in 3263.3925ms 200 image/jpeg
+Request finished in 3263.3925ms 200 image/jpeg
+Request finished in 3263.3925ms 200 image/jpeg
+Request finished in 3263.3925ms 200 image/jpeg
+Request finished in 3263.3925ms 200 image/jpeg
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Request finished in 3646.1984ms 200 image/png
+Request finished in 3646.1984ms 200 image/png
+Request finished in 3646.1984ms 200 image/png
+Request finished in 3646.1984ms 200 image/png
+Request finished in 3646.1984ms 200 image/png
+Request finished in 3646.1984ms 200 image/png
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 3862.2532ms 200 image/jpeg
+Request finished in 3862.2532ms 200 image/jpeg
+Request finished in 3862.2532ms 200 image/jpeg
+Request finished in 3862.2532ms 200 image/jpeg
+Request finished in 3862.2532ms 200 image/jpeg
+Request finished in 3862.2532ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (599ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (429ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ArticleId], [a].[ArticleName], [a].[ArticleRoute], [a].[ArticleType], [a].[PathToGallery1], [a].[PathToGallery10], [a].[PathToGallery11], [a].[PathToGallery12], [a].[PathToGallery13], [a].[PathToGallery14], [a].[PathToGallery15], [a].[PathToGallery2], [a].[PathToGallery3], [a].[PathToGallery4], [a].[PathToGallery5], [a].[PathToGallery6], [a].[PathToGallery7], [a].[PathToGallery8], [a].[PathToGallery9], [a].[Text1], [a].[Text10], [a].[Text11], [a].[Text12], [a].[Text13], [a].[Text14], [a].[Text15], [a].[Text2], [a].[Text3], [a].[Text4], [a].[Text5], [a].[Text6], [a].[Text7], [a].[Text8], [a].[Text9]
+FROM [Article] AS [a]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 8689.0019ms.
+Executed ViewResult - view Index executed in 8689.0019ms.
+Executed ViewResult - view Index executed in 8689.0019ms.
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 18761.6899ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 18761.6899ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 18761.6899ms
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Request finished in 22945.4312ms 200 text/html; charset=utf-8
+Request finished in 22945.4312ms 200 text/html; charset=utf-8
+Request finished in 22945.4312ms 200 text/html; charset=utf-8
+Request finished in 534.0923ms 200 text/css
+Request finished in 534.0923ms 200 text/css
+Request finished in 534.0923ms 200 text/css
+Request finished in 337.0772ms 200 text/css
+Request finished in 337.0772ms 200 text/css
+Request finished in 337.0772ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 1212.5566ms 200 application/javascript
+Request finished in 1212.5566ms 200 application/javascript
+Request finished in 1212.5566ms 200 application/javascript
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 2569.94ms 200 application/javascript
+Request finished in 2569.94ms 200 application/javascript
+Request finished in 2569.94ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 52.1715ms 200 application/javascript
+Request finished in 52.1715ms 200 application/javascript
+Request finished in 52.1715ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request finished in 139.3046ms 200 image/png
+Request finished in 139.3046ms 200 image/png
+Request finished in 139.3046ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request finished in 36.0223ms 200 image/png
+Request finished in 36.0223ms 200 image/png
+Request finished in 36.0223ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 38.1108ms 200 image/png
+Request finished in 38.1108ms 200 image/png
+Request finished in 38.1108ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Request finished in 50.0757ms 200 image/png
+Request finished in 50.0757ms 200 image/png
+Request finished in 50.0757ms 200 image/png
+Request finished in 75.2797ms 200 image/png
+Request finished in 75.2797ms 200 image/png
+Request finished in 75.2797ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 108.5391ms 200 image/png
+Request finished in 108.5391ms 200 image/png
+Request finished in 108.5391ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 33.0827ms 200 image/png
+Request finished in 33.0827ms 200 image/png
+Request finished in 33.0827ms 200 image/png
+Request finished in 614.9565ms 200 image/jpeg
+Request finished in 614.9565ms 200 image/jpeg
+Request finished in 614.9565ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Request finished in 81.7462ms 200 image/png
+Request finished in 81.7462ms 200 image/png
+Request finished in 81.7462ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Request finished in 268.9349ms 200 image/png
+Request finished in 268.9349ms 200 image/png
+Request finished in 268.9349ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Request finished in 233.7261ms 200 image/png
+Request finished in 233.7261ms 200 image/png
+Request finished in 233.7261ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Request finished in 282.9915ms 200 image/png
+Request finished in 282.9915ms 200 image/png
+Request finished in 282.9915ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Request finished in 49.2984ms 200 image/png
+Request finished in 49.2984ms 200 image/png
+Request finished in 49.2984ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Request finished in 47.8258ms 200 image/png
+Request finished in 47.8258ms 200 image/png
+Request finished in 47.8258ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Request finished in 38.6999ms 200 image/png
+Request finished in 38.6999ms 200 image/png
+Request finished in 38.6999ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Request finished in 27.8499ms 200 image/png
+Request finished in 27.8499ms 200 image/png
+Request finished in 27.8499ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Request finished in 64.9858ms 200 image/jpeg
+Request finished in 64.9858ms 200 image/jpeg
+Request finished in 64.9858ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Request finished in 46.8238ms 200 image/jpeg
+Request finished in 46.8238ms 200 image/jpeg
+Request finished in 46.8238ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 241.7424ms.
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 241.7424ms.
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 241.7424ms.
+Executing ViewResult, running view Create.
+Executing ViewResult, running view Create.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 1098.5222ms.
+Executed ViewResult - view Create executed in 1098.5222ms.
+Executed ViewResult - view Create executed in 1098.5222ms.
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 1500.8335ms
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 1500.8335ms
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 1500.8335ms
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/css/bootstrap.css  
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/site.css  
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Request finished in 2088.6854ms 200 text/html; charset=utf-8
+Request finished in 2088.6854ms 200 text/html; charset=utf-8
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\site.css'
+Request finished in 2088.6854ms 200 text/html; charset=utf-8
+Request finished in 43.9989ms 200 text/css
+Request finished in 43.9989ms 200 text/css
+Request finished in 43.9989ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Request finished in 26.6584ms 200 application/javascript
+Request finished in 26.6584ms 200 application/javascript
+Request finished in 26.6584ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/bootstrap/dist/js/bootstrap.bundle.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/site.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/tinymce/jquery.tinymce.min.js  
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\site.js'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 336.9055ms 200 application/javascript
+Request finished in 336.9055ms 200 application/javascript
+Request finished in 336.9055ms 200 application/javascript
+Request finished in 586.2682ms 200 text/css
+Request finished in 586.2682ms 200 text/css
+Request finished in 586.2682ms 200 text/css
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Sending file. Request path: '/js/tinymce/jquery.tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\jquery.tinymce.min.js'
+Request finished in 312.2574ms 200 application/javascript
+Request finished in 312.2574ms 200 application/javascript
+Request finished in 312.2574ms 200 application/javascript
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+Request finished in 914.8954ms 200 text/css
+Request finished in 914.8954ms 200 text/css
+Request finished in 914.8954ms 200 text/css
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Sending file. Request path: '/js/tinymce/tinymce.min.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\tinymce\tinymce.min.js'
+Request finished in 798.6716ms 200 application/javascript
+Request finished in 798.6716ms 200 application/javascript
+Request finished in 798.6716ms 200 application/javascript
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 1214.4947ms 200 text/css
+Request finished in 1214.4947ms 200 text/css
+Request finished in 1214.4947ms 200 text/css
+Request finished in 1079.6843ms 200 application/javascript
+Request finished in 1079.6843ms 200 application/javascript
+Request finished in 1079.6843ms 200 application/javascript
+Request finished in 1121.1197ms 200 application/javascript
+Request finished in 1121.1197ms 200 application/javascript
+Request finished in 1121.1197ms 200 application/javascript
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/wide.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/temp/middle.jpg  
+Request finished in 633.3671ms 404 
+Request finished in 633.3671ms 404 
+Request finished in 633.3671ms 404 
+Request finished in 680.1155ms 404 
+Request finished in 684.7756ms 404 
+Request finished in 684.7756ms 404 
+Request finished in 684.7756ms 404 
+Request finished in 680.1155ms 404 
+Request finished in 680.1155ms 404 
+Entity Framework Core 2.2.6-servicing-10079 initialized 'VaryagContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (60ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[ArticleId], [a].[ArticleName], [a].[ArticleRoute], [a].[ArticleType], [a].[PathToGallery1], [a].[PathToGallery10], [a].[PathToGallery11], [a].[PathToGallery12], [a].[PathToGallery13], [a].[PathToGallery14], [a].[PathToGallery15], [a].[PathToGallery2], [a].[PathToGallery3], [a].[PathToGallery4], [a].[PathToGallery5], [a].[PathToGallery6], [a].[PathToGallery7], [a].[PathToGallery8], [a].[PathToGallery9], [a].[Text1], [a].[Text10], [a].[Text11], [a].[Text12], [a].[Text13], [a].[Text14], [a].[Text15], [a].[Text2], [a].[Text3], [a].[Text4], [a].[Text5], [a].[Text6], [a].[Text7], [a].[Text8], [a].[Text9]
+FROM [Article] AS [a]
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n].[NewsId], [n].[Header], [n].[KeyWord], [n].[LinkedProjectNames], [n].[MainStory], [n].[MiddleFotoPreview], [n].[MiddleImgScale], [n].[MiddleImgX], [n].[MiddleImgY], [n].[MiddleStory], [n].[NewsDate], [n].[PathToGallery], [n].[PathToVideo1], [n].[PathToVideo2], [n].[PathToVideo3], [n].[ShortFotoPreview], [n].[ShortImgScale], [n].[ShortImgX], [n].[ShortImgY], [n].[ShortStory], [n].[WideFotoPreview], [n].[WideImgScale], [n].[WideImgX], [n].[WideImgY], [n].[WideStory]
+FROM [News] AS [n]
+Executed ViewResult - view Index executed in 2107.928ms.
+Executed ViewResult - view Index executed in 2107.928ms.
+Executed ViewResult - view Index executed in 2107.928ms.
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 3262.4816ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 3262.4816ms
+Executed action Varyag.Controllers.AboutController.Index (Varyag) in 3262.4816ms
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Executed endpoint 'Varyag.Controllers.AboutController.Index (Varyag)'
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/лого-кораблик-с-текстом-белый-жирный.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/fotorama.css  
+Request finished in 4753.2826ms 200 text/html; charset=utf-8
+Request finished in 4753.2826ms 200 text/html; charset=utf-8
+Request finished in 4753.2826ms 200 text/html; charset=utf-8
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/vkont.png  
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Sending file. Request path: '/images/icons/vkont.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\vkont.png'
+Request finished in 19.7212ms 200 image/png
+Request finished in 19.7212ms 200 image/png
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Sending file. Request path: '/css/fotorama.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\fotorama.css'
+Request finished in 19.7212ms 200 image/png
+Request finished in 223.9531ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/facebook.png  
+Request finished in 223.9531ms 200 text/css
+Request finished in 223.9531ms 200 text/css
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/contacts.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/лодка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/бургер-бел-спис2.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/катер-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Request starting HTTP/2.0 GET https://localhost:44325/css/MyStyleSheet.css  
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/катер-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\катер-безфона.png'
+Request finished in 34.6181ms 200 image/png
+Request finished in 34.6181ms 200 image/png
+Request finished in 34.6181ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/ладья-безфона-1200.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/парусник-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/left-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-artek.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/right-arrow-button.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/logo-fss.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Sending file. Request path: '/images/лого-кораблик-с-текстом-белый-жирный.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\лого-кораблик-с-текстом-белый-жирный.png'
+Request starting HTTP/2.0 GET https://localhost:44325/images/icons/Цветные/одинаковые/шлюпка-безфона.png  
+Request finished in 411.4958ms 200 image/png
+Request finished in 411.4958ms 200 image/png
+Request finished in 411.4958ms 200 image/png
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/facebook.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\facebook.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Sending file. Request path: '/images/icons/contacts.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts.png'
+Request finished in 340.2025ms 200 image/png
+Request finished in 340.2025ms 200 image/png
+Request finished in 340.2025ms 200 image/png
+Request finished in 561.1418ms 200 image/png
+Request finished in 561.1418ms 200 image/png
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Request finished in 561.1418ms 200 image/png
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/logo-artek.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-artek.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/icons/contacts2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\contacts2.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/left-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\left-arrow-button.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/лодка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\лодка-безфона.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Sending file. Request path: '/images/icons/бургер-бел-спис2.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\бургер-бел-спис2.png'
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/fotorama.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/lib/jquery/dist/jquery.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Request starting HTTP/2.0 GET https://localhost:44325/js/top-nav.js  
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/right-arrow-button.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\right-arrow-button.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/шлюпка-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\шлюпка-безфона.png'
+Request finished in 601.4361ms 200 image/png
+Request finished in 601.4361ms 200 image/png
+Request finished in 601.4361ms 200 image/png
+Request finished in 731.6992ms 200 image/png
+Request finished in 706.9253ms 200 image/png
+Request finished in 706.9253ms 200 image/png
+Request finished in 706.9253ms 200 image/png
+Request finished in 731.6992ms 200 image/png
+Request finished in 731.6992ms 200 image/png
+Request finished in 624.4739ms 200 image/png
+Request finished in 624.4739ms 200 image/png
+Request finished in 624.4739ms 200 image/png
+Request finished in 624.7226ms 200 image/png
+Request finished in 624.7226ms 200 image/png
+Request finished in 624.7226ms 200 image/png
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/js/fotorama.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\fotorama.js'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\lib\jquery\dist\jquery.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Request finished in 722.2809ms 200 image/png
+Sending file. Request path: '/images/logo-fss.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\logo-fss.png'
+Request finished in 409.2283ms 200 application/javascript
+Request finished in 409.2283ms 200 application/javascript
+Request finished in 409.2283ms 200 application/javascript
+Request finished in 722.2809ms 200 image/png
+Request finished in 722.2809ms 200 image/png
+Sending file. Request path: '/js/top-nav.js'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\js\top-nav.js'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/парусник-безфона.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\парусник-безфона.png'
+Request finished in 458.2581ms 200 application/javascript
+Request finished in 458.2581ms 200 application/javascript
+Request finished in 458.2581ms 200 application/javascript
+Request finished in 853.8838ms 200 image/png
+Request finished in 853.8838ms 200 image/png
+Request finished in 853.8838ms 200 image/png
+Request finished in 472.2704ms 200 application/javascript
+Request finished in 472.2704ms 200 application/javascript
+Request finished in 472.2704ms 200 application/javascript
+Request finished in 907.5958ms 200 image/png
+Request finished in 907.5958ms 200 image/png
+Request finished in 907.5958ms 200 image/png
+Request finished in 600.7686ms 200 image/png
+Request finished in 600.7686ms 200 image/png
+Request finished in 600.7686ms 200 image/png
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/css/MyStyleSheet.css'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\css\MyStyleSheet.css'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Sending file. Request path: '/images/icons/Цветные/одинаковые/ладья-безфона-1200.png'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\icons\Цветные\одинаковые\ладья-безфона-1200.png'
+Request finished in 1330.4493ms 200 text/css
+Request finished in 1330.4493ms 200 text/css
+Request finished in 1330.4493ms 200 text/css
+Request finished in 1279.1083ms 200 image/png
+Request finished in 1279.1083ms 200 image/png
+Request finished in 1279.1083ms 200 image/png
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/о_нас/гото/1_Гото_Предестинация.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/10.12.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Request starting HTTP/2.0 GET https://localhost:44325/images/news/02.11.2019/short.jpg  
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Sending file. Request path: '/images/news/02.11.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\02.11.2019\short.jpg'
+Request finished in 135.8554ms 200 image/jpeg
+Request finished in 135.8554ms 200 image/jpeg
+Request finished in 135.8554ms 200 image/jpeg
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Sending file. Request path: '/images/news/10.12.2019/short.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\news\10.12.2019\short.jpg'
+Request finished in 198.5023ms 200 image/jpeg
+Request finished in 198.5023ms 200 image/jpeg
+Request finished in 198.5023ms 200 image/jpeg
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Sending file. Request path: '/images/о_нас/гото/1_Гото_Предестинация.jpg'. Physical path: 'C:\Users\Работник №1\source\repos\1OldPony\Varyag\Varyag\wwwroot\images\о_нас\гото\1_Гото_Предестинация.jpg'
+Request finished in 441.1452ms 200 image/jpeg
+Request finished in 441.1452ms 200 image/jpeg
+Request finished in 441.1452ms 200 image/jpeg
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Request starting HTTP/2.0 GET https://localhost:44325/articles/create  
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executing endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Route matched with {action = "Create", controller = "Articles"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String, System.String) on controller Varyag.Controllers.ArticlesController (Varyag).
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executing action method Varyag.Controllers.ArticlesController.Create (Varyag) - Validation state: Valid
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 511.7896ms.
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 511.7896ms.
+Executed action method Varyag.Controllers.ArticlesController.Create (Varyag), returned result Microsoft.AspNetCore.Mvc.ViewResult in 511.7896ms.
+Executing ViewResult, running view Create.
+Executing ViewResult, running view Create.
+Executing ViewResult, running view Create.
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 1787.0708ms
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 1787.0708ms
+Executed action Varyag.Controllers.ArticlesController.Create (Varyag) in 1787.0708ms
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+Executed endpoint 'Varyag.Controllers.ArticlesController.Create (Varyag)'
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Request finished in 3358.6969ms 500 text/html; charset=utf-8
+Request finished in 3358.6969ms 500 text/html; charset=utf-8
+Request finished in 3358.6969ms 500 text/html; charset=utf-8
