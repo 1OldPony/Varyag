@@ -166,29 +166,44 @@ namespace Varyag.Controllers
 
 
         //[HttpPost]
-        public IActionResult SaveTempFoto(IFormFile newsFoto,
-            string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
-            string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
-            string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory, int? newId)
+        public void SaveTempFoto(IFormFile newsFoto, string fotoType)
         {
-            return ViewComponent("ArticlePreview", new {
-                newsFoto,fotoType,shortFotoScale,shortFotoX,shortFotoY,shortStory,middleFotoScale,middleFotoX,
-                middleFotoY,middleStory,wideFotoScale,wideFotoX,wideFotoY,wideStory,newId });
+            string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
+            if (newsFoto != null)
+            {
+                switch (fotoType)
+                {
+                    case "общая":
+                        foreach (var item in names)
+                        {
+                            SaveImgAsync(item, newsFoto);
+                        }
+                        break;
+                    case "мелкая":
+                        SaveImgAsync(names[0], newsFoto);
+                        break;
+                    case "средняя":
+                        SaveImgAsync(names[1], newsFoto);
+                        break;
+                    case "широкая":
+                        SaveImgAsync(names[2], newsFoto);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
-        //private async Task SaveImgAsync(string name, IFormFile newsFoto)
-        //{
-        //    string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
-        //    LittleHelper.DirectoryExistCheck(path);
+        private void SaveImgAsync(string name, IFormFile newsFoto)
+        {
+            string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
+            LittleHelper.DirectoryExistCheck(path);
 
-        //    using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
-        //    {
-        //        await newsFoto.CopyToAsync(fileStream);
-        //    }
-        //}
-
-
-
+            using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+            {
+                newsFoto.CopyTo(fileStream);
+            }
+        }
+                
         public async void FillPreview(IFormFileCollection preview, string previewPath)
         {
             string name = "ВерфьВаряг(превью).jpg";
@@ -201,23 +216,25 @@ namespace Varyag.Controllers
         // GET: Articles/Create
         public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTPREVIEW, string PTG1,
             string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8, string PTG9, string PTG10, string PTG11, string PTG12, 
-            string PTG13, string PTG14, string PTG15, string type)
+            string PTG13, string PTG14, string PTG15, string type, string shortFotoScale, string shortFotoX, string shortFotoY, string shortStory, 
+            string middleFotoScale, string middleFotoX, string middleFotoY, string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
+            string wideStory)
         {
-            ViewBag.RefreshEditor = new EditorModel()
-            {
-                shortFotoScale = shortFotoScale,
-                shortFotoX = shortFotoX,
-                shortFotoY = shortFotoY,
-                shortStory = shortStory,
-                middleFotoScale = middleFotoScale,
-                middleFotoX = middleFotoX,
-                middleFotoY = middleFotoY,
-                middleStory = middleStory,
-                wideFotoScale = wideFotoScale,
-                wideFotoX = wideFotoX,
-                wideFotoY = wideFotoY,
-                wideStory = wideStory
-            };
+            //ViewBag.RefreshEditor = new EditorModel()
+            //{
+            //    shortFotoScale = shortFotoScale,
+            //    shortFotoX = shortFotoX,
+            //    shortFotoY = shortFotoY,
+            //    shortStory = shortStory,
+            //    middleFotoScale = middleFotoScale,
+            //    middleFotoX = middleFotoX,
+            //    middleFotoY = middleFotoY,
+            //    middleStory = middleStory,
+            //    wideFotoScale = wideFotoScale,
+            //    wideFotoX = wideFotoX,
+            //    wideFotoY = wideFotoY,
+            //    wideStory = wideStory
+            //};
 
             if (PTPREVIEW!=null)
             {

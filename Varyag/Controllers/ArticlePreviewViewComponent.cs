@@ -23,10 +23,7 @@ namespace Varyag.Controllers
         }
 
         public async Task<IViewComponentResult> InvokeAsync(IFormFile newsFoto,
-            string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
-            string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
-            string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory, int? newId)
+            string fotoType)
         {
             string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
             if (newsFoto != null)

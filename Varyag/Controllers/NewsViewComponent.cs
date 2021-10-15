@@ -14,30 +14,27 @@ namespace Varyag.Controllers
     public class NewsViewComponent : ViewComponent
     {
         private readonly VaryagContext db;
-        private readonly ILogger _logger;
+        //private readonly ILogger _logger;
 
-        public NewsViewComponent(VaryagContext context, ILoggerFactory loggerFactory)
+        public NewsViewComponent(VaryagContext context)
         {
             db = context;
-            _logger = loggerFactory.CreateLogger("FileLogger");
-            LittleHelper.DirectoryExistCheck(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs"));
-            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today.ToShortDateString() + ".txt"));
+            //_logger = loggerFactory.CreateLogger("FileLogger");
+            //LittleHelper.DirectoryExistCheck(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs"));
+            //loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today.ToShortDateString() + ".txt"));
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
             List<NewsViewModel> lastNews = new List<NewsViewModel>();
-            //try
-            //{
-                List<News> news = await db.News.ToListAsync();
-                List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
-                lastNews = sortedNews.AsEnumerable().Take(2).ToList();
-            //}
-            //catch (Exception e)
-            //{
-            //    _logger.LogInformation("ОШИБКА!!!! ВРЕМЯ {0}, СООБЩЕНИЕ {1}, МЕТОД {2}, ПУТЬ_ДО {3},", DateTime.Now.ToShortTimeString(), e.Message, e.TargetSite, e.StackTrace);
-            //    throw new Exception("Не удалось загрузить новостные превью");
-            //}
+
+
+
+            List<News> news = await db.News.ToListAsync();
+            List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
+            lastNews = sortedNews.AsEnumerable().Take(2).ToList();
+
+
 
             return View(lastNews);
         }

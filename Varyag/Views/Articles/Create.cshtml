@@ -8,10 +8,99 @@
 <div style="max-width:1700px;margin:auto">
     <h1>Создать статью</h1>
     <hr />
-    
-    <div id="previewEditorForm">
-        @await Component.InvokeAsync("ArticlePreview")
+
+    <form asp-action="SaveTempFoto" asp-route-actionType="create" id="fotoEditorForm" enctype="multipart/form-data">
+        <div style="margin:2vW">
+            <div style="grid-area:loader">
+                <input type="file" name="newsFoto" required /><br />
+                <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
+                <input type="button" onclick="refreshPreviewEditor()" value="Загрузить" />
+            </div>
+        </div>
+    </form>
+    <div class="newsFotoEditor">
+        <div id="editorShort" class="editor">
+            <div class="partNewsElementViewShort" id="creator">
+                <div class="annotation">
+                    <div class="annotationText" id="shortFotoNewsText">
+                    </div>
+                </div>
+            </div>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="shortFotoX" id="shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="shortFotoY" id="shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="shortFotoScale" id="shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" maxlength="55" name="shortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+            </div>
+        </div>
+        <div id="editorMiddle" class="editor">
+            <div class="partNewsElementViewMiddle" id="creator">
+                <div class="annotation">
+                    <div class="annotationText" id="middleFotoNewsText">
+                    </div>
+                </div>
+            </div>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="middleFotoX" id="middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="middleFotoY" id="middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="middleFotoScale" id="middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" maxlength="55" name="middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
+            </div>
+        </div>
+        <div id="editorWide" class="editor">
+            <div class="partNewsElementViewWide" id="creator">
+                <div class="annotation">
+                    <div class="annotationText" id="wideFotoNewsText">
+                    </div>
+                </div>
+            </div>
+            <div class="newsFotoEditorControls">
+                <div id="top" class="controlGroup">
+                    <div class="controlGroup">
+                        <div>Ось Х</div>
+                        <input type="range" name="wideFotoX" id="wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Ось Y</div>
+                        <input type="range" name="wideFotoY" id="wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                    <div class="controlGroup">
+                        <div>Масштаб</div>
+                        <input type="range" name="wideFotoScale" id="wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                    </div>
+                </div>
+                <textarea rows="6" cols="30" maxlength="90" name="wideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
+            </div>
+        </div>
     </div>
+
+
+
+    @*<div id="previewEditorForm">
+            @await Component.InvokeAsync("ArticlePreview")
+        </div>*@
 
     <hr />
     <form asp-action="fillArticle" enctype="multipart/form-data">
@@ -41,7 +130,7 @@
                     }
                     <div style="display:flex;flex-direction:column;">
                         @*<div>Фото на превью(нужно нажать кнопку "Загрузить")</div>
-                        <input type="file" name="preview" />*@
+                            <input type="file" name="preview" />*@
                         <div>Выберите тип статьи</div>
                         <select name="articleType">
                             @if (ViewBag.Type == "Заказы для кино")

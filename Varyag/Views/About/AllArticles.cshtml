@@ -191,7 +191,6 @@
                 {
                     <a href="../../О-нас/Особые-заказы/@Model.ElementAt(i).ArticleRoute?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews">
                         <div class="newsListElement">
-                            @*class="partNewsElement" id="allNews" style="grid-area:preview;height:auto"*@
                             <div>
                                 @await Component.InvokeAsync("Fotorama", new { articleId = @Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery1 + "\\preview", singleFoto = true })
                             </div>
