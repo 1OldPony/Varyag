@@ -178,64 +178,33 @@ function newsSaveButtonDisable() {
 }
 
 ////////////////////////Обслуживаем механизм создания превью статей//////////////////////////
-//let x = 2;
 function refreshPreviewEditor() {
-    //$('#sortScreen').css('display', 'block');
-    //$('#sortScreen2').css('display', 'block');
-    //$('.sortOptions').css('color', 'lightgrey');
-    if ($('#creator.partNewsElementViewShort')) {
-
-    }
-
-    let editorData = $('.newsFotoEditor').html();
-
     let response = fetch('/articles/SaveTempFoto', {
         method: 'POST',
         body: new FormData(fotoEditorForm)
     });
-    //document.getElementById('fotoEditorForm')
-    //if (response.ok) {
-    //if (x%2==0) {
-        $('#creator.partNewsElementViewShort').style('class', 'partNewsElementViewShort2');
-        $('#creator.partNewsElementViewMiddle').attr('class', 'partNewsElementViewMiddle2');
-        $('#creator.partNewsElementViewWide').attr('class', 'partNewsElementViewWide2');
-    //}
-    //else {
-    //    $('#creator.partNewsElementViewShort2').attr('class', 'partNewsElementViewShort');
-    //    $('#creator.partNewsElementViewMiddle2').attr('class', 'partNewsElementViewMiddle');
-    //    $('#creator.partNewsElementViewWide2').attr('class', 'partNewsElementViewWide');
-    //}
-    //x++;
-
-    //$('#creator.partNewsElementViewShort').css('background-image', 'url(/images/temp/wide.jpg)');
-    //$('#creator.partNewsElementViewMiddle').css('background-image', 'url(/images/temp/short.jpg)');
-    //$('#creator.partNewsElementViewWide').css('background-image', 'url(/images/temp/middle.jpg) no-repeat');
-
-    //$('#creator.partNewsElementViewShort').css('background-image', 'url(/images/temp/short.jpg)');
-    //$('#creator.partNewsElementViewMiddle').css('background-image', 'url(/images/temp/middle.jpg)');
-    //$('#creator.partNewsElementViewWide').css('background-image', 'url(/images/temp/wide.jpg) no-repeat');
-    //}
-    //else {
-    //    alert("Ошибка HTTP: " + response.status);
-    //}
-
-    //$('#previewEditorForm').load("../Articles/SaveTempFoto?fotoType=" + category + "&plitca=true" + "&lengthSort=" + lengthSort, function () {
-    //    if ($('#sortScreen').css('display') == 'block') {
-    //        $('#sortScreen').css('display', 'none');
-    //        $('.sortOptions').css('color', '#183f61');
-    //        $('#sortScreen2').css('display', 'none');
-    //    }
-    //});
+    
+    setTimeout(fotoRefresh($('#typeOfFoto').val()), 1000);
 }
-function myfunction2() {
-    $('#creator.partNewsElementViewShort').attr('class', 'punishmentShort');
-    $('#creator.partNewsElementViewMiddle').attr('class', 'punishmentMiddle');
-    $('#creator.partNewsElementViewWide').attr('class', 'punishmentWide');
-}
-function myfunction() {
-    $('#creator.punishmentShort').attr('class', 'partNewsElementViewShort');
-    $('#creator.punishmentMiddle').attr('class', 'partNewsElementViewMiddle');
-    $('#creator.punishmentWide').attr('class', 'partNewsElementViewWide');
+function fotoRefresh(typeOfFoto) {
+    switch (typeOfFoto) {
+        case 'общая':
+            $('#creator.partNewsElementViewShort').css('background-image', 'url(/images/temp/wide.jpg?' + Math.random() + ')');
+            $('#creator.partNewsElementViewMiddle').css('background-image', 'url(/images/temp/short.jpg?' + Math.random() + ')');
+            $('#creator.partNewsElementViewWide').css('background-image', 'url(/images/temp/middle.jpg?' + Math.random() + ')');
+            break;
+        case 'мелкая':
+            $('#creator.partNewsElementViewShort').css('background-image', 'url(/images/temp/short.jpg?Р' + Math.random() + ')');
+            break;
+        case 'средняя':
+            $('#creator.partNewsElementViewMiddle').css('background-image', 'url(/images/temp/middle.jpg?К' + Math.random() + ')');
+            break;
+        case 'широкая':
+            $('#creator.partNewsElementViewWide').css('background-image', 'url(/images/temp/wide.jpg?У' + Math.random() + ')');
+            break;
+        default:
+            break;
+    }
 }
 ////////////////////////////Создаем список связанных проектов//////////////////////////////
 function newsLinkToProject(firstTimeEdit) {

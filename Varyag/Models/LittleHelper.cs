@@ -36,7 +36,7 @@ namespace Varyag.Models
                         + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
                     break;
                 case "articlePreview":
-                    fotoPath = "~/" + pathParts[(pathParts.Length - 1) - 5] + "/" + pathParts[(pathParts.Length - 1) - 4] + "/" + pathParts[(pathParts.Length - 1) - 3] + "/"
+                    fotoPath = "/" + pathParts[(pathParts.Length - 1) - 5] + "/" + pathParts[(pathParts.Length - 1) - 4] + "/" + pathParts[(pathParts.Length - 1) - 3] + "/"
                         + pathParts[(pathParts.Length - 1) - 2] + "/" + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
                     break;
                 case "frontFoto":

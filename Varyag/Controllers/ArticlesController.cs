@@ -33,7 +33,8 @@ namespace Varyag.Controllers
         public async Task<IActionResult> FillArticle(int? articleId, string pathToGall, string currentTextPart, IFormFileCollection fotos, IFormFileCollection preview, string articleFolder, string articleName,
             int? partsCounter, string actionType, string articleRoute, string PathToGallery1, string PathToGallery2, string PathToGallery3, string PathToGallery4, string PathToGallery5, string PathToGallery6, 
             string PathToGallery7, string PathToGallery8, string PathToGallery9, string PathToGallery10, string PathToGallery11, string PathToGallery12, string PathToGallery13, string PathToGallery14, string PathToGallery15, 
-            string articleType)
+            string articleType, string shortFotoScale, string shortFotoX, string shortFotoY, string shortStory, string middleFotoScale,
+            string middleFotoX, string middleFotoY, string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY, string wideStory)
         {
             string path = Path.Combine(_Environment.WebRootPath, "images", "articles");
             LittleHelper.DirectoryExistCheck(path);
@@ -66,27 +67,32 @@ namespace Varyag.Controllers
 
             path = Path.Combine(path, partsCounter.ToString());
             if (!Directory.Exists(path))
+            {
                 LittleHelper.DirectoryExistCheck(path);
+            }
             else
-                LittleHelper.DeleteFiles(path, false);
-
-            string previewPath;
-            if (partsCounter == null)
             {
-                previewPath = Path.Combine(path,"1", "preview");
+                if (fotos.Count!=0)
+                    LittleHelper.DeleteFiles(path, false);
             }
-            else{
-                previewPath = Path.Combine(_Environment.WebRootPath, "images", "articles", fold, "1", "preview");
-            }
-            if (preview.Count != 0)
-            {
-                if (!Directory.Exists(previewPath))
-                    LittleHelper.DirectoryExistCheck(previewPath);
-                else
-                    LittleHelper.DeleteFiles(previewPath, false);
 
-                FillPreview(preview, previewPath);
-            }
+            //string previewPath;
+            //if (partsCounter == null)
+            //{
+            //    previewPath = Path.Combine(path,"1", "preview");
+            //}
+            //else{
+            //    previewPath = Path.Combine(_Environment.WebRootPath, "images", "articles", fold, "1", "preview");
+            //}
+            //if (preview.Count != 0)
+            //{
+            //    if (!Directory.Exists(previewPath))
+            //        LittleHelper.DirectoryExistCheck(previewPath);
+            //    else
+            //        LittleHelper.DeleteFiles(previewPath, false);
+
+            //    FillPreview(preview, previewPath);
+            //}
 
             if (fotos.Count()!=0)
             {
@@ -116,7 +122,7 @@ namespace Varyag.Controllers
                     name = articleName,
                     route = articleRoute,
                     type = articleType,
-                    PTPREVIEW = previewPath,
+                    //PTPREVIEW = previewPath,
                     PTG1 = PathToGallery1,
                     PTG2 = PathToGallery2,
                     PTG3 = PathToGallery3,
@@ -131,7 +137,19 @@ namespace Varyag.Controllers
                     PTG12 = PathToGallery12,
                     PTG13 = PathToGallery13,
                     PTG14 = PathToGallery14,
-                    PTG15 = PathToGallery15
+                    PTG15 = PathToGallery15,
+                    shFotoScale=shortFotoScale,
+                    shFotoX = shortFotoX,
+                    shFotoY = shortFotoY,
+                    shStory = shortStory,
+                    midFotoScale = middleFotoScale,
+                    midFotoX = middleFotoX,
+                    midFotoY = middleFotoY,
+                    midStory = middleStory,
+                    wFotoScale = wideFotoScale,
+                    wFotoX = wideFotoX,
+                    wFotoY = wideFotoY,
+                    wStory = wideStory
                 });
             }
             else
@@ -159,7 +177,19 @@ namespace Varyag.Controllers
                     PTG12 = PathToGallery12,
                     PTG13 = PathToGallery13,
                     PTG14 = PathToGallery14,
-                    PTG15 = PathToGallery15
+                    PTG15 = PathToGallery15,
+                    shFotoScale = shortFotoScale,
+                    shFotoX = shortFotoX,
+                    shFotoY = shortFotoY,
+                    shStory = shortStory,
+                    midFotoScale = middleFotoScale,
+                    midFotoX = middleFotoX,
+                    midFotoY = middleFotoY,
+                    midStory = middleStory,
+                    wFotoScale = wideFotoScale,
+                    wFotoX = wideFotoX,
+                    wFotoY = wideFotoY,
+                    wStory = wideStory
                 });
             }
         }
@@ -203,38 +233,42 @@ namespace Varyag.Controllers
                 newsFoto.CopyTo(fileStream);
             }
         }
-                
-        public async void FillPreview(IFormFileCollection preview, string previewPath)
-        {
-            string name = "ВерфьВаряг(превью).jpg";
-            using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
-            {
-                await preview[0].CopyToAsync(fileStream);
-            }
-        }
+        //public IActionResult PreviewRefresh()
+        //{
+        //    return PartialView("Default");
+        //    //return View("Default"); 
+        //}
+
+        //public async void FillPreview(IFormFileCollection preview, string previewPath)
+        //{
+        //    string name = "ВерфьВаряг(превью).jpg";
+        //    using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
+        //    {
+        //        await preview[0].CopyToAsync(fileStream);
+        //    }
+        //}
 
         // GET: Articles/Create
-        public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTPREVIEW, string PTG1,
+        public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTPREVIEW, string PTG1,string type,
             string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8, string PTG9, string PTG10, string PTG11, string PTG12, 
-            string PTG13, string PTG14, string PTG15, string type, string shortFotoScale, string shortFotoX, string shortFotoY, string shortStory, 
-            string middleFotoScale, string middleFotoX, string middleFotoY, string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
-            string wideStory)
+            string PTG13, string PTG14, string PTG15, string shFotoScale, string shFotoX, string shFotoY, string shStory, string midFotoScale, 
+            string midFotoX, string midFotoY, string midStory, string wFotoScale, string wFotoX, string wFotoY, string wStory)
         {
-            //ViewBag.RefreshEditor = new EditorModel()
-            //{
-            //    shortFotoScale = shortFotoScale,
-            //    shortFotoX = shortFotoX,
-            //    shortFotoY = shortFotoY,
-            //    shortStory = shortStory,
-            //    middleFotoScale = middleFotoScale,
-            //    middleFotoX = middleFotoX,
-            //    middleFotoY = middleFotoY,
-            //    middleStory = middleStory,
-            //    wideFotoScale = wideFotoScale,
-            //    wideFotoX = wideFotoX,
-            //    wideFotoY = wideFotoY,
-            //    wideStory = wideStory
-            //};
+            ViewBag.RefreshEditor = new EditorModel()
+            {
+                shortFotoScale = shFotoScale,
+                shortFotoX = shFotoX,
+                shortFotoY = shFotoY,
+                shortStory = shStory,
+                middleFotoScale = midFotoScale,
+                middleFotoX = midFotoX,
+                middleFotoY = midFotoY,
+                middleStory = midStory,
+                wideFotoScale = wFotoScale,
+                wideFotoX = wFotoX,
+                wideFotoY = wFotoY,
+                wideStory = wStory
+            };
 
             if (PTPREVIEW!=null)
             {
@@ -406,6 +440,50 @@ namespace Varyag.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Article article)
         {
+            string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
+            string pathForFinalTemp = Path.Combine(article.PathToGallery1, "preview");
+            string shortPreview = "", middlePreview = "", widePreview = "";
+
+            LittleHelper.DirectoryExistCheck(pathForFinalTemp);
+
+            string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
+
+            foreach (var foto in fotos)
+            {
+                string pathStart = Path.Combine(pathTemp, foto);
+                string pathEnd = Path.Combine(pathForFinalTemp, foto);
+
+                System.IO.File.Move(pathStart, pathEnd);
+
+                switch (foto)
+                {
+                    case "short.jpg":
+                        shortPreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                        break;
+                    case "middle.jpg":
+                        middlePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                        break;
+                    case "wide.jpg":
+                        widePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            article.ShortFotoPreview = shortPreview;
+            article.MiddleFotoPreview = middlePreview;
+            article.WideFotoPreview = widePreview;
+            article.ShortImgScale = article.ShortImgScale + "%";
+            article.ShortImgX = article.ShortImgX + "%";
+            article.ShortImgY = article.ShortImgY + "%";
+            article.MiddleImgScale = article.MiddleImgScale + "%";
+            article.MiddleImgX = article.MiddleImgX + "%";
+            article.MiddleImgY = article.MiddleImgY + "%";
+            article.WideImgScale = article.WideImgScale + "%";
+            article.WideImgX = article.WideImgX + "%";
+            article.WideImgY = article.WideImgY + "%";
+
             if (ModelState.IsValid)
             {
                 _context.Add(article);
@@ -416,9 +494,9 @@ namespace Varyag.Controllers
         }
 
         // GET: Articles/Edit/5
-        public async Task<IActionResult> Edit(int? id, int? partNumber, string pathForPartGallery, string folder,
-            string name, string route, string PTG1, string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8,
-            string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15, string type)
+        public async Task<IActionResult> Edit(int? id, int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTG1, string PTG2, string PTG3, string PTG4,
+            string PTG5, string PTG6, string PTG7, string PTG8, string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15, string type, string shFotoScale,
+            string shFotoX, string shFotoY, string shStory, string midFotoScale,string midFotoX, string midFotoY, string midStory, string wFotoScale, string wFotoX, string wFotoY, string wStory)
         {
             if (id == null)
             {
@@ -430,6 +508,21 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
+            ViewBag.RefreshEditor = new EditorModel()
+            {
+                shortFotoScale = shFotoScale,
+                shortFotoX = shFotoX,
+                shortFotoY = shFotoY,
+                shortStory = shStory,
+                middleFotoScale = midFotoScale,
+                middleFotoX = midFotoX,
+                middleFotoY = midFotoY,
+                middleStory = midStory,
+                wideFotoScale = wFotoScale,
+                wideFotoX = wFotoX,
+                wideFotoY = wFotoY,
+                wideStory = wStory
+            };
 
             if (PTG1 != null)
             {
