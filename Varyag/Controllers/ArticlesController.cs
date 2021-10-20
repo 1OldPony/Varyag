@@ -686,6 +686,53 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
+            string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
+            string pathForFinalTemp = Path.Combine(article.PathToGallery1, "preview");
+            string shortPreview = "", middlePreview = "", widePreview = "";
+
+            string[] files = Directory.GetFiles(pathTemp);
+            if (files.Count()!=0)
+            {
+                LittleHelper.DeleteFiles(pathForFinalTemp, false);
+
+                string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
+
+                foreach (var foto in fotos)
+                {
+                    string pathStart = Path.Combine(pathTemp, foto);
+                    string pathEnd = Path.Combine(pathForFinalTemp, foto);
+
+                    System.IO.File.Move(pathStart, pathEnd);
+
+                    switch (foto)
+                    {
+                        case "short.jpg":
+                            shortPreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                            break;
+                        case "middle.jpg":
+                            middlePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                            break;
+                        case "wide.jpg":
+                            widePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            //article.ShortFotoPreview = shortPreview;
+            //article.MiddleFotoPreview = middlePreview;
+            //article.WideFotoPreview = widePreview;
+            article.ShortImgScale = article.ShortImgScale + "%";
+            article.ShortImgX = article.ShortImgX + "%";
+            article.ShortImgY = article.ShortImgY + "%";
+            article.MiddleImgScale = article.MiddleImgScale + "%";
+            article.MiddleImgX = article.MiddleImgX + "%";
+            article.MiddleImgY = article.MiddleImgY + "%";
+            article.WideImgScale = article.WideImgScale + "%";
+            article.WideImgX = article.WideImgX + "%";
+            article.WideImgY = article.WideImgY + "%";
+
             if (ModelState.IsValid)
             {
                 try
@@ -734,10 +781,10 @@ namespace Varyag.Controllers
         {
             var article = await _context.Article.FindAsync(id);
 
-            List<Article> article2 = _context.Article.Where(a=>a.ArticleId==id).ToList();
+            //List<Article> article2 = _context.Article.Where(a=>a.ArticleId==id).ToList();
             //string[] paths = new[] {article.PathToGallery1, article.PathToGallery2, article.PathToGallery3, article.PathToGallery4, article.PathToGallery5, article.PathToGallery6, article.PathToGallery7,
             //    article.PathToGallery8, article.PathToGallery9, article.PathToGallery10, article.PathToGallery11, article.PathToGallery12, article.PathToGallery13, article.PathToGallery14, article.PathToGallery15 };
-            ClearGallery(article2.First().PathToGallery1);
+            ClearGallery(article.PathToGallery1);
             ClearGallery(article.PathToGallery2);
             ClearGallery(article.PathToGallery3);
             ClearGallery(article.PathToGallery4);

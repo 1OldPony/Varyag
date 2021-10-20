@@ -206,6 +206,35 @@ function fotoRefresh(typeOfFoto) {
             break;
     }
 }
+//////////Отправляем форму для эдита, сохраняя данные из редактора превью///////////////////
+//$('#editFormSend').click();
+function editFormSend() {
+    fillTheForm('shortFotoScaleForm', 'shortFotoScale');
+    fillTheForm('shortFotoXForm', 'shortFotoX');
+    fillTheForm('shortFotoYForm', 'shortFotoY');
+    fillTheForm('shortStoryForm', 'shortFotoText');
+
+    fillTheForm('middleFotoScaleForm', 'middleFotoScale');
+    fillTheForm('middleFotoXForm', 'middleFotoX');
+    fillTheForm('middleFotoYForm', 'middleFotoY');
+    fillTheForm('middleStoryForm', 'middleFotoText');
+
+    fillTheForm('wideFotoScaleForm', 'wideFotoScale');
+    fillTheForm('wideFotoXForm', 'wideFotoX');
+    fillTheForm('wideFotoYForm', 'wideFotoY');
+    fillTheForm('wideStoryForm', 'wideFotoText');
+
+    $('#editForm').submit();
+}
+function fillTheForm(formId, editorId) {
+    if ($('#' + formId).val() != $('#' + editorId).val()) {
+        alert('значение поля ' + $('#' + editorId).val() + ' значение формы ' + $('#' + formId).val());
+        $('#' + formId).val($('#' + editorId).val());
+        alert('итоговое значение формы ' + $('#' + formId).val());
+    }
+    //
+}
+
 ////////////////////////////Создаем список связанных проектов//////////////////////////////
 function newsLinkToProject(firstTimeEdit) {
     let projects = $("[name='LinkedProjectNames']").val();
