@@ -281,6 +281,14 @@
     background-color: white;
     justify-content: space-between;
 }
+.catalogIconsMainPaige2Different {
+    width: 20%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between;
+}
 
 .catalogPlates {
     display: flex;

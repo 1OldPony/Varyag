@@ -215,7 +215,7 @@
         <hr />
         <div style="display:flex;flex-direction:column">
             <div>Порядковый номер блока текст-галлерея</div>
-            <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" />
+            <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" required />
         </div>
         <div style="display:flex">
             <textarea name="currentTextPart" id="mce"></textarea>
@@ -244,7 +244,9 @@
                 </div>
                 <div>
                     <div>Загрузка файлов в галлерею(Кнопка "Загрузить")</div>
-                    <input name="fotos" type="file" multiple />
+                    <div style="display:flex;">
+                        <input name="fotos" type="file" multiple /><input type="submit" value="Загрузить" />
+                    </div>
                 </div>
                 <div style="display:flex;">
                     <div style="display:flex;flex-direction:column;">
@@ -270,7 +272,6 @@
                 </div>
             </div>
         </div>
-        <input type="submit" value="Загрузить" />
         <div hidden>
             @if (@ViewBag.PathForPartGallery1 != null)
             {
@@ -673,7 +674,7 @@
             }
             else
             {
-                <input asp-for="ShortImgScale" value="@Model.ShortImgScale" id="shortFotoScaleForm" />
+                <input asp-for="ShortImgScale" value="@ViewBag.ShortImgScale" id="shortFotoScaleForm" />
             }
             @if (@ViewBag.RefreshEditor.shortFotoX != null)
             {
@@ -681,7 +682,7 @@
             }
             else
             {
-                <input asp-for="ShortImgX" value="@Model.ShortImgX" id="shortFotoXForm" />
+                <input asp-for="ShortImgX" value="@ViewBag.ShortImgX" id="shortFotoXForm" />
             }
             @if (@ViewBag.RefreshEditor.shortFotoY != null)
             {
@@ -689,7 +690,7 @@
             }
             else
             {
-                <input asp-for="ShortImgY" value="@Model.ShortImgY" id="shortFotoYForm" />
+                <input asp-for="ShortImgY" value="@ViewBag.ShortImgY" id="shortFotoYForm" />
             }
             @if (@ViewBag.RefreshEditor.shortStory != null)
             {
@@ -705,7 +706,7 @@
             }
             else
             {
-                <input asp-for="MiddleImgScale" value="@Model.MiddleImgScale" id="middleFotoScaleForm"  />
+                <input asp-for="MiddleImgScale" value="@ViewBag.MiddleImgScale" id="middleFotoScaleForm" />
             }
             @if (@ViewBag.RefreshEditor.middleFotoX != null)
             {
@@ -713,7 +714,7 @@
             }
             else
             {
-                <input asp-for="MiddleImgX" value="@Model.MiddleImgX" id="middleFotoXForm" />
+                <input asp-for="MiddleImgX" value="@ViewBag.MiddleImgX" id="middleFotoXForm" />
             }
             @if (@ViewBag.RefreshEditor.middleFotoY != null)
             {
@@ -721,7 +722,7 @@
             }
             else
             {
-                <input asp-for="MiddleImgY" value="@Model.MiddleImgY" id="middleFotoYForm" />
+                <input asp-for="MiddleImgY" value="@ViewBag.MiddleImgY" id="middleFotoYForm" />
             }
             @if (@ViewBag.RefreshEditor.middleStory != null)
             {
@@ -737,7 +738,7 @@
             }
             else
             {
-                <input asp-for="WideImgScale" value="@Model.WideImgScale" id="wideFotoScaleForm" />
+                <input asp-for="WideImgScale" value="@ViewBag.WideImgScale" id="wideFotoScaleForm" />
             }
             @if (@ViewBag.RefreshEditor.wideFotoX != null)
             {
@@ -745,7 +746,7 @@
             }
             else
             {
-                <input asp-for="WideImgX" value="@Model.WideImgX" id="wideFotoXForm" />
+                <input asp-for="WideImgX" value="@ViewBag.WideImgX" id="wideFotoXForm" />
             }
             @if (@ViewBag.RefreshEditor.wideFotoY != null)
             {
@@ -753,7 +754,7 @@
             }
             else
             {
-                <input asp-for="WideImgY" value="@Model.WideImgY" id="wideFotoYForm" />
+                <input asp-for="WideImgY" value="@ViewBag.WideImgY" id="wideFotoYForm" />
             }
             @if (@ViewBag.RefreshEditor.wideStory != null)
             {
@@ -763,6 +764,9 @@
             {
                 <input asp-for="WideStory" value="@Model.WideStory" id="wideStoryForm" />
             }
+            <input asp-for="ShortFotoPreview" value="@Model.ShortFotoPreview" />
+            <input asp-for="MiddleFotoPreview" value="@Model.MiddleFotoPreview" />
+            <input asp-for="WideFotoPreview" value="@Model.WideFotoPreview" />
         </div>
         <input type="button" value="Сохранить" onclick="editFormSend()" />
     </form>

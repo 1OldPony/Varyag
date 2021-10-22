@@ -206,8 +206,7 @@ function fotoRefresh(typeOfFoto) {
             break;
     }
 }
-//////////Отправляем форму для эдита, сохраняя данные из редактора превью///////////////////
-//$('#editFormSend').click();
+//////////////Отправляем форму для эдита, сохраняя данные из редактора превью/////////////////
 function editFormSend() {
     fillTheForm('shortFotoScaleForm', 'shortFotoScale');
     fillTheForm('shortFotoXForm', 'shortFotoX');
@@ -228,11 +227,8 @@ function editFormSend() {
 }
 function fillTheForm(formId, editorId) {
     if ($('#' + formId).val() != $('#' + editorId).val()) {
-        alert('значение поля ' + $('#' + editorId).val() + ' значение формы ' + $('#' + formId).val());
         $('#' + formId).val($('#' + editorId).val());
-        alert('итоговое значение формы ' + $('#' + formId).val());
     }
-    //
 }
 
 ////////////////////////////Создаем список связанных проектов//////////////////////////////

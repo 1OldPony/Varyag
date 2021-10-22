@@ -193,7 +193,6 @@
                         <div class="newsListElement">
                             <div>
                                 <img src="@Model.ElementAt(i).ShortFotoPreview" />
-                                @*@await Component.InvokeAsync("Fotorama", new { articleId = @Model.ElementAt(i).ArticleId, galleryPath = @Model.ElementAt(i).PathToGallery1 + "\\preview", singleFoto = true })*@
                             </div>
                             <div class="textPartAllNews" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;margin:10px 0 10px 0;justify-self:center;width:96%;text-align:left">
                                 <h2 style="margin-block:0;">@Model.ElementAt(i).ArticleName</h2>

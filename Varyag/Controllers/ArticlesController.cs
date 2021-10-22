@@ -72,8 +72,18 @@ namespace Varyag.Controllers
             }
             else
             {
-                if (fotos.Count!=0)
-                    LittleHelper.DeleteFiles(path, false);
+                if (fotos.Count != 0)
+                {
+                    string[] files = Directory.GetFiles(path);
+                    foreach (var file in files)
+                    {
+                        string[] extension = file.Split('.');
+                        if (extension[1] != "txt")
+                        {
+                            System.IO.File.Delete(file);
+                        }
+                    }
+                }
             }
 
             //string previewPath;
@@ -111,6 +121,10 @@ namespace Varyag.Controllers
             {
                 await LittleHelper.SaveInTxt(pathToText, currentTextPart);
             }
+            //else
+            //{
+            //    await LittleHelper.SaveInTxt(pathToText, currentTextPart);
+            //}
 
             if (actionType!="Edit")
             {
@@ -470,7 +484,10 @@ namespace Varyag.Controllers
                         break;
                 }
             }
+            //if (true)
+            //{
 
+            //}
             article.ShortFotoPreview = shortPreview;
             article.MiddleFotoPreview = middlePreview;
             article.WideFotoPreview = widePreview;
@@ -666,6 +683,16 @@ namespace Varyag.Controllers
                     break;
             }
 
+            ViewBag.ShortImgX = LittleHelper.PercentToCoordinates(article.ShortImgX);
+            ViewBag.ShortImgY = LittleHelper.PercentToCoordinates(article.ShortImgY);
+            ViewBag.ShortImgScale = LittleHelper.PercentToCoordinates(article.ShortImgScale);
+            ViewBag.MiddleImgX = LittleHelper.PercentToCoordinates(article.MiddleImgX);
+            ViewBag.MiddleImgY = LittleHelper.PercentToCoordinates(article.MiddleImgY);
+            ViewBag.MiddleImgScale = LittleHelper.PercentToCoordinates(article.MiddleImgScale);
+            ViewBag.WideImgX = LittleHelper.PercentToCoordinates(article.WideImgX);
+            ViewBag.WideImgY = LittleHelper.PercentToCoordinates(article.WideImgY);
+            ViewBag.WideImgScale = LittleHelper.PercentToCoordinates(article.WideImgScale);
+
             ViewBag.Folder = folder;
             ViewBag.Name = name;
             ViewBag.Route = route;
@@ -688,12 +715,11 @@ namespace Varyag.Controllers
 
             string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
             string pathForFinalTemp = Path.Combine(article.PathToGallery1, "preview");
-            string shortPreview = "", middlePreview = "", widePreview = "";
+            //string shortPreview = "", middlePreview = "", widePreview = "";
 
             string[] files = Directory.GetFiles(pathTemp);
             if (files.Count()!=0)
             {
-                LittleHelper.DeleteFiles(pathForFinalTemp, false);
 
                 string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
 
@@ -702,27 +728,40 @@ namespace Varyag.Controllers
                     string pathStart = Path.Combine(pathTemp, foto);
                     string pathEnd = Path.Combine(pathForFinalTemp, foto);
 
-                    System.IO.File.Move(pathStart, pathEnd);
-
-                    switch (foto)
+                    if (System.IO.File.Exists(pathStart))
                     {
-                        case "short.jpg":
-                            shortPreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
-                            break;
-                        case "middle.jpg":
-                            middlePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
-                            break;
-                        case "wide.jpg":
-                            widePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
-                            break;
-                        default:
-                            break;
+                        System.IO.File.Delete(pathEnd);
+                        System.IO.File.Move(pathStart, pathEnd);
                     }
+
+                    //switch (foto)
+                    //{
+                    //    case "short.jpg":
+                    //        shortPreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                    //        break;
+                    //    case "middle.jpg":
+                    //        middlePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                    //        break;
+                    //    case "wide.jpg":
+                    //        widePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                    //        break;
+                    //    default:
+                    //        break;
+                    //}
                 }
             }
-            //article.ShortFotoPreview = shortPreview;
-            //article.MiddleFotoPreview = middlePreview;
-            //article.WideFotoPreview = widePreview;
+            //if (article.ShortFotoPreview==null)
+            //{
+            //    article.ShortFotoPreview = shortPreview;
+            //}
+            //if (article.MiddleFotoPreview == null)
+            //{
+            //    article.MiddleFotoPreview = middlePreview;
+            //}
+            //if (article.WideFotoPreview == null)
+            //{
+            //    article.WideFotoPreview = widePreview;
+            //}
             article.ShortImgScale = article.ShortImgScale + "%";
             article.ShortImgX = article.ShortImgX + "%";
             article.ShortImgY = article.ShortImgY + "%";
