@@ -13,20 +13,25 @@
     .about p {
         font-size: 2rem;
     }
-
+.littleBlocksLine {
+    display:flex;
+}
 .littleBlock {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: bold;
     position: relative;
     margin: 10px;
     background: white;
     border-radius: 10px;
     font-family: 'Gabriela';
-    padding: 25px;
+    padding: 15px;
     width: 32%;
+}
+.littleBlock .borderAbout {
+    margin:10px;
 }
 
 #leftLittleBlock.littleBlock {
@@ -266,7 +271,28 @@
     max-width: 1370px;
     margin: auto 10px 10px 10px;
 }
-
+.catalogIconsMainPaigeHeader {
+    display: flex;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    align-items: center;
+    width: 16.7%;
+    background-color: #183f61;
+}
+.mainPageCatalogNav {
+    display: flex;
+    justify-content: center;
+    /*background-color: #183f61;*/
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: -1px 10px 0 10px;
+}
+.catalogIconsMainPaigeLine {
+    display: flex;
+    width: 83.4%;
+}
 .catalogIconsMainPaige {
     width: 16.6%;
     display: flex;
@@ -289,11 +315,30 @@
     background-color: white;
     justify-content: space-between;
 }
+.catalogIconHeader {
+    font-size: 1.7rem;
+    text-align: center;
+    font-family: 'Gabriela';
+    font-weight: bold;
+}
+.catalogIconMain {
+    width: 85%;
+}
+#Yal.catalogIconMain {
+    width: 70%;
+}
 
 .catalogPlates {
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
+}
+#mainPage.catalogShorted {
+    display: none;
+}
+#mainPageSmall.catalogPlates {
+    display: none;
+    flex-direction:column;
 }
 
 .catalogPlitka {
@@ -305,7 +350,10 @@
     background-color: white;
     border-radius: 10px;
 }
-
+#single.catalogPlitka {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
 #center.catalogPlitka {
     margin: 0 10px 10px 10px;
 }
@@ -333,7 +381,7 @@
 
 .plitkaCategoryHeader {
     margin-bottom: 5px;
-    color: red;
+    color: #e81010;
     font-size: 1.3rem;
     font-weight: bold;
 }
@@ -681,7 +729,7 @@ img {
 .borderAbout {
     border-top-style: solid;
     border-width: 1px;
-    margin: 2vh;
+    margin: 20px;
     border-color: rgba(24, 63, 97, 0.4);
 }
 
@@ -2392,7 +2440,8 @@ ul .nav-element-choosen {
 
 @media (max-width:1300px) {
     .catalogPlitka {
-        width: 32%;
+        /*width: 32%;*/
+        width: calc(100%/3 - 10px);
     }
 }
 
@@ -2458,7 +2507,6 @@ ul .nav-element-choosen {
     .sheme-TTH {
         width: 31.4%;
     }
-
     .galleryFlex {
         width: 66%;
     }
@@ -2467,6 +2515,18 @@ ul .nav-element-choosen {
     }
     .shortPreviewBlockText {
         display: flex;
+    }
+    .littleBlock {
+        font-size:1.5rem;
+    }
+    .catalogIconMain {
+        width: 90%;
+    }
+    #Yal.catalogIconMain {
+        width: 75%;
+    }
+    .catalogIconsMainPaigeHeader {
+        font-size: 1.7rem;
     }
 }
 
@@ -2482,9 +2542,6 @@ ul .nav-element-choosen {
     .partNews {
         flex-direction: column;
     }
-    /*.partNewsElement {
-        height:15vh;
-    }*/
 
     #mainPage.partNewsElement {
         width: 100%;
@@ -2585,9 +2642,9 @@ ul .nav-element-choosen {
         width: 67%;
     }
 
-    .catalogPlitka {
+    /*.catalogPlitka {
         width: 31.5%;
-    }
+    }*/
 }
 
 @media (max-width:1090px) {
@@ -2789,13 +2846,16 @@ ul .nav-element-choosen {
     .catalogPlates {
         margin-left: 10px;
     }
-
+    #mainPage.catalogShorted {
+        display: flex;
+        flex-direction:column;
+    }
     .navigationTopBlock {
         margin-left: 10px;
     }
 
     .catalogPlitka {
-        width: 32.2%;
+        /*width: 32.2%;*/
     }
 
     #newsTopLine.topCatalogLine {
@@ -2808,6 +2868,54 @@ ul .nav-element-choosen {
 
     #newsProjectsHalf.projectsHalf {
         margin-left: 10px;
+    }
+    .littleBlocksLine {
+        flex-direction:column;
+    }
+    .littleBlock {
+        margin: 0 10px 10px 10px;
+        width: auto;
+        /*padding: 0 15px 0 15px;*/
+        font-size: 1.4rem;
+    }
+
+    #leftLittleBlock.littleBlock {
+        margin: 0 10px 10px 10px;
+    }
+
+    #rightLittleBlock.littleBlock {
+        margin: 0 10px 10px 10px;
+    }
+    .littleBlock .borderAbout {
+        /*margin: 15px;*/
+        display:none;
+    }
+    .mainPageCatalogNav {
+        display: none;
+    }
+    .catalogIconsMainPaige2Different {
+        width: 33.3%;
+        display: flex;
+    }
+    .catalogIconsMainPaigeHeader {
+        width: auto;
+        margin: 0 10px 0 10px;
+    }
+    .catalogIconsMainPaigeLine {
+        width: auto;
+        flex-wrap:wrap;
+    }
+    .catalogIconsMainPaige2 {
+        width: 33.3%;
+    }
+    .catalogIconHeader {
+        font-size: 1.6rem;
+    }
+    .catalogIconMain {
+        width: 75%;
+    }
+    #Yal.catalogIconMain {
+        width: 60%;
     }
 }
 
@@ -2913,9 +3021,9 @@ ul .nav-element-choosen {
         display: none
     }
 
-    .catalogPlitka {
+    /*.catalogPlitka {
         width: 32%;
-    }
+    }*/
 }
 
 @media (max-width:880px) {
@@ -3260,14 +3368,14 @@ ul .nav-element-choosen {
     }
 
     .catalogPlitka {
-        width: 48.5%;
+        width: calc(100%/2 - 10px);
     }
 
     #shlupki.catalogPlitka {
         margin-left: 10px;
     }
 
-    .catalogPlitka[name="ladiy"] {
+    #center.catalogPlitka[name="ladiy"] {
         margin-left: 0px;
     }
 }
@@ -3283,9 +3391,9 @@ ul .nav-element-choosen {
         grid-template-columns: 47% 53%;
     }
 
-    .catalogPlitka {
+    /*.catalogPlitka {
         width: 48%;
-    }
+    }*/
 }
 
 @media (max-width:700px) {
@@ -3492,9 +3600,9 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:530px) {
-    .catalogPlitka {
+    /*.catalogPlitka {
         width: 47%;
-    }
+    }*/
 }
 
 @media (max-width:525px) {
@@ -3636,7 +3744,16 @@ ul .nav-element-choosen {
     .catalogPlitka {
         width: 100%;
     }
-
+    #mainPage.catalogShorted {
+        display:none;
+    }
+    #mainPageSmall.catalogPlates {
+        display: flex;
+        margin-top:0;
+    }
+    #mainPageSmall.catalogPlates .catalogIconsMainPaigeHeader {
+        margin:0;
+    }
     #center.catalogPlitka {
         margin: 0 0 10px 0;
     }
