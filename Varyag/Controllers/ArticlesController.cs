@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
+using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
@@ -32,7 +33,8 @@ namespace Varyag.Controllers
         public async Task<IActionResult> FillArticle(int? articleId, string pathToGall, string currentTextPart, IFormFileCollection fotos, IFormFileCollection preview, string articleFolder, string articleName,
             int? partsCounter, string actionType, string articleRoute, string PathToGallery1, string PathToGallery2, string PathToGallery3, string PathToGallery4, string PathToGallery5, string PathToGallery6, 
             string PathToGallery7, string PathToGallery8, string PathToGallery9, string PathToGallery10, string PathToGallery11, string PathToGallery12, string PathToGallery13, string PathToGallery14, string PathToGallery15, 
-            string articleType)
+            string articleType, string shortFotoScale, string shortFotoX, string shortFotoY, string shortStory, string middleFotoScale,
+            string middleFotoX, string middleFotoY, string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY, string wideStory)
         {
             string path = Path.Combine(_Environment.WebRootPath, "images", "articles");
             LittleHelper.DirectoryExistCheck(path);
@@ -65,27 +67,42 @@ namespace Varyag.Controllers
 
             path = Path.Combine(path, partsCounter.ToString());
             if (!Directory.Exists(path))
+            {
                 LittleHelper.DirectoryExistCheck(path);
+            }
             else
-                LittleHelper.DeleteFiles(path, false);
-
-            string previewPath;
-            if (partsCounter == null)
             {
-                previewPath = Path.Combine(path,"1", "preview");
+                if (fotos.Count != 0)
+                {
+                    string[] files = Directory.GetFiles(path);
+                    foreach (var file in files)
+                    {
+                        string[] extension = file.Split('.');
+                        if (extension[1] != "txt")
+                        {
+                            System.IO.File.Delete(file);
+                        }
+                    }
+                }
             }
-            else{
-                previewPath = Path.Combine(_Environment.WebRootPath, "images", "articles", fold, "1", "preview");
-            }
-            if (preview.Count != 0)
-            {
-                if (!Directory.Exists(previewPath))
-                    LittleHelper.DirectoryExistCheck(previewPath);
-                else
-                    LittleHelper.DeleteFiles(previewPath, false);
 
-                FillPreview(preview, previewPath);
-            }
+            //string previewPath;
+            //if (partsCounter == null)
+            //{
+            //    previewPath = Path.Combine(path,"1", "preview");
+            //}
+            //else{
+            //    previewPath = Path.Combine(_Environment.WebRootPath, "images", "articles", fold, "1", "preview");
+            //}
+            //if (preview.Count != 0)
+            //{
+            //    if (!Directory.Exists(previewPath))
+            //        LittleHelper.DirectoryExistCheck(previewPath);
+            //    else
+            //        LittleHelper.DeleteFiles(previewPath, false);
+
+            //    FillPreview(preview, previewPath);
+            //}
 
             if (fotos.Count()!=0)
             {
@@ -104,6 +121,10 @@ namespace Varyag.Controllers
             {
                 await LittleHelper.SaveInTxt(pathToText, currentTextPart);
             }
+            //else
+            //{
+            //    await LittleHelper.SaveInTxt(pathToText, currentTextPart);
+            //}
 
             if (actionType!="Edit")
             {
@@ -115,7 +136,7 @@ namespace Varyag.Controllers
                     name = articleName,
                     route = articleRoute,
                     type = articleType,
-                    PTPREVIEW = previewPath,
+                    //PTPREVIEW = previewPath,
                     PTG1 = PathToGallery1,
                     PTG2 = PathToGallery2,
                     PTG3 = PathToGallery3,
@@ -130,7 +151,19 @@ namespace Varyag.Controllers
                     PTG12 = PathToGallery12,
                     PTG13 = PathToGallery13,
                     PTG14 = PathToGallery14,
-                    PTG15 = PathToGallery15
+                    PTG15 = PathToGallery15,
+                    shFotoScale=shortFotoScale,
+                    shFotoX = shortFotoX,
+                    shFotoY = shortFotoY,
+                    shStory = shortStory,
+                    midFotoScale = middleFotoScale,
+                    midFotoX = middleFotoX,
+                    midFotoY = middleFotoY,
+                    midStory = middleStory,
+                    wFotoScale = wideFotoScale,
+                    wFotoX = wideFotoX,
+                    wFotoY = wideFotoY,
+                    wStory = wideStory
                 });
             }
             else
@@ -158,25 +191,99 @@ namespace Varyag.Controllers
                     PTG12 = PathToGallery12,
                     PTG13 = PathToGallery13,
                     PTG14 = PathToGallery14,
-                    PTG15 = PathToGallery15
+                    PTG15 = PathToGallery15,
+                    shFotoScale = shortFotoScale,
+                    shFotoX = shortFotoX,
+                    shFotoY = shortFotoY,
+                    shStory = shortStory,
+                    midFotoScale = middleFotoScale,
+                    midFotoX = middleFotoX,
+                    midFotoY = middleFotoY,
+                    midStory = middleStory,
+                    wFotoScale = wideFotoScale,
+                    wFotoX = wideFotoX,
+                    wFotoY = wideFotoY,
+                    wStory = wideStory
                 });
             }
         }
 
-        public async void FillPreview(IFormFileCollection preview, string previewPath)
+
+        //[HttpPost]
+        public void SaveTempFoto(IFormFile newsFoto, string fotoType)
         {
-                string name = "ВерфьВаряг(превью).jpg";
-                using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
+            string[] names = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
+            if (newsFoto != null)
+            {
+                switch (fotoType)
                 {
-                    await preview[0].CopyToAsync(fileStream);
+                    case "общая":
+                        foreach (var item in names)
+                        {
+                            SaveImgAsync(item, newsFoto);
+                        }
+                        break;
+                    case "мелкая":
+                        SaveImgAsync(names[0], newsFoto);
+                        break;
+                    case "средняя":
+                        SaveImgAsync(names[1], newsFoto);
+                        break;
+                    case "широкая":
+                        SaveImgAsync(names[2], newsFoto);
+                        break;
+                    default:
+                        break;
                 }
+            }
         }
+        private void SaveImgAsync(string name, IFormFile newsFoto)
+        {
+            string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
+            LittleHelper.DirectoryExistCheck(path);
+
+            using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+            {
+                newsFoto.CopyTo(fileStream);
+            }
+        }
+        //public IActionResult PreviewRefresh()
+        //{
+        //    return PartialView("Default");
+        //    //return View("Default"); 
+        //}
+
+        //public async void FillPreview(IFormFileCollection preview, string previewPath)
+        //{
+        //    string name = "ВерфьВаряг(превью).jpg";
+        //    using (var fileStream = new FileStream(previewPath + "/" + name, FileMode.Create))
+        //    {
+        //        await preview[0].CopyToAsync(fileStream);
+        //    }
+        //}
 
         // GET: Articles/Create
-        public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTPREVIEW, string PTG1,
+        public IActionResult Create(int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTPREVIEW, string PTG1,string type,
             string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8, string PTG9, string PTG10, string PTG11, string PTG12, 
-            string PTG13, string PTG14, string PTG15, string type)
+            string PTG13, string PTG14, string PTG15, string shFotoScale, string shFotoX, string shFotoY, string shStory, string midFotoScale, 
+            string midFotoX, string midFotoY, string midStory, string wFotoScale, string wFotoX, string wFotoY, string wStory)
         {
+            ViewBag.RefreshEditor = new EditorModel()
+            {
+                shortFotoScale = shFotoScale,
+                shortFotoX = shFotoX,
+                shortFotoY = shFotoY,
+                shortStory = shStory,
+                middleFotoScale = midFotoScale,
+                middleFotoX = midFotoX,
+                middleFotoY = midFotoY,
+                middleStory = midStory,
+                wideFotoScale = wFotoScale,
+                wideFotoX = wFotoX,
+                wideFotoY = wFotoY,
+                wideStory = wStory
+            };
+
             if (PTPREVIEW!=null)
             {
                 ViewBag.PathForPreview = PTPREVIEW;
@@ -347,6 +454,53 @@ namespace Varyag.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Article article)
         {
+            string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
+            string pathForFinalTemp = Path.Combine(article.PathToGallery1, "preview");
+            string shortPreview = "", middlePreview = "", widePreview = "";
+
+            LittleHelper.DirectoryExistCheck(pathForFinalTemp);
+
+            string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
+
+            foreach (var foto in fotos)
+            {
+                string pathStart = Path.Combine(pathTemp, foto);
+                string pathEnd = Path.Combine(pathForFinalTemp, foto);
+
+                System.IO.File.Move(pathStart, pathEnd);
+
+                switch (foto)
+                {
+                    case "short.jpg":
+                        shortPreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                        break;
+                    case "middle.jpg":
+                        middlePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                        break;
+                    case "wide.jpg":
+                        widePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                        break;
+                    default:
+                        break;
+                }
+            }
+            //if (true)
+            //{
+
+            //}
+            article.ShortFotoPreview = shortPreview;
+            article.MiddleFotoPreview = middlePreview;
+            article.WideFotoPreview = widePreview;
+            article.ShortImgScale = article.ShortImgScale + "%";
+            article.ShortImgX = article.ShortImgX + "%";
+            article.ShortImgY = article.ShortImgY + "%";
+            article.MiddleImgScale = article.MiddleImgScale + "%";
+            article.MiddleImgX = article.MiddleImgX + "%";
+            article.MiddleImgY = article.MiddleImgY + "%";
+            article.WideImgScale = article.WideImgScale + "%";
+            article.WideImgX = article.WideImgX + "%";
+            article.WideImgY = article.WideImgY + "%";
+
             if (ModelState.IsValid)
             {
                 _context.Add(article);
@@ -357,9 +511,9 @@ namespace Varyag.Controllers
         }
 
         // GET: Articles/Edit/5
-        public async Task<IActionResult> Edit(int? id, int? partNumber, string pathForPartGallery, string folder,
-            string name, string route, string PTG1, string PTG2, string PTG3, string PTG4, string PTG5, string PTG6, string PTG7, string PTG8,
-            string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15, string type)
+        public async Task<IActionResult> Edit(int? id, int? partNumber, string pathForPartGallery, string folder, string name, string route, string PTG1, string PTG2, string PTG3, string PTG4,
+            string PTG5, string PTG6, string PTG7, string PTG8, string PTG9, string PTG10, string PTG11, string PTG12, string PTG13, string PTG14, string PTG15, string type, string shFotoScale,
+            string shFotoX, string shFotoY, string shStory, string midFotoScale,string midFotoX, string midFotoY, string midStory, string wFotoScale, string wFotoX, string wFotoY, string wStory)
         {
             if (id == null)
             {
@@ -371,6 +525,21 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
+            ViewBag.RefreshEditor = new EditorModel()
+            {
+                shortFotoScale = shFotoScale,
+                shortFotoX = shFotoX,
+                shortFotoY = shFotoY,
+                shortStory = shStory,
+                middleFotoScale = midFotoScale,
+                middleFotoX = midFotoX,
+                middleFotoY = midFotoY,
+                middleStory = midStory,
+                wideFotoScale = wFotoScale,
+                wideFotoX = wFotoX,
+                wideFotoY = wFotoY,
+                wideStory = wStory
+            };
 
             if (PTG1 != null)
             {
@@ -514,6 +683,16 @@ namespace Varyag.Controllers
                     break;
             }
 
+            ViewBag.ShortImgX = LittleHelper.PercentToCoordinates(article.ShortImgX);
+            ViewBag.ShortImgY = LittleHelper.PercentToCoordinates(article.ShortImgY);
+            ViewBag.ShortImgScale = LittleHelper.PercentToCoordinates(article.ShortImgScale);
+            ViewBag.MiddleImgX = LittleHelper.PercentToCoordinates(article.MiddleImgX);
+            ViewBag.MiddleImgY = LittleHelper.PercentToCoordinates(article.MiddleImgY);
+            ViewBag.MiddleImgScale = LittleHelper.PercentToCoordinates(article.MiddleImgScale);
+            ViewBag.WideImgX = LittleHelper.PercentToCoordinates(article.WideImgX);
+            ViewBag.WideImgY = LittleHelper.PercentToCoordinates(article.WideImgY);
+            ViewBag.WideImgScale = LittleHelper.PercentToCoordinates(article.WideImgScale);
+
             ViewBag.Folder = folder;
             ViewBag.Name = name;
             ViewBag.Route = route;
@@ -533,6 +712,65 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
+
+            string pathTemp = Path.Combine(_Environment.WebRootPath, "images", "temp");
+            string pathForFinalTemp = Path.Combine(article.PathToGallery1, "preview");
+            //string shortPreview = "", middlePreview = "", widePreview = "";
+
+            string[] files = Directory.GetFiles(pathTemp);
+            if (files.Count()!=0)
+            {
+
+                string[] fotos = new string[] { "short.jpg", "middle.jpg", "wide.jpg" };
+
+                foreach (var foto in fotos)
+                {
+                    string pathStart = Path.Combine(pathTemp, foto);
+                    string pathEnd = Path.Combine(pathForFinalTemp, foto);
+
+                    if (System.IO.File.Exists(pathStart))
+                    {
+                        System.IO.File.Delete(pathEnd);
+                        System.IO.File.Move(pathStart, pathEnd);
+                    }
+
+                    //switch (foto)
+                    //{
+                    //    case "short.jpg":
+                    //        shortPreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                    //        break;
+                    //    case "middle.jpg":
+                    //        middlePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                    //        break;
+                    //    case "wide.jpg":
+                    //        widePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
+                    //        break;
+                    //    default:
+                    //        break;
+                    //}
+                }
+            }
+            //if (article.ShortFotoPreview==null)
+            //{
+            //    article.ShortFotoPreview = shortPreview;
+            //}
+            //if (article.MiddleFotoPreview == null)
+            //{
+            //    article.MiddleFotoPreview = middlePreview;
+            //}
+            //if (article.WideFotoPreview == null)
+            //{
+            //    article.WideFotoPreview = widePreview;
+            //}
+            article.ShortImgScale = article.ShortImgScale + "%";
+            article.ShortImgX = article.ShortImgX + "%";
+            article.ShortImgY = article.ShortImgY + "%";
+            article.MiddleImgScale = article.MiddleImgScale + "%";
+            article.MiddleImgX = article.MiddleImgX + "%";
+            article.MiddleImgY = article.MiddleImgY + "%";
+            article.WideImgScale = article.WideImgScale + "%";
+            article.WideImgX = article.WideImgX + "%";
+            article.WideImgY = article.WideImgY + "%";
 
             if (ModelState.IsValid)
             {
@@ -582,10 +820,10 @@ namespace Varyag.Controllers
         {
             var article = await _context.Article.FindAsync(id);
 
-            List<Article> article2 = _context.Article.Where(a=>a.ArticleId==id).ToList();
+            //List<Article> article2 = _context.Article.Where(a=>a.ArticleId==id).ToList();
             //string[] paths = new[] {article.PathToGallery1, article.PathToGallery2, article.PathToGallery3, article.PathToGallery4, article.PathToGallery5, article.PathToGallery6, article.PathToGallery7,
             //    article.PathToGallery8, article.PathToGallery9, article.PathToGallery10, article.PathToGallery11, article.PathToGallery12, article.PathToGallery13, article.PathToGallery14, article.PathToGallery15 };
-            ClearGallery(article2.First().PathToGallery1);
+            ClearGallery(article.PathToGallery1);
             ClearGallery(article.PathToGallery2);
             ClearGallery(article.PathToGallery3);
             ClearGallery(article.PathToGallery4);

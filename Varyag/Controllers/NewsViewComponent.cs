@@ -16,7 +16,7 @@ namespace Varyag.Controllers
         private readonly VaryagContext db;
         //private readonly ILogger _logger;
 
-        public NewsViewComponent(VaryagContext context/*, ILoggerFactory loggerFactory*/)
+        public NewsViewComponent(VaryagContext context)
         {
             db = context;
             //_logger = loggerFactory.CreateLogger("FileLogger");
@@ -24,33 +24,19 @@ namespace Varyag.Controllers
             //loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today.ToShortDateString() + ".txt"));
         }
 
-    public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-
-
-            //var items = new List<Project>();
-            //items = await db.Project.Where(w => w.BoatRow || w.BoatSail || w.BoatTraditional == true).ToListAsync();
-
-            var news = new List<News>();
-            news = await db.News.ToListAsync();
-
-
             List<NewsViewModel> lastNews = new List<NewsViewModel>();
+
+
+
+            List<News> news = await db.News.ToListAsync();
             List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
             lastNews = sortedNews.AsEnumerable().Take(2).ToList();
 
 
-            //try
-            //{
-            //}
-            //catch (Exception e)
-            //{
-            //    _logger.LogInformation("ОШИБКА!!!! ВРЕМЯ {0}, СООБЩЕНИЕ {1}, МЕТОД {2}, ПУТЬ_ДО {3},", DateTime.Now.ToShortTimeString(), e.Message, e.TargetSite, e.StackTrace);
-            //    throw new Exception("Не удалось загрузить новостные превью");
-            //}
 
             return View(lastNews);
-            //return View();
         }
     }
 }

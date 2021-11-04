@@ -177,6 +177,60 @@ function newsSaveButtonDisable() {
         $("#newsSaveButton").attr("disabled", "disabled");
 }
 
+////////////////////////Обслуживаем механизм создания превью статей//////////////////////////
+function refreshPreviewEditor() {
+    let response = fetch('/articles/SaveTempFoto', {
+        method: 'POST',
+        body: new FormData(fotoEditorForm)
+    });
+    
+    setTimeout(fotoRefresh($('#typeOfFoto').val()), 1000);
+}
+function fotoRefresh(typeOfFoto) {
+    switch (typeOfFoto) {
+        case 'общая':
+            $('#creator.partNewsElementViewShort').css('background-image', 'url(/images/temp/wide.jpg?' + Math.random() + ')');
+            $('#creator.partNewsElementViewMiddle').css('background-image', 'url(/images/temp/short.jpg?' + Math.random() + ')');
+            $('#creator.partNewsElementViewWide').css('background-image', 'url(/images/temp/middle.jpg?' + Math.random() + ')');
+            break;
+        case 'мелкая':
+            $('#creator.partNewsElementViewShort').css('background-image', 'url(/images/temp/short.jpg?Р' + Math.random() + ')');
+            break;
+        case 'средняя':
+            $('#creator.partNewsElementViewMiddle').css('background-image', 'url(/images/temp/middle.jpg?К' + Math.random() + ')');
+            break;
+        case 'широкая':
+            $('#creator.partNewsElementViewWide').css('background-image', 'url(/images/temp/wide.jpg?У' + Math.random() + ')');
+            break;
+        default:
+            break;
+    }
+}
+//////////////Отправляем форму для эдита, сохраняя данные из редактора превью/////////////////
+function editFormSend() {
+    fillTheForm('shortFotoScaleForm', 'shortFotoScale');
+    fillTheForm('shortFotoXForm', 'shortFotoX');
+    fillTheForm('shortFotoYForm', 'shortFotoY');
+    fillTheForm('shortStoryForm', 'shortFotoText');
+
+    fillTheForm('middleFotoScaleForm', 'middleFotoScale');
+    fillTheForm('middleFotoXForm', 'middleFotoX');
+    fillTheForm('middleFotoYForm', 'middleFotoY');
+    fillTheForm('middleStoryForm', 'middleFotoText');
+
+    fillTheForm('wideFotoScaleForm', 'wideFotoScale');
+    fillTheForm('wideFotoXForm', 'wideFotoX');
+    fillTheForm('wideFotoYForm', 'wideFotoY');
+    fillTheForm('wideStoryForm', 'wideFotoText');
+
+    $('#editForm').submit();
+}
+function fillTheForm(formId, editorId) {
+    if ($('#' + formId).val() != $('#' + editorId).val()) {
+        $('#' + formId).val($('#' + editorId).val());
+    }
+}
+
 ////////////////////////////Создаем список связанных проектов//////////////////////////////
 function newsLinkToProject(firstTimeEdit) {
     let projects = $("[name='LinkedProjectNames']").val();

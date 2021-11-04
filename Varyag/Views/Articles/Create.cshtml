@@ -9,10 +9,109 @@
     <h1>Создать статью</h1>
     <hr />
 
+    <form asp-action="SaveTempFoto" asp-route-actionType="create" id="fotoEditorForm" enctype="multipart/form-data">
+        <div style="margin:2vW;display:flex;justify-content:flex-start;">
+            <div style="grid-area:loader">
+                <input type="file" name="newsFoto" required /><br />
+                <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block" id="typeOfFoto"></select>
+                <input type="button" onclick="refreshPreviewEditor()" value="Загрузить" />
+            </div>
+            <div style="width:380px;font-size:1.2rem;">
+                Возможно придется несколько раз нажать "Загрузить", не всегда изображение на странице обновляется с 1 раза
+            </div>
+        </div>
+    </form>
     <form asp-action="fillArticle" enctype="multipart/form-data">
+        <div class="newsFotoEditor">
+            <div id="previewFotos" style="display:flex;flex-direction:column;justify-content:center;font-family:'Gabriela';font-weight:bold;margin:2vw;">
+                <div class="partNewsElementViewShort" id="creator" name="ViewShort">
+                    <div class="annotation">
+                        <div class="annotationText" id="shortFotoNewsText">
+                            @ViewBag.RefreshEditor.shortStory
+                        </div>
+                    </div>
+                </div>
+                <div class="partNewsElementViewMiddle" id="creator" name="ViewMiddle" style="margin: 10px 0 10px 0;">
+                    <div class="annotation">
+                        <div class="annotationText" id="middleFotoNewsText">
+                            @ViewBag.RefreshEditor.middleStory
+                        </div>
+                    </div>
+                </div>
+                <div class="partNewsElementViewWide" id="creator" name="ViewWide">
+                    <div class="annotation">
+                        <div class="annotationText" id="wideFotoNewsText">
+                            @ViewBag.RefreshEditor.wideStory
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;justify-content:space-between;font-family:'Gabriela';font-weight:bold;margin:2vw;">
+                <div id="editorShort" class="editor">
+                    <div class="newsFotoEditorControls">
+                        <div id="top" class="controlGroup">
+                            <div class="controlGroup">
+                                <div>Ось Х</div>
+                                <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.RefreshEditor.shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                            </div>
+                            <div class="controlGroup">
+                                <div>Ось Y</div>
+                                <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.RefreshEditor.shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                            </div>
+                            <div class="controlGroup">
+                                <div>Масштаб</div>
+                                <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.RefreshEditor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                            </div>
+                        </div>
+                        <textarea rows="6" cols="30" maxlength="55" name="shortStory" value="@ViewBag.RefreshEditor.shortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+                    </div>
+                </div>
+                <div id="editorMiddle" class="editor">
+                    <div class="newsFotoEditorControls">
+                        <div id="top" class="controlGroup">
+                            <div class="controlGroup">
+                                <div>Ось Х</div>
+                                <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.RefreshEditor.middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                            </div>
+                            <div class="controlGroup">
+                                <div>Ось Y</div>
+                                <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.RefreshEditor.middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                            </div>
+                            <div class="controlGroup">
+                                <div>Масштаб</div>
+                                <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.RefreshEditor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                            </div>
+                        </div>
+                        <textarea rows="6" cols="30" maxlength="55" name="middleStory" value="@ViewBag.RefreshEditor.middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
+                    </div>
+                </div>
+                <div id="editorWide" class="editor">
+                    <div class="newsFotoEditorControls">
+                        <div id="top" class="controlGroup">
+                            <div class="controlGroup">
+                                <div>Ось Х</div>
+                                <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.RefreshEditor.wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                            </div>
+                            <div class="controlGroup">
+                                <div>Ось Y</div>
+                                <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.RefreshEditor.wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                            </div>
+                            <div class="controlGroup">
+                                <div>Масштаб</div>
+                                <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.RefreshEditor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                            </div>
+                        </div>
+                        <textarea rows="6" cols="30" maxlength="90" name="wideStory" value="@ViewBag.RefreshEditor.wideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+
         <div style="display:flex;flex-direction:column">
             <div>Порядковый номер блока текст-галлерея</div>
-            <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" />
+            <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" required />
         </div>
         <div style="display:flex">
             <textarea name="currentTextPart" id="mce"></textarea>
@@ -27,16 +126,18 @@
                 </div>
                 <div>
                     <div>Загрузка файлов в галлерею(Кнопка "Загрузить")</div>
-                    <input name="fotos" type="file" multiple />
+                    <div style="display:flex;">
+                        <input name="fotos" type="file" multiple /><input type="submit" value="Загрузить" />
+                    </div>
                 </div>
-                <div style="display:flex;">
-                    @if (ViewBag.PathForPartGallery1 != null)
+                @*<div style="display:flex;">*@
+                    @*@if (ViewBag.PathForPartGallery1 != null)
                     {
                         <img style="width:304px;margin:10px 10px 0 0;" src='@Url.Content(LittleHelper.PathAdapter(ViewBag.PathForPreview+"\\ВерфьВаряг(превью).jpg","articlePreview"))' />
-                    }
+                    }*@
                     <div style="display:flex;flex-direction:column;">
-                        <div>Фото на превью(нужно нажать кнопку "Загрузить")</div>
-                        <input type="file" name="preview" />
+                        @*<div>Фото на превью(нужно нажать кнопку "Загрузить")</div>
+                            <input type="file" name="preview" />*@
                         <div>Выберите тип статьи</div>
                         <select name="articleType">
                             @if (ViewBag.Type == "Заказы для кино")
@@ -51,15 +152,14 @@
                             }
                             @if (ViewBag.Type == null)
                             {
-                                <option value="Заказы для кино" >Заказы для кино</option>
+                                <option value="Заказы для кино">Заказы для кино</option>
                                 <option value="Заказы для музеев">Заказы для музеев</option>
                             }
                         </select>
                     </div>
-                </div>
+                @*</div>*@
             </div>
         </div>
-        <input type="submit" value="Загрузить" />
         <div hidden>
             <input type="text" name="PathToGallery1" value="@ViewBag.PathForPartGallery1" />
             <input type="text" name="PathToGallery2" value="@ViewBag.PathForPartGallery2" />
@@ -110,7 +210,22 @@
             <input type="text" asp-for="PathToGallery14" value="@ViewBag.PathForPartGallery14" />
             <input type="text" asp-for="Text14" value="@ViewBag.Text14" />
             <input type="text" asp-for="PathToGallery15" value="@ViewBag.PathForPartGallery15" />
-            <input type="text" asp-for="Text15" value="@ViewBag.Text15" />
+
+            @*<input type="text" asp-for="ShortFotoPreview" value="@ViewBag.RefreshEditor.ShortFotoPreview" />*@
+            <input type="text" asp-for="ShortImgScale" value="@ViewBag.RefreshEditor.shortFotoScale" />
+            <input type="text" asp-for="ShortImgX" value="@ViewBag.RefreshEditor.shortFotoX" />
+            <input type="text" asp-for="ShortImgY" value="@ViewBag.RefreshEditor.shortFotoY" />
+            <input type="text" asp-for="ShortStory" value="@ViewBag.RefreshEditor.shortStory" />
+            @*<input type="text" asp-for="MiddleFotoPreview" value="@ViewBag.RefreshEditor.MiddleFotoPreview" />*@
+            <input type="text" asp-for="MiddleImgScale" value="@ViewBag.RefreshEditor.middleFotoScale" />
+            <input type="text" asp-for="MiddleImgX" value="@ViewBag.RefreshEditor.middleFotoX" />
+            <input type="text" asp-for="MiddleImgY" value="@ViewBag.RefreshEditor.middleFotoY" />
+            <input type="text" asp-for="MiddleStory" value="@ViewBag.RefreshEditor.middleStory" />
+            @*<input type="text" asp-for="WideFotoPreview" value="@ViewBag.RefreshEditor.WideFotoPreview" />*@
+            <input type="text" asp-for="WideImgScale" value="@ViewBag.RefreshEditor.wideFotoScale" />
+            <input type="text" asp-for="WideImgX" value="@ViewBag.RefreshEditor.wideFotoX" />
+            <input type="text" asp-for="WideImgY" value="@ViewBag.RefreshEditor.wideFotoY" />
+            <input type="text" asp-for="WideStory" value="@ViewBag.RefreshEditor.wideStory" />
             <input asp-for="ArticleName" value="@ViewBag.Name" />
             <input asp-for="ArticleRoute" value="@ViewBag.Route" />
             <input asp-for="ArticleType" value="@ViewBag.Type" />

@@ -259,14 +259,15 @@ namespace Varyag.Controllers
 
         public IActionResult Models()
         {
-            List<AnythingElse> anythingItems = db.AnythingElse.ToList();
+            //List<AnythingElse> anythingItems = db.AnythingElse.ToList();
             ViewData["Title"] = "Разные заказы";
             ViewData["Keywords"] = "Дизайнерские решения на морскую тему, Корабли-инсталяции";
             ViewData["Description"] = "Дизайнерские решения, инсталяции и прочие нестандартные поекты, производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "makets";
             ViewBag.catalogPage = "models";
 
-            return View(anythingItems);
+            //return View(anythingItems);
+            return View();
         }
 
         public async Task<IActionResult> ProjectDetails(string route)

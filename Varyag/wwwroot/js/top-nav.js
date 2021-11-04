@@ -3,12 +3,6 @@ $(document).ready(function () {
     //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
     //$("#left.control, #right.control").height($(".allCustomers").height());
     leftMenuOffset = $(".projectsHalf").offset().top;
-
-
-
-    //document.addEventListener("DOMContentLoaded", () => {
-    //    alert("DOM готов!");
-    //});
 });
 $(window).scroll(function () {
     if ($(window).width() > 1000) {

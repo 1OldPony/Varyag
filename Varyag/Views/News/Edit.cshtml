@@ -8,7 +8,7 @@
 
 <hr />
 <form asp-action="SaveTempFoto" asp-route-actionType="Edit" asp-route-newId="@Model.NewsId" asp-route-newsDate="@Model.NewsDate" asp-route-oldNewsDate="@ViewBag.oldNewsDate" id="fotoEditorForm" enctype="multipart/form-data">
-    <div class="newsFotoEditor">
+    <div class="newsFotoEditor" style="flex-direction:column;">
         <div style="grid-area:loader">
             <input type="file" name="newsFoto" required /><br />
             <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block"></select>
@@ -243,7 +243,7 @@
                 }
                 else
                 {
-                    <input asp-for="NewsDate" id="newsDate" pattern="\d{2}[.]\d{2}[.]\d{4}" onkeyup="newsDateSave()" required />
+                    <input asp-for="NewsDate" id="newsDate" value="@Model.NewsDate" pattern="\d{2}[.]\d{2}[.]\d{4}" onkeyup="newsDateSave()" required />
                 }
             </div>
             <div style="grid-area:newsVideo1;display:flex;flex-direction:column">

@@ -41,5 +41,21 @@ namespace Varyag.Models
         public string PathToGallery14 { get; set; }
         public string Text15 { get; set; }
         public string PathToGallery15 { get; set; }
+
+        public string ShortFotoPreview { get; set; }
+        public string ShortImgScale { get; set; }
+        public string ShortImgX { get; set; }
+        public string ShortImgY { get; set; }
+        public string ShortStory { get; set; }
+        public string MiddleFotoPreview { get; set; }
+        public string MiddleImgScale { get; set; }
+        public string MiddleImgX { get; set; }
+        public string MiddleImgY { get; set; }
+        public string MiddleStory { get; set; }
+        public string WideFotoPreview { get; set; }
+        public string WideImgScale { get; set; }
+        public string WideImgX { get; set; }
+        public string WideImgY { get; set; }
+        public string WideStory { get; set; }
     }
 }

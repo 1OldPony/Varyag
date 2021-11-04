@@ -166,6 +166,16 @@ namespace Varyag.Migrations
 
                     b.Property<string>("ArticleType");
 
+                    b.Property<string>("MiddleFotoPreview");
+
+                    b.Property<string>("MiddleImgScale");
+
+                    b.Property<string>("MiddleImgX");
+
+                    b.Property<string>("MiddleImgY");
+
+                    b.Property<string>("MiddleStory");
+
                     b.Property<string>("PathToGallery1");
 
                     b.Property<string>("PathToGallery10");
@@ -196,6 +206,16 @@ namespace Varyag.Migrations
 
                     b.Property<string>("PathToGallery9");
 
+                    b.Property<string>("ShortFotoPreview");
+
+                    b.Property<string>("ShortImgScale");
+
+                    b.Property<string>("ShortImgX");
+
+                    b.Property<string>("ShortImgY");
+
+                    b.Property<string>("ShortStory");
+
                     b.Property<string>("Text1");
 
                     b.Property<string>("Text10");
@@ -225,6 +245,16 @@ namespace Varyag.Migrations
                     b.Property<string>("Text8");
 
                     b.Property<string>("Text9");
+
+                    b.Property<string>("WideFotoPreview");
+
+                    b.Property<string>("WideImgScale");
+
+                    b.Property<string>("WideImgX");
+
+                    b.Property<string>("WideImgY");
+
+                    b.Property<string>("WideStory");
 
                     b.HasKey("ArticleId");
 

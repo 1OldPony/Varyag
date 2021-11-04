@@ -96,9 +96,6 @@
                         @await Component.InvokeAsync("Fotorama", new { newsId = Model.ElementAt(0).NewsId })
                     </div>
                 }
-            @*//////////////////////////////////////////
-            ////////////////////////////////////////////
-            ////////////////////////////////////////////*@
                 @if (LittleHelper.NullCounter(Model.ElementAt(0).PathToVideo1, Model.ElementAt(0).PathToVideo2, Model.ElementAt(0).PathToVideo3) < 2)
                 {
                     <div class="newsNav">
