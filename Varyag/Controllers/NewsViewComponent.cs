@@ -14,24 +14,34 @@ namespace Varyag.Controllers
     public class NewsViewComponent : ViewComponent
     {
         private readonly VaryagContext db;
-        private readonly ILogger _logger;
+        //private readonly ILogger _logger;
 
-        public NewsViewComponent(VaryagContext context, ILoggerFactory loggerFactory)
+        public NewsViewComponent(VaryagContext context/*, ILoggerFactory loggerFactory*/)
         {
             db = context;
-            _logger = loggerFactory.CreateLogger("FileLogger");
-            LittleHelper.DirectoryExistCheck(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs"));
-            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today.ToShortDateString() + ".txt"));
+            //_logger = loggerFactory.CreateLogger("FileLogger");
+            //LittleHelper.DirectoryExistCheck(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs"));
+            //loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "ForLogggs", "log" + DateTime.Today.ToShortDateString() + ".txt"));
         }
 
-        public async Task<IViewComponentResult> InvokeAsync()
+    public async Task<IViewComponentResult> InvokeAsync()
         {
+
+
+            //var items = new List<Project>();
+            //items = await db.Project.Where(w => w.BoatRow || w.BoatSail || w.BoatTraditional == true).ToListAsync();
+
+            var news = new List<News>();
+            news = await db.News.ToListAsync();
+
+
             List<NewsViewModel> lastNews = new List<NewsViewModel>();
+            List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
+            lastNews = sortedNews.AsEnumerable().Take(2).ToList();
+
+
             //try
             //{
-                List<News> news = await db.News.ToListAsync();
-                List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
-                lastNews = sortedNews.AsEnumerable().Take(3).ToList();
             //}
             //catch (Exception e)
             //{
@@ -40,6 +50,7 @@ namespace Varyag.Controllers
             //}
 
             return View(lastNews);
+            //return View();
         }
     }
 }

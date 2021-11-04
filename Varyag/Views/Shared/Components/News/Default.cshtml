@@ -1,6 +1,5 @@
 ﻿@model List<Varyag.Models.NewsViewModel>
 
-
 <div style="display:flex">
     <div style="display: flex;flex-direction: column;align-items: center;position:relative;background-color:white;padding:0 10px 10px 10px;margin:10px 5px 0 10px;width:50%;justify-content:space-between;border-radius:10px;">
         <a asp-action="AllNews" style="height:100%;">
@@ -23,12 +22,12 @@
             <div style="width:10px;height:10px"></div>
             <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
                 <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;height:25vh;width:50%;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(1).ShortStory)
-                        </div>
-                    </div>
+            <div class="annotation">
+                <div class="annotationText" style="font-size:1.2rem">
+                    @Html.Raw(Model.ElementAt(1).ShortStory)
                 </div>
+            </div>
+        </div>
             </a>
         </div>
     </div>
@@ -43,22 +42,22 @@
         <div class="partNews" style="width:100%">
             <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(0).NewsId">
                 <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).ShortFotoPreview);background-position-x:@Model.ElementAt(0).ShortImgX;background-position-y:@Model.ElementAt(0).ShortImgY;background-size:@Model.ElementAt(0).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;height:25vh;width:50%;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(0).ShortStory)
-                        </div>
-                    </div>
+            <div class="annotation">
+                <div class="annotationText" style="font-size:1.2rem">
+                    @Html.Raw(Model.ElementAt(0).ShortStory)
                 </div>
+            </div>
+        </div>
             </a>
             <div style="width:10px;height:10px"></div>
             <a asp-action="NewsDetails" asp-route-id="@Model.ElementAt(1).NewsId">
                 <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;height:25vh;width:50%;">
-                    <div class="annotation">
-                        <div class="annotationText" style="font-size:1.2rem">
-                            @Html.Raw(Model.ElementAt(1).ShortStory)
-                        </div>
-                    </div>
+            <div class="annotation">
+                <div class="annotationText" style="font-size:1.2rem">
+                    @Html.Raw(Model.ElementAt(1).ShortStory)
                 </div>
+            </div>
+        </div>
             </a>
         </div>
     </div>
@@ -68,7 +67,7 @@
 
 
 
-<div style="display: none;flex-direction: column;align-items: center;position:relative;background-color:white;margin-top:10px;border-radius:10px;padding-bottom:10px;margin:10px 10px 0 10px;">
+@*<div style="display: none;flex-direction: column;align-items: center;position:relative;background-color:white;margin-top:10px;border-radius:10px;padding-bottom:10px;margin:10px 10px 0 10px;">
     <a asp-action="AllNews">
         <div class="headerAbout">
             <div class="borderAbout"></div>
@@ -163,7 +162,7 @@
             </div>
         </a>
     </div>
-</div>
+</div>*@
 
 
 @*<div id="news" class="about">

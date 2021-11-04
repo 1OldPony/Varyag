@@ -1597,6 +1597,9 @@ ul .nav-element-choosen {
     background-color: white;
     border-radius: 10px;
     height: 100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
 }
     .TTH-detailsFlex h4 {
         margin-block-start: 0px;
@@ -1866,7 +1869,7 @@ ul .nav-element-choosen {
     width: 316px;
     height: 31vh;
     position: relative;
-    background-image: url(../images/temp/short.jpg);
+    background-image: url(/images/temp/short.jpg);
     background-repeat: no-repeat;
     background-size: 150% auto;
     background-color: brown;
@@ -1876,7 +1879,7 @@ ul .nav-element-choosen {
     width: 620px;
     height: 20vh;
     position: relative;
-    background: url(../images/temp/middle.jpg) 50% 50%;
+    background: url(/images/temp/middle.jpg) 50% 50%;
     background-repeat: no-repeat;
     background-size: 150% auto;
     background-color: brown;
@@ -1890,7 +1893,7 @@ ul .nav-element-choosen {
     width: 1053px;
     height: 20vh;
     position: relative;
-    background: url(../images/temp/wide.jpg) 50% 50% no-repeat;
+    background: url(/images/temp/wide.jpg) 50% 50% no-repeat;
     background-size: 150% auto;
     background-color: brown;
 }

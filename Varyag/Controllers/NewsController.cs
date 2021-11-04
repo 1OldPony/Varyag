@@ -75,7 +75,7 @@ namespace Varyag.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveTempFoto(IFormFile newsFoto, string actionType,
+        public /*async Task<*/IActionResult/*>*/ SaveTempFoto(IFormFile newsFoto, string actionType,
             string fotoType, string shortFotoScale, string shortFotoX, string shortFotoY,
             string shortStory, string middleFotoScale, string middleFotoX, string middleFotoY,
             string middleStory, string wideFotoScale, string wideFotoX, string wideFotoY,
@@ -90,17 +90,17 @@ namespace Varyag.Controllers
                     case "общая":
                         foreach (var item in names)
                         {
-                            await SaveImgAsync(item, newsFoto);
+                            /*await */SaveImgAsync(item, newsFoto);
                         }
                         break;
                     case "мелкая":
-                        await SaveImgAsync(names[0], newsFoto);
+                        /*await */SaveImgAsync(names[0], newsFoto);
                         break;
                     case "средняя":
-                        await SaveImgAsync(names[1], newsFoto);
+                        /*await */SaveImgAsync(names[1], newsFoto);
                         break;
                     case "широкая":
-                        await SaveImgAsync(names[2], newsFoto);
+                        /*await */SaveImgAsync(names[2], newsFoto);
                         break;
                     default:
                         break;
@@ -182,14 +182,25 @@ namespace Varyag.Controllers
             }
         }
 
-        private async Task SaveImgAsync(string name, IFormFile newsFoto)
+        //private async Task SaveImgAsync(string name, IFormFile newsFoto)
+        //{
+        //    string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
+        //    LittleHelper.DirectoryExistCheck(path);
+
+        //    using (var fileStream = new FileStream(Path.Combine(path, name), FileMode.Create))
+        //    {
+        //        await newsFoto.CopyToAsync(fileStream);
+        //    }
+        //}
+
+        private void SaveImgAsync(string name, IFormFile newsFoto)
         {
             string path = Path.Combine(_Environment.WebRootPath, "images", "temp");
             LittleHelper.DirectoryExistCheck(path);
 
-            using (var fileStream = new FileStream(path + "/" + name, FileMode.Create))
+            using (var fileStream = new FileStream(Path.Combine(path, name), FileMode.Create))
             {
-                await newsFoto.CopyToAsync(fileStream);
+                newsFoto.CopyTo(fileStream);
             }
         }
 
@@ -335,9 +346,9 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            news.ShortFotoPreview = "../"+news.ShortFotoPreview;
-            news.MiddleFotoPreview = "../" + news.MiddleFotoPreview;
-            news.WideFotoPreview = "../" + news.WideFotoPreview;
+            //news.ShortFotoPreview = "../"+news.ShortFotoPreview;
+            //news.MiddleFotoPreview = "../" + news.MiddleFotoPreview;
+            //news.WideFotoPreview = "../" + news.WideFotoPreview;
 
             ViewBag.RefreshEditor = new EditorModel()
             {

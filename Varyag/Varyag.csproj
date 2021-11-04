@@ -161,7 +161,6 @@
   <ItemGroup>
     <Folder Include="ForLogggs\" />
     <Folder Include="wwwroot\images\articles\article2\" />
-    <Folder Include="wwwroot\images\temp\" />
     <Folder Include="wwwroot\images\Thumbnails\" />
   </ItemGroup>
 

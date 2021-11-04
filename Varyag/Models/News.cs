@@ -1,10 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
 
 namespace Varyag.Models
 {
+
+    public enum NewsKeyWord
+    {
+        Жизнь_кораблей, СМИ, Новые_корабли
+    }
+
+    public enum NewsFotoType
+    {
+        общая, мелкая, средняя, широкая
+    }
+
     public class News
     {
         public int NewsId { get; set; }
@@ -59,15 +67,5 @@ namespace Varyag.Models
         public string WideStory { get; set; }
         [DisplayName("Фотка для широкого превью")]
         public string WideFotoPreview { get; set; }
-    }
-
-    public enum NewsKeyWord
-    {
-        Жизнь_кораблей, СМИ, Новые_корабли
-    }
-
-    public enum NewsFotoType
-    {
-        общая, мелкая, средняя, широкая
     }
 }
