@@ -1,8 +1,60 @@
 ﻿var leftMenuOffset;
-$(document).ready(function () {
+$(document).on('ready', function () {
     //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
     //$("#left.control, #right.control").height($(".allCustomers").height());
-    leftMenuOffset = $(".projectsHalf").offset().top;
+
+
+
+
+    ////////////ВЕРНУТЬ КОГДА БУДЕТ ЛЕВОЕ МЕНЮ НА ГЛАВНОЙ СТРАНИЦЕ///////////
+    //leftMenuOffset = $(".projectsHalf").offset().top;
+
+
+
+
+
+
+    $('.slider').slick({
+        slidesToShow: 14,
+        slidesToScroll: 14,
+        dots: true,
+        infinite: true,
+        arrows: false,
+        //autoplay: true,
+        //autoplaySpeed: 7000
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 10,
+                    slidesToScroll: 10,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 8,
+                    slidesToScroll: 8
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 6
+                }
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            }
+        ]
+    });
 });
 $(window).scroll(function () {
     if ($(window).width() > 1000) {
@@ -524,4 +576,4 @@ function navigationButton() {
 }
 
 //////////////////////////виджет контакта//////////////////////////
-VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);
+//VK.Widgets.Group("vk_groups", { mode: 3, width: "200", height: "200" }, 137987101);

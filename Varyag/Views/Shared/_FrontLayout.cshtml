@@ -8,6 +8,8 @@
     <meta http-equiv="Cache-Control" content="@ViewData["Cache"]">
     <link rel="stylesheet" type="text/css" href="~/css/MyStyleSheet.css" />
     <link rel="stylesheet" type="text/css" href="~/css/fotorama.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/slick-theme.css" />
     <link href="https://fonts.googleapis.com/css?family=Gabriela&display=swap&subset=cyrillic" rel="stylesheet">
     <title>@ViewData["Title"]</title>
 </head>
@@ -26,7 +28,7 @@
                         ВАРЯГ
                     </div>
                 </div>
-                <div id="secondVarMenu"  class="fullTopMenu">
+                <div id="secondVarMenu" class="fullTopMenu">
                     <div class="topMenuIcon">
                         <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
                     </div>
@@ -43,14 +45,14 @@
         </div>
     </div>
     @*<div id="newBurger" style="display:none;background-color:#183f61;z-index:14;max-width:310px;top:0;position:absolute;min-height:50px;padding-left:15px;">
-        <div id="navigationButton" onclick="navigationButton()" style="margin:auto 15px auto auto"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
-        <div style="width:50px;display:none;margin-left:5px">
-            <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
-        </div>
-        <div style="display:flex;align-items:center;font-size:2.5rem;color:white;">
-            ВАРЯГ
-        </div>
-    </div>*@
+            <div id="navigationButton" onclick="navigationButton()" style="margin:auto 15px auto auto"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
+            <div style="width:50px;display:none;margin-left:5px">
+                <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
+            </div>
+            <div style="display:flex;align-items:center;font-size:2.5rem;color:white;">
+                ВАРЯГ
+            </div>
+        </div>*@
     @*<partial name="_CookieConsentPartial" />*@
 
     <div style="margin-bottom:50px"></div>
@@ -106,12 +108,19 @@
             <div>© 2021 Верфь деревянного судостроения «Варяг»</div><div>Разработчик - Михаил Мартюков</div>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/js/fotorama.js"></script>
+    @*<script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>*@
+    @*<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v5.0"></script>*@
+    @*<script src="~/lib/jquery/dist/jquery.js"></script>*@
+    @*<script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>*@
+    @*<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>*@
+    @*<script src="~/js/slick.min.js"></script>*@
+    @*<script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"></script>*@
+    @*@RenderSection("Scripts", required: false)*@
+    @*<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>*@
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a93c2bc3-57dc-4ed5-90f0-419606ca819a&lang=ru_RU" type="text/javascript"></script>
-    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v5.0"></script>
+    <script src="~/js/fotorama.js"></script>
+    <script src="~/js/slick.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="~/js/top-nav.js"></script>
-    @RenderSection("Scripts", required: false)
 </body>
 </html>
