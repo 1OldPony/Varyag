@@ -1,61 +1,57 @@
 ﻿var leftMenuOffset;
 $(document).on('ready', function () {
-    //////////////////////////высота контролов слайдера заказчиков = высоте столбца заказчиков///////////////////////
-    //$("#left.control, #right.control").height($(".allCustomers").height());
-
-
-
-
     ////////////ВЕРНУТЬ КОГДА БУДЕТ ЛЕВОЕ МЕНЮ НА ГЛАВНОЙ СТРАНИЦЕ///////////
     //leftMenuOffset = $(".projectsHalf").offset().top;
 
-
-
-
-
+    $('.slideDescription').slick({
+        slidesToShow: 1,
+        //slidesToScroll: 1,
+        //infinite: true,
+        //arrows: false,
+        asNavFor: '.slider',
+        //centerMode: true,
+        //autoplay: true,
+        //autoplaySpeed: 7000,
+    });
 
     $('.slider').slick({
-        slidesToShow: 14,
-        slidesToScroll: 14,
-        dots: true,
-        infinite: true,
+        centerMode: true,
+        slidesToShow: 9,
+        //dots: true,
+        swipeToSlide: true,
         arrows: false,
-        //autoplay: true,
-        //autoplaySpeed: 7000
+        focusOnSelect: true,
+        infinite: true,
+        asNavFor: '.slideDescription',
         responsive: [
             {
                 breakpoint: 1000,
                 settings: {
-                    slidesToShow: 10,
-                    slidesToScroll: 10,
-                    infinite: true,
-                    dots: true
+                    slidesToShow: 7,
                 }
             },
             {
                 breakpoint: 800,
                 settings: {
-                    slidesToShow: 8,
-                    slidesToScroll: 8
+                    slidesToShow: 5,
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 6,
-                    slidesToScroll: 6
+                    slidesToShow: 3,
                 }
             },
             {
                 breakpoint: 400,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4
+                    slidesToShow: 1
                 }
             }
         ]
     });
 });
+
 $(window).scroll(function () {
     if ($(window).width() > 1000) {
         if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
@@ -73,6 +69,13 @@ $(window).scroll(function () {
         else {
             if ($(".leftMenu").css('position') != 'initial') {
                 $(".leftMenu").css('position', 'initial');
+                ////////////////////////////////////////
+                ///////////////////////////////////////////
+                ///////////////////////////////////////
+                $("#mainPage.leftMenu").css('position', 'fixed');
+                ////////////////////////////////////////
+                ///////////////////////////////////////////
+                ///////////////////////////////////////
             }
 
             if ($(window).width() >= 1001) {
@@ -95,34 +98,6 @@ $(window).scroll(function () {
         }
     }
 });
-
-//$(window).scroll(function() {
-//    if ($(this).scrollTop() >= (leftMenuOffset-50)) {
-//        if ($(".leftMenu").css('position')!='fixed') {
-//            $(".leftMenu").css('position', 'fixed');
-//        }
-
-//        if ($(window).width() >= 1001) {
-//            $('.projectsHalf').css('margin-left', '361px');
-//        }
-//        else {
-//            $('.projectsHalf').css('margin-left', 'auto');
-//        }
-//    }
-//    else {
-//        if ($(".leftMenu").css('position') != 'initial') {
-//            $(".leftMenu").css('position', 'initial');
-//        }
-
-//            if ($(window).width() >= 1001) {
-//                $('.projectsHalf').css('margin-left', '10px');
-//            }
-//            else {
-//                $('.projectsHalf').css('margin-left', 'auto');
-//            }
-//    }
-//});
-
 $(window).resize(function () {
     if ($(window).width() > 1000) {
         if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
@@ -139,6 +114,13 @@ $(window).resize(function () {
         else {
             if ($(".leftMenu").css('position') != 'initial') {
                 $(".leftMenu").css('position', 'initial');
+                ////////////////////////////////////////
+                ///////////////////////////////////////////
+                ///////////////////////////////////////
+                $("#mainPage.leftMenu").css('position', 'fixed');
+                ////////////////////////////////////////
+                ///////////////////////////////////////////
+                ///////////////////////////////////////
             }
             if ($(window).width() >= 1001) {
                 $('.projectsHalf').css('margin-left', '10px');
@@ -155,70 +137,6 @@ $(window).resize(function () {
         $('#blackScreen').css('display', 'none');
     }
 });
-//$(window).resize(function () {
-    //if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
-    //    if ($(".leftMenu").css('position') != 'fixed') {
-    //        $(".leftMenu").css('position', 'fixed');
-    //    }
-
-    //    if ($(window).width() >= 1001) {
-    //        $('.projectsHalf').css('margin-left', '361px');
-    //    }
-    //    else {
-    //        $('.projectsHalf').css('margin-left', 'auto');
-    //    }
-    //}
-    //else {
-    //    if ($(".leftMenu").css('position') != 'initial') {
-    //        $(".leftMenu").css('position', 'initial');
-    //    }
-    //    if ($(window).width() >= 1001) {
-    //        $('.projectsHalf').css('margin-left', '10px');
-    //    }
-    //    else {
-    //        $('.projectsHalf').css('margin-left', 'auto');
-    //    }
-    //}
-//});
-
-/////////////////показываем верхние подменю////////////////////
-//$("#ships-catalog").mouseenter(function () {
-//    $("#catalog.category").css('display', 'grid');
-//});
-
-//$("#cinema").mouseenter(function () {
-//    $("#cinemaOrders.category").css('display', 'flex');
-//});
-
-//$("#aboutUs").mouseenter(function () {
-//    $("#aboutUsTopNav.category").css('display', 'flex');
-//});
-
-//$("#menu-nav-top, #cinema, #ships-catalog, #aboutUs").mouseleave(function (event) {
-//    if (event.relatedTarget.id != "catalog" && event.relatedTarget.id != "cinemaOrders" && event.relatedTarget.id != "aboutUsTopNav") {
-//        $(".category").hide();
-//    }
-//});
-
-////////////////////////показываем пункты верхнего подменю про музей и гото-предистинацию на девайсах///////////////////////
-//museumGotoShow();
-//function museumGotoShow() {
-//    if (window.innerWidth < 611) {
-//        $(".aboutUsGoto").attr("style", "display:flex")
-//    }
-
-//    if (window.innerWidth < 401) {
-//        $(".aboutUsMuseum").attr("style", "display:flex")
-//    }
-//}
-
-//cinemaAboutUsSubNavPosition();
-//function cinemaAboutUsSubNavPosition() {
-//    var cinemaLeft = $("#cinema.nav-element-top").offset().left;
-//    var aboutUsLeft = $("#aboutUs.nav-element-top").offset().left;
-//    $("#cinemaOrders.category").css("left", cinemaLeft);
-//    $("#aboutUsTopNav.category").css("left", aboutUsLeft);
-//}
 
 /////////////////////Перещелкиваем видео в новостях////////////////////
 $("#videoOne").click(function () {
@@ -261,7 +179,6 @@ ymaps.ready(function () {
 });
 
 /////////////////////////выделяем выбранную категорию новостей//////////////////////////
-
 $("#allNewsOpen, #allNewsClose").click(function () {
     if ($("#allNewsOpen").css('display') != 'none') {
         $("#allNews-Sub").attr('class', 'leftSubNavOpen');
@@ -310,40 +227,8 @@ $("#articlesOpen, #articlesClose").click(function () {
     $("#articlesOpen").toggle()
     $("#articlesClose").toggle()
 });
-/////////////////////////выделяем выбранную подкатегорию лодок//////////////////////////
-//boatsTypeSelect();
-//function boatsTypeSelect() {
-//    var nav = $("#boatsTypeSelector").val()
-//    switch (nav) {
-//        case "traditional":
-//            $("#traditional").attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "row":
-//            $("#row").attr("class", "nav-element-minor-choosen");
-//            break;
-//        case "sail":
-//            $("#sail").attr("class", "nav-element-minor-choosen");
-//            break;
-//        default:
-//            $("#allBoats").attr("class", "nav-element-minor-choosen");
-//            break;
-//    }
-//}
-
-//////////////////////////обслуживание панели навигации внутри каталога//////////////////////////
-//navElMinorChoose();
-///////////////////заставляем поднавигацию каталога следовать за экраном при прокрутке////////////////////////
-//$(window).scroll(function () {
-//    if ($(this).scrollTop() > 714 && window.innerWidth > 790) {
-//        $('.sub-nav-elements').css("position", "fixed");
-//    }
-//    else {
-//        $('.sub-nav-elements').css("position", "relative");
-//    }
-//});
 
 ////////////////////показываем подменю на левом меню, меняем + на -/////////////////////////
-
 $("#lodkiOpen, #lodkiClose").click(function () {
     if ($("#lodkiOpen").css('display') != 'none') {
         $("#lodki-Sub").attr('class', 'leftSubNavOpen');
@@ -440,6 +325,38 @@ $("#modelsOpen, #modelsClose").click(function () {
     }
     $("#modelsOpen").toggle()
     $("#modelsClose").toggle()
+});
+$("#catalogOpen, #catalogClose").click(function () {
+    if ($("#catalogOpen").css('display') != 'none') {
+        $("#catalog-sub").attr('class', 'leftSubNavOpen');
+        $("#catalog-sub").css('visibility', 'visible');
+        $("#catalog-sub").css('opacity', '1');
+        $("#aboutUsNav").css('margin-top', '139px')
+    }
+    else {
+        $("#catalog-sub").attr('class', 'leftSubNavClose');
+        $("#catalog-sub").css('visibility', 'hidden');
+        $("#catalog-sub").css('opacity', '0');
+        $("#aboutUsNav").css('margin-top', '0px')
+    }
+    $("#catalogOpen").toggle()
+    $("#catalogClose").toggle()
+});
+$("#aboutUsOpen, #aboutUsClose").click(function () {
+    if ($("#aboutUsOpen").css('display') != 'none') {
+        $("#aboutUs-sub").attr('class', 'leftSubNavOpen');
+        $("#aboutUs-sub").css('visibility', 'visible');
+        $("#aboutUs-sub").css('opacity', '1');
+        $(".leftNavMenu").css('padding-bottom', '69px')
+    }
+    else {
+        $("#aboutUs-sub").attr('class', 'leftSubNavClose');
+        $("#aboutUs-sub").css('visibility', 'hidden');
+        $("#aboutUs-sub").css('opacity', '0');
+        $(".leftNavMenu").css('padding-bottom', '10px')
+    }
+    $("#aboutUsOpen").toggle()
+    $("#aboutUsClose").toggle()
 });
 
 //////////////////Для пролистывания списка заказчиков на странице "о нас"//////////////////////

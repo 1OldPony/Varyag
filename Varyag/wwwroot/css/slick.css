@@ -17,14 +17,13 @@
         touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
 }
-
-.slick-list
-{
+/*.slick-current {
+    transform:scale(1.3);
+}*/
+.slick-list {
     position: relative;
-
     display: block;
     overflow: hidden;
-
     margin: 0;
     padding: 0;
 }

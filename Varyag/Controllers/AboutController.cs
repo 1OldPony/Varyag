@@ -180,32 +180,11 @@ namespace Varyag.Controllers
             ViewBag.recentNews = recentNews;
             ViewBag.oldNews = oldNews;
 
-            //List<News> news = new List<News>();
-            //news = await _context.News.ToListAsync();
-            //List<NewsViewModel> sortedNews = LittleHelper.NewsToSortedViewModel(news);
-            //List<NewsViewModel> newsLeftMenu = new List<NewsViewModel>();
-            //newsLeftMenu.Add(sortedNews.FirstOrDefault(n => n.NewsId == id));
-
-            //for (int i = 0; i < 6; i++)
-            //{
-            //    if (sortedNews.ElementAt(i).NewsId!= id)
-            //    {
-            //        newsLeftMenu.Add(sortedNews.ElementAt(i));
-            //    }
-            //    else
-            //    {
-            //        continue;
-            //    }
-            //}
-
             var news = await _context.News.Where(m => m.NewsId == id).SingleAsync();
             if (news == null)
             {
                 return NotFound();
             }
-            //List<News> newsMultiply = new List<News>();
-
-
             return View(news);
         }
         public async Task<IActionResult> AllArticles(string actualNews, string recentNews, string oldNews, string type)
@@ -228,9 +207,41 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
-            ViewBag.actualNews = actualNews;
-            ViewBag.recentNews = recentNews;
-            ViewBag.oldNews = oldNews;
+
+
+            List<News> news = new List<News>();
+            news = await _context.News.ToListAsync();
+
+            int currentYear = DateTime.Today.Year, lastYear = currentYear, date = 0;
+
+            foreach (var item in news)
+            {
+                date = int.Parse(item.NewsDate.Substring(item.NewsDate.Length - 4));
+                if (date < lastYear)
+                {
+                    lastYear = date;
+                }
+            };
+
+            if (actualNews == null)
+                ViewBag.actualNews = currentYear.ToString() + " - " + (currentYear - 1).ToString();
+            else
+                ViewBag.actualNews = actualNews;
+
+            if (recentNews == null)
+                ViewBag.recentNews = (currentYear - 2).ToString() + " - " + (currentYear - 4).ToString();
+            else
+                ViewBag.recentNews = recentNews;
+
+            if (oldNews == null)
+                ViewBag.oldNews = (currentYear - 5).ToString() + " - " + lastYear;
+            else
+                ViewBag.oldNews = oldNews;
+
+
+            //ViewBag.actualNews = actualNews;
+            //ViewBag.recentNews = recentNews;
+            //ViewBag.oldNews = oldNews;
             ViewBag.type = type;
             return View(articles);
         }
@@ -241,9 +252,37 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            ViewBag.actualNews = actualNews;
-            ViewBag.recentNews = recentNews;
-            ViewBag.oldNews = oldNews;
+            List<News> news = new List<News>();
+            news = await _context.News.ToListAsync();
+
+            int currentYear = DateTime.Today.Year, lastYear = currentYear, date = 0;
+
+            foreach (var item in news)
+            {
+                date = int.Parse(item.NewsDate.Substring(item.NewsDate.Length - 4));
+                if (date < lastYear)
+                {
+                    lastYear = date;
+                }
+            };
+
+            if (actualNews==null)
+                ViewBag.actualNews = currentYear.ToString() + " - " + (currentYear - 1).ToString();
+            else
+                ViewBag.actualNews = actualNews;
+
+            if (recentNews == null)
+                ViewBag.recentNews = (currentYear - 2).ToString() + " - " + (currentYear - 4).ToString();
+            else
+                ViewBag.recentNews = recentNews;
+
+            if (oldNews == null)
+                ViewBag.oldNews = (currentYear - 5).ToString() + " - " + lastYear;
+            else
+                ViewBag.oldNews = oldNews;
+
+
+
             var article = await _context.Article.Where(a => a.ArticleRoute == route).SingleAsync();
 
             if (article == null)
