@@ -1,13 +1,14 @@
 ﻿var leftMenuOffset;
 $(document).on('ready', function () {
-    ////////////ВЕРНУТЬ КОГДА БУДЕТ ЛЕВОЕ МЕНЮ НА ГЛАВНОЙ СТРАНИЦЕ///////////
-    //leftMenuOffset = $(".projectsHalf").offset().top;
+    if ($(".projectsHalf").height() != undefined) {
+        leftMenuOffset = $(".projectsHalf").offset().top;
+    }
 
     $('.slideDescription').slick({
         slidesToShow: 1,
         //slidesToScroll: 1,
         //infinite: true,
-        //arrows: false,
+        arrows: false,
         asNavFor: '.slider',
         //centerMode: true,
         //autoplay: true,
@@ -17,7 +18,7 @@ $(document).on('ready', function () {
     $('.slider').slick({
         centerMode: true,
         slidesToShow: 9,
-        //dots: true,
+        //variableWidth: true,
         swipeToSlide: true,
         arrows: false,
         focusOnSelect: true,
@@ -45,6 +46,7 @@ $(document).on('ready', function () {
             {
                 breakpoint: 400,
                 settings: {
+                    centerMode: false,
                     slidesToShow: 1
                 }
             }
@@ -315,7 +317,7 @@ $("#modelsOpen, #modelsClose").click(function () {
         $("#models-Sub").attr('class', 'leftSubNavOpen');
         $("#models-Sub").css('visibility', 'visible');
         $("#models-Sub").css('opacity', '1');
-        $(".leftNavMenu").css('padding-bottom', '107px')
+        $(".leftNavMenu").css('padding-bottom', '56px')
     }
     else {
         $("#models-Sub").attr('class', 'leftSubNavClose');

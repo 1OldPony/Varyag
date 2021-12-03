@@ -372,26 +372,18 @@
                 <li>
                     @if (ViewBag.catalogPage == "sailboats")
                     {
-                        @*<div id="sailboatsNav" class="leftNavLine"><a asp-action="Sailboats" class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>*@
                         <div id="modelsNav" class="leftNavLine" style="margin-top:92px"><a asp-action="Models" class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
                     }
                     else
                     {
-                        @*<div id="sailboatsNav" class="leftNavLine"><a asp-action="Sailboats" class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>*@
                         <div id="modelsNav" class="leftNavLine"><a asp-action="Models" class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
                     }
                     <ul id="models-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
-                            Тренажеры
+                            Модели и макеты
                         </li>
                         <li class="leftSubCategory">
-                            Флагштоки
-                        </li>
-                        <li class="leftSubCategory">
-                            Клумбы
-                        </li>
-                        <li class="leftSubCategory">
-                            Кровати
+                            Прочая продукция
                         </li>
                     </ul>
                 </li>
@@ -399,7 +391,7 @@
         }
         else
         {
-            <ul class="leftNavMenu" style="padding-bottom:107px">
+            <ul class="leftNavMenu" style="padding-bottom:46px">
                 <li>
                     <div class="leftNavLine"><a asp-action="AllNews" asp-controller="About" class="navLineHeader">О нас</a></div>
                 </li>
@@ -486,16 +478,10 @@
                     <div id="modelsNav" class="leftNavLine"><a asp-action="Models" class="navLineHeader" style="color:red">Разное</a><div id="modelsOpen" class="leftNavOpenCurrent">+</div><div id="modelsClose" class="leftNavCloseCurrent">-</div></div>
                     <ul id="models-Sub" class="leftSubNavOpenCurrent">
                         <li class="leftSubCategory">
-                            Тренажеры
+                            Модели и макеты
                         </li>
                         <li class="leftSubCategory">
-                            Флагштоки
-                        </li>
-                        <li class="leftSubCategory">
-                            Клумбы
-                        </li>
-                        <li class="leftSubCategory">
-                            Кровати
+                            Прочая продукция
                         </li>
                     </ul>
                 </li>
