@@ -110,7 +110,7 @@
         <hr />
 
         <div style="display:flex;flex-direction:column">
-            <div>Порядковый номер блока текст-галлерея</div>
+            <div>Порядковый номер блока текст-галлерея. Если надо просто удалить текст - набери в текстовом поле тире (-)</div>
             <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" required />
         </div>
         <div style="display:flex">
@@ -125,9 +125,9 @@
                     <input type="text" name="articleRoute" value="@ViewBag.Route" />
                 </div>
                 <div>
-                    <div>Загрузка файлов в галлерею(Кнопка "Загрузить")</div>
+                    <div>Загрузка файлов/текста в блок(Кнопка "Загрузить")</div>
                     <div style="display:flex;">
-                        <input name="fotos" type="file" multiple /><input type="submit" value="Загрузить" />
+                        <input name="fotos" type="file" multiple /><input type="submit" value="Загрузить" /><div><input type="checkbox" name="deleteGallery" value="true" style="margin-left:10px;"/> Надо просто удалить галлерею</div>
                     </div>
                 </div>
                 @*<div style="display:flex;">*@

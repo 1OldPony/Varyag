@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Cache"] = "no-cache";
 }
 
 <div style="max-width:1700px;margin:auto">
@@ -38,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="partNewsElementViewMiddle" id="creator" name="ViewMiddle"  style="background-image:url(@Model.MiddleFotoPreview);background-position-x:@Model.MiddleImgX;background-position-y:@Model.MiddleImgY;background-size:@Model.MiddleImgScale;margin: 10px 0 10px 0;">
+                <div class="partNewsElementViewMiddle" id="creator" name="ViewMiddle" style="background-image:url(@Model.MiddleFotoPreview);background-position-x:@Model.MiddleImgX;background-position-y:@Model.MiddleImgY;background-size:@Model.MiddleImgScale;margin: 10px 0 10px 0;">
                     <div class="annotation">
                         <div class="annotationText" id="middleFotoNewsText">
                             @if (ViewBag.RefreshEditor.middleStory == null)
@@ -80,7 +81,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="shortFotoX" id="shortFotoX" value="@Model.ShortImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                                    <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.ShortImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
                                 }
                             </div>
                             <div class="controlGroup">
@@ -91,7 +92,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="shortFotoY" id="shortFotoY" value="@Model.ShortImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                                    <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.ShortImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
                                 }
                             </div>
                             <div class="controlGroup">
@@ -102,7 +103,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="shortFotoScale" id="shortFotoScale" value="@Model.ShortImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                                    <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
                                 }
                             </div>
                         </div>
@@ -112,7 +113,7 @@
                         }
                         else
                         {
-                            <textarea rows="6" cols="30" maxlength="55" name="shortStory" value="@Model.ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+                            <textarea rows="6" cols="30" maxlength="55" name="shortStory" value="@ViewBag.ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
                         }
                     </div>
                 </div>
@@ -127,7 +128,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="middleFotoX" id="middleFotoX" value="@Model.MiddleImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                    <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.MiddleImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
                                 }
                             </div>
                             <div class="controlGroup">
@@ -138,7 +139,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="middleFotoY" id="middleFotoY" value="@Model.MiddleImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                    <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.MiddleImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
                                 }
                             </div>
                             <div class="controlGroup">
@@ -149,7 +150,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="middleFotoScale" id="middleFotoScale" value="@Model.MiddleImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                    <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
                                 }
                             </div>
                         </div>
@@ -174,7 +175,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="wideFotoX" id="wideFotoX" value="@Model.WideImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                    <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.WideImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
                                 }
                             </div>
                             <div class="controlGroup">
@@ -185,7 +186,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="wideFotoY" id="wideFotoY" value="@Model.WideImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                    <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.WideImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
                                 }
                             </div>
                             <div class="controlGroup">
@@ -196,7 +197,7 @@
                                 }
                                 else
                                 {
-                                    <input type="range" name="wideFotoScale" id="wideFotoScale" value="@Model.WideImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                    <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
                                 }
                             </div>
                         </div>
@@ -214,7 +215,7 @@
         </div>
         <hr />
         <div style="display:flex;flex-direction:column">
-            <div>Порядковый номер блока текст-галлерея</div>
+            <div>Порядковый номер блока текст-галлерея. Если надо просто удалить текст - набери в текстовом поле тире (-)</div>
             <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" required />
         </div>
         <div style="display:flex">
@@ -243,9 +244,9 @@
                     }
                 </div>
                 <div>
-                    <div>Загрузка файлов в галлерею(Кнопка "Загрузить")</div>
+                    <div>Загрузка файлов/текста в блок(Кнопка "Загрузить")</div>
                     <div style="display:flex;">
-                        <input name="fotos" type="file" multiple /><input type="submit" value="Загрузить" />
+                        <input name="fotos" type="file" multiple /><input type="submit" value="Загрузить" onclick="$('#wideFotoText').val(''); $('#middleFotoText').val('');$('#shortFotoText').val('')" /><div><input type="checkbox" name="deleteGallery" value="true" style="margin-left:10px;" /> Надо просто удалить галлерею</div>
                     </div>
                 </div>
                 <div style="display:flex;">

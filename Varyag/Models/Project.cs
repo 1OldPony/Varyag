@@ -14,10 +14,10 @@ namespace Varyag.Models
         [DisplayName("Путь для проекта")]
         public string Route { get; set; }
 
-        [DisplayName("Длина корпуса наибольшая - если целое ДОБАВЬ ,0")]
+        [DisplayName("Длина корпуса наибольшая - если целое ДОБАВЬ .0")]
         public string Length { get; set; }
 
-        [DisplayName("Ширина корпуса наибольшая")]
+        [DisplayName("Ширина корпуса наибольшая - если целое ДОБАВЬ .0")]
         public string Windth { get; set; }
 
         [DisplayName("Осадка в полном грузу")]

@@ -120,7 +120,7 @@
                         }
                     </div>
                 </div>
-                <textarea rows="6" cols="30" maxlength="55" id="middleFotoText" asp-for="MiddleStory" onkeyup="FotoTextChange('middle')"></textarea>
+                <textarea rows="6" cols="30" maxlength="90" id="middleFotoText" asp-for="MiddleStory" onkeyup="FotoTextChange('middle')"></textarea>
             </div>
         </div>
         <div id="editorWide" class="editor">
@@ -189,7 +189,7 @@
         <div style="grid-area:explanation">Открываешь видео в вк или ютуб -> поделится -> экспортировать/встроить -> код для вставки -> вставляешь</div>
         <div style="width:78vw;grid-area:newsHeader">
             <div>Заголовок, для главного вида новости</div>
-            <input asp-for="Header" maxlength="170" id="header" class="form-control" onkeyup="headerSave()" required />
+            <input asp-for="Header" maxlength="100" id="header" class="form-control" onkeyup="headerSave()" required />
         </div>
         <div style="margin-right:20px;grid-area:mainNewsText">
             <div>Основной текст новости</div>
