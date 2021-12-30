@@ -422,6 +422,12 @@ namespace Varyag.Controllers
 
                     if (newsGallery.Count != 0)
                     {
+                        if (news.PathToGallery==null)
+                        {
+                            news.PathToGallery = Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate);
+                            LittleHelper.DirectoryExistCheck(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate));
+                            LittleHelper.DirectoryExistCheck(Path.Combine(_Environment.WebRootPath, "images", "news", news.NewsDate, news.NewsDate));
+                        }
                         LittleHelper.DeleteFiles(news.PathToGallery,false);
 
                         for (int i = 0; i <= (newsGallery.Count() - 1); i++)

@@ -39,12 +39,14 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "СМИ о верфи Варяг, Новые суда построенные на верфи Варяг, Жизнь судов построенных на верфи Варяг";
             ViewData["Description"] = "Новости верфи деревянного судостроения Варяг";
 
-            List<News> news = new List<News>();
-            news = await _context.News.ToListAsync();
+            List<News> newsToSort = new List<News>();
+            newsToSort = await _context.News.ToListAsync();
+
+            List<NewsViewModel> news = LittleHelper.NewsToSortedViewModel(newsToSort);
 
             int currentYear = DateTime.Today.Year, lastYear = currentYear, date = 0;
 
-            foreach (var item in news)
+            foreach (var item in newsToSort)
             {
                 date = int.Parse(item.NewsDate.Substring(item.NewsDate.Length - 4));
                 if (date < lastYear)
@@ -71,13 +73,13 @@ namespace Varyag.Controllers
                     switch (part)
                     {
                         case "old":
-                            news = news.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) <= currentYear - 5).ToList();
+                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(n.NewsDate.ToString().Length - 4)) <= currentYear - 5).ToList();
                             break;
                         case "recent":
-                            news = news.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) <= currentYear - 3/*2 по настоящему*/ && int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) >= currentYear - 4).ToList();
+                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(n.NewsDate.ToString().Length - 4)) <= currentYear - 3/*2 по настоящему*/ && int.Parse(n.NewsDate.ToString().Substring(n.NewsDate.ToString().Length - 4)) >= currentYear - 4).ToList();
                             break;
                         case "new":
-                            news = news.Where(n => int.Parse(n.NewsDate.Substring(n.NewsDate.Length - 4)) >= currentYear - 2/*1 по настоящему*/).ToList();
+                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(n.NewsDate.ToString().Length - 4)) >= currentYear - 2/*1 по настоящему*/).ToList();
                             break;
                         default:
                             break;
@@ -161,12 +163,15 @@ namespace Varyag.Controllers
                 }
             }
             else
+            {
                 news = news.GetRange(0, news.Count);
+            }
+
             ViewBag.part = part;
             ViewBag.newsType = newsType;
-            List<NewsViewModel> x = LittleHelper.NewsToSortedViewModel(news);
+            //List<NewsViewModel> x = LittleHelper.NewsToSortedViewModel(news);
 
-            return View(x);
+            return View(news);
         }
 
         public async Task<IActionResult> NewsDetails(int? id, string actualNews, string recentNews, string oldNews)

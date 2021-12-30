@@ -21,6 +21,68 @@ $(document).ready(function () {
         newsLinkToProject(true);
     }    
 });
+////////////////////////////Создаем список связанных проектов//////////////////////////////
+function newsLinkToProject(firstTimeEdit) {
+    let projects = $("[name='LinkedProjectNames']").val();
+    if (!projects.includes($("[name='LinkedProjects'] option:selected").text())) {
+        if (!firstTimeEdit) {
+            projects += '/' + $("[name='LinkedProjects'] option:selected").text();
+        }
+        $("[name='LinkedProjectNames']").val(projects);
+        let projectSplit = projects.split('/');
+
+        $("#LinkedProjectsList").empty();
+        for (var i = 1; i < projectSplit.length; i++) {
+            $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + projectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
+        }
+    }
+}
+////////////////////////////Удаляем элемент списка связанных проектов//////////////////////////////
+function removeLinkToProject(id) {
+    $('#' + id).remove();
+    let projects = $("[name='LinkedProjectNames']").val();
+    let projectSplit = projects.split('/');
+    let newProjectSplit = [];
+    let deleteIndicator = false;
+
+    for (var i = 0; i < projectSplit.length; i++) {
+        if (!deleteIndicator) {
+            if (i != id) {
+                newProjectSplit[i] = projectSplit[i];
+            }
+            else {
+                if (projectSplit[i + 1] != undefined) {
+                    newProjectSplit[i] = projectSplit[i + 1];
+                    deleteIndicator = true;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+        else {
+            if (projectSplit[i + 1] != undefined) {
+                newProjectSplit[i] = projectSplit[i + 1];
+            }
+            else {
+                break;
+            }
+        }
+    }
+    projects = "";
+    if (newProjectSplit.length != 1) {
+        for (var i = 1; i < newProjectSplit.length; i++) {
+            projects += '/' + newProjectSplit[i];
+        }
+    }
+    $("[name='LinkedProjectNames']").val(projects);
+
+
+    $("#LinkedProjectsList").empty();
+    for (var i = 1; i < newProjectSplit.length; i++) {
+        $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + newProjectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
+    }
+}
 
 /////////////////назначаем id и onclick новостным полным превью и кнопкам их показа/////////////////
 $("#0[name=showHideButton]").on("click", function () {
@@ -231,67 +293,3 @@ function fillTheForm(formId, editorId) {
     }
 }
 
-////////////////////////////Создаем список связанных проектов//////////////////////////////
-function newsLinkToProject(firstTimeEdit) {
-    let projects = $("[name='LinkedProjectNames']").val();
-    if (!projects.includes($("[name='LinkedProjects'] option:selected").text())) {
-        if (!firstTimeEdit) {
-            projects += '/' + $("[name='LinkedProjects'] option:selected").text();
-        }
-        $("[name='LinkedProjectNames']").val(projects);
-        let projectSplit = projects.split('/');
-
-        $("#LinkedProjectsList").empty();
-        for (var i = 1; i < projectSplit.length; i++) {
-            $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + projectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
-        }
-    }
-}
-
-
-////////////////////////////Удаляем элемент списка связанных проектов//////////////////////////////
-function removeLinkToProject(id) {
-    $('#' + id).remove();
-    let projects = $("[name='LinkedProjectNames']").val();
-    let projectSplit = projects.split('/');
-    let newProjectSplit = [];
-    let deleteIndicator = false;
-
-    for (var i = 0; i < projectSplit.length; i++) {
-        if (!deleteIndicator) {
-            if (i != id) {
-                newProjectSplit[i] = projectSplit[i];
-            }
-            else {
-                if (projectSplit[i + 1] != undefined) {
-                    newProjectSplit[i] = projectSplit[i + 1];
-                    deleteIndicator = true;
-                }
-                else {
-                    break;
-                }
-            }
-        }
-        else {
-            if (projectSplit[i + 1] != undefined) {
-                newProjectSplit[i] = projectSplit[i + 1];
-            }
-            else {
-                break;
-            }
-        }
-    }
-    projects = "";
-    if (newProjectSplit.length != 1) {
-        for (var i = 1; i < newProjectSplit.length; i++) {
-            projects += '/' + newProjectSplit[i];
-        }
-    }
-    $("[name='LinkedProjectNames']").val(projects);
-
-
-    $("#LinkedProjectsList").empty();
-    for (var i = 1; i < newProjectSplit.length; i++) {
-        $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + newProjectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
-    }
-}
