@@ -17,10 +17,10 @@ namespace Varyag.Controllers
             db = context;
         }
         
-        public IActionResult Catalog()
-        {
-            return RedirectToAction("Sailboats");
-        }
+        //public IActionResult Catalog()
+        //{
+        //    return RedirectToAction("Sailboats");
+        //}
 
         public IActionResult CatalogSort(string category, bool plitca, string lengthSort)
         {            
@@ -259,14 +259,22 @@ namespace Varyag.Controllers
 
         public IActionResult Models()
         {
-            //List<AnythingElse> anythingItems = db.AnythingElse.ToList();
             ViewData["Title"] = "Разные заказы";
             ViewData["Keywords"] = "Дизайнерские решения на морскую тему, Корабли-инсталяции";
             ViewData["Description"] = "Дизайнерские решения, инсталяции и прочие нестандартные поекты, производства верфи деревянного судостроения Варяг";
             ViewBag.TopPic = "makets";
             ViewBag.catalogPage = "models";
 
-            //return View(anythingItems);
+            return View();
+        }
+        public IActionResult ModelsMakets()
+        {
+            ViewData["Title"] = "Модели и макеты";
+            ViewData["Keywords"] = "Модели кораблей, учебные макеты шлюпок";
+            ViewData["Description"] = "Модели и макеты различных кораблей и шлюпок, учебные пособия для морских училищ и клубов юнных моряков производства верфи деревянного судостроения Варяг";
+            ViewBag.TopPic = "makets";
+            ViewBag.catalogPage = "modelsMakets";
+
             return View();
         }
 

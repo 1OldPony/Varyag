@@ -21,8 +21,7 @@
         <div class="projectsHalf">
             <div class="projectsHalfTop">
                 <div class="topCatalogLine">
-                    <div class="categorysLineTtem">Все разное</div><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('models')" class="selectSortOption"><option value="По возрастанию длинны" selected>По возрастанию длинны</option><option value="По убыванию длинны">По убыванию длинны</option></select></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
-                    @*<div class="categorysLineTtem">Все разное</div><div style="display:flex"><img src="~/images/icons/list3.png" id="iconList" style="margin-right:5px;cursor:pointer;display:none;" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="iconListRed" style="margin-right:5px;cursor:pointer;" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="iconPlitca" style="cursor:pointer;" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="iconPlitcaRed" style="cursor:pointer;display:none" onclick="switchProjectsViewPlitca()" /></div>*@
+                    <div class="categorysLineItem">Все разное</div><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('models')" class="selectSortOption"><option value="По возрастанию длинны" selected>По возрастанию длинны</option><option value="По убыванию длинны">По убыванию длинны</option></select></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
                 </div>
                 <div id="border" class="myBorder"></div>
                 <div class="projectsHalfText">
@@ -40,20 +39,6 @@
                     @await Component.InvokeAsync("ProjectsCatalog", new { category = "models", plitca = false, lengthSort = "Up" })
                 </div>
             </div>
-            
-            @*<div class="myBorder" style="margin-top:10px"></div>
-            @foreach (var item in Model)
-            {
-                <a href="../Каталог/Разное/@item.Route">
-                    <div class="singleProject">
-                        <div id="short" class="projectImage"><img src="@item.FotoPath1" /></div>
-                        <div class="projectImage"><img src="@item.FotoPath2" /></div>
-                        <div style="grid-area:name"><h3>@item.Name</h3></div>
-                        <div style="overflow:hidden;grid-area:tth">@item.ShortDescription</div>
-                    </div>
-                </a>
-                <div class="myBorder"></div>
-            }*@
         </div>
     </div>
 </div>

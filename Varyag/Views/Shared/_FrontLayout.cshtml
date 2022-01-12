@@ -21,17 +21,17 @@
             <div style="display:flex;align-items:center;justify-content:flex-start">
                 <div class="shortTopMenu">
                     <div class="navigationButton" onclick="navigationButton()"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
-                    <div class="topMenuIcon">
+                    @*<a class="topMenuIcon" asp-controller="about" asp-action="index">
                         <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
-                    </div>
+                    </a>*@
                     <div style="display:flex;align-items:center;font-size:2.5rem;">
                         ВАРЯГ
                     </div>
                 </div>
                 <div id="secondVarMenu" class="fullTopMenu">
-                    <div class="topMenuIcon">
+                    <a class="topMenuIcon" asp-controller="about" asp-action="index">
                         <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
-                    </div>
+                    </a>
                     <a href="../../Каталог" style="margin-right:15px;color:white">КАТАЛОГ</a>
                     <a id="aboutMenu" href="../../О-Нас" style="margin-right:15px;color:white">О НАС</a>
                 </div>

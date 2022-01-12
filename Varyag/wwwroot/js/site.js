@@ -24,13 +24,20 @@ $(document).ready(function () {
 ////////////////////////////Создаем список связанных проектов//////////////////////////////
 function newsLinkToProject(firstTimeEdit) {
     let projects = $("[name='LinkedProjectNames']").val();
-    if (!projects.includes($("[name='LinkedProjects'] option:selected").text())) {
-        if (!firstTimeEdit) {
-            projects += '/' + $("[name='LinkedProjects'] option:selected").text();
-        }
-        $("[name='LinkedProjectNames']").val(projects);
-        let projectSplit = projects.split('/');
+    if (!firstTimeEdit) {
+        projects += '/' + $("[name='LinkedProjects'] option:selected").text();
+        if (!projects.includes($("[name='LinkedProjects'] option:selected").text())) {
+            $("[name='LinkedProjectNames']").val(projects);
+            let projectSplit = projects.split('/');
 
+            $("#LinkedProjectsList").empty();
+            for (var i = 1; i < projectSplit.length; i++) {
+                $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + projectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
+            }
+        }
+    }
+    else {
+        let projectSplit = projects.split('/');
         $("#LinkedProjectsList").empty();
         for (var i = 1; i < projectSplit.length; i++) {
             $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + projectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");

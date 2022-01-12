@@ -1412,9 +1412,17 @@ img {
     text-align: center
 }
 
-.categorysLineTtem {
+.categorysLineItem {
     font-size: 1.3rem;
     font-weight: bold;
+}
+.categorysLineItemHeader {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-block-end: 10px;
+    margin-block-start: 0;
+    justify-content: flex-start;
+    align-self: flex-start;
 }
 
 .leftSubCategory:hover {
@@ -1516,6 +1524,12 @@ img {
 .newsMainStory {
     font-size: 1.1rem;
     text-align: left;
+}
+.newsDetailsStory {
+    text-align:left;
+}
+.newsDetailsStory p{
+    margin-block-start:0;
 }
 
 .pageView {
@@ -2722,7 +2736,7 @@ ul .nav-element-choosen {
     .tthUnderFoto {
         width: 31.5%;
     }
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width:230px;
     }
 }
@@ -2818,7 +2832,7 @@ ul .nav-element-choosen {
     .about p {
         font-size: 1.8rem;
     }
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width: 210px;
     }
 }
@@ -2999,7 +3013,7 @@ ul .nav-element-choosen {
         height: 50px;
         font-size: 1.4rem;
     }
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width: unset;
     }
 }
@@ -3378,7 +3392,7 @@ ul .nav-element-choosen {
     .aboutSite {
         justify-content: space-around
     }
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width: 270px;
     }
 }
@@ -3481,7 +3495,7 @@ ul .nav-element-choosen {
     .details-top {
         grid-template-columns: 47% 53%;
     }
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width: 230px;
     }
 }
@@ -3510,7 +3524,7 @@ ul .nav-element-choosen {
     #sortWord {
         display: none;
     }
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width: unset;
     }
 }
@@ -3525,7 +3539,7 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:635px) {
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width: 250px;
     }
 }
@@ -3697,7 +3711,7 @@ ul .nav-element-choosen {
     #first-out {
         display: none;
     }
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width: 180px;
     }
 }
@@ -3832,7 +3846,7 @@ ul .nav-element-choosen {
     .projectsHalfText {
         display: none;
     }
-    .categorysLineTtem {
+    .categorysLineItem {
         max-width: unset;
     }
 }

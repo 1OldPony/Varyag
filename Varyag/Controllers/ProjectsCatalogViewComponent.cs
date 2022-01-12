@@ -240,6 +240,14 @@ namespace Varyag.Controllers
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
+                case "modelsMakets":
+                    items = await db.Project.Where(w => w.MaketMuseum == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sailArea";
+                    if (plitca)
+                        return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
+                    else
+                        return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
                 default:
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));

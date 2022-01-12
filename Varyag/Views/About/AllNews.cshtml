@@ -174,7 +174,7 @@
         </div>
         <div class="projectsHalf">
             <div class="topCatalogLine" id="newsTopLine">
-                <h1 class="categorysLineTtem" style="margin-block:0;justify-content:flex-start">Наши новости</h1>
+                <h1 class="categorysLineItem" style="margin-block:0;justify-content:flex-start">Наши новости</h1>
             </div>
             <div class="newsBlock">
 
@@ -199,19 +199,19 @@
                 @if (ViewBag.Pages != null)
                 {
                     <div class="pageView">
-                        <a asp-action="AllNews" asp-route-page="@ViewBag.CurrentPage" asp-route-direction="left" asp-route-newsType="@ViewBag.newsType" style="color:red">&#9668;</a>
+                        <a asp-action="AllNews" asp-route-page="@ViewBag.CurrentPage" asp-route-direction="left" asp-route-newsType="@ViewBag.newsType" asp-route-part=@ViewBag.part style="color:red">&#9668;</a>
                         @for (int i = 1; i <= ViewBag.Pages; i++)
                         {
                             if (i == @ViewBag.CurrentPage)
                             {
-                                <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType"><span style="color:red;margin:3px;font-size:1.4rem">@i </span></a>
+                                <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType" asp-route-part=@ViewBag.part ><span style="color:red;margin:3px;font-size:1.4rem">@i </span></a>
                             }
                             else
                             {
-                                <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType"><span style="color:red;margin:3px;font-size:1.1rem">@i </span></a>
+                                <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType" asp-route-part=@ViewBag.part ><span style="color:red;margin:3px;font-size:1.1rem">@i </span></a>
                             }
                         }
-                        <a asp-action="AllNews" asp-route-page="@ViewBag.CurrentPage" asp-route-direction="right" asp-route-newsType="@ViewBag.newsType" style="color:red">&#9658;</a>
+                        <a asp-action="AllNews" asp-route-page="@ViewBag.CurrentPage" asp-route-direction="right" asp-route-newsType="@ViewBag.newsType" asp-route-part=@ViewBag.part style="color:red">&#9658;</a>
                     </div>
                 }
             </div>

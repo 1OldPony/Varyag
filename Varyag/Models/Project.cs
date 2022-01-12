@@ -72,6 +72,8 @@ namespace Varyag.Models
         public bool KaterRow { get; set; }
         [DisplayName("Ботик")]
         public bool Botik { get; set; }
+        [DisplayName("Макет для обучения")]
+        public bool MaketStudy { get; set; }
 
         [DisplayName("Мотосейлер")]
         public bool Motosailer { get; set; }
@@ -96,11 +98,9 @@ namespace Varyag.Models
         [DisplayName("Исторический парусник")]
         public bool SailboatHistorical { get; set; }
 
-        [DisplayName("Макет для обучения")]
-        public bool MaketStudy { get; set; }
         [DisplayName("Макет для кино")]
         public bool MaketCinema { get; set; }
-        [DisplayName("Макет для музеев")]
+        [DisplayName("Модели и макеты")]
         public bool MaketMuseum { get; set; }
         [DisplayName("Макет для интерьеров")]
         public bool MaketDesign { get; set; }

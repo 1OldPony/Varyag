@@ -39,6 +39,10 @@ namespace Varyag.Controllers
             ViewData["Keywords"] = "СМИ о верфи Варяг, Новые суда построенные на верфи Варяг, Жизнь судов построенных на верфи Варяг";
             ViewData["Description"] = "Новости верфи деревянного судостроения Варяг";
 
+
+            //System.Diagnostics.Debugger.Break();
+
+
             List<News> newsToSort = new List<News>();
             newsToSort = await _context.News.ToListAsync();
 
@@ -73,13 +77,13 @@ namespace Varyag.Controllers
                     switch (part)
                     {
                         case "old":
-                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(n.NewsDate.ToString().Length - 4)) <= currentYear - 5).ToList();
+                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(0,4)) <= currentYear - 5).ToList();
                             break;
                         case "recent":
-                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(n.NewsDate.ToString().Length - 4)) <= currentYear - 3/*2 по настоящему*/ && int.Parse(n.NewsDate.ToString().Substring(n.NewsDate.ToString().Length - 4)) >= currentYear - 4).ToList();
+                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(0, 4)) <= currentYear - 2 && int.Parse(n.NewsDate.ToString().Substring(0, 4)) >= currentYear - 4).ToList();
                             break;
                         case "new":
-                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(n.NewsDate.ToString().Length - 4)) >= currentYear - 2/*1 по настоящему*/).ToList();
+                            news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(0, 4)) >= currentYear - 1).ToList();
                             break;
                         default:
                             break;
@@ -169,7 +173,6 @@ namespace Varyag.Controllers
 
             ViewBag.part = part;
             ViewBag.newsType = newsType;
-            //List<NewsViewModel> x = LittleHelper.NewsToSortedViewModel(news);
 
             return View(news);
         }
@@ -181,11 +184,39 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            ViewBag.actualNews = actualNews;
-            ViewBag.recentNews = recentNews;
-            ViewBag.oldNews = oldNews;
+            List<News> newsForDate = new List<News>();
+            newsForDate = await _context.News.ToListAsync();
 
-            var news = await _context.News.Where(m => m.NewsId == id).SingleAsync();
+            int currentYear = DateTime.Today.Year, lastYear = currentYear, date = 0;
+
+            foreach (var item in newsForDate)
+            {
+                date = int.Parse(item.NewsDate.Substring(item.NewsDate.Length - 4));
+                if (date < lastYear)
+                {
+                    lastYear = date;
+                }
+            };
+
+            if (actualNews == null)
+                ViewBag.actualNews = currentYear.ToString() + " - " + (currentYear - 1).ToString();
+            else
+                ViewBag.actualNews = actualNews;
+
+            if (recentNews == null)
+                ViewBag.recentNews = (currentYear - 2).ToString() + " - " + (currentYear - 4).ToString();
+            else
+                ViewBag.recentNews = recentNews;
+
+            if (oldNews == null)
+                ViewBag.oldNews = (currentYear - 5).ToString() + " - " + lastYear;
+            else
+                ViewBag.oldNews = oldNews;
+            //ViewBag.actualNews = actualNews;
+            //ViewBag.recentNews = recentNews;
+            //ViewBag.oldNews = oldNews;
+
+            var news = newsForDate.Where(m => m.NewsId == id).Single(); /*await _context.News.Where(m => m.NewsId == id).SingleAsync();*/
             if (news == null)
             {
                 return NotFound();
@@ -244,9 +275,6 @@ namespace Varyag.Controllers
                 ViewBag.oldNews = oldNews;
 
 
-            //ViewBag.actualNews = actualNews;
-            //ViewBag.recentNews = recentNews;
-            //ViewBag.oldNews = oldNews;
             ViewBag.type = type;
             return View(articles);
         }
@@ -285,8 +313,6 @@ namespace Varyag.Controllers
                 ViewBag.oldNews = (currentYear - 5).ToString() + " - " + lastYear;
             else
                 ViewBag.oldNews = oldNews;
-
-
 
             var article = await _context.Article.Where(a => a.ArticleRoute == route).SingleAsync();
 

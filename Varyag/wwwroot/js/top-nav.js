@@ -362,61 +362,61 @@ $("#aboutUsOpen, #aboutUsClose").click(function () {
 });
 
 //////////////////Для пролистывания списка заказчиков на странице "о нас"//////////////////////
-var slideNumber = 0;
-var custWidth = $(".allCustomers").width();
-var step = custWidth / 9;
+//var slideNumber = 0;
+//var custWidth = $(".allCustomers").width();
+//var step = custWidth / 9;
 
-$("#right.control").click(function () {
+//$("#right.control").click(function () {
 
-    if (window.innerWidth > 990) {
-        var stepWide = custWidth;
+//    if (window.innerWidth > 990) {
+//        var stepWide = custWidth;
 
-        if (slideNumber == 2) {
-            slideNumber = 0;
-            var scrollNumber = stepWide * slideNumber;
-        }
-        else {
-            var scrollNumber = stepWide * (slideNumber + 1);
-            slideNumber += 1;
-        }
-    }
-    else {
-        if (slideNumber == 8) {
-            slideNumber = 0;
-            var scrollNumber = step * slideNumber;
-        }
-        else {
-            var scrollNumber = step * (slideNumber + 1);
-            slideNumber += 1;
-        }
-    }
+//        if (slideNumber == 2) {
+//            slideNumber = 0;
+//            var scrollNumber = stepWide * slideNumber;
+//        }
+//        else {
+//            var scrollNumber = stepWide * (slideNumber + 1);
+//            slideNumber += 1;
+//        }
+//    }
+//    else {
+//        if (slideNumber == 8) {
+//            slideNumber = 0;
+//            var scrollNumber = step * slideNumber;
+//        }
+//        else {
+//            var scrollNumber = step * (slideNumber + 1);
+//            slideNumber += 1;
+//        }
+//    }
 
-    $(".allCustomers").css('transform', "translatex(-" + scrollNumber + "px)");
-});
+//    $(".allCustomers").css('transform', "translatex(-" + scrollNumber + "px)");
+//});
 
-$("#left.control").click(function () {
-    if (window.innerWidth > 990) {
-        var stepWide = custWidth;
+//$("#left.control").click(function () {
+//    if (window.innerWidth > 990) {
+//        var stepWide = custWidth;
 
-        if (slideNumber == 0) {
-            slideNumber = 3;
-        }
+//        if (slideNumber == 0) {
+//            slideNumber = 3;
+//        }
 
-        var scrollNumber = stepWide * (slideNumber - 1);
-    }
-    else {
+//        var scrollNumber = stepWide * (slideNumber - 1);
+//    }
+//    else {
 
-        if (slideNumber == 0) {
-            slideNumber = 9;
-        }
+//        if (slideNumber == 0) {
+//            slideNumber = 9;
+//        }
 
-        var scrollNumber = step * (slideNumber - 1);
-    }
+//        var scrollNumber = step * (slideNumber - 1);
+//    }
 
-    $(".allCustomers").css('transform', "translatex(-" + scrollNumber + "px)");
+//    $(".allCustomers").css('transform', "translatex(-" + scrollNumber + "px)");
 
-    slideNumber -= 1;
-});
+//    slideNumber -= 1;
+//});
 
 /////////////////////////Переключение видов выдачи проектов//////////////////////////
 function switchProjectsViewList() {
