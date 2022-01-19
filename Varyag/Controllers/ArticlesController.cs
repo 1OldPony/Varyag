@@ -784,35 +784,9 @@ namespace Varyag.Controllers
                         }
                         System.IO.File.Move(pathStart, pathEnd);
                     }
-
-                    //switch (foto)
-                    //{
-                    //    case "short.jpg":
-                    //        shortPreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
-                    //        break;
-                    //    case "middle.jpg":
-                    //        middlePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
-                    //        break;
-                    //    case "wide.jpg":
-                    //        widePreview = LittleHelper.PathAdapter(pathEnd, "articlePreview");
-                    //        break;
-                    //    default:
-                    //        break;
-                    //}
                 }
             }
-            //if (article.ShortFotoPreview==null)
-            //{
-            //    article.ShortFotoPreview = shortPreview;
-            //}
-            //if (article.MiddleFotoPreview == null)
-            //{
-            //    article.MiddleFotoPreview = middlePreview;
-            //}
-            //if (article.WideFotoPreview == null)
-            //{
-            //    article.WideFotoPreview = widePreview;
-            //}
+
             article.ShortImgScale = article.ShortImgScale + "%";
             article.ShortImgX = article.ShortImgX + "%";
             article.ShortImgY = article.ShortImgY + "%";
@@ -874,21 +848,66 @@ namespace Varyag.Controllers
             //List<Article> article2 = _context.Article.Where(a=>a.ArticleId==id).ToList();
             //string[] paths = new[] {article.PathToGallery1, article.PathToGallery2, article.PathToGallery3, article.PathToGallery4, article.PathToGallery5, article.PathToGallery6, article.PathToGallery7,
             //    article.PathToGallery8, article.PathToGallery9, article.PathToGallery10, article.PathToGallery11, article.PathToGallery12, article.PathToGallery13, article.PathToGallery14, article.PathToGallery15 };
-            ClearGallery(article.PathToGallery1);
-            ClearGallery(article.PathToGallery2);
-            ClearGallery(article.PathToGallery3);
-            ClearGallery(article.PathToGallery4);
-            ClearGallery(article.PathToGallery5);
-            ClearGallery(article.PathToGallery6);
-            ClearGallery(article.PathToGallery7);
-            ClearGallery(article.PathToGallery8);
-            ClearGallery(article.PathToGallery9);
-            ClearGallery(article.PathToGallery10);
-            ClearGallery(article.PathToGallery11);
-            ClearGallery(article.PathToGallery12);
-            ClearGallery(article.PathToGallery13);
-            ClearGallery(article.PathToGallery14);
-            ClearGallery(article.PathToGallery15);
+            if (article.PathToGallery1!=null)
+            {
+                ClearGallery(article.PathToGallery1);
+            }
+            if (article.PathToGallery2 != null)
+            {
+                ClearGallery(article.PathToGallery2);
+            }
+            if (article.PathToGallery3 != null)
+            {
+                ClearGallery(article.PathToGallery3);
+            }
+            if (article.PathToGallery4 != null)
+            {
+                ClearGallery(article.PathToGallery4);
+            }
+            if (article.PathToGallery5 != null)
+            {
+                ClearGallery(article.PathToGallery5);
+            }
+            if (article.PathToGallery6 != null)
+            {
+                ClearGallery(article.PathToGallery6);
+            }
+            if (article.PathToGallery7 != null)
+            {
+                ClearGallery(article.PathToGallery7);
+            }
+            if (article.PathToGallery8 != null)
+            {
+                ClearGallery(article.PathToGallery8);
+            }
+            if (article.PathToGallery9 != null)
+            {
+                ClearGallery(article.PathToGallery9);
+            }
+            if (article.PathToGallery10 != null)
+            {
+                ClearGallery(article.PathToGallery10);
+            }
+            if (article.PathToGallery11 != null)
+            {
+                ClearGallery(article.PathToGallery11);
+            }
+            if (article.PathToGallery12 != null)
+            {
+                ClearGallery(article.PathToGallery12);
+            }
+            if (article.PathToGallery13 != null)
+            {
+                ClearGallery(article.PathToGallery13);
+            }
+            if (article.PathToGallery14 != null)
+            {
+                ClearGallery(article.PathToGallery14);
+            }
+            if (article.PathToGallery15 != null)
+            {
+                ClearGallery(article.PathToGallery15);
+            }
             //foreach (var item in paths)
             //{
             //    LittleHelper.DeleteFiles(item, true);

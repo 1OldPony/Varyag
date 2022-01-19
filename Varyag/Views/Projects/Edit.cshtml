@@ -115,15 +115,15 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <input type="file" asp-for="ShipSheme" class="form-control" />
+                                <input type="file" asp-for="ShipSheme" class="form-control" multiple />
                                 <span asp-validation-for="ShipSheme" class="text-danger"></span>
                             </td>
                             <td colspan="2">
-                                <input type="file" value="" asp-for="MainFoto" class="form-control" />
+                                <input type="file" value="" asp-for="MainFoto" class="form-control" multiple />
                                 <span asp-validation-for="MainFoto" class="text-danger"></span>
                             </td>
                             <td colspan="2">
-                                <input type="file" value="" asp-for="ShipShemeFull" class="form-control" />
+                                <input type="file" value="" asp-for="ShipShemeFull" class="form-control" multiple />
                                 <span asp-validation-for="ShipShemeFull" class="text-danger"></span>
                             </td>
                         </tr>
@@ -202,6 +202,11 @@
                                 <input class="form-check-input" asp-for="LadyaSail" /> @Html.DisplayNameFor(model => model.LadyaSail)
                             </label>
                         </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="LadyaProject" /> @Html.DisplayNameFor(model => model.LadyaProject)
+                            </label>
+                        </div>
                     </div>
                     <div>
                         <div class="form-group form-check">
@@ -246,11 +251,6 @@
                         <div class="form-group form-check">
                             <label class="form-check-label">
                                 <input class="form-check-input" asp-for="KaterProject" /> @Html.DisplayNameFor(model => model.KaterProject)
-                            </label>
-                        </div>
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" asp-for="LadyaProject" /> @Html.DisplayNameFor(model => model.LadyaProject)
                             </label>
                         </div>
                         <div class="form-group form-check">

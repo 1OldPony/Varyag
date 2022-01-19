@@ -88,6 +88,8 @@ namespace Varyag.Models
         public bool LadyaRow { get; set; }
         [DisplayName("Парусно-моторная ладья")]
         public bool LadyaSail { get; set; }
+        [DisplayName("Струги и галеры")]
+        public bool LadyaProject { get; set; }
 
         [DisplayName("Яхта")]
         public bool Yacht { get; set; }
@@ -102,17 +104,14 @@ namespace Varyag.Models
         public bool MaketCinema { get; set; }
         [DisplayName("Модели и макеты")]
         public bool MaketMuseum { get; set; }
-        [DisplayName("Макет для интерьеров")]
+        [DisplayName("Прочая продукция")]
         public bool MaketDesign { get; set; }
 
         [DisplayName("Проект катера")]
         public bool KaterProject { get; set; }
-        [DisplayName("Проект ладьи")]
-        public bool LadyaProject { get; set; }
         [DisplayName("Проект парусника")]
         public bool SailboatProject { get; set; }
-
-
+        
         [DisplayName("Схема")]
         public byte[] ShipSheme { get; set; }
         [DisplayName("Схема с расположением")]

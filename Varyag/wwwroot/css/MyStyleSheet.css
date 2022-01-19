@@ -1373,6 +1373,21 @@ img {
     justify-content: space-between;
     transition: margin-top 0.5s cubic-bezier(0, 1.1, 0.32, 1) 0s
 }
+    .leftNavLine h1 {
+        font-size: inherit;
+        font-weight: inherit;
+        margin-block: 0;
+    }
+    .leftNavLine h2 {
+        font-size: inherit;
+        font-weight: inherit;
+        margin-block: 0;
+    }
+    .leftNavLine h3 {
+        font-size: inherit;
+        font-weight: inherit;
+        margin-block: 0;
+    }
 
 #allNews.navLineHeader {
     font-size: 1.8rem;
@@ -1428,6 +1443,21 @@ img {
 .leftSubCategory:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+.leftSubCategory h2 {
+    font-size:inherit;
+    font-weight:inherit;
+    margin-block:0;
+}
+.leftSubCategory h3 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin-block: 0;
+}
+.leftSubCategory h4 {
+    font-size: inherit;
+    font-weight: inherit;
+    margin-block: 0;
 }
 
 #lodki.nav-element-choosen {

@@ -109,14 +109,14 @@ namespace Varyag.Controllers
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
                     else
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
-                case "ladyaproject":
+                case "galleysAndStrugs":
                     items = await db.Project.Where(w => w.LadyaProject == true).ToListAsync();
                     ViewBag.secondCharacteristic = "volume";
                     ViewBag.thirdCharacteristic = "sailArea";
                     if (plitca)
                         return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
                     else
-                        return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
+                        return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort)); 
                 case "ladyarow":
                     items = await db.Project.Where(w => w.LadyaRow == true).ToListAsync();
                     ViewBag.secondCharacteristic = "volume";
@@ -242,6 +242,14 @@ namespace Varyag.Controllers
                         return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
                 case "modelsMakets":
                     items = await db.Project.Where(w => w.MaketMuseum == true).ToListAsync();
+                    ViewBag.secondCharacteristic = "volume";
+                    ViewBag.thirdCharacteristic = "sailArea";
+                    if (plitca)
+                        return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
+                    else
+                        return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
+                case "other":
+                    items = await db.Project.Where(w => w.MaketDesign == true).ToListAsync();
                     ViewBag.secondCharacteristic = "volume";
                     ViewBag.thirdCharacteristic = "sailArea";
                     if (plitca)

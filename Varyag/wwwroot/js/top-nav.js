@@ -284,7 +284,7 @@ $("#ladiyOpen, #ladiyClose").click(function () {
         $("#ladiy-Sub").attr('class', 'leftSubNavOpen');
         $("#ladiy-Sub").css('visibility', 'visible');
         $("#ladiy-Sub").css('opacity', '1');
-        $("#sailboatsNav").css('margin-top', '46px')
+        $("#sailboatsNav").css('margin-top', '72px')
     }
     else {
         $("#ladiy-Sub").attr('class', 'leftSubNavClose');

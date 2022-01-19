@@ -131,20 +131,29 @@ namespace Varyag.Controllers
                     Windth = model.Windth,
                     Price = model.Price
                 };
-                using (var memoryStream = new MemoryStream())
+                if (model.ShipSheme.Name!=null)
                 {
-                    await model.ShipSheme.CopyToAsync(memoryStream);
-                    project.ShipSheme = memoryStream.ToArray();
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await model.ShipSheme.CopyToAsync(memoryStream);
+                        project.ShipSheme = memoryStream.ToArray();
+                    }
                 }
-                using (var memoryStream = new MemoryStream())
+                if (model.ShipSheme.Length != 0)
                 {
-                    await model.MainFoto.CopyToAsync(memoryStream);
-                    project.MainFoto = memoryStream.ToArray();
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await model.MainFoto.CopyToAsync(memoryStream);
+                        project.MainFoto = memoryStream.ToArray();
+                    }
                 }
-                using (var memoryStream = new MemoryStream())
+                if (model.ShipSheme.FileName != null)
                 {
-                    await model.ShipShemeFull.CopyToAsync(memoryStream);
-                    project.ShipShemeFull = memoryStream.ToArray();
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await model.ShipShemeFull.CopyToAsync(memoryStream);
+                        project.ShipShemeFull = memoryStream.ToArray();
+                    }
                 }
                 _context.Add(project);
                 await _context.SaveChangesAsync();

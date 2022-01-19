@@ -253,7 +253,7 @@
                                 <li class="leftSubCategory">
                                     <a asp-action="LadyasSailMotor">Парусно-моторные ладьи</a>
                                 </li>
-                            }
+                                    }
                             @if (ViewBag.TopPic == "ladyassailrow")
                             {
                                 <li class="leftSubCategory">
@@ -264,6 +264,18 @@
                             {
                                 <li class="leftSubCategory">
                                     <a asp-action="LadyasSailRow">Парусно-гребные ладьи</a>
+                                </li>
+                            }
+                            @if (ViewBag.TopPic == "galleysAndStrugs")
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="GalleysAndStrugs" style="color:red">Струги и галеры</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <a asp-action="GalleysAndStrugs">Струги и галеры</a>
                                 </li>
                             }
                         </ul>
@@ -278,14 +290,17 @@
                         {
                             <div id="ladiyNav" class="leftNavLine"><a asp-action="Ladiy" class="navLineHeader">Ладьи</a><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
                         }
-                        <ul id="ladiy-Sub" class="leftSubNavOpen">
-                            <li class="leftSubCategory">
-                                <a asp-action="LadyasSailMotor">Парусно-моторные ладьи</a>
-                            </li>
-                            <li class="leftSubCategory">
-                                <a asp-action="LadyasSailRow">Парусно-гребные ладьи</a>
-                            </li>
-                        </ul>
+                            <ul id="ladiy-Sub" class="leftSubNavOpen">
+                                <li class="leftSubCategory">
+                                    <a asp-action="LadyasSailMotor">Парусно-моторные ладьи</a>
+                                </li>
+                                <li class="leftSubCategory">
+                                    <a asp-action="LadyasSailRow">Парусно-гребные ладьи</a>
+                                </li>
+                                <li class="leftSubCategory">
+                                    <a asp-action="GalleysAndStrugs">Струги и галеры</a>
+                                </li>
+                            </ul>
                     }
                 </li>
                 <li>
@@ -347,7 +362,7 @@
                     {
                         @if (ViewBag.catalogPage == "ladiy")
                         {
-                            <div id="sailboatsNav" class="leftNavLine" style="margin-top:46px"><a asp-action="Sailboats" class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
+                            <div id="sailboatsNav" class="leftNavLine" style="margin-top:72px"><a asp-action="Sailboats" class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
                         }
                         else
                         {
@@ -383,7 +398,7 @@
                             <a asp-action="ModelsMakets">Модели и макеты</a>
                         </li>
                         <li class="leftSubCategory">
-                            Прочая продукция
+                            <a asp-action="Other">Прочая продукция</a>
                         </li>
                     </ul>
                 </li>
@@ -391,12 +406,19 @@
         }
         else
         {
-            <ul class="leftNavMenu" style="padding-bottom:46px">
-                <li>
+            <ul class="leftNavMenu" style="padding-bottom:56px">
+                <li id="aboutUs">
                     <div class="leftNavLine"><a asp-action="AllNews" asp-controller="About" class="navLineHeader">О нас</a></div>
                 </li>
-                <li>
-                    <div class="leftNavLine"><a asp-action="CatalogNavigation" class="navLineHeader">Каталог</a></div>
+                <li id="catalogWord">
+                    @if (ViewBag.catalogPage == "catalog")
+                    {
+                        <div class="leftNavLine"><a asp-action="CatalogNavigation" id="catalogHeder" class="navLineHeader" style="color:red">Каталог</a></div>
+                    }
+                    else
+                    {
+                        <div class="leftNavLine"><a asp-action="CatalogNavigation" id="catalogHeder" class="navLineHeader">Каталог</a></div>
+                    }
                 </li>
                 <li>
                     <div class="leftNavLine"><a asp-action="Boats" class="navLineHeader">Лодки</a><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div></div>
@@ -455,6 +477,9 @@
                         <li class="leftSubCategory">
                             <a asp-action="LadyasSailRow">Парусно-гребные ладьи</a>
                         </li>
+                        <li class="leftSubCategory">
+                            <a asp-action="GalleysAndStrugs">Струги и галеры</a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -478,10 +503,24 @@
                     <div id="modelsNav" class="leftNavLine"><a asp-action="Models" class="navLineHeader" style="color:red">Разное</a><div id="modelsOpen" class="leftNavOpenCurrent">+</div><div id="modelsClose" class="leftNavCloseCurrent">-</div></div>
                     <ul id="models-Sub" class="leftSubNavOpenCurrent">
                         <li class="leftSubCategory">
-                            <a asp-action="ModelsMakets">Модели и макеты</a>
+                            @if (ViewBag.redLine == "makets")
+                            {
+                                <a asp-action="ModelsMakets" style="color:red">Модели и макеты</a>
+                            }
+                            else
+                            {
+                                <a asp-action="ModelsMakets">Модели и макеты</a>
+                            }
                         </li>
                         <li class="leftSubCategory">
-                            Прочая продукция
+                            @if (ViewBag.redLine == "other")
+                            {
+                            <a asp-action="Other" style="color:red">Прочая продукция</a>
+                            }
+                            else
+                            {
+                                <a asp-action="Other">Прочая продукция</a>
+                            }
                         </li>
                     </ul>
                 </li>
