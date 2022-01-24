@@ -127,10 +127,10 @@ namespace Varyag.Models.ViewModels
         public bool SailboatProject { get; set; }
 
         [DisplayName("Схема")]
-        public IFormFile ShipSheme { get; set; }
+        public IFormFileCollection ShipSheme { get; set; }
         [DisplayName("Схема с расположением")]
-        public IFormFile ShipShemeFull { get; set; }
+        public IFormFileCollection ShipShemeFull { get; set; }
         [DisplayName("Главная фотка")]
-        public IFormFile MainFoto { get; set; }
+        public IFormFileCollection MainFoto { get; set; }
     }
 }

@@ -230,29 +230,39 @@ namespace Varyag.Models
                 {
                     string number = "";
 
-                    if (!item.Name.Contains('"') || !item.Name.Contains('-'))
+                    if (!item.Name.Contains('"'))
                     {
-                        char[] numbers = item.Length.ToCharArray();
-
-                        if (numbers.Length < 2)
+                        if (!item.Name.Contains('»'))
                         {
-                            number = string.Concat(numbers[0], "0");
+                            char[] numbers = item.Length.ToCharArray();
+
+                            if (numbers.Length < 2)
+                            {
+                                number = string.Concat(numbers[0], "0");
+                            }
+                            else
+                            {
+                                int pointCounter = 0;
+                                foreach (var symbol in numbers)
+                                {
+                                    if (symbol != '.' && symbol != ',')
+                                        number = string.Concat(number, symbol.ToString());
+                                    else
+                                        pointCounter++;
+                                    continue;
+                                }
+                                if (pointCounter == 0)
+                                {
+                                    number = string.Concat(number, "0");
+                                }
+                            }
                         }
                         else
                         {
-                            int pointCounter = 0;
-                            foreach (var symbol in numbers)
-                            {
-                                if (symbol != '.' && symbol != ',')
-                                    number = string.Concat(number, symbol.ToString());
-                                else
-                                    pointCounter++;
-                                continue;
-                            }
-                            if (pointCounter == 0)
-                            {
-                                number = string.Concat(number, "0");
-                            }
+                            string[] parts1 = item.Name.Split('"');
+                            string[] parts2 = parts1[1].Split('-');
+                            char[] numbers = parts2[1].ToCharArray();
+                            number = string.Concat(numbers[0], numbers[1]);
                         }
                     }
                     else
@@ -262,6 +272,7 @@ namespace Varyag.Models
                         char[] numbers = parts2[1].ToCharArray();
                         number = string.Concat(numbers[0], numbers[1]);
                     }
+
                     orderedProjects.Add(new ProjectPublicViewModel
                     {
                         Order = int.Parse(number),

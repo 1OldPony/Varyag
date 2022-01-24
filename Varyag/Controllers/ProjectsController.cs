@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -131,28 +132,49 @@ namespace Varyag.Controllers
                     Windth = model.Windth,
                     Price = model.Price
                 };
-                if (model.ShipSheme.Name!=null)
+                if (model.ShipSheme != null)
                 {
-                    using (var memoryStream = new MemoryStream())
+                    if (model.ShipSheme.Count == 1)
                     {
-                        await model.ShipSheme.CopyToAsync(memoryStream);
-                        project.ShipSheme = memoryStream.ToArray();
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await model.ShipSheme[0].CopyToAsync(memoryStream);
+                            project.ShipSheme = memoryStream.ToArray();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Нужно выбрать только 1 фото для схемы, нажми 'назад'(стрелочку в браузере)");
                     }
                 }
-                if (model.ShipSheme.Length != 0)
+                if (model.MainFoto != null)
                 {
-                    using (var memoryStream = new MemoryStream())
+                    if (model.MainFoto.Count == 1)
                     {
-                        await model.MainFoto.CopyToAsync(memoryStream);
-                        project.MainFoto = memoryStream.ToArray();
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await model.MainFoto[0].CopyToAsync(memoryStream);
+                            project.MainFoto = memoryStream.ToArray();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Нужно выбрать только 1 фото для главного фото, нажми 'назад'(стрелочку в браузере)");
                     }
                 }
-                if (model.ShipSheme.FileName != null)
+                if (model.ShipShemeFull != null)
                 {
-                    using (var memoryStream = new MemoryStream())
+                    if (model.ShipShemeFull.Count == 1)
                     {
-                        await model.ShipShemeFull.CopyToAsync(memoryStream);
-                        project.ShipShemeFull = memoryStream.ToArray();
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await model.ShipShemeFull[0].CopyToAsync(memoryStream);
+                            project.ShipShemeFull = memoryStream.ToArray();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception ("Нужно выбрать только 1 фото для схемы с расположением, нажми 'назад'(стрелочку в браузере)");
                     }
                 }
                 _context.Add(project);
@@ -170,11 +192,13 @@ namespace Varyag.Controllers
                 return NotFound();
             }
 
-            var project = await _context.Project.FindAsync(id);
+            var project = await _context.Project.FirstOrDefaultAsync(p=>p.ProjectID==id);
+
             if (project == null)
             {
                 return NotFound();
             }
+
             return View(project);
         }
 
@@ -240,35 +264,68 @@ namespace Varyag.Controllers
                         Windth = model.Windth,
                         Price = model.Price
                     };
-
-                    if (model.ShipSheme!=null)
+                    if (model.ShipSheme != null)
                     {
-                        using (var memoryStream = new MemoryStream())
+                        if (model.ShipSheme.Count == 1)
                         {
-                            await model.ShipSheme.CopyToAsync(memoryStream);
-                            project.ShipSheme = memoryStream.ToArray();
+                            using (var memoryStream = new MemoryStream())
+                            {
+                                await model.ShipSheme[0].CopyToAsync(memoryStream);
+                                project.ShipSheme = memoryStream.ToArray();
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("Нужно выбрать только 1 фото для схемы, нажми 'назад'(стрелочку в браузере)");
                         }
                     }
+                    //else
+                    //{
+                    //    project.ShipSheme = /*oldProject.ShipSheme*/;
+                    //}
 
                     if (model.MainFoto != null)
                     {
-                        using (var memoryStream = new MemoryStream())
+                        if (model.MainFoto.Count == 1)
                         {
-                            await model.MainFoto.CopyToAsync(memoryStream);
-                            project.MainFoto = memoryStream.ToArray();
+                            using (var memoryStream = new MemoryStream())
+                            {
+                                await model.MainFoto[0].CopyToAsync(memoryStream);
+                                project.MainFoto = memoryStream.ToArray();
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("Нужно выбрать только 1 фото для главного фото, нажми 'назад'(стрелочку в браузере)");
                         }
                     }
+                    //else
+                    //{
+                    //    project.MainFoto = oldProject.MainFoto;
+                    //}
 
                     if (model.ShipShemeFull != null)
                     {
-                        using (var memoryStream = new MemoryStream())
+                        if (model.ShipShemeFull.Count == 1)
                         {
-                            await model.ShipShemeFull.CopyToAsync(memoryStream);
-                            project.ShipShemeFull = memoryStream.ToArray();
+                            using (var memoryStream = new MemoryStream())
+                            {
+                                await model.ShipShemeFull[0].CopyToAsync(memoryStream);
+                                project.ShipShemeFull = memoryStream.ToArray();
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("Нужно выбрать только 1 фото для схемы с расположением, нажми 'назад'(стрелочку в браузере)");
                         }
                     }
-
+                    //else
+                    //{
+                    //    project.ShipShemeFull = oldProject.ShipShemeFull;
+                    //}
+                    
                     _context.Update(project);
+
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

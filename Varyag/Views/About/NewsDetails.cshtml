@@ -21,10 +21,10 @@
                         <div class="leftNavLine"><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
                         <ul id="articles-sub" class="leftSubNavOpenCurrent">
                             <li class="leftSubCategory">
-                                <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a>
+                                <h2></h2><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a>
                             </li>
                             <li class="leftSubCategory">
-                                <a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="movies">Заказы для кино</a>
+                                <h2></h2><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="movies">Заказы для кино</a>
                             </li>
                         </ul>
                     </li>
@@ -34,37 +34,37 @@
                             @if (ViewBag.newsType == "smi")
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="smi" style="color:red" id="smiNav">СМИ о нас</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="smi" style="color:red" id="smiNav">СМИ о нас</a>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav">СМИ о нас</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="smi" id="smiNav">СМИ о нас</a>
                                 </li>
                             }
                             @if (ViewBag.newsType == "life")
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="life" style="color:red" id="lifeNav">Жизнь наших судов</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="life" style="color:red" id="lifeNav">Жизнь наших судов</a>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav">Жизнь наших судов</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="life" id="lifeNav">Жизнь наших судов</a>
                                 </li>
                             }
                             @if (ViewBag.newsType == "newShips")
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="newShips" style="color:red" id="newShipsNav">Новости верфи</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="newShips" style="color:red" id="newShipsNav">Новости верфи</a>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav">Новости верфи</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav">Новости верфи</a>
                                 </li>
                             }
                         </ul>
@@ -95,13 +95,13 @@
                             <div class="leftNavLine"><a asp-action="AllNews" class="navLineHeader">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
                             <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine">СМИ о нас</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine">СМИ о нас</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine">Жизнь наших судов</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine">Жизнь наших судов</a>
                                 </li>
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine">Новости верфи</a>
+                                    <h2></h2><a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine">Новости верфи</a>
                                 </li>
                             </ul>
                         </li>
@@ -161,7 +161,7 @@
         <div class="projectsHalf" id="newsDetailsProjectsHalf">
             <div class="topCatalogLine" id="newsDetails">
                 <h1 class="categorysLineItemHeader">@Model.Header</h1>
-                <div class="newsDetailsStory">@Html.Raw(Model.MainStory)</div>
+                <h2 class="newsDetailsStory">@Html.Raw(Model.MainStory)</h2>
                 @if (Model.PathToGallery != null)
                 {
                     <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
