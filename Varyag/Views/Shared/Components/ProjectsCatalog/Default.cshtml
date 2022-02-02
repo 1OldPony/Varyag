@@ -4,11 +4,11 @@
     <div id="topCatalogBorder" class="myBorder"></div>
     @foreach (var item in Model)
     {
-        <a class="projectListItem" href="../../Каталог/@item.Route">
+        <a class="projectListItem" href="../../../@item.Route">
             <div class="singleProject">
                 <div id="short" class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "sheme"})" alt="@item.Name" title="@item.Name" /></div>
                 <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "main"})" alt="@item.Name" title="@item.Name" /></div>
-                <div class="catalogItemTop">@item.Name</div>
+                <div class="catalogItemTop"><h2 style="margin-block:0;font-size:1.13rem;">@item.Name</h2></div>
                 <div id="top" class="gridFreeSpace"></div>
                 <div class="TTH">
                     <table>

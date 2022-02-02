@@ -534,6 +534,13 @@
     margin-top: 10px;
     margin-bottom: 2%;
 }
+    .catalogPlitkaCategorys h2 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+        margin-block-start: 0;
+        margin-block-end: 0.31rem;
+        font-weight: normal;
+    }
 
 .plitkaCategoryHeader {
     margin-bottom: 5px;
@@ -2175,6 +2182,14 @@ ul .nav-element-choosen {
         margin-block-start: 0px;
         margin-block-end: 0px;
     }
+    .projectName h1 {
+        text-align: left;
+        font-size: 2rem;
+        font-weight: 600;
+        text-decoration: underline;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+    }
 
 .infoBlocks {
     display: grid;
@@ -2436,6 +2451,9 @@ ul .nav-element-choosen {
     background-color: white;
     border-radius: 10px;
 }
+    .topCatalogLine h2{
+        margin:0;
+    }
 
 #newsDetails.topCatalogLine {
     flex-direction: column;
@@ -3653,6 +3671,9 @@ ul .nav-element-choosen {
     .catalogPlitkaCategorys {
         font-size: 1rem
     }
+        .catalogPlitkaCategorys h2 {
+            font-size: 1rem;
+        }
     .plitkaCategoryHeader {
         font-size: 1.2rem
     }
