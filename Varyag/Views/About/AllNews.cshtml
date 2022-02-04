@@ -18,71 +18,71 @@
                 {
                 <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
                     <li id="catalogWord">
-                        <div class="leftNavLine"><a asp-action="CatalogNavigation" asp-controller="Catalog" class="navLineHeader">Каталог</a></div>
+                        <div class="leftNavLine"><a href="../../../katalog" class="navLineHeader">Каталог</a></div>
                     </li>
                     <li>
-                        <div class="leftNavLine"><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
+                        <div class="leftNavLine"><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
                         <ul id="articles-sub" class="leftSubNavOpenCurrent">
                             <li class="leftSubCategory">
-                                <h2><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a></h2>
+                                <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для музеев" id="museums">Заказы для музеев</a></h2>
                             </li>
                             <li class="leftSubCategory">
-                                <h2><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="movies">Заказы для кино</a></h2>
+                                <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для кино" id="museums">Заказы для кино</a></h2>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a asp-action="AllNews" class="navLineHeader" style="color:red">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a href="../../../o-nas" class="navLineHeader" style="color:red">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
                         <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
                             @if (ViewBag.newsType == "smi")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a asp-action="AllNews" asp-route-newsType="smi" style="color:red" id="smiNav">СМИ о нас</a></h2>
+                                    <h2><a href="../../../o-nas?newsType=smi" style="color:red" id="smiNav">СМИ о нас</a></h2>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a asp-action="AllNews" asp-route-newsType="smi" id="smiNav">СМИ о нас</a></h2>
+                                    <h2><a href="../../../o-nas?newsType=smi" id="smiNav">СМИ о нас</a></h2>
                                 </li>
                             }
                             @if (ViewBag.newsType == "life")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a asp-action="AllNews" asp-route-newsType="life" style="color:red" id="lifeNav">Жизнь наших судов</a></h2>
+                                    <h2><a href="../../../o-nas?newsType=life" style="color:red" id="lifeNav">Жизнь наших судов</a></h2>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a asp-action="AllNews" asp-route-newsType="life" id="lifeNav">Жизнь наших судов</a></h2>
+                                    <h2><a href="../../../o-nas?newsType=life" id="lifeNav">Жизнь наших судов</a></h2>
                                 </li>
                             }
                             @if (ViewBag.newsType == "newShips")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a asp-action="AllNews" asp-route-newsType="newShips" style="color:red" id="newShipsNav">Новости верфи</a></h2>
+                                    <h2><a href="../../../o-nas?newsType=newShips" style="color:red" id="newShipsNav">Новости верфи</a></h2>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav">Новости верфи</a></h2>
+                                    <h2><a href="../../../o-nas?newsType=newShips" id="newShipsNav">Новости верфи</a></h2>
                                 </li>
                             }
                         </ul>
                     </li>
                     <li>
-                        <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a href="../../../o-nas?newsType=byType" class="navLineHeader">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
                         <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
                             <li class="leftSubCategory">
-                                <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
+                                <a href="../../../o-nas?part=new&newsType=byType">@ViewBag.actualNews</a>
                             </li>
                             <li class="leftSubCategory">
-                                <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
+                                <a href="../../../o-nas?part=recent&newsType=byType">@ViewBag.recentNews</a>
                             </li>
                             <li class="leftSubCategory">
-                                <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
+                                <a href="../../../o-nas?part=old&newsType=byType">@ViewBag.oldNews</a>
                             </li>
                         </ul>
                     </li>
@@ -92,70 +92,70 @@
                 {
                 <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
                     <li id="catalogWord">
-                        <div class="leftNavLine"><a asp-action="CatalogNavigation" asp-controller="Catalog" class="navLineHeader">Каталог</a></div>
+                        <div class="leftNavLine"><a href="../../../katalog" class="navLineHeader">Каталог</a></div>
                     </li>
                     <li>
-                        <div class="leftNavLine"><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
+                        <div class="leftNavLine"><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews" class="leftNavLine"><div class="navLineHeader">Статьи</div></a><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div></div>
                         <ul id="articles-sub" class="leftSubNavOpenCurrent">
                             <li class="leftSubCategory">
-                                <h2><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для музеев" id="museums">Заказы для музеев</a></h2>
+                                <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для музеев" id="museums">Заказы для музеев</a></h2>
                             </li>
                             <li class="leftSubCategory">
-                                <h2><a asp-action="AllArticles" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-type="Заказы для кино" id="movies">Заказы для кино</a></h2>
+                                <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для кино" id="museums">Заказы для кино</a></h2>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a asp-action="AllNews" class="navLineHeader">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><a href="../../../o-nas" class="navLineHeader">Наши новости</a><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div></div>
                         <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
                             <li class="leftSubCategory">
-                                <h2><a asp-action="AllNews" asp-route-newsType="smi" id="smiNav" class="leftNavLine">СМИ о нас</a></h2>
+                                <h2><a href="../../../o-nas?newsType=smi" id="smiNav">СМИ о нас</a></h2>
                             </li>
                             <li class="leftSubCategory">
-                                <h2><a asp-action="AllNews" asp-route-newsType="life" id="lifeNav" class="leftNavLine">Жизнь наших судов</a></h2>
+                                <h2><a href="../../../o-nas?newsType=life" id="lifeNav">Жизнь наших судов</a></h2>
                             </li>
                             <li class="leftSubCategory">
-                                <h2><a asp-action="AllNews" asp-route-newsType="newShips" id="newShipsNav" class="leftNavLine">Новости верфи</a></h2>
+                                <h2><a href="../../../o-nas?newsType=newShips" id="newShipsNav">Новости верфи</a></h2>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a asp-action="AllNews" asp-route-newsType="byType" class="navLineHeader" style="color:red">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
+                        <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><a href="../../../o-nas?newsType=byType" class="navLineHeader" style="color:red">Архив</a><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div></div>
                         <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
                             @if (ViewBag.part == "new")
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType" style="color:red">@ViewBag.actualNews</a>
+                                    <a href="../../../o-nas?part=new&newsType=byType" style="color:red">@ViewBag.actualNews</a>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="new" asp-route-newsType="byType">@ViewBag.actualNews</a>
+                                    <a href="../../../o-nas?part=new&newsType=byType">@ViewBag.actualNews</a>
                                 </li>
                             }
                             @if (ViewBag.part == "recent")
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType" style="color:red">@ViewBag.recentNews</a>
+                                    <a href="../../../o-nas?part=recent&newsType=byType" style="color:red">@ViewBag.recentNews</a>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="recent" asp-route-newsType="byType">@ViewBag.recentNews</a>
+                                    <a href="../../../o-nas?part=recent&newsType=byType">@ViewBag.recentNews</a>
                                 </li>
                             }
                             @if (ViewBag.part == "old")
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType" style="color:red">@ViewBag.oldNews</a>
+                                    <a href="../../../o-nas?part=old&newsType=byType" style="color:red">@ViewBag.oldNews</a>
                                 </li>
                             }
                             else
                             {
                                 <li class="leftSubCategory">
-                                    <a asp-action="AllNews" asp-route-part="old" asp-route-newsType="byType">@ViewBag.oldNews</a>
+                                    <a href="../../../o-nas?part=old&newsType=byType">@ViewBag.oldNews</a>
                                 </li>
                             }
                         </ul>
@@ -178,9 +178,9 @@
             </div>
             <div class="newsBlock">
 
-                @for (int i = 0; i < Model.Count(); i++)
-                {
-                    <a asp-action="NewsDetails" asp-route-actualNews="@ViewBag.actualNews" asp-route-recentNews="@ViewBag.recentNews" asp-route-oldNews="@ViewBag.oldNews" asp-route-id="@Model.ElementAt(i).NewsId">
+                @for (int i = 0; i < Model.Count(); i++) 
+                        {
+                    <a href = "../../../o-nas/id?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&id=@Model.ElementAt(i).NewsId">
                         <div class="newsListElement">
                             <div>
                                 <img src="@Model.ElementAt(i).ShortFotoPreview" />
@@ -199,19 +199,19 @@
                 @if (ViewBag.Pages != null)
                 {
                     <div class="pageView">
-                        <a asp-action="AllNews" asp-route-page="@ViewBag.CurrentPage" asp-route-direction="left" asp-route-newsType="@ViewBag.newsType" asp-route-part=@ViewBag.part style="color:red">&#9668;</a>
+                        <a href = "../../../o-nas?page=@ViewBag.CurrentPage&direction=left&newsType=@ViewBag.newsType&part=@ViewBag.part" style="color:red">&#9668;</a>
                         @for (int i = 1; i <= ViewBag.Pages; i++)
                         {
                             if (i == @ViewBag.CurrentPage)
                             {
-                                <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType" asp-route-part=@ViewBag.part ><span style="color:red;margin:3px;font-size:1.4rem">@i </span></a>
+                                <a href = "../../../o-nas?page=@i&newsType=@ViewBag.newsType&part=@ViewBag.part"><span style="color:red;margin:3px;font-size:1.4rem">@i </span></a>
                             }
                             else
                             {
-                                <a asp-action="AllNews" asp-route-page="@i" asp-route-newsType="@ViewBag.newsType" asp-route-part=@ViewBag.part ><span style="color:red;margin:3px;font-size:1.1rem">@i </span></a>
+                                <a href = "../../../o-nas?page=@i&newsType=@ViewBag.newsType&part=@ViewBag.part"><span style="color:red;margin:3px;font-size:1.1rem">@i </span></a>
                             }
                         }
-                        <a asp-action="AllNews" asp-route-page="@ViewBag.CurrentPage" asp-route-direction="right" asp-route-newsType="@ViewBag.newsType" asp-route-part=@ViewBag.part style="color:red">&#9658;</a>
+                        <a href = "../../../o-nas?page=@ViewBag.CurrentPage&direction=right&newsType=@ViewBag.newsType&part=@ViewBag.part" style="color:red">&#9658;</a>
                     </div>
                 }
             </div>
