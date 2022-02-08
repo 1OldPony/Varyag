@@ -10,39 +10,39 @@
         <nav>
             <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:69px">
                 <li>
-                    <div class="leftNavLine"><a asp-action="CatalogNavigation" asp-controller="Catalog" class="navLineHeader">Каталог</a><div id="catalogOpen" class="leftNavOpenCurrent">+</div><div id="catalogClose" class="leftNavCloseCurrent">-</div></div>
+                    <div class="leftNavLine"><a href="../../../katalog" class="navLineHeader">Каталог</a><div id="catalogOpen" class="leftNavOpenCurrent">+</div><div id="catalogClose" class="leftNavCloseCurrent">-</div></div>
                     <ul id="catalog-sub" class="leftSubNavOpenCurrent">
                         <li class="leftSubCategory">
-                            <a asp-action="Boats" asp-controller="Catalog" class="leftNavLine">Лодки</a>
+                            <a href="../../../katalog/lodki" class="leftNavLine">Лодки</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a asp-action="Bigboats" asp-controller="Catalog" class="leftNavLine">Шлюпки</a>
+                            <a href="../../../katalog/shlyupki" class="leftNavLine">Шлюпки</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a asp-action="Motorboats" asp-controller="Catalog" class="leftNavLine">Катера</a>
+                            <a href="../../../katalog/katera" class="leftNavLine">Катера</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a asp-action="Ladiy" asp-controller="Catalog" class="leftNavLine">Ладьи</a>
+                            <a href="../../../katalog/ladi" class="leftNavLine">Ладьи</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a asp-action="Sailboats" asp-controller="Catalog" class="leftNavLine">Парусники</a>
+                            <a href="../../../katalog/parusniki" class="leftNavLine">Парусники</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a asp-action="Models" asp-controller="Catalog" class="leftNavLine">Разное</a>
+                            <a href="../../../katalog/raznoe" class="leftNavLine">Разное</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <div id="aboutUsNav" class="leftNavLine" style="margin-top:138px"><a asp-action="AllNews" class="navLineHeader">О нас</a><div id="aboutUsOpen" class="leftNavOpenCurrent">+</div><div id="aboutUsClose" class="leftNavCloseCurrent">-</div></div>
+                    <div id="aboutUsNav" class="leftNavLine" style="margin-top:138px"><a href="../../../o-nas" class="navLineHeader">О нас</a><div id="aboutUsOpen" class="leftNavOpenCurrent">+</div><div id="aboutUsClose" class="leftNavCloseCurrent">-</div></div>
                     <ul id="aboutUs-sub" class="leftSubNavOpenCurrent">
                         <li class="leftSubCategory">
-                            <a asp-action="AllArticles" asp-controller="About" id="lifeNav" class="leftNavLine">Статьи</a>
+                            <a href="../../../o-nas/stati" id="lifeNav" class="leftNavLine">Статьи</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a asp-action="AllNews" asp-controller="About" id="smiNav" class="leftNavLine">Наши новости</a>
+                            <a href="../../../o-nas" id="smiNav" class="leftNavLine">Наши новости</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a asp-action="AllNews" asp-controller="About" asp-route-newsType="byType" id="newShipsNav" class="leftNavLine">Архив</a>
+                            <a href="../../../o-nas?newsType=byType" id="newShipsNav" class="leftNavLine">Архив</a>
                         </li>
                     </ul>
                 </li>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="catalogIconsMainPaigeLine">
-                <a asp-controller="catalog" asp-action="boats" class="catalogIconsMainPaige2">
+                <a href="../../../katalog/lodki" class="catalogIconsMainPaige2">
                     <div class="catalogIconHeader">
                         Лодки
                     </div>
@@ -84,7 +84,7 @@
                         <img src="/images/icons/Цветные/одинаковые/лодка-безфона.png"/>
                     </div>
                 </a>
-                <a asp-controller="catalog" asp-action="bigboats" class="catalogIconsMainPaige2">
+                <a href="../../../katalog/shlyupki" class="catalogIconsMainPaige2">
                     <div class="catalogIconHeader">
                         Шлюпки
                     </div>
@@ -92,7 +92,7 @@
                         <img src="/images/icons/Цветные/одинаковые/шлюпка-безфона.png" />
                     </div>
                 </a>
-                <a asp-controller="catalog" asp-action="motorboats" class="catalogIconsMainPaige2">
+                <a href="../../../katalog/katera" class="catalogIconsMainPaige2">
                     <div class="catalogIconHeader">
                         Катера
                     </div>
@@ -100,7 +100,7 @@
                         <img src="/images/icons/Цветные/одинаковые/катер-безфона.png" />
                     </div>
                 </a>
-                <a asp-controller="catalog" asp-action="ladiy" class="catalogIconsMainPaige2">
+                <a href="../../../katalog/ladi" class="catalogIconsMainPaige2">
                     <div class="catalogIconHeader">
                         Ладьи
                     </div>
@@ -108,7 +108,7 @@
                         <img src="/images/icons/Цветные/одинаковые/ладья-безфона-1200.png" />
                     </div>
                 </a>
-                <a asp-controller="catalog" asp-action="sailboats" class="catalogIconsMainPaige2">
+                <a href="../../../katalog/parusniki" class="catalogIconsMainPaige2">
                     <div class="catalogIconHeader">
                         Парусники
                     </div>
@@ -116,7 +116,7 @@
                         <img src="/images/icons/Цветные/одинаковые/парусник-безфона.png" />
                     </div>
                 </a>
-                <a asp-controller="catalog" asp-action="models" class="catalogIconsMainPaige2Different">
+                <a href="../../../katalog/raznoe" class="catalogIconsMainPaige2Different">
                     <div class="catalogIconHeader">
                         Разное
                     </div>
@@ -148,51 +148,52 @@
         <div class="catalogPlates">
             <div class="catalogPlitka" id="lodki">
                 <div class="catalogPlitkaCategorys">
-                    <a href="../../Каталог/Лодки" class="plitkaCategoryHeader">Лодки</a>
-                    <a href="../../Каталог/Лодки/Народные-лодки" class="plitkaCategory">Народные лодки</a>
-                    <a href="../../Каталог/Лодки/Прогулочные-парусные-лодки" class="plitkaCategory">Прогулочные парусные лодки</a>
-                    <a id="last" href="../../Каталог/Лодки/Прогулочные-гребные-лодки" class="plitkaCategory">Прогулочные гребные лодки</a>
+                    <a href="../../../katalog/lodki" class="plitkaCategoryHeader">Лодки</a>
+                    <a href="../../../../katalog/lodki/narodnye-lodki" class="plitkaCategory">Народные лодки</a>
+                    <a href="../../../../katalog/lodki/progulochnye-parusnye-lodki" class="plitkaCategory">Прогулочные парусные лодки</a>
+                    <a id="last" href="../../../katalog/lodki/progulochnye-grebnye-lodki" class="plitkaCategory">Прогулочные гребные лодки</a>
                 </div>
             </div>
             <div id="center" class="catalogPlitka">
                 <div class="catalogPlitkaCategorys">
-                    <a href="../../Каталог/Катера" class="plitkaCategoryHeader">Катера</a>
-                    <a href="../../Каталог/Катера/Пассажирские-катера" class="plitkaCategory">Пассажирские катера</a>
-                    <a href="../../Каталог/Катера/Рабочие-и-рыболовные-катера" class="plitkaCategory">Рабочие/Рыболовные катера</a>
-                    <a href="../../Каталог/Катера/Каютные-катера" class="plitkaCategory">Каютные катера</a>
-                    <a id="last" href="../../Каталог/Катера/Мотосейлеры" class="plitkaCategory">Мотосейлеры</a>
+                    <a href="../../../katalog/katera" class="plitkaCategoryHeader">Катера</a>
+                    <a href="../../../katalog/katera/passazhirskie-katera" class="plitkaCategory">Пассажирские катера</a>
+                    <a href="../../../katalog/katera/rabochie-i-rybolovnye-katera" class="plitkaCategory">Рабочие/Рыболовные катера</a>
+                    <a href="../../../katalog/katera/kayutnye-katera" class="plitkaCategory">Каютные катера</a>
+                    <a id="last" href="../../../katalog/katera/motoseylery" class="plitkaCategory">Мотосейлеры</a>
                 </div>
             </div>
             <div class="catalogPlitka">
                 <div class="catalogPlitkaCategorys">
-                    <a href="../../Каталог/Парусники" class="plitkaCategoryHeader">Парусники</a>
-                    <a href="../../Каталог/Парусники/Исторические-парусники" class="plitkaCategory">Исторические парусники</a>
-                    <a href="../../Каталог/Парусники/Учебные-парусники" class="plitkaCategory">Учебные парусники</a>
-                    <a href="../../Каталог/Парусники/Швертботы" class="plitkaCategory">Швертботы</a>
-                    <a id="last" href="../../Каталог/Парусники/Парусные-яхты" class="plitkaCategory">Парусные яхты</a>
+                    <a href="../../../katalog/parusniki" class="plitkaCategoryHeader">Парусники</a>
+                    <a href="../../../katalog/parusniki/istoricheskie-parusniki" class="plitkaCategory">Исторические парусники</a>
+                    <a href="../../../katalog/parusniki/uchebnye-parusniki" class="plitkaCategory">Учебные парусники</a>
+                    <a href="../../../katalog/parusniki/shvertboty" class="plitkaCategory">Швертботы</a>
+                    <a id="last" href="../../../katalog/parusniki/parusnye-yahty" class="plitkaCategory">Парусные яхты</a>
                 </div>
             </div>
             <div class="catalogPlitka" id="shlupki">
                 <div class="catalogPlitkaCategorys">
-                    <a href="../../Каталог/Шлюпки" class="plitkaCategoryHeader">Шлюпки</a>
-                    <a href="../../Каталог/Шлюпки/Шлюпки-ЯЛ2,ЯЛ4,ЯЛ6" class="plitkaCategory">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
-                    <a href="../../Каталог/Шлюпки/Ботики" class="plitkaCategory">Ботики</a>
-                    <a href="../../Каталог/Шлюпки/Гребные-катера-и-вельботы" class="plitkaCategory">Гребные катера и вельботы</a>
-                    <a id="last" href="../../Каталог/Шлюпки/Учебные-пособия" class="plitkaCategory">Учебные пособия</a>
+                    <a href="../../../katalog/shlyupki" class="plitkaCategoryHeader">Шлюпки</a>
+                    <a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6" class="plitkaCategory">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
+                    <a href="../../../katalog/shlyupki/botiki" class="plitkaCategory">Ботики</a>
+                    <a href="../../../katalog/shlyupki/grebnye-katera-i-velboty" class="plitkaCategory">Гребные катера и вельботы</a>
+                    <a id="last" href="../../../katalog/shlyupki/uchebnye-posobiya" class="plitkaCategory">Учебные пособия</a>
                 </div>
             </div>
             <div id="center" class="catalogPlitka" name="ladiy">
                 <div class="catalogPlitkaCategorys">
-                    <a href="../../Каталог/Ладьи" class="plitkaCategoryHeader">Ладьи</a>
-                    <a href="../../Каталог/Ладьи/Парусно-моторные-ладьи" class="plitkaCategory">Парусно-моторные ладьи</a>
-                    <a id="last" href="../../Каталог/Ладьи/Парусно-гребные-ладьи" class="plitkaCategory">Парусно-гребные ладьи</a>
+                    <a href="../../../katalog/ladi" class="plitkaCategoryHeader">Ладьи</a>
+                    <a href="../../../katalog/ladi/parusno-motornye-ladi" class="plitkaCategory">Парусно-моторные ладьи</a>
+                    <a id="last" href="../../../katalog/ladi/parusno-grebnye-ladi" class="plitkaCategory">Парусно-гребные ладьи</a>
+                    <a id="last" href="../../../katalog/ladi/strugi-i-galery" class="plitkaCategory">Струги и галеры</a>
                 </div>
             </div>
             <div class="catalogPlitka">
                 <div class="catalogPlitkaCategorys">
-                    <a href="../../Каталог/Разное" class="plitkaCategoryHeader">Разное</a>
-                    <a class="plitkaCategory">Модели и макеты</a>
-                    <a id="last" class="plitkaCategory">Прочая продукция</a>
+                    <a href="../../../katalog/raznoe" class="plitkaCategoryHeader">Разное</a>
+                    <a href="../../../katalog/raznoe/modeli-i-makety" class="plitkaCategory">Модели и макеты</a>
+                    <a href="../../../katalog/raznoe/prochaya-produkciya" id="last" class="plitkaCategory">Прочая продукция</a>
                 </div>
             </div>
         </div>
@@ -206,12 +207,12 @@
         </div>
         <div class="catalogPlitka" id="single">
             <div class="catalogPlitkaCategorys">
-                <a href="../../Каталог/Лодки" class="plitkaCategoryHeader">Лодки</a>
-                <a href="../../Каталог/Катера" class="plitkaCategoryHeader">Катера</a>
-                <a href="../../Каталог/Парусники" class="plitkaCategoryHeader">Парусники</a>
-                <a href="../../Каталог/Шлюпки" class="plitkaCategoryHeader">Шлюпки</a>
-                <a href="../../Каталог/Ладьи" class="plitkaCategoryHeader">Ладьи</a>
-                <a href="../../Каталог/Разное" class="plitkaCategoryHeader">Разное</a>
+                <a href="../../katalog/lodki" class="plitkaCategoryHeader">Лодки</a>
+                <a href="../../katalog/shlyupki" class="plitkaCategoryHeader">Шлюпки</a>
+                <a href="../../katalog/katera" class="plitkaCategoryHeader">Катера</a>
+                <a href="../../katalog/ladi" class="plitkaCategoryHeader">Ладьи</a>
+                <a href="../../katalog/parusniki" class="plitkaCategoryHeader">Парусники</a>
+                <a href="../../katalog/raznoe" class="plitkaCategoryHeader">Разное</a>
             </div>
         </div>
     </div>

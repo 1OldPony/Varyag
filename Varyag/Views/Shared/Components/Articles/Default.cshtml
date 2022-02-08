@@ -3,7 +3,7 @@
 
 
 <div class="articlesPreviewBlock">
-    <a asp-action="AllArticles" style="height:100%;">
+    <a href="../../../o-nas/stati" style="height:100%;">
         <div class="headerAbout" id="newsPreview">
             <div class="borderAbout"></div>
             <div class="longPreviewBlockText">Статьи о наших работах для музеев, а также отечественных и зарубежных киностудий можно посмотреть тут</div>
@@ -12,7 +12,7 @@
         </div>
     </a>
     <div class="partNews" id="shortStory" style="width:100%">
-        <a asp-action="ArticleDetails" asp-route-route="@Model.ElementAt(0).ArticleRoute">
+        <a href="../../../o-nas/stati/@Model.ElementAt(0).ArticleRoute">
             <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).ShortFotoPreview);background-position-x:@Model.ElementAt(0).ShortImgX;background-position-y:@Model.ElementAt(0).ShortImgY;background-size:@Model.ElementAt(0).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
                 <div class="annotation">
                     <div class="annotationText" style="font-size:1.2rem">
@@ -22,7 +22,7 @@
             </div>
         </a>
         <div class="newsPreviewSpace"></div>
-        <a asp-action="ArticleDetails" asp-route-route="@Model.ElementAt(1).ArticleRoute">
+        <a href="../../../o-nas/stati/@Model.ElementAt(1).ArticleRoute">
             <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).ShortFotoPreview);background-position-x:@Model.ElementAt(1).ShortImgX;background-position-y:@Model.ElementAt(1).ShortImgY;background-size:@Model.ElementAt(1).ShortImgScale auto;background-repeat:no-repeat;margin-bottom:3px;">
                 <div class="annotation">
                     <div class="annotationText" style="font-size:1.2rem">
@@ -33,7 +33,7 @@
         </a>
     </div>
     <div class="partNews" id="middleStory" style="width:100%">
-        <a asp-action="ArticleDetails" asp-route-route="@Model.ElementAt(0).ArticleRoute">
+        <a href="../../../o-nas/stati/@Model.ElementAt(0).ArticleRoute">
             <div class="partNewsElement" style="background-image:url(@Model.ElementAt(0).MiddleFotoPreview);background-position-x:@Model.ElementAt(0).MiddleImgX;background-position-y:@Model.ElementAt(0).MiddleImgY;background-size:@Model.ElementAt(0).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
                 <div class="annotation">
                     <div class="annotationText" style="font-size:1.2rem">
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </a>
-        <a asp-action="ArticleDetails" asp-route-route="@Model.ElementAt(1).ArticleRoute">
+        <a href="../../../o-nas/stati/@Model.ElementAt(1).ArticleRoute">
             <div class="partNewsElement" style="background-image:url(@Model.ElementAt(1).MiddleFotoPreview);background-position-x:@Model.ElementAt(1).MiddleImgX;background-position-y:@Model.ElementAt(1).MiddleImgY;background-size:@Model.ElementAt(1).MiddleImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
                 <div class="annotation">
                     <div class="annotationText">
@@ -53,7 +53,7 @@
         </a>
     </div>
     <div class="partNews" id="wideStory" style="width:100%">
-        <a asp-action="ArticleDetails" asp-route-route="@Model.ElementAt(0).ArticleRoute">
+        <a href="../../../o-nas/stati/@Model.ElementAt(0).ArticleRoute">
             <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(0).WideFotoPreview);background-position-x:@Model.ElementAt(0).WideImgX;background-position-y:@Model.ElementAt(0).WideImgY;background-size:@Model.ElementAt(0).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
                 <div class="annotation">
                     <div class="annotationText">
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </a>
-        <a asp-action="ArticleDetails" asp-route-route="@Model.ElementAt(1).ArticleRoute">
+        <a href="../../../o-nas/stati/@Model.ElementAt(1).ArticleRoute">
             <div id="mainPage" class="partNewsElement" style="background-image:url(@Model.ElementAt(1).WideFotoPreview);background-position-x:@Model.ElementAt(1).WideImgX;background-position-y:@Model.ElementAt(1).WideImgY;background-size:@Model.ElementAt(1).WideImgScale auto;background-repeat:no-repeat;margin-bottom:3px;width:100%;">
                 <div class="annotation">
                     <div class="annotationText">

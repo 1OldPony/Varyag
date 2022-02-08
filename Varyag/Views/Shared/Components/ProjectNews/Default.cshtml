@@ -6,7 +6,7 @@
 {
     @if (x % 2 != 0)
     {
-        <a asp-controller="About" asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId" class="projectNewsElement">
+        <a href="../../../o-nas/@Model.ElementAt(i).NewsId" class="projectNewsElement">
             <div style="display:flex;margin:10px auto auto 0;height:100%;">
                 <div class="projectNewsFoto">
                     <img src="@Model.ElementAt(i).ShortFotoPreview" />
@@ -21,7 +21,7 @@
     }
     else
     {
-        <a asp-controller="About" asp-action="NewsDetails" asp-route-id="@Model.ElementAt(i).NewsId" class="projectNewsElement">
+        <a  href="../../../o-nas/@Model.ElementAt(i).NewsId" class="projectNewsElement">
             <div style="display:flex;margin:10px auto auto 0;height:100%;">
                 <div id="even" class="projectNewsFoto">
                     <img src="@Model.ElementAt(i).ShortFotoPreview" />
