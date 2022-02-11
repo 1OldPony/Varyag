@@ -157,121 +157,36 @@ namespace Varyag.Models
             List<ProjectPublicViewModel> orderedProjects = new List<ProjectPublicViewModel>();
             foreach (var item in projects)
             {
-                if (boats)
-                {
-                    char[] numbers = item.Length.ToCharArray();
+                //if (boats)
+                //{
+                string length = "";
+
+                if (!item.Length.Contains('.') && !item.Length.Contains(','))
+                    length = string.Concat(item.Length, "0");
+                else
+                    length = item.Length;
+
+                char[] numbers = length.ToCharArray();
                     string number="";
 
-                    if (numbers.Length < 2)
-                    {
-                        number = string.Concat(numbers[0], '0');
-                    }
-                    else
-                    {
-                        foreach (var symbol in numbers)
-                        {
-                            if (symbol != '.' && symbol != ',')
-                                number = string.Concat(number, symbol.ToString());
-                            else
-                                continue;
-                        }
-                    }
+                //if (numbers.Length < 2)
+                //{
+                //    number = string.Concat(numbers[0], '0');
+                //}
+                //else
+                //{
 
-                    orderedProjects.Add(new ProjectPublicViewModel
+                
+                    ////////тут старая часть//////
+                    foreach (var symbol in numbers)
                     {
-                        Order = int.Parse(number),
-                        BoatRow = item.BoatRow,
-                        BoatSail = item.BoatSail,
-                        BoatTraditional = item.BoatTraditional,
-                        BoatYal = item.BoatYal,
-                        Botik = item.Botik,
-                        Deep = item.Deep,
-                        Description = item.Description,
-                        EnginePower = item.EnginePower,
-                        FreshWaterCap = item.FreshWaterCap,
-                        FuelCap = item.FuelCap,
-                        KaterCabin = item.KaterCabin,
-                        KaterFish = item.KaterFish,
-                        KaterPass = item.KaterPass,
-                        KaterProject = item.KaterProject,
-                        KaterRow = item.KaterRow,
-                        LadyaProject = item.LadyaProject,
-                        LadyaRow = item.LadyaRow,
-                        LadyaSail = item.LadyaSail,
-                        Length = item.Length,
-                        MainFoto = item.MainFoto,
-                        MaketCinema = item.MaketCinema,
-                        MaketDesign = item.MaketDesign,
-                        MaketMuseum = item.MaketMuseum,
-                        MaketStudy = item.MaketStudy,
-                        Mass = item.Mass,
-                        Motosailer = item.Motosailer,
-                        Name = item.Name,
-                        Route = item.Route,
-                        NumberOfOars = item.NumberOfOars,
-                        PassengerCap = item.PassengerCap,
-                        Price = item.Price,
-                        ProjectID = item.ProjectID,
-                        SailArea = item.SailArea,
-                        SailboatHistorical = item.SailboatHistorical,
-                        SailboatProject = item.SailboatProject,
-                        SailboatStudy = item.SailboatStudy,
-                        ShipSheme = item.ShipSheme,
-                        ShipShemeFull = item.ShipShemeFull,
-                        Shvertbot = item.Shvertbot,
-                        SleepingAreas = item.SleepingAreas,
-                        Speed = item.Speed,
-                        Volume = item.Volume,
-                        Windth = item.Windth,
-                        Yacht = item.Yacht
-                    });
-                }
-                else
-                {
-                    string number = "";
-
-                    if (!item.Name.Contains('"'))
-                    {
-                        if (!item.Name.Contains('»'))
-                        {
-                            char[] numbers = item.Length.ToCharArray();
-
-                            if (numbers.Length < 2)
-                            {
-                                number = string.Concat(numbers[0], "0");
-                            }
-                            else
-                            {
-                                int pointCounter = 0;
-                                foreach (var symbol in numbers)
-                                {
-                                    if (symbol != '.' && symbol != ',')
-                                        number = string.Concat(number, symbol.ToString());
-                                    else
-                                        pointCounter++;
-                                    continue;
-                                }
-                                if (pointCounter == 0)
-                                {
-                                    number = string.Concat(number, "0");
-                                }
-                            }
-                        }
+                        if (symbol != '.' && symbol != ',')
+                            number = string.Concat(number, symbol.ToString());
                         else
-                        {
-                            string[] parts1 = item.Name.Split('"');
-                            string[] parts2 = parts1[1].Split('-');
-                            char[] numbers = parts2[1].ToCharArray();
-                            number = string.Concat(numbers[0], numbers[1]);
-                        }
+                            continue;
                     }
-                    else
-                    {
-                        string[] parts1 = item.Name.Split('"');
-                        string[] parts2 = parts1[1].Split('-');
-                        char[] numbers = parts2[1].ToCharArray();
-                        number = string.Concat(numbers[0], numbers[1]);
-                    }
+                    /////////////////////////////
+                    //}
 
                     orderedProjects.Add(new ProjectPublicViewModel
                     {
@@ -321,7 +236,129 @@ namespace Varyag.Models
                         Windth = item.Windth,
                         Yacht = item.Yacht
                     });
-                }
+                //    }
+                //    else
+                //    {
+                //        string number = "";
+
+                //        if (!item.Name.Contains('"'))
+                //        {
+                //            if (!item.Name.Contains('»'))
+                //            {
+                //                char[] leng = item.Length.ToCharArray();
+                //                string lengthConverted = "";
+                //                foreach (var letter in leng)
+                //                {
+                //                    if (letter!='.')
+                //                    {
+                //                        lengthConverted = string.Concat(lengthConverted, letter);
+                //                    }
+                //                    else
+                //                    {
+                //                        lengthConverted = string.Concat(lengthConverted, ',');
+                //                    }
+                //                }
+
+                //                double length = double.Parse(lengthConverted);
+                //                number = (length / 0.304).ToString();
+                //                char[] numbers = number.ToCharArray();
+                //                number = string.Concat(numbers[0], numbers[1]);
+                //                //if (numbers.Length < 2)
+                //                //{
+                //                //    number = string.Concat(numbers[0], "0");
+                //                //}
+                //                //else
+                //                //{
+                //                //    int pointCounter = 0;
+                //                //    foreach (var symbol in numbers)
+                //                //    {
+                //                //        if (symbol != '.' && symbol != ',')
+                //                //            number = string.Concat(number, symbol.ToString());
+                //                //        else
+                //                //            pointCounter++;
+                //                //        continue;
+                //                //    }
+                //                //    if (pointCounter == 0)
+                //                //    {
+                //                //        number = string.Concat(number, "0");
+                //                //    }
+                //                //}
+                //            }
+                //            else
+                //            {
+                //                string[] parts1 = item.Name.Split('«');
+                //                if (parts1.Length > 2)
+                //                {
+                //                    string[] parts3 = parts1[2].Split('-');
+                //                    char[] numbers = parts3[1].ToCharArray();
+                //                    number = string.Concat(numbers[0], numbers[1]);
+                //                }
+                //                else
+                //                {
+                //                    string[] parts3 = parts1[1].Split('-');
+                //                    char[] numbers = parts3[1].ToCharArray();
+                //                    number = string.Concat(numbers[0], numbers[1]);
+                //                }
+                //            }
+                //        }
+                //        else
+                //        {
+                //            string[] parts1 = item.Name.Split('"');
+                //            string[] parts2 = parts1[1].Split('-');
+                //            char[] numbers = parts2[1].ToCharArray();
+
+                //            number = string.Concat(numbers[0], numbers[1]);
+                //        }
+
+                //        orderedProjects.Add(new ProjectPublicViewModel
+                //        {
+                //            Order = int.Parse(number),
+                //            BoatRow = item.BoatRow,
+                //            BoatSail = item.BoatSail,
+                //            BoatTraditional = item.BoatTraditional,
+                //            BoatYal = item.BoatYal,
+                //            Botik = item.Botik,
+                //            Deep = item.Deep,
+                //            Description = item.Description,
+                //            EnginePower = item.EnginePower,
+                //            FreshWaterCap = item.FreshWaterCap,
+                //            FuelCap = item.FuelCap,
+                //            KaterCabin = item.KaterCabin,
+                //            KaterFish = item.KaterFish,
+                //            KaterPass = item.KaterPass,
+                //            KaterProject = item.KaterProject,
+                //            KaterRow = item.KaterRow,
+                //            LadyaProject = item.LadyaProject,
+                //            LadyaRow = item.LadyaRow,
+                //            LadyaSail = item.LadyaSail,
+                //            Length = item.Length,
+                //            MainFoto = item.MainFoto,
+                //            MaketCinema = item.MaketCinema,
+                //            MaketDesign = item.MaketDesign,
+                //            MaketMuseum = item.MaketMuseum,
+                //            MaketStudy = item.MaketStudy,
+                //            Mass = item.Mass,
+                //            Motosailer = item.Motosailer,
+                //            Name = item.Name,
+                //            Route = item.Route,
+                //            NumberOfOars = item.NumberOfOars,
+                //            PassengerCap = item.PassengerCap,
+                //            Price = item.Price,
+                //            ProjectID = item.ProjectID,
+                //            SailArea = item.SailArea,
+                //            SailboatHistorical = item.SailboatHistorical,
+                //            SailboatProject = item.SailboatProject,
+                //            SailboatStudy = item.SailboatStudy,
+                //            ShipSheme = item.ShipSheme,
+                //            ShipShemeFull = item.ShipShemeFull,
+                //            Shvertbot = item.Shvertbot,
+                //            SleepingAreas = item.SleepingAreas,
+                //            Speed = item.Speed,
+                //            Volume = item.Volume,
+                //            Windth = item.Windth,
+                //            Yacht = item.Yacht
+                //        });
+                //    }
             }
             if (lengthSort == "Up")
             {
