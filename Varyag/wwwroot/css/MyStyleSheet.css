@@ -2044,11 +2044,10 @@ ul .nav-element-choosen {
     }
 
     .TTH-detailsFlex .value {
-        border-bottom: 1px dashed grey;
+        border-bottom: 1px dashed #ccc;
     }
-
     .TTH-detailsFlex .characteristic {
-        border-bottom: 1px dashed grey;
+        border-bottom: 1px dashed #ccc;
     }
 
 .galleryFlex {
