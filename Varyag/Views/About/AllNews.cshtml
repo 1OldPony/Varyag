@@ -5,8 +5,8 @@
 }
 
 <div class="MyContainer">
-    <div class="path">
-        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">Наши новости</a>
+    <div class="path" style="display:flex;justify-content:space-between;">
+        <div><a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">Наши новости</a></div><div style="color:red">&#129044; &#8610; Назад</div>
     </div>
 
     <input type="text" id="newsTypeSelector" value="@ViewBag.newsType" hidden />
