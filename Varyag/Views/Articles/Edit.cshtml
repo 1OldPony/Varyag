@@ -225,28 +225,28 @@
                     <div>Заголовок статьи</div>
                     @if (@ViewBag.Name != null)
                     {
-                        <input type="text" name="articleName" value="@ViewBag.Name" style="width:700px" />
+                        <input type="text" name="articleName" value="@ViewBag.Name" style="width:700px" onchange="articlesSaveButtonDisable()" />
                     }
                     else
                     {
-                        <input type="text" name="articleName" value="@Model.ArticleName" style="width:700px" />
+                        <input type="text" name="articleName" value="@Model.ArticleName" style="width:700px" onchange="articlesSaveButtonDisable()" />
                     }
                 </div>
                 <div>
                     <div>Краткое название, замени пробелы на тире(-)</div>
                     @if (@ViewBag.Route != null)
                     {
-                        <input type="text" name="articleRoute" value="@ViewBag.Route" />
+                        <input type="text" name="articleRoute" value="@ViewBag.Route" onchange="articlesSaveButtonDisable()" />
                     }
                     else
                     {
-                        <input type="text" name="articleRoute" value="@Model.ArticleRoute" />
+                        <input type="text" name="articleRoute" value="@Model.ArticleRoute" onchange="articlesSaveButtonDisable()" />
                     }
                 </div>
                 <div>
-                    <div>Загрузка файлов/текста в блок(Кнопка "Загрузить")</div>
+                    <div>Загрузка файлов</div>
                     <div style="display:flex;">
-                        <input name="fotos" type="file" multiple /><input type="submit" value="Загрузить" onclick="$('#wideFotoText').val(''); $('#middleFotoText').val('');$('#shortFotoText').val('')" /><div><input type="checkbox" name="deleteGallery" value="true" style="margin-left:10px;" /> Надо просто удалить галлерею</div>
+                        <input name="fotos" type="file" multiple /><div style="margin-left:10px;"><input type="submit" value="Загрузить блок" onclick="$('#wideFotoText').val(''); $('#middleFotoText').val(''); $('#shortFotoText').val('')" /><input type="checkbox" name="deleteGallery" value="true" style="margin-left:10px;" /> Надо просто удалить галлерею</div>
                     </div>
                 </div>
                 <div style="display:flex;">
@@ -769,7 +769,7 @@
             <input asp-for="MiddleFotoPreview" value="@Model.MiddleFotoPreview" />
             <input asp-for="WideFotoPreview" value="@Model.WideFotoPreview" />
         </div>
-        <input type="button" value="Сохранить" onclick="editFormSend()" />
+        <div style="display:flex;"><input id="articleSave" type="button" value="Сохранить" onclick="editFormSend()" /></div>
     </form>
     <div style="max-width:1400px;margin:auto;display:flex;flex-direction:column">
         @if (@ViewBag.Text1 != null)

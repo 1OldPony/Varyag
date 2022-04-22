@@ -27,7 +27,8 @@ namespace Varyag.Controllers
             List<Article> Articles = new List<Article>();
             Random rand = new Random();
             int[] allNumbers = new int[2];
-            int countOfNumbers = 0;
+            allNumbers[0] = 5;
+            int countOfNumbers = 1;
             while (countOfNumbers < 2)
             {
                 int articleNumber = rand.Next(0, AllArticles.Count() - 1);

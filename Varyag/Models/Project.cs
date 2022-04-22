@@ -100,7 +100,7 @@ namespace Varyag.Models
         [DisplayName("Исторический парусник")]
         public bool SailboatHistorical { get; set; }
 
-        [DisplayName("Макет для кино")]
+        [DisplayName("Мулька-заглушка")]
         public bool MaketCinema { get; set; }
         [DisplayName("Модели и макеты")]
         public bool MaketMuseum { get; set; }

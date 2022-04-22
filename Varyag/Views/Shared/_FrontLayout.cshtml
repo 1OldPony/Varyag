@@ -34,10 +34,15 @@
                 </div>
             </div>
             <div style="display:flex;align-items:center;">
-                <div style="display:flex"><a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" class="contactsSocial" /></a><a style="cursor:pointer" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" class="contactsSocial" /></a></div>
+                <div style="display:flex">
+                    <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" class="contactsSocial" /></a>
+                    <a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" class="contactsSocial" /></a>
+                    <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" class="contactsSocial" /></a>
+                </div>
+                <div><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div>
                 <div><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div>
                 <div><img src="~/images/icons/contacts.png" class="contactsSocial" style="display:none" /></div>
-                <div id="contactsWords" style="margin-left:15px">КОНТАКТЫ</div>
+                <a id="contactsWords" style="margin-left:15px;color:white;width:auto;" href="https://varyag-onego.ru#ourContacts">КОНТАКТЫ</a>
             </div>
         </div>
     </div>
@@ -46,11 +51,131 @@
     <div style="margin-bottom:50px"></div>
 
     @RenderBody()
-    <footer class="footerSmall">
+    <footer class="footerNew">
+        <div class="footerBlocks">
+            <div class="catalogFooterBlock">
+                <div class="nameOfFooterBlock" id="nameOfFooterBlock"><div style="width: 260px;">НАШ КАТАЛОГ:</div></div>
+                <div class="footerBlock" id="catalogBlock">
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/lodki" class="footerSubBlockHeader">Лодки</a>
+                        <a href="../../../../katalog/lodki/narodnye-lodki" class="footerSubBlockLine">Народные лодки</a>
+                        <a href="../../../../katalog/lodki/progulochnye-parusnye-lodki" class="footerSubBlockLine">Прогулочные парусные лодки</a>
+                        <a id="last" href="../../../katalog/lodki/progulochnye-grebnye-lodki" class="footerSubBlockLine">Прогулочные гребные лодки</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/shlyupki" class="footerSubBlockHeader">Шлюпки</a>
+                        <a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6" class="footerSubBlockLine">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
+                        <a href="../../../katalog/shlyupki/botiki" class="footerSubBlockLine">Ботики</a>
+                        <a href="../../../katalog/shlyupki/grebnye-katera-i-velboty" class="footerSubBlockLine">Гребные катера и вельботы</a>
+                        <a id="last" href="../../../katalog/shlyupki/uchebnye-posobiya" class="footerSubBlockLine">Учебные пособия</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/katera" class="footerSubBlockHeader">Катера</a>
+                        <a href="../../../katalog/katera/passazhirskie-katera" class="footerSubBlockLine">Пассажирские катера</a>
+                        <a href="../../../katalog/katera/rabochie-i-rybolovnye-katera" class="footerSubBlockLine">Рабочие/Рыболовные катера</a>
+                        <a href="../../../katalog/katera/kayutnye-katera" class="footerSubBlockLine">Каютные катера</a>
+                        <a id="last" href="../../../katalog/katera/motoseylery" class="footerSubBlockLine">Мотосейлеры</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/ladi" class="footerSubBlockHeader">Ладьи</a>
+                        <a href="../../../katalog/ladi/parusno-motornye-ladi" class="footerSubBlockLine">Парусно-моторные ладьи</a>
+                        <a id="last" href="../../../katalog/ladi/parusno-grebnye-ladi" class="footerSubBlockLine">Парусно-гребные ладьи</a>
+                        <a id="last" href="../../../katalog/ladi/strugi-i-galery" class="footerSubBlockLine">Струги и галеры</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/parusniki" class="footerSubBlockHeader">Парусники</a>
+                        <a href="../../../katalog/parusniki/istoricheskie-parusniki" class="footerSubBlockLine">Исторические парусники</a>
+                        <a href="../../../katalog/parusniki/uchebnye-parusniki" class="footerSubBlockLine">Учебные парусники</a>
+                        <a href="../../../katalog/parusniki/shvertboty" class="footerSubBlockLine">Швертботы</a>
+                        <a id="last" href="../../../katalog/parusniki/parusnye-yahty" class="footerSubBlockLine">Парусные яхты</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/raznoe" class="footerSubBlockHeader">Разное</a>
+                        <a href="../../../katalog/raznoe/modeli-i-makety" class="footerSubBlockLine">Модели и макеты</a>
+                        <a href="../../../katalog/raznoe/prochaya-produkciya" class="footerSubBlockLine">Прочая продукция</a>
+                    </div>
+                </div>
+            </div>
+            <div class="aboutUsFooterBlock">
+                <div class="nameOfFooterBlock"><div style="width: 260px;">О НАС:</div></div>
+                <div class="footerBlock">
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/lodki" class="footerSubBlockHeader" style="margin-bottom:0;">О нашей верфи</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/lodki" class="footerSubBlockHeader">Статьи</a>
+                        <a href="../../../../katalog/lodki/narodnye-lodki" class="footerSubBlockLine">Заказы для музеев</a>
+                        <a href="../../../../katalog/lodki/progulochnye-parusnye-lodki" class="footerSubBlockLine">Заказы для кино</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/shlyupki" class="footerSubBlockHeader">Новости</a>
+                        <a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6" class="footerSubBlockLine">СМИ о нас</a>
+                        <a href="../../../katalog/shlyupki/botiki" class="footerSubBlockLine">Жизнь наших судов</a>
+                        <a href="../../../katalog/shlyupki/grebnye-katera-i-velboty" class="footerSubBlockLine">Новости верфи</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/katera" class="footerSubBlockHeader">Архив новостей</a>
+                        @*<a href="../../../katalog/katera/passazhirskie-katera" class="footerSubBlockLine">Пассажирские катера</a>
+                    <a href="../../../katalog/katera/rabochie-i-rybolovnye-katera" class="footerSubBlockLine">Рабочие/Рыболовные катера</a>
+                    <a href="../../../katalog/katera/kayutnye-katera" class="footerSubBlockLine">Каютные катера</a>
+                    <a id="last" href="../../../katalog/katera/motoseylery" class="footerSubBlockLine">Мотосейлеры</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="informationFooterBlock">
+                <div class="nameOfFooterBlock"><div style="width: 260px;">ИНФОРМАЦИЯ:</div></div>
+                <div class="footerBlock">
+                    <div class="footerSubBlock">
+                        <div class="footerSubBlockHeader">Контакты:</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/whatsapp.png" class="contactsIcon" alt="cont" />&nbsp;+7 (921) 524-61-02</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
+                        @*<a class="footerSubBlockLine" href="https://www.деревянная-лодка.рф" target="_blank"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.деревянная-лодка.рф</a>*@
+                        <div class="footerSubBlockLine"><img src="~/images/icons/map.png" alt="map" style="height:24px" class="contactsIcon" />&nbsp;Карелия,&nbsp;Петрозаводск</div>
+                    </div>
+                    <div class="footerSubBlock">
+                        <div class="footerSubBlockHeader">Наши соцсети:</div>
+                        <div style="display:flex;justify-content:flex-start;">
+                            <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" style="width:64px" /></a>
+                            <a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" style="width:64px" /></a>
+                            <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" style="width:64px" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerLogo">
+                <div class="footerBlock" id="logo">
+                    <div class="footerSubBlock">
+                        <div class="logoFooterDiv"><img src="~/images/icons/logo200x200-white.png" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*<div class="contactsText">
+            <p>
+                Мы находимся в Карелии,<span id="contacts" class="longText">
+                    приехать к нам и посмотреть наше производство можно
+                </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">, заезд с переулка Спасателей.</span>
+                <br />Связаться с нами можно по:
+            </p>
+            <p>
+                электронной почте&nbsp;- verf.varyag@yandex.ru<br />
+                или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
+            </p>
+        </div>*@
+        @*<div id="ourLocation"></div>*@
+
+
+        @*<div class="aboutMe">
+            <div>© 2021 Верфь деревянного судостроения «Варяг»</div><div>Разработчик - Михаил Мартюков</div>
+        </div>*@
+    </footer>
+    @*<footer class="footerSmall">
         <div class="aboutMe">
             <div>© 2021 Верфь деревянного судостроения «Варяг»</div><div>Разработчик - Михаил Мартюков</div>
         </div>
-    </footer>
+    </footer>*@
     @*<script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>*@
     @*<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v5.0"></script>*@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>

@@ -10,7 +10,7 @@
         <nav>
             <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:69px">
                 <li>
-                    <div class="leftNavLine"><a href="../../../katalog" class="navLineHeader">Каталог</a><div id="catalogOpen" class="leftNavOpenCurrent">+</div><div id="catalogClose" class="leftNavCloseCurrent">-</div></div>
+                    <div class="leftNavLine"><div id="catalogOpen" class="leftNavOpenCurrent">+</div><div id="catalogClose" class="leftNavCloseCurrent">-</div><a href="../../../katalog">Каталог</a></div>
                     <ul id="catalog-sub" class="leftSubNavOpenCurrent">
                         <li class="leftSubCategory">
                             <a href="../../../katalog/lodki" class="leftNavLine">Лодки</a>
@@ -33,49 +33,37 @@
                     </ul>
                 </li>
                 <li>
-                    <div id="aboutUsNav" class="leftNavLine" style="margin-top:138px"><a href="../../../o-nas" class="navLineHeader">О нас</a><div id="aboutUsOpen" class="leftNavOpenCurrent">+</div><div id="aboutUsClose" class="leftNavCloseCurrent">-</div></div>
+                    <div id="aboutUsNav" class="leftNavLine" style="margin-top:138px"><div id="aboutUsOpen" class="leftNavOpenCurrent">+</div><div id="aboutUsClose" class="leftNavCloseCurrent">-</div><a href="../../../o-nas">О нас</a></div>
                     <ul id="aboutUs-sub" class="leftSubNavOpenCurrent">
                         <li class="leftSubCategory">
                             <a href="../../../o-nas/stati" id="lifeNav" class="leftNavLine">Статьи</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a href="../../../o-nas" id="smiNav" class="leftNavLine">Наши новости</a>
+                            <a href="../../../o-nas/nashi-novosti" id="smiNav" class="leftNavLine">Наши новости</a>
                         </li>
                         <li class="leftSubCategory">
-                            <a href="../../../o-nas?newsType=byType" id="newShipsNav" class="leftNavLine">Архив</a>
+                            <a href="../../../o-nas/nashi-novosti?newsType=byType" id="newShipsNav" class="leftNavLine">Архив</a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <div class="ourContacts">
-            <div>НАШИ КОНТАКТЫ</div>
-            <div class="contactsLeft">
-                <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
-                <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.varyag-onego.ru</a>
-                <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;varyag@onego.ru</div>
-            </div>
-        </div>
+        <partial name="ContactsLeft" />
     </div>
 
     <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px;background:white;border-radius:10px;position:relative;">
-        <img src="~/images/о_нас/производство/47-й.jpg" class="mainFoto" style="display:block" />
+        <img src="~/images/о_нас/производство/47-й-узк.jpg" class="mainFoto" style="display:block" />
+        <img src="~/images/о_нас/производство/47-й.jpg" class="mainFoto" style="display:none" />
         <img src="~/images/о_нас/гото/1_Гото_Предестинация-16x9.jpg" class="mainFoto" id="middle" style="display:none" />
         <img src="~/images/о_нас/гото/1_Гото_Предестинация-16x9-мал.jpg" class="mainFoto" id="small" />
-        <div class="mainPageFotoText">
-            <div style="text-align:center;margin-right:8px;">
-                Единственно достойное применение деньгам — построить на них шхуну.<br />
-                Роберт Льюис Стивенсон.
-            </div>
-        </div>
     </div>
 
     <div style="display:flex;flex-direction:column;">
         <div class="mainPageCatalogNav">
             <div class="catalogIconsMainPaigeHeader">
-                <div style="width:100%;">
+                <a href="../../../katalog" style="width:100%;color:white;">
                     Наша продукция
-                </div>
+                </a>
             </div>
             <div class="catalogIconsMainPaigeLine">
                 <a href="../../../katalog/lodki" class="catalogIconsMainPaige2">
@@ -235,19 +223,19 @@
         <div class="borderAbout" style="margin:10px 30px 10px 30px;"></div>
         <div style="margin:0 10px 0 10px;">
             <div class="slideDescription">
-                <div>Администрация Воронежской области, депортамент промышленности, транспорта, связи и инноваций</div>
-                <div>Администрация муниципального образования Выборгское городское поселение</div>
+                <div>Деп. промышленности, транспорта, связи и инноваций Воронежской области</div>
+                <div>Адм. муниципального образования Выборгское городское поселение</div>
                 <div>Британская кинокомпания Picture palace</div>
                 <div>Международный детский центр "Артек"</div>
                 <div>Всероссийский детский центр "Орленок"</div>
                 <div>Государственный музей заповедник "Царское село"</div>
-                <div>Государственный университет морского и речного флота имени адмирала С.О. МАКАРОВА</div>
-                <div><span style="display:none">Санкт-Петербургское государственное автономное профессиональное образовательное учреждение</span>СПБ ГАПОУ "Морской технический колледж имени адмирала Д.Н. Сенявина"</div>
+                <div>Государственный университет морского и речного флота им. адм. Макарова</div>
+                <div>СПБ ГАПОУ "Морской технический колледж имени адмирала Д.Н. Сенявина"</div>
                 <div>Калининградский музей мирового океана</div>
                 <div>Комитет по физической культуре и спорту Новгородской области</div>
                 <div>МАОУ Детская флотилия Парус</div>
                 <div>МБОУ ДО Детский морской центр "Североморец", г.Северодвинск</div>
-                <div>Морской государственный университет имени адмирала Невельского, г.Владивосток</div>
+                <div>Морской государственный университет имени адмирала Невельского</div>
                 <div>Московский Государственный Университет имени М.В. Ломоносова</div>
                 <div>МРМОО Союз православной молодежи Мордовии, г.Саранск</div>
                 <div>Мэрия городского округа Тольятти</div>
@@ -255,14 +243,14 @@
                 <div>ПРОО Яхт клуб "Навигатор"</div>
                 <div>РМОО Молодежный морской совет, г.Санкт-Петербург</div>
                 <div>Рыболовецкий колхоз Беломор, с.Нюхча</div>
-                <div>Самарский речной техникум, Самарский филиал Волжского государственного университета водного транспорта</div>
-                <div>Санкт-Петербургское государственное бюджетное учреждение "Центр "Адмиралтейский" по работе с подростками и молодежью"</div>
-                <div>Санкт-петербургское государственное бюджетное учреждение культуры "Парк культуры и отдыха "Дубки"</div>
-                <div>Управление молодежной политики и туризма Администрации Пуровского района Ямало Ненецкого автономного округа</div>
+                <div>Самарский речной техникум, филиал Волжского ГУ Водного транспорта</div>
+                <div>СПБ ГБУ "Центр "Адмиралтейский" по работе с подростками и молодежью"</div>
+                <div>СПБ ГБУ культуры "Парк культуры и отдыха "Дубки"</div>
+                <div>Управление молодежной политики и туризма Ямало-Ненецкого авт. округа</div>
                 <div>Управление образования города Пензы</div>
                 <div>Учебный центр ФСБ России г.Анапа</div>
                 <div>Всероссийский детский центр "Океан", Владивосток</div>
-                <div><span style="display:none">Федеральное государственное бюджетное образовательное учреждение высшего образования</span>ФГБОУ ВО "Волжская государственная академия водного транспорта"</div>
+                <div>ФГБОУ ВО "Волжская государственная академия водного транспорта"</div>
                 <div>Федеральная служба охраны российской федерации</div>
                 <div>Федеральное государственное учреждение "Национальный парк "Водлозерский"</div>
                 <div>Федеральное государственное учреждение "Национальный парк "Паанаярви"</div>
@@ -320,7 +308,7 @@
         @await Component.InvokeAsync("Articles")
     </div>
     <div id="ourContacts"></div>
-    <div class="contactsBlock">
+    @*<div class="contactsBlock">
         <div class="contactsText" style="display:flex;align-items:center;flex-direction:column;">
             <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
             <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;"Анин" телефон</div>
@@ -329,18 +317,23 @@
             <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
         </div>
         <div id="ourLocation"></div>
-    </div>
-    <div class="contactsBlock" style="display:none">
+    </div>*@
+    <div class="contactsBlock">
         <div class="contactsText">
             <p>
-                Мы находимся в Карелии,<span id="contacts" class="longText">
-                    приехать к нам и посмотреть наше производство можно
-                </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">, заезд с переулка Спасателей.</span>
-                <br />Связаться с нами можно по:
+                Наш адрес: респ.&nbsp;Карелия, г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43
             </p>
-            <p>
-                электронной почте&nbsp;- varyag@onego.ru<br />
-                или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
+            <p id="shorterContactsText2">
+                Доставка готовой продукции осуществляется автомобильным транспортом во все регионы России, а также ближнего и дальнего зарубежья.
+            </p>
+            <p id="shorterContactsText2">
+                Крупногабаритные суда доставляются перегоном по внутренним водным путям.
+            </p>
+            <p id="shorterContactsTextShow">
+                Доставка готовой продукции осуществляется автомобильным транспортом или по внутренним водным путям во все регионы России, а также ближнего и дальнего зарубежья.
+            </p>
+            <p id="shorterContactsText">
+                Стоимость доставки не входит в стоимость судна и уточняется отдельно.
             </p>
         </div>
         <div id="ourLocation"></div>

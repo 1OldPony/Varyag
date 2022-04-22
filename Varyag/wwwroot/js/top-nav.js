@@ -17,7 +17,7 @@ $(document).on('ready', function () {
 
     $('.slider').slick({
         centerMode: true,
-        slidesToShow: 9,
+        slidesToShow: 7,
         //variableWidth: true,
         swipeToSlide: true,
         arrows: false,
@@ -28,28 +28,30 @@ $(document).on('ready', function () {
             {
                 breakpoint: 1000,
                 settings: {
-                    slidesToShow: 7,
+                    slidesToShow: 5,
                 }
             },
             {
                 breakpoint: 800,
                 settings: {
-                    slidesToShow: 5,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
                     slidesToShow: 3,
                 }
             },
             {
-                breakpoint: 400,
+                breakpoint: 610,
                 settings: {
-                    centerMode: false,
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    centerMode: false
                 }
             }
+            //},
+            //{
+            //    breakpoint: 400,
+            //    settings: {
+            //        centerMode: false,
+            //        slidesToShow: 1
+            //    }
+            //}
         ]
     });
 });
@@ -161,7 +163,7 @@ ymaps.ready(function () {
         zoom: 14
     });
     var VaryagMark = new ymaps.Placemark([61.7702, 34.4359], {
-        balloonContent: 'Верфь деревянного судостроения "Вряг"<br />varyag@onego.ru<br />8 814 273 35 80',
+        balloonContent: 'Верфь деревянного судостроения "Вряг"<br />verf.varyag@yandex.ru<br />8 814 273 35 80',
         iconContent: ''
     },
         {

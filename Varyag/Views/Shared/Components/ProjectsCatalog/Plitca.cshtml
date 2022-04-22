@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Varyag.Models.ProjectPublicViewModel>
 
-<div class="projects" style="flex-wrap:wrap;flex-direction:row;margin-right:0;">
+<div class="projects" style="flex-wrap:wrap;flex-direction:row;justify-content:space-between;">
     @for (int i = 0; i < Model.Count(); i++)
     {
         <a href="../../../katalog/@Model.ElementAt(i).Route" class="tthUnderFoto">
@@ -27,12 +27,19 @@
                     }
                     @if (ViewBag.thirdCharacteristic == "sailArea")
                     {
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Площадь парусности</div><div>@Model.ElementAt(i).SailArea&nbsp;м<sup>2</sup></div></div>
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Площадь парусности</div><div>@Model.ElementAt(i).SailArea&nbsp;м<sup style="font-size:10px;">2</sup></div></div>
                     }
                 </div>
-                <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.ElementAt(i).Price&nbsp;тыс.р.</div>
+                @if (@Model.ElementAt(i).Price != "по запросу")
+                {
+                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price): @Model.ElementAt(i).Price&nbsp;&#8381;</div>
+                }
+                else
+                {
+                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) @Model.ElementAt(i).Price</div>
+                }
             </div>
         </a>
-    }
+                }
     <div class="myBorder"></div>
 </div>

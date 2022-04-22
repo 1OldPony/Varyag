@@ -5,6 +5,80 @@
     font-weight: normal;
 }
 
+body {
+    color: #183f61;
+    margin: 0px;
+}
+footer a {
+    color:white;
+    cursor:pointer;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+.footerNew {
+    display: flex;
+    padding: 30px;
+    padding-bottom: 0;
+    background-color: #183f61;
+    color: white;
+    justify-content: center;
+}
+.footerBlocks {
+    display: flex;
+    max-width: 1350px;
+}
+.nameOfFooterBlock {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffeb00;
+    margin-bottom: 20px;
+}
+.catalogFooterBlock {
+    display: flex;
+    width: 780px;
+    flex-direction: column;
+}
+.aboutUsFooterBlock {
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+}
+.informationFooterBlock {
+    display: flex;
+    width: 280px;
+    flex-direction: column;
+}
+.footerBlock {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 350px;
+}
+.footerSubBlock {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 260px;
+    margin-bottom: 10px;
+}
+.footerSubBlockHeader {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.footerSubBlockLine {
+    display: flex;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.footerLogo {
+    display: none;
+    width: auto;
+    position: relative;
+    left: -20px;
+    align-content:flex-end;
+}
 .about {
     /*height: 80vh;*/
     position: relative;
@@ -25,7 +99,7 @@
     position: relative;
     margin: 10px;
     background: white;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: 'Gabriela';
     padding: 15px;
     width: 32%;
@@ -63,7 +137,7 @@
 .customersText {
     font-size: 1.5rem;
     font-weight: bold;
-    font-family: 'Gabriela';
+    /*font-family: 'Gabriela';*/
     margin:0 10px 0 10px;
 }
 #small.customersText {
@@ -81,8 +155,8 @@
     background-position-y: 0%;
     height: 60px;
     font-size: 1.6rem;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     justify-content: flex-end;
     max-width: 1350px;
     color: #183f61;
@@ -189,7 +263,7 @@
         bottom: 2vh;
         height: auto;
         width: 533px;
-        border-radius: 10px;
+        border-radius: 5px;
         display: flex;
     }
 
@@ -374,7 +448,7 @@
     margin: 10px 5px 0 10px;
     width: 50%;
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .articlesPreviewBlock {
     display: flex;
@@ -386,7 +460,7 @@
     margin: 10px 10px 0 5px;
     width: 50%;
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .longPreviewBlockText {
     display:flex;
@@ -398,22 +472,31 @@
     display: flex;
 }
 .sliderElements img {
-    margin: 20px 20px 20px 0;
+    padding: 22px 20px 20px 0;
 }
 .slick-current img {
-    transform: scale(1.5);
-    transition: all 350ms ease-out;
+    /*transform: scale(1.5);*/
+    /*transition: all 350ms ease-out;*/
+    border-style: solid;
+    border-color: #e81010;
+    border-radius:10px;
+    border-width:2px;
+    margin-top:0;
+    padding:20px 0 20px 0;
 }
 .slider {
-    margin-bottom:10px;
+    margin-bottom: 10px;
+}
+.slick-slide img {
+    margin:auto;
 }
 .slideDescription {
     font-size: 1.2rem;
     font-weight: bold;
     color: #183f61;
-    text-align:center;
-    margin:5px 0px 10px 0px;
-    font-family:'Gabriela'
+    text-align: center;
+    margin: 5px 0px 10px 0px;
+    font-family: 'Gabriela'
 }
 .newsNav {
     display: flex;
@@ -437,8 +520,8 @@
     display: flex;
     justify-content: center;
     /*background-color: #183f61;*/
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     margin: -1px 10px 0 10px;
 }
 .mainPageCatalogNavZebra {
@@ -462,6 +545,7 @@
     align-items: center;
     background-color: white;
     justify-content: space-between;
+    padding-top:6px;
 }
 .catalogIconsMainPaige2Different {
     width: 20%;
@@ -504,7 +588,7 @@
     width: 32.3%;
     margin-bottom: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 #single.catalogPlitka {
     border-top-right-radius: 0;
@@ -572,7 +656,7 @@
     font-weight: bold;
     margin-bottom: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .navigationPlitka {
@@ -594,7 +678,7 @@
     grid-template-rows: auto;
     overflow: hidden;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: auto 10px auto 0;
 }
 
@@ -608,7 +692,7 @@
         bottom: 2vh;
         height: auto;
         width: 533px;
-        border-radius: 10px;
+        border-radius: 5px;
         display: flex;
     }
 
@@ -711,7 +795,7 @@
         bottom: 2vh;
         height: auto;
         width: 533px;
-        border-radius: 10px;
+        border-radius: 5px;
         display: flex;
     }
 
@@ -730,18 +814,26 @@
     text-align: center;
     align-items: center;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px;
 }
 .contactsText {
-    width: 40%;
+    width: 30%;
     margin: 0 0 0 10px;
     font-size: 1.2rem;
     font-family: 'Gabriela';
     font-weight:bold;
+    height:350px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-around;
+    text-align:left;
+}
+#shorterContactsTextShow {
+    display:none;
 }
 #ourLocation {
-    width: 60%;
+    width: 70%;
     height: 30vh;
     margin: 10px;
 }
@@ -795,11 +887,6 @@ a {
 p {
     margin-block-start: 10px;
     margin-block-end: 10px;
-}
-
-body {
-    color: #183f61;
-    margin: 0px;
 }
 
 .top-hat {
@@ -1183,13 +1270,13 @@ img {
 .topNavTopCategory {
     font-weight: bold;
     font-size: 1.3rem;
-    color: red;
+    color: #e81010;
 }
 
 .topNavBorder {
     width: 2px;
     border-left-style: ridge;
-    border-color: red;
+    border-color: #e81010;
 }
 
 .topMenuIcon {
@@ -1253,7 +1340,7 @@ img {
 
 .articleLeftMenu {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     cursor: pointer;
     border-style: solid;
@@ -1274,11 +1361,11 @@ img {
 
 .newsArticleMenuHeader {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
     font-size: 1.6rem;
-    color: red
+    color: #e81010
 }
 
 .leftMenu {
@@ -1335,19 +1422,22 @@ img {
     background-color: white;
     margin-block-start: 0;
     margin-block-end: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 20px;
     transition: padding-bottom 0.5s cubic-bezier(0, 1.1, 0.32, 1) 0s;
-    width: 301px;
+    width: 320px;
     user-select: none;
 }
-
+.navLineHeader {
+    margin-left:0px;
+}
 .leftSubNavOpen {
     list-style-type: none;
     font-size: 1.2rem;
     font-weight: 300;
-    padding-inline-start: 10px;
+    padding-left: 40px;
     visibility: hidden;
     transition: visibility 0.3s linear 0.2s, opacity 0.3s cubic-bezier(0.36, 0.6, 0.71, 1) 0.2s;
     position: absolute
@@ -1357,7 +1447,7 @@ img {
     list-style-type: none;
     font-size: 1.2rem;
     font-weight: 300;
-    padding-inline-start: 10px;
+    padding-left: 40px;
     visibility: visible;
     transition: visibility 0.3s linear 0.2s, opacity 0.3s cubic-bezier(0.36, 0.6, 0.71, 1) 0.2s;
     position: absolute
@@ -1367,7 +1457,7 @@ img {
     list-style-type: none;
     font-size: 1.2rem;
     font-weight: 300;
-    padding-inline-start: 10px;
+    padding-left: 40px;
     visibility: visible;
     transition: visibility 0s linear 0s;
     position: absolute
@@ -1377,7 +1467,7 @@ img {
     cursor: pointer;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     transition: margin-top 0.5s cubic-bezier(0, 1.1, 0.32, 1) 0s
 }
     .leftNavLine h1 {
@@ -1568,6 +1658,10 @@ img {
 .newsDetailsStory p{
     margin-block-start:0;
 }
+    .newsDetailsStory a {
+        text-decoration: underline;
+        color: #e81010;
+    }
 
 .pageView {
     display: flex;
@@ -1575,7 +1669,7 @@ img {
     margin: auto 10px 10px 0px;
     align-items: baseline;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px;
 }
 
@@ -1719,7 +1813,7 @@ ul .nav-element-choosen {
 
 .projectsHalfTop {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     margin-right: 10px;
@@ -1743,7 +1837,7 @@ ul .nav-element-choosen {
 
 .articlePartsCounter {
     font-weight: 700;
-    color: red;
+    color: #e81010;
     font-size: 12rem;
     align-self: center;
     width: 100px
@@ -1816,11 +1910,10 @@ ul .nav-element-choosen {
 
 .tthUnderFoto {
     display: flex;
-    width: 32.29%;
+    width: 32.6%;
     flex-direction: column;
     background-color: white;
-    border-radius: 10px;
-    margin-right: 10px;
+    border-radius: 5px;
     margin-top: 10px;
 }
 
@@ -1845,8 +1938,9 @@ ul .nav-element-choosen {
     padding: 25px;
     padding-top: 5px;
     background-color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size:1.13rem
 }
 
 .projectNews {
@@ -1856,8 +1950,8 @@ ul .nav-element-choosen {
     padding: 25px;
     padding-top: 5px;
     background-color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     justify-content: space-between;
 }
 
@@ -1893,8 +1987,8 @@ ul .nav-element-choosen {
     padding-left: 25px;
     padding-top: 5px;
     padding-right: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     background-color: white;
     padding-bottom: 5px;
     width: 47%;
@@ -1903,8 +1997,8 @@ ul .nav-element-choosen {
 }
 
 .newsOfProject {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     background-color: #c3e3ff;
     padding-left: 20px;
     padding-top: 5px;
@@ -2022,7 +2116,13 @@ ul .nav-element-choosen {
 .shemeFlex {
     padding: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
+    height: 100%;
+}
+.shemeFlexHidden {
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
     height: 100%;
 }
 
@@ -2030,7 +2130,7 @@ ul .nav-element-choosen {
     padding: 10px;
     margin-top: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -2053,7 +2153,7 @@ ul .nav-element-choosen {
 .galleryFlex {
     padding: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-left: 10px;
     width: 64%;
 }
@@ -2071,7 +2171,7 @@ ul .nav-element-choosen {
     padding-bottom: 10px;
     padding-top: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 #shortNav.menu-top-element {
@@ -2170,7 +2270,7 @@ ul .nav-element-choosen {
     margin: 0 10px 10px 10px;
     padding: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
     .projectName p {
@@ -2204,7 +2304,7 @@ ul .nav-element-choosen {
     width: 100%;
     color: white;
     border-top-style: solid;
-    border-color: red;
+    border-color: #e81010;
 }
 
 .footerSmall {
@@ -2277,7 +2377,7 @@ ul .nav-element-choosen {
     padding: 10px;
     padding-bottom: 3px;
     padding-top: 3px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /*.newsFotoEditor {
@@ -2366,7 +2466,7 @@ ul .nav-element-choosen {
 .largeTopFoto {
     background-image: url('/images/collages/boats.png');
     height: 275px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: #183f61;
@@ -2399,7 +2499,7 @@ ul .nav-element-choosen {
 .smallTopFoto {
     background-color: #183f61;
     height: 80px;
-    border-radius: 10px;
+    border-radius: 5px;
     display: none;
     justify-content: center;
     align-items: center
@@ -2413,7 +2513,7 @@ ul .nav-element-choosen {
 }
 
 #textOverCollage.plitkaCategoryHeader {
-    font-size: 4rem;
+    font-size: 3.5rem;
     padding-top: 29%;
     color: white;
     margin-block-start: 0;
@@ -2435,7 +2535,7 @@ ul .nav-element-choosen {
 .ourContacts {
     padding-left: 40px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     padding-bottom: 5px;
     padding-top: 10px;
 }
@@ -2448,7 +2548,7 @@ ul .nav-element-choosen {
     margin: auto 10px 0 0;
     padding: 10px 0 5px 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
     .topCatalogLine h2{
         margin:0;
@@ -2467,7 +2567,7 @@ ul .nav-element-choosen {
     height: 0;
     overflow: hidden;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -2484,7 +2584,7 @@ ul .nav-element-choosen {
     max-width: 980px;
     padding: 10px;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .iframeForVideo {
@@ -2498,7 +2598,7 @@ ul .nav-element-choosen {
 
 .navigationTopBlock {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     margin-right: 10px;
@@ -2533,7 +2633,7 @@ ul .nav-element-choosen {
     height: 100%;
     margin: 10px 10px 0 0;
     max-width: 1000px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .loadingGif {
@@ -2589,9 +2689,46 @@ ul .nav-element-choosen {
     }
 }
 
-@media (max-width:1335px) {
-    .tthUnderFoto {
-        width: 32.18%;
+@media (max-width:1380px) {
+    .footerBlocks {
+        flex-wrap: wrap;
+        max-width: unset;
+        width: 100%;
+        justify-content: space-around;
+        margin-left:40px;
+    }
+    .catalogFooterBlock {
+        width: 100%;
+    }
+    .aboutUsFooterBlock {
+        width: auto;
+    }
+    .informationFooterBlock {
+        width: auto;
+    }
+    /*.footerSubBlock {
+        width: auto;
+    }*/
+    .footerLogo {
+        display: flex;
+    }
+    #logo.footerBlock {
+        justify-content:center;
+    }
+    #catalogBlock.footerBlock {
+        align-content: space-around;
+    }
+    #nameOfFooterBlock.nameOfFooterBlock {
+        text-align: center;
+    }
+}
+
+@media (max-width:1350px) {
+    .contactsText {
+        width: 40%;
+    }
+    #ourLocation {
+        width: 60%;
     }
 }
 
@@ -2636,9 +2773,9 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:1246px) {
-    .tthUnderFoto {
+    /*.tthUnderFoto {
         width: 32%;
-    }
+    }*/
 
     .sheme-TTH {
         width: 32.7%;
@@ -2734,7 +2871,9 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:1160px) {
-
+    .tthUnderFoto {
+        width: 49.2%;
+    }
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 53% 76% no-repeat;
     }
@@ -2780,9 +2919,6 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:1128px) {
-    .tthUnderFoto {
-        width: 31.5%;
-    }
     .categorysLineItem {
         max-width:230px;
     }
@@ -2838,12 +2974,19 @@ ul .nav-element-choosen {
     #fuel.cellLong {
         display: none;
     }
+    #shorterContactsText {
+        display:none;
+    }
+    /*.contactsText {
+        width: 40%;
+    }
+
+    #ourLocation {
+        width: 60%;
+    }*/
 }
 
 @media (max-width:1042px) {
-    .tthUnderFoto {
-        width: 48.2%;
-    }
 
     .catalog {
         grid-template-rows: 16vh min-content min-content min-content min-content min-content min-content;
@@ -2896,6 +3039,9 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:1000px) {
+    .navLineHeader {
+        margin-left: 29px;
+    }
     .ourContacts {
         display: none;
     }
@@ -2976,7 +3122,7 @@ ul .nav-element-choosen {
         margin-left: 10px;
     }
     .tthUnderFoto {
-        width: 32.2%
+        width: 32.6%
     }
     .catalogPlates {
         margin-left: 10px;
@@ -3063,6 +3209,40 @@ ul .nav-element-choosen {
     .categorysLineItem {
         max-width: unset;
     }
+    #catalogBlock.footerBlock {
+        height: auto;
+    }
+    .catalogFooterBlock {
+        width:auto;
+    }
+    .footerBlocks {
+        max-height:1000px;
+        flex-direction:column;
+        margin-left:0;
+    }
+    .footerBlock {
+        height:auto;
+        align-content:center;
+    }
+    #nameOfFooterBlock.nameOfFooterBlock {
+        text-align:initial;
+    }
+    #catalogBlock.footerBlock {
+        align-content: center;
+    }
+    .footerLogo {
+        justify-content: center;
+        margin-top:30px;
+    }
+    .nameOfFooterBlock {
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
+    .logoFooterDiv {
+        display:flex;
+        justify-content:center;
+    }
 }
 
 @media (max-width:990px) {
@@ -3144,6 +3324,10 @@ ul .nav-element-choosen {
         width: 436px;
         margin: 10px 0 0 10px;
     }
+    .shemeFlexHidden {
+        width: 436px;
+        margin: 10px 0 0 10px;
+    }
 
     .TTH-detailsFlex {
         width: 51%;
@@ -3155,11 +3339,11 @@ ul .nav-element-choosen {
     }
 }
 
-@media (max-width:919px) {
+/*@media (max-width:919px) {
     .tthUnderFoto {
         width: 32%;
     }
-}
+}*/
 
 @media (max-width:900px) {
 
@@ -3222,6 +3406,9 @@ ul .nav-element-choosen {
     /*#newsTopLine.topCatalogLine {
         margin: 0 10px 0 10px;
     }*/
+    .tthUnderFoto {
+        width: 32.6%;
+    }
 
     .longUpFoto {
         display: none
@@ -3442,11 +3629,26 @@ ul .nav-element-choosen {
     .categorysLineItem {
         max-width: 270px;
     }
+    #priceWord {
+        display: none;
+    }
 }
 
 @media (max-width:776px) {
     .singleProject {
         grid-template-rows: 60px auto min-content auto 25px;
+    }
+    #shorterContactsTextShow {
+        display:block;
+    }
+    #shorterContactsText2 {
+        display: none;
+    }
+    .contactsText {
+        width: 50%;
+    }
+    #ourLocation {
+        width: 50%;
     }
 }
 
@@ -3484,10 +3686,6 @@ ul .nav-element-choosen {
         align-items: center;
     }
 
-    /*#news.about {
-        height: 87vh;
-    }*/
-
     .sheme-TTH {
         flex-direction: column;
     }
@@ -3495,14 +3693,15 @@ ul .nav-element-choosen {
     .shemeFlex {
         width: auto;
     }
+    .shemeFlexHidden {
+        width: auto;
+        display:none;
+    }
 
     .TTH-detailsFlex {
         width: auto;
     }
 
-    .tthUnderFoto {
-        width: 31.9%;
-    }
 
     #shortCharacteristicName.characteristic {
         display: none;
@@ -3534,7 +3733,7 @@ ul .nav-element-choosen {
 
 @media (max-width:730px) {
     .tthUnderFoto {
-        width: 48%;
+        width: 49.2%;
     }
 }
 
@@ -3689,6 +3888,20 @@ ul .nav-element-choosen {
     #newsPreview.headerAbout {
         font-size: 1.2rem;
     }
+    .footerBlocks {
+        flex-wrap:nowrap;
+        max-height:unset;
+    }
+    #logo.footerBlock {
+        display:none;
+    }
+    .footerNew {
+        padding: 10px;
+    }
+    .slick-initialized .slick-slide {
+        display:flex;
+        justify-content:center;
+    }
 }
 
 @media (max-width:586px) {
@@ -3700,19 +3913,15 @@ ul .nav-element-choosen {
         width: auto;
         border-radius: 0;
     }
-
     #production.longText {
         display: none;
     }
-
     #production.shortText {
         display: initial;
     }
-
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 69% 80% no-repeat;
     }
-
         #сatalog.about .annotation {
             right: 0;
             bottom: 0;
@@ -3721,7 +3930,6 @@ ul .nav-element-choosen {
             width: auto;
             border-radius: 0;
         }
-
     #сatalog.longText {
         display: none;
     }
@@ -3743,18 +3951,15 @@ ul .nav-element-choosen {
             width: auto;
             border-radius: 0;
         }
-    .contactsText {
-        width: 50%;
-    }
-    #ourLocation {
-        width: 50%;
-    }
 }
 
 @media (max-width:558px) {
-    /*#news.about {
-        height: 91vh;
-    }*/
+    .tthUnderFoto {
+        width: 100%;
+    }
+    .underFoto {
+        height: auto;
+    }
     .singleProject {
         grid-template-rows: 60px auto min-content auto 25px;
     }
@@ -3793,13 +3998,7 @@ ul .nav-element-choosen {
     }
 }
 
-@media (max-width:530px) {
-}
-
 @media (max-width:525px) {
-    .tthUnderFoto {
-        width: 47.7%;
-    }
 
     #veryShortNav.menu-top-element {
         display: flex;
@@ -3820,20 +4019,16 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:500px) {
-    .tthUnderFoto {
+    /*.tthUnderFoto {
         width: 100%;
-    }
+    }*/
 
     .catalogItemTop {
         min-height: unset;
         margin-bottom: 5px;
     }
 
-    .underFoto {
-        height: auto;
-    }
-
-    #сatalog.about {
+        #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
     }
 
@@ -3932,7 +4127,7 @@ ul .nav-element-choosen {
     }*/
 }
 
-@media (max-width:461px) {
+@media (max-width:462px) {
     .catalogItemTop {
         font-size: 1rem;
     }
@@ -3942,6 +4137,7 @@ ul .nav-element-choosen {
 
     .contactsText {
         width: auto;
+        height: auto;
         margin: 0 10px 0 10px;
     }
 
@@ -4023,10 +4219,10 @@ ul .nav-element-choosen {
     #cinemaTopNav {
         display: initial;
     }
-    .slick-current img {
+    /*.slick-current img {
         transform: scale(1.3);
         margin: 20px auto;
-    }
+    }*/
 }
 
 /*@media (max-width:398px) {

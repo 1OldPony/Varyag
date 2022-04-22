@@ -69,7 +69,8 @@ namespace Varyag
                 routes =>
             {
                 routes.MapRoute("default", "{controller=about}/{action=index}/{id?}");
-                routes.MapRoute("О нас", "o-nas", defaults: new { controller = "About", action = "AllNews" });
+                routes.MapRoute("О нас", "o-nas", defaults: new { controller = "About", action = "AboutUs" });
+                routes.MapRoute("Наши новости", "o-nas/nashi-novosti", defaults: new { controller = "About", action = "AllNews" });
                 routes.MapRoute("Статья", "o-nas/stati", defaults: new { controller = "About", action = "AllArticles" });
                 routes.MapRoute("Статья", "o-nas/stati/{route}", defaults: new { controller = "About", action = "ArticleDetails" });
                 /*тут будет конкретная статья - про верфь, она станет главной для раздела "о нас"*/routes.MapRoute("Конкретная новость", "o-nas/{id}", defaults: new { controller = "About", action = "NewsDetails" });

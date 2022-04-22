@@ -16,7 +16,7 @@
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <div>Скопируй название и замени пробелы на тире(-)</div>
+                    <div>Скопируй название сюда https://www.translityandex.ru/ и вставь транслит сюда</div>
                     <input asp-for="Route" class="form-control" />
                     <span asp-validation-for="Route" class="text-danger"></span>
                 </div>
@@ -36,7 +36,7 @@
                     <span asp-validation-for="Deep" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Volume" class="control-label"></label>
+                    <label asp-for="Volume" class="control-label"></label>/высота борта?
                     <input asp-for="Volume" class="form-control" />
                     <span asp-validation-for="Volume" class="text-danger"></span>
                 </div>
@@ -87,7 +87,8 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Price" class="control-label"></label>
-                    <input asp-for="Price" class="form-control" />
+                    <div>"по запросу" там, где нет, с маленькой буквы</div>
+                    <input asp-for="Price" class="form-control" required />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -96,7 +97,7 @@
                     <span asp-validation-for="ShipShemeFull" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ShipSheme" class="control-label"></label>
+                    <div><label asp-for="ShipSheme" class="control-label"></label><span style="margin-right:5px"> - заглушка</span><input asp-for="MaketCinema" /></div>
                     <input type="file" asp-for="ShipSheme" required class="form-control" multiple />
                     <span asp-validation-for="ShipSheme" class="text-danger"></span>
                 </div>
@@ -207,11 +208,11 @@
                         </div>
                     </div>
                     <div>
-                        <div class="form-group form-check">
+                        @*<div class="form-group form-check">
                             <label class="form-check-label">
                                 <input class="form-check-input" asp-for="MaketCinema" /> @Html.DisplayNameFor(model => model.MaketCinema)
                             </label>
-                        </div>
+                        </div>*@
                         <div class="form-group form-check">
                             <label class="form-check-label">
                                 <input class="form-check-input" asp-for="MaketMuseum" /> @Html.DisplayNameFor(model => model.MaketMuseum)

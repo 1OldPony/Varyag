@@ -29,7 +29,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                     <div class="leftNavLine"><a href="../../../o-nas" class="navLineHeader">О нас</a></div>
                 </li>
                 <li>
-                    <div class="leftNavLine"><h2><a href="../../../katalog/lodki" class="navLineHeader">Лодки</a></h2><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div></div>
+                    <div class="leftNavLine"><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div><h2><a href="../../../katalog/lodki">Лодки</a></h2></div>
                     <ul id="lodki-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/lodki/narodnye-lodki">Народные лодки</a></h2>
@@ -43,7 +43,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                     </ul>
                 </li>
                 <li>
-                    <div id="shlupkiNav" class="leftNavLine"><h2><a href="../../../katalog/shlyupki" class="navLineHeader">Шлюпки</a></h2><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
+                    <div id="shlupkiNav" class="leftNavLine"><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div><h2><a href="../../../katalog/shlyupki">Шлюпки</a></h2></div>
                     <ul id="shlupki-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a></h2>
@@ -60,7 +60,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                     </ul>
                 </li>
                 <li>
-                    <div id="kateraNav" class="leftNavLine"><h2><a href="../../../katalog/katera" class="navLineHeader">Катера</a></h2><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div></div>
+                    <div id="kateraNav" class="leftNavLine"><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div><h2><a href="../../../katalog/katera">Катера</a></h2></div>
                     <ul id="katera-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/katera/rabochie-i-rybolovnye-katera">Рабочие/Рыболовные катера</a></h2>
@@ -77,7 +77,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                     </ul>
                 </li>
                 <li>
-                    <div id="ladiyNav" class="leftNavLine"><h2><a href="../../../katalog/ladi" class="navLineHeader">Ладьи</a></h2><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
+                    <div id="ladiyNav" class="leftNavLine"><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div><h2><a href="../../../katalog/ladi">Ладьи</a></h2></div>
                     <ul id="ladiy-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/ladi/parusno-motornye-ladi">Парусно-моторные ладьи</a></h2>
@@ -91,7 +91,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                     </ul>
                 </li>
                 <li>
-                    <div id="sailboatsNav" class="leftNavLine"><h2></h2><a href="../../../katalog/parusniki" class="navLineHeader">Парусники</a><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
+                    <div id="sailboatsNav" class="leftNavLine"><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div><a href="../../../katalog/parusniki">Парусники</a></div>
                     <ul id="sailboats-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/parusniki/istoricheskie-parusniki">Исторические парусники</a></h2>
@@ -108,7 +108,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                     </ul>
                 </li>
                 <li>
-                    <div id="modelsNav" class="leftNavLine"><a href="../../../katalog/raznoe" class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
+                    <div id="modelsNav" class="leftNavLine"><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div><a href="../../../katalog/raznoe">Разное</a></div>
                     <ul id="models-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/raznoe/modeli-i-makety">Модели и макеты</a></h2>                            
@@ -120,14 +120,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                 </li>
             </ul>
         </nav>
-        <div class="ourContacts">
-            <div>НАШИ КОНТАКТЫ</div>
-            <div class="contactsLeft">
-                <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
-                <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.varyag-onego.ru</a>
-                <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;varyag@onego.ru</div>
-            </div>
-        </div>
+        <partial name="ContactsLeft" />
     </div>
 
 
@@ -136,15 +129,26 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
     <div class="projectName"><h1 style="margin-block:0;">@Model.Name</h1></div>
     <div class="projectsDetailsTop">
         <div class="sheme-TTH">
-            <div class="shemeFlex">
-                <div class="fotorama" data-allowfullscreen="native">
-                    <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" />
+            @if (ViewBag.hideMulka)
+            {
+                <div class="shemeFlexHidden">
+                    <div class="fotorama" data-allowfullscreen="native">
+                        <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" />
+                    </div>
                 </div>
-            </div>
+            }
+            else
+            {
+                <div class="shemeFlex">
+                    <div class="fotorama" data-allowfullscreen="native">
+                        <img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ProjectID, fot = "shemeFull"})" />
+                    </div>
+                </div>
+            }
             <div class="TTH-detailsFlex">
                 <table style="margin-bottom:5px">
                     <tr>
-                        <td colspan="3"><h4>Характеристики</h4></td>
+                        <td colspan="3" style="text-align:left"><h4>Характеристики:</h4></td>
                     </tr>
                     <tr>
                         <td id="details" class="characteristic">Длина корпуса наибольшая</td>
@@ -194,7 +198,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                         }
                         else
                         {
-                            <td class="value">-</td>
+                            <td class="value" style="text-align:center">-</td>
                         }
                     </tr>
                     <tr>
@@ -206,7 +210,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                         }
                         else
                         {
-                            <td class="value">-</td>
+                            <td class="value" style="text-align:center">-</td>
                         }
                     </tr>
                     <tr>
@@ -214,11 +218,11 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                         <td id="shortCharacteristicName" class="characteristic">Площадь парусности</td>
                         @if (@Model.SailArea != null)
                         {
-                            <td class="value">@Model.SailArea&nbsp;м<sup>2</sup></td>
+                            <td class="value">@Model.SailArea&nbsp;м<sup style="font-size:10px;">2</sup></td>
                         }
                         else
                         {
-                            <td class="value">-</td>
+                            <td class="value" style="text-align:center">-</td>
                         }
                     </tr>
                     <tr>
@@ -230,7 +234,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                         }
                         else
                         {
-                            <td class="value">-</td>
+                            <td class="value" style="text-align:center">-</td>
                         }
                     </tr>
                     <tr>
@@ -242,7 +246,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                         }
                         else
                         {
-                            <td class="value">-</td>
+                            <td class="value" style="text-align:center">-</td>
                         }
                     </tr>
                     <tr>
@@ -254,7 +258,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                         }
                         else
                         {
-                            <td class="value">-</td>
+                            <td class="value" style="text-align:center">-</td>
                         }
                     </tr>
                     @if (@Model.FreshWaterCap != null)
@@ -266,7 +270,14 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                         </tr>
                     }
                 </table>
-                <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @Model.Price&nbsp;тыс.р.</div>
+                @if (@Model.Price != "по запросу")
+                {
+                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price): @Model.Price&nbsp;&#8381;</div>
+                }
+                else
+                {
+                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) @Model.Price</div>
+                }
             </div>
         </div>
         <div class="galleryFlex">

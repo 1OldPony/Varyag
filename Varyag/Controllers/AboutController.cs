@@ -25,12 +25,36 @@ namespace Varyag.Controllers
             return View();
         }
 
-        public IActionResult AboutUs()
+        public async Task<IActionResult> AboutUs()
         {
             ViewData["Title"] = "Верфь деревянного судостроения Варяг";
             ViewData["Keywords"] = "Верфь Варяг, О верфи Варяг, Построить деревянный корабль, Купить деревянную лодку";
             ViewData["Description"] = "Верфь деревянного судостроения Варяг сециализируется на проектировании судов, шлюпок и лодок. Мы в строю уже 30 лет и можем предложить широкий выбор разнообразных проектов, построенных на нашей верфи или разработать новый.";
-            return View();
+
+            List<News> newsForDate = new List<News>();
+            newsForDate = await _context.News.ToListAsync();
+
+            int currentYear = DateTime.Today.Year, lastYear = currentYear, date = 0;
+
+            foreach (var item in newsForDate)
+            {
+                date = int.Parse(item.NewsDate.Substring(item.NewsDate.Length - 4));
+                if (date < lastYear)
+                {
+                    lastYear = date;
+                }
+            };
+
+            ViewBag.actualNews = currentYear.ToString() + " - " + (currentYear - 1).ToString();
+            ViewBag.recentNews = (currentYear - 2).ToString() + " - " + (currentYear - 4).ToString();
+            ViewBag.oldNews = (currentYear - 5).ToString() + " - " + lastYear;
+
+            var article = await _context.Article.Where(a => a.ArticleId == 6).SingleAsync();
+            if (article == null)
+            {
+                return NotFound();
+            }
+            return View(article);
         }
 
         public async Task<IActionResult> AllNews(string newsType, int? page, string direction, string part)
@@ -212,11 +236,8 @@ namespace Varyag.Controllers
                 ViewBag.oldNews = (currentYear - 5).ToString() + " - " + lastYear;
             else
                 ViewBag.oldNews = oldNews;
-            //ViewBag.actualNews = actualNews;
-            //ViewBag.recentNews = recentNews;
-            //ViewBag.oldNews = oldNews;
 
-            var news = newsForDate.Where(m => m.NewsId == id).Single(); /*await _context.News.Where(m => m.NewsId == id).SingleAsync();*/
+            var news = newsForDate.Where(m => m.NewsId == id).Single();
             if (news == null)
             {
                 return NotFound();
@@ -228,15 +249,18 @@ namespace Varyag.Controllers
             List<Article> articles = new List<Article>();
             if (type == "Заказы для кино")
             {
-                articles = await _context.Article.Where(a => a.ArticleType == "Заказы для кино").ToListAsync();
+                var articles1 = _context.Article.Where(a => a.ArticleType == "Заказы для кино");
+                articles = await articles1.Where(a => a.ArticleId != 6).ToListAsync();
             }
             else if(type == "Заказы для музеев")
             {
-                articles = await _context.Article.Where(a => a.ArticleType == "Заказы для музеев").ToListAsync();
+                var articles1 = _context.Article.Where(a => a.ArticleType == "Заказы для музеев");
+                articles = await articles1.Where(a => a.ArticleId != 6).ToListAsync();
             }
             else
             {
-                articles = await _context.Article.ToListAsync();
+                articles = await _context.Article.Where(a => a.ArticleId != 6).ToListAsync();
+                //articles = await articles1.Where(a => a.ArticleId != 6).ToListAsync();
             }
 
             if (articles == null)

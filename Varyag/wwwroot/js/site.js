@@ -17,30 +17,43 @@ $(document).ready(function () {
     });
 
     ////////////////////Показываем список прикрепленных проектов новости при ее редактировании/////////////////////
-    if ($("[name='LinkedProjectNames']").val() != undefined) {
-        newsLinkToProject(true);
-    }    
+    //if ($("[name='LinkedProjectNames']").val() != undefined) {
+    //    newsLinkToProject(true);
+    //}    
+    newsLinkToProject(true)
 });
 ////////////////////////////Создаем список связанных проектов//////////////////////////////
-function newsLinkToProject(firstTimeEdit) {
+//$('#LinkedProjects').change(function () {
+//})
+function newsLinkToProject(firstTime) {
     let projects = $("[name='LinkedProjectNames']").val();
-    if (!firstTimeEdit) {
-        projects += '/' + $("[name='LinkedProjects'] option:selected").text();
-        if (!projects.includes($("[name='LinkedProjects'] option:selected").text())) {
-            $("[name='LinkedProjectNames']").val(projects);
-            let projectSplit = projects.split('/');
 
-            $("#LinkedProjectsList").empty();
-            for (var i = 1; i < projectSplit.length; i++) {
-                $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + projectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
-            }
-        }
-    }
-    else {
+    if (firstTime) {
         let projectSplit = projects.split('/');
         $("#LinkedProjectsList").empty();
         for (var i = 1; i < projectSplit.length; i++) {
             $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + projectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
+        }
+    }
+    else {
+        //if (projects != "") {
+        if (!projects.includes($("[name='LinkedProjects'] option:selected").text())) {
+            projects += '/' + $("[name='LinkedProjects'] option:selected").text();
+            $("[name='LinkedProjectNames']").val(projects);
+
+            let projectSplit = projects.split('/');
+            $("#LinkedProjectsList").empty();
+            for (var i = 1; i < projectSplit.length; i++) {
+                $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + projectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
+            }
+            //}
+            //else {
+            //    let projectSplit = projects.split('/');
+            //    $("#LinkedProjectsList").empty();
+            //    for (var i = 1; i < projectSplit.length; i++) {
+            //        $("#LinkedProjectsList").append("<div id='" + i + "' style='display:flex;width:100%;justify-content:space-between;'><div>" + projectSplit[i] + "</div><div style='cursor:pointer' onclick='removeLinkToProject(" + i + ")'>удалить</div></div>");
+            //    }
+            //}
         }
     }
 }
@@ -246,6 +259,13 @@ function newsSaveButtonDisable() {
         $("#newsSaveButton").attr("disabled", "disabled");
 }
 
+function articlesSaveButtonActive() {
+    $("#articleSave").removeAttr("disabled");
+}
+function articlesSaveButtonDisable() {
+    $("#articleSave").attr("disabled", "disabled");
+}
+
 ////////////////////////Обслуживаем механизм создания превью статей//////////////////////////
 function refreshPreviewEditor() {
     let response = fetch('/articles/SaveTempFoto', {
@@ -299,4 +319,16 @@ function fillTheForm(formId, editorId) {
         $('#' + formId).val($('#' + editorId).val());
     }
 }
+$("#videoOne").click(function () {
+    var url = $("#firstVideoUrl").val();
+    $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
+});
+$("#videoTwo").click(function () {
+    var url = $("#secondVideoUrl").val();
+    $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
+});
+$("#videoThree").click(function () {
+    var url = $("#thirdVideoUrl").val();
+    $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
+});
 

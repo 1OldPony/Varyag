@@ -4,7 +4,7 @@
 }
 <div class="MyContainer">
     <div class="path">
-        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">О нас</a> > <a>@Model.ArticleName</a>
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">О нас</a>
     </div>
     <div class="contentBlock">
         <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
@@ -15,76 +15,31 @@
                         <div class="leftNavLine"><a href="../../../katalog" class="navLineHeader">Каталог</a></div>
                     </li>
                     <li>
-                        <div class="leftNavLine"><a href="../../../o-nas" class="navLineHeader">О верфи "Варяг"</a></div>
+                        <div class="leftNavLine"><a href="../../../o-nas" class="navLineHeader" style="color: #e81010">О верфи "Варяг"</a></div>
                     </li>
                     <li>
-                        <div class="leftNavLine"><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews" class="leftNavLine"><div style="color: #e81010">Статьи</div></a></div>
+                        <div class="leftNavLine"><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews" class="leftNavLine"><div>Статьи</div></a></div>
                         <ul id="articles-sub" class="leftSubNavOpenCurrent">
-                            @if (ViewBag.type == "Заказы для музеев")
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для музеев" style="color: #e81010" id="museums">Заказы для музеев</a></h2>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для музеев" id="museums">Заказы для музеев</a></h2>
-                                </li>
-                            }
-                            @if (ViewBag.type == "Заказы для кино")
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для кино" style="color: #e81010" id="museums">Заказы для кино</a></h2>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для кино" id="museums">Заказы для кино</a></h2>
-                                </li>
-                            }
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для музеев" id="museums">Заказы для музеев</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для кино" id="museums">Заказы для кино</a></h2>
+                            </li>
                         </ul>
                     </li>
                     <li>
                         <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div><a href="../../../o-nas/nashi-novosti">Наши новости</a></div>
                         <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
-                            @if (ViewBag.newsType == "smi")
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=smi" style="color: #e81010" id="smiNav">СМИ о нас</a></h2>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=smi" id="smiNav">СМИ о нас</a></h2>
-                                </li>
-                            }
-                            @if (ViewBag.newsType == "life")
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=life" style="color: #e81010" id="lifeNav">Жизнь наших судов</a></h2>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=life" id="lifeNav">Жизнь наших судов</a></h2>
-                                </li>
-                            }
-                            @if (ViewBag.newsType == "newShips")
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=newShips" style="color: #e81010" id="newShipsNav">Новости верфи</a></h2>
-                                </li>
-                            }
-                            else
-                            {
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=newShips" id="newShipsNav">Новости верфи</a></h2>
-                                </li>
-                            }
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../o-nas/nashi-novosti?newsType=smi" id="smiNav">СМИ о нас</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../o-nas/nashi-novosti?newsType=life" id="lifeNav">Жизнь наших судов</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../o-nas/nashi-novosti?newsType=newShips" id="newShipsNav">Новости верфи</a></h2>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -104,6 +59,14 @@
                 </ul>
             </nav>
             <partial name="ContactsLeft" />
+            @*<div class="ourContacts">
+                <div>НАШИ КОНТАКТЫ</div>
+                <div class="contactsLeft">
+                    <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
+                    <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.varyag-onego.ru</a>
+                    <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
+                </div>
+            </div>*@
         </div>
         <div class="projectsHalf" id="newsProjectsHalf">
             <div class="topCatalogLine" id="newsDetails">

@@ -72,7 +72,7 @@ namespace Varyag.Controllers
             }
             else
             {
-                if (fotos.Count != 0)
+                if (fotos.Count() != 0)
                 {
                     string[] files = Directory.GetFiles(path);
                     foreach (var file in files)

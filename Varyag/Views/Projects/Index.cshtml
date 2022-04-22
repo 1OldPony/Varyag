@@ -86,7 +86,7 @@
                         <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
                         @if (@item.SailArea != null)
                         {
-                            <td class="value">@item.SailArea&nbsp;м<sup>2</sup></td>}
+                            <td class="value">@item.SailArea&nbsp;м<sup style="font-size:10px;">2</sup></td>}
                         else
                         {
                             <td class="value">-</td>}
@@ -95,7 +95,7 @@
                         <td class="characteristic">Паруса</td>
                         @if (@item.SailArea != null)
                         {
-                            <td class="value">@item.SailArea&nbsp;м<sup>2</sup></td>}
+                            <td class="value">@item.SailArea&nbsp;м<sup style="font-size:10px;">2</sup></td>}
                         else
                         {
                             <td class="value">-</td>}
@@ -157,7 +157,7 @@
                 </table>
             </div>
             <div id="bottom" class="gridFreeSpace"></div>
-            <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @item.Price&nbsp;тыс.р.</div>
+            <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) : @item.Price&nbsp;&#8381;</div>
         </div>
 
         <p style="margin:20px">ДАННЫЕ</p>

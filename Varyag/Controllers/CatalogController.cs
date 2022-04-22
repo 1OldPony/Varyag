@@ -348,6 +348,7 @@ namespace Varyag.Controllers
                 ViewData["Keywords"] = "Купить деревянные парусники, Классические парусники от производителя";
                 ViewData["Description"] = "Каталог деревянных яхт, швертботов, а также учебных и исторических парусников производства верфи деревянного судостроения Варяг";
             }
+            ViewBag.hideMulka = project.MaketCinema;
 
             if (project == null)
             {

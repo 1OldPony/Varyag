@@ -114,20 +114,20 @@
             <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" required />
         </div>
         <div style="display:flex">
-            <textarea name="currentTextPart" id="mce"></textarea>
+            <textarea name="currentTextPart" id="mce" onchange="articlesSaveButtonDisable()"></textarea>
             <div style="display:flex;flex-direction:column;margin-left:1vw">
                 <div>
                     <div>Заголовок статьи</div>
-                    <input type="text" name="articleName" value="@ViewBag.Name" style="width:700px" />
+                    <input type="text" name="articleName" value="@ViewBag.Name" style="width:700px" onchange="articlesSaveButtonDisable()" />
                 </div>
                 <div>
                     <div>Краткое название, замени пробелы на тире(-)</div>
-                    <input type="text" name="articleRoute" value="@ViewBag.Route" />
+                    <input type="text" name="articleRoute" value="@ViewBag.Route" onchange="articlesSaveButtonDisable()" />
                 </div>
                 <div>
-                    <div>Загрузка файлов/текста в блок(Кнопка "Загрузить")</div>
+                    <div>Загрузка файлов</div>
                     <div style="display:flex;">
-                        <input name="fotos" type="file" multiple /><input type="submit" value="Загрузить" /><div><input type="checkbox" name="deleteGallery" value="true" style="margin-left:10px;"/> Надо просто удалить галлерею</div>
+                        <input name="fotos" type="file" multiple /><div style="margin-left:10px;"><input type="submit" value="Загрузить блок и название" /><input type="checkbox" name="deleteGallery" value="true" style="margin-left:10px;" /> Надо просто удалить галлерею</div>
                     </div>
                 </div>
                 @*<div style="display:flex;">*@
@@ -230,7 +230,7 @@
             <input asp-for="ArticleRoute" value="@ViewBag.Route" />
             <input asp-for="ArticleType" value="@ViewBag.Type" />
         </div>
-        <input type="submit" value="Создать" />
+        <div style="display:flex;"><input id="articleSave" type="submit" value="Создать" /></div>        
     </form>
     <div style="max-width:1400px;margin:auto;display:flex;flex-direction:column">
         @if (@ViewBag.Text1 != null)

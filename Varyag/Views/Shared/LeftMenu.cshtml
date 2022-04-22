@@ -9,7 +9,7 @@
                 <li id="catalogWord">
                     @if (ViewBag.catalogPage == "catalog")
                     {
-                        <div class="leftNavLine"><a href="../../../katalog" id="catalogHeder" class="navLineHeader" style="color:red">Каталог</a></div>
+                        <div class="leftNavLine"><a href="../../../katalog" id="catalogHeder" class="navLineHeader" style="color: #e81010">Каталог</a></div>
                     }
                     else
                     {
@@ -20,12 +20,12 @@
                     @if (ViewBag.catalogPage == "boats")
                     {
                         //вниз &#709; вправо &#707;
-                        <div class="leftNavLine"><div id="lodkiClose" class="leftNavCloseCurrent">-</div><h2><a href="../../../katalog/lodki" class="navLineHeader" style="color:red">Лодки</a></h2><div id="lodkiOpen" class="leftNavOpenCurrent">+</div><div id="lodkiClose" class="leftNavCloseCurrent">-</div></div>
+                    <div class="leftNavLine"><div id="lodkiOpen" class="leftNavOpenCurrent">+</div><div id="lodkiClose" class="leftNavCloseCurrent">-</div><h2><a href="../../../katalog/lodki" style="color: #e81010">Лодки</a></h2></div>
                         <ul id="lodki-Sub" class="leftSubNavOpenCurrent">
                             @if (ViewBag.TopPic == "boatstraditional")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/lodki/narodnye-lodki" style="color:red">Народные лодки</a></h2>
+                                    <h2><a href="../../../katalog/lodki/narodnye-lodki" style="color: #e81010">Народные лодки</a></h2>
                                 </li>
                             }
                             else
@@ -37,7 +37,7 @@
                             @if (ViewBag.TopPic == "boatssail")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/lodki/progulochnye-parusnye-lodki" style="color:red">Прогулочные парусные лодки</a></h2>
+                                    <h2><a href="../../../katalog/lodki/progulochnye-parusnye-lodki" style="color: #e81010">Прогулочные парусные лодки</a></h2>
                                 </li>
                             }
                             else
@@ -49,7 +49,7 @@
                             @if (ViewBag.TopPic == "boatsrow")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/lodki/progulochnye-grebnye-lodki" style="color:red">Прогулочные гребные лодки</a></h2>
+                                    <h2><a href="../../../katalog/lodki/progulochnye-grebnye-lodki" style="color: #e81010">Прогулочные гребные лодки</a></h2>
                                 </li>
                             }
                             else
@@ -62,7 +62,7 @@
                     }
                     else
                     {
-                        <div class="leftNavLine"><h2><a href="../../../katalog/lodki" class="navLineHeader">Лодки</a></h2><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div></div>
+                        <div class="leftNavLine"><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div><h2><a href="../../../katalog/lodki">Лодки</a></h2></div>
                         <ul id="lodki-Sub" class="leftSubNavOpen">
                             <li class="leftSubCategory">
                                 <h2><a href="../../../katalog/lodki/narodnye-lodki">Народные лодки</a></h2>
@@ -79,12 +79,12 @@
                 <li>
                     @if (ViewBag.catalogPage == "bigboats")
                     {
-                        <div id="shlupkiNav" class="leftNavLine"><h2><a href="../../../katalog/shlyupki" class="navLineHeader" style="color:red">Шлюпки</a></h2><div id="shlupkiOpen" class="leftNavOpenCurrent">+</div><div id="shlupkiClose" class="leftNavCloseCurrent">-</div></div>
+                    <div id="shlupkiNav" class="leftNavLine"><div id="shlupkiOpen" class="leftNavOpenCurrent">+</div><div id="shlupkiClose" class="leftNavCloseCurrent">-</div><h2><a href="../../../katalog/shlyupki" style="color: #e81010">Шлюпки</a></h2></div>
                         <ul id="shlupki-Sub" class="leftSubNavOpenCurrent">
                             @if (ViewBag.TopPic == "boatsyal")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6" style="color:red">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a></h2>
+                                    <h2><a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6" style="color: #e81010">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a></h2>
                                 </li>
                             }
                             else
@@ -96,7 +96,7 @@
                             @if (ViewBag.TopPic == "botiks")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/shlyupki/botiki" style="color:red">Ботики</a></h2>
+                                    <h2><a href="../../../katalog/shlyupki/botiki" style="color: #e81010">Ботики</a></h2>
                                 </li>
                             }
                             else
@@ -108,7 +108,7 @@
                             @if (ViewBag.TopPic == "katerrows")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/shlyupki/grebnye-katera-i-velboty" style="color:red">Гребные катера и вельботы</a></h2>
+                                    <h2><a href="../../../katalog/shlyupki/grebnye-katera-i-velboty" style="color: #e81010">Гребные катера и вельботы</a></h2>
                                 </li>
                             }
                             else
@@ -120,7 +120,7 @@
                             @if (ViewBag.TopPic == "maketsstudy")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/shlyupki/uchebnye-posobiya" style="color:red">Учебные пособия</a></h2>
+                                    <h2><a href="../../../katalog/shlyupki/uchebnye-posobiya" style="color: #e81010">Учебные пособия</a></h2>
                                 </li>
                             }
                             else
@@ -135,37 +135,37 @@
                     {
                         @if (ViewBag.catalogPage == "boats")
                         {
-                            <div id="shlupkiNav" class="leftNavLine" style="margin-top:72px"><div id="shlupkiOpen" class="leftNavOpen">+</div><h2><a href="../../../katalog/shlyupki" class="navLineHeader">Шлюпки</a></h2><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
+                        <div id="shlupkiNav" class="leftNavLine" style="margin-top:72px"><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div><h2><a href="../../../katalog/shlyupki">Шлюпки</a></h2></div>
                         }
                         else
                         {
-                            <div id="shlupkiNav" class="leftNavLine"><h2><a href="../../../katalog/shlyupki" class="navLineHeader">Шлюпки</a></h2><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
+                        <div id="shlupkiNav" class="leftNavLine"><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div><h2><a href="../../../katalog/shlyupki">Шлюпки</a></h2></div>
                         }
-                            <ul id="shlupki-Sub" class="leftSubNavOpen">
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/shlyupki/botiki">Ботики</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/shlyupki/grebnye-katera-i-velboty">Гребные катера и вельботы</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/shlyupki/uchebnye-posobiya">Учебные пособия</a></h2>
-                                </li>
-                            </ul>
+                        <ul id="shlupki-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/shlyupki/botiki">Ботики</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/shlyupki/grebnye-katera-i-velboty">Гребные катера и вельботы</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/shlyupki/uchebnye-posobiya">Учебные пособия</a></h2>
+                            </li>
+                        </ul>
                     }
                 </li>
                 <li>
                     @if (ViewBag.catalogPage == "motorboats")
                     {
-                        <div id="kateraNav" class="leftNavLine"><h2><a href="../../../katalog/katera" class="navLineHeader" style="color:red">Катера</a></h2><div id="kateraOpen" class="leftNavOpenCurrent">+</div><div id="kateraClose" class="leftNavCloseCurrent">-</div></div>
+                    <div id="kateraNav" class="leftNavLine"><div id="kateraOpen" class="leftNavOpenCurrent">+</div><div id="kateraClose" class="leftNavCloseCurrent">-</div><h2><a href="../../../katalog/katera" style="color: #e81010">Катера</a></h2></div>
                         <ul id="katera-Sub" class="leftSubNavOpenCurrent">
                             @if (ViewBag.TopPic == "katersfishing")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/katera/rabochie-i-rybolovnye-katera" style="color:red">Рабочие и рыболовные катера</a></h2>
+                                    <h2><a href="../../../katalog/katera/rabochie-i-rybolovnye-katera" style="color: #e81010">Рабочие и рыболовные катера</a></h2>
                                 </li>
                             }
                             else
@@ -177,7 +177,7 @@
                             @if (ViewBag.TopPic == "katerspassanger")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/katera/passazhirskie-katera" style="color:red">Пассажирские катера</a></h2>
+                                    <h2><a href="../../../katalog/katera/passazhirskie-katera" style="color: #e81010">Пассажирские катера</a></h2>
                                 </li>
                             }
                             else
@@ -189,7 +189,7 @@
                             @if (ViewBag.TopPic == "katerkabins")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/katera/kayutnye-katera" style="color:red">Каютные катера</a></h2>
+                                    <h2><a href="../../../katalog/katera/kayutnye-katera" style="color: #e81010">Каютные катера</a></h2>
                                 </li>
                             }
                             else
@@ -201,7 +201,7 @@
                             @if (ViewBag.TopPic == "motosailers")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/katera/motoseylery" style="color:red">Мотосейлеры</a></h2>
+                                    <h2><a href="../../../katalog/katera/motoseylery" style="color: #e81010">Мотосейлеры</a></h2>
                                 </li>
                             }
                             else
@@ -216,37 +216,37 @@
                     {
                         @if (ViewBag.catalogPage == "bigboats")
                         {
-                            <div id="kateraNav" class="leftNavLine" style="margin-top:92px"><h2><a href="../../../katalog/katera" class="navLineHeader">Катера</a></h2><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div></div>
+                        <div id="kateraNav" class="leftNavLine" style="margin-top:92px"><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div><h2><a href="../../../katalog/katera">Катера</a></h2></div>
                         }
                         else
                         {
-                            <div id="kateraNav" class="leftNavLine"><div id="kateraOpen" class="leftNavOpen">+</div><h2><a href="../../../katalog/katera" class="navLineHeader">Катера</a></h2><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div></div>
+                        <div id="kateraNav" class="leftNavLine"><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div><h2><a href="../../../katalog/katera">Катера</a></h2></div>
                         }
-                            <ul id="katera-Sub" class="leftSubNavOpen">
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/katera/rabochie-i-rybolovnye-katera">Рабочие/Рыболовные катера</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/katera/passazhirskie-katera">Пассажирские катера</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/katera/kayutnye-katera">Каютные катера</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/katera/motoseylery">Мотосейлеры</a></h2>
-                                </li>
-                            </ul>
+                        <ul id="katera-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/katera/rabochie-i-rybolovnye-katera">Рабочие/Рыболовные катера</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/katera/passazhirskie-katera">Пассажирские катера</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/katera/kayutnye-katera">Каютные катера</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/katera/motoseylery">Мотосейлеры</a></h2>
+                            </li>
+                        </ul>
                     }
                 </li>
                 <li>
                     @if (ViewBag.catalogPage == "ladiy")
                     {
-                        <div id="ladiyNav" class="leftNavLine"><h2><a href="../../../katalog/ladi" class="navLineHeader" style="color:red">Ладьи</a></h2><div id="ladiyOpen" class="leftNavOpenCurrent">+</div><div id="ladiyClose" class="leftNavCloseCurrent">-</div></div>
+                    <div id="ladiyNav" class="leftNavLine"><div id="ladiyOpen" class="leftNavOpenCurrent">+</div><div id="ladiyClose" class="leftNavCloseCurrent">-</div><h2><a href="../../../katalog/ladi" style="color: #e81010">Ладьи</a></h2></div>
                         <ul id="ladiy-Sub" class="leftSubNavOpenCurrent">
                             @if (ViewBag.TopPic == "ladyassailmotor")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/ladi/parusno-motornye-ladi" style="color:red">Парусно-моторные ладьи</a></h2>
+                                    <h2><a href="../../../katalog/ladi/parusno-motornye-ladi" style="color: #e81010">Парусно-моторные ладьи</a></h2>
                                 </li>
                             }
                             else
@@ -254,11 +254,11 @@
                                 <li class="leftSubCategory">
                                     <h2><a href="../../../katalog/ladi/parusno-motornye-ladi">Парусно-моторные ладьи</a></h2>
                                 </li>
-                                    }
+                            }
                             @if (ViewBag.TopPic == "ladyassailrow")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/ladi/parusno-grebnye-ladi" style="color:red">Парусно-гребные ладьи</a></h2>
+                                    <h2><a href="../../../katalog/ladi/parusno-grebnye-ladi" style="color: #e81010">Парусно-гребные ладьи</a></h2>
                                 </li>
                             }
                             else
@@ -270,7 +270,7 @@
                             @if (ViewBag.TopPic == "galleysAndStrugs")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/ladi/strugi-i-galery" style="color:red">Струги и галеры</a></h2>
+                                    <h2><a href="../../../katalog/ladi/strugi-i-galery" style="color: #e81010">Струги и галеры</a></h2>
                                 </li>
                             }
                             else
@@ -285,34 +285,34 @@
                     {
                         @if (ViewBag.catalogPage == "motorboats")
                         {
-                            <div id="ladiyNav" class="leftNavLine" style="margin-top:92px"><h2><a href="../../../katalog/ladi" class="navLineHeader">Ладьи</a></h2><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
+                        <div id="ladiyNav" class="leftNavLine" style="margin-top:92px"><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div><h2><a href="../../../katalog/ladi">Ладьи</a></h2></div>
                         }
                         else
                         {
-                            <div id="ladiyNav" class="leftNavLine"><div id="ladiyOpen" class="leftNavOpen">+</div><h2><a href="../../../katalog/ladi" class="navLineHeader">Ладьи</a></h2><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
+                        <div id="ladiyNav" class="leftNavLine"><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div><h2><a href="../../../katalog/ladi">Ладьи</a></h2></div>
                         }
-                            <ul id="ladiy-Sub" class="leftSubNavOpen">
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/ladi/parusno-motornye-ladi">Парусно-моторные ладьи</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/ladi/parusno-grebnye-ladi">Парусно-гребные ладьи</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/ladi/strugi-i-galery">Струги и галеры</a></h2>
-                                </li>
-                            </ul>
+                        <ul id="ladiy-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/ladi/parusno-motornye-ladi">Парусно-моторные ладьи</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/ladi/parusno-grebnye-ladi">Парусно-гребные ладьи</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/ladi/strugi-i-galery">Струги и галеры</a></h2>
+                            </li>
+                        </ul>
                     }
                 </li>
                 <li>
                     @if (ViewBag.catalogPage == "sailboats")
                     {
-                        <div id="sailboatsNav" class="leftNavLine"><h2><a href="../../../katalog/parusniki" class="navLineHeader" style="color:red">Парусники</a></h2><div id="sailboatsOpen" class="leftNavOpenCurrent">+</div><div id="sailboatsClose" class="leftNavCloseCurrent">-</div></div>
+                    <div id="sailboatsNav" class="leftNavLine"><div id="sailboatsOpen" class="leftNavOpenCurrent">+</div><div id="sailboatsClose" class="leftNavCloseCurrent">-</div><h2><a href="../../../katalog/parusniki" style="color: #e81010">Парусники</a></h2></div>
                         <ul id="sailboats-Sub" class="leftSubNavOpenCurrent">
                             @if (ViewBag.TopPic == "sailboatshistorical")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/parusniki/istoricheskie-parusniki" style="color:red">Исторические парусники</a></h2>
+                                    <h2><a href="../../../katalog/parusniki/istoricheskie-parusniki" style="color: #e81010">Исторические парусники</a></h2>
                                 </li>
                             }
                             else
@@ -324,7 +324,7 @@
                             @if (ViewBag.TopPic == "sailboatsstudy")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/parusniki/uchebnye-parusniki" style="color:red">Учебные парусники</a></h2>
+                                    <h2><a href="../../../katalog/parusniki/uchebnye-parusniki" style="color: #e81010">Учебные парусники</a></h2>
                                 </li>
                             }
                             else
@@ -336,7 +336,7 @@
                             @if (ViewBag.TopPic == "svertbots")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/parusniki/shvertboty" style="color:red">Швертботы</a></h2>
+                                    <h2><a href="../../../katalog/parusniki/shvertboty" style="color: #e81010">Швертботы</a></h2>
                                 </li>
                             }
                             else
@@ -348,7 +348,7 @@
                             @if (ViewBag.TopPic == "yachts")
                             {
                                 <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/parusniki/parusnye-yahty" style="color:red">Парусные яхты</a></h2>
+                                    <h2><a href="../../../katalog/parusniki/parusnye-yahty" style="color: #e81010">Парусные яхты</a></h2>
                                 </li>
                             }
                             else
@@ -363,45 +363,45 @@
                     {
                         @if (ViewBag.catalogPage == "ladiy")
                         {
-                            <div id="sailboatsNav" class="leftNavLine" style="margin-top:72px"><h2><a href="../../../katalog/parusniki" class="navLineHeader">Парусники</a></h2><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
+                        <div id="sailboatsNav" class="leftNavLine" style="margin-top:72px"><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div><h2><a href="../../../katalog/parusniki">Парусники</a></h2></div>
                         }
                         else
                         {
-                            <div id="sailboatsNav" class="leftNavLine"><div id="sailboatsOpen" class="leftNavOpen">+</div><h2><a href="../../../katalog/parusniki" class="navLineHeader">Парусники</a></h2><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
+                        <div id="sailboatsNav" class="leftNavLine"><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div><h2><a href="../../../katalog/parusniki">Парусники</a></h2></div>
                         }
-                            <ul id="sailboats-Sub" class="leftSubNavOpen">
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/parusniki/istoricheskie-parusniki">Исторические парусники</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/parusniki/uchebnye-parusniki">Учебные парусники</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/parusniki/shvertboty">Швертботы</a></h2>
-                                </li>
-                                <li class="leftSubCategory">
-                                    <h2><a href="../../../katalog/parusniki/parusnye-yahty">Парусные яхты</a></h2>
-                                </li>
-                            </ul>
+                        <ul id="sailboats-Sub" class="leftSubNavOpen">
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/parusniki/istoricheskie-parusniki">Исторические парусники</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/parusniki/uchebnye-parusniki">Учебные парусники</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/parusniki/shvertboty">Швертботы</a></h2>
+                            </li>
+                            <li class="leftSubCategory">
+                                <h2><a href="../../../katalog/parusniki/parusnye-yahty">Парусные яхты</a></h2>
+                            </li>
+                        </ul>
                     }
                 </li>
                 <li>
                     @if (ViewBag.catalogPage == "sailboats")
                     {
-                        <div id="modelsNav" class="leftNavLine" style="margin-top:92px"><a href="../../../katalog/raznoe" class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
+                    <div id="modelsNav" class="leftNavLine" style="margin-top:92px"><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div><a href="../../../katalog/raznoe">Разное</a></div>
                     }
                     else
                     {
-                        <div id="modelsNav" class="leftNavLine"><a href="../../../katalog/raznoe" class="navLineHeader">Разное</a><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div></div>
+                    <div id="modelsNav" class="leftNavLine"><div id="modelsOpen" class="leftNavOpen">+</div><div id="modelsClose" class="leftNavClose">-</div><a href="../../../katalog/raznoe">Разное</a></div>
                     }
-                        <ul id="models-Sub" class="leftSubNavOpen">
-                            <li class="leftSubCategory">
-                                <h2><a href="../../../katalog/raznoe/modeli-i-makety">Модели и макеты</a></h2>
-                            </li>
-                            <li class="leftSubCategory">
-                                <a href="../../../katalog/raznoe/prochaya-produkciya">Прочая продукция</a>
-                            </li>
-                        </ul>
+                    <ul id="models-Sub" class="leftSubNavOpen">
+                        <li class="leftSubCategory">
+                            <h2><a href="../../../katalog/raznoe/modeli-i-makety">Модели и макеты</a></h2>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a href="../../../katalog/raznoe/prochaya-produkciya">Прочая продукция</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         }
@@ -414,7 +414,7 @@
                 <li id="catalogWord">
                     @if (ViewBag.catalogPage == "catalog")
                     {
-                        <div class="leftNavLine"><a href="../../../katalog" id="catalogHeder" class="navLineHeader" style="color:red">Каталог</a></div>
+                        <div class="leftNavLine"><a href="../../../katalog" id="catalogHeder" class="navLineHeader" style="color: #e81010">Каталог</a></div>
                     }
                     else
                     {
@@ -422,7 +422,7 @@
                     }
                 </li>
                 <li>
-                    <div class="leftNavLine"><h2><a href="../../../katalog/lodki" class="navLineHeader">Лодки</a></h2><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div></div>
+                    <div class="leftNavLine"><div id="lodkiOpen" class="leftNavOpen">+</div><div id="lodkiClose" class="leftNavClose">-</div><h2><a href="../../../katalog/lodki">Лодки</a></h2></div>
                     <ul id="lodki-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/lodki/narodnye-lodki">Народные лодки</a></h2>
@@ -436,7 +436,7 @@
                     </ul>
                 </li>
                 <li>
-                    <div id="shlupkiNav" class="leftNavLine"><h2><a href="../../../katalog/shlyupki" class="navLineHeader">Шлюпки</a></h2><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div></div>
+                    <div id="shlupkiNav" class="leftNavLine"><div id="shlupkiOpen" class="leftNavOpen">+</div><div id="shlupkiClose" class="leftNavClose">-</div><h2><a href="../../../katalog/shlyupki">Шлюпки</a></h2></div>
                     <ul id="shlupki-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a></h2>
@@ -453,7 +453,7 @@
                     </ul>
                 </li>
                 <li>
-                    <div id="kateraNav" class="leftNavLine"><h2><a href="../../../katalog/katera" class="navLineHeader">Катера</a></h2><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div></div>
+                    <div id="kateraNav" class="leftNavLine"><div id="kateraOpen" class="leftNavOpen">+</div><div id="kateraClose" class="leftNavClose">-</div><h2><a href="../../../katalog/katera">Катера</a></h2></div>
                     <ul id="katera-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/katera/rabochie-i-rybolovnye-katera">Рабочие/Рыболовные катера</a></h2>
@@ -470,7 +470,7 @@
                     </ul>
                 </li>
                 <li>
-                    <div id="ladiyNav" class="leftNavLine"><h2><a href="../../../katalog/ladi" class="navLineHeader">Ладьи</a></h2><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div></div>
+                    <div id="ladiyNav" class="leftNavLine"><div id="ladiyOpen" class="leftNavOpen">+</div><div id="ladiyClose" class="leftNavClose">-</div><h2><a href="../../../katalog/ladi">Ладьи</a></h2></div>
                     <ul id="ladiy-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/ladi/parusno-motornye-ladi">Парусно-моторные ладьи</a></h2>
@@ -484,7 +484,7 @@
                     </ul>
                 </li>
                 <li>
-                    <div id="sailboatsNav" class="leftNavLine"><h2><a href="../../../katalog/parusniki" class="navLineHeader">Парусники</a></h2><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div></div>
+                    <div id="sailboatsNav" class="leftNavLine"><div id="sailboatsOpen" class="leftNavOpen">+</div><div id="sailboatsClose" class="leftNavClose">-</div><h2><a href="../../../katalog/parusniki">Парусники</a></h2></div>
                     <ul id="sailboats-Sub" class="leftSubNavOpen">
                         <li class="leftSubCategory">
                             <h2><a href="../../../katalog/parusniki/istoricheskie-parusniki">Исторические парусники</a></h2>
@@ -501,12 +501,12 @@
                     </ul>
                 </li>
                 <li>
-                    <div id="modelsNav" class="leftNavLine"><h2><a href="../../../katalog/raznoe" class="navLineHeader" style="color:red">Разное</a></h2><div id="modelsOpen" class="leftNavOpenCurrent">+</div><div id="modelsClose" class="leftNavCloseCurrent">-</div></div>
+                    <div id="modelsNav" class="leftNavLine"><div id="modelsOpen" class="leftNavOpenCurrent">+</div><div id="modelsClose" class="leftNavCloseCurrent">-</div><h2><a href="../../../katalog/raznoe" style="color: #e81010">Разное</a></h2></div>
                     <ul id="models-Sub" class="leftSubNavOpenCurrent">
                         <li class="leftSubCategory">
                             @if (ViewBag.redLine == "makets")
                             {
-                                <h2><a href="../../../katalog/raznoe/modeli-i-makety" style="color:red">Модели и макеты</a></h2>
+                                <h2><a href="../../../katalog/raznoe/modeli-i-makety" style="color: #e81010">Модели и макеты</a></h2>
                             }
                             else
                             {
@@ -516,7 +516,7 @@
                         <li class="leftSubCategory">
                             @if (ViewBag.redLine == "other")
                             {
-                                <a href="../../../katalog/raznoe/prochaya-produkciya" style="color:red">Прочая продукция</a>
+                                <a href="../../../katalog/raznoe/prochaya-produkciya" style="color: #e81010">Прочая продукция</a>
                             }
                             else
                             {
@@ -528,12 +528,5 @@
             </ul>
         }
     </nav>
-    <div class="ourContacts">
-        <div>НАШИ КОНТАКТЫ</div>
-        <div class="contactsLeft">
-            <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
-            <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.varyag-onego.ru</a>
-            <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;varyag@onego.ru</div>
-        </div>
-    </div>
+    <partial name="ContactsLeft" />
 </div>
