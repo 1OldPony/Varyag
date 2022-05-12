@@ -151,14 +151,14 @@ footer a:hover {
 }
 .mapForMainPage {
     background-image: url('/images/Кусок-карты-для-географии-длин-масшт.JPG');
-    background-size: 110%;
+    background-size: 105%;
     background-position-y: 0%;
     height: 60px;
     font-size: 1.6rem;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     justify-content: flex-end;
-    max-width: 1350px;
+    max-width: 1340px;
     color: #183f61;
     padding-right: 10px;
     padding-bottom: 2px;
@@ -834,7 +834,7 @@ footer a:hover {
 }
 #ourLocation {
     width: 70%;
-    height: 30vh;
+    height: 350px;
     margin: 10px;
 }
 
@@ -1283,7 +1283,7 @@ img {
     display: flex;
     /*height: 50px;*/
     margin-right: 20px;
-    max-width: 54px;
+    max-width: 35px;
 }
 
 .fullTopMenu {
@@ -1374,7 +1374,9 @@ img {
     display: flex;
     flex-direction: column;
     top: 60px;
+    /*bottom: 100px;*/
     margin-left: 10px;
+    /*transition: bottom 1s ease-out 0s;*/
     /*justify-content: flex-start;*/
 }
 #mainPage.leftMenu {
@@ -2530,6 +2532,7 @@ ul .nav-element-choosen {
 
 .contentBlock {
     display: flex;
+    position:relative;
 }
 
 .ourContacts {
@@ -2538,6 +2541,7 @@ ul .nav-element-choosen {
     border-radius: 5px;
     padding-bottom: 5px;
     padding-top: 10px;
+    margin-bottom:10px;
 }
 
 .topCatalogLine {
@@ -3216,7 +3220,7 @@ ul .nav-element-choosen {
         width:auto;
     }
     .footerBlocks {
-        max-height:1000px;
+        max-height:1100px;
         flex-direction:column;
         margin-left:0;
     }

@@ -54,8 +54,6 @@
     <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px;background:white;border-radius:10px;position:relative;">
         <img src="~/images/о_нас/производство/47-й-узк.jpg" class="mainFoto" style="display:block" />
         <img src="~/images/о_нас/производство/47-й.jpg" class="mainFoto" style="display:none" />
-        <img src="~/images/о_нас/гото/1_Гото_Предестинация-16x9.jpg" class="mainFoto" id="middle" style="display:none" />
-        <img src="~/images/о_нас/гото/1_Гото_Предестинация-16x9-мал.jpg" class="mainFoto" id="small" />
     </div>
 
     <div style="display:flex;flex-direction:column;">
@@ -293,15 +291,15 @@
                 <div class="sliderElements"><img src="~/images/icons/Заказчики/Морской-профессиональный-лицей-№9-им.-С.Н.Орешкова,-г.Архангельск.png" loading="lazy" /></div>
             </div>
         </div>
-        <div class="mapForMainPage">
+        <a class="mapForMainPage" target="_blank" href="https://yandex.ru/maps/?um=constructor%3A4981c683bff02df9357d296ff3dd7944f7d56e9b604bd87bf148c6fd6e53e952&source=constructorLink">
             <div>География наших заказов&nbsp;&rarr;</div>
-        </div>
-        <div style="background-image:url(/images/Кусок-карты-для-географии-длинный.png);border-bottom-left-radius:10px;border-bottom-right-radius:10px;justify-content:flex-end;max-width:1350px;color:#183f61;padding-right:10px;padding-bottom:2px;padding-top:2px;font-family:'Gabriela';font-weight:bold;display:none;align-items:center;">
+        </a>
+        @*<div style="background-image:url(/images/Кусок-карты-для-географии-длинный.png);border-bottom-left-radius:10px;border-bottom-right-radius:10px;justify-content:flex-end;max-width:1350px;color:#183f61;padding-right:10px;padding-bottom:2px;padding-top:2px;font-family:'Gabriela';font-weight:bold;display:none;align-items:center;">
             <div>География наших заказов&nbsp;></div>
         </div>
         <div style="background-image:url(/images/Кусок-карты-для-географии-длин-масшт-обр.JPG);border-bottom-left-radius:10px;border-bottom-right-radius:10px;justify-content:flex-end;max-width:1350px;color:#183f61;padding-right:10px;padding-bottom:2px;padding-top:2px;font-family:'Gabriela';font-weight:bold;display:none;align-items:center;">
             <div>География наших заказов&nbsp;></div>
-        </div>
+        </div>*@
     </div>
     <div class="previewsBlock">
         @await Component.InvokeAsync("News")

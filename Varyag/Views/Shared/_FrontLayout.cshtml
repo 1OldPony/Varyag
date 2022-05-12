@@ -27,21 +27,25 @@
                 </div>
                 <div id="secondVarMenu" class="fullTopMenu">
                     <a class="topMenuIcon" asp-controller="about" asp-action="index">
-                        <img src="~/images/лого-кораблик-с-текстом-белый-жирный.png" />
+                        <img src="~/images/icons/Лого-кораблик-только-кораблик.png" style="display:block;" />
+                        <img src="~/images/icons/Лого-кораблик-после-жирный-ариал.png" style="display:none;" />
+                        <img src="~/images/icons/Лого-кораблик-после-жирный-тахома.png" style="display:none;" />
                     </a>
-                    <a href="../../../katalog" style="margin-right:15px;color:white">КАТАЛОГ</a>
-                    <a id="aboutMenu" href="../../../o-nas" style="margin-right:15px;color:white">О НАС</a>
+                    <a href="../../../katalog" style="margin-right:15px;color:white;width:unset;">КАТАЛОГ</a>
+                    <a id="aboutMenu" href="../../../o-nas" style="margin-right:15px;color:white;width:unset;">О&nbsp;НАС</a>
+                    <div>&nbsp;scroll+menu&nbsp;<input type="number" id="scrollCount" /></div>
+                    <div>&nbsp;offset&nbsp;<input type="number" id="spaceCount" /></div>
                 </div>
             </div>
             <div style="display:flex;align-items:center;">
                 <div style="display:flex">
                     <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" class="contactsSocial" /></a>
-                    <a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" class="contactsSocial" /></a>
-                    <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" class="contactsSocial" /></a>
+                    @*<a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" class="contactsSocial" /></a>
+                <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" class="contactsSocial" /></a>*@
                 </div>
                 <div><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div>
-                <div><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div>
-                <div><img src="~/images/icons/contacts.png" class="contactsSocial" style="display:none" /></div>
+                <div><img src="~/images/icons/contacts.png" class="contactsSocial" id="contacts" /></div>
+                @*<div><img src="~/images/icons/contacts.png" class="contactsSocial" style="display:none" /></div>*@
                 <a id="contactsWords" style="margin-left:15px;color:white;width:auto;" href="https://varyag-onego.ru#ourContacts">КОНТАКТЫ</a>
             </div>
         </div>
@@ -127,18 +131,18 @@
                 <div class="footerBlock">
                     <div class="footerSubBlock">
                         <div class="footerSubBlockHeader">Контакты:</div>
-                        <div class="footerSubBlockLine"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/phone-white.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
                         <div class="footerSubBlockLine"><img src="~/images/icons/whatsapp.png" class="contactsIcon" alt="cont" />&nbsp;+7 (921) 524-61-02</div>
-                        <div class="footerSubBlockLine"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/email-red-yellow.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
                         @*<a class="footerSubBlockLine" href="https://www.деревянная-лодка.рф" target="_blank"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.деревянная-лодка.рф</a>*@
-                        <div class="footerSubBlockLine"><img src="~/images/icons/map.png" alt="map" style="height:24px" class="contactsIcon" />&nbsp;Карелия,&nbsp;Петрозаводск</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/map-white-red.png" alt="map" class="contactsIcon" />&nbsp;Карелия,&nbsp;Петрозаводск</div>
                     </div>
                     <div class="footerSubBlock">
                         <div class="footerSubBlockHeader">Наши соцсети:</div>
                         <div style="display:flex;justify-content:flex-start;">
                             <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" style="width:64px" /></a>
-                            <a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" style="width:64px" /></a>
-                            <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" style="width:64px" /></a>
+                            @*<a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" style="width:64px" /></a>
+                            <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" style="width:64px" /></a>*@
                         </div>
                     </div>
                 </div>
