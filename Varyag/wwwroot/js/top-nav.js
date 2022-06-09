@@ -1,8 +1,9 @@
 ﻿var leftMenuOffset;
 var htmlHeight;
+var scrollTop=0;
 
 $(document).on('ready', function () {
-    spaceCalculate();
+    //spaceCalculate();
     if ($(".projectsHalf").height() != undefined) {
         leftMenuOffset = $(".projectsHalf").offset().top;
     }
@@ -46,21 +47,23 @@ $(document).on('ready', function () {
 });
 
 $(window).scroll(function () {
-    $('#scrollCount').val($(this).scrollTop() + $(".leftMenu").height());
-    $('#spaceCount').val($(".footerNew").offset().top);
+    
+    //$('#spaceCount').val($(".footerNew").offset().top);
 
     if ($(".leftMenu").css('position', 'fixed')) {
         htmlHeight = $("html").height();
     }
 
     if ($(window).width() > 1000) {
-        if ($(this).scrollTop() + $(".leftMenu").height() + 61 >= $(".footerNew").offset().top) {
+        scrollTop = $(this).scrollTop();
+
+        if (scrollTop + $(".leftMenu").height() + 61 >= $(".footerNew").offset().top) {
             $(".leftMenu").css('position', 'absolute');
             $(".leftMenu").css('top', "auto");
             $(".leftMenu").css('bottom', 0);
         }
         else {
-            if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
+            if (scrollTop >= (leftMenuOffset - 50)) {
                 $(".leftMenu").css('position', 'fixed');
                 $(".leftMenu").css('top', 60);
                 $(".leftMenu").css('bottom', "auto");
@@ -76,6 +79,16 @@ $(window).scroll(function () {
         }
     }
     else {
+        if ($(this).scrollTop() > scrollTop && $(this).scrollTop()>50) {
+            //$('.spaceUnderTopMenu').css('margin-bottom', '0px');
+            $('.topMenu').css('top', '-50px');
+        }
+        else {
+            //$('.spaceUnderTopMenu').css('margin-bottom', '50px');
+            $('.topMenu').css('top', '0px');
+        }
+        scrollTop = $(this).scrollTop();
+
         if ($(".leftMenu").attr('style') != null) {
             if ($(".leftMenu").css('display') != 'none') {
                 $(".leftMenu").css('display', 'flex');
@@ -88,6 +101,7 @@ $(window).scroll(function () {
 });
 
 $(window).resize(function () {
+    scrollTop = $(this).scrollTop();
     if ($(window).width() > 1000) {
         if ($(this).scrollTop() >= (leftMenuOffset - 50)) {
             if ($(".leftMenu").css('position') != 'fixed') {
@@ -98,7 +112,7 @@ $(window).resize(function () {
         else {
             if ($(".leftMenu").css('position') != 'initial') {
                 $(".leftMenu").css('position', 'initial');
-                $('.projectsHalf').css('margin-left', 'auto');
+                $('.projectsHalf').css('margin-left', '10px');
 
                 $("#mainPage.leftMenu").css('position', 'fixed');
             }
