@@ -87,6 +87,8 @@ footer a:hover {
     .about p {
         font-size: 2rem;
     }
+.bottomSpace {
+}
 .littleBlocksLine {
     display:flex;
 }
@@ -151,14 +153,14 @@ footer a:hover {
 }
 .mapForMainPage {
     background-image: url('/images/Кусок-карты-для-географии-длин-масшт.JPG');
-    background-size: 110%;
+    background-size: 105%;
     background-position-y: 0%;
     height: 60px;
     font-size: 1.6rem;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     justify-content: flex-end;
-    max-width: 1350px;
+    max-width: 1340px;
     color: #183f61;
     padding-right: 10px;
     padding-bottom: 2px;
@@ -234,7 +236,21 @@ footer a:hover {
     margin-right: 5vw;
     text-align: center;
 }
-
+.topMenu {
+    height: 50px;
+    width: 100%;
+    background-color: #183f61;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    transition: top 0.3s linear;
+}
+.spaceUnderTopMenu {
+    margin-bottom: 50px;
+}
 .annotation {
     display: flex;
     justify-content: center;
@@ -367,11 +383,6 @@ footer a:hover {
     background-size: 150% auto;
     background-color: brown;
 }
-
-    /*.partNewsElementViewWide .annotation {
-        width: 38%;
-    }*/
-
     .partNewsElementViewWide .annotationText {
         margin: 5%;
     }
@@ -834,7 +845,7 @@ footer a:hover {
 }
 #ourLocation {
     width: 70%;
-    height: 30vh;
+    height: 350px;
     margin: 10px;
 }
 
@@ -1283,7 +1294,7 @@ img {
     display: flex;
     /*height: 50px;*/
     margin-right: 20px;
-    max-width: 54px;
+    max-width: 35px;
 }
 
 .fullTopMenu {
@@ -1374,7 +1385,9 @@ img {
     display: flex;
     flex-direction: column;
     top: 60px;
+    /*bottom: 100px;*/
     margin-left: 10px;
+    /*transition: bottom 1s ease-out 0s;*/
     /*justify-content: flex-start;*/
 }
 #mainPage.leftMenu {
@@ -2530,6 +2543,7 @@ ul .nav-element-choosen {
 
 .contentBlock {
     display: flex;
+    position:relative;
 }
 
 .ourContacts {
@@ -2538,6 +2552,7 @@ ul .nav-element-choosen {
     border-radius: 5px;
     padding-bottom: 5px;
     padding-top: 10px;
+    margin-bottom:10px;
 }
 
 .topCatalogLine {
@@ -2558,6 +2573,7 @@ ul .nav-element-choosen {
     flex-direction: column;
     text-align: left;
     padding-right: 10px;
+    margin: 0;
 }
 
 .newsVideoPlayer {
@@ -2578,7 +2594,7 @@ ul .nav-element-choosen {
     max-width: 1010px;
 }
 
-#newsDetailsProjectsHalf {
+#newsDetailsProjectsHalf.projectsHalf {
     margin-bottom: 10px;
     margin-right: 10px;
     max-width: 980px;
@@ -3114,10 +3130,10 @@ ul .nav-element-choosen {
     .topCatalogLine {
         margin-left: 10px;
     }
-    #newsDetails.topCatalogLine {
+    /*#newsDetails.topCatalogLine {
         margin-right: 10px;
         margin-left: 10px;
-    }
+    }*/
     .projects {
         margin-left: 10px;
     }
@@ -3137,7 +3153,7 @@ ul .nav-element-choosen {
     #newsTopLine.topCatalogLine {
         margin: 0 10px 0 10px;
     }
-    #newsDetailsProjectsHalf {
+    #newsDetailsProjectsHalf.projectsHalf {
         margin-left: 10px;
     }
 
@@ -3216,7 +3232,7 @@ ul .nav-element-choosen {
         width:auto;
     }
     .footerBlocks {
-        max-height:1000px;
+        max-height:1100px;
         flex-direction:column;
         margin-left:0;
     }
@@ -3883,7 +3899,7 @@ ul .nav-element-choosen {
         display:none;
     }
     #small.customersText {
-        display: flex;
+        display: block;
     }
     #newsPreview.headerAbout {
         font-size: 1.2rem;
@@ -4093,6 +4109,12 @@ ul .nav-element-choosen {
     }
     .categorysLineItem {
         max-width: unset;
+    }
+    #newsProjectsHalf.projectsHalf {
+        margin-top:10px;
+    }
+    #newsDetailsProjectsHalf.projectsHalf {
+        margin-top: 10px;
     }
 }
 
