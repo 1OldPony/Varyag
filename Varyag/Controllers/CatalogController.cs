@@ -27,6 +27,20 @@ namespace Varyag.Controllers
             return ViewComponent("ProjectsCatalog", new { category, plitca, lengthSort });
         }
 
+        public int ProjectsSearchCount(string value)
+        {
+            List<Project> Projects = db.Project.Where(p => p.Name.Contains(value)).ToList();
+            return Projects.Count();
+        }
+
+        public IActionResult Search(string searchText)
+        {
+            ViewData["Title"] = String.Concat("Поиск ", "\"", searchText, "\"");
+            ViewBag.SearchText = searchText;
+            //List<Project> Projects = db.Project.Where(p => p.Name.Contains(searchText)).ToList();
+            return View();
+        }
+
         public IActionResult CatalogNavigation()
         {
             ViewData["Title"] = "Купить деревянные лодки от производителя";

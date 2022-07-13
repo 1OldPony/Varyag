@@ -128,14 +128,32 @@ $(window).resize(function () {
 
 /////////////////////Перещелкиваем видео в новостях////////////////////
 $("#videoOne").click(function () {
+    if ($("#videoOne").attr("class") !="nav-element-minor-choosen") {
+        $("#videoOne").attr("class", "nav-element-minor-choosen");
+    }
+    $("#videoTwo").attr("class", "nav-element-minor");
+    $("#videoThree").attr("class", "nav-element-minor");
+
     var url = $("#firstVideoUrl").val();
     $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
 });
 $("#videoTwo").click(function () {
+    if ($("#videoTwo").attr("class") != "nav-element-minor-choosen") {
+        $("#videoTwo").attr("class", "nav-element-minor-choosen");
+    }
+    $("#videoOne").attr("class", "nav-element-minor");
+    $("#videoThree").attr("class", "nav-element-minor");
+
     var url = $("#secondVideoUrl").val();
     $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
 });
 $("#videoThree").click(function () {
+    if ($("#videoThree").attr("class") != "nav-element-minor-choosen") {
+        $("#videoThree").attr("class", "nav-element-minor-choosen");
+    }
+    $("#videoOne").attr("class", "nav-element-minor");
+    $("#videoTwo").attr("class", "nav-element-minor");
+
     var url = $("#thirdVideoUrl").val();
     $("#videoPlayer").html("<iframe src='" + url + "' style='position:absolute;top:0;left:0;width:100%;height:100%;' frameborder='0' allowfullscreen></iframe>");
 });
@@ -422,3 +440,23 @@ function navigationButton() {
         $('#blackScreen').css('display', 'block');
     }
 }
+
+////////////////////////Показываем сколько найдено проектов в поиске////////////////////////
+$("#projectSearch").on("input", function () {
+    var x = $("#projectSearch").css("top")
+    if ($("#projectSearch").css("top") == "auto" || $("#projectSearch").css("top") == "0" ) {
+        $(".underSearch").css("top","36px")
+    }
+    //$("#searchedProjectsCount").html($("#projectSearch").val())
+
+    $("#searchedProjectsCount").load("../Catalog/ProjectsSearchCount?value=" + $("#projectSearch").val());
+})
+
+$("#closeUnderSearch").click(function () {
+    $(".underSearch").css("top", "0")
+})
+
+///////////////////////////////////Осуществляем поиск///////////////////////////////////////
+$(".searchButton").click(function () {
+    window.location.href = '../../../katalog/poisk?searchText=' + $("#projectSearch").val();
+});

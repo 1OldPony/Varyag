@@ -104,7 +104,7 @@
                 <div class="newsNav">
                     @if (Model.PathToVideo1 != null)
                     {
-                        <div class="nav-element-minor" style="cursor:pointer" id="videoOne">
+                        <div class="nav-element-minor-choosen" style="cursor:pointer" id="videoOne">
                             <div class="nav-element-inside">
                                 <p>Сюжет №1</p>
                             </div>
@@ -113,39 +113,84 @@
                     }
                     @if (Model.PathToVideo2 != null)
                     {
-                        <div class="nav-element-minor" style="cursor:pointer" id="videoTwo">
-                            <div class="nav-element-inside">
-                                @if (Model.PathToVideo1 == null)
-                                {
+                        @if (Model.PathToVideo1 == null)
+                        {
+                            <div class="nav-element-minor-choosen" style="cursor:pointer" id="videoTwo">
+                                <div class="nav-element-inside">
                                     <p>Сюжет №1</p>
-                                }
-                                else
-                                {
-                                    <p>Сюжет №2</p>
-                                }
+                                </div>
+                                <input type="text" value="@Model.PathToVideo2" id="secondVideoUrl" hidden />
                             </div>
-                            <input type="text" value="@Model.PathToVideo2" id="secondVideoUrl" hidden />
-                        </div>
+                        }
+                        else
+                        {
+                            <div class="nav-element-minor" style="cursor:pointer" id="videoTwo">
+                                <div class="nav-element-inside">
+                                    <p>Сюжет №2</p>
+                                </div>
+                                <input type="text" value="@Model.PathToVideo2" id="secondVideoUrl" hidden />
+                            </div>
+                        }
+                        @*<div class="nav-element-minor" style="cursor:pointer" id="videoTwo">
+                                <div class="nav-element-inside">
+                                    @if (Model.PathToVideo1 == null)
+                                    {
+                                        <p>Сюжет №1</p>
+                                    }
+                                    else
+                                    {
+                                        <p>Сюжет №2</p>
+                                    }
+                                </div>
+                                <input type="text" value="@Model.PathToVideo2" id="secondVideoUrl" hidden />
+                            </div>*@
                     }
                     @if (Model.PathToVideo3 != null)
                     {
-                        <div class="nav-element-minor" style="cursor:pointer" id="videoThree">
-                            <div class="nav-element-inside">
-                                @if (Model.PathToVideo1 == null && Model.PathToVideo2 == null)
-                                {
+                        @if (Model.PathToVideo1 == null && Model.PathToVideo2 == null)
+                        {
+                            <div class="nav-element-minor-choosen" style="cursor:pointer" id="videoThree">
+                                <div class="nav-element-inside">
                                     <p>Сюжет №1</p>
-                                }
-                                @if (Model.PathToVideo2 == null && Model.PathToVideo1 != null)
-                                {
-                                    <p>Сюжет №2</p>
-                                }
-                                @if (Model.PathToVideo2 != null && Model.PathToVideo1 != null)
-                                {
-                                    <p>Сюжет №3</p>
-                                }
+                                </div>
+                                <input type="text" value="@Model.PathToVideo3" id="thirdVideoUrl" hidden />
                             </div>
-                            <input type="text" value="@Model.PathToVideo3" id="thirdVideoUrl" hidden />
-                        </div>
+                        }
+                        @if (Model.PathToVideo2 == null && Model.PathToVideo1 != null)
+                        {
+                            <div class="nav-element-minor" style="cursor:pointer" id="videoThree">
+                                <div class="nav-element-inside">
+                                    <p>Сюжет №2</p>
+                                </div>
+                                <input type="text" value="@Model.PathToVideo3" id="thirdVideoUrl" hidden />
+                            </div>
+                        }
+                        @if (Model.PathToVideo2 != null && Model.PathToVideo1 != null)
+                        {
+                            <div class="nav-element-minor" style="cursor:pointer" id="videoThree">
+                                <div class="nav-element-inside">
+                                    <p>Сюжет №3</p>
+                                </div>
+                                <input type="text" value="@Model.PathToVideo3" id="thirdVideoUrl" hidden />
+                            </div>
+                        }
+                        @*<div class="nav-element-minor" style="cursor:pointer" id="videoThree">
+                                <div class="nav-element-inside">
+                                    @if (Model.PathToVideo1 == null && Model.PathToVideo2 == null)
+                                    {
+                                        <p>Сюжет №1</p>
+                                    }
+                                    @if (Model.PathToVideo2 == null && Model.PathToVideo1 != null)
+                                    {
+                                        <p>Сюжет №2</p>
+                                    }
+                                    @if (Model.PathToVideo2 != null && Model.PathToVideo1 != null)
+                                    {
+                                        <p>Сюжет №3</p>
+                                    }
+                                </div>
+                                <input type="text" value="@Model.PathToVideo3" id="thirdVideoUrl" hidden />
+                            </div>*@
                     }
                 </div>
             }
@@ -196,11 +241,10 @@
             }
         </div>
     </div>
-    </div>
+</div>
 
 
 
 
 
 
-    

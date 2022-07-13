@@ -38,10 +38,17 @@
                 </div>
             </div>
             <div style="display:flex;align-items:center;">
+                <div style="display:flex;flex-direction:column;margin: 0 10px 0 0;align-items:center;position:relative;">
+                    <div style="display:flex;">
+                        <input type="text" id="projectSearch" placeholder="Введите проект" style="box-sizing: border-box;font-family: inherit;font-size: inherit;line-height: inherit;border-top-left-radius:5px;border-bottom-left-radius:5px;border:1px #183f61 solid;height:36px;width:200px;background-color: #aec9e0;outline:none;" />
+                        <div class="searchButton"><img src="~/images/icons/search.png" style="width:26px;height:24px;opacity:0.8;" /></div>
+                    </div>
+                    <div class="underSearch"><div>Найдено проектов:&nbsp;<span id="searchedProjectsCount"></span></div><div id="closeUnderSearch" style="margin-right:5px;cursor:pointer;font-size:10px">&#10060;</div></div>
+                </div>
                 <div style="display:flex">
                     <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" class="contactsSocial" /></a>
                     @*<a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" class="contactsSocial" /></a>
-                <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" class="contactsSocial" /></a>*@
+                    <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" class="contactsSocial" /></a>*@
                 </div>
                 <div><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div>
                 <div><img src="~/images/icons/contacts.png" class="contactsSocial" id="contacts" /></div>

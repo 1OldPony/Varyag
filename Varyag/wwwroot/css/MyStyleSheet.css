@@ -251,6 +251,37 @@ footer a:hover {
 .spaceUnderTopMenu {
     margin-bottom: 50px;
 }
+.underSearch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 235px;
+    background-color: white;
+    z-index: -1;
+    transition: top 0.3s ease-out;
+    color: #183f61;
+    border-radius: 5px;
+    font-size: 15px;
+    padding-left: 5px;
+}
+.searchButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 34px;
+    border: 1px #183f61;
+    border-style: solid solid solid none;
+    background-color: white;
+    cursor: pointer;
+    color: #212529;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 .annotation {
     display: flex;
     justify-content: center;
@@ -515,7 +546,8 @@ footer a:hover {
     font-size: 1.5rem;
     font-weight: bold;
     max-width: 1370px;
-    margin: auto 10px 10px 10px;
+    margin: 10px 0 auto 0;
+    padding: 0 10px 0 10px;
 }
 .catalogIconsMainPaigeHeader {
     display: flex;
@@ -1748,10 +1780,11 @@ ul .nav-element {
     flex-grow: 1;
     font-size: 1.2rem;
     background-color: rgb(255, 255, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
     .nav-element-minor:hover {
-        cursor: pointer;
         background-color: #aec9e0;
     }
 
@@ -1763,9 +1796,12 @@ ul .nav-element {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
     flex-grow: 1;
+    font-size: 1.2rem;
+    color: #e00e0e;
     background-color: #aec9e0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
     .nav-element-minor-choosen p {
@@ -2583,9 +2619,10 @@ ul .nav-element-choosen {
     height: 0;
     overflow: hidden;
     background-color: white;
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #newsProjectsHalf.projectsHalf {
@@ -2598,7 +2635,7 @@ ul .nav-element-choosen {
     margin-bottom: 10px;
     margin-right: 10px;
     max-width: 980px;
-    padding: 10px;
+    /*padding: 10px;*/
     background-color: white;
     border-radius: 5px;
 }

@@ -78,6 +78,7 @@ namespace Varyag
                 //routes.MapRoute("Наши новости", "О-нас/Наши-новости", defaults: new { controller = "About", action = "AllNews" });
                 //routes.MapRoute("Конкретная новость", "О-нас/Наши-новости/{id}", defaults: new { controller = "About", action = "NewsDetails" });
                 routes.MapRoute("Каталог", "katalog", defaults: new { controller = "Catalog", action = "CatalogNavigation" });
+                routes.MapRoute("Поиск по каталогу", "katalog/poisk", defaults: new { controller = "Catalog", action = "Search" });
                 routes.MapRoute("Каталог лодок", "katalog/lodki", defaults: new { controller = "Catalog", action = "Boats" });
                 routes.MapRoute("Каталог прогулочных гребных лодок", "katalog/lodki/progulochnye-grebnye-lodki", defaults: new { controller = "Catalog", action = "BoatsRow" });
                 routes.MapRoute("Каталог прогулочных парусных лодок", "katalog/lodki/progulochnye-parusnye-lodki", defaults: new { controller = "Catalog", action = "BoatsSail" });
