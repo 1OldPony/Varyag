@@ -17,22 +17,19 @@ namespace Varyag.Controllers
             db = context;
         }
         
-        public async Task<IViewComponentResult> InvokeAsync(string category, bool plitca, string lengthSort, bool search, string searchText)
+        public async Task<IViewComponentResult> InvokeAsync(string category, bool plitca, string lengthSort, string searchText)
         {
             var items = new List<Project>();
             bool boats = false;
 
-            if (search)
-            {
-                items = db.Project.Where(p => p.Name.Contains(searchText)).ToList();
-                if (plitca)
-                    return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
-                else
-                    return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
-            }
-
             switch (category)
             {
+                case "search":
+                    items = db.Project.Where(p => p.Name.Contains(searchText)).ToList();
+                    if (plitca)
+                        return View("Plitca", LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
+                    else
+                        return View(LittleHelper.ProjectsToSortedViewModel(items, boats, lengthSort));
                 case "boatrow":
                     items = await db.Project.Where(w => w.BoatRow == true).ToListAsync();
                     boats = true;

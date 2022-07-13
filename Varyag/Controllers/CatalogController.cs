@@ -22,9 +22,9 @@ namespace Varyag.Controllers
         //    return RedirectToAction("Sailboats");
         //}
 
-        public IActionResult CatalogSort(string category, bool plitca, string lengthSort)
+        public IActionResult CatalogSort(string category, bool plitca, string lengthSort, string searchText)
         {            
-            return ViewComponent("ProjectsCatalog", new { category, plitca, lengthSort });
+            return ViewComponent("ProjectsCatalog", new { category, plitca, lengthSort, searchText });
         }
 
         public int ProjectsSearchCount(string value)

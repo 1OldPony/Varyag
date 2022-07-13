@@ -389,7 +389,7 @@ function switchProjectsViewPlitca() {
 }
 
 //////////////////////Сортируем по длинне///////////////////////
-function lengthSort(category) {
+function lengthSort(category, searchText) {
     let lengthSort;
     if ($('#sortOptions').val() == 'По возрастанию длинны') {
         lengthSort = 'Up';
@@ -409,14 +409,14 @@ function lengthSort(category) {
     $('#sortScreen2').css('display', 'block');
     $('.sortOptions').css('color', 'lightgrey');
 
-    $('.plitcaStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=true" + "&lengthSort=" + lengthSort, function () {
+    $('.plitcaStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=true" + "&lengthSort=" + lengthSort + "&searchText=" + searchText, function () {
         if ($('#sortScreen').css('display') == 'block') {
             $('#sortScreen').css('display', 'none');
             $('.sortOptions').css('color', '#183f61');
             $('#sortScreen2').css('display', 'none');
         }
     });
-    $('.lineStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=false" + "&lengthSort=" + lengthSort, function () {
+    $('.lineStyleCatalog').load("../Catalog/CatalogSort?category=" + category + "&plitca=false" + "&lengthSort=" + lengthSort + "&searchText=" + searchText, function () {
         if ($('#sortScreen').css('display') == 'block') {
             $('#sortScreen').css('display', 'none');
             $('.sortOptions').css('color', '#183f61');

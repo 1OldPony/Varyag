@@ -60,7 +60,7 @@
                             <td class="characteristic">Пассажиры</td>
                             <td class="value">@item.PassengerCap&nbsp;чел.</td>
                         </tr>
-                        @if (ViewBag.boats)
+                        @if (item.BoatRow || item.BoatSail || item.BoatTraditional || item.BoatYal || item.Botik || item.KaterRow || item.MaketStudy)
                         {
                             <tr id="longSleepingAreas" class="cellLong">
                                 <td class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
