@@ -251,8 +251,21 @@ footer a:hover {
 .spaceUnderTopMenu {
     margin-bottom: 50px;
 }
+.forSearchText {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px #183f61 solid;
+    height: 36px;
+    width: 200px;
+    background-color: #aec9e0;
+    outline: none;
+}
 .underSearch {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     position: absolute;
@@ -3108,16 +3121,16 @@ ul .nav-element-choosen {
         display: flex;
         margin: auto 15px auto auto;
     }
-    .topMenuIcon {
+    /*.topMenuIcon {
         display: none;
         width: 50px;
         margin-left: 50px
-    }
-    .fullTopMenu {
+    }*/
+    /*.fullTopMenu {
         display: none;
-    }
+    }*/
     .shortTopMenu {
-        display: flex;
+        display: none;
     }
     .leftMenu {
         position: fixed;
@@ -3826,6 +3839,20 @@ ul .nav-element-choosen {
     .categorysLineItem {
         max-width: unset;
     }
+
+    #contacts.contactsSocial {
+        display: block;
+        cursor: pointer;
+    }
+    #contactsWords {
+        display: none;
+    }
+    .forSearchText {
+        width:130px;
+    }
+    .underSearch {
+        width: 165px;
+    }
 }
 @media (max-width:651px) {
     .textPartAllNews {
@@ -3883,16 +3910,7 @@ ul .nav-element-choosen {
     #articleMenu {
         display: none
     }
-
-    #contacts.contactsSocial {
-        display: block;
-        cursor: pointer;
-    }
-
-    #contactsWords {
-        display: none;
-    }
-
+    
     .projectNews {
         flex-wrap: nowrap;
         flex-direction: column;

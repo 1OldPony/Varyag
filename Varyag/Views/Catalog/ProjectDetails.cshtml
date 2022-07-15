@@ -123,9 +123,6 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
         <partial name="ContactsLeft" />
     </div>
 
-
-
-
     <div class="projectName"><h1 style="margin-block:0;">@Model.Name</h1></div>
     <div class="projectsDetailsTop">
         <div class="sheme-TTH">
@@ -152,19 +149,22 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                     </tr>
                     <tr>
                         <td id="details" class="characteristic">Длина корпуса наибольшая</td>
-                        <td id="shortCharacteristicName" class="characteristic">Длина корпуса</td>
+                        <td id="shortCharacteristicName" class="characteristic">Длина наибольшая</td>
                         <td class="value">@Model.Length&nbsp;м.</td>
                     </tr>
                     <tr>
                         <td id="details" class="characteristic">Ширина корпуса наибольшая</td>
-                        <td id="shortCharacteristicName" class="characteristic">Ширина корпуса</td>
+                        <td id="shortCharacteristicName" class="characteristic">Ширина наибольшая</td>
                         <td class="value">@Model.Windth&nbsp;м.</td>
                     </tr>
-                    <tr>
-                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
-                        <td id="shortCharacteristicName" class="characteristic">Осадка судна</td>
-                        <td class="value">@Model.Deep&nbsp;м.</td>
-                    </tr>
+                    @if (!Model.BoatRow && !Model.BoatSail && !Model.BoatTraditional && !Model.BoatYal && !Model.Botik && !Model.KaterRow && !Model.MaketStudy)
+                    {
+                        <tr>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Осадка судна</td>
+                            <td class="value">@Model.Deep&nbsp;м.</td>
+                        </tr>
+                    }
                     @if (@Model.Volume != null)
                     {
                         <tr>

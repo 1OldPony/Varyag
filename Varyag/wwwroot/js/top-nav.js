@@ -444,7 +444,8 @@ function navigationButton() {
 ////////////////////////Показываем сколько найдено проектов в поиске////////////////////////
 $("#projectSearch").on("input", function () {
     var x = $("#projectSearch").css("top")
-    if ($("#projectSearch").css("top") == "auto" || $("#projectSearch").css("top") == "0" ) {
+    if ($("#projectSearch").css("top") == "auto" || $("#projectSearch").css("top") == "0") {
+        $(".underSearch").css("display", "flex")
         $(".underSearch").css("top","36px")
     }
     //$("#searchedProjectsCount").html($("#projectSearch").val())
@@ -454,9 +455,16 @@ $("#projectSearch").on("input", function () {
 
 $("#closeUnderSearch").click(function () {
     $(".underSearch").css("top", "0")
+    $(".underSearch").css("display", "none")
 })
 
 ///////////////////////////////////Осуществляем поиск///////////////////////////////////////
 $(".searchButton").click(function () {
     window.location.href = '../../../katalog/poisk?searchText=' + $("#projectSearch").val();
+});
+
+$("#projectSearch").keypress(function (e) {
+    if (e.key == "Enter") {
+        $(".searchButton").click();
+    }
 });
