@@ -142,143 +142,215 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                     </div>
                 </div>
             }
-            <div class="TTH-detailsFlex">
-                <table style="margin-bottom:5px">
-                    <tr>
-                        <td colspan="3" style="text-align:left"><h4>Характеристики:</h4></td>
-                    </tr>
-                    <tr>
-                        <td id="details" class="characteristic">Длина корпуса наибольшая</td>
-                        <td id="shortCharacteristicName" class="characteristic">Длина наибольшая</td>
-                        <td class="value">@Model.Length&nbsp;м.</td>
-                    </tr>
-                    <tr>
-                        <td id="details" class="characteristic">Ширина корпуса наибольшая</td>
-                        <td id="shortCharacteristicName" class="characteristic">Ширина наибольшая</td>
-                        <td class="value">@Model.Windth&nbsp;м.</td>
-                    </tr>
-                    @if (!Model.BoatRow && !Model.BoatSail && !Model.BoatTraditional && !Model.BoatYal && !Model.Botik && !Model.KaterRow && !Model.MaketStudy)
-                    {
+                <div class="TTH-detailsFlex">
+                    <h4>Характеристики:</h4>
+                    <table style="margin-bottom:5px">
                         <tr>
-                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
-                            <td id="shortCharacteristicName" class="characteristic">Осадка судна</td>
-                            <td class="value">@Model.Deep&nbsp;м.</td>
+                            <td id="details" class="characteristic">Длина корпуса наибольшая</td>
+                            <td id="shortCharacteristicName" class="characteristic">Длина наибольшая</td>
+                            <td class="value">@Model.Length&nbsp;м.</td>
                         </tr>
-                    }
-                    @if (@Model.Volume != null)
-                    {
                         <tr>
-                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
-                            <td id="shortCharacteristicName" class="characteristic">Водоизмещение</td>
-                            <td class="value">@Model.Volume&nbsp;т.</td>
+                            <td id="details" class="characteristic">Ширина корпуса наибольшая</td>
+                            <td id="shortCharacteristicName" class="characteristic">Ширина наибольшая</td>
+                            <td class="value">@Model.Windth&nbsp;м.</td>
                         </tr>
-                    }
-                    @if (@Model.Mass != null)
-                    {
+                        @if (!Model.BoatRow && !Model.BoatSail && !Model.BoatTraditional && !Model.BoatYal && !Model.Botik && !Model.KaterRow && !Model.MaketStudy)
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Осадка судна</td>
+                                @if (@Model.Deep != null)
+                                {
+                                    <td class="value">@Model.Deep&nbsp;м.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
+                        @if (Model.BoatRow || Model.BoatSail || Model.BoatTraditional || Model.BoatYal || Model.Botik || Model.KaterRow || Model.MaketStudy)
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">Высота борта</td>
+                                <td id="shortCharacteristicName" class="characteristic">Высота борта</td>
+                                @if (@Model.Volume != null)
+                                {
+                                    <td class="value">@Model.Volume&nbsp;м.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Volume)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Водоизмещение</td>
+                                @if (@Model.Volume != null)
+                                {
+                                    <td class="value">@Model.Volume&nbsp;т.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
+                        @if (Model.BoatRow || Model.BoatSail || Model.BoatTraditional || Model.BoatYal || Model.Botik || Model.KaterRow || Model.MaketStudy)
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Вес корпуса</td>
+                                @if (@Model.Mass != null)
+                                {
+                                    <td class="value">@Model.Mass&nbsp;кг.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">Высота борта на миделе</td>
+                                <td id="shortCharacteristicName" class="characteristic">Высота борта</td>
+                                @if (@Model.Mass != null)
+                                {
+                                    <td class="value">@Model.Mass&nbsp;м.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
+                        @if (Model.BoatRow || Model.BoatSail || Model.BoatTraditional || Model.BoatYal || Model.Botik || Model.KaterRow || Model.MaketStudy || Model.LadyaRow || Model.LadyaSail || Model.LadyaProject)
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Весла</td>
+                                @if (@Model.NumberOfOars != null)
+                                {
+                                    <td class="value">@Model.NumberOfOars&nbsp;шт.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
                         <tr>
-                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Mass)</td>
-                            <td id="shortCharacteristicName" class="characteristic">Вес корпуса</td>
-                            <td class="value">@Model.Mass&nbsp;кг.</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Мощность двигателя</td>
+                            @if (@Model.EnginePower != null)
+                            {
+                                <td class="value">@Model.EnginePower&nbsp;л.с.</td>
+                            }
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>
+                            }
                         </tr>
-                    }
-                    @if (@Model.NumberOfOars != null)
-                    {
+                        @if (!Model.BoatRow && !Model.BoatSail && !Model.BoatTraditional && !Model.BoatYal && !Model.Botik && !Model.KaterRow && !Model.MaketStudy)
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Скорость (двигатель)</td>
+                                @if (@Model.Speed != null)
+                                {
+                                    <td class="value">@Model.Speed&nbsp;узлов</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
                         <tr>
-                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
-                            <td id="shortCharacteristicName" class="characteristic">Весла</td>
-                            <td class="value">@Model.NumberOfOars&nbsp;шт.</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Площадь парусности</td>
+                            @if (@Model.SailArea != null)
+                            {
+                                <td class="value">@Model.SailArea&nbsp;м<sup style="font-size:10px;">2</sup></td>
+                            }
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>
+                            }
                         </tr>
-                    }
-                    <tr>
-                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
-                        <td id="shortCharacteristicName" class="characteristic">Мощность двигателя</td>
-                        @if (@Model.EnginePower != null)
+                        @if (!Model.BoatRow && !Model.BoatSail && !Model.BoatTraditional && !Model.BoatYal && !Model.Botik && !Model.KaterRow && !Model.MaketStudy)
                         {
-                            <td class="value">@Model.EnginePower&nbsp;л.с.</td>
+                            <tr>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Спальные места</td>
+                                @if (@Model.SleepingAreas != null)
+                                {
+                                    <td class="value">@Model.SleepingAreas&nbsp;шт.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
                         }
-                        else
-                        {
-                            <td class="value" style="text-align:center">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.Speed)</td>
-                        <td id="shortCharacteristicName" class="characteristic">Скорость (двигатель)</td>
-                        @if (@Model.Speed != null)
-                        {
-                            <td class="value">@Model.Speed&nbsp;узлов</td>
-                        }
-                        else
-                        {
-                            <td class="value" style="text-align:center">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
-                        <td id="shortCharacteristicName" class="characteristic">Площадь парусности</td>
-                        @if (@Model.SailArea != null)
-                        {
-                            <td class="value">@Model.SailArea&nbsp;м<sup style="font-size:10px;">2</sup></td>
-                        }
-                        else
-                        {
-                            <td class="value" style="text-align:center">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
-                        <td id="shortCharacteristicName" class="characteristic">Спальные места</td>
-                        @if (@Model.SleepingAreas != null)
-                        {
-                            <td class="value">@Model.SleepingAreas&nbsp;шт.</td>
-                        }
-                        else
-                        {
-                            <td class="value" style="text-align:center">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
-                        <td id="shortCharacteristicName" class="characteristic">Кол-во пассажиров</td>
-                        @if (@Model.PassengerCap != null)
-                        {
-                            <td class="value">@Model.PassengerCap&nbsp;чел.</td>
-                        }
-                        else
-                        {
-                            <td class="value" style="text-align:center">-</td>
-                        }
-                    </tr>
-                    <tr>
-                        <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
-                        <td id="shortCharacteristicName" class="characteristic">Запас топлива</td>
-                        @if (@Model.FuelCap != null)
-                        {
-                            <td class="value">@Model.FuelCap&nbsp;л.</td>
-                        }
-                        else
-                        {
-                            <td class="value" style="text-align:center">-</td>
-                        }
-                    </tr>
-                    @if (@Model.FreshWaterCap != null)
-                    {
                         <tr>
-                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
-                            <td id="shortCharacteristicName" class="characteristic">Запас пресной воды</td>
-                            <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
+                            <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                            <td id="shortCharacteristicName" class="characteristic">Кол-во пассажиров</td>
+                            @if (@Model.PassengerCap != null)
+                            {
+                                <td class="value">@Model.PassengerCap&nbsp;чел.</td>
+                            }
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>
+                            }
                         </tr>
+                        @if (!Model.BoatRow && !Model.BoatSail && !Model.BoatTraditional && !Model.BoatYal && !Model.Botik && !Model.KaterRow && !Model.MaketStudy)
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Запас топлива</td>
+                                @if (@Model.FuelCap != null)
+                                {
+                                    <td class="value">@Model.FuelCap&nbsp;л.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
+                        @if (!Model.BoatRow && !Model.BoatSail && !Model.BoatTraditional && !Model.BoatYal && !Model.Botik && !Model.KaterRow && !Model.MaketStudy)
+                        {
+                            <tr>
+                                <td id="details" class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                                <td id="shortCharacteristicName" class="characteristic">Запас пресной воды</td>
+                                @if (@Model.FreshWaterCap != null)
+                                {
+                                    <td class="value">@Model.FreshWaterCap&nbsp;л.</td>
+                                }
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>
+                                }
+                            </tr>
+                        }
+                    </table>
+                    @if (@Model.Price != "по запросу")
+                    {
+                        <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price): @Model.Price&nbsp;&#8381;</div>
                     }
-                </table>
-                @if (@Model.Price != "по запросу")
-                {
-                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price): @Model.Price&nbsp;&#8381;</div>
-                }
-                else
-                {
-                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) @Model.Price</div>
-                }
-            </div>
+                    else
+                    {
+                        <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) @Model.Price</div>
+                    }
+                </div>
         </div>
         <div class="galleryFlex">
             <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">

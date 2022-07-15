@@ -19,24 +19,27 @@
     <div class="topMenu">
         <div style="display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1350px;font-size:21px;margin-left:10px;margin-right:5px;">
             <div style="display:flex;align-items:center;justify-content:flex-start">
-                <div class="shortTopMenu">
+                @*<div class="shortTopMenu">
                     <div class="navigationButton" onclick="navigationButton()"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
                     <div style="display:flex;align-items:center;font-size:2.5rem;">
                         ВАРЯГ
                     </div>
-                </div>
-                <div id="secondVarMenu" class="fullTopMenu">
-                    <a class="topMenuIcon" asp-controller="about" asp-action="index" style="max-width:146px;">
-                        <img src="~/images/icons/Лого-кораблик-только-кораблик.png" style="display:none;" />
-                        <img src="~/images/icons/Лого-кораблик-после-жирный-ариал.png" style="display:block;" />
+                </div>*@
+                <div id="secondVarMenu" class="fullTopMenu" style="display:none">
+                    <a class="topMenuIcon" asp-controller="about" asp-action="index" style="max-width:161px;">
+                        <div class="shortTopMenu" style="display:flex;">
+                            <div class="navigationButton" style="width:38px;margin:auto" onclick="navigationButton()"><img src="~/images/icons/Лого-кораблик-только-кораблик-кнопка.png" /></div>
+                            <div style="display:flex;align-items:center;font-size:2.5rem;color:white;">
+                                ВАРЯГ
+                            </div>
+                        </div>
+                        <img src="~/images/icons/Лого-кораблик-после-жирный-ариал.png" style="display:none;" />
                         <img src="~/images/icons/Лого-кораблик-после-жирный-тахома.png" style="display:none;" />
                     </a>
                     <a href="../../../katalog" style="display:none;margin-right:15px;color:white;width:unset;">КАТАЛОГ</a>
                     <a id="aboutMenu" href="../../../o-nas" style="display:none;margin-right:15px;color:white;width:unset;">О&nbsp;НАС</a>
-                    @*<div>&nbsp;scroll+menu&nbsp;<input type="number" id="scrollCount" /></div>
-            <div>&nbsp;offset&nbsp;<input type="number" id="spaceCount" /></div>*@
                 </div>
-                <div id="thirdVarMenu" class="fullTopMenu" style="display:none">
+                <div id="thirdVarMenu" class="fullTopMenu">
                     <a class="topMenuIcon" asp-controller="about" asp-action="index">
                         <img src="~/images/icons/Лого-кораблик-только-кораблик.png" style="display:block;" />
                         <img src="~/images/icons/Лого-кораблик-после-жирный-ариал.png" style="display:none;" />
@@ -44,8 +47,6 @@
                     </a>
                     <a href="../../../katalog" style="margin-right:15px;color:white;width:unset;">КАТАЛОГ</a>
                     <a id="aboutMenu" href="../../../o-nas" style="margin-right:15px;color:white;width:unset;">О&nbsp;НАС</a>
-                    @*<div>&nbsp;scroll+menu&nbsp;<input type="number" id="scrollCount" /></div>
-            <div>&nbsp;offset&nbsp;<input type="number" id="spaceCount" /></div>*@
                 </div>
             </div>
             <div style="display:flex;align-items:center;">
