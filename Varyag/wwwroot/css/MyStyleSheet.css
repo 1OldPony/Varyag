@@ -266,12 +266,13 @@ footer a:hover {
 }
 .underSearch {
     display: none;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction:column;
+    /*justify-content: space-between;*/
+    align-items: flex-start;
     position: absolute;
     top: 0;
     left: 0;
-    height: 20px;
+    /*height: 20px;*/
     width: 235px;
     background-color: white;
     z-index: -1;
@@ -295,6 +296,32 @@ footer a:hover {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+.menuWord {
+    display: flex;
+    align-items: center;
+    font-size: 2.1rem;
+}
+.fromTheTopMenuHeader {
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 210px;
+    display: flex;
+    justify-content: space-between;
+}
+    .fromTheTopMenuHeader:hover {
+        text-decoration: underline;
+    }
+.fromTheTopMenuLine {
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 180px;
+    display:flex;
+    justify-content:space-between;
+}
+    .fromTheTopMenuLine:hover {
+        text-decoration: underline;
+    }
 .annotation {
     display: flex;
     justify-content: center;
@@ -2180,6 +2207,8 @@ ul .nav-element-choosen {
     background-color: white;
     border-radius: 5px;
     height: 100%;
+    display:flex;
+    align-items:center;
 }
 .shemeFlexHidden {
     padding: 10px;
@@ -2193,7 +2222,7 @@ ul .nav-element-choosen {
     margin-top: 10px;
     background-color: white;
     border-radius: 5px;
-    height: 100%;
+    /*height: 100%;*/
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -3852,6 +3881,9 @@ ul .nav-element-choosen {
     }
     .underSearch {
         width: 165px;
+    }
+    .menuWord {
+        display: none;
     }
 }
 @media (max-width:651px) {

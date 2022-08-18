@@ -40,14 +40,28 @@
                             <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
                             <td class="value">@item.Deep&nbsp;м.</td>
                         </tr>
-                        <tr id="middleValue" class="cellShort" name="midDeep">
-                            <td class="characteristic">Осадка судна</td>
-                            <td class="value">@item.Deep&nbsp;м.</td>
-                        </tr>
-                        <tr id="fourth-out" class="cellShort" name="shortDeep">
-                            <td class="characteristic">Осадка</td>
-                            <td class="value">@item.Deep&nbsp;м.</td>
-                        </tr>
+                        @if (item.BoatRow || item.BoatSail || item.BoatTraditional || item.BoatYal || item.Botik || item.KaterRow || item.MaketStudy)
+                        {
+                            <tr id="middleValue" class="cellShort" name="midDeep">
+                                <td class="characteristic">Вес корпуса</td>
+                                <td class="value">@item.Mass&nbsp;кг.</td>
+                            </tr>
+                            <tr id="fourth-out" class="cellShort" name="shortDeep">
+                                <td class="characteristic">Вес</td>
+                                <td class="value">@item.Mass&nbsp;кг.</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr id="middleValue" class="cellShort" name="midDeep">
+                                <td class="characteristic">Осадка судна</td>
+                                <td class="value">@item.Deep&nbsp;м.</td>
+                            </tr>
+                            <tr id="fourth-out" class="cellShort" name="shortDeep">
+                                <td class="characteristic">Осадка</td>
+                                <td class="value">@item.Deep&nbsp;м.</td>
+                            </tr>
+                        }
                         <tr id="passanger" class="cellLong">
                             <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
                             <td class="value">@item.PassengerCap&nbsp;чел.</td>

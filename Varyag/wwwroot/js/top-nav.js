@@ -436,7 +436,9 @@ function navigationButton() {
     else {
         $('.leftMenu').css('left', '-37px');
         $('body').css('overflow', 'hidden');
-        $('.leftMenu').css('overflow', 'scroll');
+        if ($(window).width() < 1350) {
+            $('.leftMenu').css('overflow', 'scroll');
+        }
         $('#blackScreen').css('display', 'block');
     }
 }
@@ -444,13 +446,48 @@ function navigationButton() {
 ////////////////////////Показываем сколько найдено проектов в поиске////////////////////////
 $("#projectSearch").on("input", function () {
     var x = $("#projectSearch").css("top")
-    if ($("#projectSearch").css("top") == "auto" || $("#projectSearch").css("top") == "0") {
-        $(".underSearch").css("display", "flex")
-        $(".underSearch").css("top","36px")
-    }
-    //$("#searchedProjectsCount").html($("#projectSearch").val())
+    let searchLine = $("#projectSearch").val();
+    let categorys = ['Лодки', 'Народные лодки', 'Прогулочные парусные лодки', 'Прогулочные гребные лодки', 'Катера',
+        'Рабочие/Рыболовные катера', 'Пассажирские катера', 'Каютные катера', 'Мотосейлеры', 'Парусники', 'Исторические парусники',
+        'Учебные парусники', 'Швертботы', 'Парусные яхты', 'Шлюпки', 'Шлюпки ЯЛ2, ЯЛ4, ЯЛ6', 'Ботики',
+        'Гребные катера и вельботы', 'Учебные пособия', 'Ладьи', 'Парусно-моторные ладьи',
+        'Парусно-гребные ладьи', 'Струги и галеры', 'Разное', 'Модели и макеты', 'Прочая продукция'];
+    let findedCategorys = new Array();
 
-    $("#searchedProjectsCount").load("../Catalog/ProjectsSearchCount?value=" + $("#projectSearch").val());
+
+    if ($("#projectSearch").val() == '') {
+        $(".underSearch").css("top", "0")
+        $(".underSearch").css("display", "none")
+        $("#suggestions").html('');
+    }
+    else {
+        if (x == "auto" || x == "0") {
+            $(".underSearch").css("display", "flex")
+            $(".underSearch").css("top", "36px")
+        }
+
+        $("#searchedProjectsCount").load("../Catalog/ProjectsSearchCount?value=" + searchLine);
+
+        if (searchLine.length >= 3) {
+            for (var i = 0; i < categorys.length; i++) {
+                if (categorys[i].toLowerCase().includes(searchLine.toLowerCase())) {
+                    findedCategorys.push(categorys[i]);
+                }
+            }
+
+            if ($("#suggestions").html != "") {
+                $("#suggestions").html('');
+                for (var i = 0; i < findedCategorys.length; i++) {
+                    $("#suggestions").append("<div>Перейти в раздел \"" + findedCategorys[i] + "\"</div>")
+                }
+            }
+            else {
+                for (var i = 0; i < findedCategorys.length; i++) {
+                    $("#suggestions").append("<div>Перейти в раздел \"" + findedCategorys[i] + "\"</div>")
+                }
+            }
+        }
+    }
 })
 
 $("#closeUnderSearch").click(function () {
@@ -468,3 +505,13 @@ $("#projectSearch").keypress(function (e) {
         $(".searchButton").click();
     }
 });
+
+function fromTheTopMenu() {
+    if ($('#fromTheTopMenu').css('display') != 'flex') {
+        $('#fromTheTopMenu').css('display', 'flex');
+    }
+    else {
+        $('#fromTheTopMenu').css('display', 'none');
+    }
+    $('#arrowDown,#arrowUp').toggle();
+}

@@ -19,16 +19,10 @@
     <div class="topMenu">
         <div style="display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1350px;font-size:21px;margin-left:10px;margin-right:5px;">
             <div style="display:flex;align-items:center;justify-content:flex-start">
-                @*<div class="shortTopMenu">
-                    <div class="navigationButton" onclick="navigationButton()"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
-                    <div style="display:flex;align-items:center;font-size:2.5rem;">
-                        ВАРЯГ
-                    </div>
-                </div>*@
                 <div id="secondVarMenu" class="fullTopMenu" style="display:none">
                     <a class="topMenuIcon" asp-controller="about" asp-action="index" style="max-width:161px;">
                         <div class="shortTopMenu" style="display:flex;">
-                            <div class="navigationButton" style="width:38px;margin:auto" onclick="navigationButton()"><img src="~/images/icons/Лого-кораблик-только-кораблик-кнопка.png" /></div>
+                            <div class="navigationButton" style="width:38px;" onclick="navigationButton()"><img src="~/images/icons/Лого-кораблик-только-кораблик-кнопка.png" /></div>
                             <div style="display:flex;align-items:center;font-size:2.5rem;color:white;">
                                 ВАРЯГ
                             </div>
@@ -39,7 +33,7 @@
                     <a href="../../../katalog" style="display:none;margin-right:15px;color:white;width:unset;">КАТАЛОГ</a>
                     <a id="aboutMenu" href="../../../o-nas" style="display:none;margin-right:15px;color:white;width:unset;">О&nbsp;НАС</a>
                 </div>
-                <div id="thirdVarMenu" class="fullTopMenu">
+                <div id="thirdVarMenu" class="fullTopMenu" style="display:none;">
                     <a class="topMenuIcon" asp-controller="about" asp-action="index">
                         <img src="~/images/icons/Лого-кораблик-только-кораблик.png" style="display:block;" />
                         <img src="~/images/icons/Лого-кораблик-после-жирный-ариал.png" style="display:none;" />
@@ -48,6 +42,51 @@
                     <a href="../../../katalog" style="margin-right:15px;color:white;width:unset;">КАТАЛОГ</a>
                     <a id="aboutMenu" href="../../../o-nas" style="margin-right:15px;color:white;width:unset;">О&nbsp;НАС</a>
                 </div>
+                <div id="mainVarMenu" class="fullTopMenu" onclick="fromTheTopMenu()" style="cursor:pointer;position:relative;user-select:none;">
+                    <div class="navigationButton" style="display:flex;margin:0 5px 0 0;height:28px;"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
+                    <div class="menuWord">
+                        МЕНЮ<span id="arrowDown" style="margin-bottom:4px;color:lime;">&#129047;</span><span id="arrowUp" style="margin-bottom:4px;color:red;display:none;">&#129045;</span>
+                    </div>
+                    <div style="display:none;flex-direction:column;position:absolute;top:50px;left:-2px;background-color:white;padding:10px 20px 10px 20px;cursor:default;font-family:Tahoma;" id="fromTheTopMenu">
+                        @*onmouseleave="$('#fromTheTopMenu').toggle();"*@
+
+
+
+
+                        <a href="../../../katalog" class="fromTheTopMenuHeader"><span>Каталог</span><span>&#129046;</span></a>
+                        <a href="../../../katalog/lodki" class="fromTheTopMenuLine"><span>Лодки</span><span>&#129046;</span></a>
+                        <a href="../../../katalog/shlyupki" class="fromTheTopMenuLine"><span>Шлюпки</span><span>&#129046;</span></a>
+                        <a href="../../../katalog/katera" class="fromTheTopMenuLine"><span>Катера</span><span>&#129046;</span></a>
+                        <a href="../../../katalog/ladi" class="fromTheTopMenuLine"><span>Ладьи</span><span>&#129046;</span></a>
+                        <a href="../../../katalog/parusniki" class="fromTheTopMenuLine"><span>Парусники</span><span>&#129046;</span></a>
+                        <a href="../../../katalog/raznoe" class="fromTheTopMenuLine"><span>Разное</span><span>&#129046;</span></a>
+
+                        <a href="../../../o-nas" class="fromTheTopMenuHeader"><span>О нас</span><span>&#129046;</span></a>
+                        <a href="../../../o-nas/stati" id="lifeNav" class="fromTheTopMenuLine"><span>Статьи</span><span>&#129046;</span></a>
+                        <a href="../../../o-nas/nashi-novosti" id="smiNav" class="fromTheTopMenuLine"><span>Наши новости</span><span>&#129046;</span></a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=byType" id="newShipsNav" class="fromTheTopMenuLine"><span>Архив</span><span>&#129046;</span></a>
+
+                        <div class="ourContacts" style="padding-left:0;color:#183f61;display:none;">
+                            <div>НАШИ КОНТАКТЫ</div>
+                            <div class="contactsLeft">
+                                <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
+                                <div class="contactsUnit"><img src="~/images/icons/whatsapp.png" class="contactsIcon" alt="cont" />&nbsp;+7 (921) 524-61-02</div>
+                                <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.varyag-onego.ru</a>
+                                <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;">
+                <div class="navigationButton" style="height:45px;margin:0 5px 0 0;display:flex;" onclick="navigationButton()"><img src="~/images/icons/Лого-кораблик-только-кораблик.png" /></div>
+                <div style="display:flex;align-items:center;font-size:2.5rem;color:white;">
+                    ВАРЯГ
+                </div>
             </div>
             <div style="display:flex;align-items:center;">
                 <div style="display:flex;flex-direction:column;margin: 0 5px 0 0;align-items:center;position:relative;">
@@ -55,12 +94,12 @@
                         <input type="text" id="projectSearch" placeholder="Найти проект" class="forSearchText" />
                         <div class="searchButton"><img src="~/images/icons/search.png" style="width:26px;height:24px;opacity:0.8;" /></div>
                     </div>
-                    <div class="underSearch"><div>Найдено проектов:&nbsp;<span id="searchedProjectsCount"></span></div><div id="closeUnderSearch" style="margin-right:5px;cursor:pointer;font-size:10px">&#10060;</div></div>
+                    <div class="underSearch"><div style="display:flex;justify-content:space-between;width:100%;"><div>Найдено проектов:&nbsp;<span id="searchedProjectsCount"></span></div><div id="closeUnderSearch" style="margin-right:5px;cursor:pointer;font-size:10px">&#10060;</div></div><div id="suggestions" style="display:flex;flex-direction:column;"></div></div>
                 </div>
                 <div style="display:none">
                     <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" class="contactsSocial" /></a>
                     @*<a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" class="contactsSocial" /></a>
-                    <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" class="contactsSocial" /></a>*@
+                <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" class="contactsSocial" /></a>*@
                 </div>
                 <div style="display:none"><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div>
                 <div style="display:none"><img src="~/images/icons/contacts.png" class="contactsSocial" id="contacts" /></div>
