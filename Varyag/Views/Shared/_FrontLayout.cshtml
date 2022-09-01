@@ -19,7 +19,7 @@
     <div class="topMenu">
         <div style="display:flex;justify-content:space-between;align-items:center;width:100%;max-width:1350px;font-size:21px;margin-left:10px;margin-right:5px;">
             <div style="display:flex;align-items:center;justify-content:flex-start">
-                <div id="secondVarMenu" class="fullTopMenu" style="display:none">
+                @*<div id="secondVarMenu" class="fullTopMenu" style="display:none">
                     <a class="topMenuIcon" asp-controller="about" asp-action="index" style="max-width:161px;">
                         <div class="shortTopMenu" style="display:flex;">
                             <div class="navigationButton" style="width:38px;" onclick="navigationButton()"><img src="~/images/icons/Лого-кораблик-только-кораблик-кнопка.png" /></div>
@@ -41,7 +41,7 @@
                     </a>
                     <a href="../../../katalog" style="margin-right:15px;color:white;width:unset;">КАТАЛОГ</a>
                     <a id="aboutMenu" href="../../../o-nas" style="margin-right:15px;color:white;width:unset;">О&nbsp;НАС</a>
-                </div>
+                </div>*@
                 <div id="mainVarMenu" class="fullTopMenu" onclick="fromTheTopMenu()" style="cursor:pointer;position:relative;user-select:none;">
                     <div class="navigationButton" style="display:flex;margin:0 5px 0 0;height:28px;"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
                     <div class="menuWord">
@@ -49,10 +49,6 @@
                     </div>
                     <div style="display:none;flex-direction:column;position:absolute;top:50px;left:-2px;background-color:white;padding:10px 20px 10px 20px;cursor:default;font-family:Tahoma;" id="fromTheTopMenu">
                         @*onmouseleave="$('#fromTheTopMenu').toggle();"*@
-
-
-
-
                         <a href="../../../katalog" class="fromTheTopMenuHeader"><span>Каталог</span><span>&#129046;</span></a>
                         <a href="../../../katalog/lodki" class="fromTheTopMenuLine"><span>Лодки</span><span>&#129046;</span></a>
                         <a href="../../../katalog/shlyupki" class="fromTheTopMenuLine"><span>Шлюпки</span><span>&#129046;</span></a>
@@ -76,21 +72,18 @@
                             </div>
                         </div>
 
-
-
-
                     </div>
                 </div>
             </div>
-            <div style="display:flex;">
+            <div class="middleTopmenu">
                 <div class="navigationButton" style="height:45px;margin:0 5px 0 0;display:flex;" onclick="navigationButton()"><img src="~/images/icons/Лого-кораблик-только-кораблик.png" /></div>
                 <div style="display:flex;align-items:center;font-size:2.5rem;color:white;">
                     ВАРЯГ
                 </div>
             </div>
-            <div style="display:flex;align-items:center;">
-                <div style="display:flex;flex-direction:column;margin: 0 5px 0 0;align-items:center;position:relative;">
-                    <div style="display:flex;">
+            <div class="search">
+                <div style="display:flex;flex-direction:column;margin: 0 5px 0 0;align-items:center;position:relative;width:100%;">
+                    <div style="display:flex;width:100%;">
                         <input type="text" id="projectSearch" placeholder="Найти проект" class="forSearchText" />
                         <div class="searchButton"><img src="~/images/icons/search.png" style="width:26px;height:24px;opacity:0.8;" /></div>
                     </div>

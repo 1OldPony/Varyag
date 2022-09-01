@@ -459,6 +459,16 @@ $("#projectSearch").on("input", function () {
         $(".underSearch").css("top", "0")
         $(".underSearch").css("display", "none")
         $("#suggestions").html('');
+
+        if ($(window).width() < 501 && $("#projectSearch").val() == '') {
+            $(".search").css('width', 'auto');
+            $(".forSearchText").css('display', 'none');
+            $(".forSearchText").css('width', '0px');
+            $(".searchButton").css('border-bottom-left-radius', '5px');
+            $(".searchButton").css('border-top-left-radius', '5px');
+            $(".fullTopMenu").css('display', 'flex');
+            $(".middleTopmenu").css('display', 'flex');
+        }
     }
     else {
         if (x == "auto" || x == "0") {
@@ -478,12 +488,12 @@ $("#projectSearch").on("input", function () {
             if ($("#suggestions").html != "") {
                 $("#suggestions").html('');
                 for (var i = 0; i < findedCategorys.length; i++) {
-                    $("#suggestions").append("<div>Перейти в раздел \"" + findedCategorys[i] + "\"</div>")
+                    $("#suggestions").append("<div class=\"searchSugestions\">Перейти в раздел \"" + findedCategorys[i] + "\"</div>")
                 }
             }
             else {
                 for (var i = 0; i < findedCategorys.length; i++) {
-                    $("#suggestions").append("<div>Перейти в раздел \"" + findedCategorys[i] + "\"</div>")
+                    $("#suggestions").append("<div class=\"searchSugestions\">Перейти в раздел \"" + findedCategorys[i] + "\"</div>")
                 }
             }
         }
@@ -497,7 +507,18 @@ $("#closeUnderSearch").click(function () {
 
 ///////////////////////////////////Осуществляем поиск///////////////////////////////////////
 $(".searchButton").click(function () {
-    window.location.href = '../../../katalog/poisk?searchText=' + $("#projectSearch").val();
+    if ($(window).width() < 501 && $("#projectSearch").val() == '') {
+        $(".search").css('width', '100%');
+        $(".forSearchText").css('display', 'inline-block');
+        $(".forSearchText").css('width', '100%'); 
+        $(".searchButton").css('border-bottom-left-radius', '0px');
+        $(".searchButton").css('border-top-left-radius', '0px');
+        $(".fullTopMenu").css('display', 'none');
+        $(".middleTopmenu").css('display', 'none');
+    }
+    else {
+        window.location.href = '../../../katalog/poisk?searchText=' + $("#projectSearch").val();
+    }
 });
 
 $("#projectSearch").keypress(function (e) {
