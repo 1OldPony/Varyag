@@ -315,6 +315,17 @@ footer a:hover {
     align-items: center;
     font-size: 2.1rem;
 }
+.fromTheTopMenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: -2px;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    cursor: default;
+    font-family: Tahoma;
+}
 .fromTheTopMenuHeader {
     font-weight: bold;
     font-size: 1.5rem;
@@ -3272,7 +3283,7 @@ ul .nav-element-choosen {
         margin: 0 10px 10px 10px;
     }
     .littleBlock .borderAbout {
-        /*margin: 15px;*/
+        margin: 10px;
         display:none;
     }
     .mainPageCatalogNav {
@@ -3891,13 +3902,17 @@ ul .nav-element-choosen {
         display: none;
     }
     .forSearchText {
-        width:130px;
+        width: 130px;
+        font-size: 1.2rem;
     }
     .underSearch {
         width: 165px;
     }
     .menuWord {
         display: none;
+    }
+    .fromTheTopMenu {
+        top: 40px;
     }
 }
 @media (max-width:651px) {

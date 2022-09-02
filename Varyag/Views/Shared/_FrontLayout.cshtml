@@ -47,7 +47,7 @@
                     <div class="menuWord">
                         МЕНЮ<span id="arrowDown" style="margin-bottom:4px;color:lime;">&#129047;</span><span id="arrowUp" style="margin-bottom:4px;color:red;display:none;">&#129045;</span>
                     </div>
-                    <div style="display:none;flex-direction:column;position:absolute;top:50px;left:-2px;background-color:white;padding:10px 20px 10px 20px;cursor:default;font-family:Tahoma;" id="fromTheTopMenu">
+                    <div class="fromTheTopMenu">
                         @*onmouseleave="$('#fromTheTopMenu').toggle();"*@
                         <a href="../../../katalog" class="fromTheTopMenuHeader"><span>Каталог</span><span>&#129046;</span></a>
                         <a href="../../../katalog/lodki" class="fromTheTopMenuLine"><span>Лодки</span><span>&#129046;</span></a>
@@ -154,25 +154,21 @@
                 <div class="nameOfFooterBlock"><div style="width: 260px;">О НАС:</div></div>
                 <div class="footerBlock">
                     <div class="footerSubBlock">
-                        <a href="../../../katalog/lodki" class="footerSubBlockHeader" style="margin-bottom:0;">О нашей верфи</a>
+                        <a href="../../../o-nas" class="footerSubBlockHeader" style="margin-bottom:0;">О нашей верфи</a>
                     </div>
                     <div class="footerSubBlock">
-                        <a href="../../../katalog/lodki" class="footerSubBlockHeader">Статьи</a>
-                        <a href="../../../../katalog/lodki/narodnye-lodki" class="footerSubBlockLine">Заказы для музеев</a>
-                        <a href="../../../../katalog/lodki/progulochnye-parusnye-lodki" class="footerSubBlockLine">Заказы для кино</a>
+                        <a href="../../../o-nas/stati" class="footerSubBlockHeader">Статьи</a>
+                        <a href="../../../../o-nas/stati?type=Заказы для музеев" class="footerSubBlockLine">Заказы для музеев</a>
+                        <a href="../../../../o-nas/stati?type=Заказы для кино" class="footerSubBlockLine">Заказы для кино</a>
                     </div>
                     <div class="footerSubBlock">
-                        <a href="../../../katalog/shlyupki" class="footerSubBlockHeader">Новости</a>
-                        <a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6" class="footerSubBlockLine">СМИ о нас</a>
-                        <a href="../../../katalog/shlyupki/botiki" class="footerSubBlockLine">Жизнь наших судов</a>
-                        <a href="../../../katalog/shlyupki/grebnye-katera-i-velboty" class="footerSubBlockLine">Новости верфи</a>
+                        <a href="../../../o-nas/nashi-novosti" class="footerSubBlockHeader">Новости</a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=smi" class="footerSubBlockLine">СМИ о нас</a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=life" class="footerSubBlockLine">Жизнь наших судов</a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=newShips" class="footerSubBlockLine">Новости верфи</a>
                     </div>
                     <div class="footerSubBlock">
-                        <a href="../../../katalog/katera" class="footerSubBlockHeader">Архив новостей</a>
-                        @*<a href="../../../katalog/katera/passazhirskie-katera" class="footerSubBlockLine">Пассажирские катера</a>
-                    <a href="../../../katalog/katera/rabochie-i-rybolovnye-katera" class="footerSubBlockLine">Рабочие/Рыболовные катера</a>
-                    <a href="../../../katalog/katera/kayutnye-katera" class="footerSubBlockLine">Каютные катера</a>
-                    <a id="last" href="../../../katalog/katera/motoseylery" class="footerSubBlockLine">Мотосейлеры</a>*@
+                        <a href="../../../o-nas/nashi-novosti?newsType=byType" class="footerSubBlockHeader">Архив новостей</a>
                     </div>
                 </div>
             </div>
@@ -184,15 +180,12 @@
                         <div class="footerSubBlockLine"><img src="~/images/icons/phone-white.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
                         <div class="footerSubBlockLine"><img src="~/images/icons/whatsapp.png" class="contactsIcon" alt="cont" />&nbsp;+7 (921) 524-61-02</div>
                         <div class="footerSubBlockLine"><img src="~/images/icons/email-red-yellow.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
-                        @*<a class="footerSubBlockLine" href="https://www.деревянная-лодка.рф" target="_blank"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.деревянная-лодка.рф</a>*@
                         <div class="footerSubBlockLine"><img src="~/images/icons/map-white-red.png" alt="map" class="contactsIcon" />&nbsp;Карелия,&nbsp;Петрозаводск</div>
                     </div>
                     <div class="footerSubBlock">
                         <div class="footerSubBlockHeader">Наши соцсети:</div>
                         <div style="display:flex;justify-content:flex-start;">
                             <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" style="width:64px" /></a>
-                            @*<a style="cursor:pointer;margin-right:5px" href="https://www.facebook.com/VaryagShipyard" target="_blank"><img src="~/images/icons/facebook.png" alt="facebook" style="width:64px" /></a>
-                            <a style="cursor:pointer" href="https://www.instagram.com/varyagshipyard/?hl=ru" target="_blank"><img src="~/images/icons/insta.png" alt="facebook" style="width:64px" /></a>*@
                         </div>
                     </div>
                 </div>
@@ -205,33 +198,7 @@
                 </div>
             </div>
         </div>
-
-        @*<div class="contactsText">
-            <p>
-                Мы находимся в Карелии,<span id="contacts" class="longText">
-                    приехать к нам и посмотреть наше производство можно
-                </span> по адресу: г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43<span id="contacts" class="longTextSecond">, заезд с переулка Спасателей.</span>
-                <br />Связаться с нами можно по:
-            </p>
-            <p>
-                электронной почте&nbsp;- verf.varyag@yandex.ru<br />
-                или по телефону&nbsp;- 8&nbsp;814&nbsp;273&nbsp;35&nbsp;80
-            </p>
-        </div>*@
-        @*<div id="ourLocation"></div>*@
-
-
-        @*<div class="aboutMe">
-            <div>© 2021 Верфь деревянного судостроения «Варяг»</div><div>Разработчик - Михаил Мартюков</div>
-        </div>*@
     </footer>
-    @*<footer class="footerSmall">
-        <div class="aboutMe">
-            <div>© 2021 Верфь деревянного судостроения «Варяг»</div><div>Разработчик - Михаил Мартюков</div>
-        </div>
-    </footer>*@
-    @*<script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>*@
-    @*<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v5.0"></script>*@
     <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=a93c2bc3-57dc-4ed5-90f0-419606ca819a&lang=ru_RU" type="text/javascript"></script>
     <script src="~/js/fotorama.js"></script>

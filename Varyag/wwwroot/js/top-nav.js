@@ -58,6 +58,7 @@ $(window).scroll(function () {
         scrollTop = $(this).scrollTop();
 
         if (scrollTop + $(".leftMenu").height() + 61 >= $(".footerNew").offset().top) {
+            //: not(#mainPage)
             $(".leftMenu").css('position', 'absolute');
             $(".leftMenu").css('top', "auto");
             $(".leftMenu").css('bottom', 0);
@@ -435,7 +436,9 @@ function navigationButton() {
     }
     else {
         $('.leftMenu').css('left', '-37px');
-        $('body').css('overflow', 'hidden');
+        if ($(window).width() < 1280) {
+            $('body').css('overflow', 'hidden');
+        }
         if ($(window).width() < 1350) {
             $('.leftMenu').css('overflow', 'scroll');
         }
@@ -447,8 +450,36 @@ function navigationButton() {
 $("#projectSearch").on("input", function () {
     var x = $("#projectSearch").css("top")
     let searchLine = $("#projectSearch").val();
+    let categorys2 = new Map()
+    categorys2.set('Лодки', '../../../katalog/lodki');
+    categorys2.set('Народные лодки', '../../../katalog/lodki/narodnye-lodki');
+    categorys2.set('Прогулочные парусные лодки', '../../../katalog/lodki/progulochnye-parusnye-lodki');
+    categorys2.set('Прогулочные гребные лодки', '../../../katalog/lodki/progulochnye-grebnye-lodki');
+    categorys2.set('Катера', '../../../katalog/katera');
+    categorys2.set('Рабочие и рыболовные катера', '../../../katalog/katera/rabochie-i-rybolovnye-katera');
+    categorys2.set('Пассажирские катера', '../../../katalog/katera/passazhirskie-katera');
+    categorys2.set('Каютные катера', '../../../katalog/katera/kayutnye-katera');
+    categorys2.set('Мотосейлеры', '../../../katalog/katera/motoseylery');
+    categorys2.set('Парусники', '../../../katalog/parusniki');
+    categorys2.set('Исторические парусники', '../../../katalog/parusniki/istoricheskie-parusniki');
+    categorys2.set('Учебные парусники', '../../../katalog/parusniki/uchebnye-parusniki');
+    categorys2.set('Швертботы', '../../../katalog/parusniki/shvertboty');
+    categorys2.set('Парусные яхты', '../../../katalog/parusniki/parusnye-yahty');
+    categorys2.set('Шлюпки', '../../../katalog/shlyupki');
+    categorys2.set('Шлюпки ЯЛ2, ЯЛ4, ЯЛ6', '../../../katalog/shlyupki/shlyupki-yal2yal4yal6');
+    categorys2.set('Ботики', '../../../katalog/shlyupki/botiki');
+    categorys2.set('Гребные катера и вельботы', '../../../katalog/shlyupki/grebnye-katera-i-velboty');
+    categorys2.set('Учебные пособия', '../../../katalog/shlyupki/uchebnye-posobiya');
+    categorys2.set('Ладьи', '../../../katalog/ladi');
+    categorys2.set('Парусно-моторные ладьи', '../../../katalog/ladi/parusno-motornye-ladi');
+    categorys2.set('Парусно-гребные ладьи', '../../../katalog/ladi/parusno-grebnye-ladi');
+    categorys2.set('Струги и галеры', '../../../katalog/ladi/strugi-i-galery');
+    categorys2.set('Разное', '.../../../katalog/raznoe');
+    categorys2.set('Модели и макеты', '../../../katalog/raznoe/modeli-i-makety');
+    categorys2.set('Прочая продукция', '../../../katalog/raznoe/prochaya-produkciya');
+
     let categorys = ['Лодки', 'Народные лодки', 'Прогулочные парусные лодки', 'Прогулочные гребные лодки', 'Катера',
-        'Рабочие/Рыболовные катера', 'Пассажирские катера', 'Каютные катера', 'Мотосейлеры', 'Парусники', 'Исторические парусники',
+        'Рабочие и рыболовные катера', 'Пассажирские катера', 'Каютные катера', 'Мотосейлеры', 'Парусники', 'Исторические парусники',
         'Учебные парусники', 'Швертботы', 'Парусные яхты', 'Шлюпки', 'Шлюпки ЯЛ2, ЯЛ4, ЯЛ6', 'Ботики',
         'Гребные катера и вельботы', 'Учебные пособия', 'Ладьи', 'Парусно-моторные ладьи',
         'Парусно-гребные ладьи', 'Струги и галеры', 'Разное', 'Модели и макеты', 'Прочая продукция'];
@@ -476,7 +507,7 @@ $("#projectSearch").on("input", function () {
             $(".underSearch").css("top", "36px")
         }
 
-        $("#searchedProjectsCount").load("../Catalog/ProjectsSearchCount?value=" + searchLine);
+        $("#searchedProjectsCount").load("../../Catalog/ProjectsSearchCount?value=" + searchLine);
 
         if (searchLine.length >= 3) {
             for (var i = 0; i < categorys.length; i++) {
@@ -488,12 +519,12 @@ $("#projectSearch").on("input", function () {
             if ($("#suggestions").html != "") {
                 $("#suggestions").html('');
                 for (var i = 0; i < findedCategorys.length; i++) {
-                    $("#suggestions").append("<div class=\"searchSugestions\">Перейти в раздел \"" + findedCategorys[i] + "\"</div>")
+                    $("#suggestions").append("<a href=\"" + categorys2.get(findedCategorys[i]) + "\" class=\"searchSugestions\">Перейти в раздел \"" + findedCategorys[i] + "\"</a>")
                 }
             }
             else {
                 for (var i = 0; i < findedCategorys.length; i++) {
-                    $("#suggestions").append("<div class=\"searchSugestions\">Перейти в раздел \"" + findedCategorys[i] + "\"</div>")
+                    $("#suggestions").append("<a class=\"searchSugestions\">Перейти в раздел \"" + findedCategorys[i] + "\"</a>")
                 }
             }
         }
@@ -528,11 +559,11 @@ $("#projectSearch").keypress(function (e) {
 });
 
 function fromTheTopMenu() {
-    if ($('#fromTheTopMenu').css('display') != 'flex') {
-        $('#fromTheTopMenu').css('display', 'flex');
+    if ($('.fromTheTopMenu').css('display') != 'flex') {
+        $('.fromTheTopMenu').css('display', 'flex');
     }
     else {
-        $('#fromTheTopMenu').css('display', 'none');
+        $('.fromTheTopMenu').css('display', 'none');
     }
     $('#arrowDown,#arrowUp').toggle();
 }
