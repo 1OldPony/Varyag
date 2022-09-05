@@ -1920,7 +1920,7 @@ ul .nav-element-choosen {
 .projectsHalf {
     display: flex;
     flex-direction: column;
-    margin: auto 0 auto 10px;
+    margin: 0 0 auto 10px;
     max-width: 1010px;
     width: 100%;
 }
@@ -2879,6 +2879,9 @@ ul .nav-element-choosen {
 
     .projectNewsTextPart {
         width: 100%;
+    }
+    .projectName h1 {
+        font-size: 1.4rem;
     }
 }
 
@@ -4242,6 +4245,9 @@ ul .nav-element-choosen {
     }
     #newsDetailsProjectsHalf.projectsHalf {
         margin-top: 10px;
+    }
+    .projectName {
+        margin:10px;
     }
 }
 

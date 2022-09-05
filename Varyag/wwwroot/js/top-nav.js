@@ -83,6 +83,9 @@ $(window).scroll(function () {
         if ($(this).scrollTop() > scrollTop && $(this).scrollTop()>50) {
             //$('.spaceUnderTopMenu').css('margin-bottom', '0px');
             $('.topMenu').css('top', '-50px');
+            $('.fromTheTopMenu').css('display', 'none');
+            $('#arrowDown').css('display', 'block');
+            $('#arrowUp').css('display', 'none');
         }
         else {
             //$('.spaceUnderTopMenu').css('margin-bottom', '50px');
