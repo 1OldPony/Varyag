@@ -9,7 +9,7 @@
 
 <div class="MyContainer">
     <div class="path">
-        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">О нас</a> > <a href="../../../o-nas/stati">Статьи</a>
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">О нас</a> > <a>@ViewBag.Header</a>
     </div>
 
     <input type="text" id="newsTypeSelector" value="@ViewBag.newsType" hidden />
@@ -114,7 +114,7 @@
         </div>
         <div class="projectsHalf" id="newsProjectsHalf">
             <div class="topCatalogLine" id="newsTopLine">
-                <h1 class="categorysLineItem" style="margin-block:0;justify-content:flex-start">Статьи о верфи "Варяг"</h1>
+                <h1 id="aboutUsHeader" class="categorysLineItem" style="margin-block:0;justify-content:flex-start">@ViewBag.Header</h1>
             </div>
             <div class="newsBlock">
                 @for (int i = 0; i < Model.Count(); i++)

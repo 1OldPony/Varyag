@@ -7,7 +7,7 @@
 <div class="MyContainer">
     <div class="path" style="display:flex;justify-content:space-between;">
         <div>
-            <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">О нас</a> > @if (ViewBag.newsType != "byType"){<a>Наши новости</a>}else{<a>Архив новостей</a>}
+            <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">О нас</a> > @if (ViewBag.newsType != "byType"){<a>@ViewBag.Header</a>}else{<a>@ViewBag.Header</a>}
         </div>
     </div>
 
@@ -175,7 +175,7 @@
         </div>
         <div class="projectsHalf" id="newsProjectsHalf">
             <div class="topCatalogLine" id="newsTopLine">
-                <h1 class="categorysLineItem" style="margin-block:0;justify-content:flex-start">Наши новости</h1>
+                <h1 id="aboutUsHeader" class="categorysLineItem" style="margin-block:0;justify-content:flex-start">@ViewBag.Header</h1>
             </div>
             <div class="newsBlock">
 

@@ -503,16 +503,27 @@ $("#projectSearch").on("input", function () {
             $(".fullTopMenu").css('display', 'flex');
             $(".middleTopmenu").css('display', 'flex');
         }
+        if ($(".closeIcon").css("display") == "none") {
+            $(".closeIcon").css("display", "block")
+            $(".searchIcon").css("display", "none")
+        }
     }
     else {
         if (x == "auto" || x == "0") {
             $(".underSearch").css("display", "flex")
             $(".underSearch").css("top", "36px")
+            var width = $(".forSearchText").width() + $(".searchButton").width();
+            $(".underSearch").css("width", width)
+        }
+
+        if ($(".searchIcon").css("display") == "none") {
+            $(".searchIcon").css("display", "block")
+            $(".closeIcon").css("display", "none")
         }
 
         $("#searchedProjectsCount").load("../../Catalog/ProjectsSearchCount?value=" + searchLine);
 
-        if (searchLine.length >= 3) {
+        if (searchLine.length >= 1) {
             for (var i = 0; i < categorys.length; i++) {
                 if (categorys[i].toLowerCase().includes(searchLine.toLowerCase())) {
                     findedCategorys.push(categorys[i]);
@@ -538,17 +549,48 @@ $("#closeUnderSearch").click(function () {
     $(".underSearch").css("top", "0")
     $(".underSearch").css("display", "none")
 })
+$(".closeIcon").click(function () {
+    $("#projectSearch").val("");
+    $("#closeUnderSearch").click();
+    
+    $(".forSearchText").css('width', '0px');
 
+    $(".forSearchText").on("transitionend webkitTransitionEnd oTransitionEnd", function () {
+        if ($(".forSearchText").css('width') == "6px") {
+            $(".forSearchText").css('opacity', '0')
+        }
+    })
+
+    $(".searchButton").css('border-bottom-left-radius', '5px');
+    $(".searchButton").css('border-top-left-radius', '5px');
+    $(".searchIcon").toggle();
+    $(".closeIcon").toggle();
+    if ($(window).width() < 501) {
+        $(".search").css('width', 'auto');
+        //$(".fullTopMenu").css('display', 'flex');
+        $(".middleTopmenu").css('display', 'flex');
+    }
+})
 ///////////////////////////////////Осуществляем поиск///////////////////////////////////////
-$(".searchButton").click(function () {
-    if ($(window).width() < 501 && $("#projectSearch").val() == '') {
-        $(".search").css('width', '100%');
-        $(".forSearchText").css('display', 'inline-block');
-        $(".forSearchText").css('width', '100%'); 
+$(".searchIcon").click(function () {
+    if ($("#projectSearch").val() == '') {
+        $(".forSearchText").css('opacity', '1');
+        $(".forSearchText").css('width', '200px');
         $(".searchButton").css('border-bottom-left-radius', '0px');
         $(".searchButton").css('border-top-left-radius', '0px');
-        $(".fullTopMenu").css('display', 'none');
-        $(".middleTopmenu").css('display', 'none');
+        $(".searchIcon").toggle();
+        $(".closeIcon").toggle();
+        if ($(window).width() < 361) {
+            $(".forSearchText").css('width', '70%');
+            $(".search").css('width', '100%');
+            //$(".fullTopMenu").css('display', 'none');
+            $(".middleTopmenu").css('display', 'none');
+        }
+        else if ($(window).width() < 501) {
+            $(".forSearchText").css('width', '75%');
+            $(".search").css('width', '100%');
+            //$(".fullTopMenu").css('display', 'none');
+            $(".middleTopmenu").css('display', 'none');}
     }
     else {
         window.location.href = '../../../katalog/poisk?searchText=' + $("#projectSearch").val();

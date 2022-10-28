@@ -73,6 +73,7 @@ namespace Varyag.Controllers
             List<NewsViewModel> news = LittleHelper.NewsToSortedViewModel(newsToSort);
 
             int currentYear = DateTime.Today.Year, lastYear = currentYear, date = 0;
+            string header;
 
             foreach (var item in newsToSort)
             {
@@ -90,26 +91,36 @@ namespace Varyag.Controllers
             {
                 case "smi":
                     news = news.Where(n => n.KeyWord.ToString() == "СМИ").ToList();
+                    header = "СМИ о нас";
                     break;
                 case "life":
                     news = news.Where(n => n.KeyWord.ToString() == "Жизнь_кораблей").ToList();
+                    header = "Жизнь наших судов";
                     break;
                 case "newShips":
                     news = news.Where(n => n.KeyWord.ToString() == "Новые_корабли").ToList();
+                    header = "Новости верфи";
                     break;
                 default:
                     switch (part)
                     {
                         case "old":
                             news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(0,4)) <= currentYear - 5).ToList();
+                            header = "Новости " + ViewBag.oldNews + " годов";
                             break;
                         case "recent":
                             news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(0, 4)) <= currentYear - 2 && int.Parse(n.NewsDate.ToString().Substring(0, 4)) >= currentYear - 4).ToList();
+                            header = "Новости " + ViewBag.recentNews + " годов";
                             break;
                         case "new":
                             news = news.Where(n => int.Parse(n.NewsDate.ToString().Substring(0, 4)) >= currentYear - 1).ToList();
+                            header = "Новости "+ViewBag.actualNews+" годов";
                             break;
                         default:
+                            if (newsType== "byType")
+                                header = "Архив новостей";
+                            else
+                                header = "Наши новости";
                             break;
                     }
                     break;
@@ -195,6 +206,7 @@ namespace Varyag.Controllers
                 news = news.GetRange(0, news.Count);
             }
 
+            ViewBag.Header = header;
             ViewBag.part = part;
             ViewBag.newsType = newsType;
 
@@ -247,22 +259,24 @@ namespace Varyag.Controllers
         public async Task<IActionResult> AllArticles(string actualNews, string recentNews, string oldNews, string type)
         {
             List<Article> articles = new List<Article>();
+            string header;
             if (type == "Заказы для кино")
             {
                 var articles1 = _context.Article.Where(a => a.ArticleType == "Заказы для кино");
                 articles = await articles1.Where(a => a.ArticleId != 6).ToListAsync();
+                header = "Заказы для кино";
             }
             else if(type == "Заказы для музеев")
             {
                 var articles1 = _context.Article.Where(a => a.ArticleType == "Заказы для музеев");
                 articles = await articles1.Where(a => a.ArticleId != 6).ToListAsync();
+                header = "Заказы для музеев";
             }
             else
             {
                 articles = await _context.Article.Where(a => a.ArticleId != 6).ToListAsync();
-                //articles = await articles1.Where(a => a.ArticleId != 6).ToListAsync();
+                header = "Статьи от нас";
             }
-
             if (articles == null)
             {
                 return NotFound();
@@ -298,7 +312,7 @@ namespace Varyag.Controllers
             else
                 ViewBag.oldNews = oldNews;
 
-
+            ViewBag.Header = header;
             ViewBag.type = type;
             return View(articles);
         }

@@ -127,10 +127,10 @@ footer a:hover {
     font-size: 1.3rem;
     font-weight: bold;
 }
-#big.mainFoto {
+#wide.mainFoto {
     display: none;
 }
-#middle.mainFoto {
+#narrow.mainFoto {
     display: flex;
 }
 #small.mainFoto {
@@ -160,9 +160,9 @@ footer a:hover {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     justify-content: flex-end;
-    max-width: 1340px;
+    max-width: 1350px;
     color: #183f61;
-    padding-right: 10px;
+    /*padding-right: 10px;*/
     padding-bottom: 2px;
     padding-top: 2px;
     font-family: 'Gabriela';
@@ -248,17 +248,32 @@ footer a:hover {
     top: 0;
     transition: top 0.3s linear;
 }
+.topMenuContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1350px;
+    font-size: 21px;
+    margin-left: 10px;
+    margin-right: 5px;
+    position: relative;
+}
 .spaceUnderTopMenu {
     margin-bottom: 50px;
 }
 .middleTopmenu {
     display:flex;
+    margin:auto;
+    width:auto;
 }
 .search {
     display: flex;
     align-items: center;
+    position:absolute;
+    right:0;
 }
-.forSearchText {
+/*.forSearchText {
     box-sizing: border-box;
     font-family: inherit;
     font-size: inherit;
@@ -271,16 +286,73 @@ footer a:hover {
     background-color: #aec9e0;
     outline: none;
     transition: width 0.3s ease-out;
+}*/
+/*.searchButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 34px;
+    border: 1px #183f61;
+    border-style: solid solid solid none;
+    background-color: white;
+    cursor: pointer;
+    color: #212529;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}*/
+.forSearchText {
+    display: block;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 1px #183f61 solid;
+    height: 36px;
+    width: 0px;
+    max-width:200px;
+    background-color: #aec9e0;
+    outline: none;
+    opacity: 0;
+    transition: width 0.3s ease-out;
+}
+
+.searchButton {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 34px;
+    border: 1px #183f61;
+    border-style: solid solid solid none;
+    background-color: white;
+    cursor: pointer;
+    color: #212529;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.searchIcon {
+    width: 26px;
+    height: 24px;
+    opacity: 0.8;
+}
+.closeIcon {
+    display:none;
+    width: 26px;
+    height: 24px;
+    opacity: 0.8;
 }
 .underSearch {
     display: none;
-    flex-direction:column;
-    /*justify-content: space-between;*/
+    flex-direction: column;
     align-items: flex-start;
     position: absolute;
     top: 0;
-    left: 0;
-    /*height: 20px;*/
+    right: 0;
     width: 235px;
     background-color: white;
     z-index: -1;
@@ -296,30 +368,16 @@ footer a:hover {
 .searchSugestions:hover {
     text-decoration: underline;
 }
-.searchButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 34px;
-    border: 1px #183f61;
-    border-style: solid solid solid none;
-    background-color: white;
-    cursor: pointer;
-    color: #212529;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
 .menuWord {
     display: flex;
     align-items: center;
-    font-size: 2.1rem;
+    font-size: 1.8rem;
 }
 .fromTheTopMenu {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 50px;
+    top: 42px;
     left: -2px;
     background-color: white;
     padding: 10px 20px 10px 20px;
@@ -330,9 +388,9 @@ footer a:hover {
     font-weight: bold;
     font-size: 1.5rem;
     cursor: pointer;
-    width: 210px;
+    width: 150px;
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
 }
     .fromTheTopMenuHeader:hover {
         text-decoration: underline;
@@ -340,9 +398,9 @@ footer a:hover {
 .fromTheTopMenuLine {
     font-size: 1.2rem;
     cursor: pointer;
-    width: 180px;
+    width: 150px;
     display:flex;
-    justify-content:space-between;
+    /*justify-content:space-between;*/
 }
     .fromTheTopMenuLine:hover {
         text-decoration: underline;
@@ -1073,7 +1131,17 @@ p {
 #contacts.contactsSocial {
     display: none
 }
-
+.wordContacts {
+    display: block;
+}
+.contactWords {
+    margin-right: 15px;
+    color: white;
+    width: auto;
+    font-size: 1.8rem;
+    position: absolute;
+    right: 50px;
+}
 img {
     display: block;
     max-width: 100%;
@@ -1399,6 +1467,12 @@ img {
     align-items: center;
     justify-content: flex-start;
 }
+#dropdawn.fullTopMenu {
+    display: flex;
+}
+#leftSide.fullTopMenu {
+    display: none;
+}
 
 .shortTopMenu {
     display: none;
@@ -1638,6 +1712,7 @@ img {
     font-size: 1.3rem;
     font-weight: bold;
 }
+
 .categorysLineItemHeader {
     font-size: 1.3rem;
     font-weight: bold;
@@ -1645,6 +1720,7 @@ img {
     margin-block-start: 0;
     justify-content: flex-start;
     align-self: flex-start;
+    padding:0 10px 0 10px;
 }
 
 .leftSubCategory:hover {
@@ -1763,7 +1839,8 @@ img {
     text-align: left;
 }
 .newsDetailsStory {
-    text-align:left;
+    text-align: left;
+    padding: 0 10px 0 10px;
 }
 .newsDetailsStory p{
     margin-block-start:0;
@@ -2369,7 +2446,6 @@ ul .nav-element-choosen {
     display: none;
     background-color: #f0f5f9;
 }
-
 .path {
     padding: 15px;
     margin-left: 40px;
@@ -2690,6 +2766,7 @@ ul .nav-element-choosen {
     border-bottom-right-radius: 5px;
     margin-left: 10px;
     margin-right: 10px;
+    margin-bottom:10px;
 }
 
 #newsProjectsHalf.projectsHalf {
@@ -2854,8 +2931,10 @@ ul .nav-element-choosen {
 
 @media (max-width:1300px) {
     .catalogPlitka {
-        /*width: 32%;*/
         width: calc(100%/3 - 10px);
+    }
+    .mapForMainPage {
+        padding-right: 0;
     }
 }
 
@@ -2899,7 +2978,18 @@ ul .nav-element-choosen {
     /*.tthUnderFoto {
         width: 32%;
     }*/
-
+    #contacts.contactsSocial {
+        display: block;
+        cursor: pointer;
+    }
+    .wordContacts {
+        display:none;
+    }
+    .contactWords {
+        margin-right: 5px;
+        width: 35px;
+        right: 45px;
+    }
     .sheme-TTH {
         width: 32.7%;
     }
@@ -3259,6 +3349,14 @@ ul .nav-element-choosen {
     }
     #newsTopLine.topCatalogLine {
         margin: 0 10px 0 10px;
+        background-color: #183f61;
+        color: white;
+        padding: 15px 0 15px 10px;
+    }
+    #aboutUsHeader.categorysLineItem {
+        font-size: 1.3rem;
+        font-weight: bold;
+        max-width: 310px;
     }
     #newsDetailsProjectsHalf.projectsHalf {
         margin-left: 10px;
@@ -3365,6 +3463,12 @@ ul .nav-element-choosen {
     .logoFooterDiv {
         display:flex;
         justify-content:center;
+    }
+    #dropdawn.fullTopMenu {
+        display: none;
+    }
+    #leftSide.fullTopMenu {
+        display: flex;
     }
 }
 
@@ -3526,9 +3630,6 @@ ul .nav-element-choosen {
     .topCatalogLine {
         margin: 0 5px 0 5px;
     }
-    /*#newsTopLine.topCatalogLine {
-        margin: 0 10px 0 10px;
-    }*/
     .tthUnderFoto {
         width: 32.6%;
     }
@@ -3626,14 +3727,14 @@ ul .nav-element-choosen {
 
     .nav-element-minor {
         width: 100%;
-        margin-right: 10px;
-        margin-left: 10px;
+        /*margin-right: 10px;
+        margin-left: 10px;*/
     }
 
     .nav-element-minor-choosen {
         width: 100%;
-        margin-right: 10px;
-        margin-left: 10px;
+        /*margin-right: 10px;
+        margin-left: 10px;*/
     }
 
     .nav-element-minor-choosen-current {
@@ -3874,7 +3975,7 @@ ul .nav-element-choosen {
         display: none;
     }
     .newsListElement {
-        grid-template-columns: 0% 100%;
+        grid-template-columns: 50% 50%;
     }
     .newsPreviewBlock {
         width: auto;
@@ -3897,15 +3998,18 @@ ul .nav-element-choosen {
         max-width: unset;
     }
 
-    #contacts.contactsSocial {
+    .middleTopmenu {
+        margin: auto 38% auto auto;
+    }
+    /*#contacts.contactsSocial {
         display: block;
         cursor: pointer;
-    }
-    #contactsWords {
+    }*/
+    /*#contactsWords {
         display: none;
-    }
+    }*/
     .forSearchText {
-        width: 130px;
+        max-width: 130px;
         font-size: 1.2rem;
     }
     .underSearch {
@@ -3915,7 +4019,7 @@ ul .nav-element-choosen {
         display: none;
     }
     .fromTheTopMenu {
-        top: 40px;
+        top: 38px;
     }
 }
 @media (max-width:651px) {
@@ -3989,7 +4093,7 @@ ul .nav-element-choosen {
         width: 170px;
         font-size: 1rem;
     }
-    #big.mainFoto {
+    /*#big.mainFoto {
         display: none;
     }
     #middle.mainFoto {
@@ -3997,7 +4101,7 @@ ul .nav-element-choosen {
     }
     #small.mainFoto {
         display: flex;
-    }
+    }*/
     .catalogIconsMainPaigeHeader {
         font-size:1.4rem
     }
@@ -4026,6 +4130,7 @@ ul .nav-element-choosen {
     .footerBlocks {
         flex-wrap:nowrap;
         max-height:unset;
+        flex-direction:column-reverse;
     }
     #logo.footerBlock {
         display:none;
@@ -4086,6 +4191,9 @@ ul .nav-element-choosen {
             width: auto;
             border-radius: 0;
         }
+    .newsListElement {
+        grid-template-columns: 58% 42%;
+    }
 }
 
 @media (max-width:558px) {
@@ -4131,6 +4239,11 @@ ul .nav-element-choosen {
     #cinemaOrders.category {
         width: 45%;
     }
+    .newsListElement {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "preview" "newsText";
+    }
 }
 
 @media (max-width:525px) {
@@ -4154,36 +4267,50 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:500px) {
-    /*.tthUnderFoto {
-        width: 100%;
-    }*/
-
+    .forSearchText {
+        max-width: unset;
+        font-size: 1.2rem;
+    }
+    .middleTopmenu {
+        margin: auto 33% auto auto;
+    }
     .catalogItemTop {
         min-height: unset;
         margin-bottom: 5px;
     }
-
         #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 65% 85% no-repeat;
     }
-
     #fourth-out[name="shortDeep"] {
         display: none;
     }
-
     #fird-out {
         display: none;
     }
-    .forSearchText {
+    /*.forSearchText {
         width: 0px;
-        display:none;
+        display: none;
+        transition: width 0.5s cubic-bezier(0, 1.1, 0.32, 1) 0s;
     }
     .searchButton {
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
-    }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 34px;
+        border: 1px #183f61;
+        border-style: solid solid solid none;
+        background-color: white;
+        cursor: pointer;
+        color: #212529;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }*/
     .underSearch {
-        width: 98%;
+        width: 75%;
     }
 }
 
@@ -4214,9 +4341,9 @@ ul .nav-element-choosen {
     .catalogIcons {
         display: none;
     }
-    .path {
+    /*.path {
         display: none;
-    }
+    }*/
 
     .MyContainer {
         margin-top: 10px;
@@ -4240,12 +4367,12 @@ ul .nav-element-choosen {
     .categorysLineItem {
         max-width: unset;
     }
-    #newsProjectsHalf.projectsHalf {
+    /*#newsProjectsHalf.projectsHalf {
         margin-top:10px;
     }
     #newsDetailsProjectsHalf.projectsHalf {
         margin-top: 10px;
-    }
+    }*/
     .projectName {
         margin:10px;
     }
@@ -4272,7 +4399,12 @@ ul .nav-element-choosen {
     #shlupki.catalogPlitka {
         margin-left: 0;
     }
-
+    #wide.mainFoto {
+        display: flex;
+    }
+    #narrow.mainFoto {
+        display: none;
+    }
     .catalogPlates {
         margin-right: 10px;
     }
@@ -4373,6 +4505,12 @@ ul .nav-element-choosen {
     }
     #cinemaTopNav {
         display: initial;
+    }
+    #contacts.contactsSocial {
+        display:none;
+    }
+    .middleTopmenu {
+        margin: auto 28% auto auto;
     }
     /*.slick-current img {
         transform: scale(1.3);
@@ -4514,9 +4652,12 @@ ul .nav-element-choosen {
     #partNewsElementShort .partNewsElement {
         margin-left: 0;
     }
+    #aboutUsHeader.categorysLineItem {
+        font-size: 1.2rem;
+    }
 }
 
-@media (max-width:359px) {
+@media (max-width:360px) {
     /*#news.about {
         height: 108vh;
     }*/
@@ -4544,14 +4685,31 @@ ul .nav-element-choosen {
     #details.characteristic {
         display: none;
     }
+    .middleTopmenu {
+        margin: auto 26% auto auto;
+    }
+    .topMenuContent {
+        padding-left:5px;
+        margin-left: 5px;
+    }
+    .underSearch {
+        width: 70%;
+    }
 }
 
 @media (max-width:346px) {
     #goto-predist.shortText {
         text-decoration: underline;
     }
-
+    .middleTopmenu {
+        margin: auto 25% auto auto;
+    }
     #goto-predist.longTextSecond {
         display: none;
+    }
+}
+@media (max-width:326px) {
+    .middleTopmenu {
+        margin: auto 24% auto auto;
     }
 }
