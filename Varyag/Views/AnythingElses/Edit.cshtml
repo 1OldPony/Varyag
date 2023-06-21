@@ -1,0 +1,49 @@
+﻿@model Varyag.Models.AnythingElse
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <div>
+            <p>Название проекта</p>
+            <input type="text" asp-for="Name" />
+        </div>
+        <div>
+            <div>Скопируй название и замени пробелы на тире(-)</div>
+            <input type="text" asp-for="Route" />
+        </div>
+        <div>
+            <p>Краткое описание</p>
+            <p>МАКСИМАЛЬНОЕ КОЛ-ВО СИМВОЛОВ ОГРАНИЧЕНО 377-Ю!!!</p>
+            <textarea asp-for="ShortDescription" rows="10" cols="170" maxlength="377"></textarea>
+        </div>
+        <div>
+            <p>Полный текст</p>
+            <textarea asp-for="Description" id="mce"></textarea>
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>Фото 1</p>
+            <input type="file" name="frontFoto1" />
+        </div>
+        <div>
+            <p>Фото 2</p>
+            <input type="file" name="frontFoto2" />
+        </div>
+        <div>
+            <p>Галерея</p>
+            <input type="file" name="galleryFoto" multiple />
+        </div>
+    </div><br />
+
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-primary" />
+    </div>
+</form>

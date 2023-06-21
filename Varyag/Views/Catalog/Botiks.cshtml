@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Varyag.Models.Project>
+@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+<div class="MyContainer" id="main">
+    <div class="path">
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../katalog">Каталог</a> > <a href="../../../katalog/shlyupki">Шлюпки</a> > <a href="../../../katalog/shlyupki/botiki">Ботики</a>
+    </div>
+    <div id="shlupkiCollage" class="largeTopFoto">
+        <div class="textOverCollage">
+            <h1 id="textOverCollage" class="plitkaCategoryHeader">Ботики</h1>
+        </div>
+    </div>
+    <div class="smallTopFoto">
+        <h2 class="smallTopFotoText">Ботики</h2>
+    </div>
+    <div class="myBorder"></div>
+    <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+        <partial name="~/Views/Shared/LeftMenu.cshtml" />
+        <div class="projectsHalf">
+            <div class="projectsHalfTop">
+                <div class="topCatalogLine">
+                    <h2 class="categorysLineItem">Все ботики</h2><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('botik')" class="selectSortOption"><option value="По возрастанию длинны" selected>По возрастанию длины</option><option value="По убыванию длинны">По убыванию длины</option></select></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div class="projectsHalfText">
+                    Ботики, или "Суда ботового типа" - это парусно-гребные шлюпки XVII-XVIII веков, которые использовались на крупных кораблях в качестве разъездных и рабочих судов.
+                    Построенные нами реплики исторических ботиков обладают не только максимальным соответствием оригиналу, но и прекрасными мореходными качествами.
+                </div>
+            </div>
+            <div style="position:relative">
+                <div id="sortScreen2" class="sortScreen2"><div class="loadingGif"><img src="~/images/icons/loading-11.gif" class="gif" /><img src="~/images/icons/loading-105.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-73.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-99.gif" style="width:50%;display:none" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "botik", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "botik", plitca = false, lengthSort = "Up" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

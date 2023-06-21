@@ -1,0 +1,138 @@
+﻿@model IEnumerable<Varyag.Models.Article>
+
+@{
+    ViewData["Title"] = "Статьи об особых заказах";
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+
+
+<div class="MyContainer">
+    <div class="path">
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../o-nas">О нас</a> > <a>@ViewBag.Header</a>
+    </div>
+
+    <input type="text" id="newsTypeSelector" value="@ViewBag.newsType" hidden />
+    <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+        <div class="leftMenu">
+            <nav>
+                <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:79px">
+                    <li id="catalogWord">
+                        <div class="leftNavLine"><a href="../../../katalog" class="navLineHeader">Каталог</a></div>
+                    </li>
+                    <li>
+                        <div class="leftNavLine"><a href="../../../o-nas" class="navLineHeader">О верфи "Варяг"</a></div>
+                    </li>
+                    <li>
+                        <div class="leftNavLine"><div id="articlesOpen" class="leftNavOpenCurrent">+</div><div id="articlesClose" class="leftNavCloseCurrent">-</div><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews" class="leftNavLine"><div style="color: #e81010">Статьи</div></a></div>
+                        <ul id="articles-sub" class="leftSubNavOpenCurrent">
+                            @if (ViewBag.type == "Заказы для музеев")
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для музеев" style="color: #e81010" id="museums">Заказы для музеев</a></h2>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для музеев" id="museums">Заказы для музеев</a></h2>
+                                </li>
+                            }
+                            @if (ViewBag.type == "Заказы для кино")
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для кино" style="color: #e81010" id="museums">Заказы для кино</a></h2>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/stati?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews&type=Заказы для кино" id="museums">Заказы для кино</a></h2>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="themeNewsNav" class="leftNavLine" style="margin-top:46px"><div id="themeNewsOpen" class="leftNavOpenCurrent">+</div><div id="themeNewsClose" class="leftNavCloseCurrent">-</div><h2><a href="../../../o-nas/nashi-novosti">Наши новости</a></h2></div>
+                        <ul id="themeNews-sub" class="leftSubNavOpenCurrent">
+                            @if (ViewBag.newsType == "smi")
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=smi" style="color: #e81010" id="smiNav">СМИ о нас</a></h2>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=smi" id="smiNav">СМИ о нас</a></h2>
+                                </li>
+                            }
+                            @if (ViewBag.newsType == "life")
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=life" style="color: #e81010" id="lifeNav">Жизнь наших судов</a></h2>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=life" id="lifeNav">Жизнь наших судов</a></h2>
+                                </li>
+                            }
+                            @if (ViewBag.newsType == "newShips")
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=newShips" style="color: #e81010" id="newShipsNav">Новости верфи</a></h2>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="leftSubCategory">
+                                    <h2><a href="../../../o-nas/nashi-novosti?newsType=newShips" id="newShipsNav">Новости верфи</a></h2>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li>
+                        <div id="allNewsNav" class="leftNavLine" style="margin-top:69px"><div id="allNewsOpen" class="leftNavOpenCurrent">+</div><div id="allNewsClose" class="leftNavCloseCurrent">-</div><a href="../../../o-nas/nashi-novosti?newsType=byType">Архив</a></div>
+                        <ul id="allNews-Sub" class="leftSubNavOpenCurrent">
+                            <li class="leftSubCategory">
+                                <a href="../../../o-nas/nashi-novosti?part=new&newsType=byType">@ViewBag.actualNews</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a href="../../../o-nas/nashi-novosti?part=recent&newsType=byType">@ViewBag.recentNews</a>
+                            </li>
+                            <li class="leftSubCategory">
+                                <a href="../../../o-nas/nashi-novosti?part=old&newsType=byType">@ViewBag.oldNews</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <partial name="ContactsLeft" />
+        </div>
+        <div class="projectsHalf" id="newsProjectsHalf">
+            <div class="topCatalogLine" id="newsTopLine">
+                <h1 id="aboutUsHeader" class="categorysLineItem" style="margin-block:0;justify-content:flex-start">@ViewBag.Header</h1>
+            </div>
+            <div class="newsBlock">
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    <a href="../../../o-nas/stati/@Model.ElementAt(i).ArticleRoute?actualNews=@ViewBag.actualNews&recentNews=@ViewBag.recentNews&oldNews=@ViewBag.oldNews">
+                        <div class="newsListElement">
+                            <div>
+                                <img src="@Model.ElementAt(i).ShortFotoPreview" loading="lazy" />
+                            </div>
+                            <div class="textPartAllNews" style="display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;margin:10px 0 10px 0;justify-self:center;width:96%;text-align:left">
+                                <h2 style="margin-block:0;">@Model.ElementAt(i).ArticleName</h2>
+                                <div style="display: flex;align-self: flex-end;justify-content: center;font-weight: bolder;font-size: 1.4rem;">Смотреть...</div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="myBorder"></div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1559 @@
+﻿@model Varyag.Models.Article
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Cache"] = "no-cache";
+}
+
+<div style="max-width:1700px;margin:auto">
+    <h1>Редактировать статью</h1>
+    <hr />
+
+    <form asp-action="SaveTempFoto" asp-route-actionType="create" id="fotoEditorForm" enctype="multipart/form-data">
+        <div style="margin:2vW;display:flex;justify-content:flex-start;">
+            <div style="grid-area:loader">
+                <input type="file" name="newsFoto" required /><br />
+                <select name="fotoType" asp-items="@new  SelectList(Enum.GetValues(typeof(NewsFotoType)))" style="display:block" id="typeOfFoto"></select>
+                <input type="button" onclick="refreshPreviewEditor()" value="Загрузить" />
+            </div>
+            <div style="width:380px;font-size:1.2rem;">
+                Возможно придется несколько раз нажать "Загрузить", не всегда изображение на странице обновляется с 1 раза
+            </div>
+        </div>
+    </form>
+    <form asp-action="fillArticle" asp-route-actionType="Edit" enctype="multipart/form-data">
+        <div class="newsFotoEditor">
+            <div id="previewFotos" style="display:flex;flex-direction:column;justify-content:center;font-family:'Gabriela';font-weight:bold;margin:2vw;">
+                <div class="partNewsElementViewShort" id="creator" name="ViewShort" style="background-image:url(@Model.ShortFotoPreview);background-position-x:@Model.ShortImgX;background-position-y:@Model.ShortImgY;background-size:@Model.ShortImgScale;">
+                    <div class="annotation">
+                        <div class="annotationText" id="shortFotoNewsText">
+                            @if (ViewBag.RefreshEditor.shortStory == null)
+                            {
+                                @Model.ShortStory
+                            }
+                            else
+                            {
+                                @ViewBag.RefreshEditor.shortStory
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="partNewsElementViewMiddle" id="creator" name="ViewMiddle" style="background-image:url(@Model.MiddleFotoPreview);background-position-x:@Model.MiddleImgX;background-position-y:@Model.MiddleImgY;background-size:@Model.MiddleImgScale;margin: 10px 0 10px 0;">
+                    <div class="annotation">
+                        <div class="annotationText" id="middleFotoNewsText">
+                            @if (ViewBag.RefreshEditor.middleStory == null)
+                            {
+                                @Model.MiddleStory
+                            }
+                            else
+                            {
+                                @ViewBag.RefreshEditor.middleStory
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="partNewsElementViewWide" id="creator" name="ViewWide" style="background-image:url(@Model.WideFotoPreview);background-position-x:@Model.WideImgX;background-position-y:@Model.WideImgY;background-size:@Model.WideImgScale;">
+                    <div class="annotation">
+                        <div class="annotationText" id="wideFotoNewsText">
+                            @if (ViewBag.RefreshEditor.wideStory == null)
+                            {
+                                @Model.WideStory
+                            }
+                            else
+                            {
+                                @ViewBag.RefreshEditor.wideStory
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;justify-content:space-between;font-family:'Gabriela';font-weight:bold;margin:2vw;">
+                <div id="editorShort" class="editor">
+                    <div class="newsFotoEditorControls">
+                        <div id="top" class="controlGroup">
+                            <div class="controlGroup">
+                                <div>Ось Х</div>
+                                @if (@ViewBag.RefreshEditor.shortFotoX != null)
+                                {
+                                    <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.RefreshEditor.shortFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="shortFotoX" id="shortFotoX" value="@ViewBag.ShortImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                                }
+                            </div>
+                            <div class="controlGroup">
+                                <div>Ось Y</div>
+                                @if (@ViewBag.RefreshEditor.shortFotoX != null)
+                                {
+                                    <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.RefreshEditor.shortFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="shortFotoY" id="shortFotoY" value="@ViewBag.ShortImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('short')" />
+                                }
+                            </div>
+                            <div class="controlGroup">
+                                <div>Масштаб</div>
+                                @if (@ViewBag.RefreshEditor.shortFotoScale != null)
+                                {
+                                    <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.RefreshEditor.shortFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="shortFotoScale" id="shortFotoScale" value="@ViewBag.ShortImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('short')" />
+                                }
+                            </div>
+                        </div>
+                        @if (@ViewBag.RefreshEditor.shortStory != null)
+                        {
+                            <textarea rows="6" cols="30" maxlength="55" name="shortStory" value="@ViewBag.RefreshEditor.shortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+                        }
+                        else
+                        {
+                            <textarea rows="6" cols="30" maxlength="55" name="shortStory" value="@ViewBag.ShortStory" id="shortFotoText" onkeyup="FotoTextChange('short')"></textarea>
+                        }
+                    </div>
+                </div>
+                <div id="editorMiddle" class="editor">
+                    <div class="newsFotoEditorControls">
+                        <div id="top" class="controlGroup">
+                            <div class="controlGroup">
+                                <div>Ось Х</div>
+                                @if (@ViewBag.RefreshEditor.middleFotoX != null)
+                                {
+                                    <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.RefreshEditor.middleFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="middleFotoX" id="middleFotoX" value="@ViewBag.MiddleImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                }
+                            </div>
+                            <div class="controlGroup">
+                                <div>Ось Y</div>
+                                @if (@ViewBag.RefreshEditor.middleFotoY != null)
+                                {
+                                    <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.RefreshEditor.middleFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="middleFotoY" id="middleFotoY" value="@ViewBag.MiddleImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                }
+                            </div>
+                            <div class="controlGroup">
+                                <div>Масштаб</div>
+                                @if (@ViewBag.RefreshEditor.middleFotoScale != null)
+                                {
+                                    <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.RefreshEditor.middleFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="middleFotoScale" id="middleFotoScale" value="@ViewBag.MiddleImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('middle')" />
+                                }
+                            </div>
+                        </div>
+                        @if (@ViewBag.RefreshEditor.middleStory != null)
+                        {
+                            <textarea rows="6" cols="30" maxlength="55" name="middleStory" value="@ViewBag.RefreshEditor.middleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
+                        }
+                        else
+                        {
+                            <textarea rows="6" cols="30" maxlength="55" name="middleStory" value="@Model.MiddleStory" id="middleFotoText" onkeyup="FotoTextChange('middle')"></textarea>
+                        }
+                    </div>
+                </div>
+                <div id="editorWide" class="editor">
+                    <div class="newsFotoEditorControls">
+                        <div id="top" class="controlGroup">
+                            <div class="controlGroup">
+                                <div>Ось Х</div>
+                                @if (@ViewBag.RefreshEditor.wideFotoX != null)
+                                {
+                                    <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.RefreshEditor.wideFotoX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="wideFotoX" id="wideFotoX" value="@ViewBag.WideImgX" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                }
+                            </div>
+                            <div class="controlGroup">
+                                <div>Ось Y</div>
+                                @if (@ViewBag.RefreshEditor.wideFotoY != null)
+                                {
+                                    <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.RefreshEditor.wideFotoY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="wideFotoY" id="wideFotoY" value="@ViewBag.WideImgY" min="0" max="100" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                }
+                            </div>
+                            <div class="controlGroup">
+                                <div>Масштаб</div>
+                                @if (@ViewBag.RefreshEditor.wideFotoScale != null)
+                                {
+                                    <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.RefreshEditor.wideFotoScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                }
+                                else
+                                {
+                                    <input type="range" name="wideFotoScale" id="wideFotoScale" value="@ViewBag.WideImgScale" min="50" max="300" class="axisControl" oninput="FotoAttrChange('wide')" />
+                                }
+                            </div>
+                        </div>
+                        @if (@ViewBag.RefreshEditor.wideStory != null)
+                        {
+                            <textarea rows="6" cols="30" maxlength="90" name="wideStory" value="@ViewBag.RefreshEditor.wideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
+                        }
+                        else
+                        {
+                            <textarea rows="6" cols="30" maxlength="90" name="wideStory" value="@Model.WideStory" id="wideFotoText" onkeyup="FotoTextChange('wide')"></textarea>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div style="display:flex;flex-direction:column">
+            <div>Порядковый номер блока текст-галлерея. Если надо просто удалить текст - набери в текстовом поле тире (-)</div>
+            <input id="numberOfPart" name="partsCounter" value="@ViewBag.PartNumber" type="number" min="1" max="15" style="width:400px" required />
+        </div>
+        <div style="display:flex">
+            <textarea name="currentTextPart" id="mce"></textarea>
+            <div style="display:flex;flex-direction:column;margin-left:1vw">
+                <div>
+                    <div>Заголовок статьи</div>
+                    @if (@ViewBag.Name != null)
+                    {
+                        <input type="text" name="articleName" value="@ViewBag.Name" style="width:700px" onchange="articlesSaveButtonDisable()" />
+                    }
+                    else
+                    {
+                        <input type="text" name="articleName" value="@Model.ArticleName" style="width:700px" onchange="articlesSaveButtonDisable()" />
+                    }
+                </div>
+                <div>
+                    <div>Краткое название, замени пробелы на тире(-)</div>
+                    @if (@ViewBag.Route != null)
+                    {
+                        <input type="text" name="articleRoute" value="@ViewBag.Route" onchange="articlesSaveButtonDisable()" />
+                    }
+                    else
+                    {
+                        <input type="text" name="articleRoute" value="@Model.ArticleRoute" onchange="articlesSaveButtonDisable()" />
+                    }
+                </div>
+                <div>
+                    <div>Загрузка файлов</div>
+                    <div style="display:flex;">
+                        <input name="fotos" type="file" multiple /><div style="margin-left:10px;"><input type="submit" value="Загрузить блок" onclick="$('#wideFotoText').val(''); $('#middleFotoText').val(''); $('#shortFotoText').val('')" /><input type="checkbox" name="deleteGallery" value="true" style="margin-left:10px;" /> Надо просто удалить галлерею</div>
+                    </div>
+                </div>
+                <div style="display:flex;">
+                    <div style="display:flex;flex-direction:column;">
+                        <div>Выберите тип статьи</div>
+                        <select name="articleType">
+                            @if (ViewBag.Type == "Заказы для кино")
+                            {
+                                <option value="Заказы для кино" selected>Заказы для кино</option>
+                                <option value="Заказы для музеев">Заказы для музеев</option>
+                            }
+                            @if (ViewBag.Type == "Заказы для музеев")
+                            {
+                                <option value="Заказы для кино">Заказы для кино</option>
+                                <option value="Заказы для музеев" selected>Заказы для музеев</option>
+                            }
+                            @if (ViewBag.Type == null)
+                            {
+                                <option value="Заказы для кино">Заказы для кино</option>
+                                <option value="Заказы для музеев">Заказы для музеев</option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div hidden>
+            @if (@ViewBag.PathForPartGallery1 != null)
+            {
+                <input type="text" name="PathToGallery1" value="@ViewBag.PathForPartGallery1" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery1" value="@Model.PathToGallery1" />
+            }
+            @if (@ViewBag.PathForPartGallery2 != null)
+            {
+                <input type="text" name="PathToGallery2" value="@ViewBag.PathForPartGallery2" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery2" value="@Model.PathToGallery2" />
+            }
+            @if (@ViewBag.PathForPartGallery3 != null)
+            {
+                <input type="text" name="PathToGallery3" value="@ViewBag.PathForPartGallery3" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery3" value="@Model.PathToGallery3" />
+            }
+            @if (@ViewBag.PathForPartGallery4 != null)
+            {
+                <input type="text" name="PathToGallery4" value="@ViewBag.PathForPartGallery4" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery4" value="@Model.PathToGallery4" />
+            }
+            @if (@ViewBag.PathForPartGallery5 != null)
+            {
+                <input type="text" name="PathToGallery5" value="@ViewBag.PathForPartGallery5" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery5" value="@Model.PathToGallery5" />
+            }
+            @if (@ViewBag.PathForPartGallery6 != null)
+            {
+                <input type="text" name="PathToGallery6" value="@ViewBag.PathForPartGallery6" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery6" value="@Model.PathToGallery6" />
+            }
+            @if (@ViewBag.PathForPartGallery7 != null)
+            {
+                <input type="text" name="PathToGallery7" value="@ViewBag.PathForPartGallery7" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery7" value="@Model.PathToGallery7" />
+            }
+            @if (@ViewBag.PathForPartGallery8 != null)
+            {
+                <input type="text" name="PathToGallery8" value="@ViewBag.PathForPartGallery8" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery8" value="@Model.PathToGallery8" />
+            }
+            @if (@ViewBag.PathForPartGallery9 != null)
+            {
+                <input type="text" name="PathToGallery9" value="@ViewBag.PathForPartGallery9" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery9" value="@Model.PathToGallery9" />
+            }
+            @if (@ViewBag.PathForPartGallery10 != null)
+            {
+                <input type="text" name="PathToGallery10" value="@ViewBag.PathForPartGallery10" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery10" value="@Model.PathToGallery10" />
+            }
+            @if (@ViewBag.PathForPartGallery11 != null)
+            {
+                <input type="text" name="PathToGallery11" value="@ViewBag.PathForPartGallery11" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery11" value="@Model.PathToGallery11" />
+            }
+            @if (@ViewBag.PathForPartGallery12 != null)
+            {
+                <input type="text" name="PathToGallery12" value="@ViewBag.PathForPartGallery12" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery12" value="@Model.PathToGallery12" />
+            }
+            @if (@ViewBag.PathForPartGallery13 != null)
+            {
+                <input type="text" name="PathToGallery13" value="@ViewBag.PathForPartGallery13" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery13" value="@Model.PathToGallery13" />
+            }
+            @if (@ViewBag.PathForPartGallery14 != null)
+            {
+                <input type="text" name="PathToGallery14" value="@ViewBag.PathForPartGallery14" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery14" value="@Model.PathToGallery14" />
+            }
+            @if (@ViewBag.PathForPartGallery15 != null)
+            {
+                <input type="text" name="PathToGallery15" value="@ViewBag.PathForPartGallery15" />
+            }
+            else
+            {
+                <input type="text" name="PathToGallery15" value="@Model.PathToGallery15" />
+            }
+            <input type="number" name="articleId" value="@Model.ArticleId" />
+            <input type="text" name="pathToGall" value="@Model.PathToGallery1" />
+        </div>
+    </form>
+    <form asp-action="Edit" id="editForm">
+        <div hidden>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="ArticleId" />
+            <input asp-for="ArticleType" value="@ViewBag.Type" />
+            @if (@ViewBag.Name != null)
+            {
+                <input asp-for="ArticleName" value="@ViewBag.Name" />
+            }
+            else
+            {
+                <input asp-for="ArticleName" value="@Model.ArticleName" />
+            }
+            @if (@ViewBag.Route != null)
+            {
+                <input asp-for="ArticleRoute" value="@ViewBag.Route" />
+            }
+            else
+            {
+                <input asp-for="ArticleRoute" value="@Model.ArticleRoute" />
+            }
+            @if (@ViewBag.Text1 != null)
+            {
+                <input asp-for="Text1" value="@ViewBag.Text1" />
+            }
+            else
+            {
+                <input asp-for="Text1" value="@Model.Text1" />
+            }
+            @if (@ViewBag.PathForPartGallery1 != null)
+            {
+                <input asp-for="PathToGallery1" value="@ViewBag.PathForPartGallery1" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery1" value="@Model.PathToGallery1" />
+            }
+
+            @if (@ViewBag.Text2 != null)
+            {
+                <input asp-for="Text2" value="@ViewBag.Text2" />
+            }
+            else
+            {
+                <input asp-for="Text2" value="@Model.Text2" />
+            }
+            @if (@ViewBag.PathForPartGallery2 != null)
+            {
+                <input asp-for="PathToGallery2" value="@ViewBag.PathForPartGallery2" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery2" value="@Model.PathToGallery2" />
+            }
+
+            @if (@ViewBag.Text3 != null)
+            {
+                <input asp-for="Text3" value="@ViewBag.Text3" />
+            }
+            else
+            {
+                <input asp-for="Text3" value="@Model.Text3" />
+            }
+            @if (@ViewBag.PathForPartGallery3 != null)
+            {
+                <input asp-for="PathToGallery3" value="@ViewBag.PathForPartGallery3" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery3" value="@Model.PathToGallery3" />
+            }
+
+            @if (@ViewBag.Text4 != null)
+            {
+                <input asp-for="Text4" value="@ViewBag.Text4" />
+            }
+            else
+            {
+                <input asp-for="Text4" value="@Model.Text4" />
+            }
+            @if (@ViewBag.PathForPartGallery4 != null)
+            {
+                <input asp-for="PathToGallery4" value="@ViewBag.PathForPartGallery4" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery4" value="@Model.PathToGallery4" />
+            }
+
+            @if (@ViewBag.Text5 != null)
+            {
+                <input asp-for="Text5" value="@ViewBag.Text5" />
+            }
+            else
+            {
+                <input asp-for="Text5" value="@Model.Text5" />
+            }
+            @if (@ViewBag.PathForPartGallery5 != null)
+            {
+                <input asp-for="PathToGallery5" value="@ViewBag.PathForPartGallery5" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery5" value="@Model.PathToGallery5" />
+            }
+
+            @if (@ViewBag.Text6 != null)
+            {
+                <input asp-for="Text6" value="@ViewBag.Text6" />
+            }
+            else
+            {
+                <input asp-for="Text6" value="@Model.Text6" />
+            }
+            @if (@ViewBag.PathForPartGallery6 != null)
+            {
+                <input asp-for="PathToGallery6" value="@ViewBag.PathForPartGallery6" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery6" value="@Model.PathToGallery6" />
+            }
+
+            @if (@ViewBag.Text7 != null)
+            {
+                <input asp-for="Text7" value="@ViewBag.Text7" />
+            }
+            else
+            {
+                <input asp-for="Text7" value="@Model.Text7" />
+            }
+            @if (@ViewBag.PathForPartGallery7 != null)
+            {
+                <input asp-for="PathToGallery7" value="@ViewBag.PathForPartGallery7" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery7" value="@Model.PathToGallery7" />
+            }
+
+            @if (@ViewBag.Text8 != null)
+            {
+                <input asp-for="Text8" value="@ViewBag.Text8" />
+            }
+            else
+            {
+                <input asp-for="Text8" value="@Model.Text8" />
+            }
+            @if (@ViewBag.PathForPartGallery8 != null)
+            {
+                <input asp-for="PathToGallery8" value="@ViewBag.PathForPartGallery8" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery8" value="@Model.PathToGallery8" />
+            }
+
+            @if (@ViewBag.Text9 != null)
+            {
+                <input asp-for="Text9" value="@ViewBag.Text9" />
+            }
+            else
+            {
+                <input asp-for="Text9" value="@Model.Text9" />
+            }
+            @if (@ViewBag.PathForPartGallery9 != null)
+            {
+                <input asp-for="PathToGallery9" value="@ViewBag.PathForPartGallery9" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery9" value="@Model.PathToGallery9" />
+            }
+            @if (@ViewBag.Text10 != null)
+            {
+                <input asp-for="Text10" value="@ViewBag.Text10" />
+            }
+            else
+            {
+                <input asp-for="Text10" value="@Model.Text10" />
+            }
+            @if (@ViewBag.PathForPartGallery10 != null)
+            {
+                <input asp-for="PathToGallery10" value="@ViewBag.PathForPartGallery10" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery10" value="@Model.PathToGallery10" />
+            }
+            @if (@ViewBag.Text11 != null)
+            {
+                <input asp-for="Text11" value="@ViewBag.Text11" />
+            }
+            else
+            {
+                <input asp-for="Text11" value="@Model.Text11" />
+            }
+            @if (@ViewBag.PathForPartGallery11 != null)
+            {
+                <input asp-for="PathToGallery11" value="@ViewBag.PathForPartGallery11" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery11" value="@Model.PathToGallery11" />
+            }
+            @if (@ViewBag.Text12 != null)
+            {
+                <input asp-for="Text12" value="@ViewBag.Text12" />
+            }
+            else
+            {
+                <input asp-for="Text12" value="@Model.Text12" />
+            }
+            @if (@ViewBag.PathForPartGallery12 != null)
+            {
+                <input asp-for="PathToGallery12" value="@ViewBag.PathForPartGallery12" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery12" value="@Model.PathToGallery12" />
+            }
+            @if (@ViewBag.Text13 != null)
+            {
+                <input asp-for="Text13" value="@ViewBag.Text13" />
+            }
+            else
+            {
+                <input asp-for="Text13" value="@Model.Text13" />
+            }
+            @if (@ViewBag.PathForPartGallery13 != null)
+            {
+                <input asp-for="PathToGallery13" value="@ViewBag.PathForPartGallery13" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery13" value="@Model.PathToGallery13" />
+            }
+            @if (@ViewBag.Text14 != null)
+            {
+                <input asp-for="Text14" value="@ViewBag.Text14" />
+            }
+            else
+            {
+                <input asp-for="Text14" value="@Model.Text14" />
+            }
+            @if (@ViewBag.PathForPartGallery14 != null)
+            {
+                <input asp-for="PathToGallery14" value="@ViewBag.PathForPartGallery14" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery14" value="@Model.PathToGallery14" />
+            }
+            @if (@ViewBag.Text15 != null)
+            {
+                <input asp-for="Text15" value="@ViewBag.Text15" />
+            }
+            else
+            {
+                <input asp-for="Text15" value="@Model.Text15" />
+            }
+            @if (@ViewBag.PathForPartGallery15 != null)
+            {
+                <input asp-for="PathToGallery15" value="@ViewBag.PathForPartGallery15" />
+            }
+            else
+            {
+                <input asp-for="PathToGallery15" value="@Model.PathToGallery15" />
+            }
+
+
+            @if (@ViewBag.RefreshEditor.shortFotoScale != null)
+            {
+                <input asp-for="ShortImgScale" value="@ViewBag.RefreshEditor.shortFotoScale" id="shortFotoScaleForm" />
+            }
+            else
+            {
+                <input asp-for="ShortImgScale" value="@ViewBag.ShortImgScale" id="shortFotoScaleForm" />
+            }
+            @if (@ViewBag.RefreshEditor.shortFotoX != null)
+            {
+                <input asp-for="ShortImgX" value="@ViewBag.RefreshEditor.shortFotoX" id="shortFotoXForm" />
+            }
+            else
+            {
+                <input asp-for="ShortImgX" value="@ViewBag.ShortImgX" id="shortFotoXForm" />
+            }
+            @if (@ViewBag.RefreshEditor.shortFotoY != null)
+            {
+                <input asp-for="ShortImgY" value="@ViewBag.RefreshEditor.shortFotoY" id="shortFotoYForm" />
+            }
+            else
+            {
+                <input asp-for="ShortImgY" value="@ViewBag.ShortImgY" id="shortFotoYForm" />
+            }
+            @if (@ViewBag.RefreshEditor.shortStory != null)
+            {
+                <input asp-for="ShortStory" value="@ViewBag.RefreshEditor.shortStory" id="shortStoryForm" />
+            }
+            else
+            {
+                <input asp-for="ShortStory" value="@Model.ShortStory" id="shortStoryForm" />
+            }
+            @if (@ViewBag.RefreshEditor.middleFotoScale != null)
+            {
+                <input asp-for="MiddleImgScale" value="@ViewBag.RefreshEditor.middleFotoScale" id="middleFotoScaleForm" />
+            }
+            else
+            {
+                <input asp-for="MiddleImgScale" value="@ViewBag.MiddleImgScale" id="middleFotoScaleForm" />
+            }
+            @if (@ViewBag.RefreshEditor.middleFotoX != null)
+            {
+                <input asp-for="MiddleImgX" value="@ViewBag.RefreshEditor.middleFotoX" id="middleFotoXForm" />
+            }
+            else
+            {
+                <input asp-for="MiddleImgX" value="@ViewBag.MiddleImgX" id="middleFotoXForm" />
+            }
+            @if (@ViewBag.RefreshEditor.middleFotoY != null)
+            {
+                <input asp-for="MiddleImgY" value="@ViewBag.RefreshEditor.middleFotoY" id="middleFotoYForm" />
+            }
+            else
+            {
+                <input asp-for="MiddleImgY" value="@ViewBag.MiddleImgY" id="middleFotoYForm" />
+            }
+            @if (@ViewBag.RefreshEditor.middleStory != null)
+            {
+                <input asp-for="MiddleStory" value="@ViewBag.RefreshEditor.middleStory" id="middleStoryForm" />
+            }
+            else
+            {
+                <input asp-for="MiddleStory" value="@Model.MiddleStory" id="middleStoryForm" />
+            }
+            @if (@ViewBag.RefreshEditor.wideFotoScale != null)
+            {
+                <input asp-for="WideImgScale" value="@ViewBag.RefreshEditor.wideFotoScale" id="wideFotoScaleForm" />
+            }
+            else
+            {
+                <input asp-for="WideImgScale" value="@ViewBag.WideImgScale" id="wideFotoScaleForm" />
+            }
+            @if (@ViewBag.RefreshEditor.wideFotoX != null)
+            {
+                <input asp-for="WideImgX" value="@ViewBag.RefreshEditor.wideFotoX" id="wideFotoXForm" />
+            }
+            else
+            {
+                <input asp-for="WideImgX" value="@ViewBag.WideImgX" id="wideFotoXForm" />
+            }
+            @if (@ViewBag.RefreshEditor.wideFotoY != null)
+            {
+                <input asp-for="WideImgY" value="@ViewBag.RefreshEditor.wideFotoY" id="wideFotoYForm" />
+            }
+            else
+            {
+                <input asp-for="WideImgY" value="@ViewBag.WideImgY" id="wideFotoYForm" />
+            }
+            @if (@ViewBag.RefreshEditor.wideStory != null)
+            {
+                <input asp-for="WideStory" value="@ViewBag.RefreshEditor.wideStory" id="wideStoryForm" />
+            }
+            else
+            {
+                <input asp-for="WideStory" value="@Model.WideStory" id="wideStoryForm" />
+            }
+            <input asp-for="ShortFotoPreview" value="@Model.ShortFotoPreview" />
+            <input asp-for="MiddleFotoPreview" value="@Model.MiddleFotoPreview" />
+            <input asp-for="WideFotoPreview" value="@Model.WideFotoPreview" />
+        </div>
+        <div style="display:flex;"><input id="articleSave" type="button" value="Сохранить" onclick="editFormSend()" /></div>
+    </form>
+    <div style="max-width:1400px;margin:auto;display:flex;flex-direction:column">
+        @if (@ViewBag.Text1 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">1</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text1)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery1 != null || @Model.PathToGallery1 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery1 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery1 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery1 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">1</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text1)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery1 != null || @Model.PathToGallery1 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery1 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery1 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery1 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text2 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">2</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text2)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery2 != null || @Model.PathToGallery2 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery2 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery2 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery2 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">2</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text2)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery2 != null || @Model.PathToGallery2 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery2 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery2 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery2 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text3 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">3</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text3)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery3 != null || @Model.PathToGallery3 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery3 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery3 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery3 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">3</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text3)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery3 != null || @Model.PathToGallery3 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery3 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery3 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery3 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text4 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">4</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text4)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery4 != null || @Model.PathToGallery4 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery4 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery4 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery4 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">4</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text4)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery4 != null || @Model.PathToGallery4 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery4 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery4 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery4 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text5 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">5</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text5)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery5 != null || @Model.PathToGallery5 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery5 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery5 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery5 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">5</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text5)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery5 != null || @Model.PathToGallery5 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery5 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery5 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery5 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text6 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">6</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text6)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery6 != null || @Model.PathToGallery6 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery6 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery6 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery6 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">6</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text6)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery6 != null || @Model.PathToGallery6 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery6 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery6 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery6 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text7 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">7</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text7)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery7 != null || @Model.PathToGallery7 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery7 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery7 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery7 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">7</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text7)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery7 != null || @Model.PathToGallery7 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery7 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery7 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery7 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text8 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">8</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text8)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery8 != null || @Model.PathToGallery8 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery8 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery8 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery8 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">8</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text8)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery8 != null || @Model.PathToGallery8 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery8 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery8 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery8 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text9 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">9</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text9)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery9 != null || @Model.PathToGallery9 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery9 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery9 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery9 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">9</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text9)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery9 != null || @Model.PathToGallery9 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery9 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery9 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery9 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text10 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">10</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text10)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery10 != null || @Model.PathToGallery10 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery10 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery10 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery10 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">10</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text10)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery10 != null || @Model.PathToGallery10 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery10 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery10 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery10 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text11 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">11</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text11)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery11 != null || @Model.PathToGallery11 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery11 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery11 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery11 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">11</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text11)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery11 != null || @Model.PathToGallery11 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery11 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery11 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery11 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text12 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">12</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text12)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery12 != null || @Model.PathToGallery12 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery12 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery12 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery12 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">12</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text12)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery12 != null || @Model.PathToGallery12 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery12 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery12 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery12 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text13 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">13</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text13)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery13 != null || @Model.PathToGallery13 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery13 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery13 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery13 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">13</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text13)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery13 != null || @Model.PathToGallery13 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery13 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery13 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery13 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text14 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">14</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text14)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery14 != null || @Model.PathToGallery14 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery14 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery14 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery14 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">14</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text14)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery14 != null || @Model.PathToGallery14 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery14 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery14 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery14 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (@ViewBag.Text15 != null)
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">15</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@ViewBag.Text15)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery15 != null || @Model.PathToGallery15 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery15 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery15 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery15 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div style="display:flex">
+                <div class="articlePartsCounter">15</div>
+                <div class="articlePreviewBlokCreate">
+                    <div>
+                        @Html.Raw(@Model.Text15)
+                    </div>
+                    <div>
+                        <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                            @if (@ViewBag.PathForPartGallery15 != null || @Model.PathToGallery15 != null)
+                            {
+                                @if (@ViewBag.pathForPartGallery15 != null)
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @ViewBag.PathForPartGallery15 })
+                                }
+                                else
+                                {
+                                    @await Component.InvokeAsync("Fotorama", new { articleId = 1, galleryPath = @Model.PathToGallery15 })
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+﻿@model Varyag.Models.Article
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Удалить статью "@Model.ArticleName"?</h3>
+    
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ArticleId" />
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    <a asp-action="Index">Back to List</a>
+</form>

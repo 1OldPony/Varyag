@@ -2,45 +2,216 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="keywords" content="@ViewData["Keywords"]" />
+    <meta name="description" content="@ViewData["Description"]" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="@ViewData["Cache"]">
     <link rel="stylesheet" type="text/css" href="~/css/MyStyleSheet.css" />
-    <link href="https://fonts.googleapis.com/css?family=Alegreya|Comfortaa|Cormorant|Cormorant+Garamond|Gabriela|Montserrat+Alternates|Noto+Serif|Oranienbaum|PT+Sans+Narrow|Source+Sans+Pro|Vollkorn|Vollkorn+SC&display=swap&subset=cyrillic" rel="stylesheet">
-    <title>@ViewData["Title"] - Varyag</title>
+    <link rel="stylesheet" type="text/css" href="~/css/fotorama.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/css/slick-theme.css" />
+    <link href="https://fonts.googleapis.com/css?family=Gabriela&display=swap&subset=cyrillic" rel="stylesheet">
+    <title>@ViewData["Title"]</title>
 </head>
-<body>
-    <div class="header">
-        <img src="~/images/Макет магнита 3.jpg" width="120" height="120" />
-        <div>
-            <a asp-page="">Суда моторные</a>
-            <a asp-page="">Суда парусно-моторные</a>
-            <a asp-page="">Лодки и шлюпки</a>
-            <a asp-page="">О нас</a>
-        </div>
-        <table class="contacts">
-            <tr><td class="phone">+7 8142 73 35 80</td></tr>
-            <tr><td class="mail">varyag@onego.ru</td></tr>
-        </table>
+<body style="background-color:#eceef1">
+    <div class="top-hat" style="display:none">
     </div>
-    <div class="myBorder"></div>
+    <div class="topMenu">
+        <div class="topMenuContent">
+            <div style="display:flex;align-items:center;justify-content:flex-start">
+                @*<div id="secondVarMenu" class="fullTopMenu" style="display:none">
+            <a class="topMenuIcon" asp-controller="about" asp-action="index" style="max-width:161px;">
+                <div class="shortTopMenu" style="display:flex;">
+                    <div class="navigationButton" style="width:38px;" onclick="navigationButton()"><img src="~/images/icons/Лого-кораблик-только-кораблик-кнопка.png" /></div>
+                    <div style="display:flex;align-items:center;font-size:2.5rem;color:white;">
+                        ВАРЯГ
+                    </div>
+                </div>
+                <img src="~/images/icons/Лого-кораблик-после-жирный-ариал.png" style="display:none;" />
+                <img src="~/images/icons/Лого-кораблик-после-жирный-тахома.png" style="display:none;" />
+            </a>
+            <a href="../../../katalog" style="display:none;margin-right:15px;color:white;width:unset;">КАТАЛОГ</a>
+            <a id="aboutMenu" href="../../../o-nas" style="display:none;margin-right:15px;color:white;width:unset;">О&nbsp;НАС</a>
+        </div>*@
+                @*<div id="thirdVarMenu" class="fullTopMenu" style="display:none;">
+            <a class="topMenuIcon" asp-controller="about" asp-action="index">
+                <img src="~/images/icons/Лого-кораблик-только-кораблик.png" style="display:block;" />
+                <img src="~/images/icons/Лого-кораблик-после-жирный-ариал.png" style="display:none;" />
+                <img src="~/images/icons/Лого-кораблик-после-жирный-тахома.png" style="display:none;" />
+            </a>
+            <a href="../../../katalog" style="margin-right:15px;color:white;width:unset;">КАТАЛОГ</a>
+            <a id="aboutMenu" href="../../../o-nas" style="margin-right:15px;color:white;width:unset;">О&nbsp;НАС</a>
+        </div>*@
+                               
+                <div id="leftSide" class="fullTopMenu" onclick="navigationButton()" style="cursor:pointer;position:absolute;user-select:none;">
+                    <div class="navigationButton" style="display:flex;margin:0 5px 0 0;height:24px;"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
+                    <div class="menuWord" id="dropdawn">
+                        МЕНЮ<span id="arrowDown" style="margin-bottom:4px;color:lime;font-size:1.6rem;">@*&#129047;*@&darr;</span><span id="arrowUp" style="margin-bottom:4px;color:red;display:none;font-size:1.6rem;">@*&#129045;*@&uarr;</span>
+                    </div>
+                    <div class="fromTheTopMenu">
+                        <a href="../../../katalog" class="fromTheTopMenuHeader"><span>Каталог</span></a>
+                        <a href="../../../katalog/lodki" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Лодки</span></a>
+                        <a href="../../../katalog/shlyupki" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Шлюпки</span></a>
+                        <a href="../../../katalog/katera" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Катера</span></a>
+                        <a href="../../../katalog/ladi" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Ладьи</span></a>
+                        <a href="../../../katalog/parusniki" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Парусники</span></a>
+                        <a href="../../../katalog/raznoe" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Разное</span></a>
 
-    <div class="MyContainer"  id="main">
-        <partial name="_CookieConsentPartial" />
-        @RenderBody()
+                        <a href="../../../o-nas" class="fromTheTopMenuHeader"><span>О нас</span></a>
+                        <a href="../../../o-nas/stati" id="lifeNav" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Статьи</span></a>
+                        <a href="../../../o-nas/nashi-novosti" id="smiNav" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Наши новости</span></a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=byType" id="newShipsNav" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Архив</span></a>
+                    </div>
+                </div>
 
-        <footer class="footer">
-            <div>
-                &copy; 2019 - Varyag - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+                <div id="dropdawn" class="fullTopMenu" onclick="fromTheTopMenu()" style="cursor:pointer;position:absolute;user-select:none;">
+                    <div class="navigationButton" style="display:flex;margin:0 5px 0 0;height:24px;"><img src="~/images/icons/бургер-бел-спис2.png" /></div>
+                    <div class="menuWord">
+                        МЕНЮ<span id="arrowDown" style="margin-bottom:4px;color:lime;font-size:1.6rem;">@*&#129047;*@&darr;</span><span id="arrowUp" style="margin-bottom:4px;color:red;display:none;font-size:1.6rem;">@*&#129045;*@&uarr;</span>
+                    </div>
+                    <div class="fromTheTopMenu">
+                        <a href="../../../katalog" class="fromTheTopMenuHeader"><span>Каталог</span></a>
+                        <a href="../../../katalog/lodki" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Лодки</span></a>
+                        <a href="../../../katalog/shlyupki" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Шлюпки</span></a>
+                        <a href="../../../katalog/katera" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Катера</span></a>
+                        <a href="../../../katalog/ladi" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Ладьи</span></a>
+                        <a href="../../../katalog/parusniki" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Парусники</span></a>
+                        <a href="../../../katalog/raznoe" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Разное</span></a>
+
+                        <a href="../../../o-nas" class="fromTheTopMenuHeader"><span>О нас</span></a>
+                        <a href="../../../o-nas/stati" id="lifeNav" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Статьи</span></a>
+                        <a href="../../../o-nas/nashi-novosti" id="smiNav" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Наши новости</span></a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=byType" id="newShipsNav" class="fromTheTopMenuLine"><span>&bull;</span>&nbsp;<span>Архив</span></a>
+                    </div>
+                </div>
             </div>
-        </footer>
+            <a class="middleTopmenu"  asp-action="Index" asp-controller="About">
+                <div class="navigationButton" style="height:45px;margin:0 5px 0 0;display:flex;"><img src="~/images/icons/Лого-кораблик-только-кораблик.png" /></div>
+                <div style="display:flex;align-items:center;font-size:2.5rem;color:white;">
+                    ВАРЯГ
+                </div>
+            </a>
+            <div class="search">
+                <a id="contactsWords" class="contactWords" href="https://varyag-onego.ru#ourContacts"><div class="wordContacts">КОНТАКТЫ</div><div><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div></a>
+                <div style="display:flex;flex-direction:column;margin: 0 5px 0 0;align-items:center;position:relative;width:100%;">
+                    <div style="display:flex;width:100%;justify-content:flex-end;">
+                        <input type="text" id="projectSearch" placeholder="Найти проект" class="forSearchText" />
+                        <div class="searchButton"><img src="~/images/icons/search.png" class="searchIcon" /><img src="~/images/icons/close.png" class="closeIcon" /></div>
+                    </div>
+                    <div class="underSearch"><div style="display:flex;justify-content:space-between;width:100%;"><div id="searchedProjectsCount" class="searchSugestions" onclick="$('.searchIcon').click();"></div><div id="closeUnderSearch" style="margin-right:5px;cursor:pointer;font-size:10px">&#10060;</div></div><div id="suggestions" style="display:flex;flex-direction:column;"></div></div>
+                </div>
+                @*<div style="display:none">
+            <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" class="contactsSocial" /></a>
+        </div>
+        <div style="display:none"><img src="~/images/icons/contacts2.png" class="contactsSocial" id="contacts" /></div>
+        <div style="display:none"><img src="~/images/icons/contacts.png" class="contactsSocial" id="contacts" /></div>*@
+            </div>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-            asp-fallback-test="window.jQuery"
-            crossorigin="anonymous"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
-    </script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*<partial name="_CookieConsentPartial" />*@
 
-    @RenderSection("Scripts", required: false)
+    <div class="spaceUnderTopMenu"></div>
+
+    @RenderBody()
+    <footer class="footerNew">
+        <div class="footerBlocks">
+            <div class="catalogFooterBlock">
+                <div class="nameOfFooterBlock" id="nameOfFooterBlock"><div style="width: 260px;">НАШ КАТАЛОГ:</div></div>
+                <div class="footerBlock" id="catalogBlock">
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/lodki" class="footerSubBlockHeader">Лодки</a>
+                        <a href="../../../../katalog/lodki/narodnye-lodki" class="footerSubBlockLine">Народные лодки</a>
+                        <a href="../../../../katalog/lodki/progulochnye-parusnye-lodki" class="footerSubBlockLine">Прогулочные парусные лодки</a>
+                        <a id="last" href="../../../katalog/lodki/progulochnye-grebnye-lodki" class="footerSubBlockLine">Прогулочные гребные лодки</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/shlyupki" class="footerSubBlockHeader">Шлюпки</a>
+                        <a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6" class="footerSubBlockLine">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
+                        <a href="../../../katalog/shlyupki/botiki" class="footerSubBlockLine">Ботики</a>
+                        <a href="../../../katalog/shlyupki/grebnye-katera-i-velboty" class="footerSubBlockLine">Гребные катера и вельботы</a>
+                        <a id="last" href="../../../katalog/shlyupki/uchebnye-posobiya" class="footerSubBlockLine">Учебные пособия</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/katera" class="footerSubBlockHeader">Катера</a>
+                        <a href="../../../katalog/katera/passazhirskie-katera" class="footerSubBlockLine">Пассажирские катера</a>
+                        <a href="../../../katalog/katera/rabochie-i-rybolovnye-katera" class="footerSubBlockLine">Рабочие/Рыболовные катера</a>
+                        <a href="../../../katalog/katera/kayutnye-katera" class="footerSubBlockLine">Каютные катера</a>
+                        <a id="last" href="../../../katalog/katera/motoseylery" class="footerSubBlockLine">Мотосейлеры</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/ladi" class="footerSubBlockHeader">Ладьи</a>
+                        <a href="../../../katalog/ladi/parusno-motornye-ladi" class="footerSubBlockLine">Парусно-моторные ладьи</a>
+                        <a id="last" href="../../../katalog/ladi/parusno-grebnye-ladi" class="footerSubBlockLine">Парусно-гребные ладьи</a>
+                        <a id="last" href="../../../katalog/ladi/strugi-i-galery" class="footerSubBlockLine">Струги и галеры</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/parusniki" class="footerSubBlockHeader">Парусники</a>
+                        <a href="../../../katalog/parusniki/istoricheskie-parusniki" class="footerSubBlockLine">Исторические парусники</a>
+                        <a href="../../../katalog/parusniki/uchebnye-parusniki" class="footerSubBlockLine">Учебные парусники</a>
+                        <a href="../../../katalog/parusniki/shvertboty" class="footerSubBlockLine">Швертботы</a>
+                        <a id="last" href="../../../katalog/parusniki/parusnye-yahty" class="footerSubBlockLine">Парусные яхты</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../katalog/raznoe" class="footerSubBlockHeader">Разное</a>
+                        <a href="../../../katalog/raznoe/modeli-i-makety" class="footerSubBlockLine">Модели и макеты</a>
+                        <a href="../../../katalog/raznoe/prochaya-produkciya" class="footerSubBlockLine">Прочая продукция</a>
+                    </div>
+                </div>
+            </div>
+            <div class="aboutUsFooterBlock">
+                <div class="nameOfFooterBlock"><div style="width: 260px;">О НАС:</div></div>
+                <div class="footerBlock">
+                    <div class="footerSubBlock">
+                        <a href="../../../o-nas" class="footerSubBlockHeader" style="margin-bottom:0;">О нашей верфи</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../o-nas/stati" class="footerSubBlockHeader">Статьи</a>
+                        <a href="../../../o-nas/stati?type=Заказы для музеев" class="footerSubBlockLine">Заказы для музеев</a>
+                        <a href="../../../o-nas/stati?type=Заказы для кино" class="footerSubBlockLine">Заказы для кино</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../o-nas/nashi-novosti" class="footerSubBlockHeader">Новости</a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=smi" class="footerSubBlockLine">СМИ о нас</a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=life" class="footerSubBlockLine">Жизнь наших судов</a>
+                        <a href="../../../o-nas/nashi-novosti?newsType=newShips" class="footerSubBlockLine">Новости верфи</a>
+                    </div>
+                    <div class="footerSubBlock">
+                        <a href="../../../o-nas/nashi-novosti?newsType=byType" class="footerSubBlockHeader">Архив новостей</a>
+                    </div>
+                </div>
+            </div>
+            <div class="informationFooterBlock">
+                <div class="nameOfFooterBlock"><div style="width: 260px;">ИНФОРМАЦИЯ:</div></div>
+                <div class="footerBlock">
+                    <div class="footerSubBlock">
+                        <div class="footerSubBlockHeader">Контакты:</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/phone-white.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/whatsapp.png" class="contactsIcon" alt="cont" />&nbsp;+7 (921) 524-61-02</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/email-red-yellow.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
+                        <div class="footerSubBlockLine"><img src="~/images/icons/map-white-red.png" alt="map" class="contactsIcon" />&nbsp;Карелия,&nbsp;Петрозаводск</div>
+                    </div>
+                    <div class="footerSubBlock">
+                        <div class="footerSubBlockHeader">Наши соцсети:</div>
+                        <div style="display:flex;justify-content:flex-start;">
+                            <a style="cursor:pointer;margin-right:5px" href="https://vk.com/shipyard_varyag" target="_blank"><img src="~/images/icons/vkont.png" alt="vk" style="width:64px" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footerLogo">
+                <div class="footerBlock" id="logo">
+                    <div class="footerSubBlock">
+                        <div class="logoFooterDiv"><img src="~/images/icons/logo200x200-white.png" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=a93c2bc3-57dc-4ed5-90f0-419606ca819a&lang=ru_RU" type="text/javascript"></script>
+    <script src="~/js/fotorama.js"></script>
+    <script src="~/js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/js/top-nav.js"></script>
 </body>
 </html>

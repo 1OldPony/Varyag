@@ -1,0 +1,215 @@
+﻿@model IEnumerable<Varyag.Models.ProjectPublicViewModel>
+
+<div class="projects">
+    <div id="topCatalogBorder" class="myBorder"></div>
+    @foreach (var item in Model)
+    {
+        <a class="projectListItem" href="../../../katalog/@item.Route">
+            <div class="singleProject">
+                <div id="short" class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "sheme"})" alt="@item.Name" title="@item.Name" /></div>
+                <div class="projectImage"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = item.ProjectID, fot = "main"})" alt="@item.Name" title="@item.Name" /></div>
+                <div class="catalogItemTop"><h2 style="margin-block:0;font-size:1.13rem;">@item.Name</h2></div>
+                <div id="top" class="gridFreeSpace"></div>
+                <div class="TTH">
+                    <table>
+                        <tr id="longLength" class="cellLong">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.Length)</td>
+                            <td class="value">@item.Length&nbsp;м.</td>
+                        </tr>
+                        <tr id="middleValue" class="cellShort" name="midLength">
+                            <td class="characteristic">Длина корпуса</td>
+                            <td class="value">@item.Length&nbsp;м.</td>
+                        </tr>
+                        <tr id="fifth-out" class="cellShort" name="shortLength">
+                            <td class="characteristic">Длина</td>
+                            <td class="value">@item.Length&nbsp;м.</td>
+                        </tr>
+                        <tr class="cellLong" name="longWindth">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.Windth)</td>
+                            <td class="value">@item.Windth&nbsp;м.</td>
+                        </tr>
+                        <tr id="middleValue" class="cellShort" name="midWidth">
+                            <td class="characteristic">Ширина корпуса</td>
+                            <td class="value">@item.Windth&nbsp;м.</td>
+                        </tr>
+                        <tr id="fifth-out" class="cellShort">
+                            <td class="characteristic">Ширина</td>
+                            <td class="value">@item.Windth&nbsp;м.</td>
+                        </tr>
+                        <tr id="longDeep" class="cellLong">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.Deep)</td>
+                            <td class="value">@item.Deep&nbsp;м.</td>
+                        </tr>
+                        @if (item.BoatRow || item.BoatSail || item.BoatTraditional || item.BoatYal || item.Botik || item.KaterRow || item.MaketStudy)
+                        {
+                            <tr id="middleValue" class="cellShort" name="midDeep">
+                                <td class="characteristic">Вес корпуса</td>
+                                <td class="value">@item.Mass&nbsp;кг.</td>
+                            </tr>
+                            <tr id="fourth-out" class="cellShort" name="shortDeep">
+                                <td class="characteristic">Вес</td>
+                                <td class="value">@item.Mass&nbsp;кг.</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr id="middleValue" class="cellShort" name="midDeep">
+                                <td class="characteristic">Осадка судна</td>
+                                <td class="value">@item.Deep&nbsp;м.</td>
+                            </tr>
+                            <tr id="fourth-out" class="cellShort" name="shortDeep">
+                                <td class="characteristic">Осадка</td>
+                                <td class="value">@item.Deep&nbsp;м.</td>
+                            </tr>
+                        }
+                        <tr id="passanger" class="cellLong">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.PassengerCap)</td>
+                            <td class="value">@item.PassengerCap&nbsp;чел.</td>
+                        </tr>
+                        <tr id="middleValue" class="cellShort" name="midPassengerCap">
+                            <td class="characteristic">Кол-во пассажиров</td>
+                            <td class="value">@item.PassengerCap&nbsp;чел.</td>
+                        </tr>
+                        <tr id="fird-out" class="cellShort">
+                            <td class="characteristic">Пассажиры</td>
+                            <td class="value">@item.PassengerCap&nbsp;чел.</td>
+                        </tr>
+                        @if (item.BoatRow || item.BoatSail || item.BoatTraditional || item.BoatYal || item.Botik || item.KaterRow || item.MaketStudy)
+                        {
+                            <tr id="longSleepingAreas" class="cellLong">
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.NumberOfOars)</td>
+                                @if (@item.NumberOfOars != null)
+                                {
+                                    <td class="value">@item.NumberOfOars&nbsp;шт.</td>}
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>}
+                            </tr>
+                            <tr id="middleValue" class="cellShort" name="midSleepingAreas">
+                                <td class="characteristic">Количество весел</td>
+                                @if (@item.NumberOfOars != null)
+                                {
+                                    <td class="value">@item.NumberOfOars&nbsp;шт.</td>}
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>}
+                            </tr>
+                            <tr id="second-out" class="cellShort" name="shortSleepingAreas">
+                                <td class="characteristic">Весла</td>
+                                @if (@item.NumberOfOars != null)
+                                {
+                                    <td class="value">@item.NumberOfOars&nbsp;шт.</td>}
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>}
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr id="longSleepingAreas" class="cellLong">
+                                <td class="characteristic">@Html.DisplayNameFor(model => model.SleepingAreas)</td>
+                                @if (@item.SleepingAreas != null)
+                                {
+                                    <td class="value">@item.SleepingAreas&nbsp;шт.</td>}
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>}
+                            </tr>
+                            <tr id="middleValue" class="cellShort" name="midSleepingAreas">
+                                <td class="characteristic">Спальные места</td>
+                                @if (@item.SleepingAreas != null)
+                                {
+                                    <td class="value">@item.SleepingAreas&nbsp;шт.</td>}
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>}
+                            </tr>
+                            <tr id="second-out" class="cellShort" name="shortSleepingAreas">
+                                <td class="characteristic">Койки</td>
+                                @if (@item.SleepingAreas != null)
+                                {
+                                    <td class="value">@item.SleepingAreas&nbsp;шт.</td>}
+                                else
+                                {
+                                    <td class="value" style="text-align:center">-</td>}
+                            </tr>
+                        }
+                        <tr id="sailArea" class="cellLong">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.SailArea)</td>
+                            @if (@item.SailArea != null)
+                            {
+                                <td class="value">@item.SailArea&nbsp;м<sup style="font-size:10px;">2</sup></td>}
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>}
+                        </tr>
+                        <tr id="middleValue" class="cellShort" name="midSailArea">
+                            <td class="characteristic">Пл. парусности</td>
+                            @if (@item.SailArea != null)
+                            {
+                                <td class="value">@item.SailArea&nbsp;м<sup style="font-size:10px;">2</sup></td>}
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>}
+                        </tr>
+                        <tr id="first-out" class="cellShort">
+                            <td class="characteristic">Паруса</td>
+                            @if (@item.SailArea != null)
+                            {
+                                <td class="value">@item.SailArea&nbsp;м<sup style="font-size:10px;">2</sup></td>}
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>}
+                        </tr>
+                        <tr id="longEnginePower" class="cellLong">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.EnginePower)</td>
+                            @if (@item.EnginePower != null)
+                            {
+                                <td class="value">@item.EnginePower&nbsp;л.с.</td>}
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>}
+                        </tr>
+                        <tr id="middleValue" class="cellShort" name="midEnginePower">
+                            <td class="characteristic">Мощность двигателя</td>
+                            @if (@item.EnginePower != null)
+                            {
+                                <td class="value">@item.EnginePower&nbsp;л.с.</td>}
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>}
+                        </tr>
+                        <tr id="fuel" class="cellLong">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.FuelCap)</td>
+                            @if (@item.FuelCap != null)
+                            {
+                                <td class="value">@item.FuelCap&nbsp;л.</td>}
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>}
+                        </tr>
+                        <tr id="longFreshWaterCap" class="cellLong">
+                            <td class="characteristic">@Html.DisplayNameFor(model => model.FreshWaterCap)</td>
+                            @if (@item.FreshWaterCap != null)
+                            {
+                                <td class="value">@item.FreshWaterCap&nbsp;л.</td>}
+                            else
+                            {
+                                <td class="value" style="text-align:center">-</td>}
+                        </tr>
+                    </table>
+                </div>
+                <div id="bottom" class="gridFreeSpace"></div>
+                @if (item.Price != "по запросу")
+                {
+                    <div id="listPrice" class="catalogItemBottom"><span id="priceWord">@Html.DisplayNameFor(model => model.Price): </span>@item.Price&nbsp;&#8381;</div>
+                }
+                else
+                {
+                    <div id="listPrice" class="catalogItemBottom"><span id="priceWord">@Html.DisplayNameFor(model => model.Price): </span>@item.Price</div>
+                }
+            </div>
+        </a>
+        <div class="myBorder"></div>
+    }
+</div>

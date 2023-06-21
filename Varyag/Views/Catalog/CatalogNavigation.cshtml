@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+<div class="MyContainer" id="main">
+    <div class="path">
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../katalog">Каталог</a>
+    </div>
+    <div id="catalogCollage" class="largeTopFoto">
+        <div class="textOverCollage">
+            <h1 id="textOverCollage" class="plitkaCategoryHeader">Каталог</h1>
+        </div>
+    </div>
+    <div class="smallTopFoto">
+        <h2 class="smallTopFotoText">Каталог</h2>
+    </div>
+    <div class="myBorder"></div>
+    <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+        <partial name="~/Views/Shared/LeftMenu.cshtml" />
+        <div class="projectsHalf">
+            <div class="navigationTopBlock">
+                <div class="topCatalogLine">
+                    <div class="categorysLineItem">Наш каталог</div>@*<div style="display:flex"><img src="~/images/icons/list3.png" style="margin-right:5px" /><img src="~/images/icons/plitca1-2.png" /></div>*@
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div style="font-size:0.9rem;text-align:left;padding:0px 10px 10px 10px">
+                    Верфь деревянного судостроения "Варяг" проектирует и строит деревянные суда различных типов и размерений.
+                    Если среди представленных на сайте судов вы не найдете подходящего для себя варианта,
+                    то мы можем спроектировать и построить такое по индивидуальному проекту, в том числе реплику реально существовавшего судна.
+                </div>
+            </div>
+            <partial name="~/Views/Shared/CatalogPlitka.cshtml" />
+        </div>
+    </div>
+</div>

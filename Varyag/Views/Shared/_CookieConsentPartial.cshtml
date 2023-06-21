@@ -8,8 +8,8 @@
 
 @if (showBanner)
 {
-    <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-        Use this space to summarize your privacy and cookie use policy. <a asp-area="" asp-controller="Home" asp-action="Privacy">Learn More</a>.
+    <div id="cookieConsent" style="display:flex;justify-content:center;height:5vh;background-color:rgba(0, 68, 187, 0.09019607843137255);font-size: 1.5rem;align-items: center;position:absolute;bottom:0" role="alert">
+        На данном сайте мы используем файлы cookie.
         <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
             <span aria-hidden="true">Accept</span>
         </button>

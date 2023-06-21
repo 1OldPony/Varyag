@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Varyag.Models.ProjectPublicViewModel>
+
+<div class="projects" style="flex-wrap:wrap;flex-direction:row;justify-content:space-between;">
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        <a href="../../../katalog/@Model.ElementAt(i).Route" class="tthUnderFoto">
+            <div class="projectImage" style="margin:0;"><img src="@Url.Action("ProjectImageRender", "Projects", new { id = Model.ElementAt(i).ProjectID, fot = "main"})" style="border-radius:5px 5px 0 0" alt="@Model.ElementAt(i).Name" title="@Model.ElementAt(i).Name" /></div>
+            <div class="underFoto">
+                <div class="catalogItemTop"><h2 style="margin-block:0;font-size:1.13rem;">@Model.ElementAt(i).Name</h2></div>
+                <div>
+                    <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Длина корпуса</div><div>@Model.ElementAt(i).Length&nbsp;м.</div></div>
+                    @if (ViewBag.secondCharacteristic == "weight")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Вес корпуса</div><div>@Model.ElementAt(i).Mass&nbsp;кг.</div></div>
+                    }
+                    @if (ViewBag.secondCharacteristic == "volume")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Водоизмещение</div><div>@Model.ElementAt(i).Volume&nbsp;т.</div></div>
+                    }
+                    @if (ViewBag.thirdCharacteristic == "passanger")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Пассажиры</div><div>@Model.ElementAt(i).PassengerCap&nbsp;чел.</div></div>
+                    }
+                    @if (ViewBag.thirdCharacteristic == "sleepingAreas")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Спальные места</div><div>@Model.ElementAt(i).SleepingAreas&nbsp;шт.</div></div>
+                    }
+                    @if (ViewBag.thirdCharacteristic == "sailArea")
+                    {
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Площадь парусности</div><div>@Model.ElementAt(i).SailArea&nbsp;м<sup style="font-size:10px;">2</sup></div></div>
+                    }
+                </div>
+                @if (@Model.ElementAt(i).Price != "по запросу")
+                {
+                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price): @Model.ElementAt(i).Price&nbsp;&#8381;</div>
+                }
+                else
+                {
+                    <div class="catalogItemBottom">@Html.DisplayNameFor(model => model.Price) @Model.ElementAt(i).Price</div>
+                }
+            </div>
+        </a>
+                }
+    <div class="myBorder"></div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Varyag.Models.Project>
+
+@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+<div class="MyContainer" id="main">
+    <div class="path">
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../katalog">Каталог</a> > <a href="../../../katalog/ladi">Ладьи</a> > <a href="../../../katalog/ladi/parusno-grebnye-ladi">Парусно-гребные ладьи</a>
+    </div>
+    <div id="ladiyCollage" class="largeTopFoto">
+        <div class="textOverCollage">
+            <h1 id="textOverCollage" class="plitkaCategoryHeader">Ладьи</h1>
+            @*<h1 id="textOverCollage" class="plitkaCategoryHeader" style="font-size:2.9rem;padding-top:16%;">Парусно-гребные ладьи</h1>*@
+        </div>
+    </div>
+    <div class="smallTopFoto">
+        <h2 class="smallTopFotoText">Ладьи</h2>
+    </div>
+    <div class="myBorder"></div>
+    <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+        <partial name="~/Views/Shared/LeftMenu.cshtml" />
+        <div class="projectsHalf">
+            <div class="projectsHalfTop">
+                <div class="topCatalogLine">
+                    <h2 class="categorysLineItem">Парусно-моторные ладьи</h2><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('ladyarow')" class="selectSortOption"><option value="По возрастанию длинны" selected>По возрастанию длины</option><option value="По убыванию длинны">По убыванию длины</option></select></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div class="projectsHalfText">
+                    Малые парусно-гребные ладьи предназначены для использования в качестве прогулочных и учебных судов, а также для участия в исторических экспедициях, походах и фестивалях.
+                    В качестве прототипов при создании проектов использовались реальные суда, найденные в процессе археологических раскопок. Все суда имеют автодорожные габариты,
+                    что существенно облегчает их перевозку по дорогам общего пользования.
+                </div>
+            </div>
+            <div style="position:relative">
+                <div id="sortScreen2" class="sortScreen2"><div class="loadingGif"><img src="~/images/icons/loading-11.gif" class="gif" /><img src="~/images/icons/loading-105.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-73.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-99.gif" style="width:50%;display:none" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "ladyarow", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "ladyarow", plitca = false, lengthSort = "Up" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

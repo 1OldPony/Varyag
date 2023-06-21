@@ -15,7 +15,7 @@ namespace Varyag.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -129,6 +129,138 @@ namespace Varyag.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("Varyag.Models.AnythingElse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("FotoPath1");
+
+                    b.Property<string>("FotoPath2");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("PathToGallery");
+
+                    b.Property<string>("Route");
+
+                    b.Property<string>("ShortDescription");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AnythingElse");
+                });
+
+            modelBuilder.Entity("Varyag.Models.Article", b =>
+                {
+                    b.Property<int>("ArticleId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ArticleName");
+
+                    b.Property<string>("ArticleRoute");
+
+                    b.Property<string>("ArticleType");
+
+                    b.Property<string>("MiddleFotoPreview");
+
+                    b.Property<string>("MiddleImgScale");
+
+                    b.Property<string>("MiddleImgX");
+
+                    b.Property<string>("MiddleImgY");
+
+                    b.Property<string>("MiddleStory");
+
+                    b.Property<string>("PathToGallery1");
+
+                    b.Property<string>("PathToGallery10");
+
+                    b.Property<string>("PathToGallery11");
+
+                    b.Property<string>("PathToGallery12");
+
+                    b.Property<string>("PathToGallery13");
+
+                    b.Property<string>("PathToGallery14");
+
+                    b.Property<string>("PathToGallery15");
+
+                    b.Property<string>("PathToGallery2");
+
+                    b.Property<string>("PathToGallery3");
+
+                    b.Property<string>("PathToGallery4");
+
+                    b.Property<string>("PathToGallery5");
+
+                    b.Property<string>("PathToGallery6");
+
+                    b.Property<string>("PathToGallery7");
+
+                    b.Property<string>("PathToGallery8");
+
+                    b.Property<string>("PathToGallery9");
+
+                    b.Property<string>("ShortFotoPreview");
+
+                    b.Property<string>("ShortImgScale");
+
+                    b.Property<string>("ShortImgX");
+
+                    b.Property<string>("ShortImgY");
+
+                    b.Property<string>("ShortStory");
+
+                    b.Property<string>("Text1");
+
+                    b.Property<string>("Text10");
+
+                    b.Property<string>("Text11");
+
+                    b.Property<string>("Text12");
+
+                    b.Property<string>("Text13");
+
+                    b.Property<string>("Text14");
+
+                    b.Property<string>("Text15");
+
+                    b.Property<string>("Text2");
+
+                    b.Property<string>("Text3");
+
+                    b.Property<string>("Text4");
+
+                    b.Property<string>("Text5");
+
+                    b.Property<string>("Text6");
+
+                    b.Property<string>("Text7");
+
+                    b.Property<string>("Text8");
+
+                    b.Property<string>("Text9");
+
+                    b.Property<string>("WideFotoPreview");
+
+                    b.Property<string>("WideImgScale");
+
+                    b.Property<string>("WideImgX");
+
+                    b.Property<string>("WideImgY");
+
+                    b.Property<string>("WideStory");
+
+                    b.HasKey("ArticleId");
+
+                    b.ToTable("Article");
+                });
+
             modelBuilder.Entity("Varyag.Models.Foto", b =>
                 {
                     b.Property<int>("FotoID")
@@ -163,9 +295,51 @@ namespace Varyag.Migrations
 
                     b.Property<string>("Header");
 
+                    b.Property<int>("KeyWord");
+
+                    b.Property<string>("LinkedProjectNames");
+
                     b.Property<string>("MainStory");
 
+                    b.Property<string>("MiddleFotoPreview");
+
+                    b.Property<string>("MiddleImgScale");
+
+                    b.Property<string>("MiddleImgX");
+
+                    b.Property<string>("MiddleImgY");
+
+                    b.Property<string>("MiddleStory");
+
+                    b.Property<string>("NewsDate");
+
+                    b.Property<string>("PathToGallery");
+
+                    b.Property<string>("PathToVideo1");
+
+                    b.Property<string>("PathToVideo2");
+
+                    b.Property<string>("PathToVideo3");
+
+                    b.Property<string>("ShortFotoPreview");
+
+                    b.Property<string>("ShortImgScale");
+
+                    b.Property<string>("ShortImgX");
+
+                    b.Property<string>("ShortImgY");
+
                     b.Property<string>("ShortStory");
+
+                    b.Property<string>("WideFotoPreview");
+
+                    b.Property<string>("WideImgScale");
+
+                    b.Property<string>("WideImgX");
+
+                    b.Property<string>("WideImgY");
+
+                    b.Property<string>("WideStory");
 
                     b.HasKey("NewsId");
 
@@ -188,16 +362,15 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("Botik");
 
-                    b.Property<string>("Deep")
-                        .HasMaxLength(5);
+                    b.Property<string>("Deep");
 
                     b.Property<string>("Description");
 
-                    b.Property<int?>("EnginePower");
+                    b.Property<string>("EnginePower");
 
-                    b.Property<int?>("FreshWaterCap");
+                    b.Property<string>("FreshWaterCap");
 
-                    b.Property<int?>("FuelCap");
+                    b.Property<string>("FuelCap");
 
                     b.Property<bool>("KaterCabin");
 
@@ -215,8 +388,7 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("LadyaSail");
 
-                    b.Property<string>("Length")
-                        .HasMaxLength(5);
+                    b.Property<string>("Length");
 
                     b.Property<byte[]>("MainFoto");
 
@@ -228,20 +400,21 @@ namespace Varyag.Migrations
 
                     b.Property<bool>("MaketStudy");
 
-                    b.Property<string>("Mass")
-                        .HasMaxLength(10);
+                    b.Property<string>("Mass");
 
                     b.Property<bool>("Motosailer");
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("NumberOfOars")
-                        .HasMaxLength(5);
+                    b.Property<string>("NumberOfOars");
 
-                    b.Property<int?>("PassengerCap");
+                    b.Property<string>("PassengerCap");
 
-                    b.Property<string>("SailArea")
-                        .HasMaxLength(10);
+                    b.Property<string>("Price");
+
+                    b.Property<string>("Route");
+
+                    b.Property<string>("SailArea");
 
                     b.Property<bool>("SailboatHistorical");
 
@@ -251,17 +424,17 @@ namespace Varyag.Migrations
 
                     b.Property<byte[]>("ShipSheme");
 
+                    b.Property<byte[]>("ShipShemeFull");
+
                     b.Property<bool>("Shvertbot");
 
-                    b.Property<int?>("SleepingAreas");
+                    b.Property<string>("SleepingAreas");
 
-                    b.Property<int?>("Speed");
+                    b.Property<string>("Speed");
 
-                    b.Property<string>("Volume")
-                        .HasMaxLength(10);
+                    b.Property<string>("Volume");
 
-                    b.Property<string>("Windth")
-                        .HasMaxLength(5);
+                    b.Property<string>("Windth");
 
                     b.Property<bool>("Yacht");
 
@@ -369,7 +542,7 @@ namespace Varyag.Migrations
             modelBuilder.Entity("Varyag.Models.Foto", b =>
                 {
                     b.HasOne("Varyag.Models.News", "News")
-                        .WithMany("NewsFotos")
+                        .WithMany()
                         .HasForeignKey("NewsID");
 
                     b.HasOne("Varyag.Models.Project", "ShipProject")

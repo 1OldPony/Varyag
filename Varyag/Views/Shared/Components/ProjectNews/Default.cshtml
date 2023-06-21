@@ -1,0 +1,45 @@
+﻿@model List<NewsViewModel>
+@{
+    int x = 1;
+}
+@if (Model.Count != 0)
+{
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        @if (x % 2 != 0)
+        {
+            <a href="../../../o-nas/@Model.ElementAt(i).NewsId" class="projectNewsElement">
+                <div style="display:flex;margin:10px auto auto 0;height:100%;">
+                    <div class="projectNewsFoto">
+                        <img src="@Model.ElementAt(i).ShortFotoPreview" />
+                    </div>
+                    <div id="even" class="projectNewsTextPart">
+                        <div style="font-size:1.6rem;font-weight:bold;">@Model.ElementAt(i).NewsDatePreview</div>
+                        <h2 class="newsMainStory">@Model.ElementAt(i).Header</h2>
+                        <div style="display: flex;align-items: center;justify-content: center;font-weight: bolder;font-size: 1.4rem;">Смотреть...</div>
+                    </div>
+                </div>
+            </a>
+        }
+        else
+        {
+            <a href="../../../o-nas/@Model.ElementAt(i).NewsId" class="projectNewsElement">
+                <div style="display:flex;margin:10px auto auto 0;height:100%;">
+                    <div id="even" class="projectNewsFoto">
+                        <img src="@Model.ElementAt(i).ShortFotoPreview" />
+                    </div>
+                    <div class="projectNewsTextPart">
+                        <div style="font-size:1.6rem;font-weight:bold;">@Model.ElementAt(i).NewsDatePreview</div>
+                        <h2 class="newsMainStory">@Model.ElementAt(i).Header</h2>
+                        <div style="display: flex;align-items: center;justify-content: center;font-weight: bolder;font-size: 1.4rem;">Смотреть...</div>
+                    </div>
+                </div>
+            </a>
+        }
+        x++;
+    }
+}
+else
+{
+    <div class="projectNewsElement" style="padding:80px;width:auto;text-align:center;">Новости по данному проекту отсутствуют</div>
+}

@@ -1,0 +1,16 @@
+﻿@model Varyag.Models.AnythingElse
+@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+
+<div class="path">
+    <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../katalog">Каталог</a> > <a href="../../katalog/raznoe">Разное</a> > <a>@Model.Name</a>
+</div>
+
+<div class="MyContainer" style="font-size:1.3rem">
+    <h2>@Model.Name</h2>
+    <div style="margin-bottom:5vh">@Html.Raw(Model.Description)</div>
+    <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+        @await Component.InvokeAsync("Fotorama", new { anythingId = Model.Id })
+    </div>
+</div>

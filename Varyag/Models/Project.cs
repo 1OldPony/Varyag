@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 namespace Varyag.Models
 {
@@ -11,58 +10,53 @@ namespace Varyag.Models
 
         [DisplayName("Название проекта")]
         public string Name { get; set; }
+        
+        [DisplayName("Путь для проекта")]
+        public string Route { get; set; }
 
-        [DisplayName("Длинна корпуса наибольшая, м")]
-        [MaxLength(5)]
+        [DisplayName("Длина корпуса наибольшая - если целое ДОБАВЬ .0")]
         public string Length { get; set; }
 
-        [DisplayName("Ширина корпуса наибольшая, м")]
-        [MaxLength(5)]
+        [DisplayName("Ширина корпуса наибольшая - если целое ДОБАВЬ .0")]
         public string Windth { get; set; }
 
-        [DisplayName("Осадка в полном грузу, м")]
-        [MaxLength(5)]
+        [DisplayName("Осадка в полном грузу")]
         public string Deep { get; set; }
 
-        [DisplayName("Водоизмещение порожнем, т")]
-        [MaxLength(10)]
+        [DisplayName("Водоизмещение порожнем")]
         public string Volume { get; set; }
 
-        [DisplayName("Вес корпуса, кг")]
-        [MaxLength(10)]
+        [DisplayName("Вес корпуса")]
         public string Mass { get; set; }
 
-        [DisplayName("Количество весел, шт")]
-        [MaxLength(5)]
+        [DisplayName("Количество весел")]
         public string NumberOfOars { get; set; }
 
-        [DisplayName("Мощность двигателя, л.с.")]
-        public int? EnginePower { get; set; }
+        [DisplayName("Мощность двигателя")]
+        public string EnginePower { get; set; }
 
-        [DisplayName("Скорость под двигателем, узлов")]
-        public int? Speed { get; set; }
+        [DisplayName("Скорость под двигателем")]
+        public string Speed { get; set; }
 
-        [DisplayName("Площадь парусности, м2")]
-        [MaxLength(10)]
+        [DisplayName("Площадь парусности")]
         public string SailArea { get; set; }
 
-        [DisplayName("Количество спальных мест, шт")]
-        public int? SleepingAreas { get; set; }
+        [DisplayName("Количество спальных мест")]
+        public string SleepingAreas { get; set; }
 
-        [DisplayName("Пассажировместимость, чел")]
-        public int? PassengerCap { get; set; }
+        [DisplayName("Количество пассажиров")]
+        public string PassengerCap { get; set; }
 
-        [DisplayName("Запас топлива, л")]
-        public int? FuelCap { get; set; }
+        [DisplayName("Запас топлива")]
+        public string FuelCap { get; set; }
 
-        [DisplayName("Запас пресной воды, л")]
-        public int? FreshWaterCap { get; set; }
+        [DisplayName("Запас пресной воды")]
+        public string FreshWaterCap { get; set; }
 
-        //[Required]
-        //[DisplayName("Тип судна")]
-        //public ShipType Type { get; set; }
+        [DisplayName("Цена")]
+        public string Price { get; set; }
 
-        [DisplayName("Описание")]
+        [DisplayName("Полное описание")]
         public string Description { get; set; }
 
         [DisplayName("Прогулочная гребная лодка")]
@@ -78,6 +72,8 @@ namespace Varyag.Models
         public bool KaterRow { get; set; }
         [DisplayName("Ботик")]
         public bool Botik { get; set; }
+        [DisplayName("Макет для обучения")]
+        public bool MaketStudy { get; set; }
 
         [DisplayName("Мотосейлер")]
         public bool Motosailer { get; set; }
@@ -92,6 +88,8 @@ namespace Varyag.Models
         public bool LadyaRow { get; set; }
         [DisplayName("Парусно-моторная ладья")]
         public bool LadyaSail { get; set; }
+        [DisplayName("Струги и галеры")]
+        public bool LadyaProject { get; set; }
 
         [DisplayName("Яхта")]
         public bool Yacht { get; set; }
@@ -102,32 +100,25 @@ namespace Varyag.Models
         [DisplayName("Исторический парусник")]
         public bool SailboatHistorical { get; set; }
 
-        [DisplayName("Макет для обучения")]
-        public bool MaketStudy { get; set; }
-        [DisplayName("Макет для кино")]
+        [DisplayName("Мулька-заглушка")]
         public bool MaketCinema { get; set; }
-        [DisplayName("Макет для музеев")]
+        [DisplayName("Модели и макеты")]
         public bool MaketMuseum { get; set; }
-        [DisplayName("Макет для интерьеров")]
+        [DisplayName("Прочая продукция")]
         public bool MaketDesign { get; set; }
 
         [DisplayName("Проект катера")]
         public bool KaterProject { get; set; }
-        [DisplayName("Проект ладьи")]
-        public bool LadyaProject { get; set; }
         [DisplayName("Проект парусника")]
         public bool SailboatProject { get; set; }
-
-
+        
         [DisplayName("Схема")]
         public byte[] ShipSheme { get; set; }
+        [DisplayName("Схема с расположением")]
+        public byte[] ShipShemeFull { get; set; }
         [DisplayName("Главная фотка")]
         public byte[] MainFoto { get; set; }
 
         public List<Foto> ShipFotos { get; set; }
-    }
-    public enum ShipType
-    {
-        Выберите_Тип, Лодка, Катер, Ладья, Парусник, Шлюпка, Макет
     }
 }

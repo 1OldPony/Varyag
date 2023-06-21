@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+<div class="MyContainer" id="main">
+    <div class="path">
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../katalog">Каталог</a> > <a>Поиск</a>
+    </div>
+    <div id="catalogCollage" class="largeTopFoto">
+        <div class="textOverCollage">
+            <h1 id="textOverCollage" class="plitkaCategoryHeader">Каталог</h1>
+        </div>
+    </div>
+    <div class="smallTopFoto">
+        <h2 class="smallTopFotoText">Каталог</h2>
+    </div>
+    <div class="myBorder"></div>
+    <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+        <partial name="~/Views/Shared/LeftMenu.cshtml" />
+        <div class="projectsHalf">
+            <div class="navigationTopBlock">
+                <div class="topCatalogLine">
+                    <div class="categorysLineItem">Поиск по каталогу "<span id="searchText">@ViewBag.SearchText</span>"</div><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('search', $('#searchText').html())" class="selectSortOption"><option value="По возрастанию длинны" selected>По возрастанию длины</option><option value="По убыванию длинны">По убыванию длины</option></select></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div style="font-size:0.9rem;text-align:left;padding:0px 10px 10px 10px">
+                    Верфь деревянного судостроения "Варяг" проектирует и строит деревянные суда различных типов и размерений.
+                    Если среди представленных на сайте судов вы не найдете подходящего для себя варианта,
+                    то мы можем спроектировать и построить такое по индивидуальному проекту, в том числе реплику реально существовавшего судна.
+                </div>
+            </div>
+            <div style="position:relative">
+                <div id="sortScreen2" class="sortScreen2"><div class="loadingGif"><img src="~/images/icons/loading-11.gif" class="gif" /><img src="~/images/icons/loading-105.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-73.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-99.gif" style="width:50%;display:none" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "search", plitca = true, lengthSort = "Up", searchText = @ViewBag.SearchText })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "search", plitca = false, lengthSort = "Up", searchText = @ViewBag.SearchText })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,53 +1,45 @@
 ﻿@model IEnumerable<Varyag.Models.Project>
-
 @{
-    ViewData["Title"] = "Купить прекрасные яхты от производителя";
     Layout = "~/Views/Shared/_FrontLayout.cshtml";
 }
-
-<input type="text" value="sailboats" id="currentPage" hidden />
-
-<h1 style="padding-bottom:20px">Яхты</h1>
-
-<div class="catalog">
-    <div class="nav" id="nav">
-        <div class="nav-element" name="lodki" id="lodki">
-            <div class="nav-element-inside">
-                <a asp-action="boats">Лодки</a>
-            </div>
+<div class="MyContainer" id="main">
+    <div class="path">
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../katalog">Каталог</a> > <a href="../../../katalog/parusniki">Парусники</a> > <a href="../../../katalog/parusniki/parusnye-yahty">Парусные яхты</a>
+    </div>
+    <div id="sailboatsCollage" class="largeTopFoto">
+        <div class="textOverCollage">
+            <h1 id="textOverCollage" class="plitkaCategoryHeader">Парусники</h1>
+            @*<h1 id="textOverCollage" class="plitkaCategoryHeader" style="font-size:2.9rem;padding-top:23%;">Парусные яхты</h1>*@
         </div>
-        <div class="nav-element" name="shlupki" id="shlupki">
-            <div class="nav-element-inside">
-                <a asp-action="bigboats">Шлюпки</a>
+    </div>
+    <div class="smallTopFoto">
+        <h2 class="smallTopFotoText">Парусники</h2>
+    </div>
+    <div class="myBorder"></div>
+    <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+        <partial name="~/Views/Shared/LeftMenu.cshtml" />
+        <div class="projectsHalf">
+            <div class="projectsHalfTop">
+                <div class="topCatalogLine">
+                    <h2 class="categorysLineItem">Парусные яхты</h2><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('yacht')" class="selectSortOption"><option value="По возрастанию длинны" selected>По возрастанию длины</option><option value="По убыванию длинны">По убыванию длины</option></select></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div class="projectsHalfText">
+                    Парусно-моторные яхты предназначены для отдыха на воде и занятий парусным спортом. Суда могут иметь как классические, так и современные обводы, а также различные типы парусного
+                    вооружения. Комплектация судов современным яхтенным оборудованием обеспечивают безопасность и комфорт для пассажиров и команды.
+                    В случае необходимости мы можем построить деревянную яхту по индивидуальному проекту, с учетом вкусов и пожеланий конкретного заказчика.
+                </div>
             </div>
-        </div>
-        <div class="nav-element" name="katera" id="katera">
-            <div class="nav-element-inside">
-                <a asp-action="motorboats">Катера</a>
-            </div>
-        </div>
-        <div class="nav-element" name="lodiy" id="lodiy">
-            <div class="nav-element-inside">
-                <a asp-action="lodiy">Лодьи</a>
-            </div>
-        </div>
-        <div class="nav-element-choosen" name="sailboats" id="sailboats">
-            <div class="nav-element-inside">
-                <a asp-action="yachts">Парусники</a>
-            </div>
-        </div>
-        <div class="nav-element" name="models" id="models">
-            <div class="nav-element-inside">
-                @*<img src="~/images/Судоверфь Варяг.jpg" />*@
-                <a asp-action="schooners">Модели</a>
+            <div style="position:relative">
+                <div id="sortScreen2" class="sortScreen2"><div class="loadingGif"><img src="~/images/icons/loading-11.gif" class="gif" /><img src="~/images/icons/loading-105.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-73.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-99.gif" style="width:50%;display:none" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "yacht", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "yacht", plitca = false, lengthSort = "Up" })
+                </div>
             </div>
         </div>
     </div>
-    <div name="sailboats-Sub" id="sailboats-Sub">@await Html.PartialAsync("~/Views/Catalog/Sailboats-SubNav.cshtml")</div>
-    <div name="lodki-Sub" id="lodki-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Lodki-SubNav.cshtml")</div>
-    <div name="shlupki-Sub" id="shlupki-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Shlupki-SubNav.cshtml")</div>
-    <div name="katera-Sub" id="katera-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Katera-SubNav.cshtml")</div>
-    <div name="lodiy-Sub" id="lodiy-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Lodiy-SubNav.cshtml")</div>
-    <div name="models-Sub" id="models-Sub" hidden>@await Html.PartialAsync("~/Views/Catalog/Models-SubNav.cshtml")</div>
-    
 </div>

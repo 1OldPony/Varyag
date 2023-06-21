@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Varyag.Models.Project>
+@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+<div class="MyContainer" id="main">
+    <div class="path">
+        <a asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../katalog">Каталог</a> > <a href="../../../katalog/parusniki">Парусники</a> > <a href="../../../katalog/parusniki/shvertboty">Швертботы</a>
+    </div>
+    <div id="sailboatsCollage" class="largeTopFoto">
+        <div class="textOverCollage">
+            @*<h1 id="textOverCollage" class="plitkaCategoryHeader" style="font-size:3.4rem">Швертботы</h1>*@
+            <h1 id="textOverCollage" class="plitkaCategoryHeader">Парусники</h1>
+        </div>
+    </div>
+    <div class="smallTopFoto">
+        <h2 class="smallTopFotoText">Парусники</h2>
+    </div>
+    <div class="myBorder"></div>
+    <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+        <partial name="~/Views/Shared/LeftMenu.cshtml" />
+        <div class="projectsHalf">
+            <div class="projectsHalfTop">
+                <div class="topCatalogLine">
+                    <h2 class="categorysLineItem">Швертботы</h2><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('shvertbot')" class="selectSortOption"><option value="По возрастанию длинны" selected>По возрастанию длины</option><option value="По убыванию длинны">По убыванию длины</option></select></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed" onclick="switchProjectsViewPlitca()" /></div>
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div class="projectsHalfText">
+                    Швертботы предназначены для отдыха на воде и занятий парусным спортом. Суда могут быть как открытыми, предназначенными для коротких выходов в течении дня,
+                    так и палубными, рассчитанными на многодневные походы и оборудованными спальными местами, камбузом и гальюном.
+                    Небольшие размеры швертботов, имеющих автодорожные габариты, облегчают их перевозку по дорогам общего пользования.
+                    Если среди представленных на сайте вариантов вы не найдете подходящих для себя, мы можем построить деревянный швертбот по индивидуальному проекту.
+                </div>
+            </div>
+            <div style="position:relative">
+                <div id="sortScreen2" class="sortScreen2"><div class="loadingGif"><img src="~/images/icons/loading-11.gif" class="gif" /><img src="~/images/icons/loading-105.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-73.gif" style="width:50%;display:none" /><img src="~/images/icons/loading-99.gif" style="width:50%;display:none" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "shvertbot", plitca = false, lengthSort = "Up" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

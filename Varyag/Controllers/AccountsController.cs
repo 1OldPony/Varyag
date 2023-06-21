@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Varyag.Controllers
 {
-    [Authorize(Roles ="admin")]
+    [Authorize(Roles = "admin")]
     public class AccountsController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -42,7 +42,7 @@ namespace Varyag.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Projects");
+                        return RedirectToAction("AboutUs", "About");
                     }
                 }
                 else
@@ -59,6 +59,37 @@ namespace Varyag.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login");
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                User user = new User { UserName = model.Login,  };
+                // добавляем пользователя
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    // установка куки
+                    await _signInManager.SignInAsync(user, false);
+                    return RedirectToAction("Index", "AboutUs");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+            }
+            return View(model);
         }
     }
 }

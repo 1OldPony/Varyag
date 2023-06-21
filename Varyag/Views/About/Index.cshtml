@@ -1,0 +1,347 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+<div id="second" class="MyContainer">
+
+
+    <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+    <div class="leftMenu" id="mainPage">
+        <nav>
+            <ul class="leftNavMenu" style="justify-content:flex-start;padding-bottom:69px">
+                <li>
+                    <div class="leftNavLine"><div id="catalogOpen" class="leftNavOpenCurrent">+</div><div id="catalogClose" class="leftNavCloseCurrent">-</div><a href="../../../katalog">Каталог</a></div>
+                    <ul id="catalog-sub" class="leftSubNavOpenCurrent">
+                        <li class="leftSubCategory">
+                            <a href="../../../katalog/lodki" class="leftNavLine">Лодки</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a href="../../../katalog/shlyupki" class="leftNavLine">Шлюпки</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a href="../../../katalog/katera" class="leftNavLine">Катера</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a href="../../../katalog/ladi" class="leftNavLine">Ладьи</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a href="../../../katalog/parusniki" class="leftNavLine">Парусники</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a href="../../../katalog/raznoe" class="leftNavLine">Разное</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div id="aboutUsNav" class="leftNavLine" style="margin-top:138px"><div id="aboutUsOpen" class="leftNavOpenCurrent">+</div><div id="aboutUsClose" class="leftNavCloseCurrent">-</div><a href="../../../o-nas">О нас</a></div>
+                    <ul id="aboutUs-sub" class="leftSubNavOpenCurrent">
+                        <li class="leftSubCategory">
+                            <a href="../../../o-nas/stati" id="lifeNav" class="leftNavLine">Статьи</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a href="../../../o-nas/nashi-novosti" id="smiNav" class="leftNavLine">Наши новости</a>
+                        </li>
+                        <li class="leftSubCategory">
+                            <a href="../../../o-nas/nashi-novosti?newsType=byType" id="newShipsNav" class="leftNavLine">Архив</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="ourContacts" style="padding-left:0;color:#183f61;">
+            <div>НАШИ КОНТАКТЫ</div>
+            <div class="contactsLeft">
+                <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
+                <div class="contactsUnit"><img src="~/images/icons/whatsapp.png" class="contactsIcon" alt="cont" />&nbsp;+7 (921) 524-61-02</div>
+                <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.varyag-onego.ru</a>
+                <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;margin:10px 10px 0 10px;background:white;border-radius:10px;position:relative;">
+        <img src="~/images/о_нас/производство/47-й-узк.jpg" class="mainFoto" id="narrow" />
+        <img src="~/images/о_нас/производство/47-й-наиширейший.jpg" class="mainFoto" id="wide" />
+    </div>
+
+    <div style="display:flex;flex-direction:column;">
+        <div class="mainPageCatalogNav">
+            <div class="catalogIconsMainPaigeHeader">
+                <a href="../../../katalog" style="width:100%;color:white;">
+                    Наша продукция
+                </a>
+            </div>
+            <div class="catalogIconsMainPaigeLine">
+                <a href="../../../katalog/lodki" class="catalogIconsMainPaige2">
+                    <div class="catalogIconHeader">
+                        Лодки
+                    </div>
+                    <div class="catalogIconMain">
+                        <img src="/images/icons/Цветные/одинаковые/лодка-безфона.png" />
+                    </div>
+                </a>
+                <a href="../../../katalog/shlyupki" class="catalogIconsMainPaige2">
+                    <div class="catalogIconHeader">
+                        Шлюпки
+                    </div>
+                    <div id="Yal" class="catalogIconMain">
+                        <img src="/images/icons/Цветные/одинаковые/шлюпка-безфона.png" />
+                    </div>
+                </a>
+                <a href="../../../katalog/katera" class="catalogIconsMainPaige2">
+                    <div class="catalogIconHeader">
+                        Катера
+                    </div>
+                    <div class="catalogIconMain">
+                        <img src="/images/icons/Цветные/одинаковые/катер-безфона.png" />
+                    </div>
+                </a>
+                <a href="../../../katalog/ladi" class="catalogIconsMainPaige2">
+                    <div class="catalogIconHeader">
+                        Ладьи
+                    </div>
+                    <div class="catalogIconMain">
+                        <img src="/images/icons/Цветные/одинаковые/ладья-безфона-1200.png" />
+                    </div>
+                </a>
+                <a href="../../../katalog/parusniki" class="catalogIconsMainPaige2">
+                    <div class="catalogIconHeader">
+                        Парусники
+                    </div>
+                    <div class="catalogIconMain">
+                        <img src="/images/icons/Цветные/одинаковые/парусник-безфона.png" />
+                    </div>
+                </a>
+                <a href="../../../katalog/raznoe" class="catalogIconsMainPaige2Different">
+                    <div class="catalogIconHeader">
+                        Разное
+                    </div>
+                    <div class="catalogIconMain">
+                        <img src="/images/icons/Цветные/одинаковые/лодка-безфона.png" />
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="mainPageCatalogNavZebra">
+            <div style="width:100%">
+                <div style="width:100%;height:2px;background-color:#183f61;"></div>
+                <div style="width:100%;height:2px;background-color:white;"></div>
+                <div style="width:100%;height:2px;background-color:#183f61;"></div>
+                <div style="width:100%;height:2px;background-color:white;"></div>
+                <div style="width:100%;height:2px;background-color:#183f61;"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="mainPage" class="catalogShorted">
+        <div class="catalogIconsMainPaigeHeader">
+            <div style="width:100%;">
+                Наша продукция
+            </div>
+        </div>
+        <div class="catalogPlates">
+            <div class="catalogPlitka" id="lodki">
+                <div class="catalogPlitkaCategorys">
+                    <a href="../../../katalog/lodki" class="plitkaCategoryHeader">Лодки</a>
+                    <a href="../../../../katalog/lodki/narodnye-lodki" class="plitkaCategory">Народные лодки</a>
+                    <a href="../../../../katalog/lodki/progulochnye-parusnye-lodki" class="plitkaCategory">Прогулочные парусные лодки</a>
+                    <a id="last" href="../../../katalog/lodki/progulochnye-grebnye-lodki" class="plitkaCategory">Прогулочные гребные лодки</a>
+                </div>
+            </div>
+            <div id="center" class="catalogPlitka">
+                <div class="catalogPlitkaCategorys">
+                    <a href="../../../katalog/katera" class="plitkaCategoryHeader">Катера</a>
+                    <a href="../../../katalog/katera/passazhirskie-katera" class="plitkaCategory">Пассажирские катера</a>
+                    <a href="../../../katalog/katera/rabochie-i-rybolovnye-katera" class="plitkaCategory">Рабочие/Рыболовные катера</a>
+                    <a href="../../../katalog/katera/kayutnye-katera" class="plitkaCategory">Каютные катера</a>
+                    <a id="last" href="../../../katalog/katera/motoseylery" class="plitkaCategory">Мотосейлеры</a>
+                </div>
+            </div>
+            <div class="catalogPlitka">
+                <div class="catalogPlitkaCategorys">
+                    <a href="../../../katalog/parusniki" class="plitkaCategoryHeader">Парусники</a>
+                    <a href="../../../katalog/parusniki/istoricheskie-parusniki" class="plitkaCategory">Исторические парусники</a>
+                    <a href="../../../katalog/parusniki/uchebnye-parusniki" class="plitkaCategory">Учебные парусники</a>
+                    <a href="../../../katalog/parusniki/shvertboty" class="plitkaCategory">Швертботы</a>
+                    <a id="last" href="../../../katalog/parusniki/parusnye-yahty" class="plitkaCategory">Парусные яхты</a>
+                </div>
+            </div>
+            <div class="catalogPlitka" id="shlupki">
+                <div class="catalogPlitkaCategorys">
+                    <a href="../../../katalog/shlyupki" class="plitkaCategoryHeader">Шлюпки</a>
+                    <a href="../../../katalog/shlyupki/shlyupki-yal2yal4yal6" class="plitkaCategory">Шлюпки ЯЛ2, ЯЛ4, ЯЛ6</a>
+                    <a href="../../../katalog/shlyupki/botiki" class="plitkaCategory">Ботики</a>
+                    <a href="../../../katalog/shlyupki/grebnye-katera-i-velboty" class="plitkaCategory">Гребные катера и вельботы</a>
+                    <a id="last" href="../../../katalog/shlyupki/uchebnye-posobiya" class="plitkaCategory">Учебные пособия</a>
+                </div>
+            </div>
+            <div id="center" class="catalogPlitka" name="ladiy">
+                <div class="catalogPlitkaCategorys">
+                    <a href="../../../katalog/ladi" class="plitkaCategoryHeader">Ладьи</a>
+                    <a href="../../../katalog/ladi/parusno-motornye-ladi" class="plitkaCategory">Парусно-моторные ладьи</a>
+                    <a id="last" href="../../../katalog/ladi/parusno-grebnye-ladi" class="plitkaCategory">Парусно-гребные ладьи</a>
+                    <a id="last" href="../../../katalog/ladi/strugi-i-galery" class="plitkaCategory">Струги и галеры</a>
+                </div>
+            </div>
+            <div class="catalogPlitka">
+                <div class="catalogPlitkaCategorys">
+                    <a href="../../../katalog/raznoe" class="plitkaCategoryHeader">Разное</a>
+                    <a href="../../../katalog/raznoe/modeli-i-makety" class="plitkaCategory">Модели и макеты</a>
+                    <a href="../../../katalog/raznoe/prochaya-produkciya" id="last" class="plitkaCategory">Прочая продукция</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="catalogPlates" id="mainPageSmall">
+        <div class="catalogIconsMainPaigeHeader">
+            <div style="width:100%;">
+                Наша продукция
+            </div>
+        </div>
+        <div class="catalogPlitka" id="single">
+            <div class="catalogPlitkaCategorys">
+                <a href="../../katalog/lodki" class="plitkaCategoryHeader">Лодки</a>
+                <a href="../../katalog/shlyupki" class="plitkaCategoryHeader">Шлюпки</a>
+                <a href="../../katalog/katera" class="plitkaCategoryHeader">Катера</a>
+                <a href="../../katalog/ladi" class="plitkaCategoryHeader">Ладьи</a>
+                <a href="../../katalog/parusniki" class="plitkaCategoryHeader">Парусники</a>
+                <a href="../../katalog/raznoe" class="plitkaCategoryHeader">Разное</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="littleBlocksLine">
+        <div id="leftLittleBlock" class="littleBlock"><div class="borderAbout"></div><div>Современные деревянные корабли - это <span style="color:#e81010">надежность</span>, <span style="color:#e81010">комфорт</span> и <span style="color:#e81010">долговечность</span></div><div class="borderAbout"></div></div>
+        <div class="littleBlock"><div class="borderAbout"></div><div>За <span style="color:#e81010">30 лет</span> построено <span style="color:#e81010">более 450 судов</span>, из них <span style="color:#e81010">более 60 - крупные</span></div><div class="borderAbout"></div></div>
+        <div id="rightLittleBlock" class="littleBlock"><div class="borderAbout"></div><div>Наши специалисты спроектируют <span style="color:#e81010">судно под ваши требования</span></div><div class="borderAbout"></div></div>
+    </div>
+    <div style="display:flex;flex-direction:column;background-color:white;border-radius:10px;max-width:1350px;margin:0 10px 0 10px;">
+        <div class="borderAbout" style="margin:10px 30px 10px 30px;"></div>
+        <div class="customersText">
+            Наши заказчики:<span style="display:none">Среди наших заказчиков крупные НКО, национальные парки, администрации городов и регионов, учебные а также другие государственные учреждения и клубы юных моряков</span>
+        </div>
+        <div class="customersText" id="small">
+            Наши заказчики:<span style="display:none"> - национальные парки, НКО, учебные, административные и другие учреждения и клубы юных моряков</span>
+        </div>
+        <div class="borderAbout" style="margin:10px 30px 10px 30px;"></div>
+        <div style="margin:0 10px 0 10px;">
+            <div class="slideDescription">
+                <div>Деп. промышленности, транспорта, связи и инноваций Воронежской области</div>
+                <div>Адм. муниципального образования Выборгское городское поселение</div>
+                <div>Британская кинокомпания Picture palace</div>
+                <div>Международный детский центр "Артек"</div>
+                <div>Всероссийский детский центр "Орленок"</div>
+                <div>Государственный музей заповедник "Царское село"</div>
+                <div>Государственный университет морского и речного флота им. адм. Макарова</div>
+                <div>СПБ ГАПОУ "Морской технический колледж имени адмирала Д.Н. Сенявина"</div>
+                <div>Калининградский музей мирового океана</div>
+                <div>Комитет по физической культуре и спорту Новгородской области</div>
+                <div>МАОУ Детская флотилия Парус</div>
+                <div>МБОУ ДО Детский морской центр "Североморец", г.Северодвинск</div>
+                <div>Морской государственный университет имени адмирала Невельского</div>
+                <div>Московский Государственный Университет имени М.В. Ломоносова</div>
+                <div>МРМОО Союз православной молодежи Мордовии, г.Саранск</div>
+                <div>Мэрия городского округа Тольятти</div>
+                <div>Новосибирская государственная академия водного транспорта</div>
+                <div>ПРОО Яхт клуб "Навигатор"</div>
+                <div>РМОО Молодежный морской совет, г.Санкт-Петербург</div>
+                <div>Рыболовецкий колхоз Беломор, с.Нюхча</div>
+                <div>Самарский речной техникум, филиал Волжского ГУ Водного транспорта</div>
+                <div>СПБ ГБУ "Центр "Адмиралтейский" по работе с подростками и молодежью"</div>
+                <div>СПБ ГБУ культуры "Парк культуры и отдыха "Дубки"</div>
+                <div>Управление молодежной политики и туризма Ямало-Ненецкого авт. округа</div>
+                <div>Управление образования города Пензы</div>
+                <div>Учебный центр ФСБ России г.Анапа</div>
+                <div>Всероссийский детский центр "Океан", Владивосток</div>
+                <div>ФГБОУ ВО "Волжская государственная академия водного транспорта"</div>
+                <div>Федеральная служба охраны российской федерации</div>
+                <div>Федеральное государственное учреждение "Национальный парк "Водлозерский"</div>
+                <div>Федеральное государственное учреждение "Национальный парк "Паанаярви"</div>
+                <div>Различные войсковые частьи и учебные центры министерства обороны РФ</div>
+                <div>Морской профессиональный лицей №9 им. С.Н. Орешкова, г. Архангельск</div>
+            </div>
+            <div class="slider">
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Администрация-Воронежской обл.,Деп.-промышленности,транспорта,-связи-и-инноваций.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Администрация-муниципального-образования-Выборгское городское поселение.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Британская-кинокомпания-Picture-palace,Malcolm-Craddock.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/ВДЦ-АРТЕК.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/ВДЦ-ОРЛЕНОК.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Гос.-музей-заповедник-Царское село.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Государственный-университет-морского-и-речного-флота-имени-адмирала-С.О.-МАКАРОВА.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/ГОУ-СПО-Спб-Морской-технический-колледж.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Калининградский-музей-мирового-океана.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Комитет-по-физической-культуре-и-спорту-Новгородской-области.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/МАОУ-Детская-флотилия-Парус.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/МБОУ-ДО-Детский-морской-центр-Североморец,г.Северодвинск.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/МГУ-им.-адм.Невельского,г.Владивосток.png" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Московский-Государственный-Университет-имени-М.В.Ломоносова.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/МРМОО-Союз-православной-молодежи-Мордовии,г.Саранск.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Мэрия-городского-округа-Тольятти.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Новосибирская-государственная-академия-водного-транспорта-мал.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/ПРОО-Яхт-клуб-Навигатор.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/РМОО-Молодежный-морской-совет,г.Санкт-Петербург.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Рыболовецкий-колхоз-Беломор,с.Нюхча,РК.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Самарский-речной-техникум(Самарский-филиала-Волжского-государственного-университета-водного-транспорта).png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/СПб гос. бюд. уч.-Центр-Адмиралтейский-по-работе-с-подростками-и-молодежью.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Спб-Государственное-учреждение-культуры-Парк-культуры-и-отдыха-Дубки.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Упр.-молодежной-политики-и-туризма-Адм.-Пуровского-района-Ямало-Ненецкого-авт.-округа.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Управление-образования-г.Пензы.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Учебный-центр-ФСБ-России-г.Анапа.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/ФГБОУ-ВДЦ-Океан,Владивосток.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/ФГОУ-ВПО-Волжская-государственная-академия-водного-транспорта.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Федеральная-служба-охраны.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Федеральное-гос.-учреждение-Национальный-парк-Водлозерский.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Федеральное-гос.-учреждение-Национальный-парк-Паанаярви.png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/эмблема-ВС-РФ-1996г..png" loading="lazy" /></div>
+                <div class="sliderElements"><img src="~/images/icons/Заказчики/Морской-профессиональный-лицей-№9-им.-С.Н.Орешкова,-г.Архангельск.png" loading="lazy" /></div>
+            </div>
+        </div>
+        <a class="mapForMainPage" target="_blank" href="https://yandex.ru/maps/?um=constructor%3A4981c683bff02df9357d296ff3dd7944f7d56e9b604bd87bf148c6fd6e53e952&source=constructorLink">
+            <div style="margin-right:10px;">География наших заказов&nbsp;&rarr;</div>
+        </a>
+        @*<div style="background-image:url(/images/Кусок-карты-для-географии-длинный.png);border-bottom-left-radius:10px;border-bottom-right-radius:10px;justify-content:flex-end;max-width:1350px;color:#183f61;padding-right:10px;padding-bottom:2px;padding-top:2px;font-family:'Gabriela';font-weight:bold;display:none;align-items:center;">
+            <div>География наших заказов&nbsp;></div>
+        </div>
+        <div style="background-image:url(/images/Кусок-карты-для-географии-длин-масшт-обр.JPG);border-bottom-left-radius:10px;border-bottom-right-radius:10px;justify-content:flex-end;max-width:1350px;color:#183f61;padding-right:10px;padding-bottom:2px;padding-top:2px;font-family:'Gabriela';font-weight:bold;display:none;align-items:center;">
+            <div>География наших заказов&nbsp;></div>
+        </div>*@
+    </div>
+    <div class="previewsBlock">
+        @await Component.InvokeAsync("News")
+        @await Component.InvokeAsync("Articles")
+    </div>
+    <div id="ourContacts"></div>
+    @*<div class="contactsBlock">
+        <div class="contactsText" style="display:flex;align-items:center;flex-direction:column;">
+            <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;+7 (814) 273-35-80</div>
+            <div class="contactsUnit"><img src="~/images/icons/phone.png" class="contactsIcon" alt="cont" />&nbsp;"Анин" телефон</div>
+            <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.varyag-onego.ru</a>
+            <a style="cursor:pointer" href="http://www.varyag-onego.ru" target="_blank" class="contactsUnit"><img src="~/images/icons/global_114550x96.png" class="contactsIcon" />&nbsp;www.деревянная-лодка.рф</a>
+            <div class="contactsUnit"><img src="~/images/icons/email.png" alt="mail" class="contactsIcon" />&nbsp;verf.varyag@yandex.ru</div>
+        </div>
+        <div id="ourLocation"></div>
+    </div>*@
+    <div class="contactsBlock">
+        <div class="contactsText">
+            <p>
+                Наш адрес: респ.&nbsp;Карелия, г.&nbsp;Петрозаводск ул.&nbsp;Онежской флотилии, д.&nbsp;43
+            </p>
+            <p id="shorterContactsText2">
+                Доставка готовой продукции осуществляется автомобильным транспортом во все регионы России, а также ближнего и дальнего зарубежья.
+            </p>
+            <p id="shorterContactsText2">
+                Крупногабаритные суда доставляются перегоном по внутренним водным путям.
+            </p>
+            <p id="shorterContactsTextShow">
+                Доставка готовой продукции осуществляется автомобильным транспортом или по внутренним водным путям во все регионы России, а также ближнего и дальнего зарубежья.
+            </p>
+            <p id="shorterContactsText">
+                Стоимость доставки не входит в стоимость судна и уточняется отдельно.
+            </p>
+        </div>
+        <div id="ourLocation"></div>
+    </div>
+</div>

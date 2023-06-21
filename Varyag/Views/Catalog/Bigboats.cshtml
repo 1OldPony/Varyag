@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Varyag.Models.Project>
+@{
+    Layout = "~/Views/Shared/_FrontLayout.cshtml";
+}
+<div class="MyContainer" id="main">
+    <div class="path">
+        <a  asp-action="Index" asp-controller="About">Главная</a> > <a href="../../../katalog">Каталог</a> > <a href="../../../katalog/shlyupki">Шлюпки</a>
+    </div>
+    <div id="shlupkiCollage" class="largeTopFoto">
+        <div class="textOverCollage">
+            <h1 id="textOverCollage" class="plitkaCategoryHeader">Шлюпки</h1>
+        </div>
+    </div>
+    <div class="smallTopFoto">
+        <div class="smallTopFotoText">Шлюпки</div>
+    </div>
+    <div class="myBorder"></div>
+    <div class="contentBlock">
+        <div id="blackScreen" onclick="navigationButton()" class="blackScreen"></div>
+        <partial name="~/Views/Shared/LeftMenu.cshtml" />
+        <div class="projectsHalf">
+            <div class="projectsHalfTop">
+                <div class="topCatalogLine">
+                    <h2 class="categorysLineItem">Все шлюпки</h2><div class="catalogIcons"><div class="sortOptions"><div id="sortScreen" class="sortScreen"></div><div id="sortWord">Сортировка:&nbsp;</div><select id="sortOptions" onchange="lengthSort('bigboat')" class="selectSortOption"><option value="По возрастанию длины" selected>По возрастанию длины</option><option value="По убыванию длинны">По убыванию  длины</option></select></div><img src="~/images/icons/list3.png" id="deactivated" class="iconList" onclick="switchProjectsViewList()" /><img src="~/images/icons/list3-red.png" id="activated" class="iconListRed" onclick="switchProjectsViewList()" /><img src="~/images/icons/plitca1-2.png" id="activated" class="iconPlitca" onclick="switchProjectsViewPlitca()" /><img src="~/images/icons/plitca1-2-red.png" id="deactivated" class="iconPlitcaRed"onclick="switchProjectsViewPlitca()" /></div>
+                </div>
+                <div id="border" class="myBorder"></div>
+                <div class="projectsHalfText">
+                    Верфь деревянного судостроения "Варяг" проектирует и строит шлюпки различных типов и размерений. Кроме серийно выпускаемых
+                    образцов, мы можем спроектировать и построить шлюпку по индивидуальному проекту, в том числе реплики исторических гребных судов XVII-XIX веков.
+                </div>
+            </div>
+            <div style="position:relative">
+                <div id="sortScreen2" style="opacity:0.5;background-color:lightgray;display:none;position:absolute;width:99%;height:100%;margin:10px 10px 0 0;max-width:1000px;border-radius:10px;"><div style="position:absolute;display:flex;justify-content:center;top:5%;width:100%"><img src="~/images/icons/loading-11.gif" style="width:50%" /></div></div>
+                <div id="deactivated" class="plitcaStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "bigboat", plitca = true, lengthSort = "Up" })
+                </div>
+                <div id="activated" class="lineStyleCatalog">
+                    @await Component.InvokeAsync("ProjectsCatalog", new { category = "bigboat", plitca = false, lengthSort = "Up" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

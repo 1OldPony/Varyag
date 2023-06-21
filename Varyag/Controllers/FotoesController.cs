@@ -9,7 +9,7 @@ using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
     public class FotoesController : Controller
     {
         private readonly VaryagContext _context;
@@ -18,7 +18,7 @@ namespace Varyag.Controllers
         {
             _context = context;
         }
-
+        [AllowAnonymous]
         public async Task<IActionResult> ImageRender(int? id)
         {
             //Foto foto;
@@ -26,13 +26,6 @@ namespace Varyag.Controllers
 
             byte[] image = foto.ProjectFoto;
             return File(image, "image/jpg");
-        }
-
-        // GET: Fotoes
-        public async Task<IActionResult> Index()
-        {
-            var varyagContext = _context.Foto.Include(f => f.News).Include(f => f.ShipProject);
-            return View(await varyagContext.ToListAsync());
         }
 
         // GET: Fotoes/Create
@@ -62,7 +55,7 @@ namespace Varyag.Controllers
                 };
                 using (var memoryStream = new MemoryStream())
                 {
-                    await model.Foto.CopyToAsync(memoryStream);
+                    await model.ProjectFoto.CopyToAsync(memoryStream);
                     foto.ProjectFoto = memoryStream.ToArray();
                 }
                 _context.Add(foto);
@@ -71,6 +64,77 @@ namespace Varyag.Controllers
             }
             return RedirectToAction(nameof(Create));
         }
+
+
+        // GET: Fotoes/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var foto = await _context.Foto.FindAsync(id);
+            if (foto == null)
+            {
+                return NotFound();
+            }
+            return View(foto);
+        }
+
+        // POST: Fotoes/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, FotoViewModel model)
+        {
+            if (id != model.FotoID)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var foto = new Foto
+                    {
+                        Name = model.Name,
+                        Alt = model.Alt,
+                        ShipProjectID = model.ShipProjectID,
+                        NewsID = model.NewsID,
+                        FotoID = model.FotoID
+                    };
+
+                    if (model.ProjectFoto != null)
+                    {
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            await model.ProjectFoto.CopyToAsync(memoryStream);
+                            foto.ProjectFoto = memoryStream.ToArray();
+                        }
+                    }
+                    
+                    _context.Update(foto);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!FotoExists(model.FotoID))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("Index", "Projects");
+            }
+            return View(model);
+        }
+
         // GET: Fotoes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
