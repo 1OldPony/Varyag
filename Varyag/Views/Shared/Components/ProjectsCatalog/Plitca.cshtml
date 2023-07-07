@@ -8,26 +8,26 @@
             <div class="underFoto">
                 <div class="catalogItemTop"><h2 style="margin-block:0;font-size:1.13rem;">@Model.ElementAt(i).Name</h2></div>
                 <div>
-                    <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Длина корпуса</div><div>@Model.ElementAt(i).Length&nbsp;м.</div></div>
+                    <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.1rem"><div>Длина корпуса</div><div>@Model.ElementAt(i).Length&nbsp;м.</div></div>
                     @if (ViewBag.secondCharacteristic == "weight")
                     {
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Вес корпуса</div><div>@Model.ElementAt(i).Mass&nbsp;кг.</div></div>
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.1rem"><div>Вес корпуса</div><div>@Model.ElementAt(i).Mass&nbsp;кг.</div></div>
                     }
                     @if (ViewBag.secondCharacteristic == "volume")
                     {
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Водоизмещение</div><div>@Model.ElementAt(i).Volume&nbsp;т.</div></div>
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.1rem"><div>Водоизмещение</div><div>@Model.ElementAt(i).Volume&nbsp;т.</div></div>
                     }
                     @if (ViewBag.thirdCharacteristic == "passanger")
                     {
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Пассажиры</div><div>@Model.ElementAt(i).PassengerCap&nbsp;чел.</div></div>
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.1rem"><div>Пассажиры</div><div>@Model.ElementAt(i).PassengerCap&nbsp;чел.</div></div>
                     }
                     @if (ViewBag.thirdCharacteristic == "sleepingAreas")
                     {
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Спальные места</div><div>@Model.ElementAt(i).SleepingAreas&nbsp;шт.</div></div>
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.1rem"><div>Спальные места</div><div>@Model.ElementAt(i).SleepingAreas&nbsp;шт.</div></div>
                     }
                     @if (ViewBag.thirdCharacteristic == "sailArea")
                     {
-                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.2rem"><div>Площадь парусности</div><div>@Model.ElementAt(i).SailArea&nbsp;м<sup style="font-size:10px;">2</sup></div></div>
+                        <div style="display:flex;margin-bottom:5px;justify-content:space-between;font-size:1.1rem"><div>Площадь парусности</div><div>@Model.ElementAt(i).SailArea&nbsp;м<sup style="font-size:10px;">2</sup></div></div>
                     }
                 </div>
                 @if (@Model.ElementAt(i).Price != "по запросу")
