@@ -48,73 +48,7 @@ $(document).on('ready', function () {
 });
 
 $(window).scroll(function () {
-
-    function leftMenuPosition() {
-        scrollTop = $(this).scrollTop();
-
-        if ($(window).width() > 1000) {
-            leftmenuHeight = $(".ourContacts").height() + $('.leftNavMenu').height() + 45;
-
-            if (scrollTop >= (leftMenuOffset - 50) && scrollTop + leftmenuHeight + 61 < $(".footerNew").offset().top) {
-                if (leftmenuHeight > $('.projectsHalf').height()) {
-                    $('.projectsHalf').css('margin-left', '10px');
-
-                    $(".leftMenu").css('position', 'initial');
-                }
-                else {
-                    $(".leftMenu").css('position', 'fixed');
-                    $(".leftMenu").css('top', 60);
-                    $(".leftMenu").css('bottom', "auto");
-
-                    $('.projectsHalf').css('margin-left', '361px');
-                    $('.projectsHalf').css('height', '');
-                }
-            }
-            else if (scrollTop + leftmenuHeight + 61 > $(".footerNew").offset().top) {
-
-                if (leftmenuHeight > $('.projectsHalf').height()) {
-                    $('.projectsHalf').css('margin-left', '10px');
-
-                    $(".leftMenu").css('position', 'initial');
-                }
-                else {
-                    $('.projectsHalf').css('margin-left', '361px');
-
-                    $(".leftMenu").css('position', 'absolute');
-                    $(".leftMenu").css('top', "auto");
-                    $(".leftMenu").css('bottom', 0);
-                }
-            }
-            else {
-                $(".leftMenu").css('position', 'initial');
-                $('.projectsHalf').css('margin-left', '10px');
-                $('.projectsHalf').css('height', '');
-
-                $("#mainPage.leftMenu").css('position', 'fixed');
-            }
-        }
-        else {
-            if (scrollTop > 50) {
-
-                $('.topMenu').css('top', '-50px');
-                $('.fromTheTopMenu').css('display', 'none');
-                $('#arrowDown').css('display', 'block');
-                $('#arrowUp').css('display', 'none');
-            }
-            else {
-                $('.topMenu').css('top', '0px');
-            }
-
-            if ($(".leftMenu").attr('style') != null) {
-                if ($(".leftMenu").css('display') != 'none') {
-                    $(".leftMenu").css('display', 'flex');
-                }
-                else {
-                    $(".leftMenu").removeAttr('style');
-                }
-            }
-        }
-    }
+    leftMenuPosition();    
 });
 
 $(window).resize(function () {
@@ -151,6 +85,7 @@ $(window).resize(function () {
                 $("#mainPage.leftMenu").css('position', 'fixed');
             }
         }
+
         $('.topMenu').css('top', '0px');
     }
     else {
@@ -160,6 +95,84 @@ $(window).resize(function () {
         $('#blackScreen').css('display', 'none');
     }
 });
+
+////////////////Правка позиционирования левого меню при изменении его размера////////////////
+//$('.leftNavOpenCurrent, .leftNavCloseCurrent, .leftNavOpen, .leftNavClose').click(function () {
+//    leftMenuPosition();
+//})
+
+function leftMenuPosition(bonus) {
+    scrollTop = $(this).scrollTop();
+
+    if ($(window).width() > 1000) {
+
+        if (bonus != undefined) {
+            leftmenuHeight = $(".ourContacts").height() + $('.leftNavMenu').height() + 45 + bonus;
+        }
+        else {
+            leftmenuHeight = $(".ourContacts").height() + $('.leftNavMenu').height() + 45;
+        }
+
+        if (scrollTop >= (leftMenuOffset - 50) && scrollTop + leftmenuHeight + 61 < $(".footerNew").offset().top) {
+            if (leftmenuHeight > $('.projectsHalf').height()) {
+                $('.projectsHalf').css('margin-left', '10px');
+
+                $(".leftMenu").css('position', 'initial');
+            }
+            else {
+                $(".leftMenu").css('position', 'fixed');
+                $(".leftMenu").css('top', 60);
+                $(".leftMenu").css('bottom', "auto");
+
+                $('.projectsHalf').css('margin-left', '361px');
+                $('.projectsHalf').css('height', '');
+            }
+        }
+        else if (scrollTop + leftmenuHeight + 61 > $(".footerNew").offset().top) {
+
+            if (leftmenuHeight > $('.projectsHalf').height()) {
+                $('.projectsHalf').css('margin-left', '10px');
+
+                $(".leftMenu").css('position', 'initial');
+            }
+            else {
+                $('.projectsHalf').css('margin-left', '361px');
+
+                $(".leftMenu").css('position', 'absolute');
+                $(".leftMenu").css('top', "auto");
+                $(".leftMenu").css('bottom', 0);
+            }
+        }
+        else {
+            $(".leftMenu").css('position', 'initial');
+            $('.projectsHalf').css('margin-left', '10px');
+            $('.projectsHalf').css('height', '');
+
+            $("#mainPage.leftMenu").css('position', 'fixed');
+        }
+    }
+    else {
+        if (scrollTop > 50) {
+
+            $('.topMenu').css('top', '-50px');
+            $('.fromTheTopMenu').css('display', 'none');
+            $('#arrowDown').css('display', 'block');
+            $('#arrowUp').css('display', 'none');
+        }
+        else {
+            $('.topMenu').css('top', '0px');
+        }
+
+        if ($(".leftMenu").attr('style') != null) {
+            if ($(".leftMenu").css('display') != 'none') {
+                $(".leftMenu").css('display', 'flex');
+            }
+            else {
+                $(".leftMenu").removeAttr('style');
+            }
+        }
+    }
+}
 
 /////////////////////Перещелкиваем видео в новостях////////////////////
 $("#videoOne").click(function () {
@@ -226,12 +239,14 @@ $("#allNewsOpen, #allNewsClose").click(function () {
         $("#allNews-Sub").css('visibility', 'visible');
         $("#allNews-Sub").css('opacity', '1');
         $(".leftNavMenu").css('padding-bottom', '79px')
+        leftMenuPosition(79);
     }
     else {
         $("#allNews-Sub").attr('class', 'leftSubNavClose');
         $("#allNews-Sub").css('visibility', 'hidden');
         $("#allNews-Sub").css('opacity', '0');
         $(".leftNavMenu").css('padding-bottom', '10px')
+        leftMenuPosition();
     }
     $("#allNewsOpen").toggle()
     $("#allNewsClose").toggle()
@@ -242,12 +257,14 @@ $("#themeNewsOpen, #themeNewsClose").click(function () {
         $("#themeNews-sub").css('visibility', 'visible');
         $("#themeNews-sub").css('opacity', '1');
         $("#allNewsNav").css('margin-top', '69px');
+        leftMenuPosition(69);
     }
     else {
         $("#themeNews-sub").attr('class', 'leftSubNavClose');
         $("#themeNews-sub").css('visibility', 'hidden');
         $("#themeNews-sub").css('opacity', '0');
         $("#allNewsNav").css('margin-top', '0px');
+        leftMenuPosition();
     }
     $("#themeNewsOpen").toggle()
     $("#themeNewsClose").toggle()
@@ -258,12 +275,14 @@ $("#articlesOpen, #articlesClose").click(function () {
         $("#articles-sub").css('visibility', 'visible');
         $("#articles-sub").css('opacity', '1');
         $("#themeNewsNav").css('margin-top', '46px');
+        leftMenuPosition(46);
     }
     else {
         $("#articles-sub").attr('class', 'leftSubNavClose');
         $("#articles-sub").css('visibility', 'hidden');
         $("#articles-sub").css('opacity', '0');
         $("#themeNewsNav").css('margin-top', '0px');
+        leftMenuPosition();
     }
     $("#articlesOpen").toggle()
     $("#articlesClose").toggle()
@@ -276,12 +295,14 @@ $("#lodkiOpen, #lodkiClose").click(function () {
         $("#lodki-Sub").css('visibility', 'visible');
         $("#lodki-Sub").css('opacity', '1');
         $("#shlupkiNav").css('margin-top', '69px')
+        leftMenuPosition(69);
     }
     else {
         $("#lodki-Sub").attr('class', 'leftSubNavClose');
         $("#lodki-Sub").css('visibility', 'hidden');
         $("#lodki-Sub").css('opacity', '0');
         $("#shlupkiNav").css('margin-top', '0px')
+        leftMenuPosition();
     }
     $("#lodkiOpen").toggle()
     $("#lodkiClose").toggle()
@@ -292,12 +313,14 @@ $("#shlupkiOpen, #shlupkiClose").click(function () {
         $("#shlupki-Sub").css('visibility', 'visible');
         $("#shlupki-Sub").css('opacity', '1');
         $("#kateraNav").css('margin-top', '92px')
+        leftMenuPosition(92);
     }
     else {
         $("#shlupki-Sub").attr('class', 'leftSubNavClose');
         $("#shlupki-Sub").css('visibility', 'hidden');
         $("#shlupki-Sub").css('opacity', '0');
         $("#kateraNav").css('margin-top', '0px')
+        leftMenuPosition();
     }
     $("#shlupkiOpen").toggle()
     $("#shlupkiClose").toggle()
@@ -308,12 +331,14 @@ $("#kateraOpen, #kateraClose").click(function () {
         $("#katera-Sub").css('visibility', 'visible');
         $("#katera-Sub").css('opacity', '1');
         $("#ladiyNav").css('margin-top', '92px')
+        leftMenuPosition(92);
     }
     else {
         $("#katera-Sub").attr('class', 'leftSubNavClose');
         $("#katera-Sub").css('visibility', 'hidden');
         $("#katera-Sub").css('opacity', '0');
         $("#ladiyNav").css('margin-top', '0px')
+        leftMenuPosition();
     }
     $("#kateraOpen").toggle()
     $("#kateraClose").toggle()
@@ -324,12 +349,14 @@ $("#ladiyOpen, #ladiyClose").click(function () {
         $("#ladiy-Sub").css('visibility', 'visible');
         $("#ladiy-Sub").css('opacity', '1');
         $("#sailboatsNav").css('margin-top', '72px')
+        leftMenuPosition(72);
     }
     else {
         $("#ladiy-Sub").attr('class', 'leftSubNavClose');
         $("#ladiy-Sub").css('visibility', 'hidden');
         $("#ladiy-Sub").css('opacity', '0');
         $("#sailboatsNav").css('margin-top', '0px')
+        leftMenuPosition();
     }
     $("#ladiyOpen").toggle()
     $("#ladiyClose").toggle()
@@ -340,12 +367,14 @@ $("#sailboatsOpen, #sailboatsClose").click(function () {
         $("#sailboats-Sub").css('visibility', 'visible');
         $("#sailboats-Sub").css('opacity', '1');
         $("#modelsNav").css('margin-top', '92px')
+        leftMenuPosition(92);
     }
     else {
         $("#sailboats-Sub").attr('class', 'leftSubNavClose');
         $("#sailboats-Sub").css('visibility', 'hidden');
         $("#sailboats-Sub").css('opacity', '0');
         $("#modelsNav").css('margin-top', '0px')
+        leftMenuPosition();
     }
     $("#sailboatsOpen").toggle()
     $("#sailboatsClose").toggle()
@@ -357,12 +386,14 @@ $("#modelsOpen, #modelsClose").click(function () {
         $("#models-Sub").css('visibility', 'visible');
         $("#models-Sub").css('opacity', '1');
         $(".leftNavMenu").css('padding-bottom', '56px')
+        leftMenuPosition(56);
     }
     else {
         $("#models-Sub").attr('class', 'leftSubNavClose');
         $("#models-Sub").css('visibility', 'hidden');
         $("#models-Sub").css('opacity', '0');
         $(".leftNavMenu").css('padding-bottom', '10px')
+        leftMenuPosition();
     }
     $("#modelsOpen").toggle()
     $("#modelsClose").toggle()

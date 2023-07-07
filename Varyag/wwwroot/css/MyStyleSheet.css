@@ -1838,6 +1838,8 @@ img {
 .newsMainStory {
     font-size: 1.1rem;
     text-align: left;
+    margin-block-start:0px;
+    margin-block-end:0px;
 }
 .newsDetailsStory {
     text-align: left;
@@ -2102,7 +2104,8 @@ ul .nav-element-choosen {
 
 .tthUnderFoto {
     display: flex;
-    width: 32.6%;
+    width:49.5%;
+    /*width: 32.6%;*/
     flex-direction: column;
     background-color: white;
     border-radius: 5px;
@@ -2976,9 +2979,6 @@ ul .nav-element-choosen {
 }
 
 @media (max-width:1246px) {
-    /*.tthUnderFoto {
-        width: 32%;
-    }*/
     #contacts.contactsSocial {
         display: block;
         cursor: pointer;
@@ -3086,7 +3086,8 @@ ul .nav-element-choosen {
 
 @media (max-width:1160px) {
     .tthUnderFoto {
-        width: 49.2%;
+        /*width: 49.2%;*/
+        width: 49.5%;
     }
     #сatalog.about {
         background: url(../images/о_нас/каталог/120923DMI_3702—копия.JPG) 53% 76% no-repeat;
@@ -3336,7 +3337,8 @@ ul .nav-element-choosen {
         margin-left: 10px;
     }
     .tthUnderFoto {
-        width: 32.6%
+        /*width: 32.6%*/
+        width: 49.5%;
     }
     .catalogPlates {
         margin-left: 10px;
@@ -3567,11 +3569,6 @@ ul .nav-element-choosen {
     }
 }
 
-/*@media (max-width:919px) {
-    .tthUnderFoto {
-        width: 32%;
-    }
-}*/
 
 @media (max-width:900px) {
 
@@ -3632,7 +3629,8 @@ ul .nav-element-choosen {
         margin: 0 5px 0 5px;
     }
     .tthUnderFoto {
-        width: 32.6%;
+        /*width: 32.6%;*/
+        width: 49.5%;
     }
 
     .longUpFoto {
@@ -3958,7 +3956,8 @@ ul .nav-element-choosen {
 
 @media (max-width:730px) {
     .tthUnderFoto {
-        width: 49.2%;
+        /*width: 49.2%;*/
+        width: 49.5%;
     }
 }
 
@@ -4215,6 +4214,14 @@ ul .nav-element-choosen {
     }
 }
 
+@media (max-width:556px) {
+    .newsListElement {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "preview" "newsText";
+    }
+}
+
 @media (max-width:550px) {
 
     #production.about {
@@ -4239,11 +4246,6 @@ ul .nav-element-choosen {
 
     #cinemaOrders.category {
         width: 45%;
-    }
-    .newsListElement {
-        grid-template-columns: auto;
-        grid-template-rows: auto auto;
-        grid-template-areas: "preview" "newsText";
     }
 }
 
