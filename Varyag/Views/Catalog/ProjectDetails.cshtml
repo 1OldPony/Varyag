@@ -375,7 +375,7 @@ else if (Model.MaketCinema == true || Model.MaketDesign == true || Model.MaketMu
                 </div>
         </div>
         <div class="galleryFlex">
-            <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+            <div class="fotorama" data-nav="thumbs" data-width="100%" data-fit="scaledown" data-allowfullscreen="native">
                 @await Component.InvokeAsync("Fotorama", new { shipProjectId = Model.ProjectID })
             </div>
         </div>

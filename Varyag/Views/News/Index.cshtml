@@ -47,7 +47,7 @@
                             <div class="newsDetailsStory">@Html.Raw(Model.ElementAt(i).MainStory)</div>
                             @if (Model.ElementAt(i).PathToGallery != null)
                             {
-                                <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="contain" data-allowfullscreen="native">
+                                <div class="fotorama" style="width:99%;" data-nav="thumbs" data-width="100%" data-fit="scaledown" data-allowfullscreen="native">
                                     @await Component.InvokeAsync("Fotorama", new { newsId = Model.ElementAt(i).NewsId })
                                 </div>
                             }
