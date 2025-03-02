@@ -8,7 +8,7 @@ using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    public class ProjectsCatalogViewComponent : ViewComponent
+	public class ProjectsCatalogViewComponent : ViewComponent
     {
         private readonly VaryagContext db;
 

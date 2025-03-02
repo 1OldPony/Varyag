@@ -2,13 +2,12 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    public class LinkToProjectViewComponent : ViewComponent
+	public class LinkToProjectViewComponent : ViewComponent
     {
         private readonly VaryagContext db;
 

@@ -8,7 +8,7 @@ using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    public class CatalogController : Controller
+	public class CatalogController : Controller
     {
         private readonly VaryagContext db;
 

@@ -3,6 +3,6 @@
 namespace Varyag.Models
 {
     public class User : IdentityUser
-    {
+	{
     }
 }

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    public class FotoramaViewComponent : ViewComponent
+	public class FotoramaViewComponent : ViewComponent
     {
         private readonly VaryagContext db;
 

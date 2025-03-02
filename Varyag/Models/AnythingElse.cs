@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Varyag.Models
+﻿namespace Varyag.Models
 {
-    public class AnythingElse
+	public class AnythingElse
     {
         public int Id { get; set; }
         public string Name { get; set; }

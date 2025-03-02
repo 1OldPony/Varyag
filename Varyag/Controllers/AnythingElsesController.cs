@@ -1,25 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    public class AnythingElsesController : Controller
+	public class AnythingElsesController : Controller
     {
         private readonly VaryagContext _context;
-        private readonly IHostingEnvironment _Environment;
+        private readonly IWebHostEnvironment _Environment;
         //private readonly ILogger _logger;
 
-        public AnythingElsesController(VaryagContext context, IHostingEnvironment appEnvironment/*, ILoggerFactory loggerFactory*/)
+        public AnythingElsesController(VaryagContext context, IWebHostEnvironment appEnvironment/*, ILoggerFactory loggerFactory*/)
         {
             _context = context;
             _Environment = appEnvironment;

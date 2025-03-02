@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
 
 namespace Varyag.Models
 {
 
-    public class ProjectPublicViewModel
+	public class ProjectPublicViewModel
     {
         public int ProjectID { get; set; }
 

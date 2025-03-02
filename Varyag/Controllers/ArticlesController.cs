@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
 using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
-    public class ArticlesController : Controller
+	public class ArticlesController : Controller
     {
         private readonly VaryagContext _context;
-        private readonly IHostingEnvironment _Environment;
+        private readonly IWebHostEnvironment _Environment;
 
-        public ArticlesController(VaryagContext context, IHostingEnvironment appEnvironment)
+        public ArticlesController(VaryagContext context, IWebHostEnvironment appEnvironment)
         {
             _context = context;
             _Environment = appEnvironment;

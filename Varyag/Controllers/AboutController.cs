@@ -8,7 +8,7 @@ using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    public class AboutController : Controller
+	public class AboutController : Controller
     {
         private readonly VaryagContext _context;
 

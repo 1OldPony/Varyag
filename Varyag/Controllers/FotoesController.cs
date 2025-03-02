@@ -9,8 +9,8 @@ using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
-    //[Authorize(Roles = "admin")]
-    public class FotoesController : Controller
+	//[Authorize(Roles = "admin")]
+	public class FotoesController : Controller
     {
         private readonly VaryagContext _context;
 

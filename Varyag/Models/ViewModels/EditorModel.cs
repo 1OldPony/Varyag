@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Varyag.Models.ViewModels
+﻿namespace Varyag.Models.ViewModels
 {
-    public class EditorModel
+	public class EditorModel
     {
         public string shortFotoScale { get; set; }
         public string shortFotoX { get; set; }

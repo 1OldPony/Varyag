@@ -1,22 +1,18 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
-using Varyag.Models.ViewModels;
 
 namespace Varyag.Controllers
 {
-    public class ArticlePreviewViewComponent : ViewComponent
+	public class ArticlePreviewViewComponent : ViewComponent
     {
         private readonly VaryagContext db;
-        private readonly IHostingEnvironment _Environment;
+        private readonly IWebHostEnvironment _Environment;
 
-        public ArticlePreviewViewComponent(VaryagContext context, IHostingEnvironment appEnvironment)
+        public ArticlePreviewViewComponent(VaryagContext context, IWebHostEnvironment appEnvironment)
         {
             db = context;
             _Environment = appEnvironment;

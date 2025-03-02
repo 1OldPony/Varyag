@@ -1,13 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Varyag.Models
 {
-    public class FileLogger : ILogger
+	public class FileLogger : ILogger
     {
         private string filePath;
         private static object _lock = new object();

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Varyag.Models;
 
 namespace Varyag.Controllers
 {
-    public class NewsViewComponent : ViewComponent
+	public class NewsViewComponent : ViewComponent
     {
         private readonly VaryagContext db;
         //private readonly ILogger _logger;
