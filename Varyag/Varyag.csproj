@@ -177,6 +177,7 @@
   <ItemGroup>
     <Folder Include="ForLogggs\" />
     <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\images\news\10.06.2016\10.06.2016\" />
     <Folder Include="wwwroot\images\temp\" />
     <Folder Include="wwwroot\images\Thumbnails\" />
   </ItemGroup>
