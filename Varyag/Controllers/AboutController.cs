@@ -22,6 +22,20 @@ namespace Varyag.Controllers
             ViewData["Title"] = "Верфь деревянного судостроения Варяг";
             ViewData["Keywords"] = "Верфь Варяг, О верфи Варяг, Построить деревянный корабль, Купить деревянную лодку";
             ViewData["Description"] = "Верфь деревянного судостроения Варяг сециализируется на проектировании судов, шлюпок и лодок. Мы в строю уже 30 лет и можем предложить широкий выбор разнообразных проектов, построенных на нашей верфи или разработать новый.";
+
+
+
+            var ART = "ArticleId,ArticleName,Text1,PathToGallery1,Text2,PathToGallery2,Text3,PathToGallery3,Text4,PathToGallery4,Text5,PathToGallery5,Text6,PathToGallery6,Text7,PathToGallery7,Text8,PathToGallery8,Text9,PathToGallery9,Text10,PathToGallery10,Text11,PathToGallery11,Text12,PathToGallery12,Text13,PathToGallery13,Text14,PathToGallery14,Text15,PathToGallery15,ArticleRoute,ArticleType,MiddleFotoPreview,MiddleImgScale,MiddleImgX,MiddleImgY,ShortFotoPreview,ShortImgScale,ShortImgX,ShortImgY,WideFotoPreview,WideImgScale,WideImgX,WideImgY,MiddleStory,ShortStory,WideStory";
+            var rrr = ART.Split(',');
+            List<Article> arts = new List<Article>();
+
+            foreach (var r in rrr) {
+				Article article = new Article
+				{ 
+                    
+                };
+            }
+            
             return View();
         }
 

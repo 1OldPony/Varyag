@@ -21,7 +21,11 @@ builder.Services.AddControllersWithViews(); // Заменяет AddMvc()
 
 // Добавление контекста базы данных
 builder.Services.AddDbContext<VaryagContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("VaryagContext")));
+	options.UseMySql(builder.Configuration.GetConnectionString("VaryagContext"),
+					 ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("VaryagContext"))));
+
+//builder.Services.AddDbContext<VaryagContext>(options =>
+//	options.UseSqlServer(builder.Configuration.GetConnectionString("VaryagContext")));
 
 // Настройка Identity
 builder.Services.AddIdentity<User, IdentityRole>(options =>
