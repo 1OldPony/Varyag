@@ -24,8 +24,8 @@ builder.Services.AddDbContext<VaryagContext>(options =>
 	options.UseMySql(builder.Configuration.GetConnectionString("VaryagContext"),
 					 ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("VaryagContext"))));
 
-//builder.Services.AddDbContext<VaryagContext>(options =>
-//	options.UseSqlServer(builder.Configuration.GetConnectionString("VaryagContext")));
+builder.Services.AddDbContext<VaryagSQLContext>(options =>
+	options.UseSqlServer(builder.Configuration.GetConnectionString("VaryagSQLContext")));
 
 // Настройка Identity
 builder.Services.AddIdentity<User, IdentityRole>(options =>

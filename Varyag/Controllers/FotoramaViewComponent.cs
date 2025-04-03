@@ -32,15 +32,20 @@ namespace Varyag.Controllers
                 ViewBag.singleFoto = false;
                 List<string> fotoPaths = new List<string>();
                 foreach (var item in fotos)
-                {
-                    string path = LittleHelper.PathAdapter(item, "gallery");
-                    fotoPaths.Add(path);
+				{
+					if (item.Last() != 't')
+					{
+						string path = LittleHelper.PathAdapter(item, "gallery");
+						fotoPaths.Add(path);
+					}
                 }
                 return View("NewsGallery",fotoPaths);
             }
             else if (articleId != null)
-            {
-                string[] fotos = Directory.GetFiles(galleryPath);
+            { 
+                string[] fotos = Directory.GetFiles(galleryPath)
+					 .Select(f => Path.GetFullPath(f).Replace("\\", "/"))
+					 .ToArray(); 
                 ViewBag.singleFoto = singleFoto;
                 List<string> fotoPaths = new List<string>();
                 if (singleFoto)
@@ -55,8 +60,11 @@ namespace Varyag.Controllers
                 {
                     foreach (var item in fotos)
                     {
-                        string path = LittleHelper.PathAdapter(item, "gallery");
-                        fotoPaths.Add(path);
+                        if (item.Last() != 't')
+						{
+							string path = LittleHelper.PathAdapter(item, "gallery");
+							fotoPaths.Add(path);
+						}
                     }
                 }
                 return View("NewsGallery", fotoPaths);
@@ -67,9 +75,12 @@ namespace Varyag.Controllers
                 string[] fotos = Directory.GetFiles(items.PathToGallery);
                 List<string> fotoPaths = new List<string>();
                 foreach (var item in fotos)
-                {
-                    string path = LittleHelper.PathAdapter(item, "gallery");
-                    fotoPaths.Add(path);
+				{
+					if (item.Last() != 't')
+					{
+						string path = LittleHelper.PathAdapter(item, "gallery");
+						fotoPaths.Add(path);
+					}
                 }
                 return View("NewsGallery", fotoPaths);
             }

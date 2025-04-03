@@ -22,6 +22,23 @@ namespace Varyag.Models
 	}
 
 
+	public class VaryagSQLContext : IdentityDbContext<User>
+	{
+		public VaryagSQLContext(DbContextOptions<VaryagSQLContext> options)
+			: base(options)
+		{
+		}
+
+		public DbSet<Project> Project { get; set; }
+
+		public DbSet<Foto> Foto { get; set; }
+
+		public DbSet<News> News { get; set; }
+
+		public DbSet<AnythingElse> AnythingElse { get; set; }
+
+		public DbSet<Varyag.Models.Article> Article { get; set; }
+	}
 }
 
 

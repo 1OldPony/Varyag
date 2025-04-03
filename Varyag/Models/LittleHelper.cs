@@ -21,8 +21,9 @@ namespace Varyag.Models
         
         public static string PathAdapter(string path, string forWhat)
         {
-            string[] pathParts = path.Split(new char[] { '\\' });
-            string fotoPath = "";
+            //string[] pathParts = path.Split(new char[] { '\\' });
+			string[] pathParts = path.Split(new char[] { '/' });
+			string fotoPath = "";
             switch (forWhat)
             {
                 case "preview":
@@ -32,7 +33,8 @@ namespace Varyag.Models
                 case "gallery":
                     fotoPath = "/" + pathParts[(pathParts.Length - 1) - 4] + "/" + pathParts[(pathParts.Length - 1) - 3] + "/" + pathParts[(pathParts.Length - 1) - 2] + "/"
                         + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];
-                    break;
+                    //fotoPath = path;
+					break;
                 case "articlePreview":
                     fotoPath = "/" + pathParts[(pathParts.Length - 1) - 5] + "/" + pathParts[(pathParts.Length - 1) - 4] + "/" + pathParts[(pathParts.Length - 1) - 3] + "/"
                         + pathParts[(pathParts.Length - 1) - 2] + "/" + pathParts[(pathParts.Length - 1) - 1] + "/" + pathParts[(pathParts.Length - 1)];

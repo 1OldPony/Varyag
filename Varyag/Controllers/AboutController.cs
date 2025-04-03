@@ -5,38 +5,125 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
+using CsvHelper;
+using System.Globalization;
+using System.IO;
+using CsvHelper.Configuration;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Options;
 
 namespace Varyag.Controllers
 {
 	public class AboutController : Controller
     {
         private readonly VaryagContext _context;
+		private readonly VaryagSQLContext _contextSQL;
 
-        public AboutController(VaryagContext context)
+		public AboutController(VaryagContext context, VaryagSQLContext contextSQL)
         {
             _context = context;
+			_contextSQL = contextSQL;
+		}
+
+        public string fixRoutes(string route) {
+
+            if (route != null)
+				route = route.Replace("\\", "/").Replace('\'', '/').Replace("C:/inetpub/vhosts/u1540332.plsk.regruhosting.ru/httpdocs/tempsite.site", ".");
+				//route = route.Replace("\\", "/").Replace('\'', '/').Replace("C:/inetpub/vhosts/u1540332.plsk.regruhosting.ru/httpdocs/tempsite.site/wwwroot", "");
+				return route;
         }
 
-        public IActionResult Index()
+		public void ImportCsvAsync()
+		{
+            // -------- СТАТЬИ --------
+            //var mySQLar = _context.Article.ToList();
+            //_context.Article.RemoveRange(mySQLar);
+            //_context.SaveChanges();
+
+            //var msSQL = _contextSQL.Article.ToList();
+            //foreach (var art in msSQL)
+            //{
+            //    art.PathToGallery1 = fixRoutes(art.PathToGallery1);
+            //    art.PathToGallery2 = fixRoutes(art.PathToGallery2);
+            //    art.PathToGallery3 = fixRoutes(art.PathToGallery3);
+            //    art.PathToGallery4 = fixRoutes(art.PathToGallery4);
+            //    art.PathToGallery5 = fixRoutes(art.PathToGallery5);
+            //    art.PathToGallery6 = fixRoutes(art.PathToGallery6);
+            //    art.PathToGallery7 = fixRoutes(art.PathToGallery7);
+            //    art.PathToGallery8 = fixRoutes(art.PathToGallery8);
+            //    art.PathToGallery9 = fixRoutes(art.PathToGallery9);
+            //    art.PathToGallery10 = fixRoutes(art.PathToGallery10);
+            //    art.PathToGallery11 = fixRoutes(art.PathToGallery11);
+            //    art.PathToGallery12 = fixRoutes(art.PathToGallery12);
+            //    art.PathToGallery13 = fixRoutes(art.PathToGallery13);
+            //    art.PathToGallery14 = fixRoutes(art.PathToGallery14);
+            //    art.PathToGallery15 = fixRoutes(art.PathToGallery15);
+            //}
+
+            //_context.Article.AddRange(msSQL);
+
+
+
+            // -------- НОВОСТИ --------
+            //var mySQLnew = _context.News.ToList();
+            //_context.News.RemoveRange(mySQLnew);
+            //_context.SaveChanges();
+
+            //var msSQLnew = _contextSQL.News.ToList();
+            //foreach (var news in msSQLnew)
+            //{
+            //    news.PathToGallery = fixRoutes(news.PathToGallery);
+            //}
+
+            //_context.News.AddRange(msSQLnew);
+
+
+
+            // -------- ПРОЕКТЫ --------
+            //var mySQLProject = _context.Project.ToList();
+            //_context.Project.RemoveRange(mySQLProject);
+            //_context.SaveChanges();
+
+            //var msSQLProject = _contextSQL.Project.ToList();
+
+            //_context.Project.AddRange(msSQLProject);
+
+            //_context.SaveChanges();
+
+
+            // -------- ФОТО --------
+            //var mySQLFoto = _context.Foto.ToList();
+            //_context.Foto.RemoveRange(mySQLFoto);
+            //_context.SaveChanges();
+
+            //var msSQLFoto = _contextSQL.Foto.ToList();
+
+            //int batchSize = 10;
+
+            //for (int i = 0; i < msSQLFoto.Count; i += batchSize)
+            //{
+            //    var batch = msSQLFoto.Skip(i).Take(batchSize).ToList();
+
+            //    _context.Foto.AddRange(batch);
+            //    _context.SaveChanges();
+            //}
+        }
+
+		public IActionResult Index()
         {
             ViewData["Title"] = "Верфь деревянного судостроения Варяг";
             ViewData["Keywords"] = "Верфь Варяг, О верфи Варяг, Построить деревянный корабль, Купить деревянную лодку";
             ViewData["Description"] = "Верфь деревянного судостроения Варяг сециализируется на проектировании судов, шлюпок и лодок. Мы в строю уже 30 лет и можем предложить широкий выбор разнообразных проектов, построенных на нашей верфи или разработать новый.";
 
 
+			//await ImportCsvAsync("G:\\TEMP2\\db_artic.csv");
 
-            var ART = "ArticleId,ArticleName,Text1,PathToGallery1,Text2,PathToGallery2,Text3,PathToGallery3,Text4,PathToGallery4,Text5,PathToGallery5,Text6,PathToGallery6,Text7,PathToGallery7,Text8,PathToGallery8,Text9,PathToGallery9,Text10,PathToGallery10,Text11,PathToGallery11,Text12,PathToGallery12,Text13,PathToGallery13,Text14,PathToGallery14,Text15,PathToGallery15,ArticleRoute,ArticleType,MiddleFotoPreview,MiddleImgScale,MiddleImgX,MiddleImgY,ShortFotoPreview,ShortImgScale,ShortImgX,ShortImgY,WideFotoPreview,WideImgScale,WideImgX,WideImgY,MiddleStory,ShortStory,WideStory";
-            var rrr = ART.Split(',');
-            List<Article> arts = new List<Article>();
-
-            foreach (var r in rrr) {
-				Article article = new Article
-				{ 
-                    
-                };
-            }
+			//string filePath = Path.Combine(Directory.GetCurrentDirectory(), "temp", "db_artic.csv");
+			
             
-            return View();
+            //ImportCsvAsync();
+
+			return View();
         }
 
         public async Task<IActionResult> AboutUs()

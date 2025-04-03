@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  myapp:
+    image: myapp:latest
+    volumes:
+      - ./local/path:/container/path
+      # - ./temp:/app/temp
+    ports:
+      - "8080:80"

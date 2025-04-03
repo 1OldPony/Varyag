@@ -1,16 +1,4 @@
 {
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iis": {
-      "applicationUrl": "http://localhost/Varyag",
-      "sslPort": 0
-    },
-    "iisExpress": {
-      "applicationUrl": "http://localhost:51989",
-      "sslPort": 0
-    }
-  },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
@@ -26,6 +14,79 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "ASPNETCORE_URLS": "http://+:80",
+        "DOTNET_RUNNING_IN_CONTAINER": "true",
+        "DOTNET_USE_POLLING_FILE_WATCHER": "1"
+      },
+      "httpPort": 5000,
+      "useSSL": false,
+      "publishAllPorts": true,
+      "dotnetRunMessages": true
+    }
+  },
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/Varyag",
+      "sslPort": 0
+    },
+    "iisExpress": {
+      "applicationUrl": "http://localhost:51989",
+      "sslPort": 0
     }
   }
 }
+
+
+
+
+
+
+
+//{
+//  "profiles": {
+//    "IIS Express": {
+//      "commandName": "IISExpress",
+//      "launchBrowser": true,
+//      "environmentVariables": {
+//        "ASPNETCORE_ENVIRONMENT": "Development"
+//      }
+//    },
+//    "Varyag": {
+//      "commandName": "Project",
+//      "launchBrowser": true,
+//      "environmentVariables": {
+//        "ASPNETCORE_ENVIRONMENT": "Development"
+//      },
+//      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+//    },
+//    "Docker": {
+//      "commandName": "Docker",
+//      "launchBrowser": true,
+//      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+//      "environmentVariables": {
+//        "ASPNETCORE_URLS": "http://+:80"
+//      },
+//      "publishAllPorts": true
+//    }
+//  },
+//  "iisSettings": {
+//    "windowsAuthentication": false,
+//    "anonymousAuthentication": true,
+//    "iis": {
+//      "applicationUrl": "http://localhost/Varyag",
+//      "sslPort": 0
+//    },
+//    "iisExpress": {
+//      "applicationUrl": "http://localhost:51989",
+//      "sslPort": 0
+//    }
+//  }
+//}
