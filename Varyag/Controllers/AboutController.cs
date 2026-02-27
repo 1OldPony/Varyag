@@ -35,32 +35,33 @@ namespace Varyag.Controllers
 
 		public void ImportCsvAsync()
 		{
-            // -------- СТАТЬИ --------
-            //var mySQLar = _context.Article.ToList();
-            //_context.Article.RemoveRange(mySQLar);
+            // --------СТАТЬИ--------
+            //         var mySQLar = _context.Article.ToList();
+            //         _context.Article.RemoveRange(mySQLar);
+            //         _context.SaveChanges();
+
+            //         var msSQL = _contextSQL.Article.ToList();
+            //         foreach (var art in msSQL)
+            //         {
+            //             art.PathToGallery1 = fixRoutes(art.PathToGallery1);
+            //             art.PathToGallery2 = fixRoutes(art.PathToGallery2);
+            //             art.PathToGallery3 = fixRoutes(art.PathToGallery3);
+            //             art.PathToGallery4 = fixRoutes(art.PathToGallery4);
+            //             art.PathToGallery5 = fixRoutes(art.PathToGallery5);
+            //             art.PathToGallery6 = fixRoutes(art.PathToGallery6);
+            //             art.PathToGallery7 = fixRoutes(art.PathToGallery7);
+            //             art.PathToGallery8 = fixRoutes(art.PathToGallery8);
+            //             art.PathToGallery9 = fixRoutes(art.PathToGallery9);
+            //             art.PathToGallery10 = fixRoutes(art.PathToGallery10);
+            //             art.PathToGallery11 = fixRoutes(art.PathToGallery11);
+            //             art.PathToGallery12 = fixRoutes(art.PathToGallery12);
+            //             art.PathToGallery13 = fixRoutes(art.PathToGallery13);
+            //             art.PathToGallery14 = fixRoutes(art.PathToGallery14);
+            //             art.PathToGallery15 = fixRoutes(art.PathToGallery15);
+            //         }
+
+            //         _context.Article.AddRange(msSQL);
             //_context.SaveChanges();
-
-            //var msSQL = _contextSQL.Article.ToList();
-            //foreach (var art in msSQL)
-            //{
-            //    art.PathToGallery1 = fixRoutes(art.PathToGallery1);
-            //    art.PathToGallery2 = fixRoutes(art.PathToGallery2);
-            //    art.PathToGallery3 = fixRoutes(art.PathToGallery3);
-            //    art.PathToGallery4 = fixRoutes(art.PathToGallery4);
-            //    art.PathToGallery5 = fixRoutes(art.PathToGallery5);
-            //    art.PathToGallery6 = fixRoutes(art.PathToGallery6);
-            //    art.PathToGallery7 = fixRoutes(art.PathToGallery7);
-            //    art.PathToGallery8 = fixRoutes(art.PathToGallery8);
-            //    art.PathToGallery9 = fixRoutes(art.PathToGallery9);
-            //    art.PathToGallery10 = fixRoutes(art.PathToGallery10);
-            //    art.PathToGallery11 = fixRoutes(art.PathToGallery11);
-            //    art.PathToGallery12 = fixRoutes(art.PathToGallery12);
-            //    art.PathToGallery13 = fixRoutes(art.PathToGallery13);
-            //    art.PathToGallery14 = fixRoutes(art.PathToGallery14);
-            //    art.PathToGallery15 = fixRoutes(art.PathToGallery15);
-            //}
-
-            //_context.Article.AddRange(msSQL);
 
 
 
@@ -76,6 +77,7 @@ namespace Varyag.Controllers
             //}
 
             //_context.News.AddRange(msSQLnew);
+            //_context.SaveChanges();
 
 
 
@@ -116,22 +118,18 @@ namespace Varyag.Controllers
             ViewData["Description"] = "Верфь деревянного судостроения Варяг сециализируется на проектировании судов, шлюпок и лодок. Мы в строю уже 30 лет и можем предложить широкий выбор разнообразных проектов, построенных на нашей верфи или разработать новый.";
 
 
-			//await ImportCsvAsync("G:\\TEMP2\\db_artic.csv");
+			// //await ImportCsvAsync("G:\\TEMP2\\db_artic.csv");
 
-			//string filePath = Path.Combine(Directory.GetCurrentDirectory(), "temp", "db_artic.csv");
+			// //string filePath = Path.Combine(Directory.GetCurrentDirectory(), "temp", "db_artic.csv");
 			
             
-            //ImportCsvAsync();
+            ImportCsvAsync();
 
 			return View();
         }
 
         public async Task<IActionResult> AboutUs()
         {
-            ViewData["Title"] = "Верфь деревянного судостроения Варяг";
-            ViewData["Keywords"] = "Верфь Варяг, О верфи Варяг, Построить деревянный корабль, Купить деревянную лодку";
-            ViewData["Description"] = "Верфь деревянного судостроения Варяг сециализируется на проектировании судов, шлюпок и лодок. Мы в строю уже 30 лет и можем предложить широкий выбор разнообразных проектов, построенных на нашей верфи или разработать новый.";
-
             List<News> newsForDate = new List<News>();
             newsForDate = await _context.News.ToListAsync();
 
@@ -155,20 +153,26 @@ namespace Varyag.Controllers
             {
                 return NotFound();
             }
-            return View(article);
+
+
+			ViewData["Title"] = "Верфь деревянного судостроения Варяг";
+			ViewData["Keywords"] = "Верфь Варяг, О верфи Варяг, Построить деревянный корабль, Купить деревянную лодку";
+			ViewData["Description"] = "Верфь деревянного судостроения Варяг сециализируется на проектировании судов, шлюпок и лодок. Мы в строю уже 30 лет и можем предложить широкий выбор разнообразных проектов, построенных на нашей верфи или разработать новый.";
+
+
+			return View(article);
         }
 
         public async Task<IActionResult> AllNews(string newsType, int? page, string direction, string part)
-        {
-            ViewData["Title"] = "Новости верфи деревянного судостроения Варяг";
-            ViewData["Keywords"] = "СМИ о верфи Варяг, Новые суда построенные на верфи Варяг, Жизнь судов построенных на верфи Варяг";
-            ViewData["Description"] = "Новости верфи деревянного судостроения Варяг";
+		{
 
 
-            //System.Diagnostics.Debugger.Break();
+			ViewData["Title"] = "Новости верфи деревянного судостроения Варяг";
+			ViewData["Keywords"] = "СМИ о верфи Варяг, Новые суда построенные на верфи Варяг, Жизнь судов построенных на верфи Варяг";
+			ViewData["Description"] = "Новости верфи деревянного судостроения Варяг";
 
 
-            List<News> newsToSort = new List<News>();
+			List<News> newsToSort = new List<News>();
             newsToSort = await _context.News.ToListAsync();
 
             List<NewsViewModel> news = LittleHelper.NewsToSortedViewModel(newsToSort);
@@ -311,7 +315,7 @@ namespace Varyag.Controllers
             ViewBag.part = part;
             ViewBag.newsType = newsType;
 
-            return View(news);
+			return View(news);
         }
 
         public async Task<IActionResult> NewsDetails(int? id, string actualNews, string recentNews, string oldNews)

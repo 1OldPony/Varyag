@@ -176,7 +176,7 @@ namespace Varyag.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AnythingElse");
+                    b.ToTable("AnythingElse", (string)null);
                 });
 
             modelBuilder.Entity("Varyag.Models.Article", b =>
@@ -331,7 +331,7 @@ namespace Varyag.Migrations
 
                     b.HasKey("ArticleId");
 
-                    b.ToTable("Article");
+                    b.ToTable("Article", (string)null);
                 });
 
             modelBuilder.Entity("Varyag.Models.Foto", b =>
@@ -362,7 +362,7 @@ namespace Varyag.Migrations
 
                     b.HasIndex("ShipProjectID");
 
-                    b.ToTable("Foto");
+                    b.ToTable("Foto", (string)null);
                 });
 
             modelBuilder.Entity("Varyag.Models.News", b =>
@@ -445,7 +445,7 @@ namespace Varyag.Migrations
 
                     b.HasKey("NewsId");
 
-                    b.ToTable("News");
+                    b.ToTable("News", (string)null);
                 });
 
             modelBuilder.Entity("Varyag.Models.Project", b =>
@@ -585,7 +585,7 @@ namespace Varyag.Migrations
 
                     b.HasKey("ProjectID");
 
-                    b.ToTable("Project");
+                    b.ToTable("Project", (string)null);
                 });
 
             modelBuilder.Entity("Varyag.Models.User", b =>

@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Varyag.Models;
 
 namespace Varyag.Controllers
@@ -27,21 +28,29 @@ namespace Varyag.Controllers
             }
             else if (newsId != null)
             {
-                var news = await db.News.Where(i=>i.NewsId == newsId).SingleAsync();
-                string[] fotos = Directory.GetFiles(news.PathToGallery);
+				//            var news = await db.News.Where(i=>i.NewsId == newsId).SingleAsync();
+				//            string[] fotos = Directory.GetFiles(news.PathToGallery);
+				//            ViewBag.singleFoto = false;
+				//            List<string> fotoPaths = new List<string>();
+				//            foreach (var item in fotos)
+				//{
+				//	if (item.Last() != 't')
+				//	{
+				//		string path = LittleHelper.PathAdapter(item, "gallery");
+				//		fotoPaths.Add(path.Replace("\\", "/").Replace("./wwwroot", ""));
+				//	}
+				//            }
+				//            return View("NewsGallery", fotoPaths);
                 ViewBag.singleFoto = false;
-                List<string> fotoPaths = new List<string>();
-                foreach (var item in fotos)
-				{
-					if (item.Last() != 't')
-					{
-						string path = LittleHelper.PathAdapter(item, "gallery");
-						fotoPaths.Add(path);
-					}
-                }
-                return View("NewsGallery",fotoPaths);
-            }
-            else if (articleId != null)
+
+				var news = await db.News.Where(i => i.NewsId == newsId).SingleAsync();
+
+				string[] fotos = Directory.GetFiles(news.PathToGallery)
+                                    .Select(f=> f.Replace("\\", "/").Replace("./wwwroot", "")).ToArray();
+
+				return View("NewsGallery", fotos);
+			}
+			else if (articleId != null)
             { 
                 string[] fotos = Directory.GetFiles(galleryPath)
 					 .Select(f => Path.GetFullPath(f).Replace("\\", "/"))
